@@ -1,0 +1,31 @@
+탐쌤이멜: tombap@naver.com
+
+공식교과서: w3c 스쿨
+https://www.w3schools.com/
+
+강의 동영상 백업 유튜브: 탐쌤코딩 프론트엔드 2024
+https://www.youtube.com/channel/UCX6SkJ-L1DHBubuQETdBxHw
+
+사이트 벤치마킹 포털
+(1) 디비컷
+https://www.dbcut.com/
+(2) 굿디자인웹
+https://www.gdweb.co.kr/main/
+(3) 어워즈
+https://www.awwwards.com/
+
+[ 개인 포폴 1차 주제선정 ]
+-> 탐쌤이멜: tombap@naver.com
+-> 벤치마킹 분석을 많이 해봐야함~!
+
+1. 유형
+(1) ****카피사이트****
+(2) 크로스오버 사이트 (디자인<->내용)
+(3) 나의 구성 사이트
+
+포트폴리오
+- 개인포폴 주제선정 후 분기별 제출 및 발표
+예시)
+https://tombap8.github.io/FED-PJ-2022-tom/
+https://tombap8.github.io/KNG-FED211/index.html
+https://tombap8.github.io/FED-RF-2023-TOM/950.%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B0%9C%ED%91%9C/main/index3rd.html
