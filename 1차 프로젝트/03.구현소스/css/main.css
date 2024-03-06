@@ -12,6 +12,11 @@
 body *{
     outline: 2px dashed #ccc;
 }
+/* 메인로고영역 */
+.mainlogo-area{
+    height: 100vw;
+
+}
 /* 1. 상단영역 */
 .top-area{
     height: 96px;
