@@ -53,3 +53,14 @@ body *{
 .footer-area{
     height: 800px;
 }
+
+
+
+.main-eve{
+    /* overflow: hidden; */
+}
+
+.main-eve a{
+    position: absolute;
+    background-image: url(../../);
+}
