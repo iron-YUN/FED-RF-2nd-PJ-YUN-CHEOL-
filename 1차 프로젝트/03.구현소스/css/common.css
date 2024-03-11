@@ -3,6 +3,46 @@
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
+
 /************* 1. 상단영역 *************/
+
+
+
+/* 상단 메인로고 */
+.mlogo{
+    display: block;
+    
+    width: 10vw;
+    margin: 0 50vh;
+}
+.mlogo img{
+    /* vertical-align: middle; */
+    /* line-height: 20px; */
+    margin-top: 20px;
+}
+
+.top-cont-box{
+    display: flex;
+    justify-content: center;
+}
+
+/* 상단 아이콘메뉴 */
+.icon-menu ul{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.icon-menu ul li{
+    padding: 10px 20px;
+}
+.icon-menu ul li a{
+    display: block;
+    padding: 5px;
+    font-size: 3rem;
+    color: #444;
+}
+.icon-menu ul li a:hover{
+    color: blueviolet;
+}
 /************ 2. 메인영역 ************/
 /************* 3. 하단영역 *************/
