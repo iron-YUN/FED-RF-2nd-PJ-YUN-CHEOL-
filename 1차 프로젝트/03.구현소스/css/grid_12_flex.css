@@ -15,13 +15,16 @@
 
 /* 파티션 비율박스 공통 */
 [class*='col-']{
-    float: left;
-    height: 100%;
+    /* float: left; */
     padding: 10px;
     box-sizing: border-box;
 }
 
 /* 예외 높이값 설정 */
 .footer-area [class*='col-']{
-    height: 50%;
+    /* height: 50%; */
+}
+.cont-box{
+    display: flex;
+    height: 100%;
 }

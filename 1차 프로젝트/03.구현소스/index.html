@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TheMacallan.com</title>
-    <link rel="shortcut icon" href="./images/pavicon_tvN.png"/>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
+    <!-- 폰트어썸CSS -->
+    <!-- https://fontawesome.com/icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="./images/pavicon_tvN.png" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
     <!--1. 메인로고영역 -->
-    <div id="mainlogo-area">
+    <!-- <div id="mainlogo-area">
         <header class="mainlogo-area inbox">
             <h2 class="temp-tit">1. 메인로고영역</h2>
             <div class="cont-box">
@@ -17,106 +23,123 @@
             </div>
 
         </header>
-    </div>
+    </div> -->
     <!-- 2. 상단영역 -->
     <div id="top-area">
-        <header class="top-area inbox">
-            <h2 class="temp-tit">2. 상단영역</h2>
-            <div class="cont-box">
-                <div class="col-2"></div>
-                <div class="col-10"></div>
+      <header class="top-area inbox">
+        <!-- <h2 class="temp-tit">2. 상단영역</h2> -->
+        <!-- 상단메뉴 -->
+        <div class="cont-box">
+          <!-- 2-1.메인메뉴 아이콘박스 -->
+          <div class="col-2">
+            <div class="top-cont-box">
+              <!-- 메인메뉴 아이콘 -->
+              <button class="icon-menu menu-btn">
+                <a href="#" class="fa-solid fa-bars"></a>
+                <a href="#">menu</a>
+              </button>
             </div>
-
-        </header>
+          </div>
+          <div class="contbox col-8"> 
+               <!-- 메인로고 -->
+            <a class="mlogo">
+              <img src="../01.자료수집/로고/M_Logo.svg" alt="메인 로고" />
+            </a></div>
+          <div class="contbox col-2">
+              <!-- 아이콘 메뉴 -->
+              <nav class="icon-menu">
+                <ul>
+                  <li>
+                    <a href="#" class="fa-regular fa-user"></a>
+                  </li>
+                  <li>
+                    <a href="#" class="fa-solid fa-bag-shopping"></a>
+                  </li>
+                </ul>
+              </nav>
+          </div>
+        </div>
+      </header>
     </div>
     <!-- 3. 배너영역 -->
     <div id="ban-area">
-        <section class="ban-area inbox">
-            <h2 class="temp-tit">3. 배너영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-
+      <section class="ban-area inbox">
+        <h2 class="temp-tit">3. 배너영역</h2>
+        <div class="cont-box">
+          <div class="col-12">
+            <div id="main-eve">
+              <!-- <video src="../01.자료수집/광고 및 소개영상/Mystère by Cirque du Soleil _ Official Trailer 2024.mp4"></video> -->
             </div>
-
-        </section>
+            <a href="#" class="main-eve"> </a>
+          </div>
+        </div>
+      </section>
     </div>
     <!-- 4.제품리스트 영역 -->
     <div id="spart-menu">
-        <nav class="spart-menu inbox">
-            <h2 class="temp-tit">4.제품리스트 영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
- 
-            </div>
-
-        </nav>
+      <nav class="spart-menu inbox">
+        <h2 class="temp-tit">4.제품리스트 영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </nav>
     </div>
     <!-- 5.최신스토리 영역 -->
     <div id="intro-area">
-        <section class="intro-area inbox">
-            <h2 class="temp-tit">5.최신스토리 영역</h2>
-            <div class="cont-box">
-                <div class="col-6"></div>
-                <div class="col-6"></div>
-            </div>
-
-        </section>
+      <section class="intro-area inbox">
+        <h2 class="temp-tit">5.최신스토리 영역</h2>
+        <div class="cont-box">
+          <div class="col-6"></div>
+          <div class="col-6"></div>
+        </div>
+      </section>
     </div>
     <!-- 6.소개동영상 영역 -->
     <div id="preview-area">
-        <section class="preview-area inbox">
-            <h2 class="temp-tit">6.소개동영상 영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-      
-            </div>
-
-        </section>
+      <section class="preview-area inbox">
+        <h2 class="temp-tit">6.소개동영상 영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
     </div>
     <!-- 7.경험해보세요 영역 -->
     <div id="real-photo-area">
-        <section class="real-photo-area inbox">
-            <h2 class="temp-tit">7.경험해보세요 영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
- 
-            </div>
-
-        </section>
+      <section class="real-photo-area inbox">
+        <h2 class="temp-tit">7.경험해보세요 영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
     </div>
     <!-- 8. 대표이미지 영역 -->
     <div id="main-photo-area">
-        <section class="main-photo-area inbox">
-            <h2 class="temp-tit">8.대표이미지 영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
-
-            </div>
-
-        </section>
+      <section class="main-photo-area inbox">
+        <h2 class="temp-tit">8.대표이미지 영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
     </div>
     <!-- 7. 기타스토리영역 -->
     <div id="clip-video-area">
-        <section class="clip-video-area inbox">
-            <h2 class="temp-tit">7. 기타스토리영역</h2>
-            <div class="cont-box">
-                <div class="col-12"></div>
- 
-            </div>
-
-        </section>
+      <section class="clip-video-area inbox">
+        <h2 class="temp-tit">7. 기타스토리영역</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
     </div>
     <!-- 8. 하단영역 -->
     <div id="footer-area">
-        <footer class="footer-area inbox">
-            <h2 class="temp-tit">8. 하단영역</h2>
-            <div class="cont-box">
-                <div class="col-8"></div>
-                <div class="col-4"></div>
-                <div class="col-12"></div>
-            </div>
-
-        </footer>
+      <footer class="footer-area inbox">
+        <h2 class="temp-tit">8. 하단영역</h2>
+        <div class="cont-box">
+          <div class="col-8"></div>
+          <div class="col-4"></div>
+          <div class="col-12"></div>
+        </div>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

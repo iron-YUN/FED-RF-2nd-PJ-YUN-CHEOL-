@@ -6,7 +6,7 @@
 @import url(./core.css);
 @import url(./common.css);
 /* 그리드 12 불러오기 */
-@import url(./grid_12_float.css);
+@import url(./grid_12_flex.css);
 
 /* 공사중 표시 */
 body *{
@@ -52,4 +52,15 @@ body *{
 /* 8. 하단영역 */
 .footer-area{
     height: 800px;
+}
+
+
+
+.main-eve{
+    /* overflow: hidden; */
+}
+
+.main-eve a{
+    position: absolute;
+    background-image: url(../../);
 }
