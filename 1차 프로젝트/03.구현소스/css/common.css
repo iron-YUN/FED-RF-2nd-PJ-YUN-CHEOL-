@@ -5,34 +5,18 @@
 
 
 /************* 1. 상단영역 *************/
-header{
-    padding: 10px 0;
-    box-sizing: border-box;
-}
-/* 상단 왼쪽 메뉴버튼 */
-.menu-btn{
-    font-size: 3rem;
-    cursor: pointer;
-    padding: 0;
-   
-}   
-.menu-btn:hover .menu-btn a{
-    color: blueviolet;
-}
+
+/* 상단 왼쪽 메뉴 */
+
+
+
 /* 상단 메인로고 */
 .mlogo{
-    width: 10vw;
-    margin: 0 auto;
     cursor: pointer;
 }
 .mlogo img{
     max-width: 200px;
     min-height: 30px;
-}
-.mlogo a{
-    display: block;
-    left: 500px;
-    margin: 0 200px;
 }
 
 /* 상단 아이콘메뉴 */
@@ -41,15 +25,17 @@ header{
 }
 .icon-menu ul{
     display: flex;
+    margin-top: 10px;
     justify-content: center;
     cursor: pointer;
+
 }
 .icon-menu ul li{
     padding: 10px 20px;
 }
 .icon-menu ul li a{
     display: block;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #444;
 }
 .icon-menu ul li a:hover{
