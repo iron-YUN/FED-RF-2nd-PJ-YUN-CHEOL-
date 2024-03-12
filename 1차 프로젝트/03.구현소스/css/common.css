@@ -3,43 +3,74 @@
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
-
 /************* 1. 상단영역 *************/
+.top-box{
+    align-items: center;
+}
 
+
+.logo-top-box img {
+  margin-top: 1vh;
+}
 /* 상단 왼쪽 메뉴 */
-
-
-
-/* 상단 메인로고 */
-.mlogo{
-    cursor: pointer;
+.icon-menu1 a span{
+    font-size: 2.5rem;
 }
-.mlogo img{
-    max-width: 200px;
-    min-height: 30px;
-}
-
-/* 상단 아이콘메뉴 */
-.icon-menu{
+.icon-menu1 {
     min-width: 80px;
-}
-.icon-menu ul{
+  }
+  .icon-menu1 ul {
     display: flex;
-    margin-top: 10px;
     justify-content: center;
-    cursor: pointer;
-
-}
-.icon-menu ul li{
-    padding: 10px 20px;
-}
-.icon-menu ul li a{
-    display: block;
-    font-size: 2rem;
+  }
+  .icon-menu1 ul li {
+      padding: 0 0;
+      white-space: nowrap;
+      justify-content: space-evenly
+    }
+    .icon-menu1 ul li a {
+        /* font-size: rem; */
+        display: flex;
     color: #444;
+  }
+  .icon-menu1 ul li a:hover {
+    color: red;
+    cursor: pointer;
+  }
+/* 상단 메인로고 */
+.logo-top-box {
+  text-align: center;
 }
-.icon-menu ul li a:hover{
-    color: blueviolet;
+.mlogo {
+  cursor: pointer;
 }
+.mlogo img {
+    width: 184px;
+  max-width: 200px;
+  min-height: 10px;
+}
+
+/* 상단 오른쪽 아이콘메뉴 */
+.icon-menu2 {
+  min-width: 80px;
+}
+.icon-menu2 ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5vh;
+}
+.icon-menu2 ul li {
+  padding: .5vw 1vw;
+}
+.icon-menu2 ul li a {
+  /* font-size: rem; */
+  color: #444;
+  display: block;
+}
+.icon-menu2 ul li a:hover {
+  color: red;
+  cursor: pointer;
+}
+
 /************ 2. 메인영역 ************/
 /************* 3. 하단영역 *************/
