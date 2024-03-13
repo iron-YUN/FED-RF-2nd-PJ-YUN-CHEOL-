@@ -35,7 +35,7 @@ body{
 }
 /* 중앙속박스 */
 .inbox{
-    max-width: 1700px; /*최대가로*/
+    max-width: 1903px; /*최대가로*/
     margin: 0 auto ; /*블록박스 중앙정렬 : 마영오*/
 }
 /* 컨텐츠박스 */

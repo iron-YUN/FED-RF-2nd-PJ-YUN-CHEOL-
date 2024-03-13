@@ -4,12 +4,19 @@
 /* 공유기능 요소 셋팅 */
 
 /************* 1. 상단영역 *************/
+.sti{
+  /* position: sticky; */
+  /* top: 0; */
+  /* text-align: center; */
+}
+
 .top-box{
-    align-items: center;
+    /* align-items: center; */
 }
 
 
 .logo-top-box img {
+  /* margin-top: 0.7vh; */
   margin-top: 1vh;
 }
 /* 상단 왼쪽 메뉴 */
@@ -22,9 +29,10 @@
   .icon-menu1 ul {
     display: flex;
     justify-content: center;
+    margin-top: 0.5vh;
   }
   .icon-menu1 ul li {
-      padding: 0 0;
+      padding: 0.5vw;
       white-space: nowrap;
       justify-content: space-evenly
     }
@@ -73,4 +81,24 @@
 }
 
 /************ 2. 메인영역 ************/
+.main-eve{
+  /* display: flex; */
+  /* position: fixed;
+  z-index: -1; */
+  background-color: #222;
+}
+.main-eve a{
+  display: flex;
+  justify-content: center;
+  top: 0;
+  width: 1600px;
+  /* height: 800px; */
+  /* height: 100%; */
+}
+.main-eve a video{
+  position: relative;
+  height: 800px;
+  top: 80px;
+
+}
 /************* 3. 하단영역 *************/
