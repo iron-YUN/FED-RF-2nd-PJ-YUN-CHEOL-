@@ -4,101 +4,139 @@
 /* 공유기능 요소 셋팅 */
 
 /************* 1. 상단영역 *************/
-.sti{
-  /* position: sticky; */
-  /* top: 0; */
-  /* text-align: center; */
+#top-area{
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background-color: #fff;
 }
-
-.top-box{
-    /* align-items: center; */
+.btnMenu::after {
+  content: "MENU";
+  margin-top: 7px;
+  font-size: 15px;
 }
-
-
-.logo-top-box img {
-  /* margin-top: 0.7vh; */
-  margin-top: 1vh;
-}
-/* 상단 왼쪽 메뉴 */
-.icon-menu1 a span{
-    font-size: 2.5rem;
-}
+/*************** 상단 왼쪽 메뉴아이콘 ***************/
 .icon-menu1 {
-    min-width: 80px;
-  }
-  .icon-menu1 ul {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5vh;
-  }
-  .icon-menu1 ul li {
-      padding: 0.5vw;
-      white-space: nowrap;
-      justify-content: space-evenly
-    }
-    .icon-menu1 ul li a {
-        /* font-size: rem; */
-        display: flex;
-    color: #444;
-  }
-  .icon-menu1 ul li a:hover {
-    color: red;
-    cursor: pointer;
-  }
-/* 상단 메인로고 */
+  min-width: 80px;
+}
+.icon-menu1 ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.icon-menu1 ul li {
+  padding: 5px;
+  white-space: nowrap;
+  /* justify-content: space-evenly; */
+}
+.icon-menu1 ul li a {
+  display: flex;
+  color: #444;
+}
+.icon-menu1 ul li a:hover {
+  color: red;
+}
+/*************** 상단 메인로고 ***************/
+.logo-top-box img {
+  margin-top: 8px;
+  width: 184px;
+}
 .logo-top-box {
   text-align: center;
 }
-.mlogo {
-  cursor: pointer;
-}
-.mlogo img {
-    width: 184px;
-  max-width: 200px;
-  min-height: 10px;
-}
-
-/* 상단 오른쪽 아이콘메뉴 */
-.icon-menu2 {
-  min-width: 80px;
-}
+/*************** 상단 오른쪽 아이콘메뉴 ***************/
 .icon-menu2 ul {
   display: flex;
   justify-content: center;
-  margin-top: 0.5vh;
+  margin-top: 10px;
 }
 .icon-menu2 ul li {
-  padding: .5vw 1vw;
+  padding: 5px 10px;
 }
 .icon-menu2 ul li a {
-  /* font-size: rem; */
   color: #444;
-  display: block;
 }
 .icon-menu2 ul li a:hover {
   color: red;
-  cursor: pointer;
 }
 
 /************ 2. 메인영역 ************/
-.main-eve{
-  /* display: flex; */
-  /* position: fixed;
-  z-index: -1; */
-  background-color: #222;
+/* 배너영역 바탕색 */
+#ban-area{
+  background-color: #000;
 }
-.main-eve a{
+/* 이벤트배너 비디오 */
+.eve-video{
+  position: relative;
+}
+/* 이벤트배너 박스 */
+.eve-ban{
+  position: relative;
+  height: 100%;
+}
+/* 이벤트배너 이미지 */
+.eve-ban a img{
+  position: absolute;
+  top: 70px;
+  width: 1600px;
+  display: none;
+}
+/* 이벤트배너 동영상 흐림 60% */
+.eve-ban::before{
+  content: '';
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 900px;
+  background-color: #000;
+  opacity: 0.60;
+  top: -10px;
+  left: -15px;
+  display: none;
+}
+/* 이벤트배너 이미지 흐림 20% */
+.eve-ban::after{
+  content: '';
+  position: absolute;
+  margin: 0 auto;
+  width: 1600px;
+  height: 738px;
+  background-color: #000;
+  opacity: 0.20;
+  top: 60px;
+  left: 151px;
+  display: none;
+}
+/*________ 영상 오버시 배너나옴 : 삭제예정 나중에 클릭으로 바꿈 ________*/
+/* 배너 이미지 */
+#ban-area:hover .eve-ban a img{
+  display: inline;
+}
+/* 배너 동영상 흐림 on */
+#ban-area:hover .eve-ban::before{
+  display: inline;
+}
+/* 배너 이미지 흐림 on */
+#ban-area:hover .eve-ban::after{
+  display: inline;
+}
+/*________ 영상 오버시 배너나옴 : 삭제예정 나중에 클릭으로 바꿈 ________*/
+
+
+
+.main-eve a {
   display: flex;
   justify-content: center;
-  top: 0;
-  width: 1600px;
-  /* height: 800px; */
-  /* height: 100%; */
+  /* margin: 0 auto; */
+  top: -10px;
+  left: 0;
+  height: 0;
+  width: 1903px;
 }
-.main-eve a video{
-  position: relative;
-  height: 800px;
-  top: 80px;
+.main-eve a video {
+  /* position: absolute; */
+  height: 900px;
+}
 
-}
+
 /************* 3. 하단영역 *************/

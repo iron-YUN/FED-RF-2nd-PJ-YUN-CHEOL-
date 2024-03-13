@@ -9,9 +9,9 @@
 @import url(./grid_12_flex.css);
 
 /* 공사중 표시 */
-body *{
+/* body *{
     outline: 2px dashed #ccc;
-}
+} */
 /* 메인로고영역 */
 .mainlogo-area{
     height: 100vw;
@@ -23,7 +23,7 @@ body *{
 }
 /* 2. 배너영역 */
 .ban-area{
-    height: 800px;
+    height: 900px;
 }
 /* 서브파트메뉴 */
 .spart-menu{
