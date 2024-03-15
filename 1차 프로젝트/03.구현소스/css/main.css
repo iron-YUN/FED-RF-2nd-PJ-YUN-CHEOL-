@@ -39,18 +39,18 @@ body *{
 }
 #intro-area{
     height: 900px;
-    background-color: #c3ff36;
-    position: relative;
-    z-index: 99;
+    background-color: #000000;
+    /* position: relative;
+    z-index: 99; */
 }
 /* 6.소개동영상 영역 */
 .preview-area{
     height: 900px;
 }
 #preview-area{
-    background-color: #ffaf36;
-    position: relative;
-    z-index: 99;
+    background-color: #1c1c1c;
+    /* position: relative;
+    z-index: 99; */
 }
 /* 7.경험해보세요 영역 */
 .real-photo-area{
@@ -58,8 +58,8 @@ body *{
 }
 #real-photo-area{
     background-color: #36ffa5;
-    position: relative;
-    z-index: 99;
+    /* position: relative;
+    z-index: 99; */
 }
 /* 8. 대표이미지 영역 */
 .main-photo-area{
@@ -67,8 +67,8 @@ body *{
 }
 #main-photo-area{
     background-color: #ffaf36;
-    position: relative;
-    z-index: 99;
+    /* position: relative;
+    z-index: 99; */
 }
 /* 9. 기타스토리영역 */
 .clip-video-area{
@@ -76,8 +76,8 @@ body *{
 }
 #clip-video-area{
     background-color: #36ffa5;
-    position: relative;
-    z-index: 99;
+    /* position: relative;
+    z-index: 99; */
 }
 /* 10. 하단영역 */
 .footer-area{
@@ -85,6 +85,6 @@ body *{
 }
 #footer-area{
     background-color: #ffaf36;
-    position: relative;
-    z-index: 99;
+    /* position: relative;
+    z-index: 99; */
 }

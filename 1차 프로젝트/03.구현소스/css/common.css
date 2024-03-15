@@ -125,15 +125,35 @@
 /* 배너 이미지 */
 #ban-area:hover .eve-ban a img {
   display: inline;
+  animation:show-eve-ban .5s ;
 }
+@keyframes show-eve-ban{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+
+
+
 /* 배너 동영상 흐림 on */
 #ban-area:hover .eve-ban::before {
   display: inline;
+  animation:show-eve-ban2 .5s  ;
 }
 /* 배너 이미지 흐림 on */
 #ban-area:hover .eve-ban::after {
   display: inline;
+  animation:show-eve-ban2 .5s  ;
 }
+/* @keyframes show-eve-ban2{
+  to{
+    
+  }
+} */
 /*________ 영상 오버시 배너나옴 : 삭제예정 나중에 클릭으로 바꿈 ________*/
 
 
@@ -151,11 +171,16 @@
   height: 900px;
 }
 
+/* *********  배너 아래 영역전체박스  ********** */
+.main-area{
+    position: relative;
+  z-index: 99;
+}
+
 /* *********4.COLLECTIONS********** */
 #collections{
   top: 0;
-  position: relative;
-  z-index: 99;
+  width: 100%;
   background-color: #fff;
   margin-top: 900px;
 }
@@ -166,6 +191,7 @@
   box-sizing: border-box;
   height: 100%;
 }
+
 .text-block {
   margin: 0 auto;
   text-align: center;
@@ -182,13 +208,17 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
-.text-block p:nth-child(3){
+/* .text-block p:nth-child(2)
+는 다른태그와 섞여있을때 작동을 안함
+이 경우 type 을 쓴다 */
+.text-block p:nth-of-type(2){
   font-size: 1.6rem;
-  /* font-weight: ; */
   line-height: 28px;
-  color: #ff0000;
 }
-
+.contain2 {
+  position: relative;
+  z-index: 98;
+}
 .col-list{
   height: calc(100% - 190px);
   background-color: #ff8c8c;
