@@ -15,8 +15,6 @@
 
 /* 파티션 비율박스 공통 */
 [class*='col-']{
-    /* float: left; */
-    padding: 0;
     box-sizing: border-box;
 }
 
