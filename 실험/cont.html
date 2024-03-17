@@ -8,73 +8,107 @@
     <style>
         html,body{
             margin: 0;
+            font-size: 10px;
+        }
+        .wow{
+            font-size: 12rem;
         }
         .box0{
             height: 100px;
             width: 100%;
             top: 0;
             background-color: #000000;
+            color: #fff;
             position: sticky;
             z-index: 100;
+            font-size: 8rem;
         }
         .box1{
-            position: fixed;
-            z-index: 1;
+            position: sticky;
+            /* margin-top: 50px; */
+            top: 100px
+            ;
             width: 100%;
             height: 500px;
-            /* margin-top: 100px; */
             background-color: #ff6969;
         }
         /* ********************************* */
         .box2{
-            position: relative;
-            z-index: 90;
-            top: 500px;
+            position: sticky;
+            top: -250px;
+            margin-top: 500px;
             width: 100%;
+            height: 800px;
             background-color: #ff8400;
         }
         .box2-1{
             position: sticky;
-            z-index: 99;
-            height: 500px;
+            top: -250px;
+            height: 800px;
+            width: 100%;
+            background-color: #864500;
         }
   
         .box3{
-            position: relative;
-            z-index: 90;
-            height: 500px;
-            width: 100%;
-            background-color: #098d18ac;
-        }
-        .box3-1{
             position: sticky;
-            z-index: 99;
-            height: 500px;
+            top: -250px;
+            height: 800px;
+            width: 100%;
+            background-color: #098d18;
         }
         .box4{
-            position: relative;
-            height: 500px;
+            position: sticky;
+            top: -250px;
+            height: 800px;
             width: 100%;
             background-color: #275dff;
         }
         .box5{
-            position: relative;
-            height: 500px;
+            position: sticky;
+            top: -250px;
+            height: 800px;
             width: 100%;
             background-color: #601447;
         }
     </style>
 <body>
-    <div class="box0"></div>
-    <div class="box1"></div>
-    <div class="box2">
-        <div class="box2-1">
-        </div>
-        <div class="box3">
-            <div class="box3-1"></div>
-            <div class="box4"></div>
-            <footer class="box5"></footer>
-        </div>
+    <div class="wow">
+    <div class="box0">난최상단</div>
+    <div class="box1">b1분홍색fixed
+        b1분홍색fixed <br>
+        b1분홍색fixed <br>
+        b1분홍색fixed <br>
+        b1분홍색fixed <br>
     </div>
+    <div class="box2">b2주황색sticky
+        <br>b2주황색sticky
+        <br>b2주황색stickyb2주황색sticky
+        <br>b2주황색sticky  </div>
+    <div class="box2-1">b2-1아니내가찐주황색?
+        <br>b2-1아니내가찐주황색?
+        <br>b2-1아니내가찐주황색?b2-1아니내가찐주황색?
+        <br>b2-1아니내가찐주황색?
+        <br>b2-1아니내가찐주황색?
+    </div>
+    <div class="box3">b3난초록색
+        b3난초록색<br>
+        b3난초록색<br>
+        b3난초록색<br>
+        b3난초록색 b3난초록색<br> b3난초록색
+    </div>
+    <div class="box4">b4파랑색이야야야야ㅑ
+        <br>b4파랑색이야야야야ㅑ
+        b4파랑색이야야야야ㅑ<br>
+        b4파랑색이야야야야ㅑ<br>b4파랑색이야야야야ㅑb4파랑색이야야야야ㅑ
+        <br>b4파랑색이야야야야ㅑb4파랑색이야야야야ㅑ
+        <br>b4파랑색이야야야야ㅑb4파랑색이야야야야ㅑ
+    </div>
+    <footer class="box5">b5자주색이지요
+        <br>b5자주색이지요
+        <br>b5자주색이지요
+        <br>b5자주색이지요
+        <br>b5자주색이지요
+    </footer>
+</div>
 </body>
 </html>

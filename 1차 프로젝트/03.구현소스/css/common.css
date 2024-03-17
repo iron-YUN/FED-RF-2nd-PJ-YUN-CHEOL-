@@ -9,13 +9,7 @@
   z-index: 100;
   top: 0;
   background-color: #ffffff;
-  /* opacity: 0; */
 }
-.top-area {
-}
-/* .top-box{
-  background-color: #ffffff;
-} */
 .btnMenu::after {
   content: "MENU";
   margin-top: 7px;
@@ -34,7 +28,6 @@
 .icon-menu1 ul li {
   padding: 5px;
   white-space: nowrap;
-  /* justify-content: space-evenly; */
 }
 .icon-menu1 ul li a {
   display: flex;
@@ -75,7 +68,6 @@
 #ban-area {
   background-color: #000;
   position: fixed;
-  z-index: 1;
   width: 100%;
 }
 /* 이벤트배너 비디오 */
@@ -160,7 +152,6 @@
 .main-eve a {
   display: flex;
   justify-content: center;
-  /* margin: 0 auto; */
   top: 0;
   left: 0;
   height: 0;
@@ -178,31 +169,35 @@
 }
 
 /* *********4.COLLECTIONS********** */
-#collections{
-  top: 0;
+#collections-area{
+  position: sticky;
+  top: -380px;
   width: 100%;
   background-color: #fff;
   margin-top: 900px;
+  overflow: hidden;
 }
-.contain {
-  /* display: block; */
-  margin: 0 auto;
-  padding: 100px 0 0;
-  box-sizing: border-box;
+.collections-area{
+  height: 1360px;
+}
+.coll-box{
   height: 100%;
 }
-
-.text-block {
-  margin: 0 auto;
+.non{
+  height: 10rem;
+}
+.coll-text {
+  margin: 0 auto 10rem;
   text-align: center;
   width: 900px;
+  height: 260px;
 }
-.text-block p:first-child{
+.coll-text p:first-child{
   font-size: 2rem;
   line-height: 24px;
   margin-bottom: 16px;
 }
-.text-block h3{
+.coll-text h3{
   font-size: 4.8rem;
   line-height: 56px;
   font-weight: bold;
@@ -211,19 +206,39 @@
 /* .text-block p:nth-child(2)
 는 다른태그와 섞여있을때 작동을 안함
 이 경우 type 을 쓴다 */
-.text-block p:nth-of-type(2){
+.coll-text p:nth-of-type(2){
   font-size: 1.6rem;
   line-height: 28px;
 }
-.contain2 {
-  position: relative;
-  z-index: 98;
+.line{
+  padding: 0;
+margin: 3rem 0;
 }
-.col-list{
-  height: calc(100% - 190px);
-  background-color: #ff8c8c;
-  /* margin: 50px 0; */
-  padding: 120px 0  ;
+.line img{
+  height: 1.2rem;
+}
+.coll-list{
+  height: 900px;
+  padding: 0 5rem;
+  background-color: #ffffff;
+}
+.coll-list ul{
+  display: flex;
+}
+.coll-list ul li a img:nth-child(1){
+  height: 60rem;
+}
+.coll-list ul li a span{
+  display: block;
+  height: 150px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3;
+  background-color: #ccc;
+}
+.coll-list ul{
+  gap: 2rem;
 }
 
 /************* 3. 하단영역 *************/
