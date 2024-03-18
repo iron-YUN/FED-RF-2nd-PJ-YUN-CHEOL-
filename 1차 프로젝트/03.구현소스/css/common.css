@@ -70,28 +70,35 @@
 }
 /* 이벤트배너 박스 */
 .eve-ban {
-  position: relative;
-  height: 100%;
 }
 /* 이벤트배너 이미지 */
 .eve-ban {
   position: absolute;
-  top: 70px;
-  width: 100%;
+  top: 10%;
+  left: 10%;
+  width: 80%;
   opacity: 0;
   transition: .5s;
+  box-sizing: border-box;
+}
+.eve-ban a{
+  display: block;
+  left: 100px;
 }
 .eve-ban img{
-  width: 100%;
-  height: 100%;
+ width: 100%;
   object-fit: cover;
 }
-.eve-ban.on{
-  filter: brightness(70%);
+    .eve-ban.on {
+  filter: brightness(80%);
   opacity: 1;
 }
-.main-eve:hover .eve-video{
-  filter: brightness(20%);
+    .eve-ban.on .eve-video{
+  filter: brightness(0%);
+}
+/* .main-eve:hover .eve-video{ */
+#ban-area:hover .eve-video{
+  filter: brightness(40%);
 }
 /* 이벤트배너 동영상 흐림 60% */
 .eve-ban::before {
@@ -124,16 +131,16 @@
 /* 배너 이미지 */
 #ban-area:hover .eve-ban a img {
   display: inline;
-  animation:show-eve-ban .5s ;
+  /* animation:show-eve-ban .5s ; */
 }
-@keyframes show-eve-ban{
+/* @keyframes show-eve-ban{
   from{
     opacity: 0;
   }
   to{
     opacity: 1;
   }
-}
+} */
 
 
 
@@ -155,13 +162,9 @@
 } */
 /*________ 영상 오버시 배너나옴 : 삭제예정 나중에 클릭으로 바꿈 ________*/
 
-
-/* .main-eve a {
-  
-} */
 .main-eve a video {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
 }
 
