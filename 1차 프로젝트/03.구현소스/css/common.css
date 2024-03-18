@@ -6,7 +6,7 @@
 /* 1.첫페이지 로고 시작 영역 */
 
 /************ 상단영역 ************/
-/* 2. 상단영역 */
+/* 1. 상단영역 */
 .btnMenu::after {
   content: "MENU";
   margin-top: 7px;
@@ -61,7 +61,7 @@
 }
 
 /******************************************************** 메인영역 ********************************************************/
-/* 3. 배너영역 */
+/* 2. 배너영역 */
 
 /* 이벤트배너 비디오 */
 .eve-video {
@@ -78,28 +78,33 @@
   left: 10%;
   width: 80%;
   opacity: 0;
-  transition: .5s;
+  transition: 0.5s;
   box-sizing: border-box;
 }
-.eve-ban a{
-  display: block;
+.eve-ban a {
+  /* display: block; */
+
   left: 100px;
 }
-.eve-ban img{
- width: 100%;
+.eve-ban img {
+  width: 100%;
   object-fit: cover;
 }
-    .eve-ban.on {
+
+/* 동영상 클릭시  */
+.eve-ban.on {
   filter: brightness(80%);
   opacity: 1;
 }
-    .eve-ban.on .eve-video{
+.eve-ban.on .eve-video {
   filter: brightness(0%);
-}
-/* .main-eve:hover .eve-video{ */
-#ban-area:hover .eve-video{
+} /* 안먹힘 */
+
+#ban-area:hover .eve-video {
   filter: brightness(40%);
 }
+
+
 /* 이벤트배너 동영상 흐림 60% */
 .eve-ban::before {
   /* content: "";
@@ -142,18 +147,15 @@
   }
 } */
 
-
-
-
 /* 배너 동영상 흐림 on */
 #ban-area:hover .eve-ban::before {
   display: inline;
-  animation:show-eve-ban2 .5s  ;
+  animation: show-eve-ban2 0.5s;
 }
 /* 배너 이미지 흐림 on */
 #ban-area:hover .eve-ban::after {
   display: inline;
-  animation:show-eve-ban2 .5s  ;
+  animation: show-eve-ban2 0.5s;
 }
 /* @keyframes show-eve-ban2{
   to{
@@ -168,12 +170,12 @@
   object-fit: cover;
 }
 
-/* *********4.COLLECTIONS********** */
+/* *********3.콜렉션영역********** */
 
-.coll-box{
+.coll-box {
   height: 100%;
 }
-.non{
+.non {
   height: 10rem;
 }
 .coll-text {
@@ -182,12 +184,12 @@
   width: 900px;
   height: 260px;
 }
-.coll-text p:first-child{
+.coll-text p:first-child {
   font-size: 2rem;
   line-height: 24px;
   margin-bottom: 16px;
 }
-.coll-text h3{
+.coll-text h3 {
   font-size: 4.8rem;
   line-height: 56px;
   font-weight: bold;
@@ -196,29 +198,29 @@
 /* .text-block p:nth-child(2)
 는 다른태그와 섞여있을때 작동을 안함
 이 경우 type 을 쓴다 */
-.coll-text p:nth-of-type(2){
+.coll-text p:nth-of-type(2) {
   font-size: 1.6rem;
   line-height: 28px;
 }
-.line{
+.line {
   padding: 0;
-margin: 3rem 0;
+  margin: 3rem 0;
 }
-.line img{
+.line img {
   height: 1.2rem;
 }
-.coll-list{
+.coll-list {
   height: 900px;
   padding: 0 5rem;
   background-color: #ffffff;
 }
-.coll-list ul{
+.coll-list ul {
   display: flex;
 }
-.coll-list ul li a img:nth-child(1){
+.coll-list ul li a img:nth-child(1) {
   height: 50rem;
 }
-.coll-list ul li a span{
+.coll-list ul li a span {
   display: block;
   height: 100px;
   text-align: center;
@@ -227,8 +229,105 @@ margin: 3rem 0;
   line-height: 3;
   background-color: #ccc;
 }
-.coll-list ul{
+.coll-list ul {
   gap: 2rem;
 }
 
+
+/* 파트너쉽영역 */
+
+
+
+/* 4-1-1 파틑너쉽 제목 */
+.partner-h1{
+  position: sticky;
+  top: -1000px;
+  left: calc(50% - 1600px/2);
+  height: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+  background-color: #0000007e;
+  
+}
+.partner-h1 p{
+  color: #fff;
+  line-height: 1.5;
+  text-align: center;
+  /* white-space: nowrap; */
+}
+.partner-h1 p:nth-child(1){
+font-size: 3rem;
+margin-bottom: 2rem;
+}
+.partner-h1 p:nth-child(2){
+font-size: 7rem;
+font-weight: bold;
+margin-bottom: 2rem;
+}
+.partner-h1 p:nth-child(3){
+font-size: 3rem;
+margin-bottom: 10rem;
+}
+.partner-h1 p:nth-child(4){
+font-size: 2.5rem;
+margin-bottom: 4rem;
+}
+.partner-h1 p:nth-child(5){
+font-size: 2.5rem;
+margin-bottom: 4rem;
+}
+.partner-h1 p:nth-child(6){
+font-size: 2.5rem;
+}
+
+.materials-h1{
+  width: 100%;
+}
+.materials-h1 p{
+  color: #fff;
+  line-height: 1.5;
+  text-align: center;
+}
+.materials-h1 p:nth-child(1){
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 5rem;
+}
+.materials-h1 p:nth-child(2){
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+}
+.materials-h1 p:nth-child(3){
+  font-size: 2.5rem;
+}
+.mat p{
+  color: #fff;
+  font-size: 3rem;
+}
+.mat{
+  width: 50rem;
+  left: calc(50% - 50rem/2);
+  text-align: center;
+  overflow: hidden;
+}
+.mat img:hover{
+  transform: scale(1.3);
+  transition: .5s ease-in-out;
+}
+
+.mat img{
+  height: 65rem;
+  transition: .5s ease-in-out;
+}
+.mat-box{
+  padding: 0 3rem;
+}
+.mat-text{
+  margin: 40rem 0 3rem;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: bold;
+
+
+}
 /******************************* 하단영역 *******************************/

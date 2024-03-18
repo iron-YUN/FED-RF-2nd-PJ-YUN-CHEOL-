@@ -14,7 +14,7 @@ body{
 
 /* 공사중 표시 */
 body *{
-    outline: 2px dashed #ccc;
+    /* outline: 2px dashed #ccc; */
 }
 /* 메인로고영역 */
 .mainlogo-area{
@@ -25,7 +25,7 @@ body *{
 /* .mainlogo-area{} */
 /* #mainlogo-area{} */
 
-/* 2. 상단영역 */
+/* 1. 상단영역 */
 #top-area {
     position: fixed;
     z-index: 100;
@@ -38,7 +38,7 @@ body *{
     height: 100%;
   }
 
-/* 3. 배너영역 */
+/* 2. 배너영역 */
 #ban-area {
     position: sticky;
     height: 900px;
@@ -51,7 +51,7 @@ body *{
   }
 
 
-/* *********4.COLLECTIONS********** */
+/* *********3.콜렉션영역********** */
 #collections-area{
     position: sticky;
     top: -250px;
@@ -64,6 +64,39 @@ body *{
   .collections-area{
     height: 100%;
   }
+/* 4-1.파트너쉽 이미지 영역 */
+#partnerships-area{
+    position: sticky;
+    top: -150px;
+    height: 1200px;
+    background: url(../../01.자료수집/main_img/Horizn.png)no-repeat center/cover;
+}
+.partnerships-area{
+    height: 100%;
+    width: 100%;
+}
+
+/* 4-2.파트너쉽설명 영역 */
+#partnerships2-area{
+    position: sticky;
+    top: -600%;
+    height: 100%;
+    margin-top: 500px;
+}
+.partnerships2-area{
+    height: 100%;
+}
+
+/* 4.파트너쉽동영상 영역 */
+#partnerships3-area{
+    position: sticky;
+    top: 15rem;
+    height: 1200px;
+    margin: 30rem 0;
+}
+.partnerships3-area{
+    height: 100%;
+}
 /* 5.최신스토리 영역 */
 #story-area{
     position: sticky;
@@ -92,15 +125,7 @@ body *{
 .experience-area{
     height: 100%;
 }
-/* 8. 대표이미지 영역 */
-#main-photo-area{
-    position: sticky;
-    background-color: #ffaf36;
-    height: 1055px;
-}
-.main-photo-area{
-    height: 100%;
-}
+
 /* 9. 기타스토리영역 */
 #other-story-area{
     position: sticky;
