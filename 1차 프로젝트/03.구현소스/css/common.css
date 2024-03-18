@@ -3,19 +3,28 @@
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
-/************* 1. 상단영역 *************/
+/* ****************** 1.로고페이지 ********************* */
+
+
+/************ 상단영역 ************/
+/* 2. 상단영역 */
 #top-area {
   position: sticky;
   z-index: 100;
   top: 0;
+  height: 75px;
   background-color: #ffffff;
+  width: 100%;
+}
+.top-area{
+  height: 100%;
 }
 .btnMenu::after {
   content: "MENU";
   margin-top: 7px;
   font-size: 15px;
 }
-/*************** 상단 왼쪽 메뉴아이콘 ***************/
+/*** 상단 왼쪽 메뉴아이콘 ***/
 .icon-menu1 {
   min-width: 80px;
   padding: 10px 0;
@@ -36,7 +45,7 @@
 .icon-menu1 ul li a:hover {
   color: red;
 }
-/*************** 상단 메인로고 ***************/
+/*** 상단 메인로고 ***/
 .logo-top-box img {
   margin-top: 20px;
   height: 35px;
@@ -44,7 +53,7 @@
 .logo-top-box {
   text-align: center;
 }
-/*************** 상단 오른쪽 아이콘메뉴 ***************/
+/*** 상단 오른쪽 아이콘메뉴 ***/
 .icon-menu2 {
   padding: 10px 0;
 }
@@ -63,12 +72,17 @@
   color: red;
 }
 
-/************ 2. 메인영역 ************/
-/* 배너영역 바탕색 */
+/**************************** 메인영역 ****************************/
+/* 3. 배너영역 */
 #ban-area {
-  background-color: #000;
-  position: fixed;
+  position: sticky;
+  height: 900px;
   width: 100%;
+  background-color: #000;
+  top: 75px;
+}
+.ban-area{
+  height: 100%;
 }
 /* 이벤트배너 비디오 */
 .eve-video {
@@ -158,28 +172,11 @@
   width: 1903px;
 }
 .main-eve a video {
-  /* position: absolute; */
   height: 900px;
 }
 
-/* *********  배너 아래 영역전체박스  ********** */
-.main-area{
-    position: relative;
-  z-index: 99;
-}
-
 /* *********4.COLLECTIONS********** */
-#collections-area{
-  position: sticky;
-  top: -380px;
-  width: 100%;
-  background-color: #fff;
-  margin-top: 900px;
-  overflow: hidden;
-}
-.collections-area{
-  height: 1360px;
-}
+
 .coll-box{
   height: 100%;
 }
@@ -241,4 +238,4 @@ margin: 3rem 0;
   gap: 2rem;
 }
 
-/************* 3. 하단영역 *************/
+/******************************* 하단영역 *******************************/
