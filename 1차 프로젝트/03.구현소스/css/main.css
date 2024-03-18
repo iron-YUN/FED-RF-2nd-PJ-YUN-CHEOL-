@@ -21,14 +21,36 @@ body *{
 /* .mainlogo-area{} */
 /* #mainlogo-area{} */
 
+/* 2. 상단영역 */
+#top-area {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    height: 75px;
+    background-color: #ffffff;
+    width: 100%;
+  }
+  .top-area{
+    height: 100%;
+  }
 
-
+/* 3. 배너영역 */
+#ban-area {
+    position: sticky;
+    height: 900px;
+    width: 100%;
+    background-color: #000;
+    top: 75px;
+  }
+  .ban-area{
+    height: 100%;
+  }
 
 
 /* *********4.COLLECTIONS********** */
 #collections-area{
     position: sticky;
-    top: -380px;
+    top: -250px;
     /* height: 1360px; */
     /* margin-top: 900px; */
     width: 100%;
