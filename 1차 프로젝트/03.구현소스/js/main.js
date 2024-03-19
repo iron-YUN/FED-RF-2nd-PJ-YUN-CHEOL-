@@ -9,3 +9,13 @@ const banMv = document.querySelector('.eve-video');
 banArea.addEventListener('click', () => {
   banImg.classList.toggle('on');
 });
+
+const partnerMv = document.querySelector('.partner-mv');
+const partnerImg = document.querySelector('.partner-mv');
+const partnerBtn = document.querySelector('.partner-mv');
+
+partnerMv.addEventListener('click', () => {
+  partnerImg.classList.toggle('on');
+  partnerBtn.classList.toggle('on');
+}
+);
