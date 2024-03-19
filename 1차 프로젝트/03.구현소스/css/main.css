@@ -68,12 +68,14 @@ body *{
 #partnerships-area{
     position: sticky;
     top: -150px;
-    height: 1200px;
+    width: 100%;
+    /* height: 125vh; */
     background: url(../../01.자료수집/main_img/Horizn.png)no-repeat center/cover;
+    /* background-color: #000; */
 }
 .partnerships-area{
-    height: 100%;
-    width: 100%;
+    height: 125vh;
+    /* width: 100vh; */
 }
 
 /* 4-2.파트너쉽설명 영역 */

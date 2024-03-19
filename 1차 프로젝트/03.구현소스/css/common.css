@@ -96,9 +96,12 @@
   filter: brightness(80%);
   opacity: 1;
 }
-.eve-ban.on .eve-video {
+.eve-ban.on .eve-video.on {
   filter: brightness(0%);
-} /* 안먹힘 */
+} /*********** 안먹힘 ***********/
+.eve-video.on{
+  filter: brightness(0%);
+}
 
 #ban-area:hover .eve-video {
   filter: brightness(40%);
@@ -300,15 +303,12 @@ font-size: 2.5rem;
 .materials-h1 p:nth-child(3){
   font-size: 2.5rem;
 }
-.mat p{
-  color: #fff;
-  font-size: 3rem;
-}
 .mat{
   width: 50rem;
   left: calc(50% - 50rem/2);
   text-align: center;
   overflow: hidden;
+  margin: 0 auto;
 }
 .mat img:hover{
   transform: scale(1.3);
@@ -324,10 +324,9 @@ font-size: 2.5rem;
 }
 .mat-text{
   margin: 40rem 0 3rem;
+  text-align: center;
   color: #fff;
   font-size: 4rem;
   font-weight: bold;
-
-
 }
 /******************************* 하단영역 *******************************/

@@ -4,6 +4,7 @@
 
 const banArea = document.querySelector('#ban-area');
 const banImg = document.querySelector('.eve-ban');
+const banMv = document.querySelector('.eve-video');
 
 banArea.addEventListener('click', () => {
   banImg.classList.toggle('on');
