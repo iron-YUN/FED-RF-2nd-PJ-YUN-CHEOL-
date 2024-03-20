@@ -14,7 +14,6 @@
 }
 /*** 상단 왼쪽 메뉴아이콘 ***/
 .icon-menu1 {
-  min-width: 80px;
   padding: 10px 0;
 }
 .icon-menu1 ul {
@@ -256,7 +255,6 @@
   color: #fff;
   line-height: 1.5;
   text-align: center;
-  /* white-space: nowrap; */
 }
 .partner-h1 p:nth-child(1){
 font-size: 3rem;
@@ -284,7 +282,8 @@ font-size: 2.5rem;
 }
 
 .materials-h1{
-  width: 100%;
+  padding: 20px;
+  background-color: #000000b0;
 }
 .materials-h1 p{
   color: #fff;
@@ -304,20 +303,41 @@ font-size: 2.5rem;
   font-size: 2.5rem;
 }
 .mat{
+  position: relative;
   width: 50rem;
+  height: 65rem;
   left: calc(50% - 50rem/2);
-  text-align: center;
   overflow: hidden;
-  margin: 0 auto;
 }
-.mat img:hover{
+/* 오버시 이미지 커짐 */
+.mat:hover img{
   transform: scale(1.3);
   transition: .5s ease-in-out;
 }
-
+.mat:hover .mat-info{
+  left: 0;
+  transition: .5s;
+}
 .mat img{
-  height: 65rem;
+  width: 100%;
+  height: 100%;
   transition: .5s ease-in-out;
+}
+.mat-info{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -50rem;
+  transition: .5s;
+  font-size: 3rem;
+  background-color: #000000a6;
+  color: #fff;
+  top: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.mat-info p{
+  white-space: normal  ;
 }
 .mat-box{
   padding: 0 3rem;
@@ -329,9 +349,10 @@ font-size: 2.5rem;
   font-size: 4rem;
   font-weight: bold;
 }
+
+/* 4-3파트너쉽 동영상영역 */
 .partner-mv{
   position: relative;
-  /* text-align: center; */
   cursor: pointer;
 }
 .partner-mv-video{
