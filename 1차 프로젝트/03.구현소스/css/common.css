@@ -319,6 +319,9 @@ margin-bottom: 0;
   overflow: hidden;
 }
 .mat-img{
+  box-shadow: 0 -5px 20px 0px #000;
+  width: 50rem;
+  height: 65rem;
   overflow: hidden;
 }
 /* 오버시 이미지 커짐 */
@@ -338,27 +341,23 @@ margin-bottom: 0;
 .mat-info{
   position: absolute;
   left: -50rem;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0 ;
+  width: 50rem;
+  height: 65rem;
   background-color: #000000a6;
-  font-size: 3rem;
+  font-size: 2rem;
+  line-height: 2;
   color: #fff;
   padding: 20px;
   transition: .5s;
   box-sizing: border-box;
 }
-.mat-info p{
-  margin-top: 100px;
-}
 .mat-box{
-  padding: 0 3rem;
-  width: 100%;
   height: 100%;
 }
 .mat-name{
+  width: 50rem;
  margin-bottom: 3rem;
-
   text-align: center;
   color: #fff;
   font-size: 4rem;
@@ -366,18 +365,18 @@ margin-bottom: 0;
 }
 
 /* 4-3파트너쉽 동영상영역 */
-.partner-mv{
+.partner-mv-box{
   position: relative;
   cursor: pointer;
 }
-.partner-mv-video{
+.partner-mv{
   position: absolute;
   width: 1280px;
   height: 720px;
   top: 0;
-  left: calc(50% - 1250px/2);
+  left: calc(50% - 1280px/2);
 }
-.partner-mv-video video{
+.partner-mv video{
   width: 100%;
   height: 100%;
 }
@@ -396,7 +395,24 @@ margin-bottom: 0;
   left: calc(50% - 80px/2);
   font-size: 5rem;
   font-weight: bold;
-  border-radius: 50% 20% 50% 50%;
+  border-radius: 50% 10% 50% 50%;
 }
+.partner-mv button svg{
+  width: 32px;
+  height: 32px;
+  scale: 1.5;
+}
+.partner-mv button:hover{
+  background-color: red;
+  color: #fff;
+}
+/* 아래코드 삭제예정
+JS : 버튼클릭시 커버이미지 제거+동영상 재생 */
+.partner-mv button:hover .partner-mv img{
+  /* display: none; */
+}
+
+
+
 
 /******************************* 하단영역 *******************************/
