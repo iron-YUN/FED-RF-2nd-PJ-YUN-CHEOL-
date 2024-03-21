@@ -63,52 +63,68 @@
 /* 2. 배너영역 */
 
 /* 이벤트배너 비디오 */
-.eve-video {
+.ban-video {
   position: relative;
   height: calc(100vh - 74px);
 }
 /* 이벤트배너 박스 */
-.eve-ban {
-}
-/* 이벤트배너 이미지 */
-.eve-ban {
+/* 베너 위 텍스트 */
+.ban-text{
   position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 80%;
+  bottom: 0;
+  left: 3rem;
+  width: 100rem;
+  height: 50rem;
+}
+.ban-text p{
+  position: absolute;
+  color: #fff;
+}
+.ban-text p:nth-child(1){
+  font-size: 3rem;
+}
+.ban-text p:nth-child(2){
+  margin-top: 10rem;
+  font-size: 2rem;
+}
+
+/* 이벤트배너 이미지 */
+.baner {
+  position: absolute;
+  top: 7%;
+  left: calc(50% - 160rem/2);
+  width: 160rem;
   opacity: 0;
   transition: 0.5s;
   box-sizing: border-box;
 }
-.eve-ban a {
-  /* display: block; */
-
+.baner a {
   left: 100px;
 }
-.eve-ban img {
+.baner img {
   width: 100%;
   object-fit: cover;
 }
 
 /* 동영상 클릭시  */
-.eve-ban.on {
+.baner.on {
   filter: brightness(80%);
   opacity: 1;
 }
-.eve-ban.on .eve-video.on {
+.baner.on .ban-video.on {
   filter: brightness(0%);
 } /*********** 안먹힘 ***********/
-.eve-video.on{
+.ban-video.on{
   filter: brightness(0%);
 }
 
-#ban-area:hover .eve-video {
+#ban-area:hover .ban-video {
   filter: brightness(40%);
 }
 
 
 /* 이벤트배너 동영상 흐림 60% */
-.eve-ban::before {
+.baner::before {
   /* content: "";
   position: absolute;
   margin: 0 auto;
@@ -122,7 +138,7 @@
   /* overflow: hidden; */
 }
 /* 이벤트배너 이미지 흐림 20% */
-.eve-ban::after {
+.baner::after {
   /* content: "";
   position: absolute;
   margin: 0 auto;
@@ -136,11 +152,11 @@
 }
 /*________ 영상 오버시 배너나옴 : 삭제예정 나중에 클릭으로 바꿈 ________*/
 /* 배너 이미지 */
-#ban-area:hover .eve-ban a img {
+#ban-area:hover .baner a img {
   display: inline;
-  /* animation:show-eve-ban .5s ; */
+  /* animation:show-baner .5s ; */
 }
-/* @keyframes show-eve-ban{
+/* @keyframes show-baner{
   from{
     opacity: 0;
   }
@@ -150,25 +166,24 @@
 } */
 
 /* 배너 동영상 흐림 on */
-#ban-area:hover .eve-ban::before {
+#ban-area:hover .baner::before {
   display: inline;
-  animation: show-eve-ban2 0.5s;
+  animation: show-baner2 0.5s;
 }
 /* 배너 이미지 흐림 on */
-#ban-area:hover .eve-ban::after {
+#ban-area:hover .baner::after {
   display: inline;
-  animation: show-eve-ban2 0.5s;
+  animation: show-baner2 0.5s;
 }
-/* @keyframes show-eve-ban2{
+/* @keyframes show-baner2{
   to{
     
   }
 } */
 /*________ 영상 오버시 배너나옴 : 삭제예정 나중에 클릭으로 바꿈 ________*/
 
-.main-eve a video {
+.ban-box a video {
   width: 100%;
-  /* height: 100%; */
   object-fit: cover;
 }
 
@@ -236,10 +251,7 @@
 }
 
 
-/* 파트너쉽영역 */
-
-
-
+/*************** 4.파트너쉽영역 ***************4./
 /* 4-1-1 파틑너쉽 제목 */
 .partner-h1{
   position: sticky;
@@ -247,7 +259,7 @@
   left: calc(50% - 1600px/2);
   height: 100%;
   overflow: hidden;
-  padding: 1rem 0;
+  padding: 1rem 10rem;
   background-color: #0000007e;
   
 }
@@ -269,16 +281,12 @@ margin-bottom: 2rem;
 font-size: 3rem;
 margin-bottom: 10rem;
 }
-.partner-h1 p:nth-child(4){
-font-size: 2.5rem;
-margin-bottom: 4rem;
-}
-.partner-h1 p:nth-child(5){
+.partner-h1 p:nth-child(3)~p{
 font-size: 2.5rem;
 margin-bottom: 4rem;
 }
 .partner-h1 p:nth-child(6){
-font-size: 2.5rem;
+margin-bottom: 0;
 }
 
 .materials-h1{
@@ -304,9 +312,13 @@ font-size: 2.5rem;
 }
 .mat{
   position: relative;
+  margin: 40rem 0 3rem;
   width: 50rem;
-  height: 65rem;
+  height: 100%;
   left: calc(50% - 50rem/2);
+  overflow: hidden;
+}
+.mat-img{
   overflow: hidden;
 }
 /* 오버시 이미지 커짐 */
@@ -325,25 +337,28 @@ font-size: 2.5rem;
 }
 .mat-info{
   position: absolute;
+  left: -50rem;
+  top: 0;
   width: 100%;
   height: 100%;
-  left: -50rem;
-  transition: .5s;
-  font-size: 3rem;
   background-color: #000000a6;
+  font-size: 3rem;
   color: #fff;
-  top: 0;
   padding: 20px;
+  transition: .5s;
   box-sizing: border-box;
 }
 .mat-info p{
-  white-space: normal  ;
+  margin-top: 100px;
 }
 .mat-box{
   padding: 0 3rem;
+  width: 100%;
+  height: 100%;
 }
-.mat-text{
-  margin: 40rem 0 3rem;
+.mat-name{
+ margin-bottom: 3rem;
+
   text-align: center;
   color: #fff;
   font-size: 4rem;
