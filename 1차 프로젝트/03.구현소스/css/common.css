@@ -101,10 +101,20 @@
 /* 배너위 버튼 */
 .ban-btn{
   position: absolute;
-  font-size: 3rem;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
   bottom: 8rem;
   left: 5rem;
+  border: 3px solid #fff;
+  border-radius: 26.5px 10px 26.5px 26.5px ;
+  padding: 1.5rem 2.5rem;
   color: #fff;
+  text-align: center;
+}
+.ban-btn:hover{
+  background-color: #fff;
+
 }
 
 /* 동영상 클릭시  */
@@ -120,7 +130,7 @@
 }
 
 #ban-area:hover .ban-video {
-  filter: brightness(40%);
+  filter: brightness(10%);
 }
 
 
@@ -134,12 +144,6 @@
   display: inline;
   animation: show-baner2 0.5s;
 }
-/* @keyframes show-baner2{
-  to{
-    
-  }
-} */
-/*________ 영상 오버시 배너나옴 : 삭제예정 나중에 클릭으로 바꿈 ________*/
 
 .ban-box a video {
   width: 100%;
