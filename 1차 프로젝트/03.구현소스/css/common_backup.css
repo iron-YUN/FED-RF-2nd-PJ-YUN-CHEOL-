@@ -12,61 +12,49 @@
   margin-top: 7px;
   font-size: 15px;
 }
-
 /*** 상단 왼쪽 메뉴아이콘 ***/
 .icon-menu1 {
   padding: 10px 0;
 }
-
 .icon-menu1 ul {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
-
 .icon-menu1 ul li {
   padding: 5px;
   white-space: nowrap;
 }
-
 .icon-menu1 ul li a {
   display: flex;
   color: #444;
 }
-
 .icon-menu1 ul li a:hover {
   color: red;
 }
-
 /*** 상단 메인로고 ***/
 .logo-top-box img {
   margin-top: 20px;
   height: 35px;
 }
-
 .logo-top-box {
   text-align: center;
 }
-
 /*** 상단 오른쪽 아이콘메뉴 ***/
 .icon-menu2 {
   padding: 10px 0;
 }
-
 .icon-menu2 ul {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
-
 .icon-menu2 ul li {
   padding: 5px 10px;
 }
-
 .icon-menu2 ul li a {
   color: #444;
 }
-
 .icon-menu2 ul li a:hover {
   color: red;
 }
@@ -79,7 +67,6 @@
   position: relative;
   height: calc(100vh - 74px);
 }
-
 /******* 이벤트배너 박스 *******/
 /* 이벤트배너 이미지 */
 .baner {
@@ -91,14 +78,12 @@
   transition: 0.5s;
   box-sizing: border-box;
 }
-
 .baner img {
   width: 100%;
   object-fit: cover;
 }
-
 /* 베너 위 텍스트 */
-.ban-text {
+.ban-text{
   position: absolute;
   bottom: 15rem;
   width: 27%;
@@ -106,18 +91,15 @@
   color: #fff;
   font-weight: bold;
 }
-
-.ban-text p:nth-child(1) {
+.ban-text p:nth-child(1){
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-
-.ban-text p:nth-child(2) {
+.ban-text p:nth-child(2){
   font-size: 3rem;
 }
-
 /* 배너위 버튼 */
-.ban-btn {
+.ban-btn{
   position: absolute;
   display: flex;
   font-size: 1.5rem;
@@ -125,13 +107,12 @@
   bottom: 8rem;
   left: 5rem;
   border: 3px solid #fff;
-  border-radius: 26.5px 10px 26.5px 26.5px;
+  border-radius: 26.5px 10px 26.5px 26.5px ;
   padding: 1.5rem 2.5rem;
   color: #fff;
   text-align: center;
 }
-
-.ban-btn:hover {
+.ban-btn:hover{
   background-color: #fff;
 
 }
@@ -141,13 +122,10 @@
   filter: brightness(80%);
   opacity: 1;
 }
-
 .baner.on .ban-video.on {
   filter: brightness(0%);
-}
-
-/*********** 안먹힘 ***********/
-.ban-video.on {
+} /*********** 안먹힘 ***********/
+.ban-video.on{
   filter: brightness(0%);
 }
 
@@ -161,7 +139,6 @@
   display: inline;
   animation: show-baner2 0.5s;
 }
-
 /* 배너 이미지 흐림 on */
 #ban-area:hover .baner::after {
   display: inline;
@@ -178,12 +155,10 @@
 .coll-box {
   height: 100%;
 }
-
 /* 상단영역 빈박스 - 추후 영역조정하여 삭제 */
 .non {
   height: 10rem;
 }
-
 /****** 제목및 설명 ******/
 .coll-text {
   margin: 0 auto 10rem;
@@ -191,20 +166,17 @@
   width: 900px;
   height: 260px;
 }
-
 .coll-text p:first-child {
   font-size: 2rem;
   line-height: 24px;
   margin-bottom: 16px;
 }
-
 .coll-text h3 {
   font-size: 4.8rem;
   line-height: 56px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 /* .text-block p:nth-child(2)
 는 다른태그와 섞여있을때 작동을 안함
 이 경우 type 을 쓴다 */
@@ -212,35 +184,29 @@
   font-size: 1.6rem;
   line-height: 28px;
 }
-
 /* 제품설명 중간의 영역구분선 */
 .line {
   padding: 0;
   margin: 3rem 0;
 }
-
 .line img {
   height: 1.2rem;
 }
-
 /****** 제품 리스트 ******/
 .coll-list {
   height: 900px;
-  padding: 0 2rem 0;
+  padding: 0 2rem 0 ;
   background-color: #ffffff;
 }
-
 .coll-list ul {
   overflow: hidden;
   width: 100%;
   display: flex;
   gap: 2rem;
 }
-
 .coll-list ul li a img:nth-child(1) {
   height: 50rem;
 }
-
 .coll-list ul li a span {
   display: block;
   height: 100px;
@@ -254,7 +220,7 @@
 
 /*************** 4.파트너쉽영역 ***************4./
 /* 4-1-1 파틑너쉽 제목 */
-.partner-h1 {
+.partner-h1{
   position: sticky;
   top: -1000px;
   left: calc(50% - 1600px/2);
@@ -262,113 +228,92 @@
   overflow: hidden;
   padding: 1rem 10rem;
   background-color: #0000007e;
-
+  
 }
-
-.partner-h1 p {
+.partner-h1 p{
   color: #fff;
   line-height: 1.5;
   text-align: center;
 }
-
-.partner-h1 p:nth-child(1) {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+.partner-h1 p:nth-child(1){
+font-size: 3rem;
+margin-bottom: 2rem;
+}
+.partner-h1 p:nth-child(2){
+font-size: 7rem;
+font-weight: bold;
+margin-bottom: 2rem;
+}
+.partner-h1 p:nth-child(3){
+font-size: 3rem;
+margin-bottom: 10rem;
+}
+.partner-h1 p:nth-child(3)~p{
+font-size: 2.5rem;
+margin-bottom: 4rem;
+}
+.partner-h1 p:nth-child(6){
+margin-bottom: 0;
 }
 
-.partner-h1 p:nth-child(2) {
-  font-size: 7rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-}
-
-.partner-h1 p:nth-child(3) {
-  font-size: 3rem;
-  margin-bottom: 10rem;
-}
-
-.partner-h1 p:nth-child(3)~p {
-  font-size: 2.5rem;
-  margin-bottom: 4rem;
-}
-
-.partner-h1 p:nth-child(6) {
-  margin-bottom: 0;
-}
-
-.materials-h1 {
+.materials-h1{
   padding: 20px;
   background-color: #000000b0;
 }
-
-.materials-h1 p {
+.materials-h1 p{
   color: #fff;
   line-height: 1.5;
   text-align: center;
 }
-
-.materials-h1 p:nth-child(1) {
+.materials-h1 p:nth-child(1){
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 5rem;
 }
-
-.materials-h1 p:nth-child(2) {
+.materials-h1 p:nth-child(2){
   font-size: 2.5rem;
   margin-bottom: 5rem;
 }
-
-.materials-h1 p:nth-child(3) {
+.materials-h1 p:nth-child(3){
   font-size: 2.5rem;
 }
-
-.mat-box1 {
-  margin-right: 20px;
-}
-
-.mat {
+.mat{
   position: relative;
   margin: 40rem 0 3rem;
-  /* width: 50rem; */
+  width: 50rem;
   height: 100%;
-  /* left: calc(50% - 50rem/2); */
+  left: calc(50% - 50rem/2);
   overflow: hidden;
 }
-
-.mat-sh {
+.mat-sh{
   /* position: relative; */
   /* width: 50rem; */
   /* height: 65rem; */
   /* box-shadow: 0 0 20px 0px #000; */
 }
-
-.mat-img {
-  /* width: 50rem; */
-  /* height: 65rem; */
+.mat-img{
+  width: 50rem;
+  height: 65rem;
   overflow: hidden;
 }
-
 /* 오버시 이미지 커짐 */
-.mat:hover img {
+.mat:hover img{
   transform: scale(1.3);
   transition: .5s ease-in-out;
 }
-
-.mat:hover .mat-info {
+.mat:hover .mat-info{
   left: 0;
   transition: .5s;
 }
-
-.mat img {
+.mat img{
   width: 100%;
   height: 100%;
   transition: .5s ease-in-out;
 }
-
-.mat-info {
+.mat-info{
   position: absolute;
   left: -50rem;
-  bottom: 0;
+  bottom: 0 ;
   width: 50rem;
   height: 65rem;
   background-color: #000000a6;
@@ -379,14 +324,12 @@
   transition: .5s;
   box-sizing: border-box;
 }
-
-.mat-box {
+.mat-box{
   height: 100%;
 }
-
-.mat-name {
-  /* width: 50rem; */
-  margin-bottom: 3rem;
+.mat-name{
+  width: 50rem;
+ margin-bottom: 3rem;
   text-align: center;
   color: #fff;
   font-size: 4rem;
@@ -394,33 +337,29 @@
 }
 
 /* 4-3파트너쉽 동영상영역 */
-.partner-mv-box {
+.partner-mv-box{
   position: relative;
   cursor: pointer;
 }
-
-.partner-mv {
+.partner-mv{
   position: absolute;
   width: 1280px;
   height: 720px;
   top: 0;
   left: calc(50% - 1280px/2);
 }
-
-.partner-mv video {
+.partner-mv video{
   width: 100%;
   height: 100%;
 }
-
-.partner-mv img {
+.partner-mv img{
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
 }
-
-.partner-mv button {
+.partner-mv button{
   position: absolute;
   width: 80px;
   height: 80px;
@@ -430,21 +369,18 @@
   font-weight: bold;
   border-radius: 50% 10% 50% 50%;
 }
-
-.partner-mv button svg {
+.partner-mv button svg{
   width: 32px;
   height: 32px;
   scale: 1.5;
 }
-
-.partner-mv button:hover {
+.partner-mv button:hover{
   background-color: red;
   color: #fff;
 }
-
 /* 아래코드 삭제예정
 JS : 버튼클릭시 커버이미지 제거+동영상 재생 */
-.partner-mv button:hover .partner-mv img {
+.partner-mv button:hover .partner-mv img{
   /* display: none; */
 }
 
