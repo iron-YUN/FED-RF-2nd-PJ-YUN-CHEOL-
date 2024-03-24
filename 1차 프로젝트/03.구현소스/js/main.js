@@ -12,7 +12,7 @@ banArea.addEventListener('click', () => {
 
 const partnerMv = document.querySelector('.partner-mv');
 const partnerImg = document.querySelector('.partner-mv');
-const partnerBtn = document.querySelector('.partner-mv');
+const partnerBtn = document.querySelector('.ptmv-btn');
 
 partnerMv.addEventListener('click', () => {
   partnerImg.classList.toggle('on');
