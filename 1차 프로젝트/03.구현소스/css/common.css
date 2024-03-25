@@ -88,7 +88,7 @@
   left: calc(50% - 160rem/2);
   width: 160rem;
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
   box-sizing: border-box;
 }
 
@@ -129,43 +129,26 @@
   padding: 1.5rem 2.5rem;
   color: #fff;
   text-align: center;
+  transition: .2s;
 }
 
 .ban-btn:hover {
   background-color: #fff;
+  color: #000;
+  transition: .2s;
 
 }
 
 /* 동영상 클릭시  */
 .baner.on {
-  filter: brightness(80%);
+  filter: brightness(90%);
   opacity: 1;
+  transition: 0.5s ease-in-out;
 }
 
-.baner.on .ban-video.on {
-  filter: brightness(0%);
-}
-
-/*********** 안먹힘 ***********/
-.ban-video.on {
-  filter: brightness(0%);
-}
-
-#ban-area:hover .ban-video {
-  filter: brightness(10%);
-}
-
-
-/* 배너 동영상 흐림 on */
-#ban-area:hover .baner::before {
-  display: inline;
-  animation: show-baner2 0.5s;
-}
-
-/* 배너 이미지 흐림 on */
-#ban-area:hover .baner::after {
-  display: inline;
-  animation: show-baner2 0.5s;
+.ban-video.on{
+  filter: brightness(30%);
+  transition: 0.5s ease-in-out;
 }
 
 .ban-box a video {
@@ -225,7 +208,7 @@
 
 /****** 제품 리스트 ******/
 .coll-list {
-  height: 900px;
+  position: relative;
   padding: 0 2rem 0;
   background-color: #ffffff;
 }
@@ -243,11 +226,12 @@
 
 .coll-list ul li a span {
   display: block;
-  height: 100px;
-  text-align: center;
+  height: 30%;
+  padding: 20px;
+  /* text-align: center; */
   font-size: 2rem;
   font-weight: bold;
-  line-height: 3;
+  line-height:1.5 ;
   background-color: #ccc;
 }
 
@@ -305,17 +289,19 @@
   color: #fff;
   line-height: 1.5;
   text-align: center;
-  /* overflow: hidden; */
+  overflow: auto; 
+  text-align: justify;
 }
 
 .materials-h1 p:nth-child(1) {
-  font-size: 4rem;
+  text-align: center;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 5rem;
 }
 
 .materials-h1 p:nth-child(2) {
-  font-size: 2rem;
+  font-size: rem;
   margin-bottom: 5rem;
 }
 
@@ -379,6 +365,7 @@
   padding: 20px;
   transition: .5s;
   box-sizing: border-box;
+  text-align: justify;
 }
 
 
@@ -437,7 +424,12 @@ JS : 버튼클릭시 커버이미지 제거+동영상 재생 */
 .partner-mv button:hover .partner-mv img {
   /* display: none; */
 }
-
+.ptmv-img.on{
+  display: none;
+}
+.ptmv-btn.on{
+  display: none;
+}
 
 
 
