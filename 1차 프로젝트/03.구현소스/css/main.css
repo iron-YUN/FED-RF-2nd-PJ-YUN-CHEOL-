@@ -16,7 +16,7 @@ body{
 
 /* 공사중 표시 */
 body *{
-    /* outline: 2px dashed #ccc; */
+    outline: 2px dashed #ccc;
 }
 /* 메인로고영역 */
 .mainlogo-area{
@@ -56,9 +56,10 @@ body *{
     top: -250px;
     background-color: #fff;
     overflow: hidden;
-    /* width: 100vw; */
+    width: 100%;
 }
 .collections-area{
+    width: 100%;
     height: 1400px;
   }
 /* 4-1.파트너쉽 이미지 영역 */

@@ -184,5 +184,25 @@ function loadFn() {
         }/////////////// goSlide /////////////////////
         ///////////////////////////////////////////////
 
+
+
+        // 마우스좌표 따라다니기
+        // const banAmove = document.querySelector(".ban-area");
+        // const moving = document.querySelector(".flying-mouse");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////

@@ -158,20 +158,11 @@
 
 /* *********3.콜렉션영역********** */
 
-.coll-box {
-  height: 100%;
-}
-
-/* 상단영역 빈박스 - 추후 영역조정하여 삭제 */
-.non {
-  height: 10rem;
-}
 
 /****** 제목및 설명 ******/
 .coll-text {
-  margin: 0 auto 10rem;
+  margin: 10rem auto 10rem;
   text-align: center;
-  width: 900px;
   height: 260px;
 }
 
@@ -208,21 +199,19 @@
 
 /****** 제품 리스트 ******/
 .coll-list {
-  position: relative;
+  /* position: relative; */
   padding: 0 2rem 0;
   background-color: #ffffff;
+  /* height: 100%; */
+  /* width: 100%; */
 }
 
 .coll-list ul {
   overflow: hidden;
-  width: 100%;
   display: flex;
   gap: 2rem;
 }
 
-.coll-list ul li a img:nth-child(1) {
-  height: 50rem;
-}
 
 .coll-list ul li a span {
   display: block;
@@ -234,15 +223,19 @@
 }
 .coll-img{
   position: relative;
+  overflow: hidden;
+
+  aspect-ratio: 572/717;
 }
-.coll-img:nth-child(2){
+.coll-img img{
+ height: 100%;
+}
+.coll-img img:nth-child(2){
+  opacity: 0.5;
   position: absolute;
   top: 0;
-  
+  left: 0;
 }
-
-
-
 
 /*이동버튼*/
 .abtn {
@@ -347,7 +340,6 @@
   position: relative;
   width: 80%;
   height: 100%;
-  /* left: calc(50% - 80%/2); */
   left: 50%;
   transform: translateX(-50%);
 }
@@ -414,7 +406,6 @@
   width: 100%;
   height: 100%;
 }
-
 .partner-mv img {
   position: absolute;
   width: 100%;
@@ -422,7 +413,6 @@
   top: 0;
   left: 0;
 }
-
 .partner-mv button {
   position: absolute;
   width: 80px;
@@ -433,22 +423,14 @@
   font-weight: bold;
   border-radius: 50% 10% 50% 50%;
 }
-
 .partner-mv button svg {
   width: 32px;
   height: 32px;
   scale: 1.5;
 }
-
 .partner-mv button:hover {
   background-color: red;
   color: #fff;
-}
-
-/* 아래코드 삭제예정
-JS : 버튼클릭시 커버이미지 제거+동영상 재생 */
-.partner-mv button:hover .partner-mv img {
-  /* display: none; */
 }
 .ptmv-img.on{
   display: none;
