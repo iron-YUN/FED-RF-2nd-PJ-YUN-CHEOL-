@@ -226,15 +226,41 @@
 
 .coll-list ul li a span {
   display: block;
-  height: 30%;
   padding: 20px;
-  /* text-align: center; */
   font-size: 2rem;
   font-weight: bold;
   line-height:1.5 ;
   background-color: #ccc;
 }
+.coll-img{
+  position: relative;
+}
+.coll-img:nth-child(2){
+  position: absolute;
+  top: 0;
+  
+}
 
+
+
+
+/*이동버튼*/
+.abtn {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  /*Y축 중앙이동*/
+}
+/*왼쪽버튼*/
+.ab1 {
+  left: 50px;
+}
+
+/*오른쪽버튼*/
+.ab2 {
+  right: 50px;
+}
 
 /*************** 4.파트너쉽영역 ***************4./
 /* 4-1-1 파틑너쉽 제목 */
@@ -295,13 +321,13 @@
 
 .materials-h1 p:nth-child(1) {
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom: 5rem;
 }
 
 .materials-h1 p:nth-child(2) {
-  font-size: rem;
+  font-size: 2rem;
   margin-bottom: 5rem;
 }
 
