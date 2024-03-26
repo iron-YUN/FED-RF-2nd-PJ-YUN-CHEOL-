@@ -199,11 +199,9 @@
 
 /****** 제품 리스트 ******/
 .coll-list {
-  /* position: relative; */
+  position: relative; /* 버튼요소 가둬놓기위한 부모장치 */
   padding: 0 2rem 0;
   background-color: #ffffff;
-  /* height: 100%; */
-  /* width: 100%; */
 }
 
 .coll-list ul {
@@ -213,8 +211,9 @@
 }
 
 
-.coll-list ul li a span {
+.coll-span {
   display: block;
+  height: 100%;
   padding: 20px;
   font-size: 2rem;
   font-weight: bold;
@@ -224,18 +223,19 @@
 .coll-img{
   position: relative;
   overflow: hidden;
-
-  aspect-ratio: 572/717;
+  height: 50rem;
+  /* aspect-ratio: 572/717; */
 }
 .coll-img img{
- height: 100%;
+  /* object-fit: cover; */
+  height: 100%;
 }
-.coll-img img:nth-child(2){
+/* .coll-img img:nth-child(2){
   opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
 
 /*이동버튼*/
 .abtn {
@@ -246,12 +246,12 @@
   /*Y축 중앙이동*/
 }
 /*왼쪽버튼*/
-.ab1 {
+.ab2 {
   left: 50px;
 }
 
 /*오른쪽버튼*/
-.ab2 {
+.ab1 {
   right: 50px;
 }
 
@@ -392,14 +392,13 @@
 .partner-mv-box {
   position: relative;
   cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .partner-mv {
   position: absolute;
-  width: 1280px;
-  height: 720px;
   top: 0;
-  left: calc(50% - 1280px/2);
 }
 
 .partner-mv video {
@@ -417,8 +416,9 @@
   position: absolute;
   width: 80px;
   height: 80px;
-  top: calc(50% - 80px/2);
-  left: calc(50% - 80px/2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
   font-size: 5rem;
   font-weight: bold;
   border-radius: 50% 10% 50% 50%;

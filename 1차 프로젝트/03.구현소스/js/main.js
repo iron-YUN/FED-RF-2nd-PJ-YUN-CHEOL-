@@ -34,11 +34,8 @@ const qsa = (x) => document.querySelectorAll(x);
 // ele - 요소, evt - 이벤트, fn - 함수
 const addEvt = 
 (ele, evt, fn) => ele.addEventListener(evt, fn);
-
 // HTML태그 로딩후 loadFn함수 호출! ///
 addEvt(window,"DOMContentLoaded", loadFn);
-
-
 /***************************************************** 
     [ 슬라이드 이동 기능정의 ]
     1. 이벤트 종류: click
@@ -68,6 +65,8 @@ addEvt(window,"DOMContentLoaded", loadFn);
 
 *****************************************************/
 
+
+//////////////////////////////버튼클릭 슬라이드///////////////////////////////////////
 /****************************************** 
     함수명: loadFn
     기능: 로딩 후 버튼 이벤트 및 기능구현
@@ -87,8 +86,6 @@ function loadFn() {
         x.onclick = goSlide;
     }///////////////for of ///////////////
 
-
- 
     //광클 금지변수
     // let prot = 0;
     let prot = false;
@@ -109,14 +106,11 @@ function loadFn() {
         }, 600);
         /////////////////////////////////////////
 
-
-
        //  1.오른쪽 버튼인 .ab2인가?
        let isRbtn = this.classList.contains('ab2');
     //   [classList 객체의 contains()메서드]
     // 해당요소의 특정 클래스 인지 여부를 리턴함 true,false
     // 해당클래스가 있으면 true ,없으면 false
-
 
         //호출확인
         // console.log('나 슬라이드야~!!!!!!!!!',this,isRbtn);
@@ -183,12 +177,6 @@ function loadFn() {
 
         }/////////////// goSlide /////////////////////
         ///////////////////////////////////////////////
-
-
-
-        // 마우스좌표 따라다니기
-        // const banAmove = document.querySelector(".ban-area");
-        // const moving = document.querySelector(".flying-mouse");
 
 
 
