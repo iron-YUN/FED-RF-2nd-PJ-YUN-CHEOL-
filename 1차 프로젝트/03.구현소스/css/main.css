@@ -16,25 +16,32 @@ body{
 
 /* 공사중 표시 */
 body *{
-    outline: 2px dashed #ccc;
+    /* outline: 2px dashed #ccc; */
 }
 
 
 
 /* //////////////////테스트중////////////////////////////// */      
 
-#mainlogo {
+.mainlogo1 {
     position: fixed;
     z-index: 1000;
     background-color: #000;
     top: 0;
     width: 100%;
     height: 100%;
+    /* clip-path: circle(100% at 50% 50%); */
+    
+   
+}
+.mainlogo1.on{
+    animation: mlogo-pg 3s;
+    /* display: none; */
 }
 .mainlogo {
     /* 커지는 원 클립패스 */
     /* clip-path: circle(100% at 50% 50%); */
-    
+    /* background-color: #fff; */
     /* 보이는 화면만큼 높이값 지정 */
     height: 100%;
    
@@ -49,44 +56,48 @@ body *{
   /* 로고이미지 박스 */
   .mlogo-pg.on{
       /* display: none; */
+  }
+  .mlogo-pgbx{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100vh;
+      
+    }
+    .mlogo-pg{
+        position: relative;
+     
+  }
+.logo-btn.on .mainlogo1{
+    animation: mlogo-pg 3s;
+    /* display: none; */
 }
-.mlogo-pgbx{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-}
-.mlogo-pg a{
-    display: block;
-    /* text-align: center; */
-    /* width: 100%;
-    height: 100%; */
-}
-.mlogo-pg img{
-    /* display: block; */
-    width: 100%;
-    height: 100%;
+.mlogo-pg a img{
+    width: 40vw;
 }  
 
 .mlogo-pg a:nth-child(1){
     position: absolute;
+    display: block;
 }
 .mlogo-pg a:nth-child(2){
-    position: absolute;
-    /* transform: rotateX(180deg) skew(72deg, 0deg) translateX(-33%); */
-    /* transform: rotateX(230deg) skewX(50deg)  translate(-13%); */
+    display: block;
+    /* position: absolute; */
+    transform: rotateX(180deg) skewX(60deg);
     transform-origin: bottom ;
-    transform: rotate(180deg) skewX(303deg);
-    opacity: 0.4;
+    opacity: 0.3;
   }
 
   /* 페이지가 사라지는 마법을 경험해보세요~~~~~슈발 */
   @keyframes mlogo-pg {
     0%{
+        clip-path: circle(100% at 50% 50%);
+    }
+    99%{
         clip-path: circle(0% at 50% 50%);
     }
     100%{
-      display: none;
+        display: none;
     }
   }
 /* //////////////////테스트중////////////////////////////// */      
