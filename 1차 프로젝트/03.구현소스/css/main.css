@@ -25,83 +25,67 @@ body *{
 
 .mainlogo1 {
     position: fixed;
-    z-index: 1000;
+    z-index: 101;
     background-color: #000;
     top: 0;
     width: 100%;
-    height: 100%;
-    /* clip-path: circle(100% at 50% 50%); */
-    
-   
 }
-.mainlogo1.on{
-    animation: mlogo-pg 3s;
-    /* display: none; */
-}
-.mainlogo {
-    /* 커지는 원 클립패스 */
-    /* clip-path: circle(100% at 50% 50%); */
-    /* background-color: #fff; */
-    /* 보이는 화면만큼 높이값 지정 */
-    height: 100%;
-   
-    /* 트랜지션 */
-     /* transition: 2s ease-in-out; */
-       
-  }
-  /* 클래스 on  */
-  .mainlogo.on #mainlogo{
-    /* animation: mlogo-pg 2s; */
-  }
-  /* 로고이미지 박스 */
-  .mlogo-pg.on{
-      /* display: none; */
-  }
+
+/*  여기부턴 로고 이미지 박스 */
   .mlogo-pgbx{
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       height: 100vh;
-      
     }
-    .mlogo-pg{
-        position: relative;
-     
-  }
-.logo-btn.on .mainlogo1{
-    animation: mlogo-pg 3s;
-    /* display: none; */
-}
 .mlogo-pg a img{
     width: 40vw;
 }  
-
 .mlogo-pg a:nth-child(1){
     position: absolute;
     display: block;
 }
 .mlogo-pg a:nth-child(2){
     display: block;
-    /* position: absolute; */
     transform: rotateX(180deg) skewX(60deg);
     transform-origin: bottom ;
     opacity: 0.3;
   }
-
+/* //////////////////테스트중////////////////////////////// */      
+/* ///////////////////테스트2////////////////////////// */
   /* 페이지가 사라지는 마법을 경험해보세요~~~~~슈발 */
-  @keyframes mlogo-pg {
-    0%{
-        clip-path: circle(100% at 50% 50%);
-    }
-    99%{
+/* #mmm-area{
+    position: absolute;
+    z-index: 101;
+    clip-path: circle(0% at 50% 2.5%);
+}
+.mainlogo1.on{
+    display: none;
+}
+#mmm-area.on {
+    clip-path: circle(100% at 50% 2.5%);
+    transition: 5s ease-in-out;
+  } */
+/* ///////////////////테스트2////////////////////////// */
+/* ///////////////////테스트3/////////////////// */
+.mainlogo1 {
+    clip-path: circle(100% at 50% 50%);
+}
+.mainlogo1.on {
+    clip-path: circle(0% at 50% 50%);
+    transition: 5s ease-in-out;
+    /* animation: logo-magic 5s ease-in-out; */
+}
+.mlogo-pg.on{
+    transform: scale(0);
+    transition: 7s ease-in-out;
+}
+@keyframes logo-magic {
+    to{
         clip-path: circle(0% at 50% 50%);
     }
-    100%{
-        display: none;
-    }
-  }
-/* //////////////////테스트중////////////////////////////// */      
-
+}
+/* ///////////////////테스트3/////////////////// */
 
 
 /* 1. 상단영역 */

@@ -24,6 +24,34 @@ partnerBtn.addEventListener('click', () => {
 }
 );
 
+// 로고화면의 로고 클릭시 메인페이지 열림 ////////////
+////////////////////테스트중///////////////////
+// const mPg = document.querySelector('#mmm-area');
+// const logoPg = document.querySelector('.mainlogo1');
+// const mlogoBtn = document.querySelector('.logo-btn');
+
+// mlogoBtn.addEventListener('click', ()=>{
+//     mPg.classList.add('on');
+//     setTimeout(() => {
+//         logoPg.classList.add('on');
+//     }, 5000);
+// }
+// );
+
+////////////////////테스트중2 이게조금더 나음.../////////////
+const logoPg = document.querySelector('.mainlogo1');
+const mlogo = document.querySelector('.mlogo-pg');
+const mlogoBtn = document.querySelector('.logo-btn');
+mlogoBtn.addEventListener('click', ()=>{
+    logoPg.classList.add('on');
+    mlogo.classList.add('on');
+}
+);
+    
+
+
+
+
 
 
 
