@@ -55,12 +55,12 @@ const mmmArea = qs('#mmm-area');
 
 mlogoBtn.addEventListener('click', ()=>{
     // logoPg.classList.add('on');
-    // mlogo.classList.add('on');
+    mlogo.classList.add('on');
     mmmArea.classList.add('on');
     setTimeout(() => {
         mmmArea.classList.add('off');
         logoPg.style.display = 'none';
-    }, 3000);
+    }, 5000);
 
 }
 );
