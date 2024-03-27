@@ -78,8 +78,8 @@ body *{
     transition: 4s ease-in-out 1.5s;    
 }
 #mmm-area.on {
-    clip-path: circle(500% at 50% 50%);
-  
+    clip-path: circle(500% at 50% 50% ) ;
+    
 }
 
 /* 초기화상태 */
