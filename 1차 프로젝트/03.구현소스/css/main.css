@@ -19,10 +19,7 @@ body *{
     /* outline: 2px dashed #ccc; */
 }
 
-
-
 /* //////////////////테스트중////////////////////////////// */      
-
 .mainlogo1 {
     position: fixed;
     z-index: 101;
@@ -120,6 +117,7 @@ body *{
    pointer-events: none;
      /* 자기자신요소는 이벤트가 무시되게 셋팅해야
     아래쪽 요소를 만질 수 있음 */
+    /* 색깔 섞기마법 */
    mix-blend-mode: screen;
      /* 
         [mix-blend-mode 속성]

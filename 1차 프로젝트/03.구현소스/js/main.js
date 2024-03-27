@@ -82,10 +82,15 @@ mlogoBtn.addEventListener('click', ()=>{
     */
     const mover = document.querySelector('.mover');
     const myBody = document.body;
+    
     myBody.onmousemove = e => {
         mover.style.left = e.pageX + "px";
         mover.style.top = e.pageY + "px";
     };//////////mousemove///////////////
+    myBody.addEventListener('click', ()=>{
+
+
+    });
 
 
 
