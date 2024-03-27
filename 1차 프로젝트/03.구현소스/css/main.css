@@ -87,6 +87,46 @@ body *{
     }
 }
 /* ///////////////////테스트3/////////////////// */
+/* ///////////////////테스트4/////////////////// */
+.mover{
+    position: absolute;
+    z-index: 1000000;
+    top: 0;
+   left: 0;
+   width: 10%;
+   height: 20%;
+   transition: 0.1s ease-out;
+    transform: translate(-50%,-50%) rotate(0deg);
+   background: url(../../01.자료수집/mover/mover_img.png) no-repeat center/cover;
+   pointer-events: none;
+     /* 자기자신요소는 이벤트가 무시되게 셋팅해야
+    아래쪽 요소를 만질 수 있음 */
+   mix-blend-mode: screen;
+     /* 
+        [mix-blend-mode 속성]
+        - 겹치는 색상처리 블랜딩 모드속성
+        - 겹치는 요소의 색상을 섞어서
+        디스플레이 처리함
+        - 밝은색섞기(screen계열)
+        - 어두운색섞기(darken계열)
+    */
+  
+    /* mask: linear-gradient(to top, #000 , transparent); */
+    /* mask-image: url(../../01.자료수집/mover/mover_img.png) no-repeat center/cover; */
+    /* clip-path: url(../../01.자료수집/mover/mover_img.png) no-repeat center/cover; */
+    /* clip-path:  */
+}
+/* ///////////////////테스트4/////////////////// */
+/* ///////////////////테스트5/////////////////// */
+.mover.on{
+   animation:drink .5s ease-in-out ;
+}
+@keyframes drink {
+    to{
+        transform:  translate(-50%,-50%) rotate(-45deg);
+    }
+}
+/* ///////////////////테스트5/////////////////// */
 
 
 /* 1. 상단영역 */

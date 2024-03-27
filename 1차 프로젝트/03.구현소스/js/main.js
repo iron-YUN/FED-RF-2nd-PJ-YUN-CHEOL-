@@ -35,7 +35,7 @@ partnerBtn.addEventListener('click', () => {
 );
 
 // 로고화면의 로고 클릭시 메인페이지 열림 ////////////
-////////////////////테스트중///////////////////
+////////////////////로고열림 테스트중///////////////////
 // const mPg = document.querySelector('#mmm-area');
 // const logoPg = document.querySelector('.mainlogo1');
 // const mlogoBtn = document.querySelector('.logo-btn');
@@ -47,7 +47,7 @@ partnerBtn.addEventListener('click', () => {
 //     }, 5000);
 // }
 // );
-////////////////////테스트중2 이게조금더 나음.../////////////
+////////////////////로고열림 테스트중2 이게조금더 나음.../////////////
 const logoPg = qs('.mainlogo1');
 const mlogo = qs('.mlogo-pg');
 const mlogoBtn = qs('.logo-btn');
@@ -58,11 +58,27 @@ mlogoBtn.addEventListener('click', ()=>{
 }
 );
     
-
-
-
-
-
+/////////////////병모양 테스트 ////////////////////
+/* 
+        ★[[ 이벤트발생시 위치값 ]]★
+        1. clientX, clientY
+            -> 현재 보이는 브라우저 화면이 기준******
+            -> 화면을 기준한 fixed ***** 포지션에서 주로 사용!
+        2. offsetX, offsetY
+            -> 이벤트 대상이 기준
+            -> 특정박스이 부모자격박스로 부터 위치를 사용할 경우
+        3. pageX, pageY*********
+            -> 전체 문서를 기준(스크롤 화면을 포함)
+            -> 화면을 기준한 absolute ***** 포지션에서 주로 사용!
+        4. screenX, screenY
+            -> 모니터 화면을 기준
+    */
+    const mover = document.querySelector('.mover');
+    const myBody = document.body;
+    myBody.onmousemove = e => {
+        mover.style.left = e.pageX + "px";
+        mover.style.top = e.pageY + "px";
+    };//////////mousemove///////////////
 
 
 
