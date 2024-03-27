@@ -1,10 +1,20 @@
 // 메인 JS - main.js
 
-// 메인 동영상 파트 클릭시 이미지 보이기 숨기기
 
-const banArea = document.querySelector('#ban-area');
-const banImg = document.querySelector('.baner');
-const banMv = document.querySelector('.ban-video');
+// DOM 선택함수
+const qs = (x) => document.querySelector(x);
+const qsa = (x) => document.querySelectorAll(x);
+
+// addEvent 함수
+// ele - 요소, evt - 이벤트, fn - 함수
+const addEvt = 
+(ele, evt, fn) => ele.addEventListener(evt, fn);
+//========================================================
+
+// 메인 동영상 파트 클릭시 이미지 보이기 숨기기
+const banArea = qs('#ban-area');
+const banImg = qs('.baner');
+const banMv = qs('.ban-video');
 
 banArea.addEventListener('click', () => {
   banImg.classList.toggle('on');
@@ -13,9 +23,9 @@ banArea.addEventListener('click', () => {
 
 
 // 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기
-const partnerImg = document.querySelector('.ptmv-img');
-const partnerBtn = document.querySelector('.ptmv-btn');
-const ptmvVideo = document.querySelector('.ptmv-video');
+const partnerImg = qs('.ptmv-img');
+const partnerBtn = qs('.ptmv-btn');
+const ptmvVideo = qs('.ptmv-video');
 
 partnerBtn.addEventListener('click', () => {
   partnerImg.classList.add('on');
@@ -37,11 +47,11 @@ partnerBtn.addEventListener('click', () => {
 //     }, 5000);
 // }
 // );
-
 ////////////////////테스트중2 이게조금더 나음.../////////////
-const logoPg = document.querySelector('.mainlogo1');
-const mlogo = document.querySelector('.mlogo-pg');
-const mlogoBtn = document.querySelector('.logo-btn');
+const logoPg = qs('.mainlogo1');
+const mlogo = qs('.mlogo-pg');
+const mlogoBtn = qs('.logo-btn');
+
 mlogoBtn.addEventListener('click', ()=>{
     logoPg.classList.add('on');
     mlogo.classList.add('on');
@@ -56,14 +66,7 @@ mlogoBtn.addEventListener('click', ()=>{
 
 
 
-// DOM 선택함수
-const qs = (x) => document.querySelector(x);
-const qsa = (x) => document.querySelectorAll(x);
 
-// addEvent 함수
-// ele - 요소, evt - 이벤트, fn - 함수
-const addEvt = 
-(ele, evt, fn) => ele.addEventListener(evt, fn);
 // HTML태그 로딩후 loadFn함수 호출! ///
 addEvt(window,"DOMContentLoaded", loadFn);
 /***************************************************** 

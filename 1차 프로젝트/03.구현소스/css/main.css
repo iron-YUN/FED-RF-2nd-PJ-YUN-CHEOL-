@@ -47,9 +47,10 @@ body *{
 }
 .mlogo-pg a:nth-child(2){
     display: block;
-    transform: rotateX(180deg) skewX(60deg);
+    transform: rotateX(180deg) skewX(60deg) scaleY(0.5);
     transform-origin: bottom ;
-    opacity: 0.3;
+    opacity: 0.7;
+    mask: linear-gradient(to top, #000 , transparent)
   }
 /* //////////////////테스트중////////////////////////////// */      
 /* ///////////////////테스트2////////////////////////// */
@@ -73,12 +74,12 @@ body *{
 }
 .mainlogo1.on {
     clip-path: circle(0% at 50% 50%);
-    transition: 5s ease-in-out;
+    transition: 2s ease-in-out;
     /* animation: logo-magic 5s ease-in-out; */
 }
 .mlogo-pg.on{
     transform: scale(0);
-    transition: 7s ease-in-out;
+    transition: 3s ease-in-out;
 }
 @keyframes logo-magic {
     to{
