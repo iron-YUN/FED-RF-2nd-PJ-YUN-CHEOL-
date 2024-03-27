@@ -51,10 +51,17 @@ partnerBtn.addEventListener('click', () => {
 const logoPg = qs('.mainlogo1');
 const mlogo = qs('.mlogo-pg');
 const mlogoBtn = qs('.logo-btn');
+const mmmArea = qs('#mmm-area');
 
 mlogoBtn.addEventListener('click', ()=>{
-    logoPg.classList.add('on');
-    mlogo.classList.add('on');
+    // logoPg.classList.add('on');
+    // mlogo.classList.add('on');
+    mmmArea.classList.add('on');
+    setTimeout(() => {
+        mmmArea.classList.add('off');
+        logoPg.style.display = 'none';
+    }, 3000);
+
 }
 );
     
@@ -165,11 +172,14 @@ function loadFn() {
         // console.log('나 슬라이드야~!!!!!!!!!',this,isRbtn);
         // this 는 호출한 버튼 자신
 
+        // 개별박스 li가로크기 계산
+        let listW = collSlide.querySelectorAll('li')[0].offsetWidth;
+
         // 2. 버튼별 분기하기
         // 2-1.오른쪽 버튼일 경우 ///
         if (isRbtn) {
             // (1) 먼저 왼쪽으로 이동하기
-            collSlide.style.left = '-100%';
+            collSlide.style.left = `calc(${-listW}px - 2rem)`;
             collSlide.style.transition = '.6s ease-in-out';
             // (2) 이동하는 시간  0.6초간 기다림
             setTimeout(() => {
@@ -204,7 +214,7 @@ function loadFn() {
         // (2) left 값을 -100% 로 변경하여 
         // 맨뒤 li가 맨앞으로 온것을 숨긴다.
         // 왼쪽에서 슬라이드 들어올 준비!!
-        collSlide.style.left ='-100%';
+        collSlide.style.left =`calc(${-listW}px - 2rem)`;
         // 트랜지션이 한번버튼클릭수 생기므로 없애줌
         collSlide.style.transition = 'none';
         

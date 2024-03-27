@@ -54,6 +54,24 @@ body *{
   }
 /* //////////////////테스트중////////////////////////////// */      
 /* ///////////////////테스트2////////////////////////// */
+#mmm-area {
+    position: relative;
+    height: 100vh;
+    z-index: 999;
+    clip-path: circle(0% at 50% 50%);
+    transition: 3s ease-in-out;
+}
+#mmm-area.on {
+    clip-path: circle(100% at 50% 50%);
+}
+/* 초기화상태 */
+#mmm-area.off {
+    position: static;
+    height: auto;
+    z-index: 0;
+    clip-path: none;
+    transition: none;
+}
   /* 페이지가 사라지는 마법을 경험해보세요~~~~~슈발 */
 /* #mmm-area{
     position: absolute;
@@ -69,18 +87,19 @@ body *{
   } */
 /* ///////////////////테스트2////////////////////////// */
 /* ///////////////////테스트3/////////////////// */
-.mainlogo1 {
+/* .mainlogo1 {
     clip-path: circle(100% at 50% 50%);
 }
 .mainlogo1.on {
     clip-path: circle(0% at 50% 50%);
     transition: 2s ease-in-out;
-    /* animation: logo-magic 5s ease-in-out; */
+    
 }
 .mlogo-pg.on{
     transform: scale(0);
     transition: 3s ease-in-out;
-}
+} */
+/* animation: logo-magic 5s ease-in-out; */
 @keyframes logo-magic {
     to{
         clip-path: circle(0% at 50% 50%);

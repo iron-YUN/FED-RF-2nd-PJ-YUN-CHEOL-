@@ -202,10 +202,13 @@
   position: relative; /* 버튼요소 가둬놓기위한 부모장치 */
   padding: 0 2rem 0;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
-.coll-list ul {
-  overflow: hidden;
+/* 움직일박스 */
+.coll-list ul {  
+  position: relative;
+  left: 0;
   display: flex;
   gap: 2rem;
 }
