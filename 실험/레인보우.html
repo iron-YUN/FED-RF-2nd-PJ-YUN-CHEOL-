@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+          .rainbow-box{
+            position: relative;
+            left: 50%;
+            top: 50%;
+            display: block;
+            /* overflow: hidden; */
+            width: 100px;
+            height: 50px;
+          
+        
+        }
+       
+        .rainbow1{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background-color: orangered;
+            border-radius: 30%;
+            scale: 1.1;
+            overflow: hidden;
+            
+        }
+        .rain{
+            background: linear-gradient( 45deg,red,yellow,blue);
+            width: 100%;
+            height: 100%;
+            animation: rota 1s infinite;
+            transform: rotate(0deg);
+        }
+        .rainbow2{
+            position: absolute;
+            background-color: green;
+            top: 0;
+            width: 100px;
+            height: 50px;
+            border-radius: 30%;
+        }
+        @keyframes rota  {
+            to{
+                transform: rotate(180deg);
+            }
+        }
+
+</style>
+<body>
+    <a href="" class="rainbow-box">
+        <div class="rainbow1">
+            <div class="rain"></div>
+        </div>
+        <div class="rainbow2">레인보우</div>
+    </a>
+</body>
+</html>
