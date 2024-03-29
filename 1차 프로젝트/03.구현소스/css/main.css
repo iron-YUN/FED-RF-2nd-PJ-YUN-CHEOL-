@@ -16,7 +16,7 @@ body{
 
 /* 공사중 표시 */
 body *{
-    outline: 2px dashed #ccc;
+    /* outline: 2px dashed #ccc; */
 }
 
  

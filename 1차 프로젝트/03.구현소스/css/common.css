@@ -21,13 +21,14 @@
   .mlogo-pg a img{
       width: 40vw;
   animation: log-magic 1.5s;
+
+ 
 }  
 /* .mlogo-pg a img.on{
   width: 40vw;
 }   */
 @keyframes log-magic{
   from{
-      
       transform-origin: bottom;
       transform: rotateX(90deg);
   }
@@ -48,7 +49,7 @@
   height: 100vh;
   z-index: 999;
   clip-path: circle(0% at 50% 50%);
-  transition: 5s ease-in-out 1.5s;    
+  transition: 3s ease-in-out 1.5s;    
 }
 #mmm-area.on {
   clip-path: circle(1000% at 50% 50% ) ;
@@ -77,6 +78,7 @@
   transform: translate(-50%,-20%) rotate(0deg);
  background: url(../../01.자료수집/mover/mover_img.png) no-repeat center/cover;
  pointer-events: none;
+ filter: drop-shadow(5px 5px 3px #00000069);
 }
 .mover.on{
  animation:drink-magic .3s ease-out alternate 2 ;
@@ -486,12 +488,10 @@
 /***** 4-3파트너쉽 동영상영역 *****/
 .partner-mv-box {
   position: relative;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .partner-mv {
+  cursor: pointer;
   position: absolute;
   top: 0;
 }
@@ -517,6 +517,7 @@
   font-size: 5rem;
   font-weight: bold;
   border-radius: 50% 10% 50% 50%;
+  cursor: pointer;
 }
 .partner-mv button svg {
   width: 32px;
@@ -534,21 +535,20 @@
   display: none;
 }
 /*****5.스토리 영역 *****/
+
 .story-mv-box {
   position: relative;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-evenly;
+  height: 100%;
 }
 
 .story-mv {
+  top: 30%;
   position: absolute;
-  top: 0;
+  cursor: pointer;
 }
 
 .story-mv video {
   width: 100%;
-  height: 100%;
 }
 .story-mv img {
   position: absolute;
@@ -558,6 +558,7 @@
   left: 0;
 }
 .story-mv button {
+  cursor: pointer;
   position: absolute;
   width: 80px;
   height: 80px;
@@ -586,14 +587,12 @@
 /*****6.소개동영상 영역 *****/
 .intro-mv-box {
   position: relative;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .intro-mv {
   position: absolute;
   top: 0;
+  cursor: pointer;
 }
 
 .intro-mv video {
@@ -617,6 +616,7 @@
   font-size: 5rem;
   font-weight: bold;
   border-radius: 50% 10% 50% 50%;
+  cursor: pointer;
 }
 .intro-mv button svg {
   width: 32px;
@@ -633,7 +633,29 @@
 .itmv-btn.on{
   display: none;
 }
-
+.stst{
+  padding: 0 50px;
+}
+.stimg-box{
+  position: relative;
+  height: 100%;
+}
+.stimg-box img{
+position: absolute;
+scale: .6;
+}
+.stimg-box img:nth-child(1){
+/* top: 10%; */
+top: 10%;
+right: 0;
+}
+.stimg-box img:nth-child(2){
+  top: 50%;
+  left: -10%;
+}
+.st-mv-h1{
+  color: #fff;
+}
 
 
 /******************************* 하단영역 *******************************/

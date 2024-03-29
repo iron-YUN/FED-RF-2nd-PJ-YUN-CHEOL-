@@ -29,6 +29,26 @@ partnerBtn.addEventListener("click", () => {
   partnerBtn.classList.add("on");
   ptmvVideo.play();
 });
+// 스토리영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기
+const storyImg = qs(".stmv-img");
+const storyBtn = qs(".stmv-btn");
+const stmvVideo = qs(".stmv-video");
+
+storyBtn.addEventListener("click", () => {
+  storyImg.classList.add("on");
+  storyBtn.classList.add("on");
+  stmvVideo.play();
+});
+// 소개(intro)영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기
+const introImg = qs(".itmv-img");
+const introBtn = qs(".itmv-btn");
+const itmvVideo = qs(".itmv-video");
+
+introBtn.addEventListener("click", () => {
+  introImg.classList.add("on");
+  introBtn.classList.add("on");
+  itmvVideo.play();
+});
 
 // 로고화면의 로고 클릭시 메인페이지 열림 ////////////
 ////////////////////로고열림 테스트중///////////////////
