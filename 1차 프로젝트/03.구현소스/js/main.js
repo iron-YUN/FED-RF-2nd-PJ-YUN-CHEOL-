@@ -51,18 +51,6 @@ introBtn.addEventListener("click", () => {
 });
 
 // 로고화면의 로고 클릭시 메인페이지 열림 ////////////
-////////////////////로고열림 테스트중///////////////////
-// const mPg = document.querySelector('#mmm-area');
-// const logoPg = document.querySelector('.mainlogo1');
-// const mlogoBtn = document.querySelector('.logo-btn');
-
-// mlogoBtn.addEventListener('click', ()=>{
-//     mPg.classList.add('on');
-//     setTimeout(() => {
-//         logoPg.classList.add('on');
-//     }, 5000);
-// }
-// );
 ////////////////////로고열림 테스트중2 이게조금더 나음.../////////////
 const logoPg = qs(".mainlogo1");
 const mlogo = qs(".mlogo-pg");
@@ -76,7 +64,7 @@ mlogoBtn.addEventListener("click", () => {
   setTimeout(() => {
     mmmArea.classList.add("off");
     logoPg.style.display = "none";
-  }, 5000);
+  }, 1500);
 });
 
 /////////////////병모양 테스트 ////////////////////

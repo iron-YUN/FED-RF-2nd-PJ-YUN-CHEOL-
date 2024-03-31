@@ -97,20 +97,21 @@ body *{
     background-color: #000;
 }
 .story-area{
-    height: 900px;
+    height: 1800px;
 }
 /* 6.소개동영상 영역 */
 #intromv-area{
     position: sticky;
+    top: 3rem;
     background-color: #000;
 }
 .intromv-area{
-    height: 900px;
+    height: 1500px;
 }
 /* 7.경험해보세요 영역 */
 #experience-area{
     position: sticky;
-    background-color: #36ffa5;
+    background-color: #fff;
 }
 .experience-area{
     height: 2400px;
