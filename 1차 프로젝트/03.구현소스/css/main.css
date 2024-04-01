@@ -11,7 +11,8 @@
 body{
     padding-top: 74px;
     margin: 0;
-    background-color: #222;
+    background-color: #000;
+    overflow-x: hidden;
 }
 
 /* 공사중 표시 */

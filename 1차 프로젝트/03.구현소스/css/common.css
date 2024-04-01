@@ -253,13 +253,13 @@
 }
 
 .coll-text p:first-child {
-  font-size: 2rem;
+  font-size: max(1.5vw);
   line-height: 24px;
   margin-bottom: 16px;
 }
 
 .coll-text h3 {
-  font-size: 4.8rem;
+  font-size: max(3.5vw);
   line-height: 56px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -269,7 +269,7 @@
 는 다른태그와 섞여있을때 작동을 안함
 이 경우 type 을 쓴다 */
 .coll-text p:nth-of-type(2) {
-  font-size: 1.6rem;
+  font-size: max(1.5vw);
   line-height: 28px;
 }
 
@@ -370,23 +370,23 @@
 }
 
 .partner-h1 p:nth-child(1) {
-  font-size: 3rem;
+  font-size: max(2vw);
   margin-bottom: 2rem;
 }
 
 .partner-h1 p:nth-child(2) {
-  font-size: 7rem;
+  font-size: max(3.5vw);
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
 .partner-h1 p:nth-child(3) {
-  font-size: 3rem;
+  font-size: max(2vw);
   margin-bottom: 10rem;
 }
 
 .partner-h1 p:nth-child(3)~p {
-  font-size: 2.5rem;
+  font-size: max(1.5vw);
   margin-bottom: 4rem;
 }
 
@@ -409,18 +409,18 @@
 
 .materials-h1 p:nth-child(1) {
   text-align: center;
-  font-size: 4rem;
+  font-size: max(3vw);
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
 .materials-h1 p:nth-child(2) {
-  font-size: 2rem;
+  font-size: max(1.5vw);
   margin-bottom: 5rem;
 }
 
 .materials-h1 p:nth-child(3) {
-  font-size: 2rem;
+  font-size: max(1.5vw);
 }
 
 .mat-box {
@@ -442,7 +442,7 @@
   margin-bottom: 3rem;
   text-align: center;
   color: #fff;
-  font-size: 4rem;
+  font-size: max(3vw);
   font-weight: bold;
 }
 .mat-sh {
@@ -472,8 +472,8 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  font-size: 2rem;
-  line-height: 2;
+  font-size: max(1.5vw);
+  line-height: 1.5;
   color: #fff;
   padding: 20px;
   transition: .5s;
@@ -553,16 +553,18 @@
 .st-h1{
   position: absolute;
 text-align: center;
-top: 15%;
-width: 100%;
+top: 10%;
+left: 50%;
+transform: translateX(-50%);
 margin-bottom: 10rem;
 color: #fff;
 }
 .st-h1 p:nth-child(2n-1){
-  font-size: 3rem;
+  font-size: max(1.5vw);
 }
 .st-h1 p:nth-child(2){
-  font-size: 7rem;
+  font-size: max(3vw);
+  /* white-space: nowrap; */
   font-weight: bold;
   margin: 2rem 0;
 }
@@ -617,21 +619,25 @@ color: #fff;
 /* 스토리 오른쪽영역 */
 .st-right{
   position: relative;
-  top: 30%;
-  height: 100%; 
+  top: 35%;
+  height: auto;
 }
 .st-img1, .st-img2{
 position: absolute;
-scale: 0.7;
+
 }
 .st-img1{
+width: 70%;
 right: 0;
 }
 .st-img2{
-top: 23%;
+width: 45%;
+left: 10%;
+margin-top: 60%;
 }
 .st-right img{
   width: 100%;
+  height: 100%;
 }
 
 /********* 6.소개동영상 영역 *********/
@@ -641,12 +647,12 @@ top: 23%;
   text-align: center;
 }
 .intro-h1 p:nth-child(1){
-  font-size: 3rem;
+  font-size: max(1.5vw);
   margin-bottom: 2rem;
 }
 .intro-h1 p:nth-child(2){
   font-weight: bold;
- font-size: 6em;
+ font-size: max(3vw);
 }
 
 .intro-mv-box {

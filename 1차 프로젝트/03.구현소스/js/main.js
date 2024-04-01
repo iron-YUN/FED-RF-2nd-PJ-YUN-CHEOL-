@@ -13,11 +13,16 @@ const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
 const banArea = qs("#ban-area");
 const banImg = qs(".baner");
 const banMv = qs(".ban-video");
+const banMv2 = qs(".ban-video video");
 
 banArea.addEventListener("click", () => {
   banImg.classList.toggle("on");
   banMv.classList.toggle("on");
 });
+
+// 배너영상 속도조절
+banMv2.playbackRate = 0.9;
+
 
 // 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기
 const partnerImg = qs(".ptmv-img");
