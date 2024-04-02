@@ -244,3 +244,40 @@ function loadFn() {
   ///////////////////////////////////////////////
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
+
+/////////////////////// 스크롤 이용한 상단영역 색 바뀌기////////////////////////////////
+const topAreaBgc = qs('.top-area-bgc');
+const scAct = qsa('.scroll-area');
+
+// 만나면 좋은친구
+// 만났을때 #top-area + 클래스 on
+// scAct[0] 가  topAreaBgc 와 만났을때 topAreaBgc 배경색 곤색
+//  scAct[1] 가  topAreaBgc 와 만났을때 topAreaBgc 배경색 검정
+// scAct[2] 가  topAreaBgc 와 만났을때 topAreaBgc 배경색 흰색 
+// (원래대로 돌아옴 = 클래스on 빼주기)
+
+  // 바운딩함수
+ const getBCR = (ele)=> ele.getBoundingClientRect().top;
+  // 옵셋탑값 반환함수
+  const getOT = (ele) => ele.offsetTop;
+
+scAct.addEvt(window,'scroll',changeTOP);
+
+const CRITERIA = window.innerHeight / 2
+
+
+///////////////////////////
+scAct.forEach((ele,idx)=>{
+  posTop[idx] = getOT(ele);
+});///// forEach /////////
+
+/////////////////////////////////////
+function changeTOP(){
+  let scTop = window.scrollY;
+  // for (let x of scAct) addOn(x);
+
+  if(scTop < posTop[0] ){
+    topAreaBgc.classList.add('on1');
+  }
+}/////////// changeTOP 함수 ///////////
+///////////////////////////////////////////////////////////////////

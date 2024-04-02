@@ -34,9 +34,9 @@ body *{
     position: fixed;
     z-index: 100;
     top: 0;
-    background-color: #ffffff;
     width: 100%;
 }
+
 .top-area{
     height: 74px;
   }

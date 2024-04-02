@@ -97,6 +97,7 @@
   content: "MENU";
   margin-top: 7px;
   font-size: 15px;
+  font-weight: bold;
 }
 
 /*** 상단 왼쪽 메뉴아이콘 ***/
@@ -113,15 +114,6 @@
 .icon-menu1 ul li {
   padding: 5px;
   white-space: nowrap;
-}
-
-.icon-menu1 ul li a {
-  display: flex;
-  color: #444;
-}
-
-.icon-menu1 ul li a:hover {
-  color: red;
 }
 
 /*** 상단 메인로고 ***/
@@ -149,13 +141,37 @@
   padding: 5px 10px;
 }
 
-.icon-menu2 ul li a {
+.top-btn{
   color: #444;
+  /* 메뉴버튼과 물결버튼 정렬을 위한 flex (오른쪽버튼은 무관하지만 그냥 같이 적용함)*/
+  display: flex;
+  transition: 1s;
 }
 
-.icon-menu2 ul li a:hover {
+.top-btn:hover {
   color: red;
 }
+
+
+/* *************상단색 바뀌는 색조정*********** */
+.top-area-bgc{
+  background-color: #ffffff;
+  transition: 1s;
+}
+.top-area-bgc.on1{
+  background-color: #1a1b26;
+  transition: 1s;
+}
+.top-area-bgc.on2{
+  background-color: #000000;
+  transition: 1s;
+}
+.top-area-bgc.on1 .top-btn,.top-area-bgc.on2 .top-btn{
+  color: #fff;
+  transition: 1s;
+}
+/* ************************ */
+
 
 /******************************************************** 메인영역 ********************************************************/
 /* 2. 배너영역 */
