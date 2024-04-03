@@ -265,29 +265,14 @@
 .coll-text {
   margin: 10rem auto 10rem;
   text-align: center;
-  height: 260px;
 }
-
-.coll-text p:first-child {
-  font-size: max(1.5vw);
-  line-height: 24px;
-  margin-bottom: 16px;
-}
-
-.coll-text h3 {
-  font-size: max(3.5vw);
-  line-height: 56px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.coll-stit{
+  margin-bottom: 1.5rem;
 }
 
 /* .text-block p:nth-child(2)
 는 다른태그와 섞여있을때 작동을 안함
 이 경우 type 을 쓴다 */
-.coll-text p:nth-of-type(2) {
-  font-size: max(1.5vw);
-  line-height: 28px;
-}
 
 /* 제품설명 중간의 영역구분선 */
 .line {
@@ -340,7 +325,7 @@
   scale: 1.3;
   transition: 0.5s;
 }
-/* 이미지 사지으 제각각으로 도입실패 */
+/* 이미지 사지을 제각각으로 도입실패 */
 /* .coll-img img:nth-child(2){
   opacity: 0.5;
   position: absolute;
@@ -371,80 +356,30 @@
 .partner-h1 {
   position: sticky;
   top: -1000px;
-  left: calc(50% - 1600px/2);
+  /* left: calc(50% - 1600px/2); */
   height: 100%;
   overflow: hidden;
-  padding: 1rem 10rem;
+  padding: 0 20% ;
   background-color: #0000007e;
-
-}
-
-.partner-h1 p {
   color: #fff;
-  line-height: 1.5;
-  text-align: center;
+}
+.part-stit{
+margin-top: 2rem;
 }
 
-.partner-h1 p:nth-child(1) {
-  font-size: max(2vw);
-  margin-bottom: 2rem;
-}
-
-.partner-h1 p:nth-child(2) {
-  font-size: max(3.5vw);
-  font-weight: bold;
-  margin-bottom: 2rem;
-}
-
-.partner-h1 p:nth-child(3) {
-  font-size: max(2vw);
-  margin-bottom: 10rem;
-}
-
-.partner-h1 p:nth-child(3)~p {
-  font-size: max(1.5vw);
-  margin-bottom: 4rem;
-}
-
-.partner-h1 p:nth-child(6) {
-  margin-bottom: 0;
-}
 /* 파트너쉽 두번째페이지 */
 .materials-h1 {
-  padding: 3%;
-  background-color: #000000b0;
+  padding: 5%;
+  background-color: #0000007e;
 }
 
 .materials-h1 p {
   color: #fff;
-  line-height: 1.5;
-  text-align: center;
-  overflow: auto; 
-  /* text-align: justify; */
 }
-
-.materials-h1 p:nth-child(1) {
-  text-align: center;
-  font-size: max(3vw);
-  font-weight: bold;
-  margin-bottom: 2rem;
-}
-
-.materials-h1 p:nth-child(2) {
-  font-size: max(1.5vw);
-  margin-bottom: 5rem;
-}
-
-.materials-h1 p:nth-child(3) {
-  font-size: max(1.5vw);
-}
-
 .mat-box {
   height: 100%;
   padding: 5%;
 }
-
-
 
 .mat {
   margin-top: 40%;
@@ -455,11 +390,8 @@
   transform: translateX(-50%);
 }
 .mat-name {
-  margin-bottom: 3rem;
   text-align: center;
   color: #fff;
-  font-size: max(3vw);
-  font-weight: bold;
 }
 .mat-sh {
   position: relative;
@@ -475,6 +407,7 @@
 .mat:hover .mat-info {
   opacity: 1;
   transition: .5s .3s;
+  /* overflow-y: scroll; */
 }
 .mat img {
   width: 100%;
@@ -488,8 +421,6 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  font-size: max(1.5vw);
-  line-height: 1.5;
   color: #fff;
   padding: 20px;
   transition: .5s;
@@ -563,27 +494,19 @@
 /* 스토리 왼쪽영역 */
 .st-left{
   position: relative;
-  top: 27%;
+  top: 17%;
 }
 /* 최신스토리 제목 */
 .st-h1{
   position: absolute;
 text-align: center;
-top: 10%;
+top: 7%;
 left: 50%;
 transform: translateX(-50%);
-margin-bottom: 10rem;
+/* margin-bottom: 10rem; */
 color: #fff;
 }
-.st-h1 p:nth-child(2n-1){
-  font-size: max(1.5vw);
-}
-.st-h1 p:nth-child(2){
-  font-size: max(3vw);
-  /* white-space: nowrap; */
-  font-weight: bold;
-  margin: 2rem 0;
-}
+
 
 /* 스토리동영상 */
 .story-mv {
@@ -626,16 +549,11 @@ color: #fff;
 .stmv-btn.on{
   display: none;
 }
-.st-text-box{
-  text-align: center;
-  font-size: 2rem;
-  line-height: 1.5;
-}
 
 /* 스토리 오른쪽영역 */
 .st-right{
   position: relative;
-  top: 35%;
+  top: 25%;
   height: auto;
 }
 .st-img1, .st-img2{
@@ -659,17 +577,9 @@ margin-top: 60%;
 /********* 6.소개동영상 영역 *********/
 .intro-h1{
   color: #fff;
-  margin-bottom: 3rem;
-  text-align: center;
+  margin-bottom: 5%;
 }
-.intro-h1 p:nth-child(1){
-  font-size: max(1.5vw);
-  margin-bottom: 2rem;
-}
-.intro-h1 p:nth-child(2){
-  font-weight: bold;
- font-size: max(3vw);
-}
+
 
 .intro-mv-box {
   position: relative;

@@ -19,7 +19,28 @@ body{
 body *{
     /* outline: 2px dashed #ccc; */
 }
-
+.sub-tit{
+    font-size: 2rem;
+    text-align: center;
+}
+.main-tit{
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 3rem auto;
+    text-align: center;
+}
+.main-text{
+    margin: 4rem 0;
+    font-size: 2rem;
+    line-height: 1.7;
+    text-align: center;
+}
+.main-text2{
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    line-height: 2;
+    text-align: center;
+}
  
 /* ///////////////////테스트2////////////////////////// */
 /* ///////////////////테스트2////////////////////////// */
@@ -103,7 +124,7 @@ body *{
 /* 6.소개동영상 영역 */
 #intromv-area{
     position: sticky;
-    top: 3rem;
+    top: -3rem;
     background-color: #000;
 }
 .intromv-area{
