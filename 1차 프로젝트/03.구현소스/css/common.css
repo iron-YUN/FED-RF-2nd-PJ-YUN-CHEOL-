@@ -156,19 +156,23 @@
 /* *************상단색 바뀌는 색조정*********** */
 .top-area-bgc{
   background-color: #ffffff;
-  transition: 1s;
+  transition: .5s;
 }
 .top-area-bgc.on1{
   background-color: #1a1b26;
-  transition: 1s;
+  transition: .5s;
 }
 .top-area-bgc.on2{
   background-color: #000000;
-  transition: 1s;
+  transition: .5s;
 }
 .top-area-bgc.on1 .top-btn,.top-area-bgc.on2 .top-btn{
   color: #fff;
-  transition: 1s;
+  transition: .5s;
+}
+
+.top-area-bgc.on1 .top-logo{
+ 
 }
 /* ************************ */
 
@@ -453,27 +457,6 @@ margin-top: 2rem;
   top: 0;
   left: 0;
 }
-.partner-mv button {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% ,-50%);
-  font-size: 5rem;
-  font-weight: bold;
-  border-radius: 50% 10% 50% 50%;
-  cursor: pointer;
-}
-.partner-mv button svg {
-  width: 32px;
-  height: 32px;
-  scale: 1.5;
-}
-.partner-mv button:hover {
-  background-color: red;
-  color: #fff;
-}
 .ptmv-img.on{
   display: none;
 }
@@ -522,27 +505,8 @@ color: #fff;
   top: 0;
   left: 0;
 }
-.story-mv button {
-  cursor: pointer;
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% ,-50%);
-  font-size: 5rem;
-  font-weight: bold;
-  border-radius: 50% 10% 50% 50%;
-}
-.story-mv button svg {
-  width: 32px;
-  height: 32px;
-  scale: 1.5;
-}
-.story-mv button:hover {
-  background-color: red;
-  color: #fff;
-}
+
+
 .stmv-img.on{
   display: none;
 }
@@ -602,27 +566,7 @@ margin-top: 60%;
   top: 0;
   left: 0;
 }
-.intro-mv button {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% ,-50%);
-  font-size: 5rem;
-  font-weight: bold;
-  border-radius: 50% 10% 50% 50%;
-  cursor: pointer;
-}
-.intro-mv button svg {
-  width: 32px;
-  height: 32px;
-  scale: 1.5;
-}
-.intro-mv button:hover {
-  background-color: red;
-  color: #fff;
-}
+
 .itmv-img.on{
   display: none;
 }

@@ -93,7 +93,7 @@ const myBody = document.body;
 myBody.onmousemove = (e) => {
   mover.style.left = e.pageX + "px";
   mover.style.top = e.clientY + "px";
-  console.log(e.pageX, this);
+  // console.log(e.pageX, this);
 }; //////////mousemove///////////////
 myBody.addEventListener("click", () => {});
 /////////////////병모양 테스트 ////////////////////
@@ -245,60 +245,44 @@ function loadFn() {
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
 
-/////////////////////// 스크롤 이용한 상단영역 색 바뀌기////////////////////////////////
+/////////////////////// 스크롤 이용한 상단영역 색 바뀌기 완성*****////////////////////////////////
 
+const topAreaBgc = document.querySelector('.top-area-bgc');
+const scAct = document.querySelectorAll('.scroll-area');
 
-
-/* 
-.top-area-bgc 를 스크롤 이벤트로 class를 추가해서 배경색이 바뀌도록 함수를 만들거야.
-각 영역이 스크린의 꼭대기에 맞닿으면 .top-area-bgc 의 색이 바뀌는 형식이야.
-.top-area-bgc 를 topAreaBgc 변수에 담을거야
-.top-area-bgc.on1 과 .top-area-bgc.on2 는 준비해두었어
-영역 종류는 위에서부터 순서대로
-partnerships-area , .story-area , .experience-area 가 준비되어있고.
-이 영역들을 forEach 로 순회하기위해 동일한 클래스인 .scroll-area 으로
- 똑같이 지정해주었어
- 그리고 이것들을 변수 scAct로 담아서 찾아올거야
-scAct[0] 은 .partnerships-area 이고,scAct[1] 은 .story-area
-scAct[2] 은 .experience-area 가 되는거야.
-scAct[0] 가 스크린의 꼭대기에 닿으면 .top-area-bgc 에 
-class on1 을 추가해줄거야 
-scAct[1] 가 스크린의 꼭대기에 닿으면 .top-area-bgc 에 
-class on2 을 추가해줄거야 
-scAct[2] 가 스크린의 상단에 닿으면 지정해두었던 on1 또는 on2를 빼줄거야.
-
-*/
-
-/* 
-
-window.addEventListener('scroll', function() {
-  var topAreaBgc = document.querySelector('.top-area-bgc');
-  var scAct = document.querySelectorAll('.scroll-area');
-
-  scAct.forEach(function(item, index) {
-    var itemRect = item.getBoundingClientRect();
-    var scrollY = window.scrollY || window.pageYOffset;
-
-    // 영역이 스크린의 꼭대기에 닿으면
-    if (itemRect.top <= 0 && itemRect.bottom >= 0) {
+window.addEventListener('scroll', () => {
+  scAct.forEach((ele, idx) => {
+    const scRect = ele.getBoundingClientRect();
+    // console.log(`영역 ${idx}의 top: ${scRect.top}, bottom: ${scRect.bottom}`);
+    
+    // 각각의 요소가 스크린의 상단을 지날 때
+    if(scRect.top > 0){
+      if (idx === 0) {
+        topAreaBgc.classList.remove('on1');
+        topAreaBgc.classList.remove('on2');
+      }////////////////  if
+    }
+    if (scRect.top <= 0 && scRect.bottom >= 0) {
       // .partnerships-area
-      if (index === 0) {
+      if (idx === 0) {
         topAreaBgc.classList.add('on1');
         topAreaBgc.classList.remove('on2');
-      }
+      }////////////////  if
       // .story-area
-      else if (index === 1) {
+      else if (idx === 1) {
         topAreaBgc.classList.remove('on1');
         topAreaBgc.classList.add('on2');
-      }
-    } else {
+      }////////////////  else if
       // .experience-area
-      if (index === 2) {
+      else  {
         topAreaBgc.classList.remove('on1');
-        topAreaBgc.classList.remove('on2');
-      }
-    }
-  });
-});
+        topAreaBgc.classList.remove('on2'); // 이건 빼도 작동을함 ... 왜???
+      }////////////////  else 
+    }////////////////   if
+ 
+  
+  });////////////forEach///////////////
+});////////////window///////////////
 
-*/
+
+
