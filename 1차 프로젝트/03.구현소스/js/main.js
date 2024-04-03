@@ -246,38 +246,59 @@ function loadFn() {
 /////////////////////////////////////////////
 
 /////////////////////// 스크롤 이용한 상단영역 색 바뀌기////////////////////////////////
-const topAreaBgc = qs('.top-area-bgc');
-const scAct = qsa('.scroll-area');
-
-// 만나면 좋은친구
-// 만났을때 #top-area + 클래스 on
-// scAct[0] 가  topAreaBgc 와 만났을때 topAreaBgc 배경색 곤색
-//  scAct[1] 가  topAreaBgc 와 만났을때 topAreaBgc 배경색 검정
-// scAct[2] 가  topAreaBgc 와 만났을때 topAreaBgc 배경색 흰색 
-// (원래대로 돌아옴 = 클래스on 빼주기)
-
-  // 바운딩함수
- const getBCR = (ele)=> ele.getBoundingClientRect().top;
-  // 옵셋탑값 반환함수
-  const getOT = (ele) => ele.offsetTop;
-
-scAct.addEvt(window,'scroll',changeTOP);
-
-const CRITERIA = window.innerHeight / 2
 
 
-///////////////////////////
-scAct.forEach((ele,idx)=>{
-  posTop[idx] = getOT(ele);
-});///// forEach /////////
 
-/////////////////////////////////////
-function changeTOP(){
-  let scTop = window.scrollY;
-  // for (let x of scAct) addOn(x);
+/* 
+.top-area-bgc 를 스크롤 이벤트로 class를 추가해서 배경색이 바뀌도록 함수를 만들거야.
+각 영역이 스크린의 꼭대기에 맞닿으면 .top-area-bgc 의 색이 바뀌는 형식이야.
+.top-area-bgc 를 topAreaBgc 변수에 담을거야
+.top-area-bgc.on1 과 .top-area-bgc.on2 는 준비해두었어
+영역 종류는 위에서부터 순서대로
+partnerships-area , .story-area , .experience-area 가 준비되어있고.
+이 영역들을 forEach 로 순회하기위해 동일한 클래스인 .scroll-area 으로
+ 똑같이 지정해주었어
+ 그리고 이것들을 변수 scAct로 담아서 찾아올거야
+scAct[0] 은 .partnerships-area 이고,scAct[1] 은 .story-area
+scAct[2] 은 .experience-area 가 되는거야.
+scAct[0] 가 스크린의 꼭대기에 닿으면 .top-area-bgc 에 
+class on1 을 추가해줄거야 
+scAct[1] 가 스크린의 꼭대기에 닿으면 .top-area-bgc 에 
+class on2 을 추가해줄거야 
+scAct[2] 가 스크린의 상단에 닿으면 지정해두었던 on1 또는 on2를 빼줄거야.
 
-  if(scTop < posTop[0] ){
-    topAreaBgc.classList.add('on1');
-  }
-}/////////// changeTOP 함수 ///////////
-///////////////////////////////////////////////////////////////////
+*/
+
+/* 
+
+window.addEventListener('scroll', function() {
+  var topAreaBgc = document.querySelector('.top-area-bgc');
+  var scAct = document.querySelectorAll('.scroll-area');
+
+  scAct.forEach(function(item, index) {
+    var itemRect = item.getBoundingClientRect();
+    var scrollY = window.scrollY || window.pageYOffset;
+
+    // 영역이 스크린의 꼭대기에 닿으면
+    if (itemRect.top <= 0 && itemRect.bottom >= 0) {
+      // .partnerships-area
+      if (index === 0) {
+        topAreaBgc.classList.add('on1');
+        topAreaBgc.classList.remove('on2');
+      }
+      // .story-area
+      else if (index === 1) {
+        topAreaBgc.classList.remove('on1');
+        topAreaBgc.classList.add('on2');
+      }
+    } else {
+      // .experience-area
+      if (index === 2) {
+        topAreaBgc.classList.remove('on1');
+        topAreaBgc.classList.remove('on2');
+      }
+    }
+  });
+});
+
+*/
