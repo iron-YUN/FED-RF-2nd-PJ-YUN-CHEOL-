@@ -101,12 +101,12 @@ addEvt(window, "DOMContentLoaded", loadFn);
  함수명: loadFn
  기능: 로딩 후 버튼 이벤트 및 기능구현
  ******************************************/
+const collSlide = qs("#coll-slide");
 function loadFn() {
   // console.log("로딩완료!");
   // 이동버튼 대상 : .abtn
   const abtn = qsa(".abtn");
   //변경대상 : #coll-slide
-  const collSlide = qs("#coll-slide");
   // console.log(abtn,collSlide);
   
   //슬라이드 순번 전역변수
@@ -289,37 +289,32 @@ const collSlideItems = [
     spanText: "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"
   },
 ];////////////////// coll 배열///////////////////////
-// personInfo.forEach(v=>contBox.innerHTML += makeMsg(v[0],v[1]));
+
 
 /* 
-innerHTML 을 사용해서 정보를 넣어주기
- .coll-img 에는 
-  `<img
-  src="../01.자료수집/main_img/main_page_bottle/coll_main${숫자}.jpg"
-  alt=""/>`
-.coll-span 에는
- `<span>${숫자}</span>`
+    collSlideItems.forEach(v => {
 
-  // html태그변수
-  let hcode = '';
-  // 순번증가변수
-  let seqNum = 0;
-   hcode += `내용`;
-
-
-
-
+      collSlide.innerHTML +=
+  `
   <li>
     <a href="javascript:;" onclick="js();">
       <div class="coll-img">
         <img
-          src="../01.자료수집/main_img/main_page_bottle/coll_main01.jpg"
+          src="../01.자료수집/main_img/main_page_bottle/coll_main0${}.jpg"
           alt=""
         />
       </div>
       <div class="coll-span">
-        <span>SHERRY OAK 12 YEARS OLD</span>
+        ${}</span>
       </div>
     </a>
   </li>
+  `;
+
+
+
+    });
+*/
+/* 
+
 */
