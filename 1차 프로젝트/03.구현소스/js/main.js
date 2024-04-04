@@ -256,39 +256,56 @@ window.addEventListener('scroll', () => {
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 const collSlideItems = [
-  {
-    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main01.jpg",
-    spanText: "SHERRY OAK 12 YEARS OLD"
-  },
-  {
-    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main02.jpg",
-    spanText: "SHERRY OAK 18 YEARS OLD, 2023 RELEASE"
-  },
-  {
-    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main03.jpg",
-    spanText: "SHERRY OAK 25 YEARS OLD, 2023 RELEASE"
-  },
-  {
-    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main04.jpg",
-    spanText: "SHERRY OAK 30 YEARS OLD, 2023 RELEASE"
-  },
-  {
-    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main05.jpg",
-    spanText: "DOUBLE CASK 12 YEARS OLD"
-  },
-  {
-    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main06.jpg",
-    spanText: "DOUBLE CASK 15 YEARS OLD"
-  },
-  {
-    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main07.jpg",
-    spanText: "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"
-  },
-  {
-    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main08.jpg",
-    spanText: "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"
-  },
-];////////////////// coll 배열///////////////////////
+  "SHERRY OAK 12 YEARS OLD",
+  "SHERRY OAK 18 YEARS OLD, 2023 RELEASE",
+  "SHERRY OAK 25 YEARS OLD, 2023 RELEASE",
+  "SHERRY OAK 30 YEARS OLD, 2023 RELEASE",
+  "DOUBLE CASK 12 YEARS OLD",
+  "DOUBLE CASK 15 YEARS OLD",
+  "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE",
+  "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE",
+  /////////////////////////////////////////////
+  // [1,"SHERRY OAK 12 YEARS OLD"],
+  // [2,"SHERRY OAK 18 YEARS OLD, 2023 RELEASE"],
+  // [3,"SHERRY OAK 25 YEARS OLD, 2023 RELEASE"],
+  // [4,"SHERRY OAK 30 YEARS OLD, 2023 RELEASE"],
+  // [5,"DOUBLE CASK 12 YEARS OLD"],
+  // [6,"DOUBLE CASK 15 YEARS OLD"],
+  // [7,"DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"],
+  // [8,"DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"],
+  // {
+  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main01.jpg",
+  //   spanText: "SHERRY OAK 12 YEARS OLD"
+  // },
+  // {
+  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main02.jpg",
+  //   spanText: "SHERRY OAK 18 YEARS OLD, 2023 RELEASE"
+  // },
+  // {
+  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main03.jpg",
+  //   spanText: "SHERRY OAK 25 YEARS OLD, 2023 RELEASE"
+  // },
+  // {
+  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main04.jpg",
+  //   spanText: "SHERRY OAK 30 YEARS OLD, 2023 RELEASE"
+  // },
+  // {
+  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main05.jpg",
+  //   spanText: "DOUBLE CASK 12 YEARS OLD"
+  // },
+  // {
+  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main06.jpg",
+  //   spanText: "DOUBLE CASK 15 YEARS OLD"
+  // },
+  // {
+  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main07.jpg",
+  //   spanText: "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"
+  // },
+  // {
+  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main08.jpg",
+  //   spanText: "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"
+  // },
+];////////////////// coll 배열 안의 배열 ///////////////////////
 
 
 /* 
@@ -300,21 +317,16 @@ const collSlideItems = [
     <a href="javascript:;" onclick="js();">
       <div class="coll-img">
         <img
-          src="../01.자료수집/main_img/main_page_bottle/coll_main0${}.jpg"
+          src="../01.자료수집/main_img/main_page_bottle/coll_main0${v[0]}.jpg"
           alt=""
         />
       </div>
       <div class="coll-span">
-        ${}</span>
+        ${v[1]}</span>
       </div>
     </a>
   </li>
   `;
-
-
-
     });
-*/
-/* 
 
 */
