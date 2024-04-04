@@ -9,7 +9,7 @@ const qsa = (x) => document.querySelectorAll(x);
 const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
 //========================================================
 
-// 메인 동영상 파트 클릭시 이미지 보이기 숨기기
+//////////////// 메인 동영상 파트 클릭시 이미지 보이기 숨기기////////////////////
 const banArea = qs("#ban-area");
 const banImg = qs(".baner");
 const banMv = qs(".ban-video");
@@ -19,12 +19,11 @@ banArea.addEventListener("click", () => {
   banImg.classList.toggle("on");
   banMv.classList.toggle("on");
 });
-
 // 배너영상 속도조절
 banMv2.playbackRate = 0.9;
+//////////////// 메인 동영상 파트 클릭시 이미지 보이기 숨기기////////////////////
 
-
-// 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기
+////////////// 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기////////////
 const partnerImg = qs(".ptmv-img");
 const partnerBtn = qs(".ptmv-btn");
 const ptmvVideo = qs(".ptmv-video");
@@ -34,7 +33,9 @@ partnerBtn.addEventListener("click", () => {
   partnerBtn.classList.add("on");
   ptmvVideo.play();
 });
-// 스토리영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기
+////////////// 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기////////////
+
+//////////////// 스토리영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기//////////////
 const storyImg = qs(".stmv-img");
 const storyBtn = qs(".stmv-btn");
 const stmvVideo = qs(".stmv-video");
@@ -44,7 +45,9 @@ storyBtn.addEventListener("click", () => {
   storyBtn.classList.add("on");
   stmvVideo.play();
 });
-// 소개(intro)영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기
+//////////////// 스토리영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기//////////////
+
+////////////// 소개(intro)영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기////////////
 const introImg = qs(".itmv-img");
 const introBtn = qs(".itmv-btn");
 const itmvVideo = qs(".itmv-video");
@@ -54,9 +57,9 @@ introBtn.addEventListener("click", () => {
   introBtn.classList.add("on");
   itmvVideo.play();
 });
+////////////// 소개(intro)영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기////////////
 
-// 로고화면의 로고 클릭시 메인페이지 열림 ////////////
-////////////////////로고열림 테스트중2 이게조금더 나음.../////////////
+/////////////// 로고화면의 로고 클릭시 메인페이지 열림 ////////////////////
 const logoPg = qs(".mainlogo1");
 const mlogo = qs(".mlogo-pg");
 const mlogoBtn = qs(".logo-btn");
@@ -71,22 +74,9 @@ mlogoBtn.addEventListener("click", () => {
     logoPg.style.display = "none";
   }, 1500);
 });
+/////////////// 로고화면의 로고 클릭시 메인페이지 열림 ////////////////////
 
-/////////////////병모양 테스트 ////////////////////
-/* 
-★[[ 이벤트발생시 위치값 ]]★
-1. clientX, clientY
--> 현재 보이는 브라우저 화면이 기준******
--> 화면을 기준한 fixed ***** 포지션에서 주로 사용!
-2. offsetX, offsetY
--> 이벤트 대상이 기준
--> 특정박스이 부모자격박스로 부터 위치를 사용할 경우
-3. pageX, pageY*********
--> 전체 문서를 기준(스크롤 화면을 포함)
--> 화면을 기준한 absolute ***** 포지션에서 주로 사용!
-4. screenX, screenY
--> 모니터 화면을 기준
-*/
+////////////////////// 병모양 따라오기 ///////////////////////////
 const mover = document.querySelector(".mover");
 const myBody = document.body;
 
@@ -96,48 +86,21 @@ myBody.onmousemove = (e) => {
   // console.log(e.pageX, this);
 }; //////////mousemove///////////////
 myBody.addEventListener("click", () => {});
-/////////////////병모양 테스트 ////////////////////
+////////////////////// 병모양 따라오기 ///////////////////////////
 
+////////////////////// 병모양 클릭 기울이기 ///////////////////////////
 myBody.addEventListener("click", () => {
   mover.classList.toggle("on");
 });
-
 // HTML태그 로딩후 loadFn함수 호출! ///
 addEvt(window, "DOMContentLoaded", loadFn);
-/***************************************************** 
-     [ 슬라이드 이동 기능정의 ]
-    1. 이벤트 종류: click
-    2. 이벤트 대상: 이동버튼(.abtn)
-    3. 변경 대상: 슬라이드 박스(#collSlide)
-    4. 기능 설계:
-
-        (1) 오른쪽 버튼 클릭시 다음 슬라이드가
-            나타나도록 슬라이드 박스의 left값을
-            -100%로 변경시킨다.
-            -> 슬라이드 이동후!!! 
-            바깥에 나가있는 첫번째 슬라이드
-            li를 잘라서 맨뒤로 보낸다!
-            동시에 left값을 0으로 변경한다!
-
-        (2) 왼쪽버튼 클릭시 이전 슬라이드가
-            나타나도록 하기위해 우선 맨뒤 li를
-            맨앞으로 이동하고 동시에 left값을
-            -100%로 변경한다.
-            그 후 left값을 0으로 애니메이션하여
-            슬라이드가 왼쪽에서 들어온다.
-
-        (3) 공통기능: 슬라이드 위치표시 블릿
-            - 블릿 대상: .indic li
-            - 변경 내용: 슬라이드 순번과 같은 순번의
-            li에 클래스 "on"주기(나머진 빼기->초기화!)
-
-*****************************************************/
+////////////////////// 병모양 클릭 기울이기 ///////////////////////////
 
 //////////////////////////////버튼클릭 슬라이드///////////////////////////////////////
 /****************************************** 
-    함수명: loadFn
-    기능: 로딩 후 버튼 이벤트 및 기능구현
-******************************************/
+ 함수명: loadFn
+ 기능: 로딩 후 버튼 이벤트 및 기능구현
+ ******************************************/
 function loadFn() {
   // console.log("로딩완료!");
   // 이동버튼 대상 : .abtn
@@ -145,7 +108,7 @@ function loadFn() {
   //변경대상 : #coll-slide
   const collSlide = qs("#coll-slide");
   // console.log(abtn,collSlide);
-
+  
   //슬라이드 순번 전역변수
   let snum = 0;
 
@@ -286,3 +249,77 @@ window.addEventListener('scroll', () => {
 
 
 
+
+
+
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+const collSlideItems = [
+  {
+    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main01.jpg",
+    spanText: "SHERRY OAK 12 YEARS OLD"
+  },
+  {
+    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main02.jpg",
+    spanText: "SHERRY OAK 18 YEARS OLD, 2023 RELEASE"
+  },
+  {
+    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main03.jpg",
+    spanText: "SHERRY OAK 25 YEARS OLD, 2023 RELEASE"
+  },
+  {
+    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main04.jpg",
+    spanText: "SHERRY OAK 30 YEARS OLD, 2023 RELEASE"
+  },
+  {
+    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main05.jpg",
+    spanText: "DOUBLE CASK 12 YEARS OLD"
+  },
+  {
+    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main06.jpg",
+    spanText: "DOUBLE CASK 15 YEARS OLD"
+  },
+  {
+    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main07.jpg",
+    spanText: "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"
+  },
+  {
+    imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main08.jpg",
+    spanText: "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"
+  },
+];////////////////// coll 배열///////////////////////
+// personInfo.forEach(v=>contBox.innerHTML += makeMsg(v[0],v[1]));
+
+/* 
+innerHTML 을 사용해서 정보를 넣어주기
+ .coll-img 에는 
+  `<img
+  src="../01.자료수집/main_img/main_page_bottle/coll_main${숫자}.jpg"
+  alt=""/>`
+.coll-span 에는
+ `<span>${숫자}</span>`
+
+  // html태그변수
+  let hcode = '';
+  // 순번증가변수
+  let seqNum = 0;
+   hcode += `내용`;
+
+
+
+
+  <li>
+    <a href="javascript:;" onclick="js();">
+      <div class="coll-img">
+        <img
+          src="../01.자료수집/main_img/main_page_bottle/coll_main01.jpg"
+          alt=""
+        />
+      </div>
+      <div class="coll-span">
+        <span>SHERRY OAK 12 YEARS OLD</span>
+      </div>
+    </a>
+  </li>
+*/
