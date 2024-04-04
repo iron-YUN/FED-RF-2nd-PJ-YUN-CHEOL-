@@ -249,30 +249,28 @@ window.addEventListener('scroll', () => {
 
 
 
-
-
-
-
-////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 const collSlideItems = [
-  "SHERRY OAK 12 YEARS OLD",
-  "SHERRY OAK 18 YEARS OLD, 2023 RELEASE",
-  "SHERRY OAK 25 YEARS OLD, 2023 RELEASE",
-  "SHERRY OAK 30 YEARS OLD, 2023 RELEASE",
-  "DOUBLE CASK 12 YEARS OLD",
-  "DOUBLE CASK 15 YEARS OLD",
-  "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE",
-  "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE",
-  /////////////////////////////////////////////
-  // [1,"SHERRY OAK 12 YEARS OLD"],
-  // [2,"SHERRY OAK 18 YEARS OLD, 2023 RELEASE"],
-  // [3,"SHERRY OAK 25 YEARS OLD, 2023 RELEASE"],
-  // [4,"SHERRY OAK 30 YEARS OLD, 2023 RELEASE"],
-  // [5,"DOUBLE CASK 12 YEARS OLD"],
-  // [6,"DOUBLE CASK 15 YEARS OLD"],
-  // [7,"DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"],
-  // [8,"DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"],
+  ////////제품이름////////////
+  // "SHERRY OAK 12 YEARS OLD",
+  // "SHERRY OAK 18 YEARS OLD, 2023 RELEASE",
+  // "SHERRY OAK 25 YEARS OLD, 2023 RELEASE",
+  // "SHERRY OAK 30 YEARS OLD, 2023 RELEASE",
+  // "DOUBLE CASK 12 YEARS OLD",
+  // "DOUBLE CASK 15 YEARS OLD",
+  // "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE",
+  // "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE",
+  ///////////////배열안의배열////////
+  [1,"SHERRY OAK 12 YEARS OLD"],
+  [2,"SHERRY OAK 18 YEARS OLD, 2023 RELEASE"],
+  [3,"SHERRY OAK 25 YEARS OLD, 2023 RELEASE"],
+  [4,"SHERRY OAK 30 YEARS OLD, 2023 RELEASE"],
+  [5,"DOUBLE CASK 12 YEARS OLD"],
+  [6,"DOUBLE CASK 15 YEARS OLD"],
+  [7,"DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"],
+  [8,"DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"],
+  //////////////////객체///////////
   // {
   //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main01.jpg",
   //   spanText: "SHERRY OAK 12 YEARS OLD"
@@ -305,14 +303,9 @@ const collSlideItems = [
   //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main08.jpg",
   //   spanText: "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"
   // },
-];////////////////// coll 배열 안의 배열 ///////////////////////
-
-
-/* 
+];////////////////// collSlideItems 배열 ///////////////////////
     collSlideItems.forEach(v => {
-
-      collSlide.innerHTML +=
-  `
+      collSlide.innerHTML +=`
   <li>
     <a href="javascript:;" onclick="js();">
       <div class="coll-img">
@@ -328,5 +321,91 @@ const collSlideItems = [
   </li>
   `;
     });
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 
-*/
+
+
+///////////////////////////////동일 버튼요소 뿌려주기////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+const buttonBtn = qsa('.button-btn');
+buttonBtn.forEach(button => {
+    button.innerHTML = `
+        <svg>
+            <path
+                fill="currentColor"
+                d="M24.887 15.5 10 6.196v18.608l4.667-2.917-1-1.733L12 21.196V9.804l9.113 5.696-5.75 3.594 1.001 1.733 8.523-5.327Z"
+            ></path>
+        </svg>
+    `;
+});
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////mat정보 배열로담아서 뿌리기//////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+const Mat = qsa('.mat');
+const MatItems = [
+  [2,"ALUMINUM",`Aluminium recovered from the Bentley Motors manufacturing
+  process has also been incorporated. The sculptural
+  foundation and bodywork of a Bentley motorcar features
+  aluminium for its remarkable strength, versatility and
+  stunning visual impact. The Macallan Horizon’s glass vessel
+  is enveloped by an aluminium ribbon, precision engineered to
+  Bentley’s exacting standards, in homage to this key material
+  used in the engineering of a Bentley motorcar.`],
+  [4,"GLASS",`Glass is a material intrinsic to both The Macallan and
+  Bentley. A foundational material to both brands, The
+  Macallan Horizon is presented in a highly innovative and
+  unique bespoke glass vessel designed to be displayed
+  horizontally, featuring a unique 180-degree twist detail.`],
+  [6,"THE WISKY",`The final component is the very special single malt being
+  created for The Macallan Horizon. The Macallan Master Whisky
+  Maker Kirsteen Campbell is developing the flavour profile
+  for the whisky following a visit to Bentley Motors in Crewe,
+  where she observed first hand their shared passion for
+  creativity, craftsmanship and innovation. The result is a
+  sophisticated and bold single malt whisky, crafted from six
+  individual casks to capture the essence of a Bentley
+  motorcar through taste, texture and natural colour.`],
+  [1,"COPPER",`A material fundamental to our single malt whisky, The
+  Macallan Horizon features a copper frame precision
+  engineered from recycled copper, which includes copper from
+  the disused Curiously Small Stills, which were located
+  within our former Distillery. The Macallan’s Curiously Small
+  Copper Stills contribute a rich and fruity character to our
+  new make spirit.`],
+  [3,"WOOD",`A material integral to both brands, The Macallan Horizon
+  features an inlay of oak on the closure, crafted from one of
+  the six casks used in the maturation of this whisky. The
+  sculpture is finished with Bentley’s Crown Cut Walnut
+  veneer, a specification meticulously developed for Bentley
+  vehicles.`],
+  [5,"LEATHER",`Ethically sourced leather has been used to ornately finish
+  and protect The Macallan Horizon. Chosen carefully and
+  crafted with precision and pride, leather hides contribute
+  enormously to the sense of comfort and refinement in every
+  Bentley. At The Macallan, we believe in craftsmanship and
+  have the greatest respect for the materials used in
+  everything we do. To protect the vessel, The Macallan
+  Horizon’s sculpture is lined with the finest low carbon
+  leather, expertly crafted, in a chestnut colourway.`],
+];
+Mat.forEach((mat, index) => {
+  const v = MatItems[index];
+  mat.innerHTML += `
+    <div class="mat-name">
+      <h2 class="main-tit">${v[1]}</h2>
+    </div>
+    <div class="mat-sh">
+      <div class="mat-img">
+        <img src="../01.자료수집/main_img/THE MATERIALS/met${v[0]}.jpg" alt="${v[1]}" />
+      </div>
+      <div class="mat-info">
+        <p class="main-text2">${v[2]}</p>
+      </div>
+    </div>
+  `;
+});
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
