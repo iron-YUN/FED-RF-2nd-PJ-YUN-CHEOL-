@@ -23,12 +23,14 @@ body *{
 .sub-tit{
     font-size: 2rem;
     text-align: center;
+    white-space: nowrap;
 }
 .main-tit{
     font-size: 4rem;
     font-weight: bold;
     margin: 3rem auto;
     text-align: center;
+    white-space: nowrap;
 }
 .main-text{
     margin: 4rem 0;
@@ -109,12 +111,13 @@ body *{
 /* 4-1.파트너쉽 이미지 영역 */
 #partnerships-area{
     position: sticky;
-    top: -20rem;
+    top: -25%;
+    /* top: -12rem; */
     background: url(../../01.자료수집/main_img/Horizn.png)no-repeat center/cover;
 }
 .partnerships-area{
-    
-    height: 1500px;
+    /* height: 1500px; */
+    height: 150vh;
 }
 
 /* 4-2.파트너쉽설명 영역 */

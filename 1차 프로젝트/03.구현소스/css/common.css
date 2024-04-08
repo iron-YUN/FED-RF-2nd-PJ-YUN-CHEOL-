@@ -359,9 +359,10 @@
 /* 4-1-1 파틑너쉽 제목 */
 .partner-h1 {
   position: sticky;
-  top: -1000px;
+  top: 0;
+  top: 100px;
   /* left: calc(50% - 1600px/2); */
-  height: 100%;
+  /* height: 100%; */
   overflow: hidden;
   padding: 0 20% ;
   background-color: #0000007e;
@@ -373,20 +374,29 @@ margin-top: 2rem;
 
 /* 파트너쉽 두번째페이지 */
 .materials-h1 {
-  padding: 5%;
+  padding: 2% 5%;
   background-color: #0000007e;
+  /* width: 30%; */
 }
 
 .materials-h1 p {
   color: #fff;
 }
+.mat-grid:nth-child(1){
+  height: auto;
+}
+.mat-grid:nth-child(2n){
+  top: 50%;
+}
 .mat-box {
-  height: 100%;
+  /* height: 100%; */
   padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  row-gap: 20rem;
 }
 
 .mat {
-  margin-top: 40%;
   position: relative;
   width: 80%;
   height: 100%;
