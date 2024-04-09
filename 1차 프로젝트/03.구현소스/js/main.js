@@ -73,7 +73,11 @@ mlogoBtn.addEventListener("click", () => {
   setTimeout(() => {
     mmmArea.classList.add("off");
     logoPg.style.display = "none";
+    document.querySelector("body").classList.remove("hidden");
   }, 1500);
+  setTimeout(() => {
+    document.querySelector("body").classList.remove("hidden");
+  }, 1000);
 });
 /////////////// 로고화면의 로고 클릭시 메인페이지 열림 ////////////////////
 
@@ -411,3 +415,16 @@ Mat.forEach((mat, index) => {
 });
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
+
+const btnMenu = qs('.btnMenu');
+const closeMenu = qs('.menu-close');
+const gnb = qs('.gnb');
+btnMenu.addEventListener('click', function(){
+  gnb.classList.add('active');
+  document.querySelector("body").classList.add("hidden")
+});
+closeMenu.addEventListener('click', function(){
+  gnb.classList.remove('active');
+  document.querySelector("body").classList.remove("hidden")
+});
+

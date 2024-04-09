@@ -1,4 +1,9 @@
 @charset "utf-8";
+body.hidden{
+  height: 100vh;
+  overflow: hidden;
+}
+
 
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
@@ -19,7 +24,6 @@
   align-items: center;
   height: 100vh;
 }
-
 
 /* 로고 이미지 크기 및 등장액션 */
 .mlogo-pg a img {
@@ -44,7 +48,7 @@
   transform: rotateX(180deg) skewX(60deg) scaleY(0.5);
   transform-origin: bottom;
   opacity: 0.7;
-  mask: linear-gradient(to top, #000, transparent)
+  mask: linear-gradient(to top, #000, transparent);
 }
 
 /* 로고뒤에 나타날 메인홈페이지 */
@@ -54,7 +58,7 @@
   z-index: 999;
   /* transform: translateY(-10px); */
   clip-path: circle(0% at 50% 50%);
-  transition: 2s ease-in-out .5s;
+  transition: 2s ease-in-out 0.5s;
 }
 
 #mmm-area.on {
@@ -92,7 +96,7 @@
 }
 
 .mover.on {
-  animation: drink-magic .3s ease-out alternate 2;
+  animation: drink-magic 0.3s ease-out alternate 2;
 }
 
 @keyframes drink-magic {
@@ -168,33 +172,32 @@
   color: red;
 }
 
-
 /* *************상단색 바뀌는 색조정*********** */
 .top-area-bgc {
   background-color: #ffffff;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .top-area-bgc.on1 {
   background-color: #1a1b26;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .top-area-bgc.on2 {
   background-color: #000000;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .top-area-bgc.on1 .top-btn,
 .top-area-bgc.on2 .top-btn {
   color: #fff;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.top-area-bgc.on1 .top-logo {}
+.top-area-bgc.on1 .top-logo {
+}
 
 /* ************************ */
-
 
 /******************************************************** 메인영역 ********************************************************/
 /* 2. 배너영역 */
@@ -259,14 +262,13 @@
   padding: 1.5rem 2.5rem;
   color: #fff;
   text-align: center;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .ban-btn:hover {
   background-color: #fff;
   color: #000;
-  transition: .2s;
-
+  transition: 0.2s;
 }
 
 /* 동영상 클릭시  */
@@ -316,7 +318,6 @@
 
 /* *********3.콜렉션영역********** */
 
-
 /****** 제목및 설명 ******/
 .coll-text {
   margin: 10rem auto 10rem;
@@ -357,7 +358,6 @@
   display: flex;
   gap: 2rem;
 }
-
 
 .coll-span {
   display: block;
@@ -484,18 +484,18 @@
 .mat:hover img {
   filter: brightness(40%);
   transform: scale(1.3);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .mat:hover .mat-info {
   opacity: 1;
-  transition: .5s .3s;
+  transition: 0.5s 0.3s;
 }
 
 .mat img {
   width: 100%;
   height: 100%;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .mat-info {
@@ -506,12 +506,10 @@
   height: 100%;
   color: #fff;
   padding: 20px;
-  transition: .5s;
+  transition: 0.5s;
   box-sizing: border-box;
   text-align: center;
 }
-
-
 
 /***** 4-3파트너쉽 동영상영역 *****/
 .partner-mv-box {
@@ -578,7 +576,6 @@
   color: #fff;
 }
 
-
 /* 스토리동영상 */
 .story-mv {
   cursor: pointer;
@@ -595,7 +592,6 @@
   top: 0;
   left: 0;
 }
-
 
 .stmv-img.on {
   display: none;
@@ -615,7 +611,6 @@
 .st-img1,
 .st-img2 {
   position: absolute;
-
 }
 
 .st-img1 {
@@ -639,7 +634,6 @@
   color: #fff;
   margin-bottom: 5%;
 }
-
 
 .intro-mv-box {
   position: relative;
@@ -672,6 +666,35 @@
   display: none;
 }
 
-
-
 /******************************* 하단영역 *******************************/
+#footer-area{
+  box-sizing: border-box;
+  box-shadow: 0px -5px 10px #eee;
+  /* box-shadow: 0px -10px 5px 0px #ccc; */
+}
+
+.f-top {
+  padding: 3rem;
+}
+.f-top-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+.fj-btn{
+  padding: 8px 120px;
+  border: 3px solid #000;
+  border-radius: 20px 10px 20px 20px;
+  text-align: center;
+}
+
+
+.f-line {
+  height: 20px;
+  background: url(../../01.자료수집/main_img/line_img/small.21f8a7d3.svg) repeat-x;
+}
+.f-grid-contain {
+}
+.f-bottom {
+}
