@@ -42,8 +42,9 @@ body *{
 .ban-area{
     height: 900px;
   }
-
-
+  .ban-area2{
+    height: 500px;
+  }
 /* *********3.콜렉션영역********** */
 #collections-area{
     position: sticky;
@@ -67,7 +68,6 @@ body *{
     /* height: 1500px; */
     height: 150vh;
 }
-
 /* 4-2.파트너쉽설명 영역 */
 #partnerships2-area{
     position: sticky;

@@ -266,7 +266,33 @@
 
 .ban-box a video {
   width: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
+}
+
+/* 배너영역 미디어쿼리 */
+.ban-area2{
+  display: none;
+}
+.baner2{
+  position: relative;
+  color: #fff;
+}
+.ban-img2{
+}
+.ban-img2 img{
+  /* width: 10%; */
+}
+.ban-text2{
+  position: absolute;
+}
+@media screen and (max-width: 1200px) {
+  .ban-area2{
+    display: inline;
+  }
+  .ban-area{
+    display: none;
+  }
+
 }
 
 /* *********3.콜렉션영역********** */
