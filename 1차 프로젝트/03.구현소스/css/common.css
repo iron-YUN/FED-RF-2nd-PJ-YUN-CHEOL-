@@ -20,7 +20,6 @@
   height: 100vh;
 }
 
-.mlogo-pg {}
 
 /* 로고 이미지 크기 및 등장액션 */
 .mlogo-pg a img {
@@ -53,6 +52,7 @@
   position: relative;
   height: 100vh;
   z-index: 999;
+  /* transform: translateY(-10px); */
   clip-path: circle(0% at 50% 50%);
   transition: 2s ease-in-out .5s;
 }
@@ -74,7 +74,7 @@
   z-index: 0;
   clip-path: none;
   transition: none;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .mover {
@@ -312,17 +312,6 @@
 
 .ban-text2 {
   position: absolute;
-}
-
-@media screen and (max-width: 1200px) {
-  .ban-area2 {
-    display: inline;
-  }
-
-  .ban-area {
-    display: none;
-  }
-
 }
 
 /* *********3.콜렉션영역********** */

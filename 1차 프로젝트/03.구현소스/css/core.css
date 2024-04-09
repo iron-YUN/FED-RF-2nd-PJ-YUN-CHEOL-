@@ -68,15 +68,15 @@ body{
     white-space: nowrap;
 }
 .main-tit{
-    font-size: max(4rem,2vw);
+    font-size: 4rem;
     font-weight: bold;
     margin: 3rem auto;
     text-align: center;
     white-space: nowrap;
 }
 .main-text{
-    margin: 4rem 0;
     font-size: 2rem;
+    margin: 4rem 0;
     line-height: 1.7;
     text-align: center;
 }
@@ -86,6 +86,8 @@ body{
     line-height: 2;
     text-align: center;
 }
+
+
  /******** 제목 및 설명크기 공통 end *********/
  /******** 버튼요소 & 오버시 공통 *********/
 .button-btn{

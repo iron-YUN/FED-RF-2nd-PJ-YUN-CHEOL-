@@ -78,23 +78,23 @@ mlogoBtn.addEventListener("click", () => {
 /////////////// 로고화면의 로고 클릭시 메인페이지 열림 ////////////////////
 
 ////////////////////// 병모양 따라오기 ///////////////////////////
-const mover = document.querySelector(".mover");
-const myBody = document.body;
+// const mover = document.querySelector(".mover");
+// const myBody = document.body;
 
-myBody.onmousemove = (e) => {
-  mover.style.left = e.pageX + "px";
-  mover.style.top = e.clientY + "px";
-  // console.log(e.pageX, this);
-}; //////////mousemove///////////////
-myBody.addEventListener("click", () => {});
+// myBody.onmousemove = (e) => {
+//   mover.style.left = e.pageX + "px";
+//   mover.style.top = e.clientY + "px";
+//   // console.log(e.pageX, this);
+// }; //////////mousemove///////////////
+// myBody.addEventListener("click", () => {});
 ////////////////////// 병모양 따라오기 ///////////////////////////
 
 ////////////////////// 병모양 클릭 기울이기 ///////////////////////////
-myBody.addEventListener("click", () => {
-  mover.classList.toggle("on");
-});
+// myBody.addEventListener("click", () => {
+//   mover.classList.toggle("on");
+// });
 // HTML태그 로딩후 loadFn함수 호출! ///
-addEvt(window, "DOMContentLoaded", loadFn);
+// addEvt(window, "DOMContentLoaded", loadFn);
 ////////////////////// 병모양 클릭 기울이기 ///////////////////////////
 
 //////////////////////////////버튼클릭 슬라이드///////////////////////////////////////
