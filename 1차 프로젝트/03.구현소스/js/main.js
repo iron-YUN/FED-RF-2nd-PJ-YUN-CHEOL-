@@ -98,10 +98,10 @@ mlogoBtn.addEventListener("click", () => {
 //   mover.classList.toggle("on");
 // });
 // HTML태그 로딩후 loadFn함수 호출! ///
-// addEvt(window, "DOMContentLoaded", loadFn);
 ////////////////////// 병모양 클릭 기울이기 ///////////////////////////
 
 //////////////////////////////버튼클릭 슬라이드///////////////////////////////////////
+addEvt(window, "DOMContentLoaded", loadFn);
 /****************************************** 
  함수명: loadFn
  기능: 로딩 후 버튼 이벤트 및 기능구현
