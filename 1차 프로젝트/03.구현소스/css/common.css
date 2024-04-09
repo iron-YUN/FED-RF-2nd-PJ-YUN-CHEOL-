@@ -1,9 +1,8 @@
 @charset "utf-8";
-body.hidden{
+body.hidden {
   height: 100vh;
   overflow: hidden;
 }
-
 
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
@@ -163,13 +162,13 @@ body.hidden{
 
 .top-btn {
   color: #444;
-  /* 메뉴버튼과 물결버튼 정렬을 위한 flex (오른쪽버튼은 무관하지만 그냥 같이 적용함)*/
   display: flex;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .top-btn:hover {
   color: red;
+  transition: 0.5s;
 }
 
 /* *************상단색 바뀌는 색조정*********** */
@@ -180,21 +179,19 @@ body.hidden{
 
 .top-area-bgc.on1 {
   background-color: #1a1b26;
-  transition: 0.5s;
 }
 
 .top-area-bgc.on2 {
   background-color: #000000;
-  transition: 0.5s;
 }
 
 .top-area-bgc.on1 .top-btn,
 .top-area-bgc.on2 .top-btn {
   color: #fff;
-  transition: 0.5s;
 }
-
-.top-area-bgc.on1 .top-logo {
+.top-area-bgc.on1 .top-btn:hover,
+.top-area-bgc.on2 .top-btn:hover {
+  color: red;
 }
 
 /* ************************ */
@@ -298,12 +295,6 @@ body.hidden{
   color: #fff;
 }
 
-/* .ban-img2{
-}
-.ban-img2 img{
-  width: 100%;
-} */
-
 .baner2 a {
   display: block;
 }
@@ -314,6 +305,15 @@ body.hidden{
 
 .ban-text2 {
   position: absolute;
+  bottom: 30%;
+  left: 5%;
+}
+.ban-text2 p:nth-child(1){
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.ban-text2 p:nth-child(2){
+  font-size: 20px;
 }
 
 /* *********3.콜렉션영역********** */
@@ -386,14 +386,6 @@ body.hidden{
   scale: 1.3;
   transition: 0.5s;
 }
-
-/* 이미지 사지을 제각각으로 도입실패 */
-/* .coll-img img:nth-child(2){
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
 
 /*이동버튼*/
 .abtn {
@@ -630,13 +622,25 @@ body.hidden{
 }
 
 /********* 6.소개동영상 영역 *********/
-.intro-h1 {
-  color: #fff;
-  margin-bottom: 5%;
+.grid12-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
 
+
+.intro-h1 {
+  color: #fff;
+  /* margin-bottom: 5%; */
+  grid-column: 1/13;
+  grid-row: 1/2;
+}
 .intro-mv-box {
+  top: -10vh;
   position: relative;
+  grid-column: 3/11;
+  grid-row: 3/4;
 }
 
 .intro-mv {
@@ -667,34 +671,113 @@ body.hidden{
 }
 
 /******************************* 하단영역 *******************************/
-#footer-area{
+#footer-area {
   box-sizing: border-box;
   box-shadow: 0px -5px 10px #eee;
   /* box-shadow: 0px -10px 5px 0px #ccc; */
 }
 
 .f-top {
-  padding: 3rem;
+  padding: 40px 60px;
 }
-.f-top-flex{
+.f-top-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
 }
-.fj-btn{
-  padding: 8px 120px;
+.fj-btn {
+  padding: 8px 20px;
+  width: 200px;
   border: 3px solid #000;
-  border-radius: 20px 10px 20px 20px;
+  border-radius: 30px 7px 30px 30px;
   text-align: center;
 }
 
-
 .f-line {
   height: 20px;
-  background: url(../../01.자료수집/main_img/line_img/small.21f8a7d3.svg) repeat-x;
+  background: url(../../01.자료수집/main_img/line_img/small.21f8a7d3.svg)
+    repeat-x;
 }
 .f-grid-contain {
+  padding: 0 30px;
+}
+.fgcon1,
+.fgcon2{
+  display: grid;
+  grid-template-columns: repeat(12, 4fr);
+  gap: 10px;
+}
+.fgcon1 {
+  margin-top: 60px;
+}
+.fgcon1 img:nth-child(2){
+  display: none;
+}
+.fgcon2 {
+  margin: 60px 0;
+}
+.fgcon3 {
+  margin-bottom: 60px;
+}
+.foot-menu {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  line-height: 1.7;
+  gap: 10px;
+}
+.foot-menu a:hover{
+  text-decoration: underline;
+  text-shadow: 0 0 1px #2222229a;
+}
+.foot-menu > li:first-child {
+  font-weight: bold;
+}
+.foot-logo{
+  grid-column: 1/3;
+}
+.foot-menu1{
+  grid-column: 4/6;
+}
+.foot-menu2{
+  grid-column: 7/9;
+}
+.foot-menu3{
+  grid-column: 10/12;
+}
+.sns-box{
+  display: flex;
+  font-size: 30px;
+  gap: 20px;
+  grid-column: 10/12;
+}
+.sns-box a{
+  color: #555;
+}
+.fgcon3 ul{
+  display: flex;
+  gap: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+.fgcon3 ul li a{
+  white-space: nowrap;
+}
+.fgcon3 ul li a:hover{
+  text-decoration: underline;
+  text-shadow: 0 0 1px #2222229a;
 }
 .f-bottom {
+  padding: 50px 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: bold;
+  color: #aaa;
+  border-top: 1px solid #ccc;
+}
+.f-bottom>span{
+  white-space: nowrap;
 }

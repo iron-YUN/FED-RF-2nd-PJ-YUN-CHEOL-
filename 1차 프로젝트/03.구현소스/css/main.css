@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* 도깨비 PJ : 메인페이지 CSS - main.css */
 
+
 /* 리셋,코아,커먼 공통CSS 합치기 */
 @import url(./reset.css);
 @import url(./core.css);
@@ -39,8 +40,8 @@ body *{
 }
 
 .gnb .menu-left{
-    width: 50%;
-   padding: 100px 50px 0px;
+    /* width: 50%; */
+   /* padding: 100px 50px 0px; */
     position: relative;
     box-sizing: border-box;
 }
@@ -50,13 +51,16 @@ body *{
     left: 30px;
     font-size: 1.5rem;
 }
-.menu-close::before{
-    content: 'X';
+.menu-close::after{
+    content: 'CLOSE';
     display: inline-block;
-    margin-right: 10px;
+    position: absolute;
+    margin-left: 5px;
+    top: 7px;
 }
 .menu-close:hover{
     font-weight: bold;
+    color: red;
 }
 .gnb ul{
     display: flex;
