@@ -12,6 +12,7 @@
     />
     <link rel="shortcut icon" href="./images/pavicon_tvN.png" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/media.css" />
     <script src="./js/main.js" defer></script>
 
     <style></style>
@@ -38,7 +39,15 @@
     <div id="mmm-area">
       <div class="gnb">
         <div class="menu-left">
-          <a href="#" class="menu-close"><svg width="32" height="32" viewBox="0 0 32 32"><g fill="currentColor"><path d="m14.585 16-4.95 4.95 1.415 1.414L22.364 11.05l-1.415-1.414-4.95 4.95-4.949-4.95-1.414 1.414 4.95 4.95ZM20.95 22.364l-3.536-3.536 1.414-1.414 3.536 3.536-1.415 1.414Z"></path></g></svg></a>
+          <a href="#" class="menu-close">
+            <svg width="32" height="32" viewBox="0 0 32 32">
+              <g fill="currentColor">
+                <path
+                  d="m14.585 16-4.95 4.95 1.415 1.414L22.364 11.05l-1.415-1.414-4.95 4.95-4.949-4.95-1.414 1.414 4.95 4.95ZM20.95 22.364l-3.536-3.536 1.414-1.414 3.536 3.536-1.415 1.414Z"
+                ></path>
+              </g>
+            </svg>
+          </a>
           <ul>
             <li>
               <a href="#">COLLECTIONS</a>
@@ -174,22 +183,22 @@
           </div>
         </section>
         <section class="inbox ban-area2">
-            <!-- 3-1.배너 이미지 박스 -->
-            <div class="baner2">
-              <a href="#">
-                <img
-                  src="../01.자료수집/main_img/main_eve_ban2.jpg"
-                  alt="메인이벤트배너"
-                />
-              </a>
-              <!-- 이미지 박스 안의 설명 -->
-              <div class="ban-text2">
-                <p>DISCOVER</p>
-                <p>THE MACALLAN & CIRQUE DU SOLEIL</p>
-              </div>
-              <!-- 이미지 박스 안의 버튼 -->
-              <a class="ban-btn" href="#">EXPLORE</a>
+          <!-- 3-1.배너 이미지 박스 -->
+          <div class="baner2">
+            <a href="#">
+              <img
+                src="../01.자료수집/main_img/main_eve_ban2.jpg"
+                alt="메인이벤트배너"
+              />
+            </a>
+            <!-- 이미지 박스 안의 설명 -->
+            <div class="ban-text2">
+              <p>DISCOVER</p>
+              <p>THE MACALLAN & CIRQUE DU SOLEIL</p>
             </div>
+            <!-- 이미지 박스 안의 버튼 -->
+            <a class="ban-btn" href="#">EXPLORE</a>
+          </div>
         </section>
       </div>
       <!-- 3.콜렉션 영역 -->
@@ -462,13 +471,78 @@
         <!-- 5.최신스토리 영역 -->
         <div id="story-area">
           <section class="story-area inbox">
+            <div class="sth2-grid12-box">
+              <div class="st-h2">
+                <p class="sub-tit">COLLABORATIONS</p>
+                <p class="main-tit">IN COLLABORATION WITH NATHAN YONG</p>
+                <p class="sub-tit">LAST UPDATED: 26 MAR 2024</p>
+              </div>
+            </div>
+            <div class="st-grid12-box">
+              <div class="st-left2">
+                <div class="story-mv-box2">
+                  <div class="story-mv">
+                    <video
+                      class="stmv-video"
+                      controls
+                      src="../01.자료수집/intro_mv/The Macallan In Collaboration With - Nathan Yong.mp4"
+                    ></video>
+                    <img
+                      class="stmv-img"
+                      src="../01.자료수집/main_img/video_img/storyimg.png"
+                      alt="커버이미지"
+                    />
+                    <button class="stmv-btn button-btn"></button>
+                  </div>
+                </div>
+                <div class="st-text-box2 main-text">
+                  <p>
+                    The Macallan House Singapore encapsulates the spirit of The
+                    Macallan Estate through the lens of 'Nature Culture,'
+                    weaving a rich tapestry of multi-sensory experiences
+                    throughout its expansive 3,000-square-foot retail haven.
+                    <br />
+                    <br />
+                    The areas within The Macallan House Singapore have been
+                    thoughtfully crafted to lead visitors on an immersive
+                    exploration of the natural world. The cultural essence of
+                    the creative expression is exemplified by our collaboration
+                    with Nathan Yong, a Spatial, Furniture, and Object Designer.
+                    <br />
+                    <br />
+                    Nathan’s creations draw deep inspiration from The Macallan
+                    Estate, forging an exquisite union of artistic expression
+                    and the essence of our heritage.
+                  </p>
+                </div>
+              </div>
+              <div class="st-right2">
+                <div>
+                  <img
+                    class="st-img11"
+                    src="../01.자료수집/main_img/video_img/storyimg2.png"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    class="st-img22"
+                    src="../01.자료수집/main_img/video_img/storyimg3.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- <div id="story-area">
+          <section class="story-area inbox">
             <div class="cont-box">
               <div class="st-h1">
                 <p class="sub-tit">COLLABORATIONS</p>
                 <p class="main-tit">IN COLLABORATION WITH NATHAN YONG</p>
                 <p class="sub-tit">LAST UPDATED: 26 MAR 2024</p>
               </div>
-
               <div class="col-6 stst">
                 <div class="st-left">
                   <div class="story-mv-box">
@@ -527,12 +601,12 @@
               </div>
             </div>
           </section>
-        </div>
+        </div> -->
         <!-- 6.소개동영상 영역 -->
         <div id="intromv-area">
           <section class="intromv-area inbox">
-            <div class="cont-box">
-              <div class="col-12 grid12-box">
+            <div class="">
+              <div class="in-grid12-box">
                 <div class="intro-h1">
                   <p class="sub-tit">HEART AND HOME</p>
                   <p class="main-tit">WELCOME TO THE MACALLAN ESTATE</p>
@@ -665,7 +739,7 @@
                     </ul>
                   </div>
                   <!-- 3-1.SNS -->
-                  <div class="fgcon2 ">
+                  <div class="fgcon2">
                     <ol class="sns-box">
                       <li>
                         <a class="fa-brands fa-square-facebook" href="#"></a>

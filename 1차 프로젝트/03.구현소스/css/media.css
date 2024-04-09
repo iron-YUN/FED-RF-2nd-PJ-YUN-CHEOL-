@@ -4,6 +4,9 @@
     width: 50%;
     padding: 100px 50px 0px;
   }
+  .black-area{
+    top: -155rem;
+}
 }
 @media screen and (max-width: 1700px) {
   
@@ -16,6 +19,16 @@
   }
 }
 @media screen and (max-width: 1450px) {
+  #story-area{
+    padding: 0 30px;
+  }
+  .st-left2 {
+    grid-column: 1/7;
+  }
+  .st-right2 {
+    grid-column: 7/13;
+    gap: 50px;
+  }
   .main-text{
     font-size: 18px;
     margin: 4rem 0;
@@ -30,10 +43,42 @@
 }
 
 @media screen and (max-width: 1200px) {
- 
+  .st-left2 {
+    grid-column: 2/12;
+    margin-right: 0px;
+  }
+  .st-right2 {
+    grid-column: 2/12;
+    flex-direction: row;
+  }
+  .st-right2>div:nth-child(1){
+    position: relative;
+  }
+  .st-right2>div:nth-child(2){
+    position: relative;
+    top: 10%;
+  }
+  .intro-h1 {
+    margin-top: 200px;
+  }
+  .black-area{
+    top: -195rem;
+}
 }
 
 @media screen and (max-width: 1000px) {
+  .coll-text{
+    padding: 0 30px;
+  }
+  .black-area{
+    top: -175rem;
+}
+  .st-left2 {
+    grid-column: 1/13;
+  }
+  .st-right2 {
+    grid-column: 1/13;
+  }
   .gnb .menu-left{
     width: 100%;
   }
@@ -96,9 +141,16 @@
   flex-direction: column;
   gap: 20px;
 }
+
   }
 
 @media screen and (max-width: 768px) {
+  #partnerships3-area{
+    top: 25rem;
+}
+  .black-area{
+    top: -155rem;
+}
   .gnb .menu-left{
     padding: 120px 30px 0px;
   }

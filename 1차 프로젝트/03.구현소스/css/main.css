@@ -8,7 +8,7 @@
 @import url(./common.css);
 /* 그리드 12 불러오기 */
 @import url(./grid_12_flex.css);
-@import url(./media.css);
+
 
 body{
     padding-top: 74px;
@@ -165,16 +165,12 @@ body *{
 /* 5.최신스토리 영역 */
 #story-area{
     position: sticky;
-    /* background-color: #000; */
 }
 .story-area{
-    height: 1800px;
+   min-height: 1500px;
 }
 /* 6.소개동영상 영역 */
 #intromv-area{
-    /* background-color: #000; */
-    /* position: sticky;
-    top: -3rem; */
 }
 .intromv-area{
     height: 1500px;
@@ -182,8 +178,7 @@ body *{
 .black-area{
     background-color: #000;
     position: sticky;
-    /* top: -192%; */
-    top: -185rem;
+    top: -155rem;
 }
 .white-area{
     position: sticky;
@@ -192,7 +187,6 @@ body *{
 /* 7.경험해보세요 영역 */
 #experience-area{
     background-color: #fff;
-    /* position: sticky; */
 }
 .experience-area{
     height: 2400px;
@@ -215,6 +209,9 @@ body *{
     /* height: 830px;  */
 }
 
+
+
+/* @import url(./media.css); */
 
 
 
