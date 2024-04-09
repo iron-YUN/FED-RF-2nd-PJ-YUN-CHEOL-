@@ -1,4 +1,5 @@
 // 메인 JS - main.js
+// import mFn from './my_function';
 
 // DOM 선택함수
 const qs = (x) => document.querySelector(x);
@@ -359,15 +360,7 @@ const MatItems = [
   Macallan Horizon is presented in a highly innovative and
   unique bespoke glass vessel designed to be displayed
   horizontally, featuring a unique 180-degree twist detail.`],
-  [6,"THE WISKY",`The final component is the very special single malt being
-  created for The Macallan Horizon. The Macallan Master Whisky
-  Maker Kirsteen Campbell is developing the flavour profile
-  for the whisky following a visit to Bentley Motors in Crewe,
-  where she observed first hand their shared passion for
-  creativity, craftsmanship and innovation. The result is a
-  sophisticated and bold single malt whisky, crafted from six
-  individual casks to capture the essence of a Bentley
-  motorcar through taste, texture and natural colour.`],
+ 
   [1,"COPPER",`A material fundamental to our single malt whisky, The
   Macallan Horizon features a copper frame precision
   engineered from recycled copper, which includes copper from
@@ -381,6 +374,15 @@ const MatItems = [
   sculpture is finished with Bentley’s Crown Cut Walnut
   veneer, a specification meticulously developed for Bentley
   vehicles.`],
+  [6,"THE WISKY",`The final component is the very special single malt being
+  created for The Macallan Horizon. The Macallan Master Whisky
+  Maker Kirsteen Campbell is developing the flavour profile
+  for the whisky following a visit to Bentley Motors in Crewe,
+  where she observed first hand their shared passion for
+  creativity, craftsmanship and innovation. The result is a
+  sophisticated and bold single malt whisky, crafted from six
+  individual casks to capture the essence of a Bentley
+  motorcar through taste, texture and natural colour.`],
   [5,"LEATHER",`Ethically sourced leather has been used to ornately finish
   and protect The Macallan Horizon. Chosen carefully and
   crafted with precision and pride, leather hides contribute

@@ -60,3 +60,55 @@ body{
     background-color: #ddd;
     border-radius: 5px;
 }
+
+/******** 제목 및 설명크기 공통 *********/
+.sub-tit{
+    font-size: 2rem;
+    text-align: center;
+    white-space: nowrap;
+}
+.main-tit{
+    font-size: max(4rem,2vw);
+    font-weight: bold;
+    margin: 3rem auto;
+    text-align: center;
+    white-space: nowrap;
+}
+.main-text{
+    margin: 4rem 0;
+    font-size: 2rem;
+    line-height: 1.7;
+    text-align: center;
+}
+.main-text2{
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    line-height: 2;
+    text-align: center;
+}
+ /******** 제목 및 설명크기 공통 end *********/
+ /******** 버튼요소 & 오버시 공통 *********/
+.button-btn{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    font-size: 5rem;
+    font-weight: bold;
+    border-radius: 50% 10% 50% 50%;
+    cursor: pointer;
+    transition: .3s;
+}
+.button-btn:hover{
+    background-color: red;
+    color: #fff;
+    transition: .3s;
+}
+.button-btn svg{
+    width: 32px;
+    height: 32px;
+    scale: 1.5;
+}
+ /******** 버튼요소 & 오버시 공통 end *********/

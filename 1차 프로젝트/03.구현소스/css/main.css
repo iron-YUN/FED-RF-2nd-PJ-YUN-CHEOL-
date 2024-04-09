@@ -17,61 +17,8 @@ body{
 
 /* 공사중 표시 */
 body *{
-    /* outline: 2px dashed #ccc; */
+    outline: 2px dashed #ccc;
 }
-/******** 제목 및 설명크기 공통 *********/
-.sub-tit{
-    font-size: 2rem;
-    text-align: center;
-    white-space: nowrap;
-}
-.main-tit{
-    font-size: 4rem;
-    font-weight: bold;
-    margin: 3rem auto;
-    text-align: center;
-    white-space: nowrap;
-}
-.main-text{
-    margin: 4rem 0;
-    font-size: 2rem;
-    line-height: 1.7;
-    text-align: center;
-}
-.main-text2{
-    margin: 1rem 0;
-    font-size: 1.7rem;
-    line-height: 2;
-    text-align: center;
-}
- /******** 제목 및 설명크기 공통 end *********/
- /******** 버튼요소 & 오버시 공통 *********/
-.button-btn{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% ,-50%);
-    font-size: 5rem;
-    font-weight: bold;
-    border-radius: 50% 10% 50% 50%;
-    cursor: pointer;
-    transition: .3s;
-}
-.button-btn:hover{
-    background-color: red;
-    color: #fff;
-    transition: .3s;
-}
-.button-btn svg{
-    width: 32px;
-    height: 32px;
-    scale: 1.5;
-}
- /******** 버튼요소 & 오버시 공통 end *********/
-
- 
 
 /* 1. 상단영역 */
 #top-area {
@@ -83,6 +30,7 @@ body *{
 
 .top-area{
     height: 74px;
+
   }
 
 /* 2. 배너영역 */

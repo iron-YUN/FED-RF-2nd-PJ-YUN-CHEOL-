@@ -13,13 +13,16 @@
 }
 /*  여기부턴 로고 이미지 박스 */
 .mlogo-pgbx{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100vh;
-  }
-  /* 로고 이미지 크기 및 등장액션 */
-  .mlogo-pg a img{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+.mlogo-pg{
+
+}
+/* 로고 이미지 크기 및 등장액션 */
+.mlogo-pg a img{
       width: 40vw;
   animation: log-magic 1.5s;
 }  
@@ -187,19 +190,23 @@
 }
 
 /******* 이벤트배너 박스 *******/
+.ban-box{
+ position: relative;
+}
 /* 이벤트배너 이미지 */
 .baner {
   position: absolute;
   top: 7%;
-  left: calc(50% - 160rem/2);
-  width: 160rem;
+  left: 50%;
+  transform: translate(-50%);
+  /* width: 100%; */
   opacity: 0;
   transition: 0.5s ease-in-out;
   box-sizing: border-box;
 }
 
 .baner img {
-  width: 100%;
+  max-width: 1600px;
   object-fit: cover;
 }
 
@@ -207,7 +214,7 @@
 .ban-text {
   position: absolute;
   bottom: 15rem;
-  width: 27%;
+  /* width: 27%; */
   left: 5rem;
   color: #fff;
   font-weight: bold;
@@ -359,14 +366,13 @@
 /* 4-1-1 파틑너쉽 제목 */
 .partner-h1 {
   position: sticky;
-  top: 0;
-  top: 100px;
-  /* left: calc(50% - 1600px/2); */
-  /* height: 100%; */
+  /* top: 0;
+  top: 100px; */
   overflow: hidden;
   padding: 0 20% ;
   background-color: #0000007e;
   color: #fff;
+  /* margin: 0 auto; */
 }
 .part-stit{
 margin-top: 2rem;
@@ -376,29 +382,32 @@ margin-top: 2rem;
 .materials-h1 {
   padding: 2% 5%;
   background-color: #0000007e;
-  /* width: 30%; */
-}
-
-.materials-h1 p {
   color: #fff;
 }
+
 .mat-grid:nth-child(1){
-  height: auto;
+  max-height: 600px;
+}
+.mat-grid:nth-child(2n-1){
+  grid-column-start: 3;
+  grid-column-end: 7;
 }
 .mat-grid:nth-child(2n){
+  grid-column-start: 7;
+  grid-column-end: 11;
   top: 50%;
 }
 .mat-box {
-  /* height: 100%; */
   padding: 5%;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(12,1fr);
   row-gap: 20rem;
+  column-gap: 30px;
 }
 
 .mat {
   position: relative;
-  width: 80%;
+  max-width: 400px;
   height: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -421,7 +430,6 @@ margin-top: 2rem;
 .mat:hover .mat-info {
   opacity: 1;
   transition: .5s .3s;
-  /* overflow-y: scroll; */
 }
 .mat img {
   width: 100%;
@@ -440,7 +448,6 @@ margin-top: 2rem;
   transition: .5s;
   box-sizing: border-box;
   text-align: center;
-  /* text-align: justify; */
 }
 
 
@@ -448,9 +455,12 @@ margin-top: 2rem;
 /***** 4-3파트너쉽 동영상영역 *****/
 .partner-mv-box {
   position: relative;
+    display: grid;
+   grid-template-columns: repeat(12,1fr);
 }
 
 .partner-mv {
+  grid-column: 3/11;
   cursor: pointer;
   position: absolute;
   top: 0;
