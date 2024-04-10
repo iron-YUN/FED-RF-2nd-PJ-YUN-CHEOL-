@@ -25,6 +25,16 @@
   }
 }
 @media screen and (max-width: 1450px) {
+  .abtn{
+    scale: 0.9;
+    top: 45%;
+  }
+  .coll-img{
+    height: 40rem;
+  }
+  .coll-span{
+    font-size: 15px;
+  }
   .baner img {
     max-width: 1200px;
 }
@@ -88,6 +98,25 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .ab1 {
+    left: 20px;
+}
+  .ab2 {
+    right: 20px;
+}
+  .coll-text {
+    margin: 10rem auto 6rem;
+}
+  .abtn{
+    scale: 0.8;
+    top: 40%;
+  }
+  .coll-img{
+    height: 30rem;
+  }
+  .coll-span{
+    font-size: 15px;
+  }
   .ban-text2 {
     position: absolute;
     top: 48%;
