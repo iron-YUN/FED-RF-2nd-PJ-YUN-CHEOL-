@@ -63,17 +63,16 @@ introBtn.addEventListener("click", () => {
 /////////////// 로고화면의 로고 클릭시 메인페이지 열림 ////////////////////
 const logoPg = qs(".mainlogo1");
 const mlogo = qs(".mlogo-pg");
-const mlogoBtn = qs(".logo-btn");
+// const mlogoBtn = qs(".logo-btn");
 const mmmArea = qs("#mmm-area");
 
-mlogoBtn.addEventListener("click", () => {
-  // logoPg.classList.add('on');
+mlogo.addEventListener("click", () => {
   mlogo.classList.add("on");
   mmmArea.classList.add("on");
   setTimeout(() => {
     mmmArea.classList.add("off");
     logoPg.style.display = "none";
-    document.querySelector("body").classList.remove("hidden");
+    // document.querySelector("body").classList.remove("hidden");
   }, 1500);
   setTimeout(() => {
     document.querySelector("body").classList.remove("hidden");

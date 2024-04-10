@@ -303,18 +303,7 @@ body.hidden {
   width: 100%;
 }
 
-.ban-text2 {
-  position: absolute;
-  bottom: 30%;
-  left: 5%;
-}
-.ban-text2 p:nth-child(1) {
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-.ban-text2 p:nth-child(2) {
-  font-size: 20px;
-}
+
 
 /* *********3.콜렉션영역********** */
 
