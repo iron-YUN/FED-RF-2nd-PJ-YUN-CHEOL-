@@ -40,8 +40,8 @@ body *{
 }
 
 .gnb .menu-left{
-    /* width: 50%; */
-   /* padding: 100px 50px 0px; */
+    width: 50%;
+   padding: 100px 50px 0px;
     position: relative;
     box-sizing: border-box;
 }
@@ -62,29 +62,32 @@ body *{
     font-weight: bold;
     color: red;
 }
-.gnb ul{
+.menu-left>ul{
     display: flex;
     flex-direction: column; 
     gap: 30px;
 }
-.gnb ul li a{
+.menu-left>ul>li>a{
     position: relative;
     font-size: 20px ;
     width: 100%;
     display: block;
 }
-.gnb ul li a::after{
+.menu-left>ul>li:nth-child(1)>a:after,
+.menu-left>ul>li:nth-child(2)>a:after,
+.menu-left>ul>li:nth-child(6)>a:after{
     position: absolute;
     right: 10px;
     content: '>';
     opacity: 0;
     transition: .6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.gnb ul li a:hover::after{
+
+.menu-left>ul>li>a:hover::after{
     right: 0;
     opacity: 1;
 }
-.gnb ul li a:hover{
+.menu-left>ul>li>a:hover{
     font-weight: bold;
 }
 
@@ -138,11 +141,9 @@ body *{
 #partnerships-area{
     position: sticky;
     top: -25%;
-    /* top: -12rem; */
     background: url(../../01.자료수집/main_img/Horizn.png)no-repeat center/cover;
 }
 .partnerships-area{
-    /* height: 1500px; */
     height: 150vh;
 }
 /* 4-2.파트너쉽설명 영역 */
