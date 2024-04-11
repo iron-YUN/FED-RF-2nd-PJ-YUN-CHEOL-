@@ -60,6 +60,32 @@
   .intro-mv-box {
     grid-column: 2 / 12;
   }
+
+  /* 7.경험해보세요 영역 */
+  .experience-grid{
+    grid-template-columns: repeat(12,2fr);
+    grid-template-rows: repeat(2,4fr);
+    padding: 0 30px 300px;
+    gap: 100px 50px;
+  }
+  .eximg:nth-child(1){
+    grid-column: 2/7;
+    grid-row: 1/2;
+  }
+  .eximg:nth-child(2){
+    grid-column: 7/12;
+    grid-row: 1/2;
+    transform: translateY(26%);
+  }
+  .eximg:nth-child(3){
+    grid-column: 2/7;
+    grid-row: 2/3;
+  }
+  .eximg:nth-child(4){
+    grid-column: 7/12;
+    grid-row: 2/3;
+    transform: translateY(26%);
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -240,7 +266,50 @@
     flex-direction: column;
     gap: 20px;
   }
- 
+ /* 7.경험해보세요 영역 */
+ .experience-grid{
+  grid-template-columns: repeat(12,2fr);
+  grid-template-rows: repeat(2,4fr);
+  padding: 0 30px 300px;
+  gap: 100px 50px;
+}
+.eximg:nth-child(1){
+  grid-column: 1/7;
+  grid-row: 1/2;
+}
+.eximg:nth-child(2){
+  grid-column: 7/13;
+  grid-row: 1/2;
+  transform: translateY(26%);
+}
+.eximg:nth-child(3){
+  grid-column: 1/7;
+  grid-row: 2/3;
+}
+.eximg:nth-child(4){
+  grid-column: 7/13;
+  grid-row: 2/3;
+  transform: translateY(26%);
+}
+.eximg span:nth-of-type(1){
+  font-size: 12px;
+  margin: 32px 0 8px; 
+}
+.eximg span:nth-of-type(2){
+  font-size: 24px;
+}
+  /* 8.기타스토리 */
+  .other-story-text {
+    margin-bottom: 50px;
+    padding: 0 6%;
+  }
+  .osimg span:nth-of-type(1){
+    font-size: 12px;
+    margin: 20px 0 8px; 
+  }
+  .osimg span:nth-of-type(2){
+    font-size: 24px;
+  }
 }
 @media screen and (max-width: 900px) {
   /* 제목공통 */
@@ -271,7 +340,11 @@
   /* 4.파트너쉽 영역 */
   /* 5.최신스토리 영역 */
   /* 6.인트로 영역 */
-  
+  /* 8.기타스토리 */
+  .other-story-text {
+    margin-bottom: 50px;
+    padding: 0 5%;
+  }
 }
 @media screen and (max-width: 800px) {
     /* 제목공통 */
@@ -302,8 +375,20 @@
   /* 4.파트너쉽 영역 */
   /* 5.최신스토리 영역 */
   /* 6.인트로 영역 */
+  /* 8.기타스토리영역 */
+  .other-story-text {
+    margin-bottom: 32px;
+    padding: 0 5%;
+  }
+
 }
 @media screen and (max-width: 768px) {
+  .col-top1{
+    width: 50%;
+}
+.col-top2{
+    width: 25%;
+}
   /* 메뉴 */
   .gnb .menu-left {
     padding: 120px 30px 0px;
@@ -371,10 +456,52 @@
   .black-area {
     top: -155rem;
   }
+  /* 7.경험해보세요 영역 */
+ .experience-grid{
+  grid-template-columns: repeat(12,2fr);
+  grid-template-rows: repeat(4,4fr);
+  padding: 0 10px 50px;
+  gap: 60px 50px;
+}
+.eximg:nth-child(1){
+  grid-column: 2/12;
+  grid-row: 1/2;
+}
+.eximg:nth-child(2){
+  grid-column: 2/12;
+  grid-row: 2/3;
+  transform: translateY(0%);
+}
+.eximg:nth-child(3){
+  grid-column: 2/12;
+  grid-row: 3/4;
+}
+.eximg:nth-child(4){
+  grid-column: 2/12;
+  grid-row: 4/5;
+  transform: translateY(0%);
+}
+.eximg span:nth-of-type(1){
+  font-size: 12px;
+  margin: 20px 0 8px; 
+}
+.eximg span:nth-of-type(2){
+  font-size: 24px;
+}
+/* 기타스토리 영역 */
+.osimg img{
+  width: 525px;
+} 
+.other-story-text {
+  margin-bottom: 32px;
+  padding: 0 4%;
+}
+
  /* 하단영역 */
   .f-bottom span {
     white-space: wrap;
   }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -407,8 +534,44 @@
   /* 4.파트너쉽 영역 */
   /* 5.최신스토리 영역 */
   /* 6.인트로 영역 */
+   /* 7.경험해보세요 영역 */
+   .experience-grid {
+    gap: 60px 40px;
+}
+  /* 8.기타스토리 */
+  .osimg img{
+    width: 470px;
+  }
+  .other-story-flex {
+    padding: 0 17px 50px;
+    gap: 20px;
+}
+.other-story-text {
+  margin-bottom: 32px;
+  padding: 0 4%;
+}
+.osimg span:nth-of-type(1) {
+  font-size: 14px;
+}
+.osimg span:nth-of-type(2) {
+  font-size: 22px;
+}
 }
 @media screen and (max-width: 500px) {
+  /* 상단영역 */
+  .icon-menu2 ul{
+    padding-right: 20px;
+}
+  .icon-menu2 ul li {
+    padding: 5px 10px;
+}
+.logo-top-box img {
+  margin-top: 25px;
+  height: 25px;
+}
+  .btnMenu::after {
+    display: none;
+  }
   /* 제목공통 */
   /* 2.배너영역 */
   .baner2 {
@@ -439,8 +602,44 @@
   /* 4.파트너쉽 영역 */
   /* 5.최신스토리 영역 */
   /* 6.인트로 영역 */
+    /* 7.경험해보세요 영역 */
+    .experience-grid {
+      gap: 60px 20px;
+  }
+   /* 8.기타스토리 */
+   
+   .osimg img{
+    width: 380px;
+  }
+  .other-story-flex {
+    padding: 0 15px 50px;
+    gap: 10px;
+}
+.other-story-text {
+  margin-bottom: 25px;
+  padding: 0 4%;
+}
+.osimg span:nth-of-type(1) {
+  font-size: 12px;
+}
+.osimg span:nth-of-type(2) {
+  font-size: 20px;
+}
 }
 @media screen and (max-width: 400px) {
+  /* 상단영역 */
+  .icon-menu2 ul{
+    padding-right: 0px;
+}
+  .icon-menu2 ul li {
+    padding: 5px 5px;
+}
+  .col-top1{
+    width: 30%;
+}
+.col-top2{
+    width: 35%;
+}
   /* 제목공통 */
   /* 2.배너영역 */
   .baner2 {
@@ -471,4 +670,23 @@
   /* 4.파트너쉽 영역 */
   /* 5.최신스토리 영역 */
   /* 6.인트로 영역 */
+
+   /* 8.기타스토리 */
+   .osimg img{
+    width: 250px;
+  }
+    .other-story-flex {
+    padding: 0 10px 50px;
+    gap: 10px;
+}
+.other-story-text {
+  margin-bottom: 16px;
+  padding: 0 4%;
+}
+.osimg span:nth-of-type(1) {
+  font-size: 10px;
+}
+.osimg span:nth-of-type(2) {
+  font-size: 17px;
+}
 }

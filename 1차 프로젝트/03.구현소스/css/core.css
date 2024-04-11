@@ -66,6 +66,7 @@ body{
     font-size: 2rem;
     text-align: center;
     white-space: nowrap;
+    font-weight: bold;
 }
 .main-tit{
     font-size: 4rem;

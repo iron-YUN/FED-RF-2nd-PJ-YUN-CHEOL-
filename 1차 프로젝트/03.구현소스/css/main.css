@@ -190,24 +190,25 @@ body *{
     background-color: #fff;
 }
 .experience-area{
-    height: 2400px;
+    /* height: 2400px; */
+    padding-top: 64px;
+    overflow: hidden;
 }
 
 /* 9. 기타스토리영역 */
-#other-story-area{
-    /* position: sticky; */
+#other-story-area{  
     background-color: #ffffff;
 }
 .other-story-area{
-    height: 800px;
+    padding-top: 100px;
+    overflow: hidden;
+    /* height: 800px; */
 }
 /* 10. 하단영역 */
 #footer-area{
-    /* position: sticky; */
     background-color: #fff;
 }
 .footer-area{
-    /* height: 830px;  */
 }
 
 
