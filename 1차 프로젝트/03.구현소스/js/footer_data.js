@@ -24,11 +24,20 @@ const fgcon1 = {
     "RETURNS INFORMATION",
   ],
 };
-const fgcon2 = {
-
-};
-const fgcon3 = {
-    
-};
+const fgcon2 = [
+        "fa-brands fa-square-facebook",
+        "fa-brands fa-square-twitter",
+        "fa-brands fa-square-instagram",
+        "fa-brands fa-square-youtube",
+    ];
+const fgcon3 = [
+    "DRINK RESPONSIBLY",
+    "EDRINGTON",
+    "PRIVACY POLICY",
+    "TERMS OF USE",
+    "COOKIES POLICY",
+    "MANAGE COOKIE PREFERENCES",
+    "TERMS AND CONDITIONS OF SALE",
+];
 
 export {fgcon1,fgcon2,fgcon3};

@@ -1,72 +1,67 @@
 // 메인 JS - main.js
-// import mFn from './my_function';
 
-// DOM 선택함수
-const qs = (x) => document.querySelector(x);
-const qsa = (x) => document.querySelectorAll(x);
-
-// addEvent 함수
-// ele - 요소, evt - 이벤트, fn - 함수
-const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
+// 나의함수 불러오기
+import mFn from './my_function.js';
 //========================================================
 
-//////////////// 메인 동영상 파트 클릭시 이미지 보이기 숨기기////////////////////
-const banArea = qs("#ban-area");
-const banImg = qs(".baner");
-const banMv = qs(".ban-video");
-const banMv2 = qs(".ban-video video");
+//////////////// 배너 동영상 클릭시 이미지 보이기 숨기기/////////***///////////
+const banArea = mFn.qs("#ban-area");
+const banImg = mFn.qs(".baner");
+const banMv = mFn.qs(".ban-video");
+const banMv2 = mFn.qs(".ban-video video");
 
-banArea.addEventListener("click", () => {
+// banArea.addEventListener("click", () => {
+  mFn.addEvt(banArea,"click", () => {
   banImg.classList.toggle("on");
   banMv.classList.toggle("on");
 });
 // 배너영상 속도조절
 banMv2.playbackRate = 0.9;
-//////////////// 메인 동영상 파트 클릭시 이미지 보이기 숨기기////////////////////
+//////////////// 배너 동영상 클릭시 이미지 보이기 숨기기/////////***///////////
 
-////////////// 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기////////////
-const partnerImg = qs(".ptmv-img");
-const partnerBtn = qs(".ptmv-btn");
-const ptmvVideo = qs(".ptmv-video");
+////////////// 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기/////***///////
+const partnerImg = mFn.qs(".ptmv-img");
+const partnerBtn = mFn.qs(".ptmv-btn");
+const ptmvVideo = mFn.qs(".ptmv-video");
 
-partnerBtn.addEventListener("click", () => {
+mFn.addEvt(partnerBtn,"click", () => {
   partnerImg.classList.add("on");
   partnerBtn.classList.add("on");
   ptmvVideo.play();
 });
-////////////// 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기////////////
+////////////// 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기/////***///////
 
-//////////////// 스토리영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기//////////////
-const storyImg = qs(".stmv-img");
-const storyBtn = qs(".stmv-btn");
-const stmvVideo = qs(".stmv-video");
+//////////////// 스토리영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기//////***////////
+const storyImg = mFn.qs(".stmv-img");
+const storyBtn = mFn.qs(".stmv-btn");
+const stmvVideo = mFn.qs(".stmv-video");
 
-storyBtn.addEventListener("click", () => {
+mFn.addEvt(storyBtn,"click", () => {
   storyImg.classList.add("on");
   storyBtn.classList.add("on");
   stmvVideo.play();
 });
-//////////////// 스토리영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기//////////////
+//////////////// 스토리영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기/////***/////////
 
-////////////// 소개(intro)영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기////////////
-const introImg = qs(".itmv-img");
-const introBtn = qs(".itmv-btn");
-const itmvVideo = qs(".itmv-video");
+////////////// 소개(intro)영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기///***/////////
+const introImg = mFn.qs(".itmv-img");
+const introBtn = mFn.qs(".itmv-btn");
+const itmvVideo = mFn.qs(".itmv-video");
 
-introBtn.addEventListener("click", () => {
+mFn.addEvt(introBtn,"click", () => {
   introImg.classList.add("on");
   introBtn.classList.add("on");
   itmvVideo.play();
 });
-////////////// 소개(intro)영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기////////////
+////////////// 소개(intro)영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기///***/////////
 
 /////////////// 로고화면의 로고 클릭시 메인페이지 열림 ////////////////////
-const logoPg = qs(".mainlogo1");
-const mlogo = qs(".mlogo-pg");
+const logoPg = mFn.qs(".mainlogo1");
+const mlogo = mFn.qs(".mlogo-pg");
 // const mlogoBtn = qs(".logo-btn");
-const mmmArea = qs("#mmm-area");
+const mmmArea = mFn.qs("#mmm-area");
 
-mlogo.addEventListener("click", () => {
+mFn.addEvt(mlogo,"click", () => {
   mlogo.classList.add("on");
   mmmArea.classList.add("on");
   setTimeout(() => {
@@ -91,7 +86,6 @@ mlogo.addEventListener("click", () => {
 // }; //////////mousemove///////////////
 // myBody.addEventListener("click", () => {});
 ////////////////////// 병모양 따라오기 ///////////////////////////
-
 ////////////////////// 병모양 클릭 기울이기 ///////////////////////////
 // myBody.addEventListener("click", () => {
 //   mover.classList.toggle("on");
@@ -100,34 +94,25 @@ mlogo.addEventListener("click", () => {
 ////////////////////// 병모양 클릭 기울이기 ///////////////////////////
 
 //////////////////////////////버튼클릭 슬라이드///////////////////////////////////////
-addEvt(window, "DOMContentLoaded", loadFn);
-/****************************************** 
- 함수명: loadFn
- 기능: 로딩 후 버튼 이벤트 및 기능구현
- ******************************************/
-const collSlide = qs("#coll-slide");
-function loadFn() {
-  // console.log("로딩완료!");
-  // 이동버튼 대상 : .abtn
-  const abtn = qsa(".abtn");
-  //변경대상 : #coll-slide
-  // console.log(abtn,collSlide);
-  
-  //슬라이드 순번 전역변수
-  let snum = 0;
 
+slideFn();
+//변경대상 : #coll-slide : 아래에서 html뿌려주기때문에 밖으로 뺌
+const collSlide = mFn.qs("#coll-slide");
+function slideFn() {
+  // 이동버튼 대상 : .abtn
+  const abtn = mFn.qsa(".abtn");
+  //슬라이드 순번 전역변수
   for (let x of abtn) {
     x.onclick = goSlide;
   } ///////////////for of ///////////////
 
   //광클 금지변수
-  // let prot = 0;
   let prot = false;
+
   /* ****************************************
     함수명 : goSlide
     기능 : 슬라이드 이동
     *****************************************/
-
   function goSlide() {
     // 광클금지 설정하기
     // 클릭신호를 막아서 못들어오게 하고
@@ -144,9 +129,6 @@ function loadFn() {
     //   [classList 객체의 contains()메서드]
     // 해당요소의 특정 클래스 인지 여부를 리턴함 true,false
     // 해당클래스가 있으면 true ,없으면 false
-
-    //호출확인
-    // console.log('나 슬라이드야~!!!!!!!!!',this,isRbtn);
     // this 는 호출한 버튼 자신
 
     // 개별박스 li가로크기 계산
@@ -209,15 +191,14 @@ function loadFn() {
     } //////// else //////////
   } /////////////// goSlide /////////////////////
   ///////////////////////////////////////////////
-} //////////////// loadFn 함수 ///////////////
+} //////////////// slideFn 함수 ///////////////
 /////////////////////////////////////////////
 
 /////////////////////// 스크롤 이용한 상단영역 색 바뀌기 완성*****////////////////////////////////
+const topAreaBgc = mFn.qs('.top-area-bgc');
+const scAct = mFn.qsa('.scroll-area');
 
-const topAreaBgc = document.querySelector('.top-area-bgc');
-const scAct = document.querySelectorAll('.scroll-area');
-
-window.addEventListener('scroll', () => {
+mFn.addEvt(window,'scroll', () => {
   scAct.forEach((ele, idx) => {
     const scRect = ele.getBoundingClientRect();
     // console.log(`영역 ${idx}의 top: ${scRect.top}, bottom: ${scRect.bottom}`);
@@ -227,25 +208,25 @@ window.addEventListener('scroll', () => {
       if (idx === 0) {
         topAreaBgc.classList.remove('on1');
         topAreaBgc.classList.remove('on2');
-      }////////////////  if
+      }////////////////  if///////////
     }
     if (scRect.top <= 0 && scRect.bottom >= 0) {
       // .partnerships-area
       if (idx === 0) {
         topAreaBgc.classList.add('on1');
         topAreaBgc.classList.remove('on2');
-      }////////////////  if
+      }////////////////  if///////////
       // .story-area
       else if (idx === 1) {
         topAreaBgc.classList.remove('on1');
         topAreaBgc.classList.add('on2');
-      }////////////////  else if
+      }////////////////  else if///////////
       // .experience-area
       else  {
         topAreaBgc.classList.remove('on1');
         topAreaBgc.classList.remove('on2'); // 이건 빼도 작동을함 ... 왜???
-      }////////////////  else 
-    }////////////////   if
+      }////////////////  else ///////////
+    }////////////////   if///////////
  
   
   });////////////forEach///////////////
@@ -332,7 +313,7 @@ const collSlideItems = [
 
 ///////////////////////////////동일 버튼요소 뿌려주기////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
-const buttonBtn = qsa('.button-btn');
+const buttonBtn = mFn.qsa('.button-btn');
 buttonBtn.forEach(button => {
     button.innerHTML = `
         <svg>
@@ -348,7 +329,7 @@ buttonBtn.forEach(button => {
 
 ////////////////////////////////mat정보 배열로담아서 뿌리기//////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-const Mat = qsa('.mat');
+const Mat = mFn.qsa('.mat');
 const MatItems = [
   [2,"ALUMINUM",`Aluminium recovered from the Bentley Motors manufacturing
   process has also been incorporated. The sculptural
@@ -418,16 +399,16 @@ Mat.forEach((mat, index) => {
 ////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////스크롤바 없애기//////////////////////////////////////////////////
 
-const btnMenu = qs('.btnMenu');
-const closeMenu = qs('.menu-close');
-const gnb = qs('.gnb');
-btnMenu.addEventListener('click', function(){
+const btnMenu = mFn.qs('.btnMenu');
+const closeMenu = mFn.qs('.menu-close');
+const gnb = mFn.qs('.gnb');
+mFn.addEvt(btnMenu,'click', function(){
   gnb.classList.add('active');
-  document.querySelector("body").classList.add("hidden")
+  mFn.qs("body").classList.add("hidden")
 });
-closeMenu.addEventListener('click', function(){
+mFn.addEvt(closeMenu,'click', function(){
   gnb.classList.remove('active');
-  document.querySelector("body").classList.remove("hidden")
+  mFn.qs("body").classList.remove("hidden")
 });
 
 /////////////////////////////////////////////////////////////////////////////
