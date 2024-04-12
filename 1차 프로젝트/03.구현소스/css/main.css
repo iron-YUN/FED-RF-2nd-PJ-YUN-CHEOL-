@@ -183,7 +183,7 @@ body *{
 }
 .white-area{
     position: sticky;
-
+    
 }
 /* 7.경험해보세요 영역 */
 #experience-area{
@@ -198,14 +198,18 @@ body *{
 /* 9. 기타스토리영역 */
 #other-story-area{  
     background-color: #ffffff;
+    position: sticky;
+    top: -10px;
 }
 .other-story-area{
     padding-top: 100px;
     overflow: hidden;
     /* height: 800px; */
+    
 }
 /* 10. 하단영역 */
 #footer-area{
+    position: sticky;
     background-color: #fff;
 }
 .footer-area{
