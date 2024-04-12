@@ -16,6 +16,14 @@ body{
     background-color: #000;
     overflow-x: hidden;
 }
+body.hidden {
+    height: 100vh;
+    overflow: hidden;
+  }
+  body>*{
+    /* overflow: hidden; */
+    /* 이걸주면 파트너쉽 영역 바탕이 망가짐 */
+  }
 
 /* 공사중 표시 */
 body *{
