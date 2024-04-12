@@ -1,5 +1,10 @@
 // 메인 JS - main.js
 
+// 공통처리함수 불러오기 : 가장먼저 처리한다!
+import setElement from "./common.js";
+// 함수호출!!!!
+setElement();
+
 // 나의함수 불러오기
 import mFn from './my_function.js';
 //========================================================
@@ -418,4 +423,85 @@ mFn.addEvt(closeMenu,'click', function(){
 ///////////////////////////////////GNB 메뉴 자동넣기////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// 제목및 설명 뿌려주기 //////////////////////
+// 공통요소
+const tAt = [
+  "sub-tit",
+  "main-tit",
+  "line",
+  "main-text",
+];
+
+// 콜렉션영역
+const collTextItems ={
+  "sub-tit":"COLLECTION",
+  "main-tit":"OUR SINGLE MALTS",
+  "line":"",
+  "main-text":`
+  From our signature ranges available globally to our special
+  limited release whiskies, each with a rich story to tell.
+  <br />
+  Each and every Macallan single malt whisky reveals our
+  unrivalled commitment to the mastery of wood and spirit <br />
+  since 1824.
+  `,
+};
+const collText = mFn.qs('.coll-text');
+collText.innerHTML=`
+<p class="${tAt[0]}">${collTextItems[tAt[0]]}</p>
+<h3 class="${tAt[1]}">${collTextItems[tAt[1]]}</h3>
+<div class="${tAt[2]}">
+  <img
+    src="../01.자료수집/main_img/line_img/lineout.svg"
+    alt=""
+  />
+</div>
+<p class="${tAt[3]}">
+${collTextItems[tAt[3]]}
+</p>
+`;
+///////파트너 영역
+const partH1 = mFn.qs('.partner-h1');
+partH1.innerHTML = `
+<p class="sub-tit part-stit">PARTNERSHIPS</p>
+            <p class="main-tit">THE MACALLAN HORIZON</p>
+            <p class="sub-tit">LAST UPDATED: 13 MAR 2024</p>
+            <p class="main-text">
+              Introducing the visionary collaboration between The Macallan and
+              Bentley Motors, an inspirational and innovative limited edition
+              single malt whisky.
+            </p>
+            <p class="main-text">
+              The Macallan Horizon is an expression of our partnership with
+              Bentley Motors that looks to the future. A fusion of traditional
+              craftsmanship and cutting edge technology featuring a
+              revolutionary horizontal design.
+            </p>
+            <p class="main-text">
+              Extensive collaboration with Bentley Motors has led to the
+              development of this product, where purpose meets innovation,
+              craftsmanship and beauty.
+            </p>
+`;
+
+////// 재료영역
+const matH1 = mFn.qs('.materials-h1');
+matH1.innerHTML = `
+<p class="main-tit">THE MATERIALS</p>
+<p class="main-text">
+  Through this partnership we sought to pay homage to our Six
+  Pillars, the foundation stones that underpin the renowned
+  quality and rich character of our whisky. The product packaging
+  incorporates six materials integral to both The Macallan and
+  Bentley Motors.
+</p>
+<p class="main-text">
+  Designed with a collective of specialist suppliers, using highly
+  skilled artisanal and precision engineering techniques, our
+  commitment to craftsmanship, creativity and innovation allowed
+  us to challenge each other and push the boundaries of the
+  possible.
+</p>
+`;
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
