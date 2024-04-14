@@ -1,6 +1,9 @@
 @charset "utf-8";
 
 /* 바탕흰색 */
+#subpg-main{
+    padding: 0 30px;
+}
 .nav-list{
     position: relative;
     background-color: #fff;
