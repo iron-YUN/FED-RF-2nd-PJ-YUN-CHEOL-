@@ -87,6 +87,22 @@ body{
     line-height: 2;
     text-align: center;
 }
+/* 제품설명 중간의 영역구분선 */
+.line {
+    padding: 0;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  
+  .line img {
+    height: 1.2rem;
+  }
+  .line2 {
+    margin: 20px 30px;
+    height: 30px;
+    background: url(../../01.자료수집/main_img/line_img/lineout2.svg)
+      repeat-x;
+  }
 
 
  /******** 제목 및 설명크기 공통 end *********/

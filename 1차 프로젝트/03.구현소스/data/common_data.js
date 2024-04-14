@@ -2,7 +2,6 @@
 const comData ={
     // 상단영역 코드
     topArea : `
-    
     <header class="inbox top-area">
     <div class="cont-box top-box">
       <!-- 2-1.메인메뉴 아이콘박스 -->
@@ -34,7 +33,7 @@ const comData ={
       </div>
       <!-- 2-2. 메인로고 -->
       <div class="col-top1 logo-top-box">
-        <a class="top-logo2" href="#">
+        <a class="top-logo2" href="./index.html">
           <img
             class="top-logo"
             src="../01.자료수집/LOGO/Logo.svg"

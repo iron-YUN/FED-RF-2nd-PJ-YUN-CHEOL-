@@ -317,16 +317,7 @@
 는 다른태그와 섞여있을때 작동을 안함
 이 경우 type 을 쓴다 */
 
-/* 제품설명 중간의 영역구분선 */
-.line {
-  padding: 0;
-  margin: 3rem 0;
-  text-align: center;
-}
 
-.line img {
-  height: 1.2rem;
-}
 
 /****** 제품 리스트 ******/
 .coll-list {
