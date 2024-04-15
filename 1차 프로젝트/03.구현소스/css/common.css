@@ -358,9 +358,13 @@
   transition: 0.5s;
 }
 
-.coll-img:hover img {
+/* .coll-img:hover img {
   scale: 1.3;
   transition: 0.5s;
+} */
+#coll-slide li:hover a img{
+  scale: 1.3;
+  
 }
 
 /*이동버튼*/
@@ -776,6 +780,15 @@
   border: 3px solid #000;
   border-radius: 30px 7px 30px 30px;
   text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
+.fj-btn:hover{
+  /* border: 3px solid red; */
+  background-color: #000;
+  font-weight: bold;
+  color: #fff;
+  transition: .2s;
 }
 
 .f-line {
