@@ -710,6 +710,8 @@
   text-align: left;
 }
 .other-story-flex{
+  position: relative;
+  left: 0;
   display: flex;
   padding: 0 30px 100px;
   gap: 0 10px;
