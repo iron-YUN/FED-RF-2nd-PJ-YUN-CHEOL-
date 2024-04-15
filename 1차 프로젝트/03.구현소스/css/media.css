@@ -501,7 +501,19 @@
   margin-bottom: 32px;
   padding: 0 4%;
 }
-
+/*이동버튼*/
+.osbtn {
+  top: 20%;
+  scale: 1;
+}
+/*왼쪽버튼*/
+.osb1 {
+  left: 30px;
+}
+/*오른쪽버튼*/
+.osb2 {
+  right: 30px;
+}
  /* 하단영역 */
   .f-bottom span {
     white-space: wrap;
@@ -639,6 +651,19 @@
 .osimg span:nth-of-type(2) {
   font-size: 20px;
 }
+/*이동버튼*/
+.osbtn {
+  top: 20%;
+  scale: 0.8;
+}
+/*왼쪽버튼*/
+.osb1 {
+  left: 15px;
+}
+/*오른쪽버튼*/
+.osb2 {
+  right: 15px;
+}
 }
 @media screen and (max-width: 400px) {
   /* 상단영역 */
@@ -682,30 +707,35 @@
   }
   /* 3.콜렉션 영역 */
   /* 4.파트너쉽 영역 */
+  .main-text2{
+    line-height: 1.7;
+    font-size: 13px;
+  }
   /* 5.최신스토리 영역 */
   #story-area {
     padding: 0 10px;
 }
   .st-right2 {
     gap: 10px;
-    flex-wrap: wrap
+    /* flex-wrap: wrap */
   }
   .st-right2 > div:nth-child(2) {
     position: relative;
     top: 3%;
   }
-  .st-right2 div{
-    
-  }
-  .st-right2 img{
-    /* width: 100%; */
+  /* .st-right2 div{
+  } */
+  /* .st-right2 img{
     object-fit: cover;
-}
+} */
 .st-right2 div:nth-child(2) {
  width: 100%;
 }
   /* 6.인트로 영역 */
-
+  /* 검정영역 묶음 */
+  .black-area {
+    top: -165rem;
+  }
    /* 8.기타스토리 */
    .osimg img{
     width: 250px;
@@ -723,6 +753,11 @@
 }
 .osimg span:nth-of-type(2) {
   font-size: 17px;
+}
+/*이동버튼*/
+.osbtn {
+  top: 10%;
+  scale: 0.7;
 }
 }
 @media screen and (max-width: 330px) {

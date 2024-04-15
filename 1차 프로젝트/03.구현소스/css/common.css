@@ -694,10 +694,14 @@
 .eximg span:nth-of-type(2){
   font-size: 32px;
 }
-/* 기타스토리 영역 */
+/********** 기타스토리 영역 **********/
 .other-story-text{
   margin-bottom: 60px;
   padding: 0 2%;
+}
+
+.os-slide{
+  position: relative;
 }
 .other-story-text *{
   text-align: left;
@@ -732,6 +736,22 @@
 }
 .osimg span:nth-of-type(2){
   font-size: 32px;
+}
+
+/*이동버튼*/
+.osbtn {
+  position: absolute;
+  z-index: 10;
+  top: 30%;
+  scale: 1.2;
+}
+/*왼쪽버튼*/
+.osb1 {
+  left: 50px;
+}
+/*오른쪽버튼*/
+.osb2 {
+  right: 50px;
 }
 /******************************* 하단영역 *******************************/
 #footer-area {
