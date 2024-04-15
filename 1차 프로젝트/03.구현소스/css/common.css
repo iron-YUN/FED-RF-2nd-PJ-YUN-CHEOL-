@@ -24,7 +24,7 @@
 /* 로고 이미지 크기 및 등장액션 */
 .mlogo-pg a img {
   width: 40vw;
-  animation: log-magic 1.5s;
+  animation: log-magic 2.5s;
 }
 
 @keyframes log-magic {
@@ -54,7 +54,7 @@
   z-index: 999;
   /* transform: translateY(-10px); */
   clip-path: circle(0% at 50% 50%);
-  transition: 2s ease-in-out 0.5s;
+  transition: 2.2s ease-in-out 0.6s;
 }
 
 #mmm-area.on {
@@ -64,7 +64,7 @@
 /* 클릭시 로고 커지며 페이지 열림 */
 .mlogo-pg.on {
   transform: scale(30);
-  transition: 2s ease-in-out;
+  transition: 2.2s ease-in;
 }
 
 /* 초기화상태 */
