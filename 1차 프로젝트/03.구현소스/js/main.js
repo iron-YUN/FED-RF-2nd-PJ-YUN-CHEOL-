@@ -6,22 +6,22 @@ import setElement from "./common.js";
 setElement();
 
 // 나의함수 불러오기
-import mFn from './my_function.js';
+import mFn from "./my_function.js";
 //========================================================
 
 //////////////// 배너 동영상 클릭시 이미지 보이기 숨기기/////////***///////////
 const banArea = mFn.qs("#ban-area");
 const banImg = mFn.qs(".baner");
 const banMv = mFn.qs(".ban-video");
-const banMv2 = mFn.qs(".ban-video video");
 
-// banArea.addEventListener("click", () => {
-  mFn.addEvt(banArea,"click", () => {
+mFn.addEvt(banArea, "click", () => {
   banImg.classList.toggle("on");
   banMv.classList.toggle("on");
 });
 // 배너영상 속도조절
+const banMv2 = mFn.qs(".ban-video video");
 banMv2.playbackRate = 0.9;
+
 //////////////// 배너 동영상 클릭시 이미지 보이기 숨기기/////////***///////////
 
 ////////////// 파트너쉽영상 버튼클릭 - 동영상 재생 & 이미지와 버튼 숨기기/////***///////
@@ -29,7 +29,7 @@ const partnerImg = mFn.qs(".ptmv-img");
 const partnerBtn = mFn.qs(".ptmv-btn");
 const ptmvVideo = mFn.qs(".ptmv-video");
 
-mFn.addEvt(partnerBtn,"click", () => {
+mFn.addEvt(partnerBtn, "click", () => {
   partnerImg.classList.add("on");
   partnerBtn.classList.add("on");
   ptmvVideo.play();
@@ -41,7 +41,7 @@ const storyImg = mFn.qs(".stmv-img");
 const storyBtn = mFn.qs(".stmv-btn");
 const stmvVideo = mFn.qs(".stmv-video");
 
-mFn.addEvt(storyBtn,"click", () => {
+mFn.addEvt(storyBtn, "click", () => {
   storyImg.classList.add("on");
   storyBtn.classList.add("on");
   stmvVideo.play();
@@ -53,7 +53,7 @@ const introImg = mFn.qs(".itmv-img");
 const introBtn = mFn.qs(".itmv-btn");
 const itmvVideo = mFn.qs(".itmv-video");
 
-mFn.addEvt(introBtn,"click", () => {
+mFn.addEvt(introBtn, "click", () => {
   introImg.classList.add("on");
   introBtn.classList.add("on");
   itmvVideo.play();
@@ -66,16 +66,17 @@ const mlogo = mFn.qs(".mlogo-pg");
 // const mlogoBtn = qs(".logo-btn");
 const mmmArea = mFn.qs("#mmm-area");
 
-mFn.addEvt(mlogo,"click", () => {
+mFn.addEvt(mlogo, "click", () => {
   mlogo.classList.add("on");
   mmmArea.classList.add("on");
   setTimeout(() => {
     mmmArea.classList.add("off");
     logoPg.style.display = "none";
-    // document.querySelector("body").classList.remove("hidden");
   }, 1500);
+  // 메인페이지 열린후 스크롤 나오기
   setTimeout(() => {
-    document.querySelector("body").classList.remove("hidden");
+    document.querySelector("body")
+    .classList.remove("hidden");
   }, 1000);
 });
 /////////////// 로고화면의 로고 클릭시 메인페이지 열림 ////////////////////
@@ -200,44 +201,40 @@ function slideFn() {
 /////////////////////////////////////////////
 
 /////////////////////// 스크롤 이용한 상단영역 색 바뀌기 완성*****////////////////////////////////
-const topAreaBgc = mFn.qs('.top-area-bgc');
-const scAct = mFn.qsa('.scroll-area');
+const topAreaBgc = mFn.qs(".top-area-bgc");
+const scAct = mFn.qsa(".scroll-area");
 
-mFn.addEvt(window,'scroll', () => {
+mFn.addEvt(window, "scroll", () => {
   scAct.forEach((ele, idx) => {
     const scRect = ele.getBoundingClientRect();
     // console.log(`영역 ${idx}의 top: ${scRect.top}, bottom: ${scRect.bottom}`);
-    
+
     // 각각의 요소가 스크린의 상단을 지날 때
-    if(scRect.top > 0){
+    if (scRect.top > 0) {
       if (idx === 0) {
-        topAreaBgc.classList.remove('on1');
-        topAreaBgc.classList.remove('on2');
-      }////////////////  if///////////
+        topAreaBgc.classList.remove("on1");
+        topAreaBgc.classList.remove("on2");
+      } ////////////////  if///////////
     }
     if (scRect.top <= 0 && scRect.bottom >= 0) {
       // .partnerships-area
       if (idx === 0) {
-        topAreaBgc.classList.add('on1');
-        topAreaBgc.classList.remove('on2');
-      }////////////////  if///////////
+        topAreaBgc.classList.add("on1");
+        topAreaBgc.classList.remove("on2");
+      } ////////////////  if///////////
       // .story-area
       else if (idx === 1) {
-        topAreaBgc.classList.remove('on1');
-        topAreaBgc.classList.add('on2');
-      }////////////////  else if///////////
+        topAreaBgc.classList.remove("on1");
+        topAreaBgc.classList.add("on2");
+      } ////////////////  else if///////////
       // .experience-area
-      else  {
-        topAreaBgc.classList.remove('on1');
-        topAreaBgc.classList.remove('on2'); // 이건 빼도 작동을함 ... 왜???
-      }////////////////  else ///////////
-    }////////////////   if///////////
- 
-  
-  });////////////forEach///////////////
-});////////////window///////////////
-
-
+      else {
+        topAreaBgc.classList.remove("on1");
+        topAreaBgc.classList.remove("on2"); // 이건 빼도 작동을함 ... 왜???
+      } ////////////////  else ///////////
+    } ////////////////   if///////////
+  }); ////////////forEach///////////////
+}); ////////////window///////////////
 
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
@@ -252,14 +249,14 @@ const collSlideItems = [
   // "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE",
   // "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE",
   ///////////////배열안의배열////////
-  [1,"SHERRY OAK 12 YEARS OLD"],
-  [2,"SHERRY OAK 18 YEARS OLD, 2023 RELEASE"],
-  [3,"SHERRY OAK 25 YEARS OLD, 2023 RELEASE"],
-  [4,"SHERRY OAK 30 YEARS OLD, 2023 RELEASE"],
-  [5,"DOUBLE CASK 12 YEARS OLD"],
-  [6,"DOUBLE CASK 15 YEARS OLD"],
-  [7,"DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"],
-  [8,"DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"],
+  [1, "SHERRY OAK 12 YEARS OLD"],
+  [2, "SHERRY OAK 18 YEARS OLD, 2023 RELEASE"],
+  [3, "SHERRY OAK 25 YEARS OLD, 2023 RELEASE"],
+  [4, "SHERRY OAK 30 YEARS OLD, 2023 RELEASE"],
+  [5, "DOUBLE CASK 12 YEARS OLD"],
+  [6, "DOUBLE CASK 15 YEARS OLD"],
+  [7, "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"],
+  [8, "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"],
   //////////////////객체///////////
   // {
   //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main01.jpg",
@@ -293,9 +290,9 @@ const collSlideItems = [
   //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main08.jpg",
   //   spanText: "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"
   // },
-];////////////////// collSlideItems 배열 ///////////////////////
-    collSlideItems.forEach(v => {
-      collSlide.innerHTML +=`
+]; ////////////////// collSlideItems 배열 ///////////////////////
+collSlideItems.forEach((v) => {
+  collSlide.innerHTML += `
   <li>
     <a href="./sub_coll.html">
       <div class="coll-img">
@@ -310,46 +307,61 @@ const collSlideItems = [
     </a>
   </li>
   `;
-    });
+});
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
 ////////////////////////////////mat정보 배열로담아서 뿌리기//////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
-const Mat = mFn.qsa('.mat');
+const Mat = mFn.qsa(".mat");
 const MatItems = [
-  [2,"ALUMINUM",`Aluminium recovered from the Bentley Motors manufacturing
+  [
+    2,
+    "ALUMINUM",
+    `Aluminium recovered from the Bentley Motors manufacturing
   process has also been incorporated. The sculptural
   foundation and bodywork of a Bentley motorcar features
   aluminium for its remarkable strength, versatility and
   stunning visual impact. The Macallan Horizon’s glass vessel
   is enveloped by an aluminium ribbon, precision engineered to
   Bentley’s exacting standards, in homage to this key material
-  used in the engineering of a Bentley motorcar.`],
-  [4,"GLASS",`Glass is a material intrinsic to both The Macallan and
+  used in the engineering of a Bentley motorcar.`,
+  ],
+  [
+    4,
+    "GLASS",
+    `Glass is a material intrinsic to both The Macallan and
   Bentley. A foundational material to both brands, The
   Macallan Horizon is presented in a highly innovative and
   unique bespoke glass vessel designed to be displayed
-  horizontally, featuring a unique 180-degree twist detail.`],
- 
-  [1,"COPPER",`A material fundamental to our single malt whisky, The
+  horizontally, featuring a unique 180-degree twist detail.`,
+  ],
+
+  [
+    1,
+    "COPPER",
+    `A material fundamental to our single malt whisky, The
   Macallan Horizon features a copper frame precision
   engineered from recycled copper, which includes copper from
   the disused Curiously Small Stills, which were located
   within our former Distillery. The Macallan’s Curiously Small
   Copper Stills contribute a rich and fruity character to our
-  new make spirit.`],
-  [3,"WOOD",`A material integral to both brands, The Macallan Horizon
+  new make spirit.`,
+  ],
+  [
+    3,
+    "WOOD",
+    `A material integral to both brands, The Macallan Horizon
   features an inlay of oak on the closure, crafted from one of
   the six casks used in the maturation of this whisky. The
   sculpture is finished with Bentley’s Crown Cut Walnut
   veneer, a specification meticulously developed for Bentley
-  vehicles.`],
-  [6,"THE WISKY",`The final component is the very special single malt being
+  vehicles.`,
+  ],
+  [
+    6,
+    "THE WISKY",
+    `The final component is the very special single malt being
   created for The Macallan Horizon. The Macallan Master Whisky
   Maker Kirsteen Campbell is developing the flavour profile
   for the whisky following a visit to Bentley Motors in Crewe,
@@ -357,8 +369,12 @@ const MatItems = [
   creativity, craftsmanship and innovation. The result is a
   sophisticated and bold single malt whisky, crafted from six
   individual casks to capture the essence of a Bentley
-  motorcar through taste, texture and natural colour.`],
-  [5,"LEATHER",`Ethically sourced leather has been used to ornately finish
+  motorcar through taste, texture and natural colour.`,
+  ],
+  [
+    5,
+    "LEATHER",
+    `Ethically sourced leather has been used to ornately finish
   and protect The Macallan Horizon. Chosen carefully and
   crafted with precision and pride, leather hides contribute
   enormously to the sense of comfort and refinement in every
@@ -366,7 +382,8 @@ const MatItems = [
   have the greatest respect for the materials used in
   everything we do. To protect the vessel, The Macallan
   Horizon’s sculpture is lined with the finest low carbon
-  leather, expertly crafted, in a chestnut colourway.`],
+  leather, expertly crafted, in a chestnut colourway.`,
+  ],
 ];
 Mat.forEach((mat, index) => {
   const v = MatItems[index];
@@ -387,27 +404,20 @@ Mat.forEach((mat, index) => {
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
-
-
 /////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////GNB 메뉴 자동넣기////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// 제목및 설명 뿌려주기 //////////////////////
 // 공통요소
-const tAt = [
-  "sub-tit",
-  "main-tit",
-  "line",
-  "main-text",
-];
+const tAt = ["sub-tit", "main-tit", "line", "main-text"];
 
 // 콜렉션영역
-const collTextItems ={
-  "sub-tit":"COLLECTION",
-  "main-tit":"OUR SINGLE MALTS",
-  "line":"",
-  "main-text":`
+const collTextItems = {
+  "sub-tit": "COLLECTION",
+  "main-tit": "OUR SINGLE MALTS",
+  line: "",
+  "main-text": `
   From our signature ranges available globally to our special
   limited release whiskies, each with a rich story to tell.
   <br />
@@ -416,8 +426,8 @@ const collTextItems ={
   since 1824.
   `,
 };
-const collText = mFn.qs('.coll-text');
-collText.innerHTML=`
+const collText = mFn.qs(".coll-text");
+collText.innerHTML = `
 <p class="${tAt[0]}">${collTextItems[tAt[0]]}</p>
 <h3 class="${tAt[1]}">${collTextItems[tAt[1]]}</h3>
 <div class="${tAt[2]}">
@@ -431,7 +441,7 @@ ${collTextItems[tAt[3]]}
 </p>
 `;
 ///////파트너 영역
-const partH1 = mFn.qs('.partner-h1');
+const partH1 = mFn.qs(".partner-h1");
 partH1.innerHTML = `
 <p class="sub-tit part-stit">PARTNERSHIPS</p>
             <p class="main-tit">THE MACALLAN HORIZON</p>
@@ -455,7 +465,7 @@ partH1.innerHTML = `
 `;
 
 ////// 재료영역
-const matH1 = mFn.qs('.materials-h1');
+const matH1 = mFn.qs(".materials-h1");
 matH1.innerHTML = `
 <p class="main-tit">THE MATERIALS</p>
 <p class="main-text">

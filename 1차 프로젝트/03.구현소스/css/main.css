@@ -16,11 +16,16 @@ body{
     background-color: #ffffff;
     overflow-x: hidden;
 }
+
+/* 스크롤 기본 막아놓기 */
 body.hidden {
     height: 100vh;
     overflow: hidden;
-  }
-  body>*{
+}
+
+
+
+body>*{
     /* overflow: hidden; */
     /* 이걸주면 파트너쉽 영역 바탕이 망가짐 */
   }
