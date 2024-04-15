@@ -350,7 +350,6 @@
   position: relative;
   overflow: hidden;
   height: 50rem;
-  /* aspect-ratio: 572/717; */
 }
 
 .coll-img img {
@@ -709,7 +708,7 @@
 .other-story-flex{
   display: flex;
   padding: 0 30px 100px;
-  gap: 0 30px;
+  gap: 0 10px;
 }
 .osimg{
   display: flex;
@@ -752,6 +751,9 @@
 /*오른쪽버튼*/
 .osb2 {
   right: 50px;
+}
+.os-bottom{
+  height: 100px;
 }
 /******************************* 하단영역 *******************************/
 #footer-area {

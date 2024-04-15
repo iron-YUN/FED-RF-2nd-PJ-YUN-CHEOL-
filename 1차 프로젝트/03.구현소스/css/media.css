@@ -633,7 +633,9 @@
       gap: 60px 20px;
   }
    /* 8.기타스토리 */
-   
+   #other-story-area{  
+    top: -10px;
+}
    .osimg img{
     width: 380px;
   }

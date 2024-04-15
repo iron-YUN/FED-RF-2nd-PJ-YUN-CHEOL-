@@ -98,7 +98,7 @@ mFn.addEvt(mlogo,"click", () => {
 // HTML태그 로딩후 loadFn함수 호출! ///
 ////////////////////// 병모양 클릭 기울이기 ///////////////////////////
 
-//////////////////////////////버튼클릭 슬라이드///////////////////////////////////////
+//////////////////////////////coll 버튼클릭 슬라이드///////////////////////////////////////
 
 slideFn();
 //변경대상 : #coll-slide : 아래에서 html뿌려주기때문에 밖으로 뺌
@@ -475,3 +475,56 @@ matH1.innerHTML = `
 `;
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+
+osslideFn();
+function osslideFn() {
+  const osSlide = mFn.qs(".other-story-flex");
+  // 이동버튼 대상 : .osbtn
+  const osbtn = mFn.qsa(".osbtn");
+  //슬라이드 순번 전역변수
+  for (let x of osbtn) {
+    x.onclick = gogoSlide;
+  } ///////////////for of ///////////////
+
+  //광클 금지변수
+  let prot = false;
+
+  function gogoSlide() {
+    if (prot) return; // 돌아가!(함수나감!)
+    prot = true; // 잠금! (뒤의호출막기)
+    setTimeout(() => {
+      prot = false; // 0.6초후 해제!
+    }, 600);
+    /////////////////////////////////////////
+
+    //  1.오른쪽 버튼인 osb2인가?
+    let isRbtn = this.classList.contains("osb2");
+    // 개별박스 a가로크기 계산
+    let listW = osSlide.querySelectorAll("a")[0].offsetWidth;
+
+    if (isRbtn) {
+      osSlide.style.left = `calc(${-listW}px - 10px)`;
+      osSlide.style.transition = ".6s ease-in-out";
+      setTimeout(() => {
+        osSlide.appendChild(osSlide.querySelectorAll("a")[0]);
+        osSlide.style.left = "0";
+        osSlide.style.transition = "none";
+      }, 600);
+    } /////// if ///////////
+
+    // 왼쪽 버튼일 경우 ///
+    else {
+      let list = osSlide.querySelectorAll("a");
+      osSlide.insertBefore(list[list.length - 1], list[0]);
+      osSlide.style.left = `calc(${-listW}px - 10px)`;
+      osSlide.style.transition = "none";
+
+      setTimeout(() => {
+        osSlide.style.left = "0";
+        osSlide.style.transition = ".6s ease-in-out";
+      }, 0);
+    } //////// else //////////
+  } /////////////// gogoSlide /////////////////////
+  ///////////////////////////////////////////////
+} //////////////// osslideFn 함수 ///////////////
+/////////////////////////////////////////////
