@@ -593,8 +593,8 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  grid-row-gap: 60px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 20px;
 }
 
 .intro-h1 {

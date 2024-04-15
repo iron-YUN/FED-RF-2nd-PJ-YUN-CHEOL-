@@ -169,20 +169,23 @@ body *{
     margin: 30rem 0;
 }
 .partnerships3-area{
-    height: 1200px;
+    height: 700px;
+    /* height: 1200px; */
 }
 /* 5.최신스토리 영역 */
 #story-area{
     position: sticky;
 }
 .story-area{
-   min-height: 1500px;
+   /* height: 1500px; */
 }
 /* 6.소개동영상 영역 */
-#intromv-area{
+#intromv-area {
+    margin-top: 300px;
 }
+
 .intromv-area{
-    height: 1500px;
+    height: 1200px;
 }
 .black-area{
     background-color: #000;

@@ -121,10 +121,10 @@
   }
   /* 6.인트로 영역 */
   .intro-h1 {
-    margin-top: 200px;
+    margin-top: 0;
   }
   .black-area {
-    top: -195rem;
+    top: -210rem;
   }
 }
 
@@ -459,7 +459,7 @@
   /* 6.인트로 영역 */
   /* 검정영역 묶음 */
   .black-area {
-    top: -155rem;
+    top: -165rem;
   }
   /* 7.경험해보세요 영역 */
  .experience-grid{
@@ -628,6 +628,9 @@
     gap: 20px;
   }
   /* 6.인트로 영역 */
+  .intromv-area {
+    height: 800px;
+}
     /* 7.경험해보세요 영역 */
     .experience-grid {
       gap: 60px 20px;
