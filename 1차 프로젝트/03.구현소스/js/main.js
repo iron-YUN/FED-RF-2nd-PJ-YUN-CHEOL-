@@ -239,6 +239,16 @@ mFn.addEvt(window, "scroll", () => {
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 const collSlideItems = [
+    ///////////////배열관리////////
+    [1, "SHERRY OAK 12 YEARS OLD"],
+    [2, "SHERRY OAK 18 YEARS OLD, 2023 RELEASE"],
+    [3, "SHERRY OAK 25 YEARS OLD, 2023 RELEASE"],
+    [4, "SHERRY OAK 30 YEARS OLD, 2023 RELEASE"],
+    [5, "DOUBLE CASK 12 YEARS OLD"],
+    [6, "DOUBLE CASK 15 YEARS OLD"],
+    [7, "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"],
+    [8, "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"],
+    
   ////////제품이름////////////
   // "SHERRY OAK 12 YEARS OLD",
   // "SHERRY OAK 18 YEARS OLD, 2023 RELEASE",
@@ -248,15 +258,7 @@ const collSlideItems = [
   // "DOUBLE CASK 15 YEARS OLD",
   // "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE",
   // "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE",
-  ///////////////배열안의배열////////
-  [1, "SHERRY OAK 12 YEARS OLD"],
-  [2, "SHERRY OAK 18 YEARS OLD, 2023 RELEASE"],
-  [3, "SHERRY OAK 25 YEARS OLD, 2023 RELEASE"],
-  [4, "SHERRY OAK 30 YEARS OLD, 2023 RELEASE"],
-  [5, "DOUBLE CASK 12 YEARS OLD"],
-  [6, "DOUBLE CASK 15 YEARS OLD"],
-  [7, "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"],
-  [8, "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"],
+
   //////////////////객체///////////
   // {
   //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main01.jpg",
@@ -291,6 +293,7 @@ const collSlideItems = [
   //   spanText: "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"
   // },
 ]; ////////////////// collSlideItems 배열 ///////////////////////
+
 collSlideItems.forEach((v) => {
   collSlide.innerHTML += `
   <li>
