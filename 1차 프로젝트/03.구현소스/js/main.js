@@ -297,7 +297,7 @@ const collSlideItems = [
     collSlideItems.forEach(v => {
       collSlide.innerHTML +=`
   <li>
-    <a href="javascript:;" onclick="js();">
+    <a href="./sub_coll.html">
       <div class="coll-img">
         <img
           src="../01.자료수집/main_img/main_page_bottle/coll_main0${v[0]}.jpg"
