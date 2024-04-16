@@ -30,7 +30,7 @@
 @keyframes log-magic {
   from {
     transform-origin: bottom;
-    transform: rotateX(90deg);
+    transform: rotateX(-90deg);
   }
 }
 
