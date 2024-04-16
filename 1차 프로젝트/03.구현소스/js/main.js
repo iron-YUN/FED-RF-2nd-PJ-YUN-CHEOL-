@@ -81,23 +81,22 @@ mFn.addEvt(mlogo, "click", () => {
 });
 /////////////// 로고화면의 로고 클릭시 메인페이지 열림 ////////////////////
 
-////////////////////// 병모양 따라오기 ///////////////////////////
-// const mover = document.querySelector(".mover");
-// const myBody = document.body;
+//////////////////////click 따라오기 ///////////////////////////
+const mover = document.querySelector(".mover");
 
-// myBody.onmousemove = (e) => {
-//   mover.style.left = e.pageX + "px";
-//   mover.style.top = e.clientY + "px";
-//   // console.log(e.pageX, this);
-// }; //////////mousemove///////////////
+mFn.addEvt(banArea,"mousemove", (e) => {
+  // 마우스 이벤트가 banArea 내에서 발생한 경우에만 .mover 보이기
+  if (e.target === banArea || banArea.contains(e.target)) {
+    mover.style.left = e.pageX + "px";
+    mover.style.top = e.clientY + "px";
+    mover.style.display = "block"; // .mover 보이기
+  } else {
+    mover.style.display = "none"; // .mover 숨기기
+  }
+});
+
 // myBody.addEventListener("click", () => {});
-////////////////////// 병모양 따라오기 ///////////////////////////
-////////////////////// 병모양 클릭 기울이기 ///////////////////////////
-// myBody.addEventListener("click", () => {
-//   mover.classList.toggle("on");
-// });
-// HTML태그 로딩후 loadFn함수 호출! ///
-////////////////////// 병모양 클릭 기울이기 ///////////////////////////
+//////////////////////click 따라오기 ///////////////////////////
 
 //////////////////////////////coll 버튼클릭 슬라이드///////////////////////////////////////
 
