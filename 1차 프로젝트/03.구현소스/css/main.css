@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* 도깨비 PJ : 메인페이지 CSS - main.css */
 
-
 /* 리셋,코아,커먼 공통CSS 합치기 */
 @import url(./reset.css);
 @import url(./core.css);
@@ -9,231 +8,241 @@
 /* 그리드 12 불러오기 */
 @import url(./grid_12_flex.css);
 
-
-body{
-    padding-top: 74px;
-    margin: 0;
-    background-color: #ffffff;
-    overflow-x: hidden;
+body {
+  padding-top: 74px;
+  margin: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 /* 스크롤 기본 막아놓기 */
 body.hidden {
-    height: 100vh;
-    overflow: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
-
-
-body>*{
-    /* overflow: hidden; */
-    /* 이걸주면 파트너쉽 영역 바탕이 망가짐 */
-  }
+body > * {
+  /* overflow: hidden; */
+  /* 이걸주면 파트너쉽 영역 바탕이 망가짐 */
+}
 
 /* 공사중 표시 */
-body *{
-    /* outline: 2px dashed #ccc; */
+body * {
+  /* outline: 2px dashed #ccc; */
 }
 
 /* 메뉴버튼 */
-.gnb{
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-    z-index: 99999;
-    transition: .6s cubic-bezier(0.65, 0, 0.35, 1);
+.gnb {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  transition: 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.gnb.active{
-    left: 0;
+.gnb.active {
+  left: 0;
 }
 
-.gnb .menu-left{
-    width: 50%;
-   padding: 100px 50px 0px;
-    position: relative;
-    box-sizing: border-box;
+.gnb .menu-left {
+  width: 50%;
+  /* padding: 100px 50px 0px; */
+  position: relative;
+  box-sizing: border-box;
 }
-.menu-close{
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    font-size: 1.5rem;
+.menu-close {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 1.5rem;
 }
-.menu-close::after{
-    content: 'CLOSE';
+.menu-close::after {
+  content: "CLOSE";
+  display: inline-block;
+  position: absolute;
+  margin-left: 5px;
+  top: 7px;
+}
+.menu-close:hover {
+  font-weight: bold;
+  color: red;
+}
+.menu-back::before {
+  content: "<";
+  display: inline-block;
+  padding-right: 20px;
+  font-weight: bold;
+}
+.menu-back {
+    padding-left: 100px;
+    margin-bottom: 20px;
+    height: 64px;
+  width: 70%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  /* display: inline-block; */
+  display: none;
+}
+.menu-left-box{
+    padding-top: 150px;
+}
+.first-menu {
+  width: 70%;
+  padding-left: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.first-menu > li > a {
+  position: relative;
+  font-size: 20px;
+  width: 100%;
+  display: block;
+}
+/* .first-menu li:nth-child(6).on .menu-back{
     display: inline-block;
-    position: absolute;
-    margin-left: 5px;
-    top: 7px;
-}
-.menu-close:hover{
-    font-weight: bold;
-    color: red;
-}
-.menu-left>ul{
-    display: flex;
-    flex-direction: column; 
-    gap: 30px;
-}
-.menu-left>ul>li>a{
-    position: relative;
-    font-size: 20px ;
-    width: 100%;
-    display: block;
-}
-.menu-left>ul>li:nth-child(1)>a:after,
-.menu-left>ul>li:nth-child(2)>a:after,
-.menu-left>ul>li:nth-child(6)>a:after{
-    position: absolute;
-    right: 10px;
-    content: '>';
-    opacity: 0;
-    transition: .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    } */
+
+.first-menu > li:nth-child(1) > a:after,
+.first-menu > li:nth-child(2) > a:after,
+.first-menu > li:nth-child(6) > a:after {
+  position: absolute;
+  right: 10px;
+  content: ">";
+  opacity: 0;
+  transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.menu-left>ul>li>a:hover::after{
-    right: 0;
-    opacity: 1;
+.first-menu > li > a:hover::after {
+  right: 0;
+  opacity: 1;
 }
-.menu-left>ul>li>a:hover{
-    font-weight: bold;
+.first-menu > li > a:hover {
+  font-weight: bold;
 }
 
-.gnb .menu-right{
-    flex: 1;
-    background: url(../../01.자료수집/main_img/menubg.webp) no-repeat center/cover;
-} 
-
-
-
-
+.gnb .menu-right {
+  flex: 1;
+  background: url(../../01.자료수집/main_img/menubg.webp) no-repeat center/cover;
+}
 
 /* 1. 상단영역 */
 #top-area {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
 }
 
-.top-area{
-    height: 74px;
-
-  }
+.top-area {
+  height: 74px;
+}
 
 /* 2. 배너영역 */
 #ban-area {
-    position: sticky;
-    background-color: #000;
-    top: 74px;
+  position: sticky;
+  background-color: #000;
+  top: 74px;
 }
-.ban-area{
-    height: 900px;
-  }
-  .ban-area2{
-    height: 500px;
-  }
+.ban-area {
+  height: 900px;
+}
+.ban-area2 {
+  height: 500px;
+}
 /* *********3.콜렉션영역********** */
-#collections-area{
-    position: sticky;
-    top: -250px;
-    background-color: #fff;
-    overflow: hidden;
-    width: 100%;
+#collections-area {
+  position: sticky;
+  top: -250px;
+  background-color: #fff;
+  overflow: hidden;
+  width: 100%;
 }
-.collections-area{
-    width: 100%;
-    height: 1400px;
-  }
+.collections-area {
+  width: 100%;
+  height: 1400px;
+}
 /* 4-1.파트너쉽 이미지 영역 */
-#partnerships-area{
-    position: sticky;
-    top: -25%;
-    background: url(../../01.자료수집/main_img/Horizn.png)no-repeat center/cover;
+#partnerships-area {
+  position: sticky;
+  top: -25%;
+  background: url(../../01.자료수집/main_img/Horizn.png) no-repeat center/cover;
 }
-.partnerships-area{
-    height: 150vh;
+.partnerships-area {
+  height: 150vh;
 }
 /* 4-2.파트너쉽설명 영역 */
-#partnerships2-area{
-    position: sticky;
-    margin-top: 500px;
+#partnerships2-area {
+  position: sticky;
+  margin-top: 500px;
 }
-.partnerships2-area{
+.partnerships2-area {
 }
 
 /* 4-3 .파트너쉽동영상 영역 */
-#partnerships3-area{
-    position: sticky;
-    top: 15rem;
-    margin: 30rem 0;
+#partnerships3-area {
+  position: sticky;
+  top: 15rem;
+  margin: 30rem 0;
 }
-.partnerships3-area{
-    height: 700px;
-    /* height: 1200px; */
+.partnerships3-area {
+  height: 700px;
+  /* height: 1200px; */
 }
 /* 5.최신스토리 영역 */
-#story-area{
-    position: sticky;
+#story-area {
+  position: sticky;
 }
-.story-area{
-   /* height: 1500px; */
+.story-area {
+  /* height: 1500px; */
 }
 /* 6.소개동영상 영역 */
 #intromv-area {
-    margin-top: 300px;
+  margin-top: 300px;
 }
 
-.intromv-area{
-    height: 1200px;
+.intromv-area {
+  height: 1200px;
 }
-.black-area{
-    background-color: #000;
-    position: sticky;
-    top: -155rem;
+.black-area {
+  background-color: #000;
+  position: sticky;
+  top: -155rem;
 }
-.white-area{
-    position: sticky;
-    
+.white-area {
+  position: sticky;
 }
 /* 7.경험해보세요 영역 */
-#experience-area{
-    background-color: #fff;
+#experience-area {
+  background-color: #fff;
 }
-.experience-area{
-    /* height: 2400px; */
-    padding-top: 64px;
-    overflow: hidden;
+.experience-area {
+  /* height: 2400px; */
+  padding-top: 64px;
+  overflow: hidden;
 }
 
 /* 9. 기타스토리영역 */
-#other-story-area{  
-    background-color: #ffffff;
-    position: sticky;
-    top: -200px;
+#other-story-area {
+  background-color: #ffffff;
+  position: sticky;
+  top: -200px;
 }
-.other-story-area{
-    padding-top: 100px;
-    overflow: hidden;
-    /* height: 800px; */
-    
+.other-story-area {
+  padding-top: 100px;
+  overflow: hidden;
+  /* height: 800px; */
 }
 /* 10. 하단영역 */
-#footer-area{
-    position: sticky;
-    background-color: #fff;
+#footer-area {
+  position: sticky;
+  background-color: #fff;
 }
-.footer-area{
+.footer-area {
 }
-
-
 
 /* @import url(./media.css); */
-
-
-
