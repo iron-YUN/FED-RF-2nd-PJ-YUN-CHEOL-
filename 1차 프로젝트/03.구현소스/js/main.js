@@ -101,8 +101,6 @@ mFn.addEvt(banArea,"mouseenter", (e) => {
   // 마우스 이벤트가 banArea 내에서 발생한 경우에만 .mover 보이기
     mover.style.display = "block"; // .mover 보이기
 });
-
-// myBody.addEventListener("click", () => {});
 //////////////////////click 따라오기 ///////////////////////////
 
 //////////////////////////////coll 버튼클릭 슬라이드///////////////////////////////////////
