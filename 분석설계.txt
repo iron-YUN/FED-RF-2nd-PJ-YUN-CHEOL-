@@ -1,0 +1,4 @@
+와인 사이트
+- 이미지 드래그
+-클릭시 이미지가 블러효과 +찌그러지며 다음페이지로 넘어감
+https://www.vntnr.co/st-hugo-signature-coonawarra-cabernet-sauvignon-1-5l-magnum-2012
