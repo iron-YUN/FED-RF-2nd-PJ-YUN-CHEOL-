@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+/*예시) 영역별 큰제목 & 작은제목 & 설명글 공통*/
+:root{
+    --main:50px;
+    --sub:30px;
+    --text:20px;
+}
+.main-tit{
+    
+}
+.sub-tit{
+
+}
+.main-text{
+
+}

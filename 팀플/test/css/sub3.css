@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+
+@import url(./reset.css);
+@import url(./common.css);
+@import url(./core.css);
+@import url(./grid_12_flex.css);
+
+/* 공사중 표시 */
+body * {
+    outline: 2px dashed #ccc;
+}
+
+body{
+    margin: 0 auto;
+}
+
+/* 중앙속박스 */
+.inbox{
+    /* 최대가로크기 */
+    max-width: 1360px;
+    padding: 0 20px;
+    /* 블록박스 중앙정렬 -> 마.영.오! */
+    margin: 0 auto;    
+}
+
+.intro-area{
+    height: 100vh;
+}
+.char-area{
+    height: 100vh;
+}
+.bg-video{
+    position: absolute;
+    height: 100%;
+     width: 100%;
+     z-index: -2;
+     overflow: hidden;
+     filter: brightness(.7);
+     background: url(../IMG/img3/character.jpg)no-repeat center/cover;
+     
+ }
+ .bgvideo{
+     height: 100%;
+     width: 100%;
+     
+     object-fit: cover;
+ }
+
+ /* .bg-box{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.507);
+ } */
+ .toy-3rd-logo{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);   
+    white-space: nowrap;
+ }
+ .toy-3rd-logo img{
+    scale: 0.5;
+ }
+ .sino-box{
+    text-align: center;
+    position: relative;
+    display: flex;
+    top: 60%;
+    left: 5%;
+    width: 90vw;
+    height: 30vh;
+    background-color: #b4b4b4ab;
+    z-index: 9999;
+
+ }
+ .sino-box span{
+    color: #fff;
+    font-size: 2rem;
+    line-height: 2;
+    padding: 15px;
+    
+ }

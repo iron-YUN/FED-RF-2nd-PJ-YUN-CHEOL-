@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./common.css);
+@import url(./core.css);
+@import url(./grid_12_flex.css);
+
+.ibx {
+  max-width: 1680px;
+  margin: 0 auto;
+}
+/* 공사중 표시 */
+body * {
+  /* outline: 2px dashed #ccc; */
+}
+.main-tit{
+  font-size: 60px;
+  font-weight: bold;
+}
+.main-text {
+  font-size: 30px;
+  line-height: 1.7;
+}
+/* gnb */
+#top-area{
+  position: fixed;
+  width: 100%;
+}
+
+.gnb{
+  position: absolute;
+  right: 1%;
+  top: 30vh;
+}
+.gnb ul li{
+  margin: 5px 0 ;
+  text-align: right;
+}
+.gnb ul li a{
+  padding: 0 10px;
+  box-sizing: border-box;
+  background-color: #0000003f;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+#container {
+  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 백그라운드 */
+/* position: fixed; */
+#logo-area {
+  background: url(../IMG/img2/bg_sky.jpg) no-repeat
+    center;
+}
+#summary-area{
+  background: url(../IMG/img2/bg_summary.jpg) no-repeat
+  center/cover;
+}
+#trailers-area{
+  background: url(../IMG/img2/bg_TRAILERS.png) no-repeat
+  center/cover;
+}
+#character-design-area{
+  background: url(../IMG/img2/bg_CHARACTERDESIGN.jpg) no-repeat
+  center/cover;
+}
+#world-design-area{
+  background: url(../IMG/img2/bg_WORLDDESIGN.jpg) no-repeat
+  center/cover;
+}
+#awards-area{
+  background: url(../IMG/img2/bg_AWARDS.jpg) no-repeat
+  center/cover;
+}
+#credits-area{
+  background: url(../IMG/img2/bg_CREDITS.jpg) no-repeat
+  center/cover;
+}
+#footer-area{
+  background: url(../IMG/img2/bg_THANKS.jpg) no-repeat
+  center/cover;
+}
+
+
+
+/*************** 상단영역 ***************/
+.logo {
+  position: relative;
+  height: 100vh;
+  aspect-ratio: 453/662;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.logo a {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s ease-in-out;
+}
+.logo a:first-child:hover {
+  transition: 0.3s ease-in-out;
+  transform: translateY(-50%) rotateX(-10deg) rotateY(20deg) scale(1.1);
+}
+.logo a img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+}
+.logo a:last-child {
+  top: -200%;
+}
+.logo a:last-child.show {
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* --------------------- */
+.chars-bg {
+  position: relative;
+  margin: 0 auto;
+  bottom: 0;
+  height: 100vh;
+}
+.chars-bg p {
+  position: relative;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  color: #000;
+  padding: 5% 10%;
+  border-radius: 50px;
+}
+.chars-bg a:first-child h1{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+.chars-bg a:last-child{
+  position: relative;
+  transition: .5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.chars-bg a:last-child.show{
+  pointer-events: painted;
+  transition: .5s;
+  opacity: 1;
+}
+
+/******************* 2.트레일러 영역 *******************/
+.trailers-area{
+  height: 100vh;
+  position: relative;
+}
+.character-design-area{
+  height: 100vh;
+  position: relative;
+}
+.world-design-area{
+  height: 100vh;
+  position: relative;
+}
+.awards-area{
+  height: 100vh;
+  position: relative;
+}
+.credits-area{
+  height: 100vh;
+  position: relative;
+}
+.footer-area{
+  height: 100vh;
+  position: relative;
+}

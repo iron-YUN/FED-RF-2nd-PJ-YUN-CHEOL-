@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+@import url(./core.css);
+@import url(./reset.css);
+@import url(./common.css);
+
+
+#top, #main, #footer{
+  max-width: 1200;
+}
+
+#top{
+ height: 1200px;
+}
+#main{
+  max-height: 100vh; 
+}
+#footer{
+  /* height: 400px; */
+}
+
+/********************************* 상단구역 *********************************/
+#top{
+  background: url(../IMG/img4/common3.jpeg) no-repeat center /100% 100%;
+}
+
+.screen{
+  position: relative;
+  width: 100%;
+  padding-top: 5%;
+}
+
+#ifr{
+  position: relative;
+  left: calc(50% - 800px / 2);
+  width: 800px;
+  height: 500px;
+  
+}
+
+
+/********************************* 메인구역 *********************************/
+.main-title >img{
+  width: 40%;
+  margin-left: 23%;
+  padding: 6%;
+}
+
+/* 재귀함수 영역 */
+
+.gbox{
+  overflow: hidden;
+}
+.gbox ul{
+  display: flex;
+  list-style: none;    
+  margin: 0;
+  padding: 0;  
+}
+.gbox li{
+    width: 25vw;
+    padding: 1vw;
+    /* 플렉스 부모박스크기에 맞춰 줄이기 
+    -> 0을 쓰면 맞춰서 안줄이겠다는 뜻*/
+    flex-shrink: 0;
+    aspect-ratio: 664/443;
+    box-sizing: border-box;
+}
+.gbox li img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 시놉시스 영역 */
+
+.main-synopsis{
+  height: 15%;
+  padding-top: 6%;
+}
+.main-synopsis h2{
+  text-align: center;
+  font-size: 2.5rem;
+}
+.main-synopsis span{
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  display: flex;
+  margin: 72px auto 0;
+  padding-bottom: 3%;
+  width: 75%;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+
+/* 포스터 영역 */
+.poster{
+  display: flex;
+  gap: 6%;
+  padding: 5% 5%;
+}
+
+
+
+
+
+/*  캐릭터 소개 영역 */
+
+
+
+
+
+
+/********************************* 하단구역 *********************************/
+
