@@ -24,7 +24,7 @@ function showPoster() {
   }
   showPoster();
 
-
+let stopSts = false;
 //////////////////////////////////////////////////////////
   // 1.전역변수 설정하기 ////////////
 // 1-1. 페이지변수
@@ -48,6 +48,27 @@ setTimeout(() => {
     window.scroll(0,0);
 }, 500);
 
+const contBox = document.querySelector(".cont-box");
+contBox.addEventListener('wheel',e=>{
+  
+  // 막기상태가 true일때만 버블링막기
+  if(stopSts) 
+    e.stopPropagation();
+
+  let scTop = e.currentTarget.scrollTop;
+  console.log(scTop);
+
+  // 맨처음 또는 맨끝 위치에서 막기해제
+  if(scTop == 0 || scTop == 1155){ 
+    stopSts = false;
+  }
+  else { // 나머지는 막기설정
+    stopSts = true;
+  }
+
+  console.log(stopSts);
+})
+
 // // 3. 함수 구현하기 ////////////////
 function wheelFn(e) {
   // 1. 우리는 휠 기본기능을 막고
@@ -55,6 +76,9 @@ function wheelFn(e) {
   // -> passive:flase설정해야함!
   // 왜? window니까!!!
   e.preventDefault();
+  
+  if(stopSts) return;
+
 
   // 2. 광휠금지장치 ////////
   if (stsWheel) {
@@ -92,6 +116,8 @@ function wheelFn(e) {
     }///// if ////////
   } ///// else //////
   console.log("pgNum:", pgNum);
+
+  if(pgNum===6) stopSts = true;
 
     // 5. 페이지 이동하기 ///
     // 5-1.이동할 위치 알아내기
