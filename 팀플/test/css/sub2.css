@@ -11,12 +11,19 @@ body{
   overflow: hidden;
 }
 .ibx {
-  max-width: 1680px;
+  max-width: 1920px;
   margin: 0 auto;
 }
+
 /* 공사중 표시 */
 body * {
-  /* outline: 2px dashed #ccc; */
+  outline: 2px dashed #ccc;
+}
+.main-tit2{
+  padding-top: 60px;
+ margin-bottom: 40px;
+ color: #fff;
+ text-align: center;
 }
 .main-tit{
   font-size: 60px;
@@ -29,6 +36,7 @@ body * {
 /* gnb */
 #top-area{
   position: fixed;
+  z-index: 100;
   width: 100%;
 }
 
@@ -39,12 +47,16 @@ body * {
 }
 .gnb ul li{
   margin: 5px 0 ;
-  text-align: right;
+  text-align: center;
+  background-color: #0000003f;
+  border-radius: 20px;
+}
+.gnb ul li.on a{
+  color: yellow;
 }
 .gnb ul li a{
   padding: 0 10px;
   box-sizing: border-box;
-  background-color: #0000003f;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
@@ -125,43 +137,52 @@ body * {
   transform: translateY(-50%);
 }
 /* --------------------- */
-.chars-bg {
+.sum-text {
   position: relative;
   margin: 0 auto;
   bottom: 0;
   height: 100vh;
+  padding: 0 10%;
 }
-.chars-bg p {
+.sum-text p {
   position: relative;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #fff;
-  color: #000;
+  background-color: #00000054;
+  color: #fff;
   padding: 5% 10%;
   border-radius: 50px;
 }
-.chars-bg a:first-child h1{
+.sum-text a:first-child h1{
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  color: #fff;
   padding: 20px;
   border-radius: 20px;
 }
-.chars-bg a:last-child{
+.sum-text a:first-child{
+  transition: .5s;
+}
+.sum-text a:last-child{
   position: relative;
   transition: .5s;
   opacity: 0;
   pointer-events: none;
 }
-.chars-bg a:last-child.show{
+.sum-text a:last-child.show{
   pointer-events: painted;
   transition: .5s;
   opacity: 1;
 }
-
+.sum-text a:first-child.show{
+  pointer-events: none;
+  transition: .5s;
+  opacity: 0;
+  
+}
 /******************* 2.트레일러 영역 *******************/
 .trailers-area{
   height: 100vh;
@@ -183,16 +204,38 @@ body * {
   height: 100vh;
   position: relative;
 }
-.cont-box{
+.content-box{
   height: 100%;
   width: 50vw;
-  margin-left: 25vw;
+  margin: 0 auto;
   overflow: auto;
-  font-size: 24px;
-  line-height: 1.8;
+  font-size: 20px;
+  line-height: 1.5;
   color: #fff;
+  background-color: #00000073;
+  /* padding: 50px 0; */
+  box-sizing: border-box;
+  text-align: center;
+}
+.credits-text p,.awards-text p{
+  margin: 25px 0;
+  line-height: 1.5;
+}
+.credits-text,.awards-text{
+  /* overflow: hidden; */
+}
+strong{
+  font-weight: bold;
 }
 .footer-area{
   height: 100vh;
   position: relative;
 }
+/* 스크롤바 디자인 클래스 */
+/* -webkit - 벤터사명(크롬,사파리) 접두어 */
+/* 클래스명 scbar */
+.content-box::-webkit-scrollbar{
+  /* 전체 스크롤바 크기변경 */
+  width: 0;
+}
+
