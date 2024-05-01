@@ -4,36 +4,59 @@
 @import url(./common.css);
 @import url(./core.css);
 @import url(./grid_12_flex.css);
+/**************** 공통영역 ****************/
 html{  
   scroll-behavior: smooth;
 }
 body{
   overflow: hidden;
 }
-.ibx {
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
 /* 공사중 표시 */
 body * {
   outline: 2px dashed #ccc;
+}
+/* **** */
+strong{
+  font-weight: bold;
+}
+/* 스크롤바 디자인 클래스 */
+.content-box::-webkit-scrollbar{
+  width: 0;
+}
+.ibx {
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+}
+.flex-column{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.flex-row{
+  position: relative;
+  padding: 0 150px 0 30px;
+  display: flex;
+  flex-direction: row;
 }
 .main-tit2{
   padding-top: 60px;
  margin-bottom: 40px;
  color: #fff;
  text-align: center;
+ width: 100%;
 }
 .main-tit{
   font-size: 60px;
   font-weight: bold;
 }
 .main-text {
-  font-size: 30px;
-  line-height: 1.7;
+  font-size: 20px;
+  line-height: 1.5;
+  white-space: wrap;
 }
-/* gnb */
+/**************** gnb 인딕 고정 박스 ****************/
 #top-area{
   position: fixed;
   z-index: 100;
@@ -62,12 +85,8 @@ body * {
   font-weight: bold;
   line-height: 1.5;
 }
-#container {
-  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
 
-/* 백그라운드 */
-/* position: fixed; */
+/********************* 백그라운드 영역 *********************/
 #logo-area {
   background: url(../IMG/img2/bg_sky.jpg) no-repeat
     center/cover;
@@ -103,10 +122,10 @@ body * {
 
 
 
-/*************** 상단영역 ***************/
+/*************** 상단 로고영역 ***************/
 .logo {
   position: relative;
-  height: 100vh;
+  height: 100%;
   aspect-ratio: 453/662;
   overflow: hidden;
   box-sizing: border-box;
@@ -149,7 +168,7 @@ body * {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #00000054;
+  background-color: #00000085;
   color: #fff;
   padding: 5% 10%;
   border-radius: 50px;
@@ -184,58 +203,73 @@ body * {
   
 }
 /******************* 2.트레일러 영역 *******************/
-.trailers-area{
-  height: 100vh;
+/******************* 3.캐릭터 영역 *******************/
+.menu{
+  width: 250px;
+}
+.menu ul li a{
+  color: #fff;
+  font-size: 30px;
+  line-height: 2;
+}
+.main-cont{
   position: relative;
 }
-.character-design-area{
-  height: 100vh;
-  position: relative;
+.ab-box{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
 }
-.world-design-area{
-  height: 100vh;
-  position: relative;
+.main-box{
+  color: #fff;
+  width: 800px;
+  height: 100%;
 }
-.awards-area{
-  height: 100vh;
-  position: relative;
+.main-box p{
 }
-.credits-area{
-  height: 100vh;
-  position: relative;
+.main-box img{
+  display: block;
+  max-height: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
+.main-box{
+  margin-left: 30px;
+}
+/******************* 4.월드 영역 *******************/
+/******************* 5.어워즈 영역 *******************/
+/******************* 6.크레딧 영역 *******************/
+/******************* 7.하단 영역 *******************/
+
+
+
+
+
+
+
+
 .content-box{
   height: 100%;
-  width: 50vw;
   margin: 0 auto;
   overflow: auto;
   font-size: 20px;
   line-height: 1.5;
   color: #fff;
   background-color: #00000073;
-  /* padding: 50px 0; */
-  box-sizing: border-box;
   text-align: center;
 }
 .credits-text p,.awards-text p{
   margin: 25px 0;
   line-height: 1.5;
 }
-.credits-text,.awards-text{
-  /* overflow: hidden; */
+.credits-text p:last-child,.awards-text p:last-child{
+  padding-bottom: 150px;
 }
-strong{
-  font-weight: bold;
-}
+
 .footer-area{
   height: 100vh;
   position: relative;
 }
-/* 스크롤바 디자인 클래스 */
-/* -webkit - 벤터사명(크롬,사파리) 접두어 */
-/* 클래스명 scbar */
-.content-box::-webkit-scrollbar{
-  /* 전체 스크롤바 크기변경 */
-  width: 0;
-}
+
 
