@@ -70,7 +70,7 @@ body * {
 /* position: fixed; */
 #logo-area {
   background: url(../IMG/img2/bg_sky.jpg) no-repeat
-    center;
+    center/cover;
 }
 #summary-area{
   background: url(../IMG/img2/bg_summary.jpg) no-repeat
