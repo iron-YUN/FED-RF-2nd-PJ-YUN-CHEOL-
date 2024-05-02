@@ -1,7 +1,6 @@
 // 내함수 가져오기
 import mFn from "./my_function.js";
-import { creditsItems, awardsItems ,charTextItems} from "./sub2_data.js";
-
+import { creditsItems, awardsItems, charTextItems } from "./sub2_data.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23,40 +22,57 @@ function scrollPage() {
     window.scroll(0, 0);
   }, 500);
 
-  const contBox = mFn.qs(".content-box");
-  mFn.addEvt(contBox, "wheel", (e) => {
+  const contBox = mFn.qsa(".content-box");
+  console.log(contBox);
+
+  contBox.forEach((ele) => {
+    mFn.addEvt(ele, "wheel", setContBoxWheelEvent);
+  });
+
+
+  function setContBoxWheelEvent(e) {
     // 막기상태가 true일때만 버블링막기
     if (stopSts) e.stopPropagation();
-
+    // console.log(e.currentTarget);
     // 휠중일때 contbox 막기
-    if (e.type === "wheel" && e.target === contBox) {
-      e.preventDefault();
-    }
+    // if (e.type === "wheel" && e.target === contBox) {
+    //   e.preventDefault();
+    // }
     // let scTop = e.currentTarget.scrollTop;
     // console.log(scTop);
-    const scrollPercentage = Math.floor(getScrollPercentage(contBox));
+
+    // contBox.addEventListener("mouseenter", () => {
+    //   stopSts = true;
+    // });
+    // contBox.addEventListener("mouseleave", () => {
+    //   stopSts = false;
+    // });
+
+    const scrollPercentage = Math.floor(getScrollPercentage(e.currentTarget));
+
     console.log(scrollPercentage + "%");
-
-    if (scrollPercentage == 0 || scrollPercentage == 100) {
-      stopSts = false;
-    } else {
-      stopSts = true;
+    console.log(e.deltaY);
+    if (pgNum === 6 || pgNum === 5) {
+      // 0이면서 윗방향일때
+      if (scrollPercentage == 0 && e.deltaY < 0) {
+        stopSts = false;
+      } 
+      // 100이고 아랫방향일때
+      else if (scrollPercentage == 100 && e.deltaY > 0) {
+        stopSts = false;
+      } 
+      // 기타일 경우
+      else {
+        stopSts = true;
+      }
     }
-
-    contBox.addEventListener("mouseenter", () => {
-      stopSts = true;
-    });
-    contBox.addEventListener("mouseleave", () => {
-      stopSts = false;
-    });
-
     console.log(stopSts);
-  });
+  } /////// setContBoxWheelEvent ///////////////////
 
   // // 3. 함수 구현하기 ////////////////
   function wheelFn(e) {
-    e.preventDefault();
-
+    // e.preventDefault();
+    console.log("잠금여부:", stopSts);
     if (stopSts) return;
 
     // 2. 광휠금지장치 ////////
@@ -96,8 +112,6 @@ function scrollPage() {
     } ///// else //////
     console.log("pgNum:", pgNum);
 
-    if (pgNum === 6) stopSts = true;
-
     // 5. 페이지 이동하기 ///
     // 5-1.이동할 위치 알아내기
     // -> .page 요소중 해당 순번페이지위치
@@ -108,6 +122,12 @@ function scrollPage() {
     // 5-2. 페이지 스크롤 위치 이동하기
     // scrollTo(0,y축이동값)
     window.scrollTo(0, pos);
+
+    if(pgNum != 5 || pgNum != 6){
+      contBox.forEach((ele) => {
+        ele.scrollTo(0,0);
+      });
+    }
 
     // 6.해당메뉴 순번 on넣기 / 나머지on빼기
     // chgMenu(pgNum);
@@ -125,8 +145,15 @@ function scrollPage() {
   // 이벤트 설정하기 + 기능구현하기
   gnbA.forEach((ele, idx) => {
     ele.onclick = () => {
-      // 메뉴 변경함수 호출
+      // 메뉴 변경함수 호출 
       chgMenu(idx);
+      let txt = ele.innerText;
+      console.log(ele.innerText);
+      if(txt !== "AWARDS" || txt !== "CREDITS"){
+        contBox.forEach((ele) => {
+          ele.scrollTo(0,0);
+        });
+      }
     }; //////click함수 ////
   }); //////// forEach ////////////////
 
@@ -235,30 +262,46 @@ function innerChar1() {
     `;
   });
   menu1.innerHTML = hcode;
-}//////////////////////////////////////////////
+} //////////////////////////////////////////////
 innerChar1();
-
 
 function innerChar2() {
   let hcode = "";
-  const mainCont = mFn.qs('main-cont');
-//   charTextItems.forEach((text, i) => {
-//     hcode += `
-//         <div class="ab-box char${i}">
-//             <div class="main-box">
-//                 <img src="./IMG/img2/char/char_${i}.png" alt="" />
-//                 <p class="main-text">${text}</p>
-//             </div>
-//             <div class="main-img">
-//                 <a href="###"><img src="./IMG/img2/char/char2/${i}_${$[i]}.jpg" alt=""></a>
-//             </div>
-//         </div>
-//     `;
-//     mainCont.innerHTML = hcode;
-// });
+  const mainCont = mFn.qs(".main-cont");
+    charTextItems.forEach((text, i) => {
+    // let text = charTextItems[1];
+    // let i = 3;
 
-}///////////////////////////////////////////////
+      hcode += `
+      <div class="ab-box char${i+1}">
+        <div class="main-box">
+          <img src="./IMG/img2/char/char_${1}.png" alt="${i+1}" />
+          <p class="main-text">${text}</p>
+        </div>
+        <div class="main-img">
+          ${makeCode(i)}
+        </div>
+      </div>
+      `;
+    });
+    mainCont.innerHTML = hcode;
+} ///////////////////////////////////////////////
 innerChar2();
+
+function makeCode(seq,total=8){
+
+  let hcode = '';
+
+  for(let i=0; i<total; i++){
+  hcode +=  `
+    <a href="###">
+      <img src="./IMG/img2/char/char2/${seq+1}_${i+1}.jpg" alt="${i+1}">
+    </a>
+  `;
+  } /// for ///
+
+  return hcode;
+}
 
 
 ///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////
@@ -275,7 +318,7 @@ function innerLogo() {
   <img src="./IMG/img2/02_ts.jpg" alt="포스터" />
 </a>
     `;
-    logo.innerHTML = hcode;
+  logo.innerHTML = hcode;
 }
 innerLogo();
 ///////////////////////////////////////로고 포스터 뿌려주기//////////////////////////////////////////////
@@ -302,7 +345,7 @@ function innerSum() {
   </p>
 </a>
     `;
-    sunTit.innerHTML = hcode;
+  sunTit.innerHTML = hcode;
 }
 innerSum();
 ///////////////////////////////////////서머리 뿌려주기//////////////////////////////////////////////
