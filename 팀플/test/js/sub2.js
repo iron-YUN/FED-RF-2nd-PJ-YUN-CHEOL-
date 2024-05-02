@@ -103,6 +103,9 @@ function scrollPage() {
         // 전체개수 -1
       } //////if ///////
     } ///// if /////
+
+    // else if(pgNum){}
+    
     else {
       pgNum--;
       // 한계수체크 (0보다 작으면 0고정)
