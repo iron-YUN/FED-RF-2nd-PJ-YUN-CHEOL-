@@ -137,5 +137,23 @@ const creditsItems = {
   "INTERNATIONAL ELECTRONIC CINEMA FESTIVAL":["WINNER OF MAYOR'S ASTROLABIUM AWARD"],
   };
 
+
+  const charTextItems = [
+    `Toy Story 2 reunited an already beloved cast, and new rendering tools literally gave them more texture. The most important new characters, Jessie, Bullseye, and Stinky Pete, had to be compelling enough to lure Woody away from Andy. And minor characters posed unexpected challenges. Some had been built quickly for non-emotive roles in Toy Story. “When we brought them back for Toy Story 2, we looked at the script and said, 'oh jeez, we have to make them run across a conveyor belt, and they don’t have legs that work!',” recalls animator Glenn McQueen.
+
+Toy Story 2 marked the third Pixar film in a row to feature a score by Randy Newman. Asked to write a song from a toy’s point of view, Newman responded with “When She Loved Me.” Sung for Jessie by Sarah McLachlan, it earned an Academy Award® Best Song nomination. According to John Lasseter, Jessie’s song was “the most significant change in the movie.”`,
+    "Of all Andy's toys, Woody seems to be the one who most questions his existence, whether it's as Andy's favorite, a toy destined for the landfill, or a hot collectible. Luckily, Woody comes to his senses before choosing to retire to a museum in Japan.",
+    `The toy gang's fearless Space Ranger has come down to Earth a bit since his last outing. In fact, Buzz finds himself in an ironic predicament when he must explain to a store display Buzz that they're "just toys."`,
+   " It's no wonder this cowgirl gets the blues. Her beloved owner gave her up to charity, she was imprisoned in a dark storage box for years, and now a cowboy from her past is asking her to take risks just when life was starting to get easy. But, Jessie's a toy at heart and would do anything to give joy to a little girl again.",
+   `This toy horse rides like the wind, especially when it's Woody giving the command. In a 21st-century real-life version of the 1950s TV episode "Woody's Finest Hour," Bullseye must gallop like crazy to rescue Jessie and Woody from a speeding plane.`,
+   `Mr. Potato Head®'s "sweet potato" lives up to her nickname as an affectionate and lovingly overprotective toy. She puts her spud's storage compartment to good use, making sure he has his "angry eyes" handy for the rescue mission, just in case.`,
+   `Every toy's worst nightmare has happened to this broken squeak-toy penguin. Relegated to the dusty top shelf in Andy's room, Wheezy finds he's got a friend in Woody, who risks life and limb to come to his pal's res`,
+`Spending a lifetime on a dime-store shelf while every other toy in the Roundup Gang gets sold can make a toy bitter. When the Prospector's waiting in boxed "mint condition" finally pays off, he won't let anything keep him from immortality.`,
+`The ultimate force of evil in the galaxy, terrifying tyrant Emperor Zurg is unswerving in his quest to destroy his enemy Buzz Lightyear.`,
+`The shifty proprietor of Al's Toy Barn will do anything to complete his collection of Woody's Roundup toys. His dream of selling his valuable menagerie to a museum nearly comes true when he finds Woody, complete with the elusive hat.`,
+  ]
   
-export {creditsItems,awardsItems};
+export {creditsItems,awardsItems,charTextItems};
+
+
+///////////////////////////////////////////////////////////////////////////////////

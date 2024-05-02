@@ -1,6 +1,6 @@
 // 내함수 가져오기
 import mFn from "./my_function.js";
-import { creditsItems, awardsItems } from "./sub2_data.js";
+import { creditsItems, awardsItems ,charTextItems} from "./sub2_data.js";
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -222,9 +222,9 @@ const charItems = [
   "Al",
 ];
 
-function innerChar() {
-  const menu1 = mFn.qs(".menu1");
+function innerChar1() {
   let hcode = "";
+  const menu1 = mFn.qs(".menu1");
   charItems.forEach((i) => {
     hcode += `
     <ul>
@@ -235,8 +235,31 @@ function innerChar() {
     `;
   });
   menu1.innerHTML = hcode;
-}
-innerChar();
+}//////////////////////////////////////////////
+innerChar1();
+
+
+function innerChar2() {
+  let hcode = "";
+  const mainCont = mFn.qs('main-cont');
+//   charTextItems.forEach((text, i) => {
+//     hcode += `
+//         <div class="ab-box char${i}">
+//             <div class="main-box">
+//                 <img src="./IMG/img2/char/char_${i}.png" alt="" />
+//                 <p class="main-text">${text}</p>
+//             </div>
+//             <div class="main-img">
+//                 <a href="###"><img src="./IMG/img2/char/char2/${i}_${$[i]}.jpg" alt=""></a>
+//             </div>
+//         </div>
+//     `;
+//     mainCont.innerHTML = hcode;
+// });
+
+}///////////////////////////////////////////////
+innerChar2();
+
 
 ///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////
 ///////////////////////////////////////월드 뿌려주기//////////////////////////////////////////////
