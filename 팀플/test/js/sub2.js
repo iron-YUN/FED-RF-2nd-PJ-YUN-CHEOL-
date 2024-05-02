@@ -237,7 +237,7 @@ for (let i = 1; i < inBox.length; i++) {
 ///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////
 
 const charItems = [
-  "DESIGN",
+  // "DESIGN",
   "Woody",
   "Buzz Lightyear",
   "Jessie",
@@ -275,7 +275,7 @@ function innerChar2() {
       hcode += `
       <div class="ab-box char${i+1}">
         <div class="main-box">
-          <img src="./IMG/img2/char/char_${1}.png" alt="${i+1}" />
+          <img src="./IMG/img2/char/char_${i+1}.png" alt="${i+1}" />
           <p class="main-text">${text}</p>
         </div>
         <div class="main-img">
@@ -299,9 +299,26 @@ function makeCode(seq,total=8){
     </a>
   `;
   } /// for ///
-
   return hcode;
 }
+function showAB (){
+  const abBox = mFn.qsa(".ab-box");
+  const menuLi = mFn.qsa(".menu1 ul li");
+
+  abBox[0].classList.add("show");
+
+ menuLi.forEach((li, index) => {
+        mFn.addEvt(li, "click", () => {
+            // 모든 ab-box에서 'show' 클래스 제거
+            abBox.forEach(abBox => {
+                abBox.classList.remove("show");
+            });
+            // 해당 순번의 ab-box에 'show' 클래스 추가
+            abBox[index].classList.add("show");
+        });
+    });
+}
+showAB();
 
 
 ///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////

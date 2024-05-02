@@ -218,9 +218,16 @@ strong{
 .ab-box{
   position: absolute;
   left: 0;
-  top: 50%;
+  /* top: 50%; */
   display: flex;
-  transform: translateY(-50%);
+  /* transform: translateY(-30%); */
+  display: none;
+}
+.ab-box.show{
+  display: flex;
+}
+.ab-box:first-child.show{
+  display: flex;
 }
 .main-box{
   color: #fff;
@@ -256,6 +263,7 @@ strong{
   width: 100%;  
   grid-column: 2/3;
 }
+
 /******************* 4.월드 영역 *******************/
 /******************* 5.어워즈 영역 *******************/
 /******************* 6.크레딧 영역 *******************/
