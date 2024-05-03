@@ -36,9 +36,11 @@ strong{
 }
 .flex-row{
   position: relative;
-  padding: 0 150px 0 30px;
+  /* padding: 0 150px 0 30px; */
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  align-items:center;
 }
 .main-tit2{
   padding-top: 60px;
@@ -65,7 +67,7 @@ strong{
 
 .gnb{
   position: absolute;
-  right: 1%;
+  right: 1vw;
   top: 30vh;
 }
 .gnb ul li{
@@ -125,8 +127,9 @@ strong{
 /*************** 상단 로고영역 ***************/
 .logo {
   position: relative;
+  max-width: 600px;
   height: 100%;
-  aspect-ratio: 453/662;
+  /* aspect-ratio: 453/662; */
   overflow: hidden;
   box-sizing: border-box;
   margin: 0 auto;
@@ -204,61 +207,79 @@ strong{
 }
 /******************* 2.트레일러 영역 *******************/
 /******************* 3.캐릭터 영역 *******************/
+/* 캐릭터 menu list */
 .menu{
+  position: absolute;
   width: 250px;
+  left: 30px;
+  /* height: 100%; */
 }
 .menu ul li a{
   color: #fff;
   font-size: 30px;
   line-height: 2;
 }
-.main-cont{
-  position: relative;
+.menu ul li.show a{
+  color: yellow;
 }
+
+/* .menu / main-cont
+ab-box , char1 
+char-info-box(char-img / main-text) / grid-img */
+
+/* 캐릭터별 메인콘텐트 
+- 부모설정 필요없어짐*/
+.main-cont{
+  /* position: relative; */
+  margin: 0 auto;
+}
+/* 앱솔루트설정박스 
+- dn설정으로 앱솔설정 필요없어짐 */
 .ab-box{
-  position: absolute;
-  left: 0;
-  /* top: 50%; */
-  display: flex;
-  /* transform: translateY(-30%); */
   display: none;
+  align-items: center;
+  /* flex-wrap: wrap; */
 }
 .ab-box.show{
   display: flex;
 }
-.ab-box:first-child.show{
+
+/* 캐릭터정보박스 */
+.char-info-box{
+  flex-direction: column;
   display: flex;
-}
-.main-box{
   color: #fff;
-  width: 800px;
+  max-width: 600px;
   height: 100%;
+  margin: 0 30px;
 }
-.main-box p{
-}
-.main-box img{
-  display: block;
-  max-height: 300px;
+/* 이미지를 가두는 박스 */
+.char-img{
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  height: 300px;
 }
-.main-box{
-  margin-left: 30px;
+.char-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-.main-img{
+/* 캐릭터 그리드 이미지 박스 */
+.grid-img{
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
 }
-.main-img a{
+.grid-img a{
  aspect-ratio: 100/100;
  width: 200px;
 }
-.main-img a img{
+.grid-img a img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+/* *********************** */
 .char0 a{
   width: 100%;  
   grid-column: 2/3;

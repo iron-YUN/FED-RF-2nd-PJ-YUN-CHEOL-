@@ -141,8 +141,6 @@ const creditsItems = {
 // Toy Story 2 marked the third Pixar film in a row to feature a score by Randy Newman. Asked to write a song from a toy’s point of view, Newman responded with “When She Loved Me.” Sung for Jessie by Sarah McLachlan, it earned an Academy Award® Best Song nomination. According to John Lasseter, Jessie’s song was “the most significant change in the movie.”`,
 
   const charTextItems = [
-    
-
     "Of all Andy's toys, Woody seems to be the one who most questions his existence, whether it's as Andy's favorite, a toy destined for the landfill, or a hot collectible. Luckily, Woody comes to his senses before choosing to retire to a museum in Japan.",
 
     `The toy gang's fearless Space Ranger has come down to Earth a bit since his last outing. In fact, Buzz finds himself in an ironic predicament when he must explain to a store display Buzz that they're "just toys."`,
@@ -160,9 +158,23 @@ const creditsItems = {
 `The ultimate force of evil in the galaxy, terrifying tyrant Emperor Zurg is unswerving in his quest to destroy his enemy Buzz Lightyear.`,
 
 `The shifty proprietor of Al's Toy Barn will do anything to complete his collection of Woody's Roundup toys. His dream of selling his valuable menagerie to a museum nearly comes true when he finds Woody, complete with the elusive hat.`,
-  ]
+  ];
+
+  const worldTextItems=[
+    "Although Al is surrounded by toys, he has a different point of view than Andy. Al is an adult, not a kid, and his only relationship with toys involves a profit motive. The filmmakers established the distance between their worlds by giving Al a small apartment in an imposing high-rise, where the colors were more drab, the lighting was dim and artificial, and air vents would be seen as escape routes.",
+    "For the cast of Toy Story 2, the trip to Al’s Toy Barn was both perilous and otherworldly. Using only modest exaggeration, the filmmakers presented the retail toy store as towering and awe inspiring, especially when viewed from the very low angle of the characters. It also provided Buzz the existential experience of confronting himself, facing hundreds of identical Buzz Lightyears still in their packages.",
+    "A crucial story element involved Woody discovering his past life as a TV star. Delving back to the early days of black-and-white television, the Pixar team envisioned Woody’s Roundup in the primitive marionette format of the day. To capture that authenticity, the crew enlisted various CGI processes to make the vintage television footage look not only old but also like it had been stored in a garage.",
+    "Just as Woody was given a backstory for the sequel, Buzz Lightyear had his own world created for Toy Story 2. The opening sequence allowed the filmmakers to launch Buzz into a wildly over- matched battle on the distant planet ruled by his archnemesis. The space adventure would be revealed as a video game within the movie, but it established the character of evil Emperor Zurg, who would later pose a real threat to Buzz and friends.",
+    `For Toy Story 2’s dramatic climax, the race led to the Tri-County International Airport. The rescue involved two devices that would be featured in other Pixar films: a Pizza Planet delivery truck and a vast, byzantine world of conveyance systems. In the end, it's Woody’s old-fashioned cowboy heroics that prevail over the
+    modern jetliner.`,
+    `A colorscript is a sequence of small pastel drawings or paintings used to emphasize color in each scene and establish a film's
+    visual language.
+
+    Ralph Eggleston set the visual style for Toy Story with his original colorscript. Production Designer Bill Cone expanded on it for Toy Story 2. “It’s writing a symphony where the dynamics of the plot are reflected in the dynamics of light and color,” offers Cone.“The expression of light and color in storytelling is a bottomless well of inquiry. You won’t run out of ways to express mood and emotion through those qualities.”  
+    `,
+  ];
   
-export {creditsItems,awardsItems,charTextItems};
+export {creditsItems,awardsItems,charTextItems,worldTextItems};
 
 
 ///////////////////////////////////////////////////////////////////////////////////
