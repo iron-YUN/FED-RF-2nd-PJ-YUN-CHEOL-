@@ -13,7 +13,7 @@ body{
 }
 /* 공사중 표시 */
 body * {
-  outline: 2px dashed #ccc;
+  /* outline: 2px dashed #ccc; */
 }
 /* **** */
 strong{
@@ -244,8 +244,8 @@ char-info-box(char-img / main-text) / grid-img */
   display: flex;
 }
 
-/* 캐릭터정보박스 */
-.char-info-box{
+/* 공통 -  정보박스 */
+.info-box{
   flex-direction: column;
   display: flex;
   color: #fff;
@@ -253,7 +253,7 @@ char-info-box(char-img / main-text) / grid-img */
   height: 100%;
   margin: 0 30px;
 }
-/* 이미지를 가두는 박스 */
+/* 개별 - 캐릭터정보 이미지를 가두는 박스 */
 .char-img{
   margin: 0 auto;
   margin-bottom: 30px;
@@ -264,7 +264,7 @@ char-info-box(char-img / main-text) / grid-img */
   height: 100%;
   object-fit: contain;
 }
-/* 캐릭터 그리드 이미지 박스 */
+/* 공통 - 그리드 겔러리 박스 */
 .grid-img{
   display: grid;
   gap: 20px;
@@ -279,12 +279,6 @@ char-info-box(char-img / main-text) / grid-img */
   height: 100%;
   object-fit: cover;
 }
-/* *********************** */
-.char0 a{
-  width: 100%;  
-  grid-column: 2/3;
-}
-
 /******************* 4.월드 영역 *******************/
 /******************* 5.어워즈 영역 *******************/
 /******************* 6.크레딧 영역 *******************/
@@ -293,6 +287,7 @@ char-info-box(char-img / main-text) / grid-img */
 
 .content-box{
   height: 100%;
+  width: 50vw;
   margin: 0 auto;
   overflow: auto;
   font-size: 20px;

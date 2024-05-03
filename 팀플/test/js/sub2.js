@@ -1,6 +1,14 @@
 // 내함수 가져오기
 import mFn from "./my_function.js";
-import { creditsItems, awardsItems, charTextItems ,worldTextItems} from "./sub2_data.js";
+import { creditsItems, awardsItems} from "./sub2_data.js";
+
+// 캐릭터뿌려주기
+import showChar from "./sub2_char.js"
+showChar();
+// 월드뿌려주기
+import showWorld from "./sub2_world.js"
+showWorld();
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -17,7 +25,7 @@ function scrollPage() {
   // 휠이벤트가 발생하면 wheelFn을 호출해라
   mFn.addEvt(window, "wheel", wheelFn, { passive: false });
 
-  // [새로고침시 맨위로 강제 이동하기 설정]
+  // [새로고침시 맨위로 강제 이동하기 설정]http://127.0.0.1:5501/%ED%8C%80%ED%94%8C/test/sub2.html###
   setTimeout(() => {
     window.scroll(0, 0);
   }, 500);
@@ -233,168 +241,20 @@ function innerAwards() {
 //////////////////////////////////배경사진 어둡게///////////////////////////////////////////
 const inBox = mFn.qsa(".ibx");
 for (let i = 1; i < inBox.length; i++) {
+  console.log("인박스 개수 : ",inBox.length);
   inBox[i].style.backgroundColor = "#00000098";
+  ///////////////////////////////////////////
+  // 0~7 까지 중 5,6번 배경은 살짝 밝게 조정하기
+  ///////////////////////////////////////////
 }
 //////////////////////////////////배경사진 어둡게///////////////////////////////////////////
 
 ///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////
 
-const charItems = [
-  // "DESIGN",
-  "Woody",
-  "Buzz Lightyear",
-  "Jessie",
-  "Bullseye",
-  "Mrs. Potato Head",
-  "Weezy",
-  "The Prospector",
-  "Emperor Zurg",
-  "Al",
-];
-///////// 리스트뿌리기 함수 /////////
-function innerChar1() {
-  let hcode = "";
-  const menu1 = mFn.qs(".menu1");
-  charItems.forEach((i) => {
-    hcode += `
-    <ul>
-        <li>
-        <a href="###">${i}</a>
-        </li>
-    </ul>
-    `;
-  });
-  menu1.innerHTML = hcode;
-} ///////////////////리스트뿌리기 함수///////////////////////////
-innerChar1();
-
-/////// 캐릭터정보 뿌리기 /////////////
-function innerChar2() {
-  let hcode = "";
-  const mainCont1 = mFn.qsa(".main-cont")[0];
-    charTextItems.forEach((text, i) => {
-    // let text = charTextItems[1];
-    // let i = 3;
-
-      hcode += `
-      <div class="ab-box ab-box1 char${i+1}">
-        <div class="char-info-box">
-         <div class="char-img">
-          <img src="./IMG/img2/char/char_${i+1}.png" alt="${i+1}" />
-          </div>
-          <p class="main-text">${text}</p>
-        </div>
-        <div class="grid-img">
-          ${makeCode1(i)}
-        </div>
-      </div>
-      `;
-    });
-    mainCont1.innerHTML = hcode;
-} ////////////////캐릭터정보 뿌리기 함수///////////////////////////////
-innerChar2();
-
-///////////// 캐릭터 사진겔러리 뿌리기 /////////////
-function makeCode1(seq,total=9){
-  let hcode = '';
-  for(let i=0; i<total; i++){
-  hcode +=  `
-    <a href="###">
-      <img src="./IMG/img2/char/char2/${seq+1}_${i+1}.jpg" alt="${i+1}">
-    </a>
-  `;
-  } /// for ///
-  return hcode;
-}////////////////makeCode1/////////////////////
-function showAB (){
-  const abBox = mFn.qsa(".ab-box1");
-  const menuLi = mFn.qsa(".menu1 ul li");
-
-  abBox[0].classList.add("show");
-  menuLi[0].classList.add("show");
-
-// 1-1. 이벤트대상 : ..menu1 ul li (버튼들) menuLi
-// 1-2. 변경대상 : .ab-box (겔러리 박스들) abBox
-
- menuLi.forEach((li, index) => {
-   // menuLi.classList.remove("show");
-   mFn.addEvt(li, "click", () => {
-          // menuLi[index].classList.add("show");
-            // 모든 ab-box에서 'show' 클래스 제거
-            abBox.forEach(abBox => {
-                abBox.classList.remove("show");
-              });
-              // 해당 순번의 ab-box에 'show' 클래스 추가
-              abBox[index].classList.add("show");``
-        });
-    });
-}/////////////////showAB///////////////////////////
-showAB();
-
-//////////////// 캐릭터 사진겔러리 뿌리기 함수 //////////
 
 
 ///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////
 ///////////////////////////////////////월드 뿌려주기//////////////////////////////////////////////
-
-const worldItems = [
- "Al's Apartment",
- "Al's Toy Barn",
- "Woody's Roundup",
- "Zurg's Fortress",
- "Airport",
- "Colorscripts",
-];
-///////// 월드 리스트 뿌리기 ////////////////
-function innerWorld1() {
-  let hcode = "";
-  const menu2 = mFn.qs(".menu2");
-  worldItems.forEach((i) => {
-    hcode += `
-    <ul>
-        <li>
-        <a href="###">${i}</a>
-        </li>
-    </ul>
-    `;
-  });
-  menu2.innerHTML = hcode;
-} ///////////////// 월드 리스트 뿌리기 함수/////////////////////////////
-innerWorld1();
-
-////////////////////// 월드 정보 뿌리기 ///////////////
-function innerWorld2() {
-  let hcode = "";
-  const mainCont2 = mFn.qsa(".main-cont")[1];
-    worldTextItems.forEach((text, i) => {
-    // let text = charTextItems[1];
-    // let i = 3;
-      hcode += `
-      <div class="ab-box ab-box2 world${i+1}">
-        <div class="world-info-box">
-          <p class="main-text">${text}</p>
-        </div>
-        <div class="grid-img">
-          ${makeCode2(i)}
-        </div>
-      </div>
-      `;
-    });
-    mainCont2.innerHTML = hcode;
-} ////////////////////// 월드 정보 뿌리기 함수 //////////////////////////////////
-innerWorld2();
-/////////////////////////////////////////////////////
-function makeCode2(seq,total=9){
-  let hcode = '';
-  for(let i=0; i<total; i++){
-  hcode +=  `
-    <a href="###">
-      <img src="./IMG/img2/char/char2/${seq+1}_${i+1}.jpg" alt="${i+1}">
-    </a>
-  `;
-  } /// for ///
-  return hcode;
-}////////////////makeCode1/////////////////////
 
 ///////////////////////////////////////월드 뿌려주기//////////////////////////////////////////////
 ///////////////////////////////////////로고 포스터 뿌려주기//////////////////////////////////////////////
