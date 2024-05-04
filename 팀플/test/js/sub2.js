@@ -20,7 +20,7 @@ function scrollPage() {
   let stsWheel = false; // 1-2. 휠 상태변수 (true 는 막기/ false는 통과)
   const elePage = mFn.qsa(".section"); // 1-3. .section 클래스요소
   const totalCnt = elePage.length; // 1-4. 전체페이지수
-  console.log("대상:", elePage, totalCnt, "개");
+  // console.log("대상:", elePage, totalCnt, "개");
 
   // 휠이벤트가 발생하면 wheelFn을 호출해라
   mFn.addEvt(window, "wheel", wheelFn, { passive: false });
@@ -31,7 +31,7 @@ function scrollPage() {
   }, 500);
 
   const contBox = mFn.qsa(".content-box");
-  console.log(contBox);
+  // console.log(contBox);
 
   contBox.forEach((ele) => {
     mFn.addEvt(ele, "wheel", setContBoxWheelEvent);
@@ -152,7 +152,7 @@ function scrollPage() {
   const gnbA = document.querySelectorAll(".gnb a");
   //  이벤트 대상 : .indic a
   // const indic = document.querySelectorAll('.indic a');
-  console.log("gnbA", gnbA);
+  // console.log("gnbA", gnbA);
   // 이벤트 설정하기 + 기능구현하기
   gnbA.forEach((ele, idx) => {
     ele.onclick = () => {

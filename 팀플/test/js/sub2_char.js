@@ -72,28 +72,38 @@ export default function showChar() {
     } /// for ///
     return hcode;
   } ////////////////makeCode/////////////////////
+
+  
   function showAB() {
     const abBox = mFn.qsa(".ab-box1");
+    // console.log('.ab-box1 개수',abBox)
     const menuLi = mFn.qsa(".menu1 ul li");
+    // console.log('.menu1 ul li 개수',menuLi)
 
     abBox[0].classList.add("show");
     menuLi[0].classList.add("show");
 
     // 1-1. 이벤트대상 : ..menu1 ul li (버튼들) menuLi
     // 1-2. 변경대상 : .ab-box (겔러리 박스들) abBox
-
     menuLi.forEach((li, index) => {
-      // menuLi.classList.remove("show");
       mFn.addEvt(li, "click", () => {
-        // menuLi[index].classList.add("show");
-        // 모든 ab-box에서 'show' 클래스 제거
+
+        // 1-1.모든 menuLi에서 'show' 클래스 제거z`
+        // li.classList.remove("show");
+        // 이건왜 이상한걸까요??????????????? 
+        menuLi.forEach((menuLi)=>{
+          menuLi.classList.remove("show");
+        });/////// forEach //////////////
+
+        // 1-2.모든 ab-box에서 'show' 클래스 제거z`
         abBox.forEach((abBox) => {
           abBox.classList.remove("show");
-        });
-        // 해당 순번의 ab-box에 'show' 클래스 추가
+        });/////// forEach //////////////
+
+        // 2.해당 순번에 'show' 클래스 추가
         abBox[index].classList.add("show");
-        ``;
-      });
+        menuLi[index].classList.add("show");
+      });/////// addEvt ///////
     });
   } /////////////////showAB///////////////////////////
   showAB();
