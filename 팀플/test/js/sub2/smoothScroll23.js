@@ -3,11 +3,15 @@
 // 부드러운 스크롤 2023.09 수정버전
 // 부드러운 스크롤 2024.04 변수선언개정
 // arranged by Tom Brace Parker
+import mFn from "../my_function.js";
 
 // startSS()함수를 호출하여 사용
 function startSS() {
     // 전체 스크롤 대상일때 document를 보냄
+    // const contBox = mFn.qsa(".content-box");
+    // new SmoothScroll(document.querySelectorAll('.content-box'), 90, 15)
     new SmoothScroll(document, 90, 15)
+
     // 특정박스일 경우 document.querySelector(선택요소)를 씀!
     // new SmoothScroll(document.querySelector('.wrap'), 60, 12)
 }
@@ -103,4 +107,4 @@ function SmoothScroll(scrollTarget, speed, smooth) {
 // 함수 외부 공개하기
 // 부드러운 스크롤 시작 함수 : startSS()
 // 위치값 변경 함수 : setScrollPos()
-export {startSS,setScrollPos};
+export {startSS,setScrollPos,SmoothScroll};
