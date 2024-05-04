@@ -1,262 +1,58 @@
 // 내함수 가져오기
 import mFn from "./my_function.js";
-import { creditsItems, awardsItems} from "./sub2_data.js";
+import {gnbItems} from "./sub2_data.js";
 
-// 캐릭터뿌려주기
+// gnb 뿌려주기 슬라이드 기능보다 앞에있어야함 -> 노란표시기능때문임
+showGNB();
+// 페이지 슬라이드 기능 불러오기
+import scrollPage from "./sub2_slide.js";
+scrollPage();
+// 캐릭터 뿌려주기
 import showChar from "./sub2_char.js"
 showChar();
-// 월드뿌려주기
+// 월드 뿌려주기
 import showWorld from "./sub2_world.js"
 showWorld();
-
-
+// 어워즈 & 크레딧 뿌려주기
+import showAwardsCredits from "./sub2_aw_cre.js";
+showAwardsCredits();
 //////////////////////////////////////////////////////////////////////////////////////////////////
-
-scrollPage();
-function scrollPage() {
-  // 1.변수 설정하기 ////////////
-  let stopSts = false;
-  let pgNum = 0; // 1-1. 페이지변수
-  let stsWheel = false; // 1-2. 휠 상태변수 (true 는 막기/ false는 통과)
-  const elePage = mFn.qsa(".section"); // 1-3. .section 클래스요소
-  const totalCnt = elePage.length; // 1-4. 전체페이지수
-  // console.log("대상:", elePage, totalCnt, "개");
-
-  // 휠이벤트가 발생하면 wheelFn을 호출해라
-  mFn.addEvt(window, "wheel", wheelFn, { passive: false });
-
-  // [새로고침시 맨위로 강제 이동하기 설정]http://127.0.0.1:5501/%ED%8C%80%ED%94%8C/test/sub2.html###
-  setTimeout(() => {
-    window.scroll(0, 0);
-  }, 500);
-
-  const contBox = mFn.qsa(".content-box");
-  // console.log(contBox);
-
-  contBox.forEach((ele) => {
-    mFn.addEvt(ele, "wheel", setContBoxWheelEvent);
+/////////////////////////////////////////////gnb 뿌려주기/////////////////////////////////////////////////////
+function showGNB(){
+  const gnb = mFn.qs('.gnb');
+  // console.log("나와gnb",gnb);
+  let hcode = "<ul>";
+  Object.keys(gnbItems).forEach((key) => {
+    hcode +=`
+    <li>
+      <a href="#${gnbItems[key]}">${key}</a>
+    </li>
+    `;
   });
+  hcode +="<ul>";
+  gnb.innerHTML = hcode;
 
+  const gnbLi = mFn.qsaEl(gnb,"li");
+  // console.log("나와라 li",gnbLi);
+  gnbLi[0].classList.add('on');
+}/////////////// showGNB함수 /////////////////
 
-  function setContBoxWheelEvent(e) {
-    // 막기상태가 true일때만 버블링막기
-    if (stopSts) e.stopPropagation();
-    // console.log(e.currentTarget);
-    // 휠중일때 contbox 막기
-    // if (e.type === "wheel" && e.target === contBox) {
-    //   e.preventDefault();
-    // }
-    // let scTop = e.currentTarget.scrollTop;
-    // console.log(scTop);
-
-    // contBox.addEventListener("mouseenter", () => {
-    //   stopSts = true;
-    // });
-    // contBox.addEventListener("mouseleave", () => {
-    //   stopSts = false;
-    // });
-
-    const scrollPercentage = Math.floor(getScrollPercentage(e.currentTarget));
-
-    console.log(scrollPercentage + "%");
-    console.log(e.deltaY);
-    if (pgNum === 6 || pgNum === 5) {
-      // 0이면서 윗방향일때
-      if (scrollPercentage == 0 && e.deltaY < 0) {
-        stopSts = false;
-      } 
-      // 100이고 아랫방향일때
-      else if (scrollPercentage == 100 && e.deltaY > 0) {
-        stopSts = false;
-      } 
-      // 기타일 경우
-      else {
-        stopSts = true;
-      }
-    }
-    console.log(stopSts);
-  } /////// setContBoxWheelEvent ///////////////////
-
-  // // 3. 함수 구현하기 ////////////////
-  function wheelFn(e) {
-    // e.preventDefault();
-    console.log("잠금여부:", stopSts);
-    if (stopSts) return;
-
-    // 2. 광휠금지장치 ////////
-    if (stsWheel) {
-      return; //돌아가
-    }
-    stsWheel = true; //잠금!!
-    setTimeout(() => {
-      stsWheel = false;
-    }, 1000);
-    //////////////////////////
-
-    //  3. 휠방향 알아내기 ///
-    let delta = e.wheelDelta;
-    // 휠델타는 이벤트 객체에서 리턴해주는
-    // 방향,이동거리 등의 정보값이다.
-    console.log("델타값:", delta);
-    //  -> 마이너스가 아랫방향임!
-
-    // 4. 방향별 분기하기 ////
-    if (delta < 0) {
-      // 아랫페이지로 가야하니까 페이지번호증가
-      pgNum++;
-      //  한계수체크 (끝번호고정)
-      if (pgNum === totalCnt) {
-        pgNum = totalCnt - 1;
-        //마지막페이지순번은
-        // 전체개수 -1
-      } //////if ///////
-    } ///// if /////
-
-    // else if(pgNum){}
-    
-    else {
-      pgNum--;
-      // 한계수체크 (0보다 작으면 0고정)
-      if (pgNum < 0) {
-        pgNum = 0;
-      } ///// if ////////
-    } ///// else //////
-    console.log("pgNum:", pgNum);
-
-    // 5. 페이지 이동하기 ///
-    // 5-1.이동할 위치 알아내기
-    // -> .page 요소중 해당 순번페이지위치
-    let pos = elePage[pgNum].offsetTop;
-    //  offsetTop 은 최상단에서부터 거리
-    console.log("이동할위치:", pos);
-
-    // 5-2. 페이지 스크롤 위치 이동하기
-    // scrollTo(0,y축이동값)
-    window.scrollTo(0, pos);
-
-    if(pgNum != 5 || pgNum != 6){
-      contBox.forEach((ele) => {
-        ele.scrollTo(0,0);
-      });
-    }
-
-    // 6.해당메뉴 순번 on넣기 / 나머지on빼기
-    // chgMenu(pgNum);
-  } /////////// wheelFn 함수 ////////////////
-  ///////////////////////////////////////////
-  /**********************************
-   메뉴클릭시 이벤트 처리하기
-  ********************************* */
-  //  이벤트 대상 : .gnb a
-  const gnb = document.querySelector(".gnb");
-  const gnbA = document.querySelectorAll(".gnb a");
-  //  이벤트 대상 : .indic a
-  // const indic = document.querySelectorAll('.indic a');
-  // console.log("gnbA", gnbA);
-  // 이벤트 설정하기 + 기능구현하기
-  gnbA.forEach((ele, idx) => {
-    ele.onclick = () => {
-      // 메뉴 변경함수 호출 
-      chgMenu(idx);
-      let txt = ele.innerText;
-      console.log(ele.innerText);
-      if(txt !== "AWARDS" || txt !== "CREDITS"){
-        contBox.forEach((ele) => {
-          ele.scrollTo(0,0);
-        });
-      }
-    }; //////click함수 ////
-  }); //////// forEach ////////////////
-
-  // [메뉴 변경함수 : .gnb + .indic]
-  function chgMenu(idx) {
-    // idx - 순번
-    // 클릭시 자신의 순번찍기
-    console.log("순번:", idx);
-    // 1.전역페이지변수에 순번 업데이트
-    pgNum = idx;
-    // 2.전체메뉴에 on빼기
-    gnbA.forEach((ele, seq) => {
-      // ele - a요소 / seq - 순번
-      if (idx === seq) {
-        //선택순번과 같으면 on넣기
-        ele.parentElement.classList.add("on");
-        // indic[seq].parentElement.classList.add('on');
-      } /////if //////
-      else {
-        ele.parentElement.classList.remove("on");
-        // indic[seq].parentElement.classList.remove('on');
-      } ////// else///////
-    }); //////forEach/////////
-  } ///////////chgMenu ///////////
-  ///////////////////////////////////
-
-  function getScrollPercentage(element) {
-    const scrollTop = element.scrollTop;
-    const scrollHeight = element.scrollHeight;
-    const clientHeight = element.clientHeight;
-
-    const scrollableHeight = scrollHeight - clientHeight;
-    const scrollPercentage = (scrollTop / scrollableHeight) * 100;
-
-    return scrollPercentage;
-  }
-}
-////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////크레딧뿌려주기///////////////////////////////////////////////////////
-
-innerCredits();
-function innerCredits() {
-  const credits = mFn.qs(".credits-text");
-  let hcode = ``;
-  Object.keys(creditsItems).forEach((key) => {
-    if (key !== "CAST") {
-      hcode += `<p><strong>${key}</strong><br>${creditsItems[key]}<br></p>`;
-    } /////////// if ///////////////////
-    else {
-      hcode += `<p><strong>${key}</strong><br></p>`;
-    } //////////// else ///////////////
-  });
-  credits.innerHTML = hcode;
-} ////////////////////////////////////크레딧뿌려주기/////////////////////////////////////////
-
-///////////////////////////////어워즈 뿌려주기//////////////////////////////////////////////
-innerAwards();
-function innerAwards() {
-  const awards = mFn.qs(".awards-text");
-  let hcode = ``;
-  Object.keys(awardsItems).forEach((key) => {
-    hcode += `<p><strong>${key}</strong><br>`;
-    awardsItems[key].forEach((item) => {
-      hcode += `${item ? item + "<br>" : "<br>"}`;
-    });
-    hcode += `</p>`;
-  });
-  awards.innerHTML = hcode;
-} /////////////////////////////////////어워즈 뿌려주기////////////////////////////////////////
-
+/////////////////////////////////////////////gnb 뿌려주기/////////////////////////////////////////////////////
 //////////////////////////////////배경사진 어둡게///////////////////////////////////////////
 const inBox = mFn.qsa(".ibx");
-for (let i = 1; i < inBox.length; i++) {
-  console.log("인박스 개수 : ",inBox.length);
-  inBox[i].style.backgroundColor = "#00000098";
-  ///////////////////////////////////////////
-  // 0~7 까지 중 5,6번 배경은 살짝 밝게 조정하기
-  ///////////////////////////////////////////
+for (let i = 0; i < inBox.length; i++) {
+  if (i === 0) { // 순번 0에 해당하는 경우
+    inBox[i].style.backgroundColor = "none"; // 배경색
+  } else if (i === 5 || i === 6) { // 순번 5와 6에 해당하는 경우
+    inBox[i].style.backgroundColor = "rgb(0 0 0 / 20%)"; // 배경색
+  }else if (i === 1) { // 순번 5와 6에 해당하는 경우
+    inBox[i].style.backgroundColor = "rgb(0 0 0 / 40%)"; // 배경색
+  }
+   else { // 그 외의 경우
+    inBox[i].style.backgroundColor = "rgb(0 0 0 / 60%)"; // 배경색
+  }
 }
 //////////////////////////////////배경사진 어둡게///////////////////////////////////////////
-
-///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////
-
-
-
-///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////
-///////////////////////////////////////월드 뿌려주기//////////////////////////////////////////////
-
-///////////////////////////////////////월드 뿌려주기//////////////////////////////////////////////
 ///////////////////////////////////////로고 포스터 뿌려주기//////////////////////////////////////////////
 function innerLogo() {
   const logo = mFn.qs(".logo");
@@ -273,11 +69,10 @@ function innerLogo() {
 innerLogo();
 ///////////////////////////////////////로고 포스터 뿌려주기//////////////////////////////////////////////
 ///////////////////////////////////////서머리 뿌려주기//////////////////////////////////////////////
-
 function innerSum() {
   const sunTit = mFn.qs(".sum-text");
   let hcode = `
-  <a href="###">
+  <a href="###" class="summary-click">
   <h1 class="main-tit">SUMMARY</h1>
 </a>
 <a href="###">
@@ -298,10 +93,8 @@ function innerSum() {
   sunTit.innerHTML = hcode;
 }
 innerSum();
-///////////////////////////////////////서머리 뿌려주기//////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-// 로고 나오기
-// 대상 : .logo a:last-child
+///////////////////////////////////////서머리 뿌려주기//////////////////////////////
+///////////////////////////////////////// 포스터나오기 & 서머리나오기 ///////////////
 const toyLogoA = mFn.qsa(".logo a");
 const poster = mFn.qs(".logo a:last-child");
 const toyLogoA2 = mFn.qsa(".sum-text a");
@@ -322,4 +115,4 @@ function showPoster() {
   });
 }
 showPoster();
-//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////포스터나오기 & 서머리나오기///////////////////

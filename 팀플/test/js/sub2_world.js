@@ -40,7 +40,7 @@ export default function showChar() {
         hcode += `
              <div class="ab-box ab-box2 world${i + 1}">
                <div class="world-info-box info-box">
-                 <p class="main-text">${text}</p>
+                 <p class="main-text info-text">${text}</p>
                </div>
                <div class="grid-img">
                  ${makeCode(i)}
@@ -67,9 +67,9 @@ export default function showChar() {
     } ////////////////makeCode/////////////////////
 
     function showAB() {
-      const abBox = mFn.qsa(".ab-box1");
+      const abBox = mFn.qsa(".ab-box2");
       // console.log('.ab-box1 개수',abBox)
-      const menuLi = mFn.qsa(".menu1 ul li");
+      const menuLi = mFn.qsa(".menu2 ul li");
       // console.log('.menu1 ul li 개수',menuLi)
   
       abBox[0].classList.add("show");

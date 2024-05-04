@@ -44,7 +44,7 @@ strong{
 }
 .main-tit2{
   padding-top: 60px;
- margin-bottom: 40px;
+ margin-bottom: 60px;
  color: #fff;
  text-align: center;
  width: 100%;
@@ -158,7 +158,7 @@ strong{
   top: 50%;
   transform: translateY(-50%);
 }
-/* --------------------- */
+/* 줄거리 영역 */
 .sum-text {
   position: relative;
   margin: 0 auto;
@@ -203,16 +203,27 @@ strong{
   pointer-events: none;
   transition: .5s;
   opacity: 0;
-  
+}
+.summary-click h1{
+  transition: .3s;
+}
+.summary-click:hover h1{
+  color: #56a5cc !important;
+  transition: 0.3s ease-in-out;
+  transform: translate(-50%, -50%) rotateX(-10deg) rotateY(20deg) scale(1.1)!important;
 }
 /******************* 2.트레일러 영역 *******************/
-/******************* 3.캐릭터 영역 *******************/
+
+/*************** 3,4 공통영역 ***************/
 /* 캐릭터 menu list */
 .menu{
   position: absolute;
   width: 250px;
   left: 30px;
-  /* height: 100%; */
+  /* top: 50vh;
+  transform: translateY(50vh); */
+  top: 50%;
+  transform: translateY(-50%);
 }
 .menu ul li a{
   color: #fff;
@@ -222,15 +233,9 @@ strong{
 .menu ul li.show a{
   color: yellow;
 }
-
-/* .menu / main-cont
-ab-box , char1 
-char-info-box(char-img / main-text) / grid-img */
-
 /* 캐릭터별 메인콘텐트 
 - 부모설정 필요없어짐*/
 .main-cont{
-  /* position: relative; */
   margin: 0 auto;
 }
 /* 앱솔루트설정박스 
@@ -239,11 +244,11 @@ char-info-box(char-img / main-text) / grid-img */
   display: none;
   align-items: center;
   /* flex-wrap: wrap; */
+  margin-left: 250px;
 }
 .ab-box.show{
   display: flex;
 }
-
 /* 공통 -  정보박스 */
 .info-box{
   flex-direction: column;
@@ -253,16 +258,9 @@ char-info-box(char-img / main-text) / grid-img */
   height: 100%;
   margin: 0 30px;
 }
-/* 개별 - 캐릭터정보 이미지를 가두는 박스 */
-.char-img{
-  margin: 0 auto;
-  margin-bottom: 30px;
-  height: 300px;
-}
-.char-img img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.info-text{
+  max-width: 600px;
+  margin-top: 30px;
 }
 /* 공통 - 그리드 겔러리 박스 */
 .grid-img{
@@ -271,20 +269,31 @@ char-info-box(char-img / main-text) / grid-img */
   grid-template-columns: repeat(3, 1fr);
 }
 .grid-img a{
- aspect-ratio: 100/100;
- width: 200px;
+ aspect-ratio: 1/1;
+ max-width: 200px;
+ max-height: 200px;
+ /* overflow: hidden; */
 }
 .grid-img a img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+/******************* 3.캐릭터 영역 *******************/
+/* 개별 - 캐릭터정보 이미지를 가두는 박스 */
+.char-img {
+  max-height: 350px;
+  max-width: 300px;
+  margin:0 auto ;
+}
+.char-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 /******************* 4.월드 영역 *******************/
-/******************* 5.어워즈 영역 *******************/
-/******************* 6.크레딧 영역 *******************/
-/******************* 7.하단 영역 *******************/
-
-
+/* 없어도되지요~~~~~~ */
+/******************* 5 & 6 . 어워즈 & 크레딧 영역 공통 *******************/
 .content-box{
   height: 100%;
   width: 50vw;
@@ -303,7 +312,7 @@ char-info-box(char-img / main-text) / grid-img */
 .credits-text p:last-child,.awards-text p:last-child{
   padding-bottom: 150px;
 }
-
+/******************* 7.하단 영역 *******************/
 .footer-area{
   height: 100vh;
   position: relative;

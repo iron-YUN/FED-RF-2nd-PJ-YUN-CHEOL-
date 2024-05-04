@@ -1,3 +1,14 @@
+const gnbItems = {
+  TOP:"logo-area",
+  SUMMARY:"summary-area",
+  TRAILERS:"trailers-area",
+  CHARACTERS:"character-design-area",
+  WORLD:"world-design-area",
+  AWARDS:"awards-area",
+  CREDITS:"credits-area",
+  ABOUT:"footer-area",
+}
+
 const creditsItems = {
     "DIRECTED BY": "JOHN LASSETER",
     "CO-DIRECTED BY": "LEE UNKRICH, ASH BRANNON",
@@ -174,7 +185,7 @@ const creditsItems = {
     `,
   ];
   
-export {creditsItems,awardsItems,charTextItems,worldTextItems};
+export {gnbItems,creditsItems,awardsItems,charTextItems,worldTextItems};
 
 
 ///////////////////////////////////////////////////////////////////////////////////
