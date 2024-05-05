@@ -15,7 +15,7 @@ body{
 body * {
   /* outline: 2px dashed #ccc; */
 }
-/* **** */
+
 strong{
   font-weight: bold;
 }
@@ -23,6 +23,7 @@ strong{
 .content-box::-webkit-scrollbar{
   width: 0;
 }
+
 .ibx {
   max-width: 1920px;
   margin: 0 auto;
@@ -213,7 +214,53 @@ strong{
   transform: translate(-50%, -50%) rotateX(-10deg) rotateY(20deg) scale(1.1)!important;
 }
 /******************* 2.트레일러 영역 *******************/
+.content-box2{
+  margin: 0 auto;
+  overflow: hidden;
+}
+.trailers-box {
+  position: relative;
+  display: flex;
+}
+.trailer {
+  flex: 0 0 100%; 
+}
+.trailer video {
+  display: block;
+  margin: 0 auto;
+  max-width: 1080px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1280/720;
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
 
+/* 버튼 */
+.trail-button{
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+.abtn{
+  padding: 20px 40px;
+  color: #fff;
+  font-size: 50px;
+  text-shadow:
+  2px 0px #ffe861,
+  -2px 0px #ffe861,
+  0px 2px #ffe861,
+  0px -2px #ffe861;
+  transition: .3s;
+}
+.abtn:hover{
+  color: #ffe861;
+}
+.ab1{
+  rotate: 180deg;
+}
+.ab2{
+}
 /*************** 3,4 공통영역 ***************/
 /* 캐릭터 menu list */
 .menu{
@@ -317,5 +364,79 @@ strong{
   height: 100vh;
   position: relative;
 }
+@media screen and (max-width: 1000px) {
+  .main-tit2{
+    font-size: 40px;
+  }
+  .gnb{
+    top: 40vh;
+    /* bottom: 0vh; */
+  }
+  .gnb ul {
+    /* gap: 10px; */
+  }
+  .gnb ul li {
+    margin: 10px 0;
+  }
+  .gnb ul li a {
+    font-size: 10px;
+  }
+  .flex-row {
+    align-items: flex-start
+  }
+  .content-box2{
+    position: relative;
+    top: 50%;
+    transform: translate(0, -75%);
+  }
+.trailers-box{
 
+}
+.grid-img{
+  display: none;
+}
+.ab-box {
+  margin: 0 auto;
+}
+.char-img {
+  max-width: 150px;
+}
+.main-cont{
 
+}
+.menu{
+  position: relative;
+  top: 0;
+  left: 2vw;
+  transform: translateY(0);
+}
+.menu ul li a {
+  font-size: 20px;
+  line-height: 2;
+  white-space: nowrap;
+}
+.content-box{
+  width: 80vw;
+}
+.main-text p{
+  font-size: 15px;
+  margin: 15px 0;
+}
+.info-box {
+  margin: 0 100px 0 10px;
+}
+}
+@media screen and (max-width: 500px){
+  .info-box {
+    margin: 0 50px 0 10px;
+  }
+  .flex-row {
+  }
+  .menu{
+    /* width: 100%; */
+  }
+  .menu ul{
+    /* display: flex;
+    flex-wrap: wrap; */
+  }
+}

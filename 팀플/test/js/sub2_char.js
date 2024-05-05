@@ -3,7 +3,6 @@ import { charTextItems } from "./sub2_data.js";
 
 ///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////
 export default function showChar() {
-
   const charItems = [
     // "DESIGN",
     "Woody",
@@ -18,17 +17,16 @@ export default function showChar() {
   ];
   ///////// 리스트뿌리기 함수 /////////
   function innerChar1() {
-    let hcode = "";
+    let hcode = " <ul>";
     const menu = mFn.qsa(".menu")[0];
     charItems.forEach((i) => {
       hcode += `
-          <ul>
               <li>
               <a href="###">${i}</a>
               </li>
-          </ul>
           `;
     });
+    hcode += "</ul>";
     menu.innerHTML = hcode;
   } ///////////////////리스트뿌리기 함수///////////////////////////
   innerChar1();
@@ -73,7 +71,6 @@ export default function showChar() {
     return hcode;
   } ////////////////makeCode/////////////////////
 
-  
   function showAB() {
     const abBox = mFn.qsa(".ab-box1");
     // console.log('.ab-box1 개수',abBox)
@@ -87,23 +84,22 @@ export default function showChar() {
     // 1-2. 변경대상 : .ab-box (겔러리 박스들) abBox
     menuLi.forEach((li, index) => {
       mFn.addEvt(li, "click", () => {
-
         // 1-1.모든 menuLi에서 'show' 클래스 제거z`
         // li.classList.remove("show");
-        // 이건왜 이상한걸까요??????????????? 
-        menuLi.forEach((menuLi)=>{
+        // 이건왜 이상한걸까요???????????????
+        menuLi.forEach((menuLi) => {
           menuLi.classList.remove("show");
-        });/////// forEach //////////////
+        }); /////// forEach //////////////
 
         // 1-2.모든 ab-box에서 'show' 클래스 제거z`
         abBox.forEach((abBox) => {
           abBox.classList.remove("show");
-        });/////// forEach //////////////
+        }); /////// forEach //////////////
 
         // 2.해당 순번에 'show' 클래스 추가
         abBox[index].classList.add("show");
         menuLi[index].classList.add("show");
-      });/////// addEvt ///////
+      }); /////// addEvt ///////
     });
   } /////////////////showAB///////////////////////////
   showAB();

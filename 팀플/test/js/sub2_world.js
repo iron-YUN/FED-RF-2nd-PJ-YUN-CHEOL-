@@ -14,17 +14,16 @@ export default function showChar() {
     ];
     ///////// 월드 리스트 뿌리기 ////////////////
     function innerWorld1() {
-      let hcode = "";
+      let hcode = "<ul>";
       const menu = mFn.qsa(".menu")[1];
       worldItems.forEach((i) => {
         hcode += `
-           <ul>
                <li>
                <a href="###">${i}</a>
-               </li>
-           </ul>
+               </li> 
            `;
       });
+      hcode += "</ul>";
       menu.innerHTML = hcode;
     } ///////////////// 월드 리스트 뿌리기 함수/////////////////////////////
     innerWorld1();
@@ -52,14 +51,16 @@ export default function showChar() {
     } ////////////////////// 월드 정보 뿌리기 함수 //////////////////////////////////
     innerWorld2();
     /////////////////////////////////////////////////////
-    function makeCode(seq, total = 9) {
+    function makeCode(seq) {
+      let total = 9;
+      if (seq === 0 || seq === 2) {
+        total = 8;
+      }
       let hcode = "";
       for (let i = 0; i < total; i++) {
         hcode += `
            <a href="###">
-             <img src="./IMG/img2/world/${seq + 1}_${i + 1}.jpg" alt="${
-          i + 1
-        }">
+             <img src="./IMG/img2/world/${seq + 1}_${i + 1}.jpg" alt="${i + 1}">
            </a>
          `;
       } /// for ///

@@ -129,7 +129,7 @@ export default function scrollPage() {
     let delta = e.wheelDelta;
     // 휠델타는 이벤트 객체에서 리턴해주는
     // 방향,이동거리 등의 정보값이다.
-    console.log("델타값:", delta);
+    // console.log("델타값:", delta);
     //  -> 마이너스가 아랫방향임!
 
     // 4. 방향별 분기하기 ////
@@ -152,14 +152,14 @@ export default function scrollPage() {
         pgNum = 0;
       } ///// if ////////
     } ///// else //////
-    console.log("pgNum:", pgNum);
+    console.log("페이지넘버:", pgNum);
 
     // 5. 페이지 이동하기 ///
     // 5-1.이동할 위치 알아내기
     // -> .page 요소중 해당 순번페이지위치
     let pos = elePage[pgNum].offsetTop;
     //  offsetTop 은 최상단에서부터 거리
-    console.log("이동할위치:", pos);
+    // console.log("이동할위치:", pos);
 
     // 5-2. 페이지 스크롤 위치 이동하기
     // scrollTo(0,y축이동값)
@@ -205,7 +205,7 @@ export default function scrollPage() {
   function chgMenu(idx) {
     // idx - 순번
     // 클릭시 자신의 순번찍기
-    console.log("순번:", idx);
+    // console.log("순번:", idx);
     // 1.전역페이지변수에 순번 업데이트
     pgNum = idx;
     // 2.전체메뉴에 on빼기
