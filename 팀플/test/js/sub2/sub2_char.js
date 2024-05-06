@@ -42,7 +42,7 @@ export default function showChar() {
             <div class=" ab-box ab-box1 char${i + 1}">
               <div class="char-info-box info-box">
                <div class="char-img">
-                <img src="./IMG/img2/char/char_${i + 1}.png" alt="${i + 1}" />
+                <img src="./img/img2/char/char_${i + 1}.png" alt="${i + 1}" />
                 </div>
                 <p class="main-text info-text">${text}</p>
               </div>
@@ -62,7 +62,7 @@ export default function showChar() {
     for (let i = 0; i < total; i++) {
       hcode += `
           <a href="###">
-            <img src="./IMG/img2/char/char2/${seq + 1}_${i + 1}.jpg" alt="${
+            <img src="./img/img2/char/char2/${seq + 1}_${i + 1}.jpg" alt="${
         i + 1
       }">
           </a>

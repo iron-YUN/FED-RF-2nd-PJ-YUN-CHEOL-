@@ -4,6 +4,12 @@
 @import url(./common.css);
 @import url(./core.css);
 @import url(./grid_12_flex.css);
+
+  /* font-family: "Dancing Script", cursive;
+    font-family: "Lugrasimo", cursive;
+font-family: "Pacifico", cursive;
+font-family: "Lobster", sans-serif;
+  */
 /**************** 공통영역 ****************/
 html{  
   scroll-behavior: smooth;
@@ -50,11 +56,18 @@ strong{
  text-align: center;
  width: 100%;
 }
+  /* font-family: "Dancing Script", cursive;
+    font-family: "Lugrasimo", cursive;
+font-family: "Pacifico", cursive;
+font-family: "Lobster", sans-serif;
+  */
 .main-tit{
+  font-family: "Dancing Script", cursive;
   font-size: 60px;
   font-weight: bold;
 }
 .main-text {
+  font-family: "Lugrasimo", cursive;
   font-size: 20px;
   line-height: 1.5;
   white-space: wrap;
@@ -221,6 +234,7 @@ strong{
 .trailers-box {
   position: relative;
   display: flex;
+  transition: ".6s ease-in-out";
 }
 .trailer {
   flex: 0 0 100%; 

@@ -62,10 +62,10 @@ function innerLogo() {
   const logo = mFn.qs(".logo");
   let hcode = `
   <a href="###">
-  <img src="./IMG/img2/page_logo.png" alt="페이지로고" />
+  <img src="./img/img2/page_logo.png" alt="페이지로고" />
 </a>
 <a href="###">
-  <img src="./IMG/img2/02_ts.jpg" alt="포스터" />
+  <img src="./img/img2/02_ts.jpg" alt="포스터" />
 </a>
     `;
   logo.innerHTML = hcode;

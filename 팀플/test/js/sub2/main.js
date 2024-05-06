@@ -25,7 +25,7 @@ const showContent = () => {
         gnbContent += `
         <li data-index="${i}"><a href="./sub${i}.html">Toy Story ${i}</a></li>
         `;
-        tsContent += `<img src="./IMG/poster/0${i}_ts.jpg" alt="ts${i}" class="ts-img">`;
+        tsContent += `<img src="./img/poster/0${i}_ts.jpg" alt="ts${i}" class="ts-img">`;
     }
     gnbContent += "</ul>";
 
