@@ -1,5 +1,5 @@
 // 쇼핑몰 배너 JS - 01.가로방향 배너 슬라이드 //
-import mFn from "./my_function.js";
+import mFn from "../my_function.js";
 
 export default function slideTrailersFn() {
   // 이동버튼 대상 : .abtn

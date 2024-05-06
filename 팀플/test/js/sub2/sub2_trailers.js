@@ -1,4 +1,4 @@
-import mFn from "./my_function.js";
+import mFn from "../my_function.js";
 import slideTrailersFn from "./slide.js";
 
 export default function showTrailers() {

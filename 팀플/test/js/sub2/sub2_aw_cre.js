@@ -1,4 +1,4 @@
-import mFn from "./my_function.js";
+import mFn from "../my_function.js";
 import { creditsItems, awardsItems} from "./sub2_data.js";
 export default function showAwardsCredits (){
 ////////////////////////////////////////크레딧뿌려주기///////////////////////////////////////////////////////

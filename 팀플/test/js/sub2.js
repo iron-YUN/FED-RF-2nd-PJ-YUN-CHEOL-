@@ -1,23 +1,23 @@
 // 내함수 가져오기
 import mFn from "./my_function.js";
-import showTrailers from "./sub2_trailers.js";
-import {gnbItems} from "./sub2_data.js";
+import showTrailers from "./sub2/sub2_trailers.js";
+import {gnbItems} from "./sub2/sub2_data.js";
 
 // gnb 뿌려주기 슬라이드 기능보다 앞에있어야함 -> 노란표시기능때문임
 showGNB();
 // 페이지 슬라이드 기능 불러오기
-import scrollPage from "./sub2_slide.js";
+import scrollPage from "./sub2/sub2_slide.js";
 scrollPage();
 // 트레일러 뿌려주기
 showTrailers();
 // 캐릭터 뿌려주기
-import showChar from "./sub2_char.js"
+import showChar from "./sub2/sub2_char.js"
 showChar();
 // 월드 뿌려주기
-import showWorld from "./sub2_world.js"
+import showWorld from "./sub2/sub2_world.js"
 showWorld();
 // 어워즈 & 크레딧 뿌려주기
-import showAwardsCredits from "./sub2_aw_cre.js";
+import showAwardsCredits from "./sub2/sub2_aw_cre.js";
 showAwardsCredits();
 //////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////gnb 뿌려주기/////////////////////////////////////////////////////

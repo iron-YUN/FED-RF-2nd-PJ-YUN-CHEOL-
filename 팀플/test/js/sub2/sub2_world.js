@@ -1,4 +1,4 @@
-import mFn from "./my_function.js";
+import mFn from "../my_function.js";
 import { worldTextItems } from "./sub2_data.js";
 
 ///////////////////////////////////////캐릭터뿌려주기//////////////////////////////////////////////

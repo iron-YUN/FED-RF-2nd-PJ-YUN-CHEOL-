@@ -1,4 +1,4 @@
-import mFn from "./my_function.js";
+import mFn from "../my_function.js";
 import { startSS, setScrollPos, SmoothScroll } from "./smoothScroll23.js";
 
 export default function scrollPage() {
