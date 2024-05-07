@@ -86,6 +86,7 @@ export default function scrollPage() {
       // 기타일 경우
       else {
         stopSts = true;
+        // window.addEventListener('wheel',e=>e.preventDefault()); 에러코드
       }
     }
     console.log(stopSts);
@@ -236,8 +237,12 @@ export default function scrollPage() {
   }
 }
 
-// 3번의 이유로 스무스스크롤 적용해보았지만 다른 오류가 생김 (3번오류는 거의없어짐)
 // 오류해결해야함
 // 1.위치값공유 오류 = 스무스 스크롤 적용다음부터임
 // 2.콘텐트박스의 퍼센트가 98 또는 99로 멈춰서 아랫방향이 안됨
 // 3. 페이지가 넘어가면서 true로 잠기는 현상있음 -> 내가 settimeout 걸어봤는데 의미없음
+// 3번의 이유로 스무스스크롤 적용해보았지만 다른 오류가 생김 (3번오류는 거의없어짐)
+
+
+//결론 : 4~7 순번의 top 위치값이 0<위치값<100 이면서 stopSts 값이 true 인 것이 0.6초 이상 일때 
+// gnb 리스트의 해당순번으로 강제이동
