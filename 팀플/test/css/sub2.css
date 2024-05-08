@@ -72,12 +72,12 @@ strong{
   position: fixed;
   z-index: 100;
   width: 100%;
+  bottom: 60vh;
 }
 
 .gnb{
   position: absolute;
-  right: 1vw;
-  top: 30vh;
+  right: 0;
 }
 .gnb ul li{
   margin: 5px 0 ;
@@ -383,16 +383,11 @@ strong{
   position: relative;
 }
 @media screen and (max-width: 1000px) {
-  .main-tit2{
-    font-size: 40px;
-  }
-  .gnb{
-    top: 40vh;
-    /* bottom: 0vh; */
-  }
-  .gnb ul {
-    /* gap: 10px; */
-  }
+
+#side-area{
+  bottom: 30vh;
+}
+
   .gnb ul li {
     margin: 10px 0;
   }
@@ -408,7 +403,6 @@ strong{
     transform: translate(0, -75%);
   }
 .trailers-box{
-
 }
 .grid-img{
   display: none;
@@ -420,7 +414,6 @@ strong{
   max-width: 150px;
 }
 .main-cont{
-
 }
 .menu{
   position: relative;
@@ -436,7 +429,7 @@ strong{
 .content-box{
   width: 80vw;
 }
-.main-text p{
+.sub-text2{
   font-size: 15px;
   margin: 15px 0;
 }
@@ -444,17 +437,41 @@ strong{
   margin: 0 100px 0 10px;
 }
 }
-@media screen and (max-width: 500px){
-  .info-box {
-    margin: 0 50px 0 10px;
+@media screen and (max-width: 600px){
+  .flex-row{
+    flex-wrap: wrap;
   }
-  .flex-row {
-  }
-  .menu{
-    /* width: 100%; */
+  .menu {
+    width: auto;
+    padding: 0 20px 30px;
+    left: 0;
   }
   .menu ul{
-    /* display: flex;
-    flex-wrap: wrap; */
+    /* position: absolute; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+  }
+  .menu ul li a{
+    font-size: 15px;
+  }
+  .info-box {
+    margin: 0 80px 0 20px;
+  }
+  #side-area{
+    /* bottom: 300px; */
+  }
+  .gnb{
+    /* top: auto; */
+    /* bottom: 0vh; */
+    /* bottom: 30vh; */
+  }
+}
+@media screen and (max-width: 400px){
+  .sub-text2{
+    font-size: 12px;
+  }
+  .main-tit2{
+    margin-bottom: 30px;
   }
 }
