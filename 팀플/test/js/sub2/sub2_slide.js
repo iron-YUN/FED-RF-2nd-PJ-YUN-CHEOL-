@@ -7,19 +7,19 @@ const mySmooth = new SmoothScroll(document,60,20);
 export default function scrollPage() {
   //  부드러운스크롤 to content-box
 
-  function applySmoothScrollToContentBox1() {
-    const contentBoxes = document.querySelectorAll(".content-box")[0];
-    new SmoothScroll(contentBoxes, 60, 30);
-  } ///////////////////////////////
-  applySmoothScrollToContentBox1();
-  function applySmoothScrollToContentBox2() {
-    const contentBoxes = document.querySelectorAll(".content-box")[1];
-    new SmoothScroll(contentBoxes, 60, 30);
-  } ///////////////////////////////
-  applySmoothScrollToContentBox2();
+  // function applySmoothScrollToContentBox1() {
+  //   const contentBoxes = document.querySelectorAll(".content-box")[0];
+  //   new SmoothScroll(contentBoxes, 60, 30);
+  // } ///////////////////////////////
+  // applySmoothScrollToContentBox1();
+  // function applySmoothScrollToContentBox2() {
+  //   const contentBoxes = document.querySelectorAll(".content-box")[1];
+  //   new SmoothScroll(contentBoxes, 60, 30);
+  // } ///////////////////////////////
+  // applySmoothScrollToContentBox2();
 
   //   function applySmoothScrollToContentBox() {
-  //     // 스크롤 5~6페이지 순번 이동시 서로간의 콘텐트박스 위치값 공유로 각자 잡아주었다
+  //     // 스크롤 5~6페이지 순번 이동시 서로간의 콘텐트박스 위치값 공유
   //     const contentBoxes = document.querySelectorAll('.content-box');
   //     contentBoxes.forEach(contentBox => {
   //         new SmoothScroll(contentBox, 60, 30);
