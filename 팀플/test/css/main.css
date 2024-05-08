@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
   /* font-family: "Dancing Script", cursive; */
 
+
 * {
     margin: 0;
     padding: 0;
@@ -54,7 +55,7 @@
   }
   
   /* Sidebar styles */
-  .GNB {
+  #GNB {
     position: absolute;
     z-index: 1;
     left: 2%;

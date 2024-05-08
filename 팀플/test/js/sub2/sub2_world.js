@@ -39,7 +39,7 @@ export default function showChar() {
         hcode += `
              <div class="ab-box ab-box2 world${i + 1}">
                <div class="world-info-box info-box">
-                 <p class="main-text info-text">${text}</p>
+                 <p class="sub-text2 info-text">${text}</p>
                </div>
                <div class="grid-img">
                  ${makeCode(i)}

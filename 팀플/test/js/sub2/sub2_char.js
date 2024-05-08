@@ -44,7 +44,7 @@ export default function showChar() {
                <div class="char-img">
                 <img src="./img/img2/char/char_${i + 1}.png" alt="${i + 1}" />
                 </div>
-                <p class="main-text info-text">${text}</p>
+                <p class="sub-text2 info-text">${text}</p>
               </div>
               <div class="grid-img">
                 ${makeCode(i)}
