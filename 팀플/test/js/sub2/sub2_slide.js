@@ -1,25 +1,23 @@
 import mFn from "../my_function.js";
-import { startSS, setScrollPos, SmoothScroll } from "./smoothScroll23.js";
+
+import SmoothScroll from "./smoothScroll23.js";
+// 1. 부드러운 스크롤 호출
+const mySmooth = new SmoothScroll(document,60,20);
 
 export default function scrollPage() {
   //  부드러운스크롤 to content-box
-  // 스크롤 5~6페이지 순번 이동시 서로간의 콘텐트박스 위치값 공유로 각자 잡아주었다
-  // -> 그런데도 공유가 되고있다
 
-  // 2. 이거 지워도될듯 - 의미없음
-  // function applySmoothScrollToContentBox1() {
-  //   const contentBoxes = document.querySelectorAll(".content-box")[0];
-  //   new SmoothScroll(contentBoxes, 60, 30);
-  // } ///////////////////////////////
-  // applySmoothScrollToContentBox1();
-  // function applySmoothScrollToContentBox2() {
-  //   const contentBoxes = document.querySelectorAll(".content-box")[1];
-  //   new SmoothScroll(contentBoxes, 60, 30);
-  // } ///////////////////////////////
-  // applySmoothScrollToContentBox2();
+  function applySmoothScrollToContentBox1() {
+    const contentBoxes = document.querySelectorAll(".content-box")[0];
+    new SmoothScroll(contentBoxes, 60, 30);
+  } ///////////////////////////////
+  applySmoothScrollToContentBox1();
+  function applySmoothScrollToContentBox2() {
+    const contentBoxes = document.querySelectorAll(".content-box")[1];
+    new SmoothScroll(contentBoxes, 60, 30);
+  } ///////////////////////////////
+  applySmoothScrollToContentBox2();
 
-
-  // 1. 못고치면 스무스스크롤 자체제거
   //   function applySmoothScrollToContentBox() {
   //     // 스크롤 5~6페이지 순번 이동시 서로간의 콘텐트박스 위치값 공유로 각자 잡아주었다
   //     const contentBoxes = document.querySelectorAll('.content-box');
