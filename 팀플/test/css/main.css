@@ -62,7 +62,9 @@
     top: 50%; 
     transform: translateY(-50%);
   }
-  
+  #GNB ul {
+    display: block;
+}
   .menu-list {
     list-style: none;
     padding: 0;
@@ -75,9 +77,9 @@
   .menu-list li a {
     color: #fff;
     text-decoration: none;
-    font-family: "Dancing Script", cursive;
-    font-size: 40px;
-    font-weight: bold;
+    font-family: "Dancing Script", cursive !important;
+    font-size: 40px !important;
+    font-weight: bold !important;
     transition: .3s;
   }
   .menu-list li:hover a{

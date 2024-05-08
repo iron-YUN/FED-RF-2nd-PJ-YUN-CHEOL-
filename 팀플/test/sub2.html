@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toy Story2</title>
     <link rel="shortcut icon" href="./IMG/favicon.png" />
-     <!-- 폰트어썸CSS -->
+    <!-- 폰트어썸CSS -->
     <!-- https://fontawesome.com/icons -->
     <link
       rel="stylesheet"
@@ -15,25 +15,25 @@
     <script type="module" src="./js/sub2.js"></script>
   </head>
   <body>
-    <header id="top-area">
-      <div id="GNB"></div>
-      <div class="page-bx">
-        <div class="logobx-area">
-          <h1 class="mlogo">
+    <!-- 상단영역 -->
+    <header id="top-area" class="">
+      <div class="page-bx col-9">
+        <div id="GNB" class=""></div>
+        <div class="logobx-area mlogo">
+          <a href="./main.html">
             <img src="./IMG/PIXAR_LOGO black.png" alt="메인로고" />
-          </h1>
+          </a>
         </div>
       </div>
     </header>
+
     <div class="ts"></div>
     <div id="side-area">
-      <nav class="gnb">
-      </nav>
+      <nav class="gnb"></nav>
     </div>
     <div id="logo-area">
       <div class="logo-area ibx section">
-        <div class="logo">
-        </div>
+        <div class="logo"></div>
       </div>
     </div>
     <div id="summary-area">
@@ -46,14 +46,12 @@
         <h1 class="main-title main-tit2">TRAILERS</h1>
         <div class="content-box2">
           <!-- ul 역할 -->
-          <div id="slide" class="trailers-box">
-          </div>
+          <div id="slide" class="trailers-box"></div>
           <div class="trail-button">
             <a href="###" class="abtn ab1 fa-solid fa-chevron-right"></a>
             <a href="###" class="abtn ab2 fa-solid fa-chevron-right"></a>
           </div>
         </div>
-       
       </div>
     </div>
     <div id="character-design-area">
@@ -62,8 +60,7 @@
           <h1 class="main-title main-tit2">CHARACTER DESIGN</h1>
           <div class="flex-row">
             <div class="menu menu1"></div>
-            <div class="main-cont">
-            </div>
+            <div class="main-cont"></div>
           </div>
         </section>
       </div>
@@ -95,10 +92,105 @@
         </div>
       </div>
     </div>
-    <div id="footer-area">
-      <div class="footer-area ibx section">
+    <div id="foot-back">
+      <div id="footer-area" class="section ibx">
         <h1 class="main-title main-tit2">ABOUT</h1>
+        <footer class="footer-bx col-12">
+          <!-- 하위 col-12 부모박스는 무의미, 상단으로 합침 -->
+            <!-- SNS 영역 -->
+            <div class="sns-part">
+              <aside class="sns-box">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/pixar/"
+                      target="_blank"
+                      class="fa-brands fa-instagram"
+                    >
+                      <span class="ir"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/Pixar/"
+                      target="_blank"
+                      class="fa-brands fa-facebook"
+                    >
+                      <span class="ir"> </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://twitter.com/pixar"
+                      target="_blank"
+                      class="fa-brands fa-x-twitter"
+                    >
+                      <span class="ir"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/pixar"
+                      target="_blank"
+                      class="fa-brands fa-youtube"
+                    >
+                      <span class="ir"></span>
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+            </div>
+            <!-- 정책약관 영역 -->
+            <div class="fcont-part">
+              <aside class="info-link">
+                <ul>
+                  <li>
+                    <a
+                      href="https://privacy.thewaltdisneycompany.com/en/"
+                      target="_blank"
+                      >PRIVACY POLICY</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://disneytermsofuse.com/" target="_blank"
+                      >TERMS OF USE</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights/"
+                      target="_blank"
+                      >YOUR US STATE PRIVACY RIGHTS</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://privacy.thewaltdisneycompany.com/en/for-parents/childrens-online-privacy-policy/"
+                      target="_blank"
+                      >CHILDREN’S ONLINE PRIVACY POLICY</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://preferences-mgr.truste.com/?affiliateId=115&type=disneycolor"
+                      target="_blank"
+                      >INTEREST-BASED ADS</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+            </div>
+            <!-- 저작권 표시 영역 -->
+            <div class="corp-part">
+              <address class="corp-info">© 1986-2024 DISNEY / PIXAR</address>
+            </div>
+        </footer>
       </div>
     </div>
+    <!-- 모달 -->
+<div id="modal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modal-img">
+</div>
   </body>
 </html>
