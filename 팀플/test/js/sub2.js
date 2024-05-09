@@ -6,7 +6,9 @@ import goSub from "./gosub.js";
 // 공통파트 뿌려주기
 import spreadCommon from "./sub_spread_common.js";
 spreadCommon();
-// goSub();
+// 숨겨져있으면 오버시 나옴
+// spreadCommon 보다 아래 위치해야함!!!!!!!!!!!!
+goSub();
 
 // gnb 뿌려주기 슬라이드 기능보다 앞에있어야함 -> 노란표시기능때문임
 showGNB();

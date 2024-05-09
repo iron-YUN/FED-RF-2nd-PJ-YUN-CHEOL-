@@ -107,17 +107,16 @@
     bottom: 10px;
     text-align: center;
 }
-.sns-box ul{
+.sns-part ul{
     display: flex;
     flex-wrap: nowrap;
     gap: 0 15px;
     justify-content: center
 }
-.sns-box a{
+.sns-part a{
     font-size: 25px;
     line-height: 2.5;
 }
-
 .fcont-part{
     font-size: 15px;
     line-height: 1.5;

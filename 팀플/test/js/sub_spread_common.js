@@ -1,8 +1,9 @@
 import mFn from "./my_function.js";
-
 export default function spreadCommon() {
   const topArea = mFn.qs("#top-area");
-  const footerArea = mFn.qs("#footer-area");
+  // const footerArea = mFn.qs("#footer-area");
+  const footerBox = mFn.qs(".footer-bx");
+
   const footerItems = [
     {
       type: "sns",
@@ -24,14 +25,11 @@ export default function spreadCommon() {
       ]
     },
     {
-      type: "copyright",
+      type: "corp",
       text: "© 1986-2024 DISNEY / PIXAR"
     }
   ];
-
-  // function spreadTop(){
-    // }
-    // spreadTop();
+    // 상단영역 뿌리기
     let hcode1 = "";
     hcode1 += `
     <div class="page-bx col-9">
@@ -45,102 +43,47 @@ export default function spreadCommon() {
     `;
     topArea.innerHTML += hcode1;
 
+    // 하단영역 돌려뿌리기
+    footerItems.forEach(item => {
+      let hcode2 = "";
+      switch (item.type) {
+        case "sns":
+          hcode2 += `<div class="sns-part">
+                      <aside class="sns-box">
+                        <ul>`;
+          item.links.forEach(link => {
+            hcode2 += `<li>
+                        <a href="${link.href}" target="_blank" class="fa-brands ${link.icon}">
+                          <span class="ir"></span>
+                        </a>
+                      </li>`;
+          });
+          hcode2 += `</ul>
+                    </aside>
+                  </div>`;
+          break;
+        case "policy":
+          hcode2 += `<div class="fcont-part">
+                      <aside class="info-link">
+                        <ul>`;
+          item.links.forEach(link => {
+            hcode2 += `<li>
+                        <a href="${link.href}" target="_blank">${link.text}</a>
+                      </li>`;
+          });
+          hcode2 += `</ul>
+                    </aside>
+                  </div>`;
+          break;
+        case "corp":
+          hcode2 += `<div class="corp-part">
+                      <address class="corp-info">${item.text}</address>
+                    </div>`;
+          break;
+        default:
+          break;
+        }
+      footerBox.innerHTML += hcode2;
+    });
 
-
-
-
-
-
-    
-  let hcode2 = "";
-  footerArea.innterHTML += hcode2;
-}
-
-
-
-// <div class="footer-bx col-12">
-//   <div class="sns-part">
-//     <aside class="sns-box">
-//       <ul>
-//         <li>
-//           <a
-//             href="https://www.instagram.com/pixar/"
-//             target="_blank"
-//             class="fa-brands fa-instagram"
-//           >
-//             <span class="ir"></span>
-//           </a>
-//         </li>
-//         <li>
-//           <a
-//             href="https://www.facebook.com/Pixar/"
-//             target="_blank"
-//             class="fa-brands fa-facebook"
-//           >
-//             <span class="ir"> </span>
-//           </a>
-//         </li>
-//         <li>
-//           <a
-//             href="https://twitter.com/pixar"
-//             target="_blank"
-//             class="fa-brands fa-x-twitter"
-//           >
-//             <span class="ir"></span>
-//           </a>
-//         </li>
-//         <li>
-//           <a
-//             href="https://www.youtube.com/pixar"
-//             target="_blank"
-//             class="fa-brands fa-youtube"
-//           >
-//             <span class="ir"></span>
-//           </a>
-//         </li>
-//       </ul>
-//     </aside>
-//   </div>
-//   <div class="fcont-part">
-//     <aside class="info-link">
-//       <ul>
-//         <li>
-//           <a
-//             href="https://privacy.thewaltdisneycompany.com/en/"
-//             target="_blank"
-//             >PRIVACY POLICY</a
-//           >
-//         </li>
-//         <li>
-//           <a href="https://disneytermsofuse.com/" target="_blank"
-//             >TERMS OF USE</a
-//           >
-//         </li>
-//         <li>
-//           <a
-//             href="https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights/"
-//             target="_blank"
-//             >YOUR US STATE PRIVACY RIGHTS</a
-//           >
-//         </li>
-//         <li>
-//           <a
-//             href="https://privacy.thewaltdisneycompany.com/en/for-parents/childrens-online-privacy-policy/"
-//             target="_blank"
-//             >CHILDREN’S ONLINE PRIVACY POLICY</a
-//           >
-//         </li>
-//         <li>
-//           <a
-//             href="https://preferences-mgr.truste.com/?affiliateId=115&type=disneycolor"
-//             target="_blank"
-//             >INTEREST-BASED ADS</a
-//           >
-//         </li>
-//       </ul>
-//     </aside>
-//   </div>
-//   <div class="corp-part">
-//     <address class="corp-info">© 1986-2024 DISNEY / PIXAR</address>
-//   </div>
-// </div>
+}////////////////////////////////////////////////
