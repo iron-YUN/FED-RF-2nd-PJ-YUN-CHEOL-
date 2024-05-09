@@ -586,6 +586,9 @@ padding: 30px 0;
   .main-tit2{
     margin-bottom: 30px;
   }
+  .gnb ul li a{
+    padding: 0 5px;
+  }
 }
 
 /* ************************************************* */
