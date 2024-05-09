@@ -3,12 +3,19 @@ import mFn from "./my_function.js";
 import showTrailers from "./sub2/sub2_trailers.js";
 import {gnbItems} from "./sub2/sub2_data.js";
 import goSub from "./gosub.js";
-goSub();
+// 공통파트 뿌려주기
+import spreadCommon from "./sub_spread_common.js";
+spreadCommon();
+// goSub();
+
 // gnb 뿌려주기 슬라이드 기능보다 앞에있어야함 -> 노란표시기능때문임
 showGNB();
 // 페이지 슬라이드 기능 불러오기
 import scrollPage from "./sub2/sub2_slide.js";
 scrollPage();
+
+
+
 // 트레일러 뿌려주기
 showTrailers();
 // 캐릭터 뿌려주기
@@ -121,3 +128,4 @@ function showPoster() {
 }
 showPoster();
 //////////////////////////////////////////포스터나오기 & 서머리나오기///////////////////
+
