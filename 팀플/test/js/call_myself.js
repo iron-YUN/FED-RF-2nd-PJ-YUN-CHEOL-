@@ -30,7 +30,7 @@ function increasePercent() {
     // 6.슬라이드 이동함수 호출하기
     setTimeout(() => {
       // 페이지 이동 코드 작성
-      window.location.href = "main.html";
+      window.location.href = "./main.html";
     }, 300);
   }///// else /////
 } ////////////// increasePercent ////////////////////
