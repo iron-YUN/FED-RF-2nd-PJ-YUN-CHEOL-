@@ -6,7 +6,9 @@
     --sub:30px;
     --text:20px;
 }
-
+.icon2{
+    display: none;
+}
 .main-title{
     font-family: "Lugrasimo", cursive;
     font-weight: bold;
