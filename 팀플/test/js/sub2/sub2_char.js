@@ -101,6 +101,9 @@ export default function showChar() {
         menuLi[index].classList.add("show");
       }); /////// addEvt ///////
     });
+
+       
+
   } /////////////////showAB///////////////////////////
   showAB();
 }

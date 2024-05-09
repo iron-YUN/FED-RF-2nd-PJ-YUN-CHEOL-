@@ -16,8 +16,14 @@ showGNB();
 import scrollPage from "./sub2/sub2_slide.js";
 scrollPage();
 
-
-
+window.onload = function() {
+  const modal = document.getElementById("modal1");
+  modal.style.display = "none";
+}
+window.onload = function() {
+  const modal = document.getElementById("modal2");
+  modal.style.display = "none";
+}
 // 트레일러 뿌려주기
 showTrailers();
 // 캐릭터 뿌려주기
@@ -130,4 +136,39 @@ function showPoster() {
 }
 showPoster();
 //////////////////////////////////////////포스터나오기 & 서머리나오기///////////////////
+  // 모달 관련 변수 선언
+  const modal = mFn.qs("#modal1");
+  const modalImg = mFn.qsa("#modalImg")[0];
+  
+  window.onload = function() {
+    const modal = document.getElementById("modal1");
+    modal.style.display = "none";
+  }
+  // 각 이미지 클릭 시 모달 팝업창 열기
+  const gridImgs = mFn.qsa(".grid-img img");
+  gridImgs.forEach((img, index) => {
+    mFn.addEvt(img, "click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  // 이미지를 클릭하면 모달이 닫히도록 설정
+  mFn.addEvt(modalImg, "click", () => {
+    modal.style.display = "none";
+  });
+
+  // 모달 닫기 버튼 이벤트 처리
+  const closeBtn = mFn.qs(".close");
+  mFn.addEvt(closeBtn, "click", () => {
+    modal.style.display = "none";
+  });
+
+  // 모달 영역 외부 클릭 시 모달 닫기
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+  // 페이지가 로드될 때 모달을 숨깁니다.
 
