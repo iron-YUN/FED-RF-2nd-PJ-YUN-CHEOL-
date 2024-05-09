@@ -15,7 +15,7 @@ export default function goSub(){
         gnbContent += `
         <li data-index="${i}">
         <a class="icon1" href="./sub${i}.html">Toy Story ${i}</a>
-        <a class="icon2" href="./sub${i}.html"></a>
+        <a class="icon2" href="./sub${i}.html">T${i}</a>
         </li>
         `;
         tsContent += `<img src="./IMG/poster/0${i}_ts.jpg" alt="ts${i}" class="ts-img">`;

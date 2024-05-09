@@ -102,8 +102,7 @@
 }
 
 /* 하단 영역 CSS */
-#footer-area{
-}
+
 .footer-bx{
     margin-top: 80px;
     bottom: 10px;
@@ -135,7 +134,10 @@
 
 @media screen and (max-width: 1000px) {
     /* 예시 입니다. */
-   
+    #GNB{
+        top: 0;
+        margin-right: 10px;
+    }
     .main-title{
         font-size: 4rem;
      }
@@ -144,6 +146,20 @@
     }
     .sub-text2{
         font-size: 1.4rem;
+    }
+    #GNB ul {
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 700px) {
+    #GNB ul {
+        /* gap: 10px; */
+    }
+    .icon1{
+        display: none;
+    }
+    .icon2{
+        display: inline-block;
     }
 }
 @media screen and (max-width: 400px) {
