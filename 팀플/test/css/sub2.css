@@ -70,7 +70,7 @@ strong{
   align-items:center;
 }
 .main-tit2{
-  padding-top: 100px;
+  padding-top: 80px;
  margin-bottom: 60px;
  color: #fff;
  text-align: center;
@@ -426,15 +426,30 @@ padding: 30px 0;
   margin-top: 20px;
   font-size: 25px;
 }
+@media screen and (max-width: 1400px) {
+  .trailer video {
+    max-width: 1000px;
+}
+.main-tit2 {
+  padding-top: 70px;
+  margin-bottom: 50px;
+}
+}
+@media screen and (max-width: 1200px) {
+  .trailer video {
+    max-width: 950px;
+}
+.main-tit2 {
+  padding-top: 60px;
+  margin-bottom: 45px;
+}
+}
 @media screen and (max-width: 1000px) {
   .flex-row{
     /* padding: 0 150px 0 30px;
     box-sizing: border-box; */
   }
   .main-tit2{
-    /* width: 100vw; */
-    /* padding-left: 50px;
-    padding-right: 50px; */
     box-sizing: border-box;
   }
 #side-area{

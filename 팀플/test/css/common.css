@@ -138,6 +138,9 @@
         top: 0;
         margin-right: 10px;
     }
+    #GNB ul li a {
+        font-size: 15px;
+    }
     .main-title{
         font-size: 4rem;
      }

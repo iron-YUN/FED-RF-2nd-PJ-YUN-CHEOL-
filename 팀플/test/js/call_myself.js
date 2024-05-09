@@ -23,7 +23,7 @@ function increasePercent() {
   buddy.style.left = ++percent2 + "%";
   // 3.증가숫자가 100보다 작을때까지 계속 재귀호출
   if (percent < 100) {
-    setTimeout(increasePercent, 60);
+    setTimeout(increasePercent, 30);
   } else {
     // 5.바색 변경하기
     bar.style.backgroundColor = "red";
