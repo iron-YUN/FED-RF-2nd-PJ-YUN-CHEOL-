@@ -16,7 +16,7 @@ export default function goSub(){
         <li data-index="${i}">
         <a class="icon1" href="./sub${i}.html">Toy Story ${i}</a>
         <a class="icon2" href="./sub${i}.html">
-            <img src="./IMG/toy${i}_icon.png" alt="">
+            <img src="./IMG/toy${i}_icon.png" alt="Toy Story ${i}">
         </a>
         </li>
         `;
