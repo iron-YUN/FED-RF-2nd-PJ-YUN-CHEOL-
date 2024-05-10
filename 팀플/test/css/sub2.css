@@ -373,6 +373,7 @@ strong{
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 /******************* 4.월드 영역 *******************/
 /* 없어도되지요~~~~~~ */
@@ -590,50 +591,15 @@ padding: 30px 0;
     padding: 0 5px;
   }
 }
-@media only screen and (max-width: 1600px) and (max-height: 650px) {
-  .grid-img{
-    display: none;
-  }
-  .grid-img a {
-    max-width: 100px;
-    max-height: 100px;
-  }
-   .char-img img {
-    max-height: 100px;
-    max-width: 100px;
-  }
-  .footer-bx {
-    padding: 0;
-  }
-  .sns-box a {
-    font-size: 25px;
-  }
-  .fcont-part a {
-    font-size: 14px;
-    line-height: 2;
-  }
-  .corp-part {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-}
-@media only screen and (max-width: 1800px) and (max-height: 400px) {
-  .footer-bx {
-    padding: 0;
-  }
-  .sns-box a {
-    font-size: 25px;
-  }
-  .fcont-part a {
-    font-size: 14px;
-    line-height: 2;
-  }
-  .corp-part {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-}
+
 @media only screen and (max-width: 1870px) and (max-height: 830px) {
+    /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  .trailer video {
+    max-width: 900px;
+  }
+  /* 캐릭터 월드 */
   .char-img img {
     max-height: 200px;
     max-width: 200px;
@@ -641,23 +607,27 @@ padding: 30px 0;
   .menu ul li a {
     font-size: 20px;
     line-height: 1.5;
-}
-.grid-img a {
+ }
+ .grid-img a {
   aspect-ratio: 1 / 1;
   max-width: 150px;
   max-height: 150px;
-}
-.trailer video {
-  max-width: 900px;
-}
+ }
+ /* 어워즈 크레딧 */
+  /* 하단 */
+
 }
 
 @media only screen and (max-width: 1800px) and (max-height: 800px) {
+    /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
   .trailer video {
     max-width: 900px;
-}
-  .grid-img{
-  }
+ }
+  /* 캐릭터 월드 */
+ /* 어워즈 크레딧 */
+  /* 하단 */
   .grid-img a {
     aspect-ratio: 1 / 1;
     max-width: 150px;
@@ -676,7 +646,67 @@ padding: 30px 0;
     line-height: 1.5;
 }
 }
+@media only screen and (max-width: 1800px) and (max-height: 400px) {
+  /* 상단 */
+/* 서머리 */
+/* 캐릭터 월드 */
+/* 어워즈 크레딧 */
+/* 하단 */
+.footer-bx {
+  padding: 0;
+}
+.sns-box a {
+  font-size: 25px;
+}
+.fcont-part a {
+  font-size: 14px;
+  line-height: 2;
+}
+.corp-part {
+  margin-top: 10px;
+  font-size: 12px;
+}
+}
+@media only screen and (max-width: 1600px) and (max-height: 650px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  .grid-img{
+    display: none;
+  }
+  .grid-img a {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .char-img img {
+   max-height: 100px;
+   max-width: 100px;
+ }
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  .footer-bx {
+    padding: 0;
+  }
+  .sns-box a {
+    font-size: 25px;
+  }
+  .fcont-part a {
+    font-size: 14px;
+    line-height: 2;
+  }
+  .corp-part {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
 @media only screen and (max-width: 1400px) and (max-height: 850px) {
+   /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
   .menu ul li a {
     color: #fff;
     font-size: 20px;
@@ -688,11 +718,23 @@ padding: 30px 0;
 }
 }
 @media only screen and (max-width: 1400px) and (max-height: 700px) {
+   /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
   .trailer video {
     max-width: 600px;
 }
 }
 @media only screen and (max-width: 1200px) and (max-height: 850px) {
+   /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
   .char-img img {
     max-height: 250px;
     max-width: 200px;
@@ -703,12 +745,58 @@ padding: 30px 0;
     line-height: 2;
 }
 }
+@media only screen and (max-width: 1200px) and (max-height: 708px) {
+   /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  .char-img img {
+    max-height: 250px;
+    max-width: 200px;
+  }
+  .menu ul li a {
+    color: #fff;
+    font-size: 20px;
+    line-height: 2;
+}
+.info-box {
+  flex-direction: row;
+}
+}
 @media only screen and (max-width: 1100px) and (max-height: 850px) {
+   /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
   .grid-img{
-    display: none;
+    /* display: none; */
+  }
+}
+@media only screen and (max-width: 1100px) and (max-height: 650px) {
+   /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  .grid-img{
+    /* display: none; */
   }
 }
 @media only screen and (max-width: 1000px) and (max-height: 850px) {
+   /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  .info-box {
+    flex-direction: column;
+}
   .trailer video {
 
 }
@@ -719,7 +807,12 @@ padding: 30px 0;
 }
 }
 @media only screen and (max-width: 1000px) and (max-height: 600px) {
-/* 상단로고 영역 */
+   /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
 #side-area {
   bottom: 60vh;
 }
@@ -777,13 +870,13 @@ padding: 30px 0;
 .char-img {
   max-height: 200px;
   max-width: 100px;
-  margin: 0 10px;
+  /* margin: 0 10px; */
 }
 .char-img img{
   object-fit: contain;
 }
 .info-box{
-  flex-direction: row;
+  /* flex-direction: row; */
 }
 .menu{
   width: 100px;
@@ -792,8 +885,6 @@ padding: 30px 0;
   font-size: 12px;
   line-height: 1.8;
 }
-
-
 
 /* 하단영역 */
 .footer-bx {
@@ -809,6 +900,40 @@ padding: 30px 0;
 .corp-part {
   margin-top: 10px;
   font-size: 12px;
+}
+}
+@media only screen and (max-width: 750px) and (max-height: 370px) {
+  #side-area {
+    bottom: 66vh;
+}
+.trailer video {
+  max-width: 320px;
+  max-height: 200px;
+}
+  .info-box {
+    flex-direction: row;
+}
+.main-tit2 {
+  padding-top: 50px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+.sns-part a {
+  font-size: 25px;
+  line-height: 1.5;
+}
+}
+@media only screen and (max-width: 370px) and (max-height: 750px) {
+  .char-img {
+    max-width: 100px;
+}
+.menu ul li a {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.fcont-part a {
+  font-size: 15px;
+  line-height: 2;
 }
 }
 /* ************************************************* */
