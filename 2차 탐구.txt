@@ -1,0 +1,106 @@
+사이트 벤치마킹 포털
+(1) 디비컷
+https://www.dbcut.com/
+(2) 굿디자인웹
+https://www.gdweb.co.kr/main/
+(3) 어워즈
+https://www.awwwards.com/
+동영상다운
+https://snapsave.io/ko19
+
+
+=====================2차 주제선정====================
+BOSE
+https://www.bose.com/home
+메인페이지 :원본 메인배너가 내가본 마지막 페이지에따라 쿠키로저장됨
+여러 배너들을 종합해서 슬라이드로 구현계획
+
+카테고리를 이미지로 보여줌
+큰 카테고리 : 스피커,해드폰,이어폰
+
+상단네비 : 블랙 로고
+BOSE코리아 상단네비 색상참고
+https://www.bose.co.kr/?gad_source=1&gclid=CjwKCAjwupGyBhBBEiwA0UcqaI_rDE6--9tAp9ErznXtNGd7ZWqM4Gt3-ynorWZqlAfiQ7WNk-WZAxoC6ngQAvD_BwE
+
+이미지활용 기능
+윈도우 스크롤 위치에따라 각 이미지들 애니메이션 적용
+
+카테고리 메뉴바 보더박스 참고(이미지 위)
+https://escape.cafe/
+
+https://assets.bosecreative.com/transform/7bc70bbb-324a-49bc-9681-27be5161f26d/CREA-1005_QCH24_BoseBlack_0273?io=transform:crop,height:1350,width:1080,path:square,gravity:top&io=overlay:box,color:000,opacity:20&quality=95
+https://assets.bosecreative.com/transform/6af2af5e-698a-4d93-84e7-924f4625647c/sf_nav_flyout_SLMPS_blue_720x711_x2?io=transform:fit,height:1000,width:1000&io=overlay:box,color:000000,opacity:15&quality=95
+https://assets.bosecreative.com/transform/9e3cbf50-03ca-4c36-a1eb-7099a79692fe/CTP-47671_AntEdwardsTylerHerro_CollabsHubMarquee?io=transform:crop,height:1920,width:1920,path:square&io=overlay:box,color:000,opacity:20&quality=95
+
+메인페이지 로고 와 동영상배치 예시
+https://www.marshall.com/kr/en
+적용할 동영상
+ https://www.youtube.com/watch?v=qPx4_GuHI4w
+https://www.youtube.com/watch?v=cDxbnkgNphI
+https://www.youtube.com/watch?v=WnaO2K7JnOM
+
+
+-각 대분류 카테고리를 이미지로 드래그
+-해당 카테고리서브페이지를 들어가면 소분류 카테고리를 봄
+-스크롤 위치에따라 이미지가 옆으로 넘어감 (드래그 x)
+-스크롤 위치에따라 배경이미지의 높이값이 다름 : 부드러운스크롤 동시사용
+-배경사진 위에 큰 카테고리 메뉴를 보더박스로 만듬
+-메뉴바 사이드에 배치 / 로고는 상단 : 모바일화면시 메뉴바 상단이동
+
+==============폰트============
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+ font-family: "Passion One", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Passion+One:wght@400;700;900&display=swap');
+font-family: "Inter Tight", sans-serif;
+==============폰트============
+
+메인페이지 구성
+원본페이지의 단점: 해당제품을 광고하는 페이지를 찾기가 매우힘듬
+이를 제품과 연결되는카테고리에 같이 등록
+예) 메인페이지 & 제품페이지 등 
+
+전체 색상 : 배경 다크
+1.상단 네비바 : 로고박스 / 메뉴바
+ -로고박스 :  흰로고+어두운배경
+ -메뉴바 : 좌 우 로나눔
+   -좌 :discover
+    All Products :오버시 카테고리 하위 (해드폰,이어버드,스피커,홈시어터 등 하위메뉴나옴)
+        :  All Products 누르면 전체메뉴페이지 이동
+        전체페이지 이동시 예) SHOP->ALL 식으로 페이지에 표시
+        각 카테고리 이동시 예) SHOP->ALL->해드폰 의 식으로 페이지에 표시
+    EXPLORE : 상세페이지로 이동
+    SUPPORT : 상세페이지로 이동 - 보류
+
+   -우 :아이콘!!!!! 검색+로그인+장바구니(+위시리스트)
+   New & Featured,Headphones,Earbuds,Speakers,Home Theater
+   ALL PRODUCTS
+HEADPHONES
+EARBUDS
+SPEAKERS
+HOME THEATER
+EXPLORE
+SUPPORT
+
+2.메인베너영역 : 전체동영상박스 + 중앙 동영상스티키로고 + 하단보더메뉴박스
+- 전체동영상박스 : 자동재생
+- 중앙 동영상스티키로고 : 스크롤시 보더메뉴박스까지 끌려내려옴 (로고배경으로 전체동영상과 같은속도의 영상)
+- 하단보더메뉴박스 : 메인 주력 메뉴리스트를 보더박스로 보이게함(배경없음) - 오버시 배경색채움
+
+
+메인페이지 바 
+https://vanholtz.co/
+
+상세페이지 내용
+https://www.bose.com/pxp/bose-soundlink-max
+https://www.bose.com/pxp/bose-quietcomfort-ultra-headphones
+https://www.bose.com/pxp/bose-ultra-open-earbuds
+
+메뉴클릭기능
+https://www.significo.com/
+
+사진배치
+https://anaiwood.com/en
+와인 사이트
+- 이미지 드래그
+-클릭시 이미지가 블러효과 +찌그러지며 다음페이지로 넘어감
+https://www.vntnr.co/st-hugo-signature-coonawarra-cabernet-sauvignon-1-5l-magnum-2012
