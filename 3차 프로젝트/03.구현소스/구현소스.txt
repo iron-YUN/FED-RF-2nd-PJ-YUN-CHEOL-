@@ -1,1 +1,24 @@
-ing
+node js 설치
+버전확인 = 컨트롤키 + 빽틱 = cmd창
+기본설정 바꾸기 = cmd
+cd + 띄어쓰기 + 폴더(구현소스) -> 앤터
+npx create-react-app 내가정한이름-app -> 앤터
+(설치후) 내가정한이름-app -> 앤터
+npm ci -> 앤터
+
+서버열기 npm start
+서버닫기 컨트롤+c -> y
+
+
+    (1) npm i react-router-dom@latest
+    (2) npm i jquery
+    (3) npm i jquery-ui-dist
+    (4) npm i jquery-ui-touch-punch
+    (5) npm i swiper
+
+버전 확인하기
+node -v
+npm -v
+npx -v
+
+
