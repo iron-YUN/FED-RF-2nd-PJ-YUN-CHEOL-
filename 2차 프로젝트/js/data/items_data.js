@@ -1,7 +1,7 @@
 // 제품 카테고리별 분류
 // 메인분류 : 유형별
 // 서브분류 : 사용목적별
-
+// https://www.bose.com/c/headphones
 const products = {
   Headphones: {
     "Over-ear":[
