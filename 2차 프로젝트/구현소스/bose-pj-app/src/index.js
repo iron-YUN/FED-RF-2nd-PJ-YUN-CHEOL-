@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import "./css/main.scss";
+
+
+
 export default function MainComponent(){
   return(
     <>
