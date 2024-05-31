@@ -1,0 +1,18 @@
+const poductColor={
+    "Black":"#000",
+    "White Smoke":"#eee8e5",
+    "Sandstone":"#928982",
+    "Luxe Silver":"#adb0b1",
+    "Cypress Green":"#537262",
+    "Moonstone Blue":"#a2c2d9",
+    "Chilled Lilac":"#c5c6e1",
+    "Blue Dusk":"#486e8a",
+    "Stone Blue":"#7f98a5",
+    "Triple Black":"#283238",
+    "Arctic White":"#f4f3ef",
+    "Bose Black":"#202020",
+    "bgc1":"#181818",
+    "bgc2":"#191919",
+    "bgc3":"#0d0d0d",
+    "bgc4":"#282828",
+    };
