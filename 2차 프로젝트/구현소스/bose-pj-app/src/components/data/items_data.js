@@ -28,7 +28,7 @@ const productSubType = [
 ];
 const productList = [
   {
-    dix: "1",
+    idx: "1",
     name: "Bose QuietComfort Ultra Headphones",
     price: "$379.00",
     MainType: "Headphones",
@@ -84,7 +84,7 @@ const productList = [
     },
   },
   {
-    dix: "2",
+    idx: "2",
     name: "Bose QuietComfort 45 headphones",
     price: "$329.00",
     MainType: "Headphones",
@@ -139,7 +139,7 @@ const productList = [
     },
   },
   {
-    dix: "3",
+    idx: "3",
     name: "Bose QuietComfort Headphones",
     price: "$249.00",
     MainType: "Headphones",
@@ -192,7 +192,7 @@ const productList = [
     },
   },
   {
-    dix: "4",
+    idx: "4",
     name: "Bose A30 Aviation Headset",
     price: "$1,299.00",
     MainType: "Headphones",
@@ -235,7 +235,7 @@ const productList = [
     },
   },
   {
-    dix: "5",
+    idx: "5",
     name: "ProFlight Series 2 Aviation Headset",
     price: "$1,045.00",
     MainType: "Headphones",
@@ -273,7 +273,7 @@ const productList = [
     },
   },
   {
-    dix: "6",
+    idx: "6",
     name: "Bose QuietComfort Ultra Earbuds",
     price: "$249.00",
     MainType: "Earbuds",
@@ -326,7 +326,7 @@ const productList = [
     },
   },
   {
-    dix: "7",
+    idx: "7",
     name: "Bose Ultra Open Earbuds",
     price: "$299.00",
     MainType: "Earbuds",
@@ -377,7 +377,7 @@ const productList = [
     },
   },
   {
-    dix: "8",
+    idx: "8",
     name: "Bose Ultra Open Earbuds Silicone Case Cover",
     price: "$25.00",
     MainType: "Earbuds",
@@ -394,7 +394,7 @@ const productList = [
     Specifications: {},
   },
   {
-    dix: "9",
+    idx: "9",
     name: "Bose Ultra Open Earbuds Wireless Charging Case Cover",
     price: "$49.00 ",
     MainType: "Earbuds",
@@ -416,7 +416,7 @@ const productList = [
     Specifications: {},
   },
   {
-    dix: "10",
+    idx: "10",
     name: "Bose SoundLink Max Portable Speaker",
     price: "$399.00",
     MainType: "Speakers",
@@ -460,7 +460,7 @@ const productList = [
     },
   },
   {
-    dix: "11",
+    idx: "11",
     name: "Bose SoundLink Flex Bluetooth Speaker",
     price: "$149.00 ",
     MainType: "Speakers",
@@ -508,7 +508,7 @@ const productList = [
     },
   },
   {
-    dix: "12",
+    idx: "12",
     name: "Bose SoundLink Mini II Special Edition",
     price: "$179.00",
     MainType: "Speakers",
@@ -545,7 +545,7 @@ const productList = [
     },
   },
   {
-    dix: "13",
+    idx: "13",
     name: "Bose SoundLink Micro Bluetooth Speaker",
     price: "$119.00",
     MainType: "Speakers",
@@ -587,7 +587,7 @@ const productList = [
     },
   },
   {
-    dix: "14",
+    idx: "14",
     name: "Bose Portable Smart Speaker",
     price: "$349.00",
     MainType: "Speakers",
@@ -632,7 +632,7 @@ const productList = [
     },
   },
   {
-    dix: "15",
+    idx: "15",
     name: "Bose SoundLink Revolve+ II Bluetooth Speaker",
     price: "$249.00",
     MainType: "Speakers",
@@ -675,7 +675,7 @@ const productList = [
     },
   },
   {
-    dix: "16",
+    idx: "16",
     name: "Bose SoundLink Revolve II Bluetooth Speaker",
     price: "$219.00",
     MainType: "Speakers",
@@ -716,7 +716,7 @@ const productList = [
     },
   },
   {
-    dix: "17",
+    idx: "17",
     name: "251® environmental speakers",
     price: "$398.00",
     MainType: "Speakers",
@@ -749,7 +749,7 @@ const productList = [
     },
   },
   {
-    dix: "18",
+    idx: "18",
     name: "Bose Smart Speaker 500",
     price: "$379.00",
     MainType: "Speakers",
@@ -783,7 +783,7 @@ const productList = [
     },
   },
   {
-    dix: "19",
+    idx: "19",
     name: "Bose Music Amplifier",
     price: "$699.00",
     MainType: "Speakers",
@@ -821,7 +821,7 @@ const productList = [
     },
   },
   {
-    dix: "20",
+    idx: "20",
     name: "Bose Smart Ultra Soundbar",
     price: "$799.00",
     MainType: "Home Theater",
@@ -866,7 +866,7 @@ const productList = [
     },
   },
   {
-    dix: "21",
+    idx: "21",
     name: "Bose Smart Soundbar 600",
     price: "$399.00 ",
     MainType: "Home Theater",
@@ -910,7 +910,7 @@ const productList = [
     },
   },
   {
-    dix: "22",
+    idx: "22",
     name: "Bose TV Speaker",
     price: "$199.00",
     MainType: "Home Theater",
@@ -947,7 +947,7 @@ const productList = [
     },
   },
   {
-    dix: "23",
+    idx: "23",
     name: "Bose Bass Module 500",
     price: "$499.00",
     MainType: "Home Theater",
@@ -976,7 +976,7 @@ const productList = [
     },
   },
   {
-    dix: "24",
+    idx: "24",
     name: "Bose Bass Module 700",
     price: "$699.00",
     MainType: "Home Theater",
@@ -1004,7 +1004,7 @@ const productList = [
     },
   },
   {
-    dix: "25",
+    idx: "25",
     name: "Bose Surround Speakers",
     price: "$399.00",
     MainType: "Home Theater",
@@ -1033,7 +1033,7 @@ const productList = [
     Specifications: { Speaker: '15" H x 8" W x 5" D (6.6 lb)' },
   },
   {
-    dix: "26",
+    idx: "26",
     name: "Bose Surround Speakers 700",
     price: "$599.00",
     MainType: "Home Theater",
@@ -1062,7 +1062,7 @@ const productList = [
     Specifications: { Speaker: '5" H x 1" W x 1" D (0.78 lb)' },
   },
   {
-    dix: "27",
+    idx: "27",
     name: "Bose S1 Pro+ Portable Bluetooth Speaker System",
     price: "$599.00",
     MainType: "PA Systems",
@@ -1104,7 +1104,7 @@ const productList = [
     },
   },
   {
-    dix: "28",
+    idx: "28",
     name: "L1 Pro16 Portable Line Array System",
     price: "$1,899.00",
     MainType: "PA Systems",
@@ -1140,7 +1140,7 @@ const productList = [
     },
   },
   {
-    dix: "29",
+    idx: "29",
     name: "L1 Pro8 Portable Line Array System",
     price: "$1,299.00",
     MainType: "PA Systems",
@@ -1176,7 +1176,7 @@ const productList = [
     },
   },
   {
-    dix: "30",
+    idx: "30",
     name: "F1 Model 812 Flexible Array loudspeaker",
     price: "$1,199.00",
     MainType: "PA Systems",
@@ -1205,7 +1205,7 @@ const productList = [
     },
   },
   {
-    dix: "31",
+    idx: "31",
     name: "Sub1 Powered Bass Module",
     price: "$899.00",
     MainType: "PA Systems",
@@ -1230,7 +1230,7 @@ const productList = [
     },
   },
   {
-    dix: "32",
+    idx: "32",
     name: "Sub2 Powered Bass Module",
     price: "$1,299.00",
     MainType: "PA Systems",
@@ -1255,7 +1255,7 @@ const productList = [
     },
   },
   {
-    dix: "33",
+    idx: "33",
     name: "F1 Subwoofer",
     price: "$1,299.00",
     MainType: "PA Systems",
@@ -1287,7 +1287,7 @@ const productList = [
     },
   },
   {
-    dix: "34",
+    idx: "34",
     name: "T4S ToneMatch mixer",
     price: "$699.00",
     MainType: "PA Systems",
@@ -1312,7 +1312,7 @@ const productList = [
     },
   },
   {
-    dix: "35",
+    idx: "35",
     name: "T8S ToneMatch mixer",
     price: "$999.00",
     MainType: "PA Systems",
