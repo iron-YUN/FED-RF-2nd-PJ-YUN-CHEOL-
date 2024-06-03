@@ -4,15 +4,18 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
 
-
-
 import "./css/main.scss";
-import Headphones from "./components/pages/Headphones";
-import Explore from "./components/pages/Explore";
-import Earbuds from "./components/pages/Earbuds";
+// 상세페이지
 import Shop from "./components/pages/Shop";
+import Headphones from "./components/pages/Headphones";
+import Earbuds from "./components/pages/Earbuds";
+import Speakers from "./components/pages/Speakers";
+import Hometheater from "./components/pages/Hometheater";
+import Pasystems from "./components/pages/Pasystems";
 
-
+// 기타페이지
+import Explore from "./components/pages/Explore";
+import Support from "./components/pages/Support";
 
 export default function MainComponent(){
   return (
@@ -34,9 +37,9 @@ export default function MainComponent(){
           <Route path="speakers" element={<Speakers/>} />
           <Route path="hometheater" element={<Hometheater/>} />
           <Route path="pasystems" element={<Pasystems/>} />
-          {/*  */}
+          {/* 기타페이지 */}
           <Route path="Explore" element={<Explore/>} />
-          <Route path="Support" element={<Support/>} />
+          <Route path="support" element={<Support/>} />
         </Route>
      </Routes>
     </BrowserRouter>
