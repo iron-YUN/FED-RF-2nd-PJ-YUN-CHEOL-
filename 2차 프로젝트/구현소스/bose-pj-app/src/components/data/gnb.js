@@ -1,17 +1,13 @@
 // DC.com GNB메뉴 데이터
 export const menu = [
     {
-        txt:"Home",
+        txt:"HOME",
         link:"/",
     },
     {
         txt:"SHOP",
         link:"/shop",
         sub:[
-            {
-                txt: "All Products",
-                link: "/all",
-            },
             {
                 txt: "Headphones",
                 link: "/headphones",
@@ -45,12 +41,4 @@ export const menu = [
 
     ///////////////////////////////////////////////
     ///////////////////////////////////////////////
-    {
-        txt:"VIDEO",
-        link:"/video",
-    },
-    {
-        txt:"OPINIONS",
-        link:"/board",
-    },
 ];
