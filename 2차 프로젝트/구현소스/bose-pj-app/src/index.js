@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
 
-import "./css/main.scss";
+import "../src/css/index.scss";
 // 상세페이지
 import Shop from "./components/pages/Shop";
 import Headphones from "./components/pages/Headphones";

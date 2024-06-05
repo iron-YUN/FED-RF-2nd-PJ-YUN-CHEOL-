@@ -1,0 +1,68 @@
+// 하단영역 css
+
+
+
+
+
+.info {
+    white-space: nowrap;
+    .send-email-tit{
+        white-space: wrap;
+    }
+    & a{
+        color: #fff;
+    }
+    padding: 30px;
+    background-color: #000;
+    color: #fff;
+    .from{
+        display: flex;
+    }
+    .container{
+        max-width: 1440px;
+    }
+    .input-holder {
+        max-width: 58%;
+        flex: 0 0 58%;
+        width: 58%;
+        padding: 0 12px;
+       & input {
+            background: #f8f8f8;
+            color: #131317;
+            padding: 12px 12px 12px 16px;
+        }
+        .form-control {
+            width: 100%;
+            color: #495057;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+        }
+    }
+    .btn-secondary {
+        max-width: 100%;
+        border-radius: 2px;
+        height: 50px;
+        position: relative;
+    }
+
+
+
+    .footer-md{
+        line-height: 1.7;
+        margin-top: 50px;
+        display: flex;
+        .about-link1{
+            display: flex;
+            gap: 30px;
+        }
+        .footer-app{
+            margin-left: 150px;
+        }
+    }
+    .about-link2{
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+  }
