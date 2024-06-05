@@ -9,7 +9,7 @@ export const isrc = {
     video:"/videos/",
     // 로고
     logoW: "/images/logo/bose_logo_w.png",
-    logoB: "/images/svg/dc-logo.svg",
+
     // 에러페이지
     error:"https://shop.dc.com/coming-soon/static/media/mxyzptlk.0f810a8a.png"
 };

@@ -4,11 +4,26 @@
 import { Link } from "react-router-dom";
 import { menu } from "../data/gnb";
 
+import "../../css/top_area.scss";
+import Logo from "../modules/Logo";
+
 export default function TopArea() {
   return (
     <>
       {/* 1.상단영역 */}
       <header className="top-area">
+        {/* 메뉴박스 */}
+        <div className="menu">
+          <Logo logoStyle="top" />
+          <div className="icon-box">
+            <ul className="icon-menu">
+              <li>＠</li>
+              <li>＠</li>
+              <li>＠</li>
+              <li>＠</li>
+            </ul>
+          </div>
+        </div>
         {/* 네비게이션 GNB파트 */}
         <nav className="gnb">
           <ul>
