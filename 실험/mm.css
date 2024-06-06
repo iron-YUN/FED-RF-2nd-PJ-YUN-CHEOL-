@@ -1,0 +1,75 @@
+.content-area .col-12 {
+  display: flex;
+}
+
+#content-area .textbox-wrap {
+  top: 0;
+  position: sticky;
+  padding: 15px;
+  width: 50%;
+}
+#content-area .textbox-wrap span.stit {
+  display: inline-block;
+  width: min(200px, 13vw);
+  border-bottom: 1px solid #777;
+}
+#content-area .textbox-wrap small {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: clamp(10px, 3vw, 13px);
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: bold;
+}
+#content-area .textbox-wrap h2 {
+  color: #000;
+  font-size: clamp(14px, 6vw, 9vw);
+  font-family: "Cormorant Garamond", serif;
+  padding-bottom: 10px;
+}
+#content-area .textbox-wrap span.text {
+  width: 100%;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+}
+#content-area .textbox-wrap button {
+  display: block;
+  width: auto;
+  border-radius: 100px;
+  border: 1px solid #6e6e6e;
+  padding: 12px 7px;
+  margin: 20px 0;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+  font-weight: 500;
+}
+#content-area .imgbox-wrap {
+  height: 30000px;
+  background-color: #000;
+  position: relative;
+  width: 50%;
+}
+#content-area .imgbox-wrap .img-wrap {
+  width: 100%;
+}
+#content-area .imgbox-wrap .img-wrap a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#content-area .imgbox-wrap .img-wrap a img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+#content-area .imgbox-wrap .img-wrap a .desc {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  translate: 0 -100%;
+  color: #fff;
+  font-size: clamp(14px, 9vw, 9vw);
+  font-family: "Cormorant Garamond", serif;
+}/*# sourceMappingURL=mm.css.map */
