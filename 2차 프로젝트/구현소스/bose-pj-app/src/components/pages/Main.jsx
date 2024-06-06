@@ -1,5 +1,5 @@
 // 메인페이지 컴포넌트 ///
-
+import "../../css/main_area.scss";
 export default function Main() {
   return (
     <>

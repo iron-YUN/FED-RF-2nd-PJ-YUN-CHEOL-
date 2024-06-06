@@ -1,5 +1,5 @@
 // DC.com GNB메뉴 데이터
-export const menu = [
+const menu = [
     {
         txt:"HOME",
         link:"/",
@@ -42,3 +42,5 @@ export const menu = [
     ///////////////////////////////////////////////
     ///////////////////////////////////////////////
 ];
+
+export {menu};

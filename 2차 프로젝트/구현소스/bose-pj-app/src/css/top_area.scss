@@ -1,35 +1,133 @@
-.menu {
+// https://easings.net/ko
+
+/* 스크롤 기본 막아놓기 */
+body.hidden {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top-area{
   position: fixed;
-  display: flex;
-  .logo-box {
-    display: inline-block;
-    background-color: #000;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      box-sizing: border-box;
+  z-index: 9999;
+  .icon-menu-box {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    .logo-box {
+      display: inline-block;
+      background-color: #000;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        box-sizing: border-box;
+      }
     }
-  }
-  .icon-box {
-    display: inline-block;
-    background-color: #0000005f;
-    width: 150px;
-    .icon-menu {
+    .icon-box {
       display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-evenly;
-      align-items: center;
-      color: #fff;
-      vertical-align: middle; /* 자식 요소에 수직 정렬 적용 */
-      // 아래는 아이콘 적용후 수정
-      font-size: 25px;
-      font-weight: bold;
-      & li {
-        display: inline-block; /* 인라인 블록으로 변경 */
-        padding: 5px;
-        vertical-align: middle; /* 각 li 요소에 수직 정렬 적용 */
+      background-color: #00000095;
+      .icon-menu {
+        // width: 150px;
+        padding: 0 10px;
+        display: inline-block;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        gap: 5px;
+        color: #fff;
+        // 아래는 아이콘 적용후 수정
+        font-size: 20px;
+        font-weight: bold;
+        & li {
+          display: inline-block; /* 인라인 블록으로 변경 */
+          padding: 5px;
+          
+          box-sizing: border-box;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            color: #486e8a;
+          }
+        }
+      }
+      .search {
+        width: 0;
+        height: 100%;
+        overflow: hidden;
+        transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        text-align: center;
+        &.active {
+          width: 400px;
+        }
+        & input {
+          // display: none;
+          position: relative;
+          width: 0%;
+          height: 50%;
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 0;
+          transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+          transition: opacity 0s;
+          &.active {
+            opacity: 1;
+            width: 90%;
+            transition: width 0s cubic-bezier(0.22, 1, 0.36, 1);
+          }
+        }
       }
     }
   }
+  .gnb{
+    &.active{
+    left: 0%;
+    }
+    transition: left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    left: -100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #ffffffde;
+    .left{
+      width: 50%;
+      // height: 100%;
+      .menu-box{
+        font-weight: bold;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        top: 10vh;
+        left: 2vw;
+        &>li{
+          font-size: 3vw;
+          ol{
+            position: relative;
+            display: flex;
+        flex-direction: column;
+        left: 3vw;
+            li{
+              line-height: 1.7;
+              font-size: 2.2vw;
+            }
+          }
+        }
+      }
+      }
+      .right{
+        flex: 1;
+        // height: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          box-sizing: border-box;
+        }
+    }
+  }
 }
+
+
