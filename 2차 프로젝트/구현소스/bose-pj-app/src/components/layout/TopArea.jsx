@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import mFn from "../func/my_function";
 import { isrc, menuSrc } from "../data/img_src";
+import $ from "jquery";
 // GNB 데이터 불러오기
 import { menu } from "../data/gnb";
 
@@ -68,6 +69,18 @@ export default function TopArea() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(()=>{
+    $(".smenu li").on("mouseover",(e)=>{
+      // 오버시 순번
+      let idx = $(e.currentTarget).index();
+      console.log(idx);
+
+      // 배경이미지 보이기
+      $(".right img").eq(idx).css({zIndex:1})
+      .siblings().css({zIndex:0});
+    });
+  });
 
   return (
     <>
