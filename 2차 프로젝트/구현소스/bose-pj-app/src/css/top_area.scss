@@ -9,6 +9,8 @@ body.hidden {
 .top-area{
   position: fixed;
   z-index: 9999;
+  // 강제로 h0  - 앞화면을 가려버림
+  height: 0;
   .icon-menu-box {
     position: fixed;
     z-index: 9999;
@@ -81,11 +83,12 @@ body.hidden {
     }
   }
   .gnb{
+    display: inline-block;
     &.active{
     left: 0%;
-    }
-    transition: left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    position: relative;
+  }
+  transition: left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
     left: -100%;
     width: 100vw;
     height: 100vh;
