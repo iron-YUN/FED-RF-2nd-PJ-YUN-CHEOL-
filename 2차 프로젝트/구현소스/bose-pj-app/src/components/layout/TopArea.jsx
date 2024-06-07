@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import mFn from "../func/my_function";
-
+import { isrc, menuSrc } from "../data/img_src";
 // GNB 데이터 불러오기
 import { menu } from "../data/gnb";
 
@@ -18,14 +18,15 @@ import Logo from "../modules/Logo";
 export default function TopArea() {
   // 햄버거 버튼을 X버튼으로 바꾸기위한 설정
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const menuSrcV = Object.values(menuSrc);
+  const menuSrcK = Object.keys(menuSrc);
   useEffect(() => {
     const svgIcons = document.querySelectorAll(".top-area svg");
 
     svgIcons.forEach((v) => {
       v.setAttribute("width", "18");
       v.setAttribute("height", "18");
-    });////////////아이콘 크기변경 함수///////////////
+    }); ////////////아이콘 크기변경 함수///////////////
 
     const icon1 = mFn.qsa(".icon-menu li")[0];
     const icon5 = mFn.qsa(".icon-menu li")[4];
@@ -55,12 +56,12 @@ export default function TopArea() {
         // 메뉴버튼 동작시 스크롤 제한여부
         mFn.qs("body").classList.add("hidden");
       } //// else ///
-    });//////////////// 메뉴 햄버거 버튼 클릭이벤트 ////////////////
+    }); //////////////// 메뉴 햄버거 버튼 클릭이벤트 ////////////////
     // 검색창 나오기
     mFn.addEvt(icon5, "click", function () {
       search.classList.toggle("active");
       searchInput.classList.toggle("active");
-    });////////// 검색창 클릭 이벤트 ////////
+    }); ////////// 검색창 클릭 이벤트 ////////
   }); /////////////// useEffect 도큐번트 출력후 실행///////////////
 
   // 햄버거버튼 바꾸기
@@ -74,7 +75,9 @@ export default function TopArea() {
       <header className="top-area">
         {/* 메뉴박스 */}
         <div className="icon-menu-box">
-          <Logo logoStyle="top" />
+          <Link to={"/"}>
+            <Logo logoStyle="top" />
+          </Link>
           <div className="icon-box">
             <ul className="icon-menu">
               {iconMenu.map((v, i) => (
@@ -127,14 +130,12 @@ export default function TopArea() {
             </ul>
           </div>
           <div className="right">
-            <img src="./images/menu.webp" alt="" />
+            {menuSrcV.map((v, i) => (
+              <img className="menu-img" key={i} src={v} alt={menuSrcK[i]} />
+            ))}
           </div>
         </nav>
       </header>
     </>
   );
 } ////////////// TopArea /////////////
-
-
-
-
