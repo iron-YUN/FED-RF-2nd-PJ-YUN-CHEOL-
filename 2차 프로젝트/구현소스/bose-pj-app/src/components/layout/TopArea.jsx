@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import mFn from "../func/my_function";
-import { isrc, menuSrc } from "../data/img_src";
+import { isrc, menuSrc,smenuSrc } from "../data/img_src";
 import $ from "jquery";
 // GNB 데이터 불러오기
 import { menu } from "../data/gnb";
@@ -21,6 +21,8 @@ export default function TopArea() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuSrcV = Object.values(menuSrc);
   const menuSrcK = Object.keys(menuSrc);
+  const smenuSrcV = Object.values(smenuSrc);
+  const smenuSrcK = Object.keys(smenuSrc);
   useEffect(() => {
     const svgIcons = document.querySelectorAll(".top-area svg");
 
@@ -70,16 +72,29 @@ export default function TopArea() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // 
   useEffect(()=>{
-    $(".smenu li").on("mouseover",(e)=>{
+    const menuLi = mFn.qsa(".menu-box li");
+    const smenuLi = mFn.qsa(".smenu>ol>li");
+    const rightDiv = mFn.qsa(".right div");
+    // const rightImg = mFn.qsaEl(rightDiv,"img");
+    const rightImg1 = mFn.qsaEl(rightDiv[0],"img");
+    const rightImg2 = mFn.qsaEl(rightDiv[1],"img");
+    
+    $(menuLi).on("mouseover",(e)=>{
       // 오버시 순번
       let idx = $(e.currentTarget).index();
       console.log(idx);
-
-      // 배경이미지 보이기
-      $(".right img").eq(idx).css({zIndex:1})
+      $(rightImg1).eq(idx).css({zIndex:1})
       .siblings().css({zIndex:0});
     });
+    // $(smenuLi).on("mouseover",(e)=>{
+    //   // 오버시 순번
+    //   let idx = $(e.currentTarget).index();
+    //   console.log(idx);
+    //   $(rightImg2).eq(idx).css({zIndex:1})
+    //   .siblings().css({zIndex:0});
+    // });
   });
 
   return (
@@ -143,9 +158,16 @@ export default function TopArea() {
             </ul>
           </div>
           <div className="right">
+            <div className="menu-img">
             {menuSrcV.map((v, i) => (
-              <img className="menu-img" key={i} src={v} alt={menuSrcK[i]} />
+              <img key={i} src={v} alt={menuSrcK[i]} />
             ))}
+            </div>
+            <div className="smenu-img">
+            {smenuSrcV.map((v, i) => (
+              <img key={i} src={v} alt={smenuSrcK[i]} />
+            ))}
+            </div>
           </div>
         </nav>
       </header>

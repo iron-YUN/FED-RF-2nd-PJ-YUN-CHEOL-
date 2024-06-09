@@ -3,7 +3,7 @@ import "../../css/main_area.scss";
 export default function Main() {
   return (
     <>
-      <div class="ban-video">
+      <div className="ban-video">
         <a href="###">
           <video
             src="./videos/speak/speaker_main.mp4"
