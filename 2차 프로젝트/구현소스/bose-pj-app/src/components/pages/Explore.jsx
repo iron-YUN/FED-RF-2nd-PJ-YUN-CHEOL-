@@ -1,9 +1,12 @@
 // 캐릭터페이지 컴포넌트 ///
 
+import Banner from "../modules/Banner";
+
 export default function Explore() {
-    return (
-      <>
-        <h1>EXPLORE</h1>
-      </>
-    );
-  } ////////////// Explore /////////////
+  return (
+    <>
+      {/* 1.배너 컴포넌트 */}
+      <Banner catName="EXPLORE" />
+    </>
+  );
+} ////////////// Explore /////////////

@@ -39,7 +39,7 @@ export default function MainComponent(){
           <Route path="pasystems" element={<Pasystems/>} />
           {/* 기타페이지 */}
           <Route path="Explore" element={<Explore/>} />
-          <Route path="support" element={<Support/>} />
+          <Route path="Support" element={<Support/>} />
         </Route>
      </Routes>
     </BrowserRouter>

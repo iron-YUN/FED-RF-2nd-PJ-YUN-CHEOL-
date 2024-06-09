@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import mFn from "../func/my_function";
-import { isrc, menuSrc,smenuSrc } from "../data/img_src";
+import { isrc, menuSrc } from "../data/img_src";
 import $ from "jquery";
 // GNB 데이터 불러오기
 import { menu } from "../data/gnb";
@@ -21,8 +21,6 @@ export default function TopArea() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuSrcV = Object.values(menuSrc);
   const menuSrcK = Object.keys(menuSrc);
-  const smenuSrcV = Object.values(smenuSrc);
-  const smenuSrcK = Object.keys(smenuSrc);
   useEffect(() => {
     const svgIcons = document.querySelectorAll(".top-area svg");
 
@@ -31,71 +29,80 @@ export default function TopArea() {
       v.setAttribute("height", "18");
     }); ////////////아이콘 크기변경 함수///////////////
 
-    const icon1 = mFn.qsa(".icon-menu li")[0];
-    const icon5 = mFn.qsa(".icon-menu li")[4];
+    const icon1 = mFn.qsa(".icon-menu li")[0]; // 햄버거버튼
+    const icon5 = mFn.qsa(".icon-menu li")[4]; // 돋보기버튼
     const gnb = mFn.qs(".gnb");
     const search = mFn.qs(".search");
     const searchInput = mFn.qs(".search input");
 
-    // 메뉴창 나오기
-    mFn.addEvt(icon1, "click", function () {
+    // li 요소와 img 요소를 배열로 재수집
+    const menuLiArray = Array.from($(".menu-box li a"));
+    const rightImg = $(".right img");
+
+    // 광클금지 설정 - 잘안됨
+    // let prot = false;
+    // if (prot) return; // 돌아가!(함수나감!)
+    // prot = true; // 잠금! (뒤의호출막기)
+    // setTimeout(() => {
+    //   prot = false; // 0.6초후 해제!
+    // }, 6000);
+
+    
+    // 메뉴버튼에 메뉴페이지 기능추가 + 최상단으로 이동
+    menuLiArray.forEach((v) => {
+      mFn.addEvt(v, "click", topMenuOpen);
+    });
+    // 햄버거 버튼에 메뉴페이지 기능추가
+    mFn.addEvt(icon1, "click", menuOpen);
+
+    function topMenuOpen(){
+      // 메뉴 클릭시에만 상단스크롤 이동하기위해 
+      // 함수안에 함수를 호출
+      menuOpen();
+      window.scrollTo(0,0);
+    }
+    // 메뉴창 나오기 이벤트
+    function menuOpen() {
+      gnb.classList.add("active");
+      search.classList.add("active");
+      searchInput.classList.add("active");
+      mFn.qs("body").classList.add("hidden");
       if (isMenuOpen) {
-        gnb.classList.remove("active");
-        // 서치버튼이 메뉴열기버튼 기능과 연결되어 잘작동하지않아
-        // 메뉴를 열고닫을때도 관리되도록 장치함
-        // 이벤트 버블링
-        search.classList.remove("active");
-        searchInput.classList.remove("active");
-        // 메뉴버튼 동작시 스크롤 제한여부
-        mFn.qs("body").classList.remove("hidden");
-      } /// if //
-      else {
-        gnb.classList.add("active");
-        // 서치버튼이 메뉴열기버튼 기능과 연결되어 잘작동하지않아
-        // 메뉴를 열고닫을때도 관리되도록 장치함
-        // 이벤트 버블링
-        search.classList.add("active");
-        searchInput.classList.add("active");
-        // 메뉴버튼 동작시 스크롤 제한여부
-        mFn.qs("body").classList.add("hidden");
-      } //// else ///
-    }); //////////////// 메뉴 햄버거 버튼 클릭이벤트 ////////////////
-    // 검색창 나오기
+        closeMenu();
+      }
+    } /////////////////////////////////////
+
+    // 메뉴 닫기 함수
+    function closeMenu() {
+      // 메뉴창이 열려있을 때 동작해야 하는 로직을 여기에 작성합니다.
+      gnb.classList.remove("active");
+      search.classList.remove("active");
+      searchInput.classList.remove("active");
+      mFn.qs("body").classList.remove("hidden");
+      setIsMenuOpen(!isMenuOpen);
+    } ///////////////////////////////////////////////
+    
+
+    // 검색창 나오기 ->> 메뉴바와 별도로!!!!! 기능추가
     mFn.addEvt(icon5, "click", function () {
       search.classList.toggle("active");
       searchInput.classList.toggle("active");
     }); ////////// 검색창 클릭 이벤트 ////////
+
+    $(menuLiArray).on("mouseover", function (e) {
+      // 이벤트 타겟이 하위 요소라도 가장 가까운 li 부모 요소 찾기
+      //  let menuLi = e.target;
+      let menuLi = e.currentTarget;
+      let idx = menuLiArray.indexOf(menuLi);
+      console.log("순번:", idx);
+      $(rightImg).eq(idx).css({ zIndex: 1 }).siblings().css({ zIndex: 0 });
+    });
   }); /////////////// useEffect 도큐번트 출력후 실행///////////////
 
-  // 햄버거버튼 바꾸기
+  // html 햄버거버튼 바꾸기
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  // 
-  useEffect(()=>{
-    const menuLi = mFn.qsa(".menu-box li");
-    const smenuLi = mFn.qsa(".smenu>ol>li");
-    const rightDiv = mFn.qsa(".right div");
-    // const rightImg = mFn.qsaEl(rightDiv,"img");
-    const rightImg1 = mFn.qsaEl(rightDiv[0],"img");
-    const rightImg2 = mFn.qsaEl(rightDiv[1],"img");
-    
-    $(menuLi).on("mouseover",(e)=>{
-      // 오버시 순번
-      let idx = $(e.currentTarget).index();
-      console.log(idx);
-      $(rightImg1).eq(idx).css({zIndex:1})
-      .siblings().css({zIndex:0});
-    });
-    // $(smenuLi).on("mouseover",(e)=>{
-    //   // 오버시 순번
-    //   let idx = $(e.currentTarget).index();
-    //   console.log(idx);
-    //   $(rightImg2).eq(idx).css({zIndex:1})
-    //   .siblings().css({zIndex:0});
-    // });
-  });
 
   return (
     <>
@@ -132,12 +139,10 @@ export default function TopArea() {
                 <li key={i}>
                   {
                     // 하위메뉴가 있으면 일반 a요소에 출력
-                    // 없으면 Link 라우팅출력
-                    v.sub ? (
-                      <a href="#">{v.txt}</a>
-                    ) : (
+                    // 없으면 Link 라우팅출력 >>> 필요없음
+                    // v.sub ? (<a href="#">{v.txt}</a>)
+                    //    : (<Link to={v.link}>{v.txt}</Link>)
                       <Link to={v.link}>{v.txt}</Link>
-                    )
                   }
                   {
                     // 서브메뉴 데이터가 있으면 하위 그리기
@@ -158,16 +163,9 @@ export default function TopArea() {
             </ul>
           </div>
           <div className="right">
-            <div className="menu-img">
             {menuSrcV.map((v, i) => (
               <img key={i} src={v} alt={menuSrcK[i]} />
             ))}
-            </div>
-            <div className="smenu-img">
-            {smenuSrcV.map((v, i) => (
-              <img key={i} src={v} alt={smenuSrcK[i]} />
-            ))}
-            </div>
           </div>
         </nav>
       </header>

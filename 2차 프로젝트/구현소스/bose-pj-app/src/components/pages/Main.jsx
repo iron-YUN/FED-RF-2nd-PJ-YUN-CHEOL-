@@ -7,9 +7,9 @@ export default function Main() {
         <a href="###">
           <video
             src="./videos/speak/speaker_main.mp4"
-            loop="1"
-            autoplay="1"
-            muted="1"
+            loop
+            autoPlay
+            muted
           ></video>
         </a>
       </div>

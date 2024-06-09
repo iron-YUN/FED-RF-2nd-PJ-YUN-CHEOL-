@@ -1,9 +1,12 @@
 // 캐릭터페이지 컴포넌트 ///
 
+import Banner from "../modules/Banner";
+
 export default function Earbuds() {
-    return (
-      <>
-        <h1>Earbuds</h1>
-      </>
-    );
-  } ////////////// Earbuds /////////////
+  return (
+    <>
+      {/* 1.배너 컴포넌트 */}
+      <Banner catName="Earbuds" />
+    </>
+  );
+} ////////////// Earbuds /////////////

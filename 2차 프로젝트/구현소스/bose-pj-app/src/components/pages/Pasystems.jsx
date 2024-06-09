@@ -1,9 +1,12 @@
 // 캐릭터페이지 컴포넌트 ///
 
+import Banner from "../modules/Banner";
+
 export default function Pasystems() {
     return (
-      <>
-        <h1>PA_Systems</h1>
+          <>
+          {/* 1.배너 컴포넌트 */}
+          <Banner catName="PA Systems" />
       </>
     );
   } ////////////// Pasystems /////////////
