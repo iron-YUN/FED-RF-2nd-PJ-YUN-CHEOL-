@@ -2,32 +2,6 @@
 // 메인분류 : 유형별
 // 서브분류 : 사용목적별
 // https://www.bose.com/c/headphones
-const mainType = [
-  "Headphones",
-  "Earbuds",
-  "Speakers",
-  "Home Theater",
-  "PA Systems",
-]; ///////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-const subType = [
-  "Over-ear",
-  "Aviation",
-  "In Ear",
-  "Open Ear",
-  "Portable",
-  "Home Speakers",
-  "Amplifiers",
-  "Soundbars",
-  "Bass modules",
-  "Surround speakers",
-  "Portable PA",
-  "Array Systems",
-  "Sub-woofers",
-  "Mixers",
-  "Sets",
-]; ///////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
 const productHeadphones = [
   {
     idx: "0",
@@ -35,7 +9,7 @@ const productHeadphones = [
     price: "$379.00",
     MainType: "Headphones",
     SubType: "Over-ear",
-    color: ["Black", "White Smoke", "Sandstone"],
+    color: ["Sandstone", "Black", "White Smoke"],
     isrc: ["", "", ""],
   },
   {
@@ -354,3 +328,10 @@ const productPASystems = [
     isrc: ["", "", ""],
   },
 ];
+export {
+  productEarbuds,
+  productHeadphones,
+  productHomeTheater,
+  productSpeakers,
+  productPASystems,
+};

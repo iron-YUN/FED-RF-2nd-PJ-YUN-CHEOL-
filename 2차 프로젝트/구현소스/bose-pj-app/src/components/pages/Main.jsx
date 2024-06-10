@@ -15,7 +15,9 @@ export default function Main() {
           ></video>
         </a>
       </div>
-      <div className="items-area"></div>
+      <div className="items-area">
+        <h2></h2>
+      </div>
       <div className="main-ban-area">
         <MainPageBan />
       </div>
