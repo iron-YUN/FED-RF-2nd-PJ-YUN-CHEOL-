@@ -6,12 +6,12 @@ import { isrc, menuSrc } from "../data/img_src";
 import $ from "jquery";
 // GNB 데이터 불러오기
 import { menu } from "../data/gnb";
+// 아이콘 svg 불러오기
+import { CloseMenuIcon, iconMenu,} from "../data/icons";
 
 // top css불러오기
 import "../../css/top_area.scss";
 
-// 아이콘 svg 불러오기
-import { HamburgerMenuIcon, CloseMenuIcon, iconMenu } from "../data/icons";
 
 // 로고 불러오기
 import Logo from "../modules/Logo";
@@ -21,6 +21,8 @@ export default function TopArea() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuSrcV = Object.values(menuSrc);
   const menuSrcK = Object.keys(menuSrc);
+  
+
   useEffect(() => {
     const svgIcons = document.querySelectorAll(".top-area svg");
 
@@ -46,8 +48,15 @@ export default function TopArea() {
     // setTimeout(() => {
     //   prot = false; // 0.6초후 해제!
     // }, 6000);
-
     
+    const escClose = (event) => {
+      if (event.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false);
+        closeMenu();
+      }///////// if //////
+    };/////////escClose///////////////
+    window.addEventListener('keydown', escClose);
+
     // 메뉴버튼에 메뉴페이지 기능추가 + 최상단으로 이동
     menuLiArray.forEach((v) => {
       mFn.addEvt(v, "click", topMenuOpen);

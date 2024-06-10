@@ -104,10 +104,92 @@ export const LoginIcon = () => (
   </svg>
 );
 
+
+
+export const InstagramIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
+export const FacebookIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M18 2h-3a4 4 0 0 0-4 4v3H9v4h2v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+export const TwitterIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.43 2a9 9 0 0 1-2.88 1.1A4.48 4.48 0 0 0 16.84 1a4.48 4.48 0 0 0-4.44 5.64A12.71 12.71 0 0 1 3 2.73a4.48 4.48 0 0 0 1.39 5.92 4.48 4.48 0 0 1-2-.56v.06a4.48 4.48 0 0 0 3.57 4.4 4.48 4.48 0 0 1-2 .08 4.48 4.48 0 0 0 4.19 3.11A9 9 0 0 1 2 19.54 12.71 12.71 0 0 0 7.29 21c8.11 0 12.53-6.73 12.53-12.53v-.57A8.93 8.93 0 0 0 23 3z" />
+  </svg>
+);
+
+export const YoutubeIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.61.42a2.78 2.78 0 0 0-1.94 2C1 8.14 1 12 1 12s0 3.86.42 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.61-.42a2.78 2.78 0 0 0 1.94-2C23 15.86 23 12 23 12s0-3.86-.46-5.58z" />
+    <polygon points="9.75 15.02 15.59 12 9.75 8.98 9.75 15.02" />
+  </svg>
+);
+
+
+
 export const iconMenu = [
   <HamburgerMenuIcon />,
   <LoginIcon />,
   <WishlistHeartIcon />,
   <CartIcon />,
   <SearchIcon />,
+];
+
+export const snsIconMenu = [
+{txt :<InstagramIcon />,
+link : "https://www.instagram.com/bose/" },
+{txt :<FacebookIcon />,
+link :"https://www.facebook.com/Bose/"},
+{txt :<TwitterIcon />,
+link :"https://x.com/bose"},
+{txt :<YoutubeIcon />,
+link :"https://www.youtube.com/user/bose"},
 ];

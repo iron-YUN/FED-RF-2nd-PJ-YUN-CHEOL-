@@ -3,6 +3,8 @@ import Logo from "../modules/Logo";
 
 // 하단메뉴 데이터불러오기
 import {bmData,bmData2,bmData3} from "../data/bmenu";
+// 아이콘 svg 불러오기
+import {snsIconMenu } from "../data/icons";
 
 // 하단영역 css 불러오기
 import "../../css/footer_area.scss";
@@ -48,6 +50,9 @@ export default function FooterArea() {
           </li>
         ))}
       </ul>
+      </div>
+      <div className="sns-box">
+        {}
       </div>
       <ul className="about-link2">© Bose Corporation 2024
         {bmData3.map((v, i) => (

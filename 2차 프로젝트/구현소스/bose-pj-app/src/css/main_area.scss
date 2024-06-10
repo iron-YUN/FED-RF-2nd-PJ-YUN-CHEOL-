@@ -1,5 +1,5 @@
 
-.ban-video{
+.top-video{
     a{
         video{
             width: 100%;
@@ -7,4 +7,52 @@
             object-fit: cover;
         }
     }
+}
+.items-area{
+    height: 1800px;
+
+}
+
+
+.main-ban-area{
+    ul{
+        li{ position: relative;
+            &:nth-child(2n-1){
+                .mb-img{
+                    left: 10%;
+                }
+            }
+            .mb-tit{
+                position: absolute;
+                z-index: 10;
+                font-size: 5vw;
+                font-weight: bold;
+                color: #fff;
+            }
+            .mb-video{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .mb-img{
+                position: absolute;
+                right: 10%;
+                top: 25%;
+                aspect-ratio: 1/1;
+                max-width: 400px;
+                max-height: 400px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+        }
+    }
+}
+.sns-area{
+    height: 1800px;
+
 }

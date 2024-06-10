@@ -17,12 +17,11 @@ const menuSrc ={
     "Home Theater": "/images/main_ban/ban_home1.webp",
     "PA Systems": "/images/main_ban/ban_pa1.webp",
   // EXPLORE
-  EXPLORE: "/images/main_ban/veiw_h1.webp",
+  EXPLORE: "/images/main_ban/ban_h3.webp",
   // SUPPORT
   SUPPORT: "/images/main_ban/ban_su1.webp",
 }
 const smenuSrc ={
-  // 각 서브 페이지 이미지경로
   Headphones: "/images/main_ban/ban_h1.webp",
   Earbuds: "/images/main_ban/ban_e1.webp",
   Speakers: "/images/main_ban/ban_s2.webp",
