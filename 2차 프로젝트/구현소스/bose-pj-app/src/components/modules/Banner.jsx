@@ -14,7 +14,14 @@ console.log(selData);
   // 코드리턴
   return (
     <div className="banner">
-      {/* 이동슬라이드 */}
+        {/* {selData.map((v, i) => 
+            <img src={v.src} alt={v.tit1 == "" ? "banner image" : v.tit1} />
+            <section className="bantit">
+              <h2>{v.tit1}</h2>
+              <p>{v.tit2}</p>
+              {v.btn != "" && <button>{v.btn}</button>}
+            </section>
+        )} */}
       <ul className="slider">
         {selData.map((v, i) => (
           <li key={i}>
