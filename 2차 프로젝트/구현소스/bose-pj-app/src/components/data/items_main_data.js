@@ -12,7 +12,7 @@ const headphones = [
     price: "$379.00",
     MainType: "Headphones",
     SubType: "Over-ear",
-    color: ["Sandstone", "Black", "White Smoke"],
+    color: ["sand_stone", "black", "white_smoke"],
     isrc: `./images/headphones/`,
   },
   {
@@ -21,7 +21,7 @@ const headphones = [
     price: "$329.00",
     MainType: "Headphones",
     SubType: "Over-ear",
-    color: ["White Smoke"],
+    color: ["white_smoke"],
     isrc: `./images/headphones/`,
   },
   {
@@ -30,7 +30,7 @@ const headphones = [
     price: "$249.00",
     MainType: "Headphones",
     SubType: "Over-ear",
-    color: ["Black", "White Smoke", "Moonstone Blue", "Cypress Green"],
+    color: ["black", "white_smoke", "moonstone_blue", "cypress_green"],
     isrc: `./images/headphones/`,
   },
   {
@@ -39,7 +39,7 @@ const headphones = [
     price: "$1,299.00",
     MainType: "Headphones",
     SubType: "Aviation",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/headphones/`,
   },
   {
@@ -48,7 +48,7 @@ const headphones = [
     price: "$1,045.00",
     MainType: "Headphones",
     SubType: "Aviation",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/headphones/`,
   },
   {
@@ -57,7 +57,7 @@ const headphones = [
     price: "$1,095.00",
     MainType: "Headphones",
     SubType: "Aviation",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/headphones/`,
   },
 ]; ///////////////////////////////////////////////////////////////
@@ -69,7 +69,7 @@ const earbuds = [
     price: "$249.00",
     MainType: "Earbuds",
     SubType: "In Ear",
-    color: ["Black", "White Smoke", "Moonstone Blue"],
+    color: ["black", "white_smoke", "moonstone_blue"],
     isrc: `./images/earbuds/`,
   },
   {
@@ -78,7 +78,7 @@ const earbuds = [
     price: "$299.00",
     MainType: "Earbuds",
     SubType: "Open Ear",
-    color: ["Black", "White Smoke"],
+    color: ["black", "white_smoke"],
     isrc: `./images/earbuds/`,
   },
   {
@@ -87,7 +87,7 @@ const earbuds = [
     price: "$25.00",
     MainType: "Earbuds",
     SubType: "Open Ear",
-    color: ["Black", "White Smoke", "Chilled Lilac"],
+    color: ["black", "white_smoke", "chilled_lilac"],
     isrc: `./images/earbuds/`,
   },
   {
@@ -96,7 +96,7 @@ const earbuds = [
     price: "$49.00",
     MainType: "Earbuds",
     SubType: "Open Ear",
-    color: ["Black", "White Smoke",],
+    color: ["black", "white_smoke",],
     isrc: `./images/earbuds/`,
   },
 ]; ///////////////////////////////////////////////////////////////
@@ -108,7 +108,7 @@ const speakers = [
     price: "$399.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["Blue Dusk","Black", ],
+    color: ["blue_dusk","black", ],
     isrc: `./images/speakers/`,
   },
   {
@@ -118,11 +118,11 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: [
-      "Chilled Lilac",
-      "Black",
-      "White Smoke",
-      "Cypress Green",
-      "Stone Blue",
+      "chilled_lilac",
+      "black",
+      "white_smoke",
+      "cypress_green",
+      "stone_blue",
     ],
     isrc: `./images/speakers/`,
   },
@@ -132,7 +132,7 @@ const speakers = [
     price: "$179.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["Triple Black", "Luxe Silver"],
+    color: ["triple_black", "luxe_silver"],
     isrc: `./images/speakers/`,
   },
   {
@@ -141,7 +141,7 @@ const speakers = [
     price: "$119.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["Black","Stone Blue", "White Smoke"],
+    color: ["black","stone_blue", "white_smoke"],
     isrc: `./images/speakers/`,
   },
   {
@@ -150,7 +150,7 @@ const speakers = [
     price: "$349.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["Triple Black", "Luxe Silver"],
+    color: ["triple_black", "luxe_silver"],
     isrc: `./images/speakers/`,
   },
   {
@@ -159,7 +159,7 @@ const speakers = [
     price: "$249.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["Triple Black", "Luxe Silver"],
+    color: ["triple_black", "luxe_silver"],
     isrc: `./images/speakers/`,
   },
   {
@@ -168,7 +168,7 @@ const speakers = [
     price: "$219.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["Triple Black", "Luxe Silver"],
+    color: ["triple_black", "luxe_silver"],
     isrc: `./images/speakers/`,
   },
   {
@@ -177,7 +177,7 @@ const speakers = [
     price: "$398.00",
     MainType: "Speakers",
     SubType: "Home Speakers",
-    color: ["White","Black", ],
+    color: ["white","black", ],
     isrc: `./images/speakers/`,
   },
   {
@@ -186,7 +186,7 @@ const speakers = [
     price: "$379.00",
     MainType: "Speakers",
     SubType: "Home Speakers",
-    color: ["Luxe Silver","Triple Black", ],
+    color: ["luxe_silver","triple_black", ],
     isrc: `./images/speakers/`,
   },
   {
@@ -195,7 +195,7 @@ const speakers = [
     price: "$699.00",
     MainType: "Speakers",
     SubType: "Amplifiers",
-    color: [],
+    color: ["black",],
     isrc: `./images/speakers/`,
   },
 ]; ///////////////////////////////////////////////////////////////
@@ -207,7 +207,7 @@ const homeTheater = [
     price: "$799.00",
     MainType: "Home Theater",
     SubType: "Soundbars",
-    color: ["Black", "Arctic White"],
+    color: ["black", "arctic_white"],
     isrc: `./images/hometheater/`,
   },
   {
@@ -216,7 +216,7 @@ const homeTheater = [
     price: "$399.00 ",
     MainType: "Home Theater",
     SubType: "Soundbars",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/hometheater/`,
   },
   {
@@ -225,7 +225,7 @@ const homeTheater = [
     price: "$199.00",
     MainType: "Home Theater",
     SubType: "Soundbars",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/hometheater/`,
   },
   {
@@ -234,7 +234,7 @@ const homeTheater = [
     price: "$499.00",
     MainType: "Home Theater",
     SubType: "Bass modules",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/hometheater/`,
   },
   {
@@ -243,7 +243,7 @@ const homeTheater = [
     price: "$699.00",
     MainType: "Home Theater",
     SubType: "Bass modules",
-    color: ["Bose Black", "Arctic White"],
+    color: ["bose_black", "arctic_white"],
     isrc: `./images/hometheater/`,
   },
   {
@@ -252,7 +252,7 @@ const homeTheater = [
     price: "$399.00",
     MainType: "Home Theater",
     SubType: "Surround speakers",
-    color: ["Bose Black", "Arctic White"],
+    color: ["bose_black", "arctic_white"],
     isrc: `./images/hometheater/`,
   },
   {
@@ -261,7 +261,7 @@ const homeTheater = [
     price: "$599.00",
     MainType: "Home Theater",
     SubType: "Surround speakers",
-    color: ["Bose Black", "Arctic White"],
+    color: ["bose_black", "arctic_white"],
     isrc: `./images/hometheater/`,
   },
 ]; ///////////////////////////////////////////////////////////////
@@ -273,7 +273,7 @@ const paSystems = [
     price: "$599.00",
     MainType: "PA Systems",
     SubType: "Portable PA",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
   {
@@ -282,7 +282,7 @@ const paSystems = [
     price: "$1,899.00",
     MainType: "PA Systems",
     SubType: "Array Systems",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
   {
@@ -291,7 +291,7 @@ const paSystems = [
     price: "$1,299.00",
     MainType: "PA Systems",
     SubType: "Array Systems",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
   {
@@ -300,7 +300,7 @@ const paSystems = [
     price: "$1,199.00",
     MainType: "PA Systems",
     SubType: "Array Systems",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
   {
@@ -309,7 +309,7 @@ const paSystems = [
     price: "$899.00",
     MainType: "PA Systems",
     SubType: "Sub-woofers",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
   {
@@ -318,7 +318,7 @@ const paSystems = [
     price: "$1,299.00",
     MainType: "PA Systems",
     SubType: "Sub-woofers",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
   {
@@ -327,7 +327,7 @@ const paSystems = [
     price: "$1,299.00",
     MainType: "PA Systems",
     SubType: "Sub-woofers",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
   {
@@ -336,7 +336,7 @@ const paSystems = [
     price: "$699.00",
     MainType: "PA Systems",
     SubType: "Mixers",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
   {
@@ -345,7 +345,7 @@ const paSystems = [
     price: "$999.00",
     MainType: "PA Systems",
     SubType: "Mixers",
-    color: ["Black"],
+    color: ["black"],
     isrc: `./images/pasystem/`,
   },
 ];
