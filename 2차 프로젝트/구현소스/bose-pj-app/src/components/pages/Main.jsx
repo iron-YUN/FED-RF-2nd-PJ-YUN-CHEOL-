@@ -1,6 +1,7 @@
 // 메인페이지 컴포넌트 ///
 import "../../css/main_area.scss";
 import MainPageBan from "../modules/MainPageBan";
+import Trending from "../modules/Trending";
 export default function Main() {
   return (
     <>
@@ -16,7 +17,7 @@ export default function Main() {
         </a>
       </div>
       <div className="items-area">
-        <h2></h2>
+        <Trending/>
       </div>
       <div className="main-ban-area">
         <MainPageBan />

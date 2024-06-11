@@ -349,10 +349,14 @@ const paSystems = [
     isrc: `./images/pasystem/`,
   },
 ];
-export {
+
+
+export const products = [
   earbuds,
   headphones,
   homeTheater,
   speakers,
   paSystems,
-};
+]
+
+
