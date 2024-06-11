@@ -5,7 +5,7 @@
 const product=[
 
 ];
-const productHeadphones = [
+const headphones = [
   {
     idx: "0",
     name: "Bose QuietComfort Ultra Headphones",
@@ -13,7 +13,7 @@ const productHeadphones = [
     MainType: "Headphones",
     SubType: "Over-ear",
     color: ["Sandstone", "Black", "White Smoke"],
-    isrc: ["", "", ""],
+    isrc: `./images/headphones/`,
   },
   {
     idx: "1",
@@ -22,7 +22,7 @@ const productHeadphones = [
     MainType: "Headphones",
     SubType: "Over-ear",
     color: ["White Smoke"],
-    isrc: ["", "", ""],
+    isrc: `./images/headphones/`,
   },
   {
     idx: "3",
@@ -31,7 +31,7 @@ const productHeadphones = [
     MainType: "Headphones",
     SubType: "Over-ear",
     color: ["Black", "White Smoke", "Moonstone Blue", "Cypress Green"],
-    isrc: ["", "", ""],
+    isrc: `./images/headphones/`,
   },
   {
     idx: "4",
@@ -40,7 +40,7 @@ const productHeadphones = [
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/headphones/`,
   },
   {
     idx: "5",
@@ -49,7 +49,7 @@ const productHeadphones = [
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/headphones/`,
   },
   {
     idx: "6",
@@ -58,11 +58,11 @@ const productHeadphones = [
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/headphones/`,
   },
 ]; ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
-const productEarbuds = [
+const earbuds = [
   {
     idx: "0",
     name: "Bose QuietComfort Ultra Earbuds",
@@ -70,7 +70,7 @@ const productEarbuds = [
     MainType: "Earbuds",
     SubType: "In Ear",
     color: ["Black", "White Smoke", "Moonstone Blue"],
-    isrc: ["", "", ""],
+    isrc: `./images/earbuds/`,
   },
   {
     idx: "1",
@@ -79,7 +79,7 @@ const productEarbuds = [
     MainType: "Earbuds",
     SubType: "Open Ear",
     color: ["Black", "White Smoke"],
-    isrc: ["", "", ""],
+    isrc: `./images/earbuds/`,
   },
   {
     idx: "2",
@@ -88,19 +88,28 @@ const productEarbuds = [
     MainType: "Earbuds",
     SubType: "Open Ear",
     color: ["Black", "White Smoke", "Chilled Lilac"],
-    isrc: ["", "", ""],
+    isrc: `./images/earbuds/`,
+  },
+  {
+    idx: "3",
+    name: "Bose Ultra Open Earbuds Wireless Charging Case Cover",
+    price: "$49.00",
+    MainType: "Earbuds",
+    SubType: "Open Ear",
+    color: ["Black", "White Smoke",],
+    isrc: `./images/earbuds/`,
   },
 ]; ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
-const productSpeakers = [
+const speakers = [
   {
     idx: "0",
     name: "Bose SoundLink Max Portable Speaker",
     price: "$399.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["Black", "Blue Dusk"],
-    isrc: ["", "", ""],
+    color: ["Blue Dusk","Black", ],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "1",
@@ -109,13 +118,13 @@ const productSpeakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: [
+      "Chilled Lilac",
       "Black",
       "White Smoke",
       "Cypress Green",
       "Stone Blue",
-      "Chilled Lilac",
     ],
-    isrc: ["", "", ""],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "2",
@@ -124,7 +133,7 @@ const productSpeakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["Triple Black", "Luxe Silver"],
-    isrc: ["", "", ""],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "3",
@@ -132,8 +141,8 @@ const productSpeakers = [
     price: "$119.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["Black", "White Smoke", "Stone Blue"],
-    isrc: ["", "", ""],
+    color: ["Black","Stone Blue", "White Smoke"],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "4",
@@ -142,7 +151,7 @@ const productSpeakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["Triple Black", "Luxe Silver"],
-    isrc: ["", "", ""],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "5",
@@ -151,7 +160,7 @@ const productSpeakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["Triple Black", "Luxe Silver"],
-    isrc: ["", "", ""],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "6",
@@ -160,7 +169,7 @@ const productSpeakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["Triple Black", "Luxe Silver"],
-    isrc: ["", "", ""],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "7",
@@ -168,8 +177,8 @@ const productSpeakers = [
     price: "$398.00",
     MainType: "Speakers",
     SubType: "Home Speakers",
-    color: ["Black", "White"],
-    isrc: ["", "", ""],
+    color: ["White","Black", ],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "8",
@@ -177,8 +186,8 @@ const productSpeakers = [
     price: "$379.00",
     MainType: "Speakers",
     SubType: "Home Speakers",
-    color: ["Triple Black", "Luxe Silver"],
-    isrc: ["", "", ""],
+    color: ["Luxe Silver","Triple Black", ],
+    isrc: `./images/speakers/`,
   },
   {
     idx: "9",
@@ -187,11 +196,11 @@ const productSpeakers = [
     MainType: "Speakers",
     SubType: "Amplifiers",
     color: [],
-    isrc: ["", "", ""],
+    isrc: `./images/speakers/`,
   },
 ]; ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
-const productHomeTheater = [
+const homeTheater = [
   {
     idx: "0",
     name: "Bose Smart Ultra Soundbar",
@@ -199,7 +208,7 @@ const productHomeTheater = [
     MainType: "Home Theater",
     SubType: "Soundbars",
     color: ["Black", "Arctic White"],
-    isrc: ["", "", ""],
+    isrc: `./images/hometheater/`,
   },
   {
     idx: "1",
@@ -208,7 +217,7 @@ const productHomeTheater = [
     MainType: "Home Theater",
     SubType: "Soundbars",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/hometheater/`,
   },
   {
     idx: "2",
@@ -217,7 +226,7 @@ const productHomeTheater = [
     MainType: "Home Theater",
     SubType: "Soundbars",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/hometheater/`,
   },
   {
     idx: "3",
@@ -226,7 +235,7 @@ const productHomeTheater = [
     MainType: "Home Theater",
     SubType: "Bass modules",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/hometheater/`,
   },
   {
     idx: "4",
@@ -235,7 +244,7 @@ const productHomeTheater = [
     MainType: "Home Theater",
     SubType: "Bass modules",
     color: ["Bose Black", "Arctic White"],
-    isrc: ["", "", ""],
+    isrc: `./images/hometheater/`,
   },
   {
     idx: "5",
@@ -244,7 +253,7 @@ const productHomeTheater = [
     MainType: "Home Theater",
     SubType: "Surround speakers",
     color: ["Bose Black", "Arctic White"],
-    isrc: ["", "", ""],
+    isrc: `./images/hometheater/`,
   },
   {
     idx: "6",
@@ -253,11 +262,11 @@ const productHomeTheater = [
     MainType: "Home Theater",
     SubType: "Surround speakers",
     color: ["Bose Black", "Arctic White"],
-    isrc: ["", "", ""],
+    isrc: `./images/hometheater/`,
   },
 ]; ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
-const productPASystems = [
+const paSystems = [
   {
     idx: "0",
     name: "Bose S1 Pro+ Portable Bluetooth Speaker System",
@@ -265,7 +274,7 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Portable PA",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
   {
     idx: "1",
@@ -274,7 +283,7 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
   {
     idx: "2",
@@ -283,7 +292,7 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
   {
     idx: "3",
@@ -292,7 +301,7 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
   {
     idx: "4",
@@ -301,7 +310,7 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Sub-woofers",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
   {
     idx: "5",
@@ -310,7 +319,7 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Sub-woofers",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
   {
     idx: "6",
@@ -319,7 +328,7 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Sub-woofers",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
   {
     idx: "7",
@@ -328,7 +337,7 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Mixers",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
   {
     idx: "8",
@@ -337,13 +346,13 @@ const productPASystems = [
     MainType: "PA Systems",
     SubType: "Mixers",
     color: ["Black"],
-    isrc: ["", "", ""],
+    isrc: `./images/pasystem/`,
   },
 ];
 export {
-  productEarbuds,
-  productHeadphones,
-  productHomeTheater,
-  productSpeakers,
-  productPASystems,
+  earbuds,
+  headphones,
+  homeTheater,
+  speakers,
+  paSystems,
 };

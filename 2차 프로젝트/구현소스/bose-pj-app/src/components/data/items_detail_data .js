@@ -30,11 +30,6 @@ const productList = [
   {
     idx: "1",
     name: "Bose QuietComfort Ultra Headphones",
-    price: "$379.00",
-    MainType: "Headphones",
-    SubType: "Over-ear",
-    color: ["Black", "White Smoke", "Sandstone"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -86,11 +81,6 @@ const productList = [
   {
     idx: "2",
     name: "Bose QuietComfort 45 headphones",
-    price: "$329.00",
-    MainType: "Headphones",
-    SubType: "Over-ear",
-    color: ["Black", "White Smoke"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -141,11 +131,6 @@ const productList = [
   {
     idx: "3",
     name: "Bose QuietComfort Headphones",
-    price: "$249.00",
-    MainType: "Headphones",
-    SubType: "Over-ear",
-    color: ["Black", "White Smoke", "Moonstone Blue", "Cypress Green"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -194,11 +179,6 @@ const productList = [
   {
     idx: "4",
     name: "Bose A30 Aviation Headset",
-    price: "$1,299.00",
-    MainType: "Headphones",
-    SubType: "Aviation",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -237,11 +217,6 @@ const productList = [
   {
     idx: "5",
     name: "ProFlight Series 2 Aviation Headset",
-    price: "$1,045.00",
-    MainType: "Headphones",
-    SubType: "Aviation",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -331,11 +306,6 @@ const productList = [
   {
     idx: "6",
     name: "Bose QuietComfort Ultra Earbuds",
-    price: "$249.00",
-    MainType: "Earbuds",
-    SubType: "In Ear",
-    color: ["Black", "White Smoke", "Moonstone Blue"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -384,11 +354,6 @@ const productList = [
   {
     idx: "7",
     name: "Bose Ultra Open Earbuds",
-    price: "$299.00",
-    MainType: "Earbuds",
-    SubType: "Open Ear",
-    color: ["Black", "White Smoke"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -435,11 +400,6 @@ const productList = [
   {
     idx: "8",
     name: "Bose Ultra Open Earbuds Silicone Case Cover",
-    price: "$25.00",
-    MainType: "Earbuds",
-    SubType: "Open Ear",
-    color: ["Black", "White Smoke", "Chilled Lilac"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -452,11 +412,6 @@ const productList = [
   {
     idx: "9",
     name: "Bose Ultra Open Earbuds Wireless Charging Case Cover",
-    price: "$49.00 ",
-    MainType: "Earbuds",
-    SubType: "Open Ear",
-    color: ["Black", "White Smoke"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
@@ -474,11 +429,6 @@ const productList = [
   {
     idx: "10",
     name: "Bose SoundLink Max Portable Speaker",
-    price: "$399.00",
-    MainType: "Speakers",
-    SubType: "Portable",
-    color: ["Black", "Blue Dusk"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
