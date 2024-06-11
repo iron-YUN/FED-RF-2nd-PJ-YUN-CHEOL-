@@ -2,6 +2,9 @@
 // 메인분류 : 유형별
 // 서브분류 : 사용목적별
 // https://www.bose.com/c/headphones
+const product=[
+
+];
 const productHeadphones = [
   {
     idx: "0",
@@ -14,11 +17,11 @@ const productHeadphones = [
   },
   {
     idx: "1",
-    name: "Bose QuietComfort 45 headphones",
+    name: "Bose QuietComfort 45 headphones 2021 Model",
     price: "$329.00",
     MainType: "Headphones",
     SubType: "Over-ear",
-    color: ["Black", "White Smoke"],
+    color: ["White Smoke"],
     isrc: ["", "", ""],
   },
   {
@@ -43,6 +46,15 @@ const productHeadphones = [
     idx: "5",
     name: "ProFlight Series 2 Aviation Headset",
     price: "$1,045.00",
+    MainType: "Headphones",
+    SubType: "Aviation",
+    color: ["Black"],
+    isrc: ["", "", ""],
+  },
+  {
+    idx: "6",
+    name: 'A20 Aviation Headset with Bluetooth',
+    price: "$1,095.00",
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["Black"],
