@@ -35,16 +35,18 @@ export const CloseMenuIcon = ({ onClick }) => (
     <line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
-
-export const WishlistHeartIcon = () => (
+// 기본값을 정해서 들어오고
+// 내보내서 불러온 곳에서 값을 다시 정할수있다.
+export const WishlistHeartIcon = ({ strokeWidth = "3",width="24"
+  ,height="24" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width={width}
+    height={height}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="3"
+    strokeWidth={strokeWidth}
     strokeLinecap="round"
     strokeLinejoin="round"
   >

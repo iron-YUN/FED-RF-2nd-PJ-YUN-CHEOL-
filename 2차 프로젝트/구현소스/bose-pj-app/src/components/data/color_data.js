@@ -1,4 +1,4 @@
-const colorList={
+export const colorList={
     "black":"#000",
     "white_smoke":"#eee8e5",
     "sand_stone":"#928982",

@@ -1,0 +1,95 @@
+#recommended {
+  margin: 0 auto;
+  max-width: 1980px;
+  padding-top: clamp(50px, 20vh, 100px);
+  padding-left: clamp(50px, 5vw, 100px);
+  padding-bottom: clamp(50px, 20vh, 100px);
+  box-sizing: border-box;
+  h1 {
+    margin-bottom: clamp(50px, 4vh, 100px);
+    font-size: clamp(40px, 4vw, 200px);
+    color: #ccc;
+  }
+}
+.item-box {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  .cat-cont {
+    position: relative;
+    z-index: 0;
+    &:hover {
+      z-index: 1;
+      background-color: #fff;
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.15);
+    }
+    transition: 0.3s;
+    cursor: pointer;
+    // flex: 1;
+    background-color: #f8f8f8;
+    padding: 30px;
+    aspect-ratio: 1/1.5;
+    box-sizing: border-box;
+    .p-box {
+      position: relative;
+      height: 100%;
+      .wish {
+        position: absolute;
+        right: 0;
+        color: #aaa;
+        &:hover {
+          color: red;
+        }
+        &.add-pick {
+          color: red;
+        }
+      }
+      .p-img {
+        max-width: 400px;
+        width: 100%;
+        min-width: 200px;
+        aspect-ratio: 1/1;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .p-info {
+        position: absolute;
+        bottom: 0;
+        .p-name {
+          line-height: 1.5;
+        }
+        .p-price {
+        }
+        .p-color-box {
+          display: flex;
+          gap: 5px; /* 색상 원 사이의 간격 */
+          margin-top: 10px; /* 색상 박스의 상단 여백 */
+          .color-circle-wrap {
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #fff;
+            &.on {
+              border: 1px solid #aaa;
+            }
+            .color-circle {
+              margin: 3px;
+              width: 1.5vw;
+              min-width: 18px;
+              max-width: 30px;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
+              border: 1px solid #ccc;
+              transition: 0.2s;
+              &:hover {
+                scale: 1.3;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

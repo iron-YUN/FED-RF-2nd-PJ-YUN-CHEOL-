@@ -25,16 +25,16 @@ const headphones = [
     isrc: `./images/headphones/`,
   },
   {
-    idx: "3",
+    idx: "2",
     name: "Bose QuietComfort Headphones",
     price: "$249.00",
     MainType: "Headphones",
     SubType: "Over-ear",
-    color: ["black", "white_smoke", "moonstone_blue", "cypress_green"],
+    color: [ "moonstone_blue","black", "white_smoke", "cypress_green",],
     isrc: `./images/headphones/`,
   },
   {
-    idx: "4",
+    idx: "3",
     name: "Bose A30 Aviation Headset",
     price: "$1,299.00",
     MainType: "Headphones",
@@ -43,7 +43,7 @@ const headphones = [
     isrc: `./images/headphones/`,
   },
   {
-    idx: "5",
+    idx: "4",
     name: "ProFlight Series 2 Aviation Headset",
     price: "$1,045.00",
     MainType: "Headphones",
@@ -52,7 +52,7 @@ const headphones = [
     isrc: `./images/headphones/`,
   },
   {
-    idx: "6",
+    idx: "5",
     name: 'A20 Aviation Headset with Bluetooth',
     price: "$1,095.00",
     MainType: "Headphones",
@@ -69,7 +69,7 @@ const earbuds = [
     price: "$249.00",
     MainType: "Earbuds",
     SubType: "In Ear",
-    color: ["black", "white_smoke", "moonstone_blue"],
+    color: [ "moonstone_blue","black", "white_smoke",],
     isrc: `./images/earbuds/`,
   },
   {
@@ -78,7 +78,7 @@ const earbuds = [
     price: "$299.00",
     MainType: "Earbuds",
     SubType: "Open Ear",
-    color: ["black", "white_smoke"],
+    color: ["white_smoke","black", ],
     isrc: `./images/earbuds/`,
   },
   {
@@ -87,7 +87,7 @@ const earbuds = [
     price: "$25.00",
     MainType: "Earbuds",
     SubType: "Open Ear",
-    color: ["black", "white_smoke", "chilled_lilac"],
+    color: [ "chilled_lilac","black", "white_smoke",],
     isrc: `./images/earbuds/`,
   },
   {
@@ -150,7 +150,7 @@ const speakers = [
     price: "$349.00",
     MainType: "Speakers",
     SubType: "Portable",
-    color: ["triple_black", "luxe_silver"],
+    color: [ "luxe_silver","triple_black",],
     isrc: `./images/speakers/`,
   },
   {
@@ -352,10 +352,10 @@ const paSystems = [
 
 
 export const products = [
-  earbuds,
   headphones,
-  homeTheater,
+  earbuds,
   speakers,
+  homeTheater,
   paSystems,
 ]
 
