@@ -3,14 +3,22 @@ import React, { useState, useEffect } from "react";
 import { products } from "../data/items_main_data";
 import { colorList } from "../data/color_data";
 import { WishlistHeartIcon } from "../data/icons";
+
+// 제이쿼리????
+import $ from "jquery";
+
 // css불러오기
 import "../../css/trending.scss";
 
 export default function Trending() {
   useEffect(() => {
+    // 위시리스트 이벤트 등록하기 
     const wish = document.querySelectorAll(".wish");
+
+    // 컬리선택 체인지 이벤트 등록하기
+    
   });
-  console.log(colorList);
+  // console.log(colorList);
 
   // 무작위 제품+컬러 함수만들기
   // 1. rdProduct : 리턴코드에서 products의 순번 카테고리를 받아서

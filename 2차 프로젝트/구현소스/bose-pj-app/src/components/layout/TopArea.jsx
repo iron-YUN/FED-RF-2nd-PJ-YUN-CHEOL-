@@ -106,7 +106,7 @@ export default function TopArea() {
       console.log("순번:", idx);
       $(rightImg).eq(idx).css({ zIndex: 1 }).siblings().css({ zIndex: 0 });
     });
-  }); /////////////// useEffect 도큐번트 출력후 실행///////////////
+  }); /////////////// useEffect 도큐먼트 출력후 실행///////////////
 
   // html 햄버거버튼 바꾸기
   const toggleMenu = () => {
