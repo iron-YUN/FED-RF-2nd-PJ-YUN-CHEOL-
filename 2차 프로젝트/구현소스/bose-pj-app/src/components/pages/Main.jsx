@@ -10,7 +10,7 @@ export default function Main() {
   return (
     <>
       <section id="main-page">
-        <div className="main-page-top">
+        <div id="main-page-top">
           <MainPageTop/>
         </div>
         <div className="items-area">

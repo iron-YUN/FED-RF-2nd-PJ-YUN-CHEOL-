@@ -106,6 +106,8 @@ export default function TopArea() {
       console.log("순번:", idx);
       $(rightImg).eq(idx).css({ zIndex: 1 }).siblings().css({ zIndex: 0 });
     });
+
+
   }); /////////////// useEffect 도큐먼트 출력후 실행///////////////
 
   // html 햄버거버튼 바꾸기
@@ -113,13 +115,23 @@ export default function TopArea() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const aaaa =()=> {
+    window.scrollTo(0, 0);
+  console.log("호출!");
+  if (isMenuOpen) {
+  }
+  };
+  // function aaaa () {
+  //   window.scrollTo(0, 0);
+  // console.log("호출!");
+  // };
   return (
     <>
       {/* 1.상단영역 */}
       <header className="top-area">
         {/* 메뉴박스 */}
         <div className="icon-menu-box">
-          <Link to={"/"}>
+          <Link to={"/"} onClick={()=>aaaa()}>
             <Logo logoStyle="top" />
           </Link>
           <div className="icon-box">

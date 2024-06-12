@@ -26,6 +26,7 @@ export default function Logo({ logoStyle }) {
     top: { width: "110px" , 
     },
     bottom: { width: "80px" },
+    video:{width: "100%"}
   };
 
   // 코드리턴구역

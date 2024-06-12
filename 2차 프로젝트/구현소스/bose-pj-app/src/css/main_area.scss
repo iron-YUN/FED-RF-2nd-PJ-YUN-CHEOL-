@@ -30,9 +30,8 @@
                 position: absolute;
                 right: 10%;
                 top: 25%;
+                width: clamp(130px, 20vw, 400px);;
                 aspect-ratio: 1/1;
-                max-width: 400px;
-                max-height: 400px;
                 img{
                     width: 100%;
                     height: 100%;
@@ -45,5 +44,4 @@
 }
 .sns-area{
     height: 1800px;
-
 }

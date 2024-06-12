@@ -16,3 +16,14 @@ export const colorList={
     "bgc3":"#0d0d0d",
     "bgc4":"#282828",
     };
+export const banColor ={
+    "pure_white":"#ffffff",
+    "blue_dusk":"#486e8a",
+    "chilled_lilac":"#c5c6e1",
+    "moonstone_blue":"#a2c2d9",
+    "cypress_green":"#537262",
+    //////////////////////
+    "white_smoke":"#eee8e5",//2
+    head : "#e56c1c",//3
+    ear :"#e4a9ff",//4
+}

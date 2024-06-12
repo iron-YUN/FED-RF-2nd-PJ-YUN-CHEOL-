@@ -43,4 +43,10 @@ const menu = [
     ///////////////////////////////////////////////
 ];
 
-export {menu};
+const subMenu = menu
+  .filter(item => item.sub) // sub 속성이 있는 객체만 필터링
+  .map(item => item.sub)    // 각 객체의 sub 속성만 추출
+  .flat();                  // 다차원 배열을 단일 배열로 평탄화
+
+
+export {menu,subMenu};

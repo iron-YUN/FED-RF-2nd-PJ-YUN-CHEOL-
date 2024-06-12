@@ -1,39 +1,116 @@
 .main-page-top {
   position: relative;
+  width: 100%;
+  height: 100%;
   .top-video {
     position: relative;
-    .big-box {
-      position: relative;
-      .big-video {
-        cursor: pointer;
-        width: 100%;
-        height: auto;
+    .big-wrap-box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      .big-box {
+        position: sticky;
+        .big-video {
+          cursor: pointer;
+          width: 105%; // 동영상 사이즈 조정하기
+          height: auto;
+          object-fit: cover;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     }
-    .small-box {
-      width: 100%;
+    .small-wrap-box {
       position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: 50%;
-      width: 20vw;
-      aspect-ratio: 2;
-      height: auto;
-
-      overflow: hidden;
-      .small-video {
-        position: absolute;
-        top: 50%;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      .small-box {
+        width: 100%;
+        position: sticky;
+        top: 50%; // 나중에 미디어 쿼리 할때 조절
         left: 50%;
         translate: -50% -50%;
-        width: 600%;
+        width: 20%;
+        aspect-ratio: 2;
         height: auto;
+        overflow: hidden;
+
+        .small-video {
+          position: relative;
+          top: 50%;
+          left: 50%;
+          translate: -50% -40%; // 조정하기
+          width: 525%; // 조정하기
+          height: auto;
+          filter: blur(10px);
+        }
+        .logo-box {
+          box-sizing: border-box;
+          padding: clamp(5px, 1vw, 20px);
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          width: 100%;
+
+          img {
+            width: 100%;
+            filter: invert(1);
+            mix-blend-mode: difference;
+          }
+        }
       }
     }
   }
 }
-.small2 {
+
+.go-tit-box {
   position: absolute;
-  width: 100%;
+  top: 5%;
+  right: 3%;
   height: 100%;
+  .go-tit {
+    top: 0;
+    position: sticky;
+    display: flex;
+    gap: clamp(20px, 2vw, 40px);
+    flex-direction: column;
+    // https://vanholtz.co/
+    // 3d효과주기 
+    // transform-style: preserve-3d;
+    // transform: rotateY(-35deg) translateZ(0) scale(1);
+    // transform-origin: right center;
+    // transform-style: preserve-3d;
+    // will-change: transform;
+
+
+
+    .tit-box {
+      position: sticky;
+      &:hover {
+        .tit2 {
+          opacity: 1;
+        }
+      }
+      .tit1 {
+        text-shadow: 0 0 2px #282828;
+        text-align: right;
+        font-size: clamp(30px, 4vw, 80px);
+        font-weight: bold;
+        margin-bottom: 2vh;
+        
+      }
+      .tit2 {
+        text-shadow: 0 0 2px #282828;
+        transition: 0.3s;
+        opacity: 0;
+        display: flex;
+        gap: clamp(20px, 2vw, 40px);
+        justify-content: flex-end;
+        font-weight: bold;
+        font-size: clamp(15px, 2vw, 30px);
+      }
+    }
+  }
 }

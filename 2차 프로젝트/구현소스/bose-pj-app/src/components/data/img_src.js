@@ -28,4 +28,8 @@ const smenuSrc ={
   "Home Theater": "/images/main_ban/ban_home1.webp",
   "PA Systems": "/images/main_ban/ban_pa1.webp",
 }
-export { isrc,menuSrc,smenuSrc };
+const logoSrc = {
+  svg1: "/images/logo/svg_logo1.svg",
+  svg2: "/images/logo/svg_logo2.svg",
+}
+export { isrc,menuSrc,smenuSrc,logoSrc };
