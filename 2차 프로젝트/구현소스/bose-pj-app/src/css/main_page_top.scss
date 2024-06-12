@@ -11,22 +11,29 @@
       }
     }
     .small-box {
-        width: 100%;
+      width: 100%;
       position: absolute;
       z-index: 1;
-      top: -40px;
-      width: 100%;
+      top: 50%;
+      left: 50%;
+      width: 20vw;
+      aspect-ratio: 2;
       height: auto;
+
       overflow: hidden;
       .small-video {
-        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 500%;
         height: auto;
       }
     }
   }
 }
-.small2{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.small2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
