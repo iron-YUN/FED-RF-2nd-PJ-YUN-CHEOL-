@@ -7,11 +7,10 @@ import $ from "jquery";
 // GNB 데이터 불러오기
 import { menu } from "../data/gnb";
 // 아이콘 svg 불러오기
-import { CloseMenuIcon, iconMenu,} from "../data/icons";
+import { CloseMenuIcon, iconMenu } from "../data/icons";
 
 // top css불러오기
 import "../../css/top_area.scss";
-
 
 // 로고 불러오기
 import Logo from "../modules/Logo";
@@ -21,7 +20,6 @@ export default function TopArea() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuSrcV = Object.values(menuSrc);
   const menuSrcK = Object.keys(menuSrc);
-  
 
   useEffect(() => {
     const svgIcons = document.querySelectorAll(".top-area svg");
@@ -48,14 +46,14 @@ export default function TopArea() {
     // setTimeout(() => {
     //   prot = false; // 0.6초후 해제!
     // }, 6000);
-    
+
     const escClose = (event) => {
-      if (event.key === 'Escape' && isMenuOpen) {
+      if (event.key === "Escape" && isMenuOpen) {
         setIsMenuOpen(false);
         closeMenu();
-      }///////// if //////
-    };/////////escClose///////////////
-    window.addEventListener('keydown', escClose);
+      } ///////// if //////
+    }; /////////escClose///////////////
+    window.addEventListener("keydown", escClose);
 
     // 메뉴버튼에 메뉴페이지 기능추가 + 최상단으로 이동
     menuLiArray.forEach((v) => {
@@ -64,11 +62,11 @@ export default function TopArea() {
     // 햄버거 버튼에 메뉴페이지 기능추가
     mFn.addEvt(icon1, "click", menuOpen);
 
-    function topMenuOpen(){
-      // 메뉴 클릭시에만 상단스크롤 이동하기위해 
+    function topMenuOpen() {
+      // 메뉴 클릭시에만 상단스크롤 이동하기위해
       // 함수안에 함수를 호출
       menuOpen();
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     }
     // 메뉴창 나오기 이벤트
     function menuOpen() {
@@ -83,6 +81,7 @@ export default function TopArea() {
 
     // 메뉴 닫기 함수
     function closeMenu() {
+      console.log(33333,isMenuOpen);
       // 메뉴창이 열려있을 때 동작해야 하는 로직을 여기에 작성합니다.
       gnb.classList.remove("active");
       search.classList.remove("active");
@@ -90,7 +89,6 @@ export default function TopArea() {
       mFn.qs("body").classList.remove("hidden");
       setIsMenuOpen(!isMenuOpen);
     } ///////////////////////////////////////////////
-    
 
     // 검색창 나오기 ->> 메뉴바와 별도로!!!!! 기능추가
     mFn.addEvt(icon5, "click", function () {
@@ -106,32 +104,36 @@ export default function TopArea() {
       console.log("순번:", idx);
       $(rightImg).eq(idx).css({ zIndex: 1 }).siblings().css({ zIndex: 0 });
     });
-
-
-  }); /////////////// useEffect 도큐먼트 출력후 실행///////////////
-
-  // html 햄버거버튼 바꾸기
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const aaaa =()=> {
-    window.scrollTo(0, 0);
-  console.log("호출!");
-  if (isMenuOpen) {
-  }
-  };
-  // function aaaa () {
-  //   window.scrollTo(0, 0);
-  // console.log("호출!");
-  // };
+    
+    aaaa = () => {
+      window.scrollTo(0, 0);
+      console.log("호출!");
+      // if (isMenuOpen) {
+        closeMenu();
+        // 햄버거 메뉴를 원래모양으로 변경하기
+        // 위해  false로 만들고 닫기에서 true로 전환함!
+        setIsMenuOpen(false)
+      // }
+    };
+    // function aaaa () {
+      //   window.scrollTo(0, 0);
+      // console.log("호출!");
+      // };
+      
+      
+    }); /////////////// useEffect 도큐먼트 출력후 실행///////////////
+    let aaaa;
+    // html 햄버거버튼 바꾸기
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
   return (
     <>
       {/* 1.상단영역 */}
       <header className="top-area">
         {/* 메뉴박스 */}
         <div className="icon-menu-box">
-          <Link to={"/"} onClick={()=>aaaa()}>
+          <Link to={"/"} onClick={() => aaaa()}>
             <Logo logoStyle="top" />
           </Link>
           <div className="icon-box">
@@ -163,7 +165,7 @@ export default function TopArea() {
                     // 없으면 Link 라우팅출력 >>> 필요없음
                     // v.sub ? (<a href="#">{v.txt}</a>)
                     //    : (<Link to={v.link}>{v.txt}</Link>)
-                      <Link to={v.link}>{v.txt}</Link>
+                    <Link to={v.link}>{v.txt}</Link>
                   }
                   {
                     // 서브메뉴 데이터가 있으면 하위 그리기

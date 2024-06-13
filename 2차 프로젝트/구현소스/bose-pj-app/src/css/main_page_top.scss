@@ -64,44 +64,77 @@
     }
   }
 }
-
+@keyframes ani1 {
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes ani2 {
+  to {    
+    transform: rotateY(0deg);
+  }
+}
 .go-tit-box {
   position: absolute;
   top: 0;
+  translate: 0 -100%;
+  transition: 1s ease-in-out;
+  perspective: 40vh;
+  perspective-origin: right;
+  transform: rotateX(40deg) rotate(9deg);
+
   right: 3%;
   height: 100%;
   padding: 8vh 0 2vh;
   box-sizing: border-box;
+  animation: ani1 1s ease-in-out 1s forwards;
   .go-tit {
-    top: 0;
     position: sticky;
+    top: 0;
     display: flex;
     gap: clamp(15px, 2vw, 30px);
     flex-direction: column;
-  
+    perspective: 40vh;
+    perspective-origin: right;
+
+    transform: rotateY(-20deg);
+
     // https://vanholtz.co/
-    // 3d효과주기 
+    // 3d효과주기
     // transform-style: preserve-3d;
     // transform: rotateY(-35deg) translateZ(0) scale(1);
     // transform-origin: right center;
     // transform-style: preserve-3d;
     // will-change: transform;
 
-
-
     .tit-box {
       position: relative;
+      transform-origin: right;
+      transform: rotateY(-10deg);
+      transition: 0.3s;
+      // animation: ;
+      
       &:hover {
+        transform: rotateY(20deg);
         .tit2 {
           opacity: 1;
         }
-        .tit1{
+        .tit1 {
           filter: invert(1);
           mix-blend-mode: difference;
         }
-     
-         
-    
+      }
+      & h2 {
+        perspective: 40vh;
+        perspective-origin: right;
+        transform-origin: right;
+        transform: rotateY(-60deg);
+        animation: ani2 .5s ease-out forwards;
+      }
+      @for $i from 1 to 6 {
+        &:nth-child(#{6-$i}) h2 {
+          animation-delay: #{1.8 + 0.09*$i}s;
+        }
       }
       .tit1 {
         transition: 0.3s;
@@ -109,7 +142,7 @@
         text-align: right;
         font-size: clamp(30px, 3vw, 60px);
         font-weight: bold;
-        margin-bottom: 2vh;      
+        margin-bottom: 2vh;
       }
       .tit2 {
         text-shadow: 0 0 2px #282828;
@@ -120,8 +153,9 @@
         justify-content: flex-end;
         font-weight: bold;
         font-size: clamp(15px, 1.5vw, 30px);
-        p{transition: 0.3s;
-          &:hover{
+        p {
+          transition: 0.3s;
+          &:hover {
             filter: invert(1);
             mix-blend-mode: difference;
           }
