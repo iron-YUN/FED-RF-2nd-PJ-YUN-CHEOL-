@@ -115,7 +115,9 @@ export default function MainPageTop() {
       <div className="go-tit-box">
         <div className="go-tit">
           {subMenu.map((v, i) => (
-            <div className="tit-box" key={i} style={{color:vcolor}}>
+            <div className="tit-box" key={i}
+             style={{color:vcolor}}
+             >
               <h2 className="tit1">{v.txt}</h2>
               <div className="tit2">
                 <p className="stit1">SHOP</p>

@@ -56,6 +56,7 @@
 
           img {
             width: 100%;
+            color: auto;
             filter: invert(1);
             mix-blend-mode: difference;
           }
@@ -64,100 +65,140 @@
     }
   }
 }
+////////////////// 서브타이틀 영역 //////////////////////
+
+// 상단에서 내려옴
 @keyframes ani1 {
   to {
     translate: 0 0;
+    transform: rotateX(0deg) rotate(0deg);
   }
 }
+// 원래상태로 돌아옴
 @keyframes ani2 {
-  to {    
+  to {
     transform: rotateY(0deg);
   }
 }
+// 원래상태로 돌아옴
+@keyframes ani3 {
+  to {
+    transform: rotateY(20deg);
+  }
+}
+
+// https://vanholtz.co/
+// will-change: transform;
+
+// 3d 부모설정 ****** 중요
+// perspective: 30vh; 
+// perspective-origin: right;
+
+// 자식설정 : 실제3d적용됨
+//   transform-style: preserve-3d; -> z축과 관련
+// transform: rotateY(0deg) ; 이걸로 조절해줌
+
 .go-tit-box {
   position: absolute;
-  top: 0;
+  top: 10%;
   translate: 0 -100%;
-  transition: 1s ease-in-out;
-  perspective: 40vh;
-  perspective-origin: right;
-  transform: rotateX(20deg) rotate(0deg);
-
   right: 3%;
   height: 100%;
-  padding: 8vh 0 2vh;
+  padding: 0 0 10%;
   box-sizing: border-box;
-  animation: ani1 1s ease-in-out 1s forwards;
+
+
   .go-tit {
     position: sticky;
     top: 0;
     display: flex;
     gap: clamp(15px, 2vw, 30px);
     flex-direction: column;
-    perspective: 40vh;
-    perspective-origin: right;
-    transform: rotateY(-20deg);
-
-    // https://vanholtz.co/
-    // 3d효과주기
-    // transform-style: preserve-3d;
-    // transform: rotateY(-35deg) translateZ(0) scale(1);
-    // transform-origin: right center;
-    // transform-style: preserve-3d;
-    // will-change: transform;
-
     .tit-box {
       position: relative;
-      transform-origin: right;
-      transform: rotateY(-10deg);
-      transition: 0.3s;
-      // animation: ;
       &:hover {
-        transform: rotateY(20deg);
+        transform: rotateY(0deg);
+        .tit1 {
+          // filter: invert(1);
+          filter: drop-shadow(0 0 10px black) invert(1);
+          mix-blend-mode: difference;
+        }
         .tit2 {
           opacity: 1;
         }
-        .tit1 {
-          filter: invert(1);
-          mix-blend-mode: difference;
-        }
-      }
-      & h2 {
-        perspective: 40vh;
-        perspective-origin: right;
-        transform-origin: right;
-        transform: rotateY(-60deg);
-        animation: ani2 .5s ease-out forwards;
-      }
-      @for $i from 1 to 6 {
-        &:nth-child(#{6-$i}) h2 {
-          animation-delay: #{1.5 + 0.07*$i}s;
-        }
       }
       .tit1 {
-        transition: 0.3s;
+        cursor: pointer;
         text-shadow: 0 0 2px #484848;
         text-align: right;
         font-size: clamp(30px, 4vw, 60px);
         font-weight: bold;
-        margin-bottom: 2vh;
+        margin-bottom: clamp(10px, 1.3vw, 18px);
       }
       .tit2 {
         text-shadow: 0 0 2px #282828;
         transition: 0.3s;
         opacity: 0;
         display: flex;
-        gap: clamp(20px, 2vw, 40px);
+        gap: clamp(20px, 2vw, 40px); // show view 사이간격
         justify-content: flex-end;
         font-weight: bold;
         font-size: clamp(15px, 1.5vw, 30px);
         p {
+          cursor: pointer;
           transition: 0.3s;
           &:hover {
-            filter: invert(1);
+            // filter: invert(1);
+            filter: drop-shadow(0 0 6px black) invert(1);
             mix-blend-mode: difference;
           }
         }
+      }
+    }
+  }
+}
+
+// 3d 설정파트
+.go-tit-box {
+  // background-color: #000;
+    // 상단에서 내려옴
+    animation: ani1 1.2s cubic-bezier(0, 0.55, 0.45, 1) 1s forwards;
+  // transition: 1s cubic-bezier(0.33, 1, 0.68, 1);
+    transform: rotateX(120deg) rotate(60deg);
+  // 3d 부모설정
+  perspective: 80vh;
+  perspective-origin: right;
+  ///////////////////////
+  .go-tit {
+    // 자식설정 /////////////
+    transform: rotateY(-10deg); 
+     // 3d 부모설정 //////////////
+     perspective: 80vh;
+     perspective-origin: right;
+    .tit-box {
+      transition: 0.3s;
+       // 3d 부모설정 //////////////
+     perspective: 80vh;
+     perspective-origin: right;
+      // 자식설정 /////////////
+      transform: rotateY(-25deg);
+      transform-origin: right;
+      &:hover {
+        transform: rotateY(-5deg);
+      }
+      @for $i from 1 to 6 {
+        // .tit-box 아래 자식들 .tit1 의 애니효과 지연
+        &:nth-child(#{6-$i}) .tit1 {
+          animation-delay: #{1 + 0.15 * $i}s;
+        }
+      }
+      .tit1 {
+        transition: 0.3s;
+        margin-bottom: clamp(10px, 1.3vw, 18px);
+        animation: ani2 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        // 자식설정 /////////////
+      transform: rotateY(-90deg);
+      transform-origin: right;
       }
     }
   }

@@ -18,7 +18,9 @@
                 z-index: 10;
                 font-size: 5vw;
                 font-weight: bold;
-                color: #fff;
+                // color: #fff;
+                filter: invert(1);
+                mix-blend-mode: difference;
             }
             .mb-video{
                 position: relative;
