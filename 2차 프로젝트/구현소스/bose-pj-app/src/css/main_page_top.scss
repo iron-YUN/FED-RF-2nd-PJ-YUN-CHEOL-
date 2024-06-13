@@ -67,15 +67,18 @@
 
 .go-tit-box {
   position: absolute;
-  top: 5%;
+  top: 0;
   right: 3%;
   height: 100%;
+  padding: 8vh 0 2vh;
+  box-sizing: border-box;
   .go-tit {
     top: 0;
     position: sticky;
     display: flex;
-    gap: clamp(20px, 2vw, 40px);
+    gap: clamp(15px, 2vw, 30px);
     flex-direction: column;
+  
     // https://vanholtz.co/
     // 3d효과주기 
     // transform-style: preserve-3d;
@@ -87,7 +90,7 @@
 
 
     .tit-box {
-      position: sticky;
+      position: relative;
       &:hover {
         .tit2 {
           opacity: 1;
@@ -104,11 +107,9 @@
         transition: 0.3s;
         text-shadow: 0 0 2px #484848;
         text-align: right;
-        font-size: clamp(30px, 4vw, 80px);
+        font-size: clamp(30px, 3vw, 60px);
         font-weight: bold;
-        margin-bottom: 2vh;
-       
-        
+        margin-bottom: 2vh;      
       }
       .tit2 {
         text-shadow: 0 0 2px #282828;
@@ -118,7 +119,7 @@
         gap: clamp(20px, 2vw, 40px);
         justify-content: flex-end;
         font-weight: bold;
-        font-size: clamp(15px, 2vw, 30px);
+        font-size: clamp(15px, 1.5vw, 30px);
         p{transition: 0.3s;
           &:hover{
             filter: invert(1);
