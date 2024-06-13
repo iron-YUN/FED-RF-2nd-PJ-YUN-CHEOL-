@@ -81,7 +81,7 @@
   transition: 1s ease-in-out;
   perspective: 40vh;
   perspective-origin: right;
-  transform: rotateX(40deg) rotate(9deg);
+  transform: rotateX(20deg) rotate(0deg);
 
   right: 3%;
   height: 100%;
@@ -96,7 +96,6 @@
     flex-direction: column;
     perspective: 40vh;
     perspective-origin: right;
-
     transform: rotateY(-20deg);
 
     // https://vanholtz.co/
@@ -113,7 +112,6 @@
       transform: rotateY(-10deg);
       transition: 0.3s;
       // animation: ;
-      
       &:hover {
         transform: rotateY(20deg);
         .tit2 {
@@ -133,14 +131,14 @@
       }
       @for $i from 1 to 6 {
         &:nth-child(#{6-$i}) h2 {
-          animation-delay: #{1.8 + 0.09*$i}s;
+          animation-delay: #{1.5 + 0.07*$i}s;
         }
       }
       .tit1 {
         transition: 0.3s;
         text-shadow: 0 0 2px #484848;
         text-align: right;
-        font-size: clamp(30px, 3vw, 60px);
+        font-size: clamp(30px, 4vw, 60px);
         font-weight: bold;
         margin-bottom: 2vh;
       }
