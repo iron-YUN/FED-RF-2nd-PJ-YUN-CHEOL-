@@ -92,13 +92,22 @@
         .tit2 {
           opacity: 1;
         }
+        .tit1{
+          filter: invert(1);
+          mix-blend-mode: difference;
+        }
+     
+         
+    
       }
       .tit1 {
-        text-shadow: 0 0 2px #282828;
+        transition: 0.3s;
+        text-shadow: 0 0 2px #484848;
         text-align: right;
         font-size: clamp(30px, 4vw, 80px);
         font-weight: bold;
         margin-bottom: 2vh;
+       
         
       }
       .tit2 {
@@ -110,6 +119,12 @@
         justify-content: flex-end;
         font-weight: bold;
         font-size: clamp(15px, 2vw, 30px);
+        p{transition: 0.3s;
+          &:hover{
+            filter: invert(1);
+            mix-blend-mode: difference;
+          }
+        }
       }
     }
   }
