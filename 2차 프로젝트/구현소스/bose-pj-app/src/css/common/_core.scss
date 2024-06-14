@@ -1,0 +1,8 @@
+/*드래그 선택 안되게 하는 CSS*/
+.none-sel {
+    user-select: none;
+  }
+  
+  .nonedrag {
+    -webkit-user-drag: none;
+  }

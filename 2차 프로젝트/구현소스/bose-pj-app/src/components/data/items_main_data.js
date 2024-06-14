@@ -351,12 +351,19 @@ const paSystems = [
 ];
 
 
-export const products = [
+export const products = [ 
   headphones,
   earbuds,
   speakers,
   homeTheater,
   paSystems,
+  ////////두번째 : 데이터 강제로 늘리기
+  // headphones,
+  // earbuds,
+  // speakers,
+  // homeTheater,
+  // paSystems,
+
 ]
 
 

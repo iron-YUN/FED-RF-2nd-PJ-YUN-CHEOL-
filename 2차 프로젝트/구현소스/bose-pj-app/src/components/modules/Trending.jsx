@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 // 아이템 데이터 불러오기
 import { products } from "../data/items_main_data";
 import { colorList } from "../data/color_data";
@@ -12,11 +12,9 @@ import "../../css/trending.scss";
 
 export default function Trending() {
   useEffect(() => {
-    // 위시리스트 이벤트 등록하기 
+    // 위시리스트 이벤트 등록하기
     const wish = document.querySelectorAll(".wish");
-
     // 컬리선택 체인지 이벤트 등록하기
-    
   });
   // console.log(colorList);
 
@@ -35,7 +33,8 @@ export default function Trending() {
   return (
     <div id="recommended">
       <h1>Recommended</h1>
-      <section className="trending-container item-box">
+      {/* 플렉스 설정 item-box */}
+      <section className="item-box">
         {
           // 1.각 카테고리별로 하나의 제품 랜덤선택
           // 2.선택된 제품에서의 가지고있는 색 랜덤선택
@@ -47,11 +46,14 @@ export default function Trending() {
             const rdColor = getRdItem(rdProduct.color);
             // console.log(rdColor); // 랜덤 컬러 확인하기
             return (
-              <div key={i} className="cat-cont">
+              // 제품 각 박스
+              <div key={i} className="cat-cont ">
                 <div className="p-box">
+                  {/* 1.위시리스트 버튼 */}
                   <span className="wish">
                     <WishlistHeartIcon strokeWidth="1" width="30" height="30" />
                   </span>
+                  {/* 2.제품이미지 */}
                   <div className="p-img">
                     <img
                       idx={rdProduct.idx}
@@ -59,9 +61,13 @@ export default function Trending() {
                       alt={rdProduct.name}
                     />
                   </div>
+                  {/* 3.제품별 정보박스 */}
                   <section className="p-info">
+                    {/* 3-1.제품명 */}
                     <p className="p-name">{rdProduct.name}</p>
+                    {/* 3-2.제품가격 */}
                     <p className="p-price">{rdProduct.price}</p>
+                    {/* 3-3.제품색상 */}
                     <div className="p-color-box">
                       {rdProduct.color.map((color, idx) => (
                         <div

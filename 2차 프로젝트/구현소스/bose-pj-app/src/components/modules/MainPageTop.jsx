@@ -77,7 +77,33 @@ export default function MainPageTop() {
         mainVideo.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
+
   }, [muted]);
+
+  ///////////// stit 오버시 색 고정
+  useEffect(()=>{
+    // const titBx = document.querySelectorAll(".tit1");
+    const titColor = document.querySelectorAll(".tit1");
+    const stitColor = document.querySelectorAll(".tit2 p");
+    console.log("나는 stit",stitColor);
+    const mouseOverFn = (e) => {
+      e.target.style.color = vcolor;
+      e.target.style.filter = "none";
+      e.target.style.mixBlendMode = "none";
+
+      console.log("나 색깔바껴~~~");
+    };
+
+    titColor.forEach((e) => {
+      e.addEventListener("mouseover", mouseOverFn);
+    });
+    stitColor.forEach((e) => {
+      e.addEventListener("mouseover", mouseOverFn);
+    });
+  },[vcolor]);
+
+
+
 
   return (
     <div className="main-page-top">
@@ -116,12 +142,15 @@ export default function MainPageTop() {
         <div className="go-tit">
           {subMenu.map((v, i) => (
             <div className="tit-box" key={i}
-             style={{color:vcolor}}
+            //  동영상마다 고정된 색상 하고싶으면 주석풀기
+            //  style={{color:vcolor}}
              >
               <h2 className="tit1">{v.txt}</h2>
               <div className="tit2">
-                <p className="stit1">SHOP</p>
-                <p className="stit2">VIEW</p>
+                <p className="stit1"
+                >SHOP</p>
+                <p className="stit2"
+                >VIEW</p>
               </div>
             </div>
           ))}
