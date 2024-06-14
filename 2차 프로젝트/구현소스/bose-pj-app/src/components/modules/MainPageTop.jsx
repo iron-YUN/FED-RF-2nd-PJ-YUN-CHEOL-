@@ -87,9 +87,10 @@ export default function MainPageTop() {
     const stitColor = document.querySelectorAll(".tit2 p");
     console.log("나는 stit",stitColor);
     const mouseOverFn = (e) => {
-      e.target.style.color = vcolor;
-      e.target.style.filter = "none";
-      e.target.style.mixBlendMode = "none";
+      // let tg = e.target.parentElement;
+      // tg.style.color = vcolor;
+      // tg.style.filter = "none";
+      // tg.style.mixBlendMode = "normal";
 
       console.log("나 색깔바껴~~~");
     };
@@ -101,8 +102,6 @@ export default function MainPageTop() {
       e.addEventListener("mouseover", mouseOverFn);
     });
   },[vcolor]);
-
-
 
 
   return (

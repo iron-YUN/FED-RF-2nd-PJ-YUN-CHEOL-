@@ -98,7 +98,9 @@
 //   transform-style: preserve-3d; -> z축과 관련
 // transform: rotateY(0deg) ; 이걸로 조절해줌
 
+
 .go-tit-box {
+  z-index: 999;
   // 반전효과 ////////////
   filter: invert(1);
   mix-blend-mode: difference;
@@ -119,7 +121,7 @@
     flex-direction: column;
     .tit-box {
       // 반전효과 ////////////
-      filter: invert(1) contrast(0.5) invert(1);
+      filter: invert(1) contrast(0) ;
       mix-blend-mode: difference;
       ////////////////////////
       position: relative;
@@ -209,3 +211,6 @@
     }
   }
 }
+////////////////////////////
+
+
