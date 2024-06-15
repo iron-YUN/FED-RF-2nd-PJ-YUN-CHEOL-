@@ -205,11 +205,12 @@
 .go-tit-box{
   .go-tit{
     .tit-box{ 
+      &:hover .tit1{
+        text-shadow: 0 0 4px #000000;
+        filter: invert(1) drop-shadow(0 0 8px #ffffff76);
+      }
       .tit1 {
-        &:hover{
-          text-shadow: 0 0 4px #000000;
-          filter: invert(1) drop-shadow(0 0 8px #ffffff76);
-        }
+        text-shadow: 0 0 4px #2a2a2aaf;
       }
       .tit2 {
         p{
