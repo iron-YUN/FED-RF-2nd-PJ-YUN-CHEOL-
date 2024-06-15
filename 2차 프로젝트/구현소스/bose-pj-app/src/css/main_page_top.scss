@@ -80,7 +80,7 @@
     transform: rotateY(0deg);
   }
 }
-// 원래상태로 돌아옴
+// 회전상태로 돌아옴
 @keyframes ani3 {
   to {
     transform: rotateY(20deg);
@@ -101,10 +101,6 @@
 
 .go-tit-box {
   z-index: 999;
-  // 반전효과 ////////////
-  filter: invert(1);
-  mix-blend-mode: difference;
-  ////////////////////////
   position: absolute;
   top: 10%;
   translate: 0 -100%;
@@ -120,10 +116,6 @@
     gap: clamp(15px, 2vw, 30px);
     flex-direction: column;
     .tit-box {
-      // 반전효과 ////////////
-      filter: invert(1) contrast(0) ;
-      mix-blend-mode: difference;
-      ////////////////////////
       position: relative;
       &:hover {
         transform: rotateY(0deg);
@@ -154,11 +146,10 @@
         font-weight: bold;
         font-size: clamp(15px, 1.5vw, 30px);
         p {
+          // font-weight: normal;
           cursor: pointer;
           transition: 0.3s;
           &:hover {
-            // filter: invert(1) contrast(0.5) invert(1);
-            // mix-blend-mode: difference;
           }
         }
       }
@@ -168,7 +159,6 @@
 
 // 3d 설정파트
 .go-tit-box {
-  // background-color: #000;
   // 상단에서 내려옴
   animation: ani1 1.2s cubic-bezier(0, 0.55, 0.45, 1) 1s forwards;
   // transition: 1s cubic-bezier(0.33, 1, 0.68, 1);
@@ -212,5 +202,78 @@
   }
 }
 ////////////////////////////
+.go-tit-box{
+  .go-tit{
+    .tit-box{ 
+      .tit1 {
+        &:hover{
+          text-shadow: 0 0 4px #000000;
+          filter: invert(1) drop-shadow(0 0 8px #ffffff76);
+        }
+      }
+      .tit2 {
+        p{
+          &:hover{
+            text-shadow: 0 0 2px #000000;
+            filter: invert(1) drop-shadow(0 0 6px #ffffff76);
+          }
+        }
+      }
+    }
+  }
+}
 
+///////////////////////////////////
+// blur()mix-blend-mode: 요소를 흐리게 만듭니다.
+// 예시: filter: blur(5px);
+// brightness(): 이미지의 밝기를 조절합니다.
+// 예시: filter: brightness(0.5);
+// contrast(): 이미지의 대비를 조절합니다.
+// 예시: filter: contrast(1.5);
+// drop-shadow(): 요소에 그림자 효과를 추가합니다.
+// 예시: filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+// grayscale(): 이미지를 회색조로 변환합니다.
+// 예시: filter: grayscale(0.7);
+// hue-rotate(): 이미지의 색조를 회전시킵니다.
+// 예시: filter: hue-rotate(90deg);
+// invert(): 이미지의 색상을 반전시킵니다.
+// 예시: filter: invert(1);
+// opacity(): 요소의 불투명도를 조절합니다.
+// 예시: filter: opacity(0.5);
+// saturate(): 이미지의 채도를 조절합니다.
+// 예시: filter: saturate(1.5);
+// sepia(): 이미지에 세피아 톤을 적용합니다.
+// 예시: filter: sepia(0.5);
 
+// normal: 기본값으로, 요소는 배경과 혼합되지 않고 단순히 위에 표시됩니다.
+// 예시: mix-blend-mode: normal;
+// multiply: 배경과 요소의 색상을 곱하여 더 어둡게 만듭니다.
+// 예시: mix-blend-mode: multiply;
+// screen: 배경과 요소의 색상을 반전한 후 곱하여 더 밝게 만듭니다.
+// 예시: mix-blend-mode: screen;
+// overlay: 배경과 요소의 색상을 곱하거나 더하여 대비를 높입니다.
+// 예시: mix-blend-mode: overlay;
+// darken: 배경과 요소의 색상 중 더 어두운 색상을 선택합니다.
+// 예시: mix-blend-mode: darken;
+// lighten: 배경과 요소의 색상 중 더 밝은 색상을 선택합니다.
+// 예시: mix-blend-mode: lighten;
+// color-dodge: 배경색을 밝히고 요소의 색상을 유지합니다.
+// 예시: mix-blend-mode: color-dodge;
+// color-burn: 배경색을 어둡게 하고 요소의 색상을 유지합니다.
+// 예시: mix-blend-mode: color-burn;
+// hard-light: 요소의 색상을 곱하거나 스크린하여 배경을 강조합니다.
+// 예시: mix-blend-mode: hard-light;
+// soft-light: 요소의 색상을 어둡게 하거나 밝게 하여 배경을 부드럽게 강조합니다.
+// 예시: mix-blend-mode: soft-light;
+// difference: 배경과 요소의 색상을 빼서 차이를 강조합니다.
+// 예시: mix-blend-mode: difference;
+// exclusion: 배경과 요소의 색상을 빼서 차이를 덜 강조합니다.
+// 예시: mix-blend-mode: exclusion;
+// hue: 배경의 채도와 명도를 유지하고 요소의 색조를 적용합니다.
+// 예시: mix-blend-mode: hue;
+// saturation: 배경의 색조와 명도를 유지하고 요소의 채도를 적용합니다.
+// 예시: mix-blend-mode: saturation;
+// color: 배경의 명도를 유지하고 요소의 색조와 채도를 적용합니다.
+// 예시: mix-blend-mode: color;
+// luminosity: 배경의 색조와 채도를 유지하고 요소의 명도를 적용합니다.
+// 예시: mix-blend-mode: luminosity;

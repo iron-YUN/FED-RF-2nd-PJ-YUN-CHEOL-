@@ -81,27 +81,27 @@ export default function MainPageTop() {
   }, [muted]);
 
   ///////////// stit 오버시 색 고정
-  useEffect(()=>{
-    // const titBx = document.querySelectorAll(".tit1");
-    const titColor = document.querySelectorAll(".tit1");
-    const stitColor = document.querySelectorAll(".tit2 p");
-    console.log("나는 stit",stitColor);
-    const mouseOverFn = (e) => {
-      // let tg = e.target.parentElement;
-      // tg.style.color = vcolor;
-      // tg.style.filter = "none";
-      // tg.style.mixBlendMode = "normal";
+  // useEffect(()=>{
+  //   // const titBx = document.querySelectorAll(".tit1");
+  //   const titColor = document.querySelectorAll(".tit1");
+  //   const stitColor = document.querySelectorAll(".tit2 p");
+  //   console.log("나는 stit",stitColor);
+  //   const mouseOverFn = (e) => {
+  //     // let tg = e.target.parentElement;
+  //     // tg.style.color = vcolor;
+  //     // tg.style.filter = "none";
+  //     // tg.style.mixBlendMode = "normal";
 
-      console.log("나 색깔바껴~~~");
-    };
+  //     console.log("나 색깔바껴~~~");
+  //   };
 
-    titColor.forEach((e) => {
-      e.addEventListener("mouseover", mouseOverFn);
-    });
-    stitColor.forEach((e) => {
-      e.addEventListener("mouseover", mouseOverFn);
-    });
-  },[vcolor]);
+  //   titColor.forEach((e) => {
+  //     e.addEventListener("mouseover", mouseOverFn);
+  //   });
+  //   stitColor.forEach((e) => {
+  //     e.addEventListener("mouseover", mouseOverFn);
+  //   });
+  // },[vcolor]);
 
 
   return (
@@ -130,8 +130,8 @@ export default function MainPageTop() {
               muted={muted}
               className="small-video"
             ></video>
-            <div className="logo-box">
-              <img src={logoSrc.svg1} alt="logo" />
+            <div className="logo-box none-sel nonedrag">
+              <img src={logoSrc.svg1} alt="logo " />
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function MainPageTop() {
           {subMenu.map((v, i) => (
             <div className="tit-box" key={i}
             //  동영상마다 고정된 색상 하고싶으면 주석풀기
-            //  style={{color:vcolor}}
+             style={{color:vcolor}}
              >
               <h2 className="tit1">{v.txt}</h2>
               <div className="tit2">

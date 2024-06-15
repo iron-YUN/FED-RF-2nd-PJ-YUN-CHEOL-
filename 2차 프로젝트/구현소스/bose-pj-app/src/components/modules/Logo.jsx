@@ -31,7 +31,7 @@ export default function Logo({ logoStyle }) {
 
   // 코드리턴구역
   return (
-    <div className="logo-box" style={myStyle[logoStyle]}>
+    <div className="logo-box none-sel nonedrag" style={myStyle[logoStyle]}>
       <img style={imgStyle[logoStyle]} src={isrc.logoW} alt="Bose-logo" />
     </div>
   );
