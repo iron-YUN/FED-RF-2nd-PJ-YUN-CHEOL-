@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
 // css 불러오기
-import "../../css/main_page_top.scss";
+import "./css/main_page_top.scss";
 // 로고 불러오기
 import { logoSrc } from "../data/img_src";
 // 동영상 불러오기
