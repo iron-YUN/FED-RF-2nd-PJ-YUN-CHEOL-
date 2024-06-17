@@ -16,7 +16,7 @@ export default function FooterArea() {
           Be the first to know. Sign up to receive Bose emails & communications.
         </span></div>
         <div className="input-holder">
-        <input type="email" className="form-control"/>
+        <input type="email" className="form-control" placeholder="Email address"/>
           </div>
         <div>
         <button type="submit" className="btn-secondary">

@@ -149,7 +149,7 @@ export default function TopArea() {
               ))}
             </ul>
             <div className="search">
-              <input type="text" />
+              <input type="text" placeholder="Filter by keyword" />
             </div>
           </div>
         </div>

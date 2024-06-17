@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect,useCallback  } from "react";
 // 아이템 데이터 불러오기
 import { products } from "../data/items_main_data";
 import { colorList } from "../data/color_data";
@@ -19,11 +19,18 @@ export default function Trending() {
 
   useEffect(() => {
     // 위시리스트 이벤트 등록하기
-    const wish = document.querySelectorAll(".wish");
-    // 컬리선택 체인지 이벤트 등록하기
-  });
+    // const wish = $(".wish");
+    // console.log("나 위시리스트",wish);
 
-  // 무작위 제품+컬러 함수만들기
+    // 랜덤 아이템 총 개수
+    // const itemGet = $(".cat-cont");
+    // console.log("나 랜덤개수야~~", itemGet.length);
+    // 컬리선택 체인지 이벤트 등록하기
+  });///////////// useEffect ////////////////////
+  
+  useLayoutEffect(() => {},[]);
+
+  // 램덤1 함수 ///////////////////////////////////////
   // 1. rdProduct : 리턴코드에서 products의 순번 카테고리를 받아서
   // 해당 카테고리 내의 순번개수만큼 랜덤돌리기를 한다
   // 2.rdColor : 위에서 결정된 제품내의 컬러리스트를 랜덤돌리기한다(위와같은방법).
@@ -33,10 +40,10 @@ export default function Trending() {
     // console.log(rdIdx);
     return arr[rdIdx];
     // 위에서 rdIdx 에 담은 순번을 Headphones[랜덤수] 로 리턴해 getRdItem 에 담는다.
-  };
-  ////////////////////////////////////////////////////////
+  }; ////////////// 랜덤1 함수 getRdItem ////////////
 
-  // 랜덤으로 아이템 출력함수 2
+
+  // 랜덤2 함수 ///////////////////////////////////
   const getRdItems = (arr) => {
     // 1. 1~2개 랜덤넘버
     const rNum = Math.ceil(Math.random() * 2); // 1 또는 2
@@ -72,19 +79,14 @@ export default function Trending() {
       // console.log(catCopyArr); // -> 선택된 제품 제외하고 나머지 나옴
     }
     return items;
-  };
-  // 랜덤 아이템 출력후 총 개수 확인해보기 (총 5~10개)
-  // useEffect(()=>{
-  //   const  itemGet = $(".cat-cont");
-  //   console.log("나 랜덤개수야~~",itemGet.length);
-  // });
+  };////////////// 랜덤2 함수 getRdItems ////////////
+
+
 
   const colorFn = (e, clr) => {
-    // e.preventDefault();
-    setSelectedColors((prevSelectedColors) => ({
-      ...prevSelectedColors,
-      [clr]: true, // 클릭된 색상을 true로 설정하여 상태 업데이트
-    }));
+    e.preventDefault();
+    console.log("나를 선택했군!!",clr);
+    // console.log("나를 선택했군!!",e.currentTarget.title);
   };
 
   return (
@@ -132,15 +134,16 @@ export default function Trending() {
                         {prod.color.map((clr, idx) => (
                           <div
                             key={idx}
-                            className={`color-circle-wrap ${
-                              clr == rdColor ? "on" : ""
-                            }`}
-                          >
+                            // map 컬러가 랜덤컬러와 일치시 클래스on ,나머지는 on을 뺌
+                            // clr : map 을 돌린 컬러들임
+                            className={`color-circle-wrap ${clr == rdColor ? "on" : ""
+                            }`}   onClick={(e) => colorFn(e, clr)}>
                             <div
-                              onClick={(e) => colorFn(e, clr)}
                               className="color-circle"
+                              // 배경색상을 컬러리스트의 색상에서 불러온다
                               style={{ backgroundColor: colorList[clr] }}
                               title={clr}
+                              // onClick={(e) => colorFn(e, clr)}
                             />
                           </div>
                         ))}
@@ -156,7 +159,6 @@ export default function Trending() {
     </div>
   );
 }
-
 
 // 카테고리당 1개씩만 출력하는 리턴
 //   return (
