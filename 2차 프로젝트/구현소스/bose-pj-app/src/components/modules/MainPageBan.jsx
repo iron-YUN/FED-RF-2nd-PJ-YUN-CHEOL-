@@ -28,142 +28,94 @@ function MainPageBan() {
   //   return scrollPercentage;
   // }
 
-  function banScrollEvt() {
+  // 스크롤이벤트 함수 : 윈도우 스크롤시 해당 이벤트 발생
+  function banScrollEvt(e) {
+    let scrollLock = false;
+    let body = document.body;
+    // 박스 수집
     const mbBox = document.querySelectorAll(".mb-box");
     mbBox.forEach((box, i) => {
-      const rect = box.getBoundingClientRect();
-      const rectTop = rect.top;
-      // 해당 li top 값 퍼센트로 환산
-      const scrollTopPer = Math.floor((rectTop / window.innerHeight) * 100);
+      // 박스탑
+      const rectTop = box.getBoundingClientRect().top;
+      const rectTopPer = Math.floor((rectTop / window.innerHeight) * 100);
+      console.log(i,"번주자 달려",rectTopPer);
+      // 박스바텀값
+      const rectBot = box.getBoundingClientRect().bottom;
+      const rectBotPer = Math.floor((rectTop / window.innerHeight) * 100);
+      // 제목 변수할당
+      const tit = box.querySelector(".mb-tit");
+      // 베너비디오 들 변수할당
       const banVid = box.querySelector(".mb-video");
+      // 정보박스 들 변수할당
+      const infoBox = box.querySelector(".cat-info-box");
 
-      // 스크롤 퍼센티지가 증가하면 비디오 크기도 증가
-      if (scrollTopPer >= 0 && scrollTopPer <= 100) {
-        // console.log("li top 위치",scrollTopPer);
-        const scale = 1 - (scrollTopPer / 100) * 0.7;
-        console.log("scale", scale);
+      // 스크롤 증감설정구역1 : 내용 나오기 설정
+      // 설정 : 탑값 50% 이하일때 제목 나옴
+      if (rectTopPer <= 50) {
+        tit.classList.add("on1");
+        // 탑값 20% 미만일때 설명막스나옴
+        if (rectTop <= 30) {
+          setShowControls(true); // 컨트롤 켜기
+          // banVid.controls = true; // 컨트롤 켜기
+          // banVid.controls = false; // 컨트롤 끄기
+          // banVid.muted = true; // 음소거설정
+          // banVid.muted = false; // 음소거설정
+          infoBox.classList.add("on2");
+        } /// if //
+        else {
+          setShowControls(false);
+          infoBox.classList.remove("on2");
+        } /// else //
+      } ///////////// if ///////////
+      else {
+        tit.classList.remove("on1");
+      } /////////// else //////////
+
+      // 스크롤 증감설정 구역2 :  비디오 크기 증감
+      if (rectTopPer >= 0 && rectTopPer <= 100) {
+        const scale = 1 - (rectTopPer / 100) * 0.9;
         // 1에서 0.5까지 스케일 조정
         banVid.style.transform = `scale(${scale})`;
-        banVid.controls = true; // 컨트롤 끄기
-        // banVid.muted = true; // 소리내기
-      } else if (scrollTopPer > 100) {
+      } ////////////////////////
+      else if (rectTopPer > 100) {
         banVid.style.transform = "scale(0.3)";
-      } else {
-        banVid.controls = true; // 컨트롤 켜기
-        // banVid.muted = false; // 음소거하기
+      } /////////////////////////
+      else {
         banVid.style.transform = "scale(1)";
-      }
-    });
-  }
+      } /////////////////////////
 
+    
+    // 스크롤 막기 설정
+    if (rectTop === 0) {
+      scrollLock = true;
+    }
+    }); ////////////// forEach //////////////////
+
+ // 스크롤 막기 적용
+ if (scrollLock) {
+  window.addEventListener("wheel", preventScroll, { passive: false });
+  window.addEventListener("touchmove", preventScroll, { passive: false });
+} else {
+  window.removeEventListener("wheel", preventScroll);
+  window.removeEventListener("touchmove", preventScroll);
+}
+
+  } //////////////// banScrollEvt 함수//////////////////////
+  function preventScroll(e) {
+    e.preventDefault();
+  }
   useEffect(() => {
     window.addEventListener("scroll", banScrollEvt);
     return () => {
       window.removeEventListener("scroll", banScrollEvt);
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll); // Clean up on unmount
     };
   }, []);
+  ////////////////////////////////////////////////////////////
+  const mData = mainPageBan; // 버리지말아주쇼
 
-  /////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////
-  // useEffect(() => {
-  //   window.addEventListener("scroll", showIt);
-  //   return () => {
-  //     window.removeEventListener("scroll", showIt);
-  //   };
-  //   const scAct = document.querySelectorAll(".mb-img");
-  //   function showIt() {
-  //     scAct.forEach((ele) => addOn(ele));
-  //    }//////////////////showIt//////////////////////
-  //    const CRITERIA = (window.innerHeight / 3) * 2;
-  //    function addOn(ele) {
-  //     let bcrVal = myFn.getBCR(ele);
-  //     if (bcrVal < CRITERIA) ele.classList.add("on");
-  //     else ele.classList.remove("on");
-  //   } //////////////// addOn ////////////////
-  //   function showLetters() {
-  //     //  2. 대상선정 : .stage-letters
-  //     const stage = myFn.qs(".stage");
-  //     // console.log('대상:',stage);
-  //     // 3.글자데이터 변수 할당
-  //     const myText = "신카이 마코토";
-  //     // 4. 데이터 글자 한 글자씩 태그로 싸기
-  //     // for of
-  //     //html 태그변수
-  //     let hcode = "";
-  //     // 지연시간 계산을 위한 순번변수
-  //     let seqNum = 0;
-  //     for (let x of myText) {
-  //       // console.log(x);
-  //       if (x === " ") {
-  //         ///스페이스 공백처리
-  //         hcode += "&nbsp;&nbsp;";
-  //       } //////if/////
-  //       else {
-  //         // 글자일 경우 span태그 랩핑처리
-  //         hcode += `
-  //           <span style="transition-delay : ${seqNum * 0.08}s"
-  //           >${x}</span>`;
-  //       } ////////else ////////
-  //       // 중요!! 지연시간에 곱해질 순번증가하기!
-  //       seqNum++;
-  //     } ///////////////////// for of ///////////////////////////
-  //     // 5.스테이지에 코드 출력하기
-  //     stage.innerHTML = hcode;
-  //     // 6. 일정시간 뒤 등장클래스 .on넣기
-  //     setTimeout(() => {
-  //       stage.classList.add("on");
-  //     }, 1000);
-
-  //     ////////// 글자 스크롤 이벤트 셋팅하기 //////
-  //     // 이벤트대상 : windows
-  //     myFn.addEvt(window, "scroll", moveTit);
-
-  //     // 기준이 되는 포스터 박스 위치 구하기
-  //     const posTop = [];
-
-  //     scAct.forEach((ele, idx) => {
-  //       posTop[idx] = myFn.getOT(ele);
-  //     }); ///// forEach /////////
-
-  //     // 화면절반크기 변수 (포스터 위치에서 뺄값!)
-  //     const gap = window.innerHeight / 2;
-
-  //     console.log("포스터위치:", posTop);
-
-  //     function moveTit() {
-  //       // 스크롤 위치값 구하기
-  //       let scTop = window.scrollY;
-  //       //  1. 맨위 원위치하기 : 첫번째 기준보다 작을때
-  //       if (scTop < posTop[0] - gap) {
-  //         stage.style.top = "0%";
-  //         stage.style.left = "50%";
-  //         stage.style.transition = "1s ease-in-out";
-  //       }
-  //       //  2. 첫번째 포스터 옆으로 이동
-  //       if (scTop > posTop[0] - gap && scTop < posTop[0]) {
-  //         stage.style.top = "50%";
-  //         stage.style.left = "25%";
-  //         stage.style.transition = "1s ease-in-out";
-  //       }
-  //       //  3. 두번째 포스터 옆으로 이동
-  //       if (scTop > posTop[1] - gap && scTop < posTop[1]) {
-  //         stage.style.top = "70%";
-  //         stage.style.left = "65%";
-  //         stage.style.transition = "1s ease-in-out";
-  //       }
-  //       //  4. 세번째 포스터 옆으로 이동
-  //       if (scTop > posTop[2] - gap && scTop < posTop[2]) {
-  //         stage.style.top = "50%";
-  //         stage.style.left = "25%";
-  //         stage.style.transition = "1s ease-in-out";
-  //       }
-  //     } //////////////moveTit/////////////////
-  //   }
-  // }, []);
-
-  /////////////////////////////////////////////////////////
-  ///////////////////////리턴구역//////////////////////////////////
-  const mData = mainPageBan;
+  ////////////////////////////////////////////////////////////
   return (
     <ul>
       {mData.map((v, i) => (
@@ -174,30 +126,27 @@ function MainPageBan() {
           <video
             className="mb-video"
             src={v.vsrc}
-            // controls
             controls={showControls}
+            // controls
             loop
             autoPlay
             muted={muted}
-            onDoubleClick={toggleMuted}
-            onPlay={handleVolumeChange}
+            // onDoubleClick={toggleMuted}
+            // onPlay={handleVolumeChange}
           />
-           {/*section 비디오와 겹치는 앱솔루트박스 
+          {/*section 비디오와 겹치는 앱솔루트박스 
           패팅탑 줘서 일정부분 내림*/}
           <section className="cat-info-box">
             {/* <div className="info-box"> */}
-              <div className="mb-img">
-                <img src={v.isrc} alt={v.tit} />
-              </div>
-              <div className="mb-text">
-                <span>
-                  나는 말이야 똑똑한 사람이야
-                  집에가고싶어
-                  집에보내줘
-                  오늘 일찍자야지
-                  방구나 먹어랏
-                </span>
-              </div>
+            <div className="box1">
+              <img src={v.isrc} alt={v.tit} />
+            </div>
+            <div className="box2">
+              <span>
+                나는 말이야 똑똑한 사람이야 집에가고싶어 집에보내줘 오늘
+                일찍자야지 방구나 먹어랏
+              </span>
+            </div>
             {/* </div> */}
           </section>
         </li>

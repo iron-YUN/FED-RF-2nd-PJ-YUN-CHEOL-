@@ -1,5 +1,13 @@
+body{
+  transition: .5s;
+}
+
 #recommended {
+  // 넘치기 숨기자
+  overflow-x: hidden;
+  
   margin: 0 auto;
+  width: 100%;
   max-width: 1980px;
   padding-top: clamp(50px, 20vh, 100px);
   padding-left: clamp(50px, 5vw, 100px);
@@ -16,6 +24,7 @@
   display: flex;
   gap: 2px;
   .cat-cont {
+    // flex-basis: ;
     position: relative;
     z-index: 0;
     &:hover {

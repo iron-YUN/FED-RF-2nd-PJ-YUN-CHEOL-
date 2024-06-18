@@ -40,6 +40,8 @@ export default function MainComponent(){
           {/* 기타페이지 */}
           <Route path="Explore" element={<Explore/>} />
           <Route path="Support" element={<Support/>} />
+          {/* <Route path="detail" element={<CatDetail />} /> */}
+          {/* <Route path="search" element={<SearchPage />} /> */}
         </Route>
      </Routes>
     </BrowserRouter>

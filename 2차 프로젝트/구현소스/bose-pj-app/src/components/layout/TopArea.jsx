@@ -1,5 +1,5 @@
 // 상단영역 컴포넌트 ///
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useNavigate } from "react";
 import { Link } from "react-router-dom";
 import mFn from "../func/my_function";
 import { isrc, menuSrc } from "../data/img_src";
@@ -16,6 +16,7 @@ import "../../css/top_area.scss";
 import Logo from "../modules/Logo";
 
 export default function TopArea() {
+
   // 햄버거 버튼을 X버튼으로 바꾸기위한 설정
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuSrcV = Object.values(menuSrc);
@@ -46,6 +47,8 @@ export default function TopArea() {
     // setTimeout(() => {
     //   prot = false; // 0.6초후 해제!
     // }, 6000);
+
+
 
     const escClose = (event) => {
       if (event.key === "Escape" && isMenuOpen) {
@@ -108,17 +111,11 @@ export default function TopArea() {
     aaaa = () => {
       window.scrollTo(0, 0);
       console.log("호출!");
-      // if (isMenuOpen) {
         closeMenu();
         // 햄버거 메뉴를 원래모양으로 변경하기
         // 위해  false로 만들고 닫기에서 true로 전환함!
         setIsMenuOpen(false)
-      // }
     };
-    // function aaaa () {
-      //   window.scrollTo(0, 0);
-      // console.log("호출!");
-      // };
       
       
     }); /////////////// useEffect 도큐먼트 출력후 실행///////////////
@@ -127,6 +124,42 @@ export default function TopArea() {
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
     };
+
+
+
+  // 검색관련 함수들 /////
+  // 1.검색창 보이기 함수
+  const showSearch = (e) => {
+    // 기본기능막기
+    e.preventDefault();
+    // 2.입력창
+    $("#schinGnb").focus();
+  }; ///////// showSearch 함수 /////////
+  // 2.검색창에 앤터키 누르면 검색함수 호출
+  const enterKey = (e) => {
+    // e.keyCode 는 숫자, e.key는 문자로 리턴함
+    // console.log(e.key,e.keyCode);
+    if (e.key == "Enter"){
+        // 입력창의 입력값 읽어오기 : val()사용
+        let txt = $(e.target).val().trim();
+        console.log(txt);
+        // 빈값이 아니면 검색함수 호출(검색어전달)
+        if(txt!=""){
+          // 입력창 비우고 부모박스 닫기
+          // 검색 보내기
+          goSearch(txt);
+        }//// if ////
+    }///// if ////
+  };/////// enterKey ////////
+
+  // 3.검색페이지로 검색어와 함께 이동하기 함수
+  const goSearch = (txt) => {
+    console.log("나는 검색하러 간다규!!~!~");
+    // 라우터 이동함수로 이동하기
+    // 네비게이트메서드(라우터주소,{state:{보낼값}})
+    // goNav("search",{state:{keyword:txt}})
+  };////////// goSearch /////
+
   return (
     <>
       {/* 1.상단영역 */}
@@ -143,13 +176,21 @@ export default function TopArea() {
                 //   {i === 0 && isMenuOpen ? <CloseMenuIcon /> : v}
                 // </li>
                 // 기존 x 버튼 작동시 다른버튼이 작동하지 않음 위아래 같음
-                <li key={i} onClick={() => (i === 0 ? toggleMenu() : null)}>
-                  {isMenuOpen && i === 0 ? <CloseMenuIcon /> : v}
+                <li key={i} onClick={() => (
+                  i === 0 
+                  ? toggleMenu() 
+                  : null )}>
+                  {isMenuOpen && i === 0 ? <CloseMenuIcon /> : v}           
                 </li>
               ))}
             </ul>
             <div className="search">
-              <input type="text" placeholder="Filter by keyword" />
+              <input 
+              type="text" 
+              placeholder="Filter by keyword"
+              id="schinGnb"
+              onKeyUp={enterKey}
+               />
             </div>
           </div>
         </div>

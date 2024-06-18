@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+  }
+  .clip-path-circle {
+    width: 100%;
+    height: 100%;
+    clip-path: circle(40% at 50% 50%);
+    background-color: #000000;
+  }
+  .video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="clip-path-circle"></div>
+    <video class="video-background" autoplay muted loop>
+      <source src="./img/3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</body>
+</html>
+설명:

@@ -42,6 +42,26 @@ export default function Trending() {
     // 위에서 rdIdx 에 담은 순번을 Headphones[랜덤수] 로 리턴해 getRdItem 에 담는다.
   }; ////////////// 랜덤1 함수 getRdItem ////////////
 
+  function backColorFn() {
+    const rbox = document.querySelector("#recommended");
+      const rectB = rbox.getBoundingClientRect().bottom;
+      const rectBPer = Math.floor((rectB / window.innerHeight) * 100);
+      // console.log("바디색!!!",rectBPer);
+      const body =  document.body;
+      // 스크롤 퍼센티지가 증가하면 비디오 크기도 증가
+      if(rectBPer>50){
+        body.style.backgroundColor = "#fff";
+      }///////////////////////
+      else if (rectBPer >= 0 && rectBPer <= 70) {
+        body.style.backgroundColor = "#282828";
+      } ////////////////////////
+  }/////////////backColorFn///////////////////
+  useEffect(() => {
+    window.addEventListener("scroll", backColorFn);
+    return () => {
+      window.removeEventListener("scroll", backColorFn);
+    };
+  }, []);
 
   // 랜덤2 함수 ///////////////////////////////////
   const getRdItems = (arr) => {
