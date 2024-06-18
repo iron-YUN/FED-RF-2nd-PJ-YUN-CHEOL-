@@ -25,9 +25,9 @@ body.hidden {
 .mb-box:nth-child(2n) .cat-info-box {
   flex-direction: row-reverse;
   .box1 {
-    img{
-        // right: 50%;
-        // transform: translateX(0);
+    img {
+      // right: 50%;
+      // transform: translateX(0);
     }
   }
 }
@@ -43,9 +43,9 @@ body.hidden {
   mix-blend-mode: difference;
   // 나오기 애니
   top: 15%;
-  transition: .7s;
+  transition: 0.7s;
   opacity: 0;
-  &.on1{
+  &.on1 {
     opacity: 1;
     top: 5%;
   }
@@ -53,16 +53,16 @@ body.hidden {
 .cat-info-box {
   position: absolute;
   z-index: 10;
-  padding: 15% 3% 2%;
+  padding: 10% 3% 2%;
   box-sizing: border-box;
   display: flex;
   height: 100%;
   width: 100%;
   // 나오기 애니 설정
-  top:10%;
-  transition: .7s;
+  top: 20%;
+  transition: 1s;
   opacity: 0;
-  &.on2{
+  &.on2 {
     opacity: 1;
     top: 0%;
   }
@@ -72,8 +72,10 @@ body.hidden {
     width: 50%;
 
     img {
+      display: inline-block;
       position: sticky;
       top: 35%;
+      left: 50%;
       aspect-ratio: 1 /1;
       width: clamp(130px, 20vw, 400px);
       object-fit: cover;
@@ -83,12 +85,26 @@ body.hidden {
     position: relative;
     height: 100%;
     flex: 1;
-    span {
-        font-size: 3vh;
-        font-weight: bold;
-        color: #fff;
-        top: 50%;
+    .span-text {
+      display: inline-block;
+      font-size: 5vh;
+      font-weight: bold;
+      text-shadow: 0 0 10px #000;
+      color: #fff;
       position: sticky;
+      top: 55%;
+      transition: .5s;
+      opacity: 0;
+      &.on1{
+        transition-delay: opacity .5s;
+        top: 50%;
+        opacity: 1;
+      }
+      &.on2{
+        transition-delay: opacity .5s;
+        top: 45%;
+        opacity: 0;
+      }
     }
   }
 }

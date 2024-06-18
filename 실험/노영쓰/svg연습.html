@@ -3,37 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video and SVG Mask Example</title>
 <style>
-  .container {
-    width: 400px;
-    height: 400px;
-    position: relative;
+  body{
+    background-color: #000;
+    display: flex;
   }
-  .clip-path-circle {
-    width: 100%;
-    height: 100%;
-    clip-path: circle(40% at 50% 50%);
-    background-color: #000000;
+  .target {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    margin: 0 auto;
   }
-  .video-background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    
+  .alpha-target {
+    position: fixed;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    mask-image: url('./aaa.svg');
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    /* -webkit-mask-image: url('./img/svg_logo2.svg'); */
+    /* -webkit-mask-mode: alpha; */
+    /* -webkit-mask-size: 40%; */
+    /* -webkit-mask-repeat: no-repeat; */
   }
-</style>
-</head>
-<body>
-  <div class="container">
-    <div class="clip-path-circle"></div>
-    <video class="video-background" autoplay muted loop>
-      <source src="./img/3.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</body>
+  </style>
+  <body>
+    <video 
+    src="./img/3.mp4" 
+    class="target alpha-target" 
+    autoplay =1
+    muted = 1
+    ></video>
+  </body>
 </html>
-설명:

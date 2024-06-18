@@ -17,7 +17,11 @@ import Pasystems from "./components/pages/Pasystems";
 import Explore from "./components/pages/Explore";
 import Support from "./components/pages/Support";
 
+import { scrolled, setPos } from "./components/modules/smoothScroll24";
+
 export default function MainComponent(){
+
+
   return (
     // 라우터 루트로 라우터 구성시작
     <BrowserRouter>

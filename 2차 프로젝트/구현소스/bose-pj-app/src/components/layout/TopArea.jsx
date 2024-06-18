@@ -11,12 +11,12 @@ import { CloseMenuIcon, iconMenu } from "../data/icons";
 
 // top css불러오기
 import "../../css/top_area.scss";
-
+// 부드러운 스크롤
+import { scrolled, setPos } from "../modules/smoothScroll24";
 // 로고 불러오기
 import Logo from "../modules/Logo";
 
 export default function TopArea() {
-
   // 햄버거 버튼을 X버튼으로 바꾸기위한 설정
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuSrcV = Object.values(menuSrc);
@@ -91,6 +91,7 @@ export default function TopArea() {
       searchInput.classList.remove("active");
       mFn.qs("body").classList.remove("hidden");
       setIsMenuOpen(!isMenuOpen);
+     
     } ///////////////////////////////////////////////
 
     // 검색창 나오기 ->> 메뉴바와 별도로!!!!! 기능추가

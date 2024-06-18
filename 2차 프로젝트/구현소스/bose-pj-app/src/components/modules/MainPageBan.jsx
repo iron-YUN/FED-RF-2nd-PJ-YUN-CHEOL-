@@ -38,38 +38,78 @@ function MainPageBan() {
       // 박스탑
       const rectTop = box.getBoundingClientRect().top;
       const rectTopPer = Math.floor((rectTop / window.innerHeight) * 100);
-      console.log(i,"번주자 달려",rectTopPer);
+
       // 박스바텀값
       const rectBot = box.getBoundingClientRect().bottom;
-      const rectBotPer = Math.floor((rectTop / window.innerHeight) * 100);
+      const rectBotPer = Math.floor((rectBot / window.innerHeight) * 100);
+      // console.log(i,"번주자 달려",rectBotPer);
       // 제목 변수할당
       const tit = box.querySelector(".mb-tit");
       // 베너비디오 들 변수할당
       const banVid = box.querySelector(".mb-video");
       // 정보박스 들 변수할당
       const infoBox = box.querySelector(".cat-info-box");
-
+      // 글자 수집
+      const spanT = box.querySelectorAll(".span-text");
       // 스크롤 증감설정구역1 : 내용 나오기 설정
       // 설정 : 탑값 50% 이하일때 제목 나옴
-      if (rectTopPer <= 50) {
-        tit.classList.add("on1");
-        // 탑값 20% 미만일때 설명막스나옴
-        if (rectTop <= 30) {
-          setShowControls(true); // 컨트롤 켜기
-          // banVid.controls = true; // 컨트롤 켜기
-          // banVid.controls = false; // 컨트롤 끄기
-          // banVid.muted = true; // 음소거설정
-          // banVid.muted = false; // 음소거설정
+      if (rectTopPer >= -50 && rectTopPer <= 100) {
+        console.log("달려", rectTopPer);
+
+        if (rectTopPer <= 50) {
+          // 50 이하시 나타남
           infoBox.classList.add("on2");
-        } /// if //
-        else {
-          setShowControls(false);
+          tit.classList.add("on1");
+        } else {
+          // 50 초과시 지움
           infoBox.classList.remove("on2");
-        } /// else //
-      } ///////////// if ///////////
-      else {
-        tit.classList.remove("on1");
-      } /////////// else //////////
+          tit.classList.remove("on1");
+        }
+
+        if (rectTopPer <= 40) {
+          spanT[0].classList.add("on1");
+        } else {
+          spanT[0].classList.remove("on1");
+        }
+
+        if (rectTopPer <= 23) {
+          spanT[0].classList.add("on2");
+          spanT[1].classList.add("on1");
+        } else {
+          spanT[0].classList.remove("on2");
+          spanT[1].classList.remove("on1");
+        }
+
+        if (rectTopPer <= 6) {
+          spanT[1].classList.add("on2");
+          spanT[2].classList.add("on1");
+        } else {
+          spanT[1].classList.remove("on2");
+          spanT[2].classList.remove("on1");
+        }
+
+        if (rectTopPer <= -11) {
+          spanT[2].classList.add("on2");
+          spanT[3].classList.add("on1");
+        } else {
+          spanT[2].classList.remove("on2");
+          spanT[3].classList.remove("on1");
+        }
+
+        if (rectTopPer <= -28) {
+          spanT[3].classList.add("on2");
+          spanT[4].classList.add("on1");
+        } else {
+          spanT[3].classList.remove("on2");
+          spanT[4].classList.remove("on1");
+        }
+      }
+      //////////////////// if 0 ~ 100 구간/////////////////////////////
+      // setShowControls(true); // 컨트롤 켜기
+      // banVid.controls = true; // 컨트롤 켜기
+      // banVid.controls = false; // 컨트롤 끄기
+      // banVid.muted = true; // 음소거설정
+      // banVid.muted = false; // 음소거설정
 
       // 스크롤 증감설정 구역2 :  비디오 크기 증감
       if (rectTopPer >= 0 && rectTopPer <= 100) {
@@ -84,34 +124,37 @@ function MainPageBan() {
         banVid.style.transform = "scale(1)";
       } /////////////////////////
 
-    
-    // 스크롤 막기 설정
-    if (rectTop === 0) {
-      scrollLock = true;
-    }
+      // 스크롤 막기 설정
+      if (rectTop === 0) {
+        scrollLock = false;
+      }
     }); ////////////// forEach //////////////////
 
- // 스크롤 막기 적용
- if (scrollLock) {
-  window.addEventListener("wheel", preventScroll, { passive: false });
-  window.addEventListener("touchmove", preventScroll, { passive: false });
-} else {
-  window.removeEventListener("wheel", preventScroll);
-  window.removeEventListener("touchmove", preventScroll);
-}
-
+    // 스크롤 막기 적용
+    if (scrollLock) {
+      window.addEventListener("wheel", preventScroll, { passive: false });
+      window.addEventListener("touchmove", preventScroll, { passive: false });
+    } else {
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+    }
   } //////////////// banScrollEvt 함수//////////////////////
   function preventScroll(e) {
     e.preventDefault();
   }
+
   useEffect(() => {
+    // 스크롤시 나타남 이벤트
     window.addEventListener("scroll", banScrollEvt);
     return () => {
+      // 클린업 리스트
       window.removeEventListener("scroll", banScrollEvt);
       window.removeEventListener("wheel", preventScroll);
-      window.removeEventListener("touchmove", preventScroll); // Clean up on unmount
+      window.removeEventListener("touchmove", preventScroll);
     };
   }, []);
+  ////////////////////////////////////////////////////////////
+
   ////////////////////////////////////////////////////////////
   const mData = mainPageBan; // 버리지말아주쇼
 
@@ -142,9 +185,12 @@ function MainPageBan() {
               <img src={v.isrc} alt={v.tit} />
             </div>
             <div className="box2">
-              <span>
-                나는 말이야 똑똑한 사람이야 집에가고싶어 집에보내줘 오늘
-                일찍자야지 방구나 먹어랏
+              <span className="span-text text1">탐쌤 안녕하세요~!!</span>
+              <span className="span-text text2">저는 윤철맨이에요~!~!</span>
+              <span className="span-text text3">만나서 반갑습니다❤</span>
+              <span className="span-text text4">신기하죠? ㅋㅋㅋㅋㅋㅋ</span>
+              <span className="span-text text5">
+                집에보내주세요 힘들어요 ㅠㅠ
               </span>
             </div>
             {/* </div> */}
