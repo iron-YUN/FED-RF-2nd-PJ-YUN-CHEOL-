@@ -198,8 +198,8 @@ export default function TopArea() {
               <li>
                 <CartIcon />
               </li>
-              <li onClick={()=>showSearch()}>
-              {/* <li onClick={showSearch}> */}
+              {/* <li onClick={()=>showSearch()}> */}
+              <li onClick={showSearch}>
                 <SearchIcon />
               </li>
 
@@ -226,8 +226,8 @@ export default function TopArea() {
                 name="schinGnb"
                 placeholder="Filter by keyword"
                 id="schinGnb"
-                // onKeyUp={enterKey}
-                onKeyUp={()=>enterKey()}
+                onKeyUp={enterKey}
+                // onKeyUp={()=>enterKey()}
               />
             </div>
           </div>
