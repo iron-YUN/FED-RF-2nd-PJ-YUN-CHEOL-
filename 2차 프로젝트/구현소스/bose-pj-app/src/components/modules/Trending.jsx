@@ -85,8 +85,31 @@ export default function Trending() {
   const colorFn = (e, clr) => {
     e.preventDefault();
     console.log("나를 선택했군!!",clr);
-    // console.log("나를 선택했군!!",e.currentTarget.title);
+    // console.log("나를 선택했군!!",e.currentTarget);
+    // ./images/speakers/1/white_smoke/0.webp
+    // 0. 원조대상
+    let org = $(e.currentTarget);
+
+    // 1. 대상이미지선택
+    let tg = org.parents(".p-info").prev().find("img");
+
+    // 2. 대상이미지 src값 읽기
+    let isrc = tg.attr("src").split("/");
+    console.log("전isrc:",JSON.stringify(isrc));
+    // 3. 대상이미지 src값 변경
+    isrc[4] = clr;
+    console.log("후isrc:",isrc);
+    // 4. 대상이미지경로 복원
+    isrc = isrc.join("/");
+    console.log("최종isrc:",isrc);
+    // 5. 대상이미지 src 실제로 변경
+    tg.attr("src",isrc);
+
+    // 6. 현재 자신에게 클래스"on"넣기
+    org.addClass("on").siblings().removeClass("on");
+    
   };
+
 
   return (
     <div id="recommended">
@@ -142,7 +165,6 @@ export default function Trending() {
                               // 배경색상을 컬러리스트의 색상에서 불러온다
                               style={{ backgroundColor: colorList[clr] }}
                               title={clr}
-                              // onClick={(e) => colorFn(e, clr)}
                             />
                           </div>
                         ))}
