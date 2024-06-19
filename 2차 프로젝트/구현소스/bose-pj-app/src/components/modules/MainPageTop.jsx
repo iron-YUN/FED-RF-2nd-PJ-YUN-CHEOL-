@@ -12,8 +12,8 @@ import { menu, subMenu } from "../data/gnb";
 import { banColor } from "../data/color_data";
 
 export default function MainPageTop() {
-  console.log(subMenu);
-  console.log(banColor);
+  // console.log(subMenu);
+  // console.log(banColor);
   const [muted, setMuted] = useState(true);
   const mainVideoRef = useRef(null);
   const smallVideoRef = useRef(null);
@@ -23,7 +23,7 @@ export default function MainPageTop() {
   // 랜덤수로 상단 동영상 불러오기
   const rdIdx = Math.floor(Math.random() * topVideo.length);
   const selectedVideo = topVideo[rdIdx];
-  console.log(rdIdx);
+  // console.log(rdIdx);
 
   // 동영상마다 컬러색 선택해서 서브메뉴에 입히기
   const vcolor =
