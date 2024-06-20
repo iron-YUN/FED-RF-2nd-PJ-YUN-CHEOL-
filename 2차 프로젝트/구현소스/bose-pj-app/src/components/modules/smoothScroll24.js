@@ -18,8 +18,8 @@ function setPos(val) {
 
 // 생성자함수로 받던 값을 직접 지정함!
 let target = document;
-let speed = 90;
-let smooth = 20;
+let speed = 30;
+let smooth = 22;
 
 // function SmoothScroll(target, speed, smooth) {
 if (target === document)
@@ -36,8 +36,8 @@ var frame =
     ? document.documentElement
     : target; // safari is the new IE
 
-    // 여기서 이벤트 연결설정 하지 않고 리액트페이지에서 함!
-    // -> 그래야 removeEventListener 를 할 수 있음!!!
+// 여기서 이벤트 연결설정 하지 않고 리액트페이지에서 함!
+// -> 그래야 removeEventListener 를 할 수 있음!!!
 // target.addEventListener("mousewheel", scrolled, {
 //   passive: false,
 // });

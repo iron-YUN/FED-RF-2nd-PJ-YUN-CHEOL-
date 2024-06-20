@@ -66,13 +66,13 @@ function MainPageBan() {
           tit.classList.remove("on1");
         }
 
-        if (rectTopPer <= 40) {
+        if (rectTopPer <= 30) {
           spanT[0].classList.add("on1");
         } else {
           spanT[0].classList.remove("on1");
         }
 
-        if (rectTopPer <= 23) {
+        if (rectTopPer <= 13) {
           spanT[0].classList.add("on2");
           spanT[1].classList.add("on1");
         } else {
@@ -80,7 +80,7 @@ function MainPageBan() {
           spanT[1].classList.remove("on1");
         }
 
-        if (rectTopPer <= 6) {
+        if (rectTopPer <= 0) {
           spanT[1].classList.add("on2");
           spanT[2].classList.add("on1");
         } else {
@@ -88,7 +88,7 @@ function MainPageBan() {
           spanT[2].classList.remove("on1");
         }
 
-        if (rectTopPer <= -11) {
+        if (rectTopPer <= -21) {
           spanT[2].classList.add("on2");
           spanT[3].classList.add("on1");
         } else {
@@ -96,7 +96,7 @@ function MainPageBan() {
           spanT[3].classList.remove("on1");
         }
 
-        if (rectTopPer <= -28) {
+        if (rectTopPer <= -48) {
           spanT[3].classList.add("on2");
           spanT[4].classList.add("on1");
         } else {
@@ -163,38 +163,40 @@ function MainPageBan() {
     <ul>
       {mData.map((v, i) => (
         <li className="mb-box" key={i}>
-          {/* 믹스블랜드 타이틀 :앱솔루트 */}
-          <h2 className="mb-tit">{v.tit}</h2>
-          {/* 배경이되는 박스 */}
-          <video
-            className="mb-video"
-            src={v.vsrc}
-            controls={showControls}
-            // controls
-            loop
-            autoPlay
-            muted={muted}
-            // onDoubleClick={toggleMuted}
-            // onPlay={handleVolumeChange}
-          />
-          {/*section 비디오와 겹치는 앱솔루트박스 
-          패팅탑 줘서 일정부분 내림*/}
-          <section className="cat-info-box">
-            {/* <div className="info-box"> */}
-            <div className="box1">
-              <img src={v.isrc} alt={v.tit} />
-            </div>
-            <div className="box2">
-              <span className="span-text text1">탐쌤 안녕하세요~!!</span>
-              <span className="span-text text2">저는 윤철맨이에요~!~!</span>
-              <span className="span-text text3">만나서 반갑습니다❤</span>
-              <span className="span-text text4">신기하죠? ㅋㅋㅋㅋㅋㅋ</span>
-              <span className="span-text text5">
-                집에보내주세요 힘들어요 ㅠㅠ
-              </span>
-            </div>
-            {/* </div> */}
-          </section>
+          <div className="wrap">
+            {/* 믹스블랜드 타이틀 :앱솔루트 */}
+            <h2 className="mb-tit">{v.tit}</h2>
+            {/* 배경이되는 박스 */}
+            <video
+              className="mb-video"
+              src={v.vsrc}
+              controls={showControls}
+              // controls
+              loop
+              autoPlay
+              muted={muted}
+              // onDoubleClick={toggleMuted}
+              // onPlay={handleVolumeChange}
+            />
+            {/*section 비디오와 겹치는 앱솔루트박스
+            패팅탑 줘서 일정부분 내림*/}
+            <section className="cat-info-box">
+              {/* <div className="info-box"> */}
+              <div className="box1">
+                <img src={v.isrc} alt={v.tit} />
+              </div>
+              <div className="box2">
+                <span className="span-text text1">탐쌤 안녕하세요~!!</span>
+                <span className="span-text text2">저는 윤철맨이에요~!~!</span>
+                <span className="span-text text3">만나서 반갑습니다❤</span>
+                <span className="span-text text4">신기하죠? ㅋㅋㅋㅋㅋㅋ</span>
+                <span className="span-text text5">
+                  집에보내주세요 힘들어요 ㅠㅠ
+                </span>
+              </div>
+              {/* </div> */}
+            </section>
+          </div>
         </li>
       ))}
     </ul>

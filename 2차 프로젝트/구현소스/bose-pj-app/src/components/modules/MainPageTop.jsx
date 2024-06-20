@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 // css 불러오기
 import "./css/main_page_top.scss";
@@ -10,8 +10,12 @@ import { topVideo } from "../data/main_page_banner";
 import { menu, subMenu } from "../data/gnb";
 // 색상 불러오기
 import { banColor } from "../data/color_data";
+import { bCon } from "./bCon";
+
+import $ from "jquery";
 
 export default function MainPageTop() {
+  const myCon = useContext(bCon);
   // console.log(subMenu);
   // console.log(banColor);
   const [muted, setMuted] = useState(true);
@@ -151,6 +155,14 @@ export default function MainPageTop() {
                 >SHOP</p>
               </Link>
                 <p className="stit2"
+                onClick={()=>{
+                  let tt = $(".mb-box").first().offset().top;
+                  console.log("위치:",tt);
+                  $("html,body")
+                  .animate({scrollTop:tt+"px"},1000);
+
+                  myCon.setPos(tt);
+                }}
                 >VIEW</p>
               </div>
             </div>
