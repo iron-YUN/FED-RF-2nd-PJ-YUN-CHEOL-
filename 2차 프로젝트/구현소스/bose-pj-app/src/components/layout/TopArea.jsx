@@ -207,10 +207,6 @@ export default function TopArea() {
               {
                 /////////////////////////////////////////////////////
                 // iconMenu.map((v, i) => (
-                // <li key={i} onClick={i === 0 ? toggleMenu : null}>
-                //   {i === 0 && isMenuOpen ? <CloseMenuIcon /> : v}
-                // </li>
-                // 기존 x 버튼 작동시 다른버튼이 작동하지 않음 위아래 같음
                 // <li key={i} onClick={() => (
                 //   i === 0
                 //   ? toggleMenu()
