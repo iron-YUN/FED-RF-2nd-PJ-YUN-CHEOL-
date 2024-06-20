@@ -5,11 +5,12 @@ import "../../css/main_area.scss";
 import MainPageTop from "../modules/MainPageTop";
 import Trending from "../modules/Trending";
 import MainPageBan from "../modules/MainPageBan";
+import MainPageMiddle from "../modules/MainPageMiddle";
 
 export default function Main() {
      // 바디색 바꾸기
      function backColorFn() {
-      const rbox = document.querySelector("#recommended");
+      const rbox = document.querySelector(".items-area");
         const rectB = rbox.getBoundingClientRect().bottom;
         const rectBPer = Math.floor((rectB / window.innerHeight) * 100);
         // console.log("바디색!!!",rectBPer);
@@ -36,6 +37,7 @@ export default function Main() {
         </div>
         <div className="items-area">
           <Trending />
+          <MainPageMiddle />
         </div>
         <div className="main-ban-area">
           <MainPageBan />

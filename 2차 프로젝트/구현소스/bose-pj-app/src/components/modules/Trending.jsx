@@ -1,17 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  useLayoutEffect,
-  useCallback,
-} from "react";
-// 아이템 데이터 불러오기
-import { products } from "../data/items_main_data";
-import { colorList } from "../data/color_data";
-import { WishlistHeartIcon } from "../data/icons";
-
-// 제이쿼리????
-import $ from "jquery";
+import React from "react";
 
 // css불러오기
 import "./css/trending.scss";
@@ -22,7 +9,7 @@ export default function Trending() {
     <div id="recommended">
       <h1>Recommended</h1>
       <section className="item-box">
-        <SwiperRd/>
+        <SwiperRd />
       </section>
     </div>
   );

@@ -1,0 +1,81 @@
+$font-12 : 12px;
+$font-16 : 16px;
+.rec-buy-now-box {
+  margin: 0 auto;
+  max-width: 80vw;
+  padding-bottom: clamp(100px, 40vh, 200px);
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .rec-100-1{
+    padding: 0 $font-12;
+    height: 80vh;
+    margin-bottom: $font-12*2;
+    .box-pad {
+      background: url(../../../../public/images/main_ban_middle/1.webp) no-repeat
+      center / cover;
+      h2 {
+        font-size: $font-12*8;
+        font-weight: bold;
+      }
+    }
+  }
+  .rec-100:nth-child(2){
+    display: flex;
+  }
+  .rec-100-2 {
+    height: 80vh;
+    h2 {
+      font-size: $font-12*5;
+      font-weight: bold;
+    }
+    .rec-50-1 {
+      padding: 0 $font-12;
+      width: 50%;
+      .box-pad {
+        background: url(../../../../public/images/main_ban_middle/2.webp) no-repeat
+        center / cover;
+      }
+    }
+    .rec-50-2 {
+      flex: 1;
+      padding: 0 $font-12;
+      .box-pad {
+        background: url(../../../../public/images/main_ban_middle/3.webp) no-repeat
+        center / cover;
+      }
+    }
+  }
+}
+
+.box-pad {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: $font-12*4;
+  box-sizing: border-box;
+  color: #fff;
+  justify-content: flex-end;
+  h3 {
+    margin-top: $font-12*2;
+    font-size: $font-12*2;
+  }
+  p {
+    margin-top: $font-16*2;
+    width: $font-12*10;
+    height: $font-12*4;
+    background-color: #fff;
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      font-size: $font-16;
+      vertical-align: middle;
+      color: #131317;
+      font-weight: bold;
+    }
+  }
+}

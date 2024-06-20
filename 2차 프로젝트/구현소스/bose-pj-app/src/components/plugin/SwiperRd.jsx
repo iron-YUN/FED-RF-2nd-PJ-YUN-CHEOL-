@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 // import required modules
 // 사용할 스와이퍼 모듈을 불러온다
 // (여기서는 네비게이션 - 양쪽이동버튼)
-import { Navigation } from "swiper/modules";
+import { Navigation ,Pagination} from "swiper/modules";
 
 // 아이템 데이터 불러오기
 import { products } from "../data/items_main_data";
@@ -21,15 +21,6 @@ import { WishlistHeartIcon } from "../data/icons";
 // css불러오기
 import "./css/swiper_rd.scss";
 ///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
-
-
-
-
-
-
-
 
 
 export function SwiperRd({ catName }) {
@@ -66,7 +57,7 @@ export function SwiperRd({ catName }) {
      // 1. 1~2개 랜덤넘버
      const rNum = Math.ceil(Math.random() * 2); // 1 또는 2
      // const rNum = Math.floor(Math.random() * 2)+1; // 1 또는 2
-     // console.log("난 1개내지 2개",rNum)
+     console.log("난 1개내지 2개",rNum)
  
      // 2. 선택된 아이템들을 배열로 담을 준비
      const items = [];
@@ -130,41 +121,29 @@ export function SwiperRd({ catName }) {
    };
 ////////////////////////////////////////////////////////////////////
 
-
-
-
-
-  
-
-  // 선택데이터 변수할당
-
   return (
     <>
       <Swiper
         // slidesPerView={4}
-        spaceBetween={20}
-        // pagination={{
-        //   clickable: true,
-        // }}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        spaceBetween={3}
+        pagination={{
+          clickable: true,
+        }}
         // loop={true}
         navigation={true}
         /* 사용할 모듈을 여기에 적용시킨다 */
-        modules={[Navigation]}
+        modules={[Navigation,Pagination]}
         className="mySwiper"
         // 스와이퍼 사이즈별 슬라이드수 변경!
         breakpoints={{
           200: {
-              slidesPerView: 1,
-          },
-          500: {
               slidesPerView: 2,
           },
-          1000: {
+          500: {
               slidesPerView: 3,
+          },
+          1000: {
+              slidesPerView: 4,
           },
           1200: {
               slidesPerView: 4,
@@ -235,78 +214,6 @@ export function SwiperRd({ catName }) {
         {/* ///////////////////////////////////// */}
       </Swiper>
     </>
-
-
-
-//////////////////////////////////////////////////////////////////
-
-   
-      // {/* 플렉스 설정 item-box */}
-      // <section className="item-box">
-      //   {
-      //     // 각 카테고리별로 1~2개의 제품 랜덤 선택
-      //     products.flatMap((v, i) => {
-      //       // 1.각 카테고리별로 1~2개 제품 랜덤선택
-      //       const rdProduct = getRdItems(v);
-      //       // console.log(rdProduct); // 랜덤오브젝트 확인하기
-      //       return rdProduct.map((prod, j) => {
-      //         // 2.선택된 제품에서의 가지고있는 색 랜덤선택
-      //         const rdColor = getRdItem(prod.color);
-      //         // console.log(rdColor); // 랜덤 컬러 확인하기
-      //         return (
-      //           <SwiperSlide key={`${i}-${j}`} className="cat-cont">
-      //             <div className="p-box">
-      //               <span className="wish">
-      //                 {/* 1.위시리스트 버튼 */}
-      //                 <WishlistHeartIcon
-      //                   strokeWidth="1"
-      //                   width="30"
-      //                   height="30"
-      //                 />
-      //               </span>
-      //               {/* 2.제품이미지 */}
-      //               <div className="p-img">
-      //                 <img
-      //                   idx={prod.idx}
-      //                   src={`${prod.isrc}${prod.idx}/${rdColor}/0.webp`}
-      //                   alt={prod.name}
-      //                 />
-      //               </div>
-      //               {/* 3.제품별 정보박스 */}
-      //               <section className="p-info">
-      //                 {/* 3-1.제품명 */}
-      //                 <p className="p-name">{prod.name}</p>
-      //                 {/* 3-2.제품가격 */}
-      //                 <p className="p-price">{prod.price}</p>
-      //                 {/* 3-3.제품색상 */}
-      //                 <div className="p-color-box">
-      //                   {prod.color.map((clr, idx) => (
-      //                     <div
-      //                       key={idx}
-      //                       // map 컬러가 랜덤컬러와 일치시 클래스on ,나머지는 on을 뺌
-      //                       // clr : map 을 돌린 컬러들임
-      //                       className={`color-circle-wrap ${clr == rdColor ? "on" : ""
-      //                       }`}   onClick={(e) => colorFn(e, clr)}>
-      //                       <div
-      //                         className="color-circle"
-      //                         // 배경색상을 컬러리스트의 색상에서 불러온다
-      //                         style={{ backgroundColor: colorList[clr] }}
-      //                         title={clr}
-      //                       />
-      //                     </div>
-      //                   ))}
-      //                 </div>
-      //               </section>
-      //             </div>
-      //           </SwiperSlide>
-      //         );
-      //       });
-      //     })
-      //   }
-      // </section>
-   
-
-
 
   );
 } /////////// SwiperVid 컴포넌트 ///////////

@@ -116,6 +116,8 @@
     gap: clamp(15px, 2vw, 30px);
     flex-direction: column;
     .tit-box {
+      user-select: none;
+      // -webkit-user-drag: none;
       position: relative;
       &:hover {
         transform: rotateY(0deg);
