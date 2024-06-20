@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 // css 불러오기
 import "./css/main_page_top.scss";
 // 로고 불러오기
@@ -146,8 +146,10 @@ export default function MainPageTop() {
              >
               <h2 className="tit1">{v.txt}</h2>
               <div className="tit2">
-                <p className="stit1"
+              <Link to={v.link}>
+                <p className="stit1" style={{color:vcolor}}
                 >SHOP</p>
+              </Link>
                 <p className="stit2"
                 >VIEW</p>
               </div>

@@ -199,7 +199,8 @@ export default function TopArea() {
                 <CartIcon />
               </li>
               {/* <li onClick={()=>showSearch()}> */}
-              <li onClick={showSearch}>
+              <li onClick={showSearch} 
+              className="search-li">
                 <SearchIcon />
               </li>
 
@@ -254,6 +255,7 @@ export default function TopArea() {
                           {v.sub.map((v, i) => (
                             <li key={i}>
                               <Link to={v.link}>{v.txt}</Link>
+                              
                             </li>
                           ))}
                         </ol>

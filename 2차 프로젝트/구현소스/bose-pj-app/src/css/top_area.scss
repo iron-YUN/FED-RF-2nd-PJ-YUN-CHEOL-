@@ -29,7 +29,6 @@ body.hidden {
       display: flex;
       background-color: #00000095;
       .icon-menu {
-        // width: 150px;
         padding: 0 10px;
         display: inline-block;
         height: 100%;
@@ -45,7 +44,6 @@ body.hidden {
         & li {
           display: inline-block; /* 인라인 블록으로 변경 */
           padding: 5px;
-          
           box-sizing: border-box;
           cursor: pointer;
           transition: 0.3s;
