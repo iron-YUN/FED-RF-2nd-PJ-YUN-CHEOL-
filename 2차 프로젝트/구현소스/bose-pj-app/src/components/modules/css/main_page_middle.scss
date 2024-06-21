@@ -13,8 +13,8 @@ $font-16 : 16px;
     height: 80vh;
     margin-bottom: $font-12*2;
     .box-pad {
-      background: url(../../../../public/images/main_ban_middle/1.webp) no-repeat
-      center / cover;
+      // background: url(../../../../public/images/main_ban_middle/1.webp) no-repeat
+      // center / cover;
       h2 {
         font-size: $font-12*8;
         font-weight: bold;
@@ -34,16 +34,16 @@ $font-16 : 16px;
       padding: 0 $font-12;
       width: 50%;
       .box-pad {
-        background: url(../../../../public/images/main_ban_middle/2.webp) no-repeat
-        center / cover;
+        // background: url(../../../../public/images/main_ban_middle/2.webp) no-repeat
+        // center / cover;
       }
     }
     .rec-50-2 {
       flex: 1;
       padding: 0 $font-12;
       .box-pad {
-        background: url(../../../../public/images/main_ban_middle/3.webp) no-repeat
-        center / cover;
+        // background: url(../../../../public/images/main_ban_middle/3.webp) no-repeat
+        // center / cover;
       }
     }
   }
@@ -62,20 +62,25 @@ $font-16 : 16px;
     margin-top: $font-12*2;
     font-size: $font-12*2;
   }
-  p {
+  a {
     margin-top: $font-16*2;
     width: $font-12*10;
     height: $font-12*4;
     background-color: #fff;
+    color: #131317;
     border: 2px solid transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    a {
+    transition: .3s ease;
+    span {
       font-size: $font-16;
       vertical-align: middle;
-      color: #131317;
       font-weight: bold;
+    }
+    &:hover{
+      color: #fff;
+      background-color:#131317;
     }
   }
 }
