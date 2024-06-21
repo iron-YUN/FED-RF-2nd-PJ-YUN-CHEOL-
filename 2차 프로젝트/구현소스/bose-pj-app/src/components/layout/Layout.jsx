@@ -31,14 +31,10 @@ mFn.addEvt(window, "mouseup", () => setPos(window.scrollY));
 // 0. 키보드 방향키 이동시 위치값 반영
 mFn.addEvt(window, "keyup", () => setPos(window.scrollY));
 //////// mouseup /////////////
-
-
-
-
   }, []);
 
   useEffect(() => {
-    console.log("요기요~!!!");
+    // console.log("요기요~!!!");
   });
 
   return (

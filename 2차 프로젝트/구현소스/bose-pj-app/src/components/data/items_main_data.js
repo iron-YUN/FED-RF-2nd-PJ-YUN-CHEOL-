@@ -357,13 +357,13 @@ export const products = [
   speakers,
   homeTheater,
   paSystems,
-  ////////두번째 : 데이터 강제로 늘리기
-  // headphones,
-  // earbuds,
-  // speakers,
-  // homeTheater,
-  // paSystems,
-
 ]
+export const products2 = {
+ "Headphones": headphones,
+ "Earbuds":  earbuds,
+ "Speakers":  speakers,
+ "Home Theater":  homeTheater,
+ "PA Systems":  paSystems,
 
+}
 

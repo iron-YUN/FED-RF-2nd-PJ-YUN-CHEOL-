@@ -1,0 +1,53 @@
+
+<div id="recommended">
+<h1>Shop</h1>
+<h2>{catName}</h2>
+{/* 플렉스 설정 item-box */}
+<section className="item-box">
+  {
+    products.map((v, i) => {
+        // 제품 각 박스
+        <div key={i} className="cat-cont">
+          <div className="p-box">
+            {/* 1.위시리스트 버튼 */}
+            <span className="wish">
+              <WishlistHeartIcon strokeWidth="1" width="30" height="30" />
+            </span>
+            {/* 2.제품이미지 */}
+            <div className="p-img">
+              <img
+                // idx={rdProduct.idx}
+                // src={`${rdProduct.isrc}${rdProduct.idx}/${rdColor}/0.webp`}
+                // alt={rdProduct.name}
+              />
+            </div>
+            {/* 3.제품별 정보박스 */}
+            <section className="p-info">
+              {/* 3-1.제품명 */}
+              {/* <p className="p-name">{rdProduct.name}</p> */}
+              {/* 3-2.제품가격 */}
+              {/* <p className="p-price">{rdProduct.price}</p> */}
+              {/* 3-3.제품색상 */}
+              <div className="p-color-box">
+                {/* {rdProduct.color.map((color, idx) => (
+                  <div
+                    key={idx}
+                    className={`color-circle-wrap ${
+                      color == rdColor ? "on" : ""
+                    }`}
+                  >
+                    <div
+                      className="color-circle"
+                      style={{ backgroundColor: colorList[color] }}
+                      title={color}
+                    />
+                  </div>
+                ))} */}
+              </div>
+            </section>
+          </div>
+        </div>
+    })
+  }
+</section>
+</div>
