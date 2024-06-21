@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 // 메인페이지 컴포넌트 ///
 import "../../css/main_area.scss";
 import MainPageTop from "../modules/MainPageTop";
-import Trending from "../modules/Trending";
+import MainPageRd from "../modules/MainPageRd";
 import MainPageBan from "../modules/MainPageBan";
 import MainPageMiddle from "../modules/MainPageMiddle";
 
@@ -36,7 +36,7 @@ export default function Main() {
           <MainPageTop/>
         </div>
         <div className="items-area">
-          <Trending />
+          <MainPageRd />
           <MainPageMiddle />
         </div>
         <div className="main-ban-area">

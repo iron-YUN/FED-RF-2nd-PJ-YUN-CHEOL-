@@ -8,6 +8,7 @@ import $ from "jquery";
 // Import Swiper styles 모듈용 기본 css파일로딩
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 // import required modules
 // 사용할 스와이퍼 모듈을 불러온다
 // (여기서는 네비게이션 - 양쪽이동버튼)
@@ -101,7 +102,7 @@ export function SwiperRd({ catName }) {
      let org = $(e.currentTarget);
  
      // 1. 대상이미지선택
-     let tg = org.parents(".p-info").prev().find("img");
+     let tg = org.parents(".rd-p-info").prev().find("img");
  
      // 2. 대상이미지 src값 읽기
      let isrc = tg.attr("src").split("/");
@@ -118,7 +119,7 @@ export function SwiperRd({ catName }) {
      // 6. 현재 자신에게 클래스"on"넣기
      org.addClass("on").siblings().removeClass("on");
      
-   };
+   };///////////// colorFn ////////////////
 ////////////////////////////////////////////////////////////////////
 
   return (
@@ -162,8 +163,8 @@ export function SwiperRd({ catName }) {
               const rdColor = getRdItem(prod.color);
               // console.log(rdColor); // 랜덤 컬러 확인하기
               return (
-                <SwiperSlide key={`${i}-${j}`} className="cat-cont">
-                  <div className="p-box">
+                <SwiperSlide key={`${i}-${j}`} className="rd-cat-cont">
+                  <div className="rd-p-box">
                     <span className="wish">
                       {/* 1.위시리스트 버튼 */}
                       <WishlistHeartIcon
@@ -173,7 +174,7 @@ export function SwiperRd({ catName }) {
                       />
                     </span>
                     {/* 2.제품이미지 */}
-                    <div className="p-img">
+                    <div className="rd-p-img">
                       <img
                         idx={prod.idx}
                         src={`${prod.isrc}${prod.idx}/${rdColor}/0.webp`}
@@ -181,13 +182,13 @@ export function SwiperRd({ catName }) {
                       />
                     </div>
                     {/* 3.제품별 정보박스 */}
-                    <section className="p-info">
+                    <section className="rd-p-info">
                       {/* 3-1.제품명 */}
-                      <p className="p-name">{prod.name}</p>
+                      <p className="rd-p-name">{prod.name}</p>
                       {/* 3-2.제품가격 */}
-                      <p className="p-price">{prod.price}</p>
+                      <p className="rd-p-price">{prod.price}</p>
                       {/* 3-3.제품색상 */}
-                      <div className="p-color-box">
+                      <div className="rd-p-color-box">
                         {prod.color.map((clr, idx) => (
                           <div
                             key={idx}
@@ -196,6 +197,7 @@ export function SwiperRd({ catName }) {
                             className={`color-circle-wrap ${clr == rdColor ? "on" : ""
                             }`}   onClick={(e) => colorFn(e, clr)}>
                             <div
+
                               className="color-circle"
                               // 배경색상을 컬러리스트의 색상에서 불러온다
                               style={{ backgroundColor: colorList[clr] }}

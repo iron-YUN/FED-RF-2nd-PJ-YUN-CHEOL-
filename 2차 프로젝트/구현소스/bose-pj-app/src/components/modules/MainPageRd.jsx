@@ -1,10 +1,10 @@
 import React from "react";
 
 // css불러오기
-import "./css/trending.scss";
+import "./css/main_page_rd.scss";
 import { SwiperRd } from "../plugin/SwiperRd";
 
-export default function Trending() {
+export default function MainPageRd() {
   return (
     <div id="recommended">
       <h1>Recommended</h1>

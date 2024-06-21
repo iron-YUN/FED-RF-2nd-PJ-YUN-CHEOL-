@@ -1,4 +1,4 @@
-.cat-cont {
+.rd-cat-cont {
   -webkit-user-drag: none;
     // flex-basis: ;
     position: relative;
@@ -15,7 +15,7 @@
     padding: 30px;
     aspect-ratio: 1/1.5;
     box-sizing: border-box;
-    .p-box {
+    .rd-p-box {
     ///////////////////////
       user-select: none;
       /////////////////////////
@@ -32,7 +32,7 @@
           color: red;
         }
       }
-      .p-img {
+      .rd-p-img {
         max-width: 400px;
         width: 100%;
         min-width: 200px;
@@ -45,15 +45,15 @@
           // -webkit-user-drag: none;
         }
       }
-      .p-info {
+      .rd-p-info {
         position: absolute;
         bottom: 0;
-        .p-name {
+        .rd-p-name {
           line-height: 1.5;
         }
-        .p-price {
+        .rd-p-price {
         }
-        .p-color-box {
+        .rd-p-color-box {
           display: flex;
           gap: 5px; /* 색상 원 사이의 간격 */
           margin-top: 10px; /* 색상 박스의 상단 여백 */
@@ -95,7 +95,7 @@
     // padding: 0 3vw;
   }
   .swiper-button-prev,.swiper-button-next{
-    position: absolute;
+    // position: absolute;
     top:92%;
     // top: 100%;
     width: 30px;

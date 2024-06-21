@@ -2,9 +2,7 @@
 // 메인분류 : 유형별
 // 서브분류 : 사용목적별
 // https://www.bose.com/c/headphones
-const product=[
 
-];
 const headphones = [
   {
     idx: "0",
@@ -351,19 +349,66 @@ const paSystems = [
 ];
 
 
+const headphonesSub={
+  src: `./images/headphones/items_sub_ban/`,
+  tit1: `Leveled-up listening`,
+  stit1: `Bose QuietComfort Ultra Headphones`,
+  tit2: `Best noise cancelling headphones`,
+  stit2: `Discover features and find your perfect fit.`,
+};
+const earbudsSub={
+  src: `./images/earbuds/items_sub_ban/`,
+  tit1: `All-day comfort`,
+  stit1: `Tennis pro Ben Shelton sports Ultra Open Earbuds.`,
+  tit2: `Open-ear vs in-ear:`,
+  stit2: `Find your fit`,
+  tit3: `Design your own`,
+  stit3: `Customize and purchase QuietComfort Ultra Earbuds on Colorware.com`,
+};
+const speakersSub={
+  src: `./images/speakers/items_sub_ban/`,
+  tit1: `Run the vibe`,
+  stit1: `Introducing the new Bose SoundLink Max Portable Speaker`,
+  tit2: `Unleashing the energy`,
+  stit2: `DJ and Producer John Summit on how he sets the vibe and starts the party.`,
+};
+const homeTheaterSub={
+  src: `./images/hometheater/items_sub_ban/`,
+  tit1: `“Makes the sound come alive”`,
+  stit1: `~ Pinnerman08`,
+  tit2: `What is Dolby Atmos?`,
+  stit2: `Learn more about this new technology and how it revolutionizes surround sound.`,
+  tit3: `Smart-sized cinematic sound`,
+  stit3: `Bose Smart Soundbar 600`,
+};
+const paSystemsSub={
+  src: `./images/pasystem/items_sub_ban/`,
+  tit1: `Transform sound into something more`,
+  stit1: `S1 Pro+ Wireless PA System: Add any vibe, anywhere you play`,
+  tit2: `The best PA systems for live music`,
+  stit2: `Get the best sound experience for your live performances.`,
+};
+
 export const products = [ 
   headphones,
   earbuds,
   speakers,
   homeTheater,
   paSystems,
-]
+];
 export const products2 = {
  "Headphones": headphones,
  "Earbuds":  earbuds,
  "Speakers":  speakers,
  "Home Theater":  homeTheater,
  "PA Systems":  paSystems,
-
-}
+ "Shop":  [products],
+};
+export const productsSub = {
+  "Headphones": headphonesSub,
+  "Earbuds":  earbudsSub,
+  "Speakers":  speakersSub,
+  "Home Theater":  homeTheaterSub,
+  "PA Systems":  paSystemsSub,
+};
 

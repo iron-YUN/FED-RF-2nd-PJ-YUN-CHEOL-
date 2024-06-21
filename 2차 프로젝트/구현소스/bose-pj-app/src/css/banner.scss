@@ -1,0 +1,35 @@
+.top-banner {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .ban-tit {
+    padding: 2%;
+  }
+  .ban-smenu-box{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3px;
+    .ban-smenu{
+        background-color: #ffffffa0;
+        flex: 1;
+        text-align: center;
+        transition: .3s ease;
+        a{  
+            display: inline-block;
+            width: 100%;
+            line-height: 3;  
+            white-space: nowrap;
+            font-size: clamp(12px, 1.5vw, 30px);
+            font-weight: bold;
+            color: #383838;
+        }
+        &:hover{
+            background-color: #383838;
+            a{
+                color: #fff;
+            }
+        }
+    }
+  }
+}

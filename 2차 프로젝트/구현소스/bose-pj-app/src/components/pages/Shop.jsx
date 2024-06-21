@@ -8,7 +8,11 @@ export default function Shop() {
     <>
       {/* 1.배너 컴포넌트 */}
       <Banner catName="SHOP" />
-      <ShopItems catName="SHOP"/>
+      <ShopItems catName="Headphones"/>
+      <ShopItems catName="Earbuds"/>
+      <ShopItems catName="Speakers"/>
+      <ShopItems catName="Home Theater"/>
+      <ShopItems catName="PA Systems"/>
     </>
   );
 } ////////////// Shop /////////////
