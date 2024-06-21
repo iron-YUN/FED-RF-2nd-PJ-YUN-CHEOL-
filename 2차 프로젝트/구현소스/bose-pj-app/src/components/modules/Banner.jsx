@@ -23,6 +23,7 @@ function Banner({ catName }) {
   return (
     <div className="top-banner" style={{ background: `${selData.src} ` }}>
       <div className="ban-tit">
+        <h3>{catName}</h3>
         <h1>{selData.tit1}</h1>
         <h2>{selData.tit2}</h2>
       </div>

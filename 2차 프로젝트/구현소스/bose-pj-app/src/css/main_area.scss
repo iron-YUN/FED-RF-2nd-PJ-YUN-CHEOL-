@@ -1,14 +1,31 @@
-#main-page{
-    transition: .7s;
-    width: 100vw;
+#main-page {
+transition: background-color 0.7s;
+  width: 100vw;
 }
-.items-area{
-    // height: 1800px;
-
+.items-area {
+}
+#shop-area{
+    margin-bottom: clamp(50px, 10vh, 100px);
+    .shop-tit-box {
+      width: 80%;
+      margin: 0 auto;
+      h1 {
+        letter-spacing: -0.04em;
+        margin-top: clamp(50px, 10vh, 100px);
+        margin-bottom: clamp(30px, 4vh, 60px);
+        font-size: clamp(30px, 4vw, 60px);
+        color: #484848;
+        font-weight: bold;
+      }
+      h2 {
+        margin-top: clamp(30px, 4vh, 60px);
+        font-size: clamp(24px, 2vw, 48px);
+        color: #484848;
+        font-weight: bold;
+      }
+    }
 }
 
-
-
-.sns-area{
-    height: 1800px;
+.sns-area {
+  height: 1800px;
 }

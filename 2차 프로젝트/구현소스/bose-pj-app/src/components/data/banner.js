@@ -76,8 +76,8 @@ export const banData = {
   EXPLORE: 
     {
       src: "url(/images/main_ban/ban_h3.webp) no-repeat center / cover",
-      tit1: "",
-      tit2: "",
+      tit1: "Crafting off-the-court culture",
+      tit2: "Literally Balling’s Victor Solomon reimagines the game in gold.",
       cont: ``,
       btn: "DISCOVER",
     },
@@ -85,8 +85,8 @@ export const banData = {
   SUPPORT: 
     {
       src: "url(/images/main_ban/ban_su1.webp) no-repeat center / cover",
-      tit1: "",
-      tit2: "",
+      tit1: "We're here to help",
+      tit2: "Ensure the lasting value of your Bose® products.",
       cont: ``,
       btn: "DISCOVER",
     },

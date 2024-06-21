@@ -16,6 +16,7 @@ $font-16 : 16px;
       // background: url(../../../../public/images/main_ban_middle/1.webp) no-repeat
       // center / cover;
       h2 {
+        letter-spacing: -0.05em;
         font-size: $font-12*8;
         font-weight: bold;
       }
@@ -27,6 +28,7 @@ $font-16 : 16px;
   .rec-100-2 {
     height: 80vh;
     h2 {
+      letter-spacing: -0.04em;
       font-size: $font-12*5;
       font-weight: bold;
     }
@@ -59,6 +61,7 @@ $font-16 : 16px;
   color: #fff;
   justify-content: flex-end;
   h3 {
+    letter-spacing: -0.04em;
     margin-top: $font-12*2;
     font-size: $font-12*2;
   }

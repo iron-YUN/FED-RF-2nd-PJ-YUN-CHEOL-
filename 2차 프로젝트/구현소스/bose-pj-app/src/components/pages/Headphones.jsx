@@ -2,6 +2,7 @@
 
 import Banner from "../modules/Banner";
 import ShopArea from "../modules/ShopArea";
+import ShopTit from "../modules/ShopTit";
 
 export default function Headphones() {
   return (

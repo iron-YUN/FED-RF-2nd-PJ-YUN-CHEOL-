@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { products2 } from "../data/items_main_data";
 import { WishlistHeartIcon } from "../data/icons";
 import { colorList } from "../data/color_data";
@@ -49,10 +49,28 @@ const colorFn = (e, clr) => {
   
 };///////////// colorFn ////////////////
 
+useEffect(() => {
+  // useEffect 안에서 jQuery를 이용한 이벤트 처리
+  $(".wish svg").click(function() {
+    // 현재 fill 속성 값을 가져옵니다.
+    const currentFill = $(this).attr("fill");
 
+    // 새로운 fill 속성 값을 설정합니다. 여기서는 빨강과 검정을 토글합니다.
+    const newFill = currentFill === "red" ? "none" : "red";
+
+    // 새로운 fill 속성 값을 적용합니다.
+    $(this).attr("fill", newFill);
+  });
+
+  // clean-up 함수: 컴포넌트가 언마운트될 때 클릭 이벤트 핸들러를 제거합니다.
+  return () => {
+    $(".wish svg").off("click"); // 이벤트 제거
+  };
+}, []); 
 
   const products = products2[catName];
   return (
+    <>
     <div className="shop-item">
       {/* 플렉스 설정 item-box */}
       {products.map((v, i) => {
@@ -108,6 +126,7 @@ const colorFn = (e, clr) => {
         );
       })}
     </div>
+    </>
   );
 }
 export default ShopItems;

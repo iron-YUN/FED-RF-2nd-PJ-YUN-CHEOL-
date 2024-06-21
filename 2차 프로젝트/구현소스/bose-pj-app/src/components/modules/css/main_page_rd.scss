@@ -13,9 +13,10 @@ body{
   padding-bottom: clamp(50px, 20vh, 100px);
   box-sizing: border-box;
   h1 {
+    letter-spacing: -0.04em;
     margin-bottom: clamp(50px, 4vh, 100px);
     font-size: clamp(40px, 4vw, 200px);
-    color: #000000;
+    color: #484848;
     font-weight: bold;
   
     // padding-left: clamp(50px, 5vw, 100px);

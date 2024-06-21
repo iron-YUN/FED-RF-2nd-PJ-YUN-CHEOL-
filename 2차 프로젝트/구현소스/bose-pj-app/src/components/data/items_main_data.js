@@ -402,7 +402,7 @@ export const products2 = {
  "Speakers":  speakers,
  "Home Theater":  homeTheater,
  "PA Systems":  paSystems,
- "Shop":  [products],
+ "SHOP":  products, // map을 못돌림 idx 값 중복으로 확인됨
 };
 export const productsSub = {
   "Headphones": headphonesSub,

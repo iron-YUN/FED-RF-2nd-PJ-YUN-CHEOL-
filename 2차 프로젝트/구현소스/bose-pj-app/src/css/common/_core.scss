@@ -1,4 +1,7 @@
 /*드래그 선택 안되게 하는 CSS*/
+body{
+  overflow-x: hidden;
+}
 .none-sel {
     user-select: none;
   }

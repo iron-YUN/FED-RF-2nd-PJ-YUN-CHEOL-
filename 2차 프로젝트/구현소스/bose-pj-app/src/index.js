@@ -17,6 +17,7 @@ import Pasystems from "./components/pages/Pasystems";
 import Explore from "./components/pages/Explore";
 import Support from "./components/pages/Support";
 import SearchPage from "./components/pages/SearchPage";
+import CatDetail from "./components/pages/CatDetail";
 
 import { scrolled, setPos } from "./components/modules/smoothScroll24";
 

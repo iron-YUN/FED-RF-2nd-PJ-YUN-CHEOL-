@@ -39,8 +39,27 @@ export function SwiperRd({ catName }) {
      // 컬리선택 체인지 이벤트 등록하기
    });///////////// useEffect ////////////////////
    
-   useLayoutEffect(() => {},[]);
+   useEffect(() => {
+    // useEffect 안에서 jQuery를 이용한 이벤트 처리
+    $(".wish svg").click(function() {
+      // 현재 fill 속성 값을 가져옵니다.
+      const currentFill = $(this).attr("fill");
+
+      // 새로운 fill 속성 값을 설정합니다. 여기서는 빨강과 검정을 토글합니다.
+      const newFill = currentFill === "red" ? "none" : "red";
+
+      // 새로운 fill 속성 값을 적용합니다.
+      $(this).attr("fill", newFill);
+    });
+
+    // clean-up 함수: 컴포넌트가 언마운트될 때 클릭 이벤트 핸들러를 제거합니다.
+    return () => {
+      $(".wish svg").off("click"); // 이벤트 제거
+    };
+  }, []); 
  
+
+
    // 램덤1 함수 ///////////////////////////////////////
    // 1. rdProduct : 리턴코드에서 products의 순번 카테고리를 받아서
    // 해당 카테고리 내의 순번개수만큼 랜덤돌리기를 한다
@@ -138,13 +157,13 @@ export function SwiperRd({ catName }) {
         // 스와이퍼 사이즈별 슬라이드수 변경!
         breakpoints={{
           200: {
-              slidesPerView: 2,
+              slidesPerView: 1,
           },
           500: {
-              slidesPerView: 3,
+              slidesPerView: 2,
           },
           1000: {
-              slidesPerView: 4,
+              slidesPerView: 3,
           },
           1200: {
               slidesPerView: 4,
