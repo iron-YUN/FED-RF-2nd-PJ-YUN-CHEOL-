@@ -4,44 +4,65 @@ body.hidden {
   overflow: hidden;
 }
 .main-ban-area {
-  ul {
-    li {
+  #culture {
+    .mb-box {
       width: 100%;
       height: 300vh;
       .back-img {
-        top: 0;
         position: relative;
-        transform-origin: center;
         width: 100vw;
         height: 100vh;
-        object-fit: cover;
-        transition: 0.3s;
+        top: 0;
+        transform-origin: center;
+        .back-img2 {
+          width: 100vw;
+          height: 100vh;
+          transition: 1s;
+          object-fit: cover;
+          opacity: 0;
+          &.on {
+            opacity: 1;
+          }
+        }
       }
-      .wrap{
+      .wrap {
         position: sticky;
-        top: 0;        
+        top: 0;
       }
     }
   }
 }
 
 .mb-tit {
+  letter-spacing: -0.1em;
   text-align: center;
   position: absolute;
   width: 100%;
+  height: 100%;
   z-index: 10;
-  margin-bottom: 5vh;
-  font-size: 5vw;
   font-weight: bold;
+  // 나오기 애니
   filter: invert(1);
   mix-blend-mode: difference;
-  // 나오기 애니
-  top: 15%;
-  transition: 0.7s;
-  opacity: 0;
-  &.on1 {
-    opacity: 1;
+  .craft-tit1,
+  .craft-tit2 {
+    position: relative;
     top: 5%;
+    transition: 0.7s;
+    opacity: 0;
+    font-weight: bold;
+    transform: translateY(100%);
+    &.on1 {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  .craft-tit1 {
+    margin-bottom: 4vh;
+    font-size: 5vw;
+  }
+  .craft-tit2 {
+    font-size: 2.5vw;
   }
 }
 .cat-info-box {
@@ -64,45 +85,101 @@ body.hidden {
     position: relative;
     height: 100%;
     width: 50%;
-
-    img {
-      display: inline-block;
-      position: sticky;
-      top: 35%;
-      left: 50%;
-      aspect-ratio: 1 /1;
-      width: clamp(130px, 20vw, 400px);
-      object-fit: cover;
+    ul{
+      position: relative;
+      width: 100%;
+      height: 100%;
+ 
+    }
+    .box1-img {
+      transition: .5s ease;
+      opacity: 0;
+      &.on1 {
+        opacity: 1;
+      }
+      position: absolute;
+      width: clamp(200px, 50vw, 600px);
+      aspect-ratio: 1.5 /1;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
   }
+  ////////////////////////////////
   .box2 {
     position: relative;
     height: 100%;
     flex: 1;
-    .span-text {
-      display: inline-block;
-      font-size: 5vh;
-      font-weight: bold;
-      text-shadow: 0 0 10px #000;
-      color: #fff;
-      position: sticky;
-      top: 55%;
-      transition: .5s;
-      opacity: 0;
-      &.on1{
-        transition-delay: opacity .5s;
-        top: 50%;
-        opacity: 1;
-      }
-      &.on2{
-        transition-delay: opacity .5s;
-        top: 45%;
+    .p-text-box{
+      position: relative;
+      width: 80%;
+      height: 40%;
+      margin-bottom: 5vw;
+      .p-text {
+        position: absolute;
+        font-size: clamp(20px, 3vw , 50px);
+        font-weight: bold;
+        text-shadow: 0 0 10px #000;
+        color: #fff;
+        //////////////////////////////////
+        top: 55%;
+        transition: 0.5s;
         opacity: 0;
+        &.on1 {
+          transition-delay: opacity 0.5s;
+          top: 50%;
+          opacity: 1;
+        }
+        &.on2 {
+          transition-delay: opacity 0.5s;
+          top: 45%;
+          opacity: 0;
+        }
       }
     }
   }
 }
-.mb-box{
-  // top: 0;
-  // position: sticky;
+
+.p-flex-box1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-flex-box2{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.go-box{
+  top: 0;
+  position: absolute;
+  height: 100%;
+  z-index: 11;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  .p-button{
+    display: flex;
+    position: absolute;
+    bottom: 10%;
+    background-color: #fff;
+    padding: 1vw;
+    transition: .3s ease;
+    span{
+      font-size: 1vw;
+      letter-spacing: -0.05em;
+      font-weight: bold;
+    }
+    &:hover{
+      span{
+        color: #fff;
+      }
+      background-color: #282828;
+    }
+  }
 }

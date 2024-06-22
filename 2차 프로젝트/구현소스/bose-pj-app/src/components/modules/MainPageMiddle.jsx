@@ -24,7 +24,6 @@ function MainPageMiddle() {
           <div className="box-pad" style={{ background: `${rdItem[0].src}` }}>
             <h2>{rdItem[0].tit1}</h2>
             <h3>{rdItem[0].tit2}</h3>
-
             <Link>
               <span>BUY NOW</span>
             </Link>
