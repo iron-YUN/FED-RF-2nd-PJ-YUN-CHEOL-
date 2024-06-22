@@ -1,52 +1,50 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-// css 불러오기
 import "./css/main_page_top.scss";
-// 로고 불러오기
 import { logoSrc } from "../data/img_src";
-// 동영상 불러오기
 import { topVideo } from "../data/main_page_banner";
-// 서브메뉴 불러오기
-import { menu, subMenu } from "../data/gnb";
-// 색상 불러오기
+import { subMenu } from "../data/gnb";
 import { banColor } from "../data/color_data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay, faCirclePause } from "@fortawesome/free-regular-svg-icons";
+import { faVolumeXmark, faVolumeHigh, faExpand } from "@fortawesome/free-solid-svg-icons";
 import { bCon } from "./bCon";
 
-import $ from "jquery";
 
-export default function MainPageTop() {
+const MainPageTop = () => {
   const myCon = useContext(bCon);
-  // console.log(subMenu);
-  // console.log(banColor);
-  const [muted, setMuted] = useState(true);
   const mainVideoRef = useRef(null);
   const smallVideoRef = useRef(null);
 
-  
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [muted, setMuted] = useState(true);
+  const [selectedVideo, setSelectedVideo] = useState("");
+  const [vcolor, setVColor] = useState("");
+  const [isFullscreen, setIsFullscreen] = useState(false); // 전체화면 상태 추가
+  const [savedVolume, setSavedVolume] = useState(0.3); // 소리 설정 상태 추가
 
-  // 랜덤수로 상단 동영상 불러오기
-  const rdIdx = Math.floor(Math.random() * topVideo.length);
-  const selectedVideo = topVideo[rdIdx];
-  // console.log(rdIdx);
+  useEffect(() => {
+    const rdIdx = Math.floor(Math.random() * topVideo.length);
+    const randomVideo = topVideo[rdIdx];
+    const color =
+      rdIdx === 0
+        ? banColor.moonstone_blue
+        : rdIdx === 1
+        ? banColor.pure_white
+        : rdIdx === 2
+        ? banColor.white_smoke
+        : rdIdx === 3
+        ? banColor.head
+        : banColor.ear;
 
-  // 동영상마다 컬러색 선택해서 서브메뉴에 입히기
-  const vcolor =
-    rdIdx == 0
-      ? banColor.moonstone_blue
-      : rdIdx == 1
-      ? banColor.pure_white
-      : rdIdx == 2
-      ? banColor.white_smoke
-      : rdIdx == 3
-      ? banColor.head
-      : banColor.ear;
+    setSelectedVideo(randomVideo);
+    setVColor(color);
+  }, []);
 
-  // 초기 설정에서 볼륨을 조정, 동기화 설정.
   useEffect(() => {
     const mainVideo = mainVideoRef.current;
     const smallVideo = smallVideoRef.current;
 
-    // 큰비디오 의 상태에 따라 작은비디오 상태변경
     if (mainVideo && smallVideo) {
       const syncVideos = () => {
         smallVideo.currentTime = mainVideo.currentTime;
@@ -57,23 +55,25 @@ export default function MainPageTop() {
             console.error("Error attempting to play the small video:", error);
           });
         }
-      }; //////////if/////////////
+      };
 
-      //   소리설정
-      mainVideo.volume = muted ? 0 : 0.3;
-      //   smallVideo.volume = muted ? 0 : 0.3;
+      mainVideo.volume = muted ? 0 : savedVolume; // 저장된 볼륨 설정 적용
+      smallVideo.volume = muted ? 0 : 0;
 
-      //////////////////////////////////////////////////////
       const handlePlayPause = () => {
         syncVideos();
+        setIsPlaying(mainVideo.paused);
       };
+
       const handleTimeUpdate = () => {
         syncVideos();
       };
+
       mainVideo.addEventListener("play", handlePlayPause);
       mainVideo.addEventListener("pause", handlePlayPause);
       mainVideo.addEventListener("seeked", handleTimeUpdate);
       mainVideo.addEventListener("timeupdate", handleTimeUpdate);
+
       return () => {
         mainVideo.removeEventListener("play", handlePlayPause);
         mainVideo.removeEventListener("pause", handlePlayPause);
@@ -81,32 +81,78 @@ export default function MainPageTop() {
         mainVideo.removeEventListener("timeupdate", handleTimeUpdate);
       };
     }
+  }, [muted, savedVolume]); // muted와 savedVolume 상태가 변경될 때마다 useEffect 실행
 
-  }, [muted]);
+  const togglePlayPause = () => {
+    const mainVideo = mainVideoRef.current;
+    if (mainVideo.paused) {
+      mainVideo.play();
+      setIsPlaying(true);
+    } else {
+      mainVideo.pause();
+      setIsPlaying(false);
+    }
+  };
 
-  ///////////// stit 오버시 색 고정
-  // useEffect(()=>{
-  //   // const titBx = document.querySelectorAll(".tit1");
-  //   const titColor = document.querySelectorAll(".tit1");
-  //   const stitColor = document.querySelectorAll(".tit2 p");
-  //   console.log("나는 stit",stitColor);
-  //   const mouseOverFn = (e) => {
-  //     // let tg = e.target.parentElement;
-  //     // tg.style.color = vcolor;
-  //     // tg.style.filter = "none";
-  //     // tg.style.mixBlendMode = "normal";
+  const toggleMute = () => {
+    setMuted((prevMuted) => !prevMuted);
+  };
 
-  //     console.log("나 색깔바껴~~~");
-  //   };
+  const toggleFullscreen = () => {
+    const mainVideo = mainVideoRef.current;
+    if (!isFullscreen) {
+      if (mainVideo.requestFullscreen) {
+        mainVideo.requestFullscreen();
+      } else if (mainVideo.mozRequestFullScreen) { /* Firefox */
+        mainVideo.mozRequestFullScreen();
+      } else if (mainVideo.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        mainVideo.webkitRequestFullscreen();
+      } else if (mainVideo.msRequestFullscreen) { /* IE/Edge */
+        mainVideo.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { /* Firefox */
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { /* Chrome, Safari & Opera */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE/Edge */
+        document.msExitFullscreen();
+      }
+    }
+  };
 
-  //   titColor.forEach((e) => {
-  //     e.addEventListener("mouseover", mouseOverFn);
-  //   });
-  //   stitColor.forEach((e) => {
-  //     e.addEventListener("mouseover", mouseOverFn);
-  //   });
-  // },[vcolor]);
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement));
+    };
 
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+    document.addEventListener("mozfullscreenchange", handleFullscreenChange);
+    document.addEventListener("MSFullscreenChange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
+      document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
+      document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
+    };
+  }, []);
+
+  // 전체화면 상태에 따라 아이콘 변경 로직 추가
+  const playPauseIcon = isPlaying ? (
+    <FontAwesomeIcon icon={faCirclePlay} className="play-icon play-a" />
+  ) : (
+    <FontAwesomeIcon icon={faCirclePause} className="play-icon play-a" />
+  );
+
+  const muteIcon = muted ? (
+    <FontAwesomeIcon icon={faVolumeXmark} className="play-icon play-b" />
+  ) : (
+    <FontAwesomeIcon icon={faVolumeHigh} className="play-icon play-b" />
+  );
 
   return (
     <div className="main-page-top">
@@ -117,16 +163,15 @@ export default function MainPageTop() {
               ref={mainVideoRef}
               src={selectedVideo}
               loop
-              // controls
               autoPlay
               muted={muted}
               className="big-video"
+              controls={isFullscreen ? true : false} // 전체화면일 때만 컨트롤바 표시
             ></video>
           </div>
         </div>
         <div className="small-wrap-box">
           <div className="small-box">
-            {/* 가두는 스티키 박스 */}
             <video
               ref={smallVideoRef}
               src={selectedVideo}
@@ -139,36 +184,37 @@ export default function MainPageTop() {
             </div>
           </div>
         </div>
+        <ul className="play-top-vid" style={{ color: vcolor }}>
+          <li onClick={togglePlayPause}>
+            {playPauseIcon}
+          </li>
+          <li onClick={toggleMute}>
+            {muteIcon}
+          </li>
+          <li onClick={toggleFullscreen}>
+            <FontAwesomeIcon icon={faExpand} className="play-icon play-c" />
+          </li>
+        </ul>
       </div>
-      {/* 서브메뉴 불러오기 */}
       <div className="go-tit-box">
         <div className="go-tit">
           {subMenu.map((v, i) => (
-            <div className="tit-box" key={i}
-            //  동영상마다 고정된 색상 하고싶으면 주석풀기
-             style={{color:vcolor}}
-             >
-              <h2 className="tit1">{v.txt}</h2>
-              <div className="tit2">
-              <Link to={v.link}>
-                <p className="stit1" style={{color:vcolor}}
-                >SHOP</p>
-              </Link>
-                <p className="stit2"
-                onClick={()=>{
-                  let tt = $(".mb-box").first().offset().top;
-                  console.log("위치:",tt);
-                  $("html,body")
-                  .animate({scrollTop:tt+"px"},1000);
-
-                  myCon.setPos(tt);
-                }}
-                >VIEW</p>
-              </div>
+            <div className="tit-box" key={i} style={{ color: vcolor }}>
+              <h2 className="tit1 wavw1" style={{ color: vcolor }}>
+                {v.txt}
+              </h2>
+              <h2 className="tit1 wavw2">
+                <Link to={v.link} style={{ color: vcolor }}>
+                  {v.txt}
+                </Link>
+              </h2>
             </div>
           ))}
         </div>
       </div>
     </div>
   );
-} //////////// MainPageTop /////////////
+};
+
+
+export default MainPageTop;

@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "../../css/main_area.scss";
 import MainPageTop from "../modules/MainPageTop";
 import MainPageRd from "../modules/MainPageRd";
-import MainPageBan from "../modules/MainPageBan";
+import MainPageBottom from "../modules/MainPageBottom";
 import MainPageMiddle from "../modules/MainPageMiddle";
 
 export default function Main() {
@@ -36,11 +36,14 @@ export default function Main() {
           <MainPageTop/>
         </div>
         <div className="items-area">
+          {/* 랜덤 제품 영역 */}
           <MainPageRd />
+          {/* 배너 3개있는 중간영역 */}
           <MainPageMiddle />
         </div>
         <div className="main-ban-area">
-          <MainPageBan />
+          {/* 동영상 영역 */}
+          <MainPageBottom />
         </div>
         <div className="sns-area"></div>
       </section>
