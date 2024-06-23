@@ -180,13 +180,13 @@
     opacity: 0;
     box-sizing: border-box;
     font-size: 1vw;
-    line-height: 1.25;
+    line-height: 1.5;
     background-color: #00000072;
     transition: .5s ease;
     display: flex;
     align-items: baseline;
     span{
-      padding: 5vw 1vw;
+      padding: 2vw 1vw;
       box-sizing: border-box;
       font-size: clamp(12px, 1.5vw, 20px);
       color: #fff;
