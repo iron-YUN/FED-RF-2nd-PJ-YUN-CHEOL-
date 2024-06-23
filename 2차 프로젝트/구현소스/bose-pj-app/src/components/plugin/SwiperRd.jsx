@@ -141,6 +141,8 @@ export function SwiperRd({ catName }) {
    };///////////// colorFn ////////////////
 ////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////
+
   return (
     <>
       <Swiper
@@ -153,7 +155,7 @@ export function SwiperRd({ catName }) {
         navigation={true}
         /* 사용할 모듈을 여기에 적용시킨다 */
         modules={[Navigation,Pagination]}
-        className="mySwiper"
+        className="mySwiper-rd"
         // 스와이퍼 사이즈별 슬라이드수 변경!
         breakpoints={{
           200: {

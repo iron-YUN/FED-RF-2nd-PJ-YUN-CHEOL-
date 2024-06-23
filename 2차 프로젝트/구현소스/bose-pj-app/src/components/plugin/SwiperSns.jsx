@@ -4,94 +4,130 @@ import { useState } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import "./css/swiper_sns.scss";
 
 function SwiperSns() {
-    // 상태값 설정
-    const [isVisible, setIsVisible] = useState(false);
-    const videoRef = useRef(null);
-    // 데이터 확인
-    const sD = snsData;
-    console.log(sD);
+  const videoRefs = useRef([]);
+  const [activeVideoIndex, setActiveVideoIndex] = useState(null);
 
-    useEffect(() => {
-        const options = {
-          root: null,
-          rootMargin: "0px",
-            // IntersectionObserver가 작동할 기준 
-            // 화면 비율 (0.5는 절반 이상 보이면 작동)
-          threshold: 0.5, 
-        };
-    
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setIsVisible(true);
-              entry.target.play(); // 화면에 보이면 동영상 재생
-            } else {
-              setIsVisible(false);
-              entry.target.pause(); // 화면에서 벗어나면 동영상 일시정지
-            }
-          });
-        }, options);
-    
-        // 각 동영상 요소에 Observer 적용
-        document.querySelectorAll(".video-item").forEach((video) => {
-          observer.observe(video);
-        });
-    
-        return () => {
-          observer.disconnect();
-        };
-      }, []);
- 
-    return (
-        <div className="sns-box">
-          <h1>Sound is Power</h1>
-          <h3>Looks good. Sounds amazing. Your life, your soundtrack, your Bose.</h3>
-          <section className="sns-gallery">
-            {/* ul map으로 여러 개 만들기 */}
-            {sD.map((item, index) => (
-              <ul key={index}>
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting && !entry.target.paused) {
+          entry.target.pause();
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    videoRefs.current.forEach((video) => {
+      if (video) observer.observe(video);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const handleSlideChange = () => {
+    // 현재 재생 중인 동영상을 멈추기
+    if (activeVideoIndex !== null && videoRefs.current[activeVideoIndex]) {
+      videoRefs.current[activeVideoIndex].pause();
+      setActiveVideoIndex(null);
+    }
+  };
+  //////////////// 코드 무시 구역 ////////////////////////////
+  useEffect(() => {
+    const resizeObserverErrorHandler = () => {
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          console.log("ResizeObserver loop error ignored");
+        }, 0);
+      });
+    };
+    window.addEventListener("error", resizeObserverErrorHandler);
+    return () => {
+      window.removeEventListener("error", resizeObserverErrorHandler);
+    };
+  }, []); //////////////// 코드 무시 구역 ////////////////////////////
+
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+
+  ///////////// 리턴 ////////
+  return (
+    <div className="sns-box">
+      <div className="sns-tit">
+        <h1>Sound is Power</h1>
+        <h3>
+          Looks good. Sounds amazing. Your life, your soundtrack, your Bose.
+        </h3>
+      </div>
+      <section className="sns-gallery-box">
+        <Swiper
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          loop={true}
+          navigation={true}
+          modules={[Navigation, Pagination]}
+          className="mySwiper-sns"
+        //   breakpoints={{
+        //     1200: { slidesPerView: 1 },
+        //   }}
+          onSlideChange={handleSlideChange}
+        >
+          {snsData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <ul className="sns-gallery">
                 {item.map((media, idx) => (
-                  <li key={idx} className={idx === 0 && index === 0 ? "grid-item-2x2" : "grid-item-1x1"}>
-                    {/* 첫 번째 li에는 비디오 태그를 넣고 나머지는 이미지 태그를 넣는다 */}
+                    // ul>li 중 첫번째 li 만 그리드클래스 따로 적용하기
+                  <li
+                    key={idx}
+                    className={idx === 0 ? "grid-item-2x2" : "grid-item-1x1"}
+                  >
+                    {/* 첫번째 li 비디오 출력 / 나머지는 이미지 출력 */}
                     {idx === 0 ? (
-                      <video className="sns-video" ref={videoRef} src={media.src} controls autoPlay muted>
-                      </video>
+                      <video
+                        className="sns-video"
+                        // 동영상 제어하기 : 오류 조정중
+                        ref={(el) => (videoRefs.current[index] = el)}
+                        src={media.src}
+                        controls
+                      ></video>
                     ) : (
-                      <img className="sns-img" src={media.src} alt="gallery" />
+                        <div className="sns-txt-box">
+                            <p className="sns-txt">
+                                <span>
+                                {media.txt}
+                                </span>
+                                </p>
+                          <img className="sns-img" src={media.src} alt="gallery" />
+                      </div>
                     )}
                   </li>
                 ))}
               </ul>
-            ))}
-          </section>
-        </div>
-      );
-}///////////////////////////////////////
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+      
+    </div>
+  );
+}
 
 export default SwiperSns;
-
-/* 
-  return (
-        <div className="sns-box">
-          <h1>Sound is Power</h1>
-          <h3>Looks good. Sounds amazing. Your life, your soundtrack, your Bose.</h3>
-          <section className="sns-gallery">
-           {///////}
-            {sD.map((v, i) => (
-                <ul key={i}>
-                    {
-                      v.map((p, j) =>
-                    <li key={j}>
-                   
-                    </li>)  
-                    }
-    
-                </ul>
-            ))}
-              </section>
-            </div>
-          );
-*/

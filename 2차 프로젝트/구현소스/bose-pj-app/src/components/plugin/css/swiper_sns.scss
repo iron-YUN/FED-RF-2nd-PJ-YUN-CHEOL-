@@ -1,53 +1,203 @@
-/* SnsArea.css */
+.sns-tit{
+  padding-top: clamp(50px, 20vh, 100px);
+  filter: invert(1);
+  mix-blend-mode: difference;
+  font-weight: bold;
+  h1{
+    font-size: clamp(24px, 4vw, 100px);
+    letter-spacing: -0.05em;
+    margin-bottom: clamp(12px, 2vw, 24px);
+  }
+  h3{
+    font-size: clamp(16px, 1.5vw, 36px);
+    letter-spacing: -0.05em;
+    margin-bottom: clamp(12px, 2vw, 24px);
+  }
+}
 
 .sns-box {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.sns-gallery-box{
+  padding: 2vw 0;
+}
+.sns-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-item-2x2 {
+  grid-column: span 1; /* 1개의 열을 차지 */
+  grid-row: span 2; /* 2개의 행을 차지 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .sns-video {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    height: 100%;
+    aspect-ratio: 1/2; /* 가로 1칸, 세로 2칸 차지 */
+    object-fit: cover;
+    border-radius: 10px;
   }
-  
-  .sns-gallery {
-    display: grid;
-    grid-gap: 20px;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4개의 열, 각각 1fr로 설정 */
-    grid-template-rows: repeat(2, 1fr); /* 2개의 행, 각각 1fr로 설정 */
-    grid-gap: 10px;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .grid-item-2x2 {
-    grid-column: span 2; /* 2개의 열을 차지 */
-    grid-row: span 2; /* 2개의 행을 차지 */
-  }
-  
-  .grid-item-1x1 {
-    grid-column: span 1; /* 1개의 열을 차지 */
-    grid-row: span 1; /* 1개의 행을 차지 */
-  }
-  
-  .video-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-  }
-  
-  .video-item video {
+}
+
+.grid-item-1x1 {
+  grid-column: span 1; /* 1개의 열을 차지 */
+  grid-row: span 1; /* 1개의 행을 차지 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // aspect-ratio: 1/1;
+
+  .sns-img {
+    aspect-ratio: 1/1;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+  }
+}
+
+
+
+//////////////////////////////////////////////////////////
+.mySwiper-sns{
+  padding-bottom: clamp(50px, 10vh, 100px);
+  .swiper-wrapper{
+    .swiper-slide{
+      padding:0 clamp(50px, 20vh, 100px);
+      box-sizing: border-box;
+    }
+  }
+  .swiper-button-prev,.swiper-button-next{
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    border: 1px solid #131317;
+    border-radius: 50%;
+    transition: opacity .3s ease;
+    color: #131317;
+    background: #fff;
+    &::after{
+      scale: .5;
+    }
+    &:hover{
+      background-color: #484848;
+      border: 2px solid #9191ff;
+      color: #fff;
+    }
   }
   
-  .video-item img {
+  .swiper-button-prev{
+   &::after{
+  }
+  }
+  .swiper-button-next{
+    &::after{
+    }
+  }
+  .swiper-pagination-bullet{
+    // background-color: #fff;
+    // filter: invert(1);
+    mix-blend-mode: difference;
+  }
+}
+
+
+////////////// 모달창 ///////////////////////////////////////////
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px; /* 최대 너비 설정 */
+  height: 80%;
+  max-height: 80%;
+  background-color: white;
+  z-index: 1001;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+.modal-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image {
+  width: 50%;
+  height: auto;
+  object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.sns-txt-box{
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  .sns-img{
+    transition: .5s ease;
+    scale: 1.01;
+  }
+  .sns-txt{
+    overflow-y: auto;
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+    z-index: 10;
+    opacity: 0;
+    box-sizing: border-box;
+    font-size: 1vw;
+    line-height: 1.25;
+    background-color: #00000072;
+    transition: .5s ease;
+    display: flex;
+    align-items: baseline;
+    span{
+      padding: 5vw 1vw;
+      box-sizing: border-box;
+      font-size: clamp(12px, 1.5vw, 20px);
+      color: #fff;
+    }
   }
+  &:hover{
+    .sns-txt{
+      opacity: 1;
+    }
+    .sns-img{
+      scale: 1.2;
+    }
+  }
+}

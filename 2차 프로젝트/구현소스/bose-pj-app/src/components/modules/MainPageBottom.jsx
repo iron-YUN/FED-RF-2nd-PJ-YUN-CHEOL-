@@ -30,7 +30,7 @@ function MainPageBottom() {
     // 스크롤 증감설정구역1 : 내용 나오기 설정
     // 설정 : 탑값 50% 이하일때 제목 나옴
     if (rectTopPer >= -200 && rectTopPer <= 100) {
-      console.log("달려", rectTopPer);
+      // console.log("달려", rectTopPer);
 
       if (rectTopPer <= 40) {
         tit.classList.add("on1");

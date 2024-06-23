@@ -88,47 +88,40 @@
       }
     }
   }
-  .swiper{
-    // padding: 0 3vw;
-    // width: 100%;
-    // box-sizing: border-box;
-    // padding-top: clamp(50px, 20vh, 100px);
+  .mySwiper-rd{
     padding-bottom: clamp(50px, 20vh, 100px);
-  }
-  .swiper-wrapper{
-    // width: 100%;
-    // box-sizing: border-box;
-    // padding: 0 3vw;
-  }
-  .swiper-button-prev,.swiper-button-next{
-    // position: absolute;
-    top:92%;
-    // top: 100%;
-    width: 30px;
-    height: 30px;
-    padding: 8px;
-    border: 1px solid #131317;
-    border-radius: 50%;
-    transition: opacity .3s ease;
-    color: #131317;
-    background: #fff;
-    &::after{
-      scale: .5;
+    .swiper-wrapper{
     }
-    &:hover{
-      background-color: #484848;
-      border: 2px solid #9191ff;
-      color: #fff;
+    .swiper-button-prev,.swiper-button-next{
+      // position: absolute;
+      top:92%;
+      // top: 100%;
+      width: 30px;
+      height: 30px;
+      padding: 8px;
+      border: 1px solid #131317;
+      border-radius: 50%;
+      transition: opacity .3s ease;
+      color: #131317;
+      background: #fff;
+      &::after{
+        scale: .5;
+      }
+      &:hover{
+        background-color: #484848;
+        border: 2px solid #9191ff;
+        color: #fff;
+      }
     }
-  }
-  
-  .swiper-button-prev{
-   left: 45.5%;
-   &::after{
-  }
-  }
-  .swiper-button-next{
-    left: 52.5%;
-    &::after{
+    
+    .swiper-button-prev{
+     left: 45.5%;
+     &::after{
+    }
+    }
+    .swiper-button-next{
+      left: 52.5%;
+      &::after{
+      }
     }
   }
