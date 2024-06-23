@@ -6,7 +6,6 @@ import {snsIconMenu } from "../data/icons";
 // import "../../css/sns.scss";
 
 function Sns() {
-console.log(selData);
   // 코드리턴
   return (
     <div className="">

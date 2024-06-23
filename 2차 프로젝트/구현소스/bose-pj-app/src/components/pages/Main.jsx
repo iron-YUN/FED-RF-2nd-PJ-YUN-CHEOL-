@@ -6,6 +6,8 @@ import MainPageTop from "../modules/MainPageTop";
 import MainPageRd from "../modules/MainPageRd";
 import MainPageBottom from "../modules/MainPageBottom";
 import MainPageMiddle from "../modules/MainPageMiddle";
+import SnsArea from "../modules/SnsArea";
+import SwiperSns from "../plugin/SwiperSns";
 
 export default function Main() {
      // 바디색 바꾸기
@@ -45,7 +47,9 @@ export default function Main() {
           {/* 동영상 영역 */}
           <MainPageBottom />
         </div>
-        <div className="sns-area"></div>
+        <div className="sns-area">
+          <SwiperSns />
+        </div>
       </section>
     </>
   );

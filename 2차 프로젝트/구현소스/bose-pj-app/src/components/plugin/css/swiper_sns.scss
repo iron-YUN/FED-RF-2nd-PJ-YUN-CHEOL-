@@ -1,0 +1,53 @@
+/* SnsArea.css */
+
+.sns-box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .sns-gallery {
+    display: grid;
+    grid-gap: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개의 열, 각각 1fr로 설정 */
+    grid-template-rows: repeat(2, 1fr); /* 2개의 행, 각각 1fr로 설정 */
+    grid-gap: 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .grid-item-2x2 {
+    grid-column: span 2; /* 2개의 열을 차지 */
+    grid-row: span 2; /* 2개의 행을 차지 */
+  }
+  
+  .grid-item-1x1 {
+    grid-column: span 1; /* 1개의 열을 차지 */
+    grid-row: span 1; /* 1개의 행을 차지 */
+  }
+  
+  .video-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .video-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }

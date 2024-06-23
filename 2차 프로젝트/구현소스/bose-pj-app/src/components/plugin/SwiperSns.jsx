@@ -4,7 +4,9 @@ import { useState } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 
-function SnsArea() {
+import "./css/swiper_sns.scss";
+
+function SwiperSns() {
     // 상태값 설정
     const [isVisible, setIsVisible] = useState(false);
     const videoRef = useRef(null);
@@ -16,7 +18,9 @@ function SnsArea() {
         const options = {
           root: null,
           rootMargin: "0px",
-          threshold: 0.5, // IntersectionObserver가 작동할 기준 화면 비율 (0.5는 절반 이상 보이면 작동)
+            // IntersectionObserver가 작동할 기준 
+            // 화면 비율 (0.5는 절반 이상 보이면 작동)
+          threshold: 0.5, 
         };
     
         const observer = new IntersectionObserver((entries) => {
@@ -50,7 +54,7 @@ function SnsArea() {
             {sD.map((item, index) => (
               <ul key={index}>
                 {item.map((media, idx) => (
-                  <li key={idx}>
+                  <li key={idx} className={idx === 0 && index === 0 ? "grid-item-2x2" : "grid-item-1x1"}>
                     {/* 첫 번째 li에는 비디오 태그를 넣고 나머지는 이미지 태그를 넣는다 */}
                     {idx === 0 ? (
                       <video className="sns-video" ref={videoRef} src={media.src} controls autoPlay muted>
@@ -65,9 +69,9 @@ function SnsArea() {
           </section>
         </div>
       );
-}
+}///////////////////////////////////////
 
-export default SnsArea;
+export default SwiperSns;
 
 /* 
   return (
