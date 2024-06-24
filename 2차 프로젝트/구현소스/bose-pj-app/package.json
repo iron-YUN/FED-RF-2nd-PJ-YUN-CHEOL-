@@ -1,4 +1,5 @@
-{
+{ 
+  "homepage": "",
   "name": "bose-pj-app",
   "version": "0.1.0",
   "private": true,
