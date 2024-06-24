@@ -32,12 +32,12 @@ function MainPageBottom() {
     if (rectTopPer >= -200 && rectTopPer <= 100) {
       // console.log("달려", rectTopPer);
 
-      if (rectTopPer <= 40) {
+      if (rectTopPer <= 50) {
         tit.classList.add("on1");
       } else {
         tit.classList.remove("on1");
       }
-      if (rectTopPer <= 0) {
+      if (rectTopPer <= 20) {
         ctit.classList.add("on1");
         infoBox.classList.add("on2");
       } else {
@@ -45,7 +45,7 @@ function MainPageBottom() {
         infoBox.classList.remove("on2");
       }
 
-      if (rectTopPer <= -40) {
+      if (rectTopPer <= -20) {
         spanT[0].classList.add("on1");
         img[0].classList.add("on1");
       } else {
@@ -53,7 +53,7 @@ function MainPageBottom() {
         img[0].classList.remove("on1");
       }
 
-      if (rectTopPer <= -80) {
+      if (rectTopPer <= -60) {
         spanT[0].classList.add("on2");
         spanT[1].classList.add("on1");
         img[0].classList.remove("on1");
@@ -64,7 +64,7 @@ function MainPageBottom() {
         img[1].classList.remove("on1");
       }
 
-      if (rectTopPer <= -120) {
+      if (rectTopPer <= -100) {
         spanT[1].classList.add("on2");
         spanT[2].classList.add("on1");
         img[1].classList.remove("on1");
@@ -75,7 +75,7 @@ function MainPageBottom() {
         img[2].classList.remove("on1");
       }
 
-      if (rectTopPer <= -160) {
+      if (rectTopPer <= -140) {
         spanT[2].classList.add("on2");
         spanT[3].classList.add("on1");
         img[2].classList.remove("on1");
@@ -86,7 +86,7 @@ function MainPageBottom() {
         img[3].classList.remove("on1");
       }
 
-      if (rectTopPer <= -200) {
+      if (rectTopPer <= -180) {
         spanT[3].classList.add("on2");
         spanT[4].classList.add("on1");
         img[3].classList.remove("on1");
