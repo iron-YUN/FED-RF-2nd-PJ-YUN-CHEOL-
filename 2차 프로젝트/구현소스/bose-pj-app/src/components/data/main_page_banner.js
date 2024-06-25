@@ -87,9 +87,9 @@ export const shopPageBan = {
   ],
 };
 export const topVideo = [
-  "./videos/top/0.mp4",
-  "./videos/top/1.mp4",
-  "./videos/top/2.mp4",
-  "./videos/top/3.mp4",
-  "./videos/top/4.mp4",
+  "/videos/top/0.mp4",
+  "/videos/top/1.mp4",
+  "/videos/top/2.mp4",
+  "/videos/top/3.mp4",
+  "/videos/top/4.mp4",
 ];

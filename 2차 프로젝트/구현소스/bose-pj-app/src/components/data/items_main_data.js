@@ -11,7 +11,7 @@ const headphones = [
     MainType: "Headphones",
     SubType: "Over-ear",
     color: ["sand_stone", "black", "white_smoke"],
-    isrc: `./images/headphones/`,
+    isrc: `/images/headphones/`,
   },
   {
     idx: "1",
@@ -20,7 +20,7 @@ const headphones = [
     MainType: "Headphones",
     SubType: "Over-ear",
     color: ["white_smoke"],
-    isrc: `./images/headphones/`,
+    isrc: `/images/headphones/`,
   },
   {
     idx: "2",
@@ -29,7 +29,7 @@ const headphones = [
     MainType: "Headphones",
     SubType: "Over-ear",
     color: [ "moonstone_blue","black", "white_smoke", "cypress_green",],
-    isrc: `./images/headphones/`,
+    isrc: `/images/headphones/`,
   },
   {
     idx: "3",
@@ -38,7 +38,7 @@ const headphones = [
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["black"],
-    isrc: `./images/headphones/`,
+    isrc: `/images/headphones/`,
   },
   {
     idx: "4",
@@ -47,7 +47,7 @@ const headphones = [
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["black"],
-    isrc: `./images/headphones/`,
+    isrc: `/images/headphones/`,
   },
   {
     idx: "5",
@@ -56,7 +56,7 @@ const headphones = [
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["black"],
-    isrc: `./images/headphones/`,
+    isrc: `/images/headphones/`,
   },
 ]; ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
@@ -68,7 +68,7 @@ const earbuds = [
     MainType: "Earbuds",
     SubType: "In Ear",
     color: [ "moonstone_blue","black", "white_smoke",],
-    isrc: `./images/earbuds/`,
+    isrc: `/images/earbuds/`,
   },
   {
     idx: "1",
@@ -77,7 +77,7 @@ const earbuds = [
     MainType: "Earbuds",
     SubType: "Open Ear",
     color: ["white_smoke","black", ],
-    isrc: `./images/earbuds/`,
+    isrc: `/images/earbuds/`,
   },
   {
     idx: "2",
@@ -86,7 +86,7 @@ const earbuds = [
     MainType: "Earbuds",
     SubType: "Open Ear",
     color: [ "chilled_lilac","black", "white_smoke",],
-    isrc: `./images/earbuds/`,
+    isrc: `/images/earbuds/`,
   },
   {
     idx: "3",
@@ -95,7 +95,7 @@ const earbuds = [
     MainType: "Earbuds",
     SubType: "Open Ear",
     color: ["black", "white_smoke",],
-    isrc: `./images/earbuds/`,
+    isrc: `/images/earbuds/`,
   },
 ]; ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
@@ -107,7 +107,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["blue_dusk","black", ],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "1",
@@ -122,7 +122,7 @@ const speakers = [
       "cypress_green",
       "stone_blue",
     ],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "2",
@@ -131,7 +131,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["triple_black", "luxe_silver"],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "3",
@@ -140,7 +140,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["black","stone_blue", "white_smoke"],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "4",
@@ -149,7 +149,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: [ "luxe_silver","triple_black",],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "5",
@@ -158,7 +158,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["triple_black", "luxe_silver"],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "6",
@@ -167,7 +167,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Portable",
     color: ["triple_black", "luxe_silver"],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "7",
@@ -176,7 +176,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Home Speakers",
     color: ["white","black", ],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "8",
@@ -185,7 +185,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Home Speakers",
     color: ["luxe_silver","triple_black", ],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
   {
     idx: "9",
@@ -194,7 +194,7 @@ const speakers = [
     MainType: "Speakers",
     SubType: "Amplifiers",
     color: ["black",],
-    isrc: `./images/speakers/`,
+    isrc: `/images/speakers/`,
   },
 ]; ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
@@ -206,7 +206,7 @@ const homeTheater = [
     MainType: "Home Theater",
     SubType: "Soundbars",
     color: ["black", "arctic_white"],
-    isrc: `./images/hometheater/`,
+    isrc: `/images/hometheater/`,
   },
   {
     idx: "1",
@@ -215,7 +215,7 @@ const homeTheater = [
     MainType: "Home Theater",
     SubType: "Soundbars",
     color: ["black"],
-    isrc: `./images/hometheater/`,
+    isrc: `/images/hometheater/`,
   },
   {
     idx: "2",
@@ -224,7 +224,7 @@ const homeTheater = [
     MainType: "Home Theater",
     SubType: "Soundbars",
     color: ["black"],
-    isrc: `./images/hometheater/`,
+    isrc: `/images/hometheater/`,
   },
   {
     idx: "3",
@@ -233,7 +233,7 @@ const homeTheater = [
     MainType: "Home Theater",
     SubType: "Bass modules",
     color: ["black"],
-    isrc: `./images/hometheater/`,
+    isrc: `/images/hometheater/`,
   },
   {
     idx: "4",
@@ -242,7 +242,7 @@ const homeTheater = [
     MainType: "Home Theater",
     SubType: "Bass modules",
     color: ["bose_black", "arctic_white"],
-    isrc: `./images/hometheater/`,
+    isrc: `/images/hometheater/`,
   },
   {
     idx: "5",
@@ -251,7 +251,7 @@ const homeTheater = [
     MainType: "Home Theater",
     SubType: "Surround speakers",
     color: ["bose_black", "arctic_white"],
-    isrc: `./images/hometheater/`,
+    isrc: `/images/hometheater/`,
   },
   {
     idx: "6",
@@ -260,7 +260,7 @@ const homeTheater = [
     MainType: "Home Theater",
     SubType: "Surround speakers",
     color: ["bose_black", "arctic_white"],
-    isrc: `./images/hometheater/`,
+    isrc: `/images/hometheater/`,
   },
 ]; ///////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
@@ -272,7 +272,7 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Portable PA",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
   {
     idx: "1",
@@ -281,7 +281,7 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
   {
     idx: "2",
@@ -290,7 +290,7 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
   {
     idx: "3",
@@ -299,7 +299,7 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
   {
     idx: "4",
@@ -308,7 +308,7 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Sub-woofers",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
   {
     idx: "5",
@@ -317,7 +317,7 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Sub-woofers",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
   {
     idx: "6",
@@ -326,7 +326,7 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Sub-woofers",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
   {
     idx: "7",
@@ -335,7 +335,7 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Mixers",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
   {
     idx: "8",
@@ -344,20 +344,20 @@ const paSystems = [
     MainType: "PA Systems",
     SubType: "Mixers",
     color: ["black"],
-    isrc: `./images/pasystem/`,
+    isrc: `/images/pasystem/`,
   },
 ];
 
 
 const headphonesSub={
-  src: `./images/headphones/items_sub_ban/`,
+  src: `/images/headphones/items_sub_ban/`,
   tit1: `Leveled-up listening`,
   stit1: `Bose QuietComfort Ultra Headphones`,
   tit2: `Best noise cancelling headphones`,
   stit2: `Discover features and find your perfect fit.`,
 };
 const earbudsSub={
-  src: `./images/earbuds/items_sub_ban/`,
+  src: `/images/earbuds/items_sub_ban/`,
   tit1: `All-day comfort`,
   stit1: `Tennis pro Ben Shelton sports Ultra Open Earbuds.`,
   tit2: `Open-ear vs in-ear:`,
@@ -366,14 +366,14 @@ const earbudsSub={
   stit3: `Customize and purchase QuietComfort Ultra Earbuds on Colorware.com`,
 };
 const speakersSub={
-  src: `./images/speakers/items_sub_ban/`,
+  src: `/images/speakers/items_sub_ban/`,
   tit1: `Run the vibe`,
   stit1: `Introducing the new Bose SoundLink Max Portable Speaker`,
   tit2: `Unleashing the energy`,
   stit2: `DJ and Producer John Summit on how he sets the vibe and starts the party.`,
 };
 const homeTheaterSub={
-  src: `./images/hometheater/items_sub_ban/`,
+  src: `/images/hometheater/items_sub_ban/`,
   tit1: `“Makes the sound come alive”`,
   stit1: `~ Pinnerman08`,
   tit2: `What is Dolby Atmos?`,
@@ -382,7 +382,7 @@ const homeTheaterSub={
   stit3: `Bose Smart Soundbar 600`,
 };
 const paSystemsSub={
-  src: `./images/pasystem/items_sub_ban/`,
+  src: `/images/pasystem/items_sub_ban/`,
   tit1: `Transform sound into something more`,
   stit1: `S1 Pro+ Wireless PA System: Add any vibe, anywhere you play`,
   tit2: `The best PA systems for live music`,

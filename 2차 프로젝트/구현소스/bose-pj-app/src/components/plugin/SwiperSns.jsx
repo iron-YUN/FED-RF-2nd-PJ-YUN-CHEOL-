@@ -81,7 +81,7 @@ function SwiperSns() {
         <Swiper
           slidesPerView={1}
           pagination={{ clickable: true }}
-          loop={true}
+          // loop={true}
           navigation={true}
           modules={[Navigation, Pagination]}
           className="mySwiper-sns"
@@ -115,7 +115,7 @@ function SwiperSns() {
                                 {media.txt}
                                 </span>
                                 </p>
-                          <img className="sns-img" src={media.src} alt="gallery" />
+                          <img className="sns-img" src={process.env.PUBLIC_URL+media.src} alt="gallery" />
                       </div>
                     )}
                   </li>
