@@ -1,5 +1,27 @@
 /* Search 모듈용 CSS - searching.css  */
-
+// 검색결과 있음
+.result{
+    h1{ margin-top: clamp(12px,3vw,36px);
+        color: #383838;
+        font-size: clamp(24px,5vw,60px);
+    }
+    h2{ margin-top: clamp(12px,3vw,36px);
+        color: #686868;
+        font-size: clamp(12px,3vw,36px);
+        margin-bottom: clamp(12px,3vw,36px);
+    }
+}
+// 검색결과없음
+.no_result{
+    h1{ margin-top: clamp(12px,3vw,36px);
+        color: #383838;
+        font-size: clamp(24px,5vw,60px);
+    }
+    h2{ margin-top: clamp(12px,3vw,36px);
+        color: #686868;
+        font-size: clamp(12px,3vw,36px);
+    }
+}
 /* 검색입력창 박스 */
 .searching{
     width: 250px;
@@ -34,9 +56,10 @@ input:focus{
 /* 검색박스 */
 .schbx{
     font-family: 'Ubuntu Condensed', sans-serif;
-    display: flex;
-    max-width: 1320px;
-    min-height: 600px;
+    // display: flex;
+    width: 80%;
+    // max-width: 1320px;
+    // min-height: 600px;
     padding: 20px;
     margin: 20px auto;
     /* border: 1px solid #000; */
@@ -109,3 +132,4 @@ input:checked+.chklb::before{
     color: #fff;
     line-height: 0;
 }
+

@@ -17,7 +17,7 @@ import Pasystems from "./components/pages/Pasystems";
 import Explore from "./components/pages/Explore";
 import Support from "./components/pages/Support";
 import SearchPage from "./components/pages/SearchPage";
-import CatDetail from "./components/pages/CatDetail";
+import ShopDetail from "./components/pages/ShopDetail";
 
 import { scrolled, setPos } from "./components/modules/smoothScroll24";
 
@@ -48,7 +48,7 @@ export default function MainComponent(){
           {/* 기타페이지 */}
           <Route path="Explore" element={<Explore/>} />
           <Route path="Support" element={<Support/>} />
-          {/* <Route path="detail" element={<CatDetail />} /> */}
+          {/* <Route path="detail" element={<ShopDetail />} /> */}
           <Route path="search" element={<SearchPage />} />
         </Route>
      </Routes>

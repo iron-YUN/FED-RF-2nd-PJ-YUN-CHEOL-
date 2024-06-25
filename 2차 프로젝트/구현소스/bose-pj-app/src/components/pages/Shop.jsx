@@ -1,6 +1,7 @@
 // 코믹스페이지 컴포넌트 ///
 
 import Banner from "../modules/Banner";
+import MainPageRd from "../modules/MainPageRd";
 import ShopArea from "../modules/ShopArea";
 import ShopItems from "../modules/ShopItems";
 import ShopTit from "../modules/ShopTit";
@@ -25,6 +26,8 @@ export default function Shop() {
         <ShopItems catName="PA Systems" />
         {/* 왜 보스인가 모듈 */}
         <WhyBuyFromBose />
+        {/* 랜덤 추천 제품 */}
+        <MainPageRd />
       </div>
     </>
   );

@@ -51,6 +51,21 @@
 }
 
 @media screen and (max-width: 768px) {
+  .why-bose-section {
+
+  
+  .why-bose-box {
+    .why-bose-flex {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      .why-bose {
+        padding-right: clamp(20px, 3vw, 50px);
+      }
+    }
+  }  }
+}
+@media screen and (max-width: 768px) {
   .why-bose-box {
     .why-bose-flex {
       display: grid;

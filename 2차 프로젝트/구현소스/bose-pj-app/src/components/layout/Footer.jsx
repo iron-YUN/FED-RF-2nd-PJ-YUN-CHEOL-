@@ -26,7 +26,7 @@ export default function FooterArea() {
             placeholder="Email address"
           />
           <button type="submit" className="btn-secondary">
-            <span className="btn_text">SEND</span>
+            <span className="btn-text">SEND</span>
           </button>
         </div>
       </div>
@@ -34,7 +34,7 @@ export default function FooterArea() {
         <ul className="about-link1">
           {Object.keys(bmData).map((v, i) => (
             <li key={i}>
-              {v}
+              <p className="link-tit">{v}</p>
               <ol>
                 {bmData[v].map((v, i) => (
                   <li key={i}>

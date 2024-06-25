@@ -90,5 +90,13 @@ export const banData = {
       cont: ``,
       btn: "DISCOVER",
     },
+  Search: 
+    {
+      src: "url(/images/main_ban/search.webp) no-repeat center / cover",
+      tit1: "Find Your Desired Bose Products",
+      tit2: "Experience Bose Whenever You Want",
+      cont: ``,
+      btn: "DISCOVER",
+    },
   
 };

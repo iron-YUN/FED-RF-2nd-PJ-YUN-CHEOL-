@@ -1,92 +1,224 @@
 // 하단영역 css
-.footer-area{
-    background-color: #000;
-    /////////////////////////////////////////////////////////////////////
-.info {
+.footer-area {
+  background-color: #000;
+  /////////////////////////////////////////////////////////////////////
+  .info {
     width: 80%;
     margin: 0 auto;
     white-space: nowrap;
     /////////////////////////////////////////////////////////////////////
-  a {
+    a {
+      color: #fff;
+    }
+    padding: 30px;
     color: #fff;
-  }
-  padding: 30px;
-  color: #fff;
-  .from-container {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1vw;
-    .send-email-tit {
-        width: clamp(200px, 60vw, 600px);
+    .from-container {
+      margin: 0 auto;
       display: flex;
-      align-items: center;
-      span {
-        white-space: wrap;
-        font-size: clamp(20px, 1.5vw, 24px);
-        font-weight: bold;
+      gap: 1vw;
+      .send-email-tit {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        span {
+          white-space: wrap;
+          font-size: clamp(20px, 1.5vw, 24px);
+          font-weight: bold;
+        }
+      }
+      .input-holder {
+        display: flex;
+        box-sizing: border-box;
+        gap: 3px;
+        .input-send {
+          width: clamp(300px, 30vw, 600px);
+          background: #f8f8f8;
+          // color: #131317;
+          font-size: 24px;
+          padding: 10px;
+          // color: #495057;
+          background-color: #fff;
+          border: 1px solid #ced4da;
+        }
+        .btn-secondary {
+          width: clamp(105px, 5vw, 120px);
+          height: 50px;
+          position: relative;
+          padding: 10px;
+          .btn-text {
+            font-size: 24px;
+          }
+        }
       }
     }
-    .input-holder {
-        // width: 100%;
+
+    /////////////////////////////////////////////////////////////////////
+    .footer-md {
+      line-height: 1.7;
+      margin-top: 50px;
       display: flex;
+      .about-link1 {
+        display: flex;
+        gap: 30px;
+        .link-tit{
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      .footer-app {
+        margin-left: clamp(10px, 15vw, 150px);
+      }
+    }
+    /////////////////////////////////////////////////////////////////////
+
+    .sns-box {
+    }
+
+    /////////////////////////////////////////////////////////////////////
+    .about-link2 {
+      margin-top: 50px;
+      padding-bottom: 50px;
       box-sizing: border-box;
-      gap: 3px;
-      .input-send {
-        width: clamp(300px, 30vw, 600px);
-        background: #f8f8f8;
-        // color: #131317;
-        padding: 12px 12px 12px 16px;
-        // color: #495057;
-        background-color: #fff;
-        border: 1px solid #ced4da;
-      }
-      .btn-secondary {
-        flex: 1;
-        width: clamp(105px, 5vw, 120px);
-        // max-width: 100%;
-        border-radius: 2px;
-        height: 50px;
-        position: relative;
-      }
-    }
-  }
- 
-  /////////////////////////////////////////////////////////////////////
-  .footer-md {
-    line-height: 1.7;
-    margin-top: 50px;
-    display: flex;
-    .about-link1 {
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
     }
-    .footer-app {
-      margin-left: clamp(10px,10vw,150px)
-    }
+    /////////////////////////////////////////////////////////////////////
   }
-  /////////////////////////////////////////////////////////////////////
-
-  .sns-box {
-  }
-
-  /////////////////////////////////////////////////////////////////////
-  .about-link2 {
-    margin-top: 50px;
-    padding-bottom: 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  /////////////////////////////////////////////////////////////////////
 }
-}
-
 
 ////////////////////////////////////////////////////////////////////
-@media screen and (max-width: 1100px) {
-    .from-container {
-        flex-wrap: wrap;
+@media screen and (max-width: 1250px) {
+  .footer-area {
+    .info {
+      .from-container {
+        // 이메일 설명
+        .send-email-tit {
+          span {
+          }
+        }
+        .input-holder {
+          .input-send {
+          }
+          .btn-secondary {
+            .btn-text {
+            }
+          }
+        }
+      }
+      .footer-md{
+        flex-direction: column;
+        .about-link1{
+          margin-bottom: 50px;
+        }
+        .footer-app{
+          display: flex;
+          justify-content: space-evenly;
+          margin-left: 0;
+        }
+      }
     }
+  }
+}
+@media screen and (max-width: 1100px) {
+  .footer-area {
+    .info {
+      .from-container {
+        flex-direction: column;
+        // 이메일 설명
+        .send-email-tit {
+          width: 80%;
+          span {
+          }
+        }
+        .input-holder {
+          .input-send {
+            width: clamp(100px, 50vw, 600px);
+          }
+          .btn-secondary {
+            .btn-text {
+            }
+          }
+        }
+      }
+      .footer-md{
+
+        .about-link1{
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+        }
+        .footer-app{
+
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer-area {
+    .info {
+      .from-container {
+        flex-wrap: wrap;
+        // 이메일 설명
+        .send-email-tit {
+          span {
+          }
+        }
+        .input-holder {
+          .input-send {
+            padding: 5px;
+            font-size: 16px;
+          }
+          .btn-secondary {
+            .btn-text {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .footer-md{
+
+        .about-link1{
+          font-size: 12px;
+          .link-tit{
+            font-size: 16px;
+          }
+        }
+        .footer-app{
+
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .footer-area {
+    .info {
+      .from-container {
+        // 이메일 설명
+        .send-email-tit {
+          span {
+          }
+        }
+        .input-holder {
+          .input-send {
+          }
+          .btn-secondary {
+            .btn-text {
+            }
+          }
+        }
+      }
+      .footer-md{
+
+        .about-link1{
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+        }
+        .footer-app{
+
+        }
+      }
+    }
+  }
 }

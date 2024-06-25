@@ -1,8 +1,11 @@
 import React from 'react';
+import Banner from '../modules/Banner';
 import Searching from '../modules/Searching';
+import WhyBuyFromBose from '../modules/WhyBuyFromBose';
 
 // 라우터 전달변수값 받기위해
 import { useLocation } from 'react-router-dom';
+import MainPageRd from '../modules/MainPageRd';
 
 function SearchPage() {
     // 라우터 전달값 받기 객체 생성
@@ -15,10 +18,11 @@ function SearchPage() {
     // 코드 리턴구역 //////////
     return (
         <>
-        <h1 className='tit'>
-            검색좀해봐 ssiba
-        </h1>
+        <Banner catName="Search"/>
         <Searching kword={keyword} />
+        <WhyBuyFromBose />
+        {/* 랜덤 추천 제품 */}
+        <MainPageRd />
     </>
     );
 }

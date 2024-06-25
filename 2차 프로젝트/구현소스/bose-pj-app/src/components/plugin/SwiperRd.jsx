@@ -159,7 +159,7 @@ export function SwiperRd({ catName }) {
         // 스와이퍼 사이즈별 슬라이드수 변경!
         breakpoints={{
           200: {
-              slidesPerView: 1,
+              slidesPerView: 2,
           },
           500: {
               slidesPerView: 2,

@@ -89,12 +89,12 @@
     }
   }
   .mySwiper-rd{
-    padding-bottom: clamp(50px, 20vh, 100px);
+    padding-bottom: clamp(70px, 20vw, 100px);
     .swiper-wrapper{
     }
     .swiper-button-prev,.swiper-button-next{
       // position: absolute;
-      top:88%;
+      top:90%;
       // top: 100%;
       width: 30px;
       height: 30px;
@@ -134,4 +134,22 @@
         translate: -50% !important;
       }
       
+  }
+  @media screen and (max-width: 768px) {
+    .mySwiper-rd{
+      .swiper-button-prev,.swiper-button-next{
+          width: 20px;
+          height: 20px;
+          //  transform: translateY(-20px);
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .mySwiper-rd{
+      .swiper-button-prev,.swiper-button-next{
+          width: 20px;
+          height: 20px;
+          //  transform: translateY(-20px);
+      }
+    }
   }

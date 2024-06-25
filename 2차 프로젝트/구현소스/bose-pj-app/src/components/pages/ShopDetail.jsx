@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 // CSS불러오기
 // import "../../css/cat_detail.scss";
 
-function CatDetail() {
+function ShopDetail() {
   // 라우터 호출시 전달한 값을 받는다!
   const loc = useLocation();
   const cname = loc.state.cname;
@@ -79,4 +79,4 @@ function CatDetail() {
   );
 }
 
-export default CatDetail;
+export default ShopDetail;

@@ -1,5 +1,6 @@
 .shop-item{
   padding-top: 20px;
+  padding-bottom: 40px;
   box-sizing: border-box;
   width: 80vw;
   display: grid;
@@ -111,6 +112,18 @@
     @media screen and (max-width: 768px) {
       .shop-item{
         grid-template-columns: repeat(2, 1fr);
+      }
+      .wish{
+        svg{
+          width: 20px;
+          height: 20px;
+          // fill: red;
+        }
+      }
+  }
+    @media screen and (max-width: 400px) {
+      .shop-item{
+        grid-template-columns: repeat(1, 1fr);
       }
       .wish{
         svg{

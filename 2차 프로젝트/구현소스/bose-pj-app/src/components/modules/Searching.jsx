@@ -26,8 +26,6 @@ keyObj.forEach(v=>{
 //   ...searchProd[keyObj[3]],
 //   ...searchProd[keyObj[4]],
 // ];
-
-
 console.log("새데이터:",selData);
 
 
@@ -43,7 +41,13 @@ function Searching({kword}) {
 
     const lastData = selData.filter(v=>{
       let pname = v.name.toLowerCase();
-      if(pname.indexOf(kw)!=-1) return true;
+      pname = pname.indexOf(kw)!=-1;
+      let mtype = v.MainType.toLowerCase();
+      mtype = mtype.indexOf(kw)!=-1
+      let stype = v.SubType.toLowerCase();
+      stype = stype.indexOf(kw)!=-1
+      let cType = v.color.some(color => color.toLowerCase().indexOf(kw) !== -1);
+      if(pname || mtype || stype || cType) return true;
     });
 
     console.log("최종데이터:",lastData);
@@ -55,12 +59,20 @@ function Searching({kword}) {
       <section className="schbx">
         {
           lastData.length > 0 &&
+          <>
+          <div className="result">
+          <h1>No results found.</h1>
+          <h2>Search results for:  <span>"{kword}"</span></h2>
+        </div>
         <SearchShopItems data={lastData} />
+          </>
         }
         {
           lastData.length === 0 &&
           <div className="no_result">
-            <h1>더 발전적으로 검색해 보세요~!!!</h1>
+            <h1>No results found.</h1>
+            <h2>Search results for:  <span>"{kword}"</span></h2>
+            <h2>Please search by product name.</h2>
           </div>
         }
       </section>
