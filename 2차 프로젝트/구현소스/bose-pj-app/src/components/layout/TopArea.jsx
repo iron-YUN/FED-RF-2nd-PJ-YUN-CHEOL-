@@ -216,10 +216,10 @@ const myCon = useContext(bCon);
       <header className="top-area">
         {/* 메뉴박스 */}
         <div className="icon-menu-box">
+          <div className="icon-box">
           <Link to={"/"} onClick={initSet}>
             <Logo logoStyle="top" />
           </Link>
-          <div className="icon-box">
             <ul className="icon-menu">
               <li onClick={() => toggleMenu()}>
                 {isMenuOpen ? <CloseMenuIcon /> : <HamburgerMenuIcon />}
@@ -253,7 +253,9 @@ const myCon = useContext(bCon);
                 ////////////////////////////////////////////////
               }
             </ul>
-            <div className="search">
+
+          </div>
+          <div className="search">
               <input
                 type="text"
                 name="schinGnb"
@@ -263,7 +265,6 @@ const myCon = useContext(bCon);
                 // onKeyUp={()=>enterKey()}
               />
             </div>
-          </div>
         </div>
         {/* 네비게이션 GNB파트 */}
         <nav className="gnb">

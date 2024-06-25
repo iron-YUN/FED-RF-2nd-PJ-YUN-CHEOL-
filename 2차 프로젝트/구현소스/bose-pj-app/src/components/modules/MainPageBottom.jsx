@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // 이미지 동영상 데이터불러오기
-import { mainPageBan2 } from "../data/main_page_banner";
+import { mainPageBan } from "../data/main_page_banner";
 import $ from "jquery";
 // css 불러오기
 import "./css/main_page_bottom.scss";
@@ -127,10 +127,10 @@ function MainPageBottom() {
   ////////////////////////////////////////////////////////////
 
   ////////////////////////////////////////////////////////////
-  const mData = mainPageBan2[0]; // 버리지말아주쇼
-  const iData = mainPageBan2[1]; // 버리지말아주쇼
-  const tData = mainPageBan2[2]; // 버리지말아주쇼
-  const lData = mainPageBan2[3]; // 버리지말아주쇼
+  const mData = mainPageBan[0]; // 버리지말아주쇼
+  const iData = mainPageBan[1]; // 버리지말아주쇼
+  const tData = mainPageBan[2]; // 버리지말아주쇼
+  const lData = mainPageBan[3]; // 버리지말아주쇼
   ////////////////////////////////////////////////////////////
   return (
     <div id="culture">
