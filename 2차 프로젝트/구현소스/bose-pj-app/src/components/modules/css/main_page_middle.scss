@@ -2,7 +2,7 @@ $font-12 : 12px;
 $font-16 : 16px;
 .rec-buy-now-box {
   margin: 0 auto;
-  max-width: 80vw;
+  width: 80%;
   padding-bottom: clamp(100px, 40vh, 200px);
   box-sizing: border-box;
   height: 100%;
@@ -10,14 +10,15 @@ $font-16 : 16px;
   flex-direction: column;
   .rec-100-1{
     padding: 0 $font-12;
-    height: 80vh;
+    height: 40vw;
     margin-bottom: $font-12*2;
     .box-pad {
       // background: url(../../../../public/images/main_ban_middle/1.webp) no-repeat
       // center / cover;
-      h2 {
-        letter-spacing: -0.05em;
-        font-size: $font-12*8;
+      h1 {
+        letter-spacing: +0.05em;
+        font-size: clamp(30px,5vw,65px);
+        line-height: 1.3;
         font-weight: bold;
       }
     }
@@ -26,10 +27,11 @@ $font-16 : 16px;
     display: flex;
   }
   .rec-100-2 {
-    height: 80vh;
-    h2 {
-      letter-spacing: -0.04em;
-      font-size: $font-12*5;
+    height: 40vw;
+    h1 {
+      letter-spacing: +0.05em;
+      font-size: clamp(20px,3vw,50px);
+      line-height: 1.3;
       font-weight: bold;
     }
     .rec-50-1 {
@@ -56,19 +58,18 @@ $font-16 : 16px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: $font-12*4;
+  padding: clamp(12px , 3vw , 48px);
   box-sizing: border-box;
   color: #fff;
   justify-content: flex-end;
   h3 {
-    letter-spacing: -0.04em;
-    margin-top: $font-12*2;
-    font-size: $font-12*2;
+    margin-top:clamp(12px , 3vw , 24px);
+    font-size:clamp(16px , 1.5vw , 48px);
   }
   a {
-    margin-top: $font-16*2;
+    padding: clamp(10px , 1vw , 20px);
+    margin-top: clamp(24px , 2vw , 48px);
     width: $font-12*10;
-    height: $font-12*4;
     background-color: #fff;
     color: #131317;
     border: 2px solid transparent;

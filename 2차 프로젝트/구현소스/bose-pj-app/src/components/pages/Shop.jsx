@@ -4,6 +4,7 @@ import Banner from "../modules/Banner";
 import ShopArea from "../modules/ShopArea";
 import ShopItems from "../modules/ShopItems";
 import ShopTit from "../modules/ShopTit";
+import WhyBuyFromBose from "../modules/WhyBuyFromBose";
 
 export default function Shop() {
   return (
@@ -22,6 +23,8 @@ export default function Shop() {
         <ShopItems catName="Home Theater" />
         <div className="shop-tit-box"><h2>PA Systems</h2></div>
         <ShopItems catName="PA Systems" />
+        {/* 왜 보스인가 모듈 */}
+        <WhyBuyFromBose />
       </div>
     </>
   );

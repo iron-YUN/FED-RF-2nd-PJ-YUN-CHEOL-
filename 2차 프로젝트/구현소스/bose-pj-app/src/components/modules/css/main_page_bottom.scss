@@ -68,11 +68,13 @@ body.hidden {
 .cat-info-box {
   position: absolute;
   z-index: 10;
-  padding: 10% 3% 2%;
+  padding: 10% 0 2%;
   box-sizing: border-box;
   display: flex;
   height: 100%;
-  width: 100%;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
   // 나오기 애니 설정
   top: 20%;
   transition: 1s;
@@ -168,10 +170,11 @@ body.hidden {
     position: absolute;
     bottom: 10%;
     background-color: #fff;
-    padding: 1vw;
+    padding: clamp(10px,1vw,20px);
     transition: .3s ease;
     span{
-      font-size: 1vw;
+      white-space: nowrap;
+      font-size: clamp(12px,2vw,24px);
       letter-spacing: -0.05em;
       font-weight: bold;
     }

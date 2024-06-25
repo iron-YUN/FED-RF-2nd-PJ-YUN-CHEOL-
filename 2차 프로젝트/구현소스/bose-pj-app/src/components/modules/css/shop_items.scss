@@ -2,7 +2,6 @@
   padding-top: 20px;
   box-sizing: border-box;
   width: 80vw;
-  // display: flex;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
@@ -11,7 +10,6 @@
 
 .item-cat-cont {
     -webkit-user-drag: none;
-      // flex-basis: ;
       position: relative;
       z-index: 0;
       &:hover {

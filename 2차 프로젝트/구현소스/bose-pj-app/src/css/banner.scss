@@ -10,19 +10,19 @@
       font-weight: bold;
       margin-bottom: 12px;
       font-size: clamp(16px, 2vw, 36px);
-      text-shadow: 0 0 2px #282828;
+      // text-shadow: 0 0 2px #282828;
     }
     h1{
-      text-shadow: 0 0 2px #282828;
-      letter-spacing: -0.05em;
+      // text-shadow: 0 0 2px #282828;
+      letter-spacing: +0.05em;
       line-height: 1.3;
       font-size: clamp(36px, 5vw, 96px);
       font-weight: bold;
       margin-bottom: clamp(12px, 2vw, 24px);
     }
     h2{
-      text-shadow: 0 0 2px #282828;
-      letter-spacing: -0.04em;
+      letter-spacing: +0.05em;
+      // text-shadow: 0 0 2px #282828;
       font-size: clamp(16px, 2vw, 36px);
       font-weight: bold;
       margin-bottom: 12px;

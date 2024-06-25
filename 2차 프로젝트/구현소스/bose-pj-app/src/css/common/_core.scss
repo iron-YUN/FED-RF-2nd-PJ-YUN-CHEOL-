@@ -1,6 +1,22 @@
 /*드래그 선택 안되게 하는 CSS*/
+// 폰트
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+// font-family: "Anton", sans-serif;
+
 body{
   overflow-x: hidden;
+  h1{
+    font-family: "Anton", sans-serif;
+  }
+  h2{
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+  }
+  h3{
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+  }
 }
 .none-sel {
     user-select: none;

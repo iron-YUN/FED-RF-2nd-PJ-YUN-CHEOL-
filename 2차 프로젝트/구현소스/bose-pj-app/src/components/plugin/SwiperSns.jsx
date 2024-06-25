@@ -105,7 +105,7 @@ function SwiperSns() {
                         className="sns-video"
                         // 동영상 제어하기 : 오류 조정중
                         ref={(el) => (videoRefs.current[index] = el)}
-                        src={media.src}
+                        src={process.env.PUBLIC_URL+media.src}
                         controls
                       ></video>
                     ) : (

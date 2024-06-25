@@ -4,13 +4,14 @@
   mix-blend-mode: difference;
   font-weight: bold;
   h1{
+    color: #484848;
     font-size: clamp(24px, 4vw, 100px);
-    letter-spacing: -0.05em;
+    // letter-spacing: -0.05em;
     margin-bottom: clamp(12px, 2vw, 24px);
   }
   h3{
     font-size: clamp(16px, 1.5vw, 36px);
-    letter-spacing: -0.05em;
+    // letter-spacing: -0.05em;
     margin-bottom: clamp(12px, 2vw, 24px);
   }
 }
@@ -109,6 +110,9 @@
     // filter: invert(1);
     mix-blend-mode: difference;
   }
+  .swiper-pagination-bullet-active {
+    // background: #fff;
+}
 }
 
 
@@ -200,4 +204,9 @@
       scale: 1.2;
     }
   }
+}
+
+
+@media screen and (max-width: 768px) {
+
 }

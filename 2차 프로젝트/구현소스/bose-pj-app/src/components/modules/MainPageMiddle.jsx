@@ -22,7 +22,7 @@ function MainPageMiddle() {
       <section className="rec-buy-now">
         <div className="rec-100-1 rec-100">
           <div className="box-pad" style={{ background: `${rdItem[0].src}` }}>
-            <h2>{rdItem[0].tit1}</h2>
+            <h1>{rdItem[0].tit1}</h1>
             <h3>{rdItem[0].tit2}</h3>
             <Link>
               <span>BUY NOW</span>
@@ -32,7 +32,7 @@ function MainPageMiddle() {
         <div className="rec-100-2 rec-100 ">
           <div className="rec-50-1 ">
             <div className="box-pad" style={{ background: `${rdItem[1].src}` }}>
-              <h2>{rdItem[1].tit1}</h2>
+              <h1>{rdItem[1].tit1}</h1>
               <h3>{rdItem[1].tit2}</h3>
               <Link>
               <span>BUY NOW</span>
@@ -41,7 +41,7 @@ function MainPageMiddle() {
           </div>
           <div className="rec-50-2 ">
             <div className="box-pad" style={{ background: `${rdItem[2].src}` }}>
-              <h2>{rdItem[2].tit1}</h2>
+              <h1>{rdItem[2].tit1}</h1>
               <h3>{rdItem[2].tit2}</h3>
               <Link>
               <span>BUY NOW</span>
