@@ -404,6 +404,13 @@ export const products2 = {
  "PA Systems":  paSystems,
  "SHOP":  products, // map을 못돌림 idx 값 중복으로 확인됨
 };
+export const searchProd = {
+ "Headphones": headphones,
+ "Earbuds":  earbuds,
+ "Speakers":  speakers,
+ "Home Theater":  homeTheater,
+ "PA Systems":  paSystems,
+};
 export const productsSub = {
   "Headphones": headphonesSub,
   "Earbuds":  earbudsSub,

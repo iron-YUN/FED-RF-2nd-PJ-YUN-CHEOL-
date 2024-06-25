@@ -94,7 +94,7 @@
     }
     .swiper-button-prev,.swiper-button-next{
       // position: absolute;
-      top:92%;
+      top:88%;
       // top: 100%;
       width: 30px;
       height: 30px;
@@ -115,14 +115,23 @@
     }
     
     .swiper-button-prev{
-     left: 45.5%;
+     left: 50%;
+     translate: calc(-50% - 40px);
      &::after{
     }
     }
     .swiper-button-next{
-      left: 52.5%;
+      left: 50%;
+      translate: calc(-50% + 40px);
       &::after{
       }
     }
+    
+      .swiper-pagination {
+        width: auto !important;
+        left: 50% !important; 
+        transform: none;
+        translate: -50% !important;
+      }
+      
   }
-  
