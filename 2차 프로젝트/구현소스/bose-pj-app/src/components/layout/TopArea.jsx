@@ -1,6 +1,6 @@
 // 상단영역 컴포넌트 ///
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 // import React, { useState, useEffect, useNavigate } from "react";
 
 import { bCon } from "../modules/bCon";
@@ -30,13 +30,13 @@ import { scrolled, setPos } from "../modules/smoothScroll24";
 import Logo from "../modules/Logo";
 
 export default function TopArea() {
-// 전역 컨텍스트 사용하기
-const myCon = useContext(bCon);
+  // 전역 컨텍스트 사용하기
+  const myCon = useContext(bCon);
 
   // 햄버거 버튼을 X버튼으로 바꾸기위한 설정
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuOpen2, setIsMenuOpen2] = useState(false);
-  
+
   //  메뉴박스 오른쪽칸에 들어갈 map 이미지들 변수 ////////////
   const menuSrcV = Object.values(menuSrc);
   const menuSrcK = Object.keys(menuSrc);
@@ -50,11 +50,6 @@ const myCon = useContext(bCon);
   let menuLiArray;
   let rightImg;
   let closeMenu;
-
-
-
-
-
 
   useEffect(() => {
     const svgIcons = document.querySelectorAll(".top-area svg");
@@ -127,8 +122,6 @@ const myCon = useContext(bCon);
       setIsMenuOpen(true);
     }; ///////////////////////////////////////////////
 
-    
-
     // 검색창 나오기 ->> 메뉴바와 별도로!!!!! 기능추가
     // mFn.addEvt(icon5, "click", function (e) ); ////////// 검색창 클릭 이벤트 ////////
 
@@ -139,13 +132,6 @@ const myCon = useContext(bCon);
       console.log("순번:", idx);
       $(rightImg).eq(idx).css({ zIndex: 1 }).siblings().css({ zIndex: 0 });
     }); //////////////////// 오버시 //////////////////////////////////
-
-    
-
-
-
-    
-
   }); /////////////// useEffect 도큐먼트 출력후 실행///////////////
   // 초기화셋팅함수
   const initSet = () => {
@@ -156,7 +142,7 @@ const myCon = useContext(bCon);
     // 햄버거 메뉴를 원래모양으로 변경하기
     // 위해  false로 만들고 닫기에서 true로 전환함!
     setIsMenuOpen(false);
-  };////////////////
+  }; ////////////////
 
   // html 햄버거버튼 바꾸기
   const toggleMenu = () => {
@@ -166,11 +152,10 @@ const myCon = useContext(bCon);
 
   const searchBtnFn = (e) => {
     e.stopPropagation();
-    if(search.classList.contains("active")){
+    if (search.classList.contains("active")) {
       search.classList.remove("active");
       searchInput.classList.remove("active");
-    }
-    else{
+    } else {
       search.classList.add("active");
       searchInput.classList.add("active");
     }
@@ -199,6 +184,9 @@ const myCon = useContext(bCon);
       if (txt != "") {
         // 검색 보내기
         goSearch(txt);
+        if (isMenuOpen) {
+          $(".icon-menu li").first().trigger("click");
+        }
       } //// if ////
     } ///// if ////
   }; /////// enterKey ////////
@@ -208,7 +196,7 @@ const myCon = useContext(bCon);
     console.log("나는 검색하러 간다규!!~!~");
     // 라우터 이동함수로 이동하기
     // 네비게이트메서드(라우터주소,{state:{보낼값}})
-    goNav("search", { state: { keyword : txt } });
+    goNav("search", { state: { keyword: txt } });
   }; ////////// goSearch /////
   return (
     <>
@@ -217,9 +205,9 @@ const myCon = useContext(bCon);
         {/* 메뉴박스 */}
         <div className="icon-menu-box">
           <div className="icon-box">
-          <Link to={"/"} onClick={initSet}>
-            <Logo logoStyle="top" />
-          </Link>
+            <Link to={"/"} onClick={initSet}>
+              <Logo logoStyle="top" />
+            </Link>
             <ul className="icon-menu">
               <li onClick={() => toggleMenu()}>
                 {isMenuOpen ? <CloseMenuIcon /> : <HamburgerMenuIcon />}
@@ -234,9 +222,7 @@ const myCon = useContext(bCon);
                 <CartIcon />
               </li>
               {/* <li onClick={()=>showSearch()}> */}
-              <li 
-              onClick={searchBtnFn} 
-              className="search-li">
+              <li onClick={searchBtnFn} className="search-li">
                 <SearchIcon />
               </li>
 
@@ -253,18 +239,17 @@ const myCon = useContext(bCon);
                 ////////////////////////////////////////////////
               }
             </ul>
-
           </div>
           <div className="search">
-              <input
-                type="text"
-                name="schinGnb"
-                placeholder="Filter by keyword"
-                id="schinGnb"
-                onKeyUp={enterKey}
-                // onKeyUp={()=>enterKey()}
-              />
-            </div>
+            <input
+              type="text"
+              name="schinGnb"
+              placeholder="Filter by keyword"
+              id="schinGnb"
+              onKeyUp={enterKey}
+              // onKeyUp={()=>enterKey()}
+            />
+          </div>
         </div>
         {/* 네비게이션 GNB파트 */}
         <nav className="gnb">
@@ -278,7 +263,9 @@ const myCon = useContext(bCon);
                     // 없으면 Link 라우팅출력 >>> 필요없음
                     // v.sub ? (<a href="#">{v.txt}</a>)
                     //    : (<Link to={v.link}>{v.txt}</Link>)
-                    <Link to={v.link} onClick={initSet}>{v.txt}</Link>
+                    <Link to={v.link} onClick={initSet}>
+                      {v.txt}
+                    </Link>
                   }
                   {
                     // 서브메뉴 데이터가 있으면 하위 그리기
@@ -287,8 +274,9 @@ const myCon = useContext(bCon);
                         <ol>
                           {v.sub.map((v, i) => (
                             <li key={i}>
-                              <Link to={v.link} onClick={initSet}>{v.txt}</Link>
-                              
+                              <Link to={v.link} onClick={initSet}>
+                                {v.txt}
+                              </Link>
                             </li>
                           ))}
                         </ol>

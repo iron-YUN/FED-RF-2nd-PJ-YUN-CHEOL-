@@ -21,6 +21,7 @@
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+  user-select: none;
 }
 .sns-gallery-box{
   padding: 2vw 0;
@@ -36,11 +37,21 @@
 }
 
 .grid-item-2x2 {
+  position: relative;
   grid-column: span 1; /* 1개의 열을 차지 */
   grid-row: span 2; /* 2개의 행을 차지 */
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 68px);
+  }
 
   .sns-video {
     width: 100%;
