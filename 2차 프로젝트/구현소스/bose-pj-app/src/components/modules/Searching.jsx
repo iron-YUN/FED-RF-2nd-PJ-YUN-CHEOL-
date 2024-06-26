@@ -63,6 +63,23 @@ function Searching({kword}) {
           <div className="result">
           <h1>No results found.</h1>
           <h2>Search results for:  <span>"{kword}"</span></h2>
+                {/* 2-2. 정렬선택박스 */}
+                <aside className="sortbx">
+            <select
+              name="sel"
+              id="sel"
+              className="sel"
+              // 값을 변경할때 이벤트발생
+              onChange={(e) => {
+                console.log(e.target.value);
+                // 정렬기준 상태변수 업데이트
+                setSort(e.target.value);
+              }}
+            >
+              <option value="asc">A-Z</option>
+              <option value="desc">Z-A</option>
+            </select>
+          </aside>
         </div>
         <SearchShopItems data={lastData} />
           </>
