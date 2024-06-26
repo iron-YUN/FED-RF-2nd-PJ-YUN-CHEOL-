@@ -35,7 +35,7 @@ console.log("새데이터:", selData);
 function Searching({ kword }) {
   // kword - 전달받은 키워드
   console.log("kword:", kword);
-
+  const [sort, setSort] = useState("asc");
   let kw = kword.toLowerCase();
 
   const lastData = selData.filter((v) => {
@@ -47,25 +47,28 @@ function Searching({ kword }) {
     stype = stype.indexOf(kw) != -1;
     let cType = v.color.some((color) => color.toLowerCase().indexOf(kw) !== -1);
     if (pname || mtype || stype || cType) return true;
+
+    
   });
+  // console.log("최종데이터:", lastData);
 
-  console.log("최종데이터:", lastData);
 
-  const [sort, setSort] = useState("asc");
   // [ 정렬기능 추가하기 ] /////////
   // (1) 오름차순일 경우
+  // lastData.map((v,i)=> v.name);
   if (sort == "asc") {
     lastData.sort((a, b) =>
-      a.cname > b.cname ? 1 : a.cname < b.cname ? -1 : 0
-    );
+      a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+      );
+      // console.log("lastData:", lastData);
   } /// if ///////////////////////
   // (2) 내림차순일 경우
   else if (sort == "desc") {
     lastData.sort((a, b) =>
-      a.cname > b.cname ? -1 : a.cname < b.cname ? 1 : 0
+      a.name > b.name ? -1 : a.name < b.name ? 1 : 0
     );
+    // console.log("lastData:", lastData);
   } /// else if ///////////////////
-
 
   // 코드 리턴구역 ////////////////////////
   return (

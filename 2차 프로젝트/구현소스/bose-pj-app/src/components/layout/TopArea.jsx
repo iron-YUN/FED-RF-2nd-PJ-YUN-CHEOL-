@@ -182,8 +182,11 @@ export default function TopArea() {
       console.log(txt);
       // 빈값이 아니면 검색함수 호출(검색어전달)
       if (txt != "") {
+        // 입력창 비우기
+        $(e.target).val("");
         // 검색 보내기
         goSearch(txt);
+        // 메뉴창 닫기
         if (isMenuOpen) {
           $(".icon-menu li").first().trigger("click");
         }
@@ -197,6 +200,7 @@ export default function TopArea() {
     // 라우터 이동함수로 이동하기
     // 네비게이트메서드(라우터주소,{state:{보낼값}})
     goNav("search", { state: { keyword: txt } });
+    window.scrollTo(0, 0);
   }; ////////// goSearch /////
   return (
     <>

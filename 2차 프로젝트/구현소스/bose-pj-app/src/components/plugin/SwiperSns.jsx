@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-
+import $ from "jquery";
 // 데이터
 import { snsData } from "../data/sns_data";
 // 스와이퍼
@@ -87,7 +87,14 @@ function SwiperSns() {
     let mytg = document.querySelector(".mySwiper-sns");
     let winH = window.innerHeight / 2;
     let vidSts = true;
+
     const scSwp = (e) => {
+      // 웹표준 에러 음소거 준비
+      $(document).ready(function() {
+        // 첫 번째 슬라이드의 첫 번째 비디오 요소를 선택하여 muted 설정
+        $(".mySwiper-sns li:first-child video").prop("muted", true);
+        
+        // 설정
       let pos = mytg.getBoundingClientRect().top;
       console.log(pos);
       if (pos < winH && vidSts) {
@@ -99,7 +106,13 @@ function SwiperSns() {
         vidSts = true;
         console.log("한번만 실행", vidSts);
       }
+    });
     };
+
+
+
+
+
 
     window.addEventListener("scroll", scSwp);
 

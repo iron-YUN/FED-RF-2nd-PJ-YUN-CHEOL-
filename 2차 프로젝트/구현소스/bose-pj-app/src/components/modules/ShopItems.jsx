@@ -75,7 +75,7 @@ function ShopItems({ catName }) {
     <>
       <div className="shop-item">
         <div
-          className="item-cat-cont cont-0 cont-common"
+          className=" cont-0 cont-common"
           style={{ background: sbData.src1 }}
         >
           <h1>{sbData.tit1}</h1>
