@@ -28,6 +28,7 @@ import "../../css/top_area.scss";
 import { scrolled, setPos } from "../modules/smoothScroll24";
 // 로고 불러오기
 import Logo from "../modules/Logo";
+import SnsLink from "../modules/SnsLink";
 
 export default function TopArea() {
   // 전역 컨텍스트 사용하기
@@ -113,7 +114,7 @@ export default function TopArea() {
 
     // 메뉴 닫기 함수
     closeMenu = () => {
-      console.log("상태값!!", isMenuOpen);
+      // console.log("상태값!!", isMenuOpen);
       // 메뉴창이 열려있을 때 동작해야 하는 로직을 여기에 작성
       gnb.classList.remove("active");
       search.classList.remove("active");
@@ -129,7 +130,7 @@ export default function TopArea() {
       // 이벤트 타겟이 하위 요소라도 가장 가까운 li 부모 요소 찾기
       let menuLi = e.currentTarget;
       let idx = menuLiArray.indexOf(menuLi);
-      console.log("순번:", idx);
+      // console.log("순번:", idx);
       $(rightImg).eq(idx).css({ zIndex: 1 }).siblings().css({ zIndex: 0 });
     }); //////////////////// 오버시 //////////////////////////////////
   }); /////////////// useEffect 도큐먼트 출력후 실행///////////////
@@ -137,7 +138,7 @@ export default function TopArea() {
   const initSet = () => {
     window.scrollTo(0, 0);
     myCon.setPos(0);
-    console.log("호출!");
+    // console.log("호출!");
     closeMenu();
     // 햄버거 메뉴를 원래모양으로 변경하기
     // 위해  false로 만들고 닫기에서 true로 전환함!
@@ -146,7 +147,7 @@ export default function TopArea() {
 
   // html 햄버거버튼 바꾸기
   const toggleMenu = () => {
-    console.log(isMenuOpen);
+    // console.log(isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
   }; ////////////////////
 
@@ -167,7 +168,7 @@ export default function TopArea() {
   const goNav = useNavigate();
   // 1.검색창 보이기 함수
   const showSearch = (e) => {
-    console.log(isMenuOpen);
+    // console.log(isMenuOpen);
     // 기본기능막기
     // e.preventDefault();
     // 2.입력창
@@ -179,7 +180,7 @@ export default function TopArea() {
     if (e.key == "Enter") {
       // 입력창의 입력값 읽어오기 : val()사용
       let txt = $(e.target).val().trim();
-      console.log(txt);
+      // console.log(txt);
       // 빈값이 아니면 검색함수 호출(검색어전달)
       if (txt != "") {
         // 입력창 비우기
@@ -196,7 +197,7 @@ export default function TopArea() {
 
   // 3.검색페이지로 검색어와 함께 이동하기 함수
   const goSearch = (txt) => {
-    console.log("나는 검색하러 간다규!!~!~");
+    // console.log("나는 검색하러 간다규!!~!~");
     // 라우터 이동함수로 이동하기
     // 네비게이트메서드(라우터주소,{state:{보낼값}})
     goNav("search", { state: { keyword: txt } });
@@ -229,19 +230,6 @@ export default function TopArea() {
               <li onClick={searchBtnFn} className="search-li">
                 <SearchIcon />
               </li>
-
-              {
-                /////////////////////////////////////////////////////
-                // iconMenu.map((v, i) => (
-                // <li key={i} onClick={() => (
-                //   i === 0
-                //   ? toggleMenu()
-                //   : null )}>
-                //   {isMenuOpen && i === 0 ? <CloseMenuIcon /> : v}
-                // </li>
-                // ))
-                ////////////////////////////////////////////////
-              }
             </ul>
           </div>
           <div className="search">
@@ -289,6 +277,7 @@ export default function TopArea() {
                   }
                 </li>
               ))}
+            <li className="sns-link-box"><SnsLink/></li>
             </ul>
           </div>
           {/* 메뉴박스 오른쪽칸 이미지들 */}

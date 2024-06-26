@@ -77,7 +77,7 @@ export function SwiperRd({ catName }) {
      // 1. 1~2개 랜덤넘버
      const rNum = Math.ceil(Math.random() * 2); // 1 또는 2
      // const rNum = Math.floor(Math.random() * 2)+1; // 1 또는 2
-     console.log("난 1개내지 2개",rNum)
+    //  console.log("난 1개내지 2개",rNum)
  
      // 2. 선택된 아이템들을 배열로 담을 준비
      const items = [];

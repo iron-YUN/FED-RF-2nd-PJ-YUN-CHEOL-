@@ -1,3 +1,8 @@
+// 폰트어썸
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// 폰트어썸 whybuybose 
+import { faCircleUser,} from "@fortawesome/free-regular-svg-icons";
+import { faHandHoldingDollar,faCalendarDays,faTruckFast  } from "@fortawesome/free-solid-svg-icons";
 
 export const HamburgerMenuIcon = ({ onClick }) => (
   <svg
@@ -116,7 +121,7 @@ export const InstagramIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="3"
+    strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
@@ -134,7 +139,7 @@ export const FacebookIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="3"
+    strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
@@ -150,7 +155,7 @@ export const TwitterIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="3"
+    strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
@@ -166,7 +171,7 @@ export const YoutubeIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="3"
+    strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
@@ -185,13 +190,40 @@ export const iconMenu = [
   <SearchIcon />,
 ];
 
-export const snsIconMenu = [
-{txt :<InstagramIcon />,
-link : "https://www.instagram.com/bose/" },
-{txt :<FacebookIcon />,
-link :"https://www.facebook.com/Bose/"},
-{txt :<TwitterIcon />,
-link :"https://x.com/bose"},
-{txt :<YoutubeIcon />,
-link :"https://www.youtube.com/user/bose"},
+export const whyData = [
+  {
+    icon: <FontAwesomeIcon icon={faCalendarDays} />,
+    txt1: "90-day return policy",
+    txt2: "Try it for 90 days to make sure it’s right for you.",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faHandHoldingDollar} />,
+    txt1: "Price match promise",
+    txt2: "Shop confidently. We’ll match a lower price.",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faTruckFast} />,
+    txt1: "Complimentary shipping & returns",
+    txt2: "On in-stock orders of $49 or more.",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faCircleUser} />,
+    txt1: "My Bose perks",
+    txt2: "My Bose members get access to exclusive experiences, offers, and more.",
+  },
 ];
+
+export const snsIconMenu = [
+  {comp :<InstagramIcon />,
+    txt : "InstagramIcon",
+  link : "https://www.instagram.com/bose/" },
+  {comp :<TwitterIcon />,
+    txt : "TwitterIcon",
+  link :"https://x.com/bose"},
+  {comp :<FacebookIcon />,
+    txt : "FacebookIcon",
+  link :"https://www.facebook.com/Bose/"},
+  {comp :<YoutubeIcon />,
+    txt : "YoutubeIcon",
+  link :"https://www.youtube.com/user/bose"},
+  ];

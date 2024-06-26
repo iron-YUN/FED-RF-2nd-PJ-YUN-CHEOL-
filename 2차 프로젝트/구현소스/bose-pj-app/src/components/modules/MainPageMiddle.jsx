@@ -16,7 +16,7 @@ function MainPageMiddle() {
     // 위에서 rdIdx 에 담은 순번을 Headphones[랜덤수] 로 리턴해 getRdItem 에 담는다.
   }; ////////////// 랜덤1 함수 getRdItem ////////////
   const rdItem = getRdItem(middleBan);
-  console.log(rdItem);
+  // console.log(rdItem);
   return (
     <div className="rec-buy-now-box">
       <section className="rec-buy-now">

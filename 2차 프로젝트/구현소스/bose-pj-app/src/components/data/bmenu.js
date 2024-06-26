@@ -94,10 +94,12 @@ const bmData = {
 
 const bmData2 = [
   {
-    text: "Bose app",
-    link: "https://www.bose.com/apps/bose-app",
-  },
-  {
+     src : "/images/logo/Music_App.webp",
+     text: "Bose app",
+     link: "https://www.bose.com/apps/bose-app",
+    },
+    {
+    src : "/images/logo/Connect_App.png",
     text: "Bose Connect App",
     link: "https://www.bose.com/apps/bose-connect",
   },

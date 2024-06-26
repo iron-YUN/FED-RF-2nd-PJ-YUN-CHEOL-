@@ -9,10 +9,10 @@ import "../../css/searching.scss";
 import { searchProd } from "../data/items_main_data";
 import SearchShopItems from "./SearchShopItems";
 import { useState } from "react";
-console.log("이거!", searchProd);
+// console.log("이거!", searchProd);
 
 let keyObj = Object.keys(searchProd);
-console.log("키배열:", keyObj);
+// console.log("키배열:", keyObj);
 
 let selData = [];
 // 배열안의 배열이므로 두번 forEach() 처리한다!
@@ -27,7 +27,7 @@ keyObj.forEach((v) => {
 //   ...searchProd[keyObj[3]],
 //   ...searchProd[keyObj[4]],
 // ];
-console.log("새데이터:", selData);
+// console.log("새데이터:", selData);
 
 // 캐릭터 리스트 결과 컴포넌트
 // import SearchingCat from "./SearchingCat";
@@ -91,7 +91,7 @@ function Searching({ kword }) {
                   className="sel"
                   // 값을 변경할때 이벤트발생
                   onChange={(e) => {
-                    console.log(e.target.value);
+                    // console.log(e.target.value);
                     // 정렬기준 상태변수 업데이트
                     setSort(e.target.value);
                   }}

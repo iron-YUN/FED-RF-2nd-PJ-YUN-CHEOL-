@@ -23,8 +23,8 @@ function SearchShopItems({ data }) {
   // 제품 색상바꾸기 함수
   const colorFn = (e, clr) => {
     e.preventDefault();
-    console.log("나를 선택했군!!", clr);
-    console.log("나를 선택했군!!", e.currentTarget);
+    // console.log("나를 선택했군!!", clr);
+    // console.log("나를 선택했군!!", e.currentTarget);
     // ./images/speakers/1/white_smoke/0.webp
     // 0. 원조대상
     let org = $(e.currentTarget);
@@ -34,13 +34,13 @@ function SearchShopItems({ data }) {
 
     // 2. 대상이미지 src값 읽기
     let isrc = tg.attr("src").split("/");
-    console.log("전isrc:", JSON.stringify(isrc));
+    // console.log("전isrc:", JSON.stringify(isrc));
     // 3. 대상이미지 src값 변경
     isrc[4] = clr;
-    console.log("후isrc:", isrc);
+    // console.log("후isrc:", isrc);
     // 4. 대상이미지경로 복원
     isrc = isrc.join("/");
-    console.log("최종isrc:", isrc);
+    // console.log("최종isrc:", isrc);
     // 5. 대상이미지 src 실제로 변경
     tg.attr("src", isrc);
 

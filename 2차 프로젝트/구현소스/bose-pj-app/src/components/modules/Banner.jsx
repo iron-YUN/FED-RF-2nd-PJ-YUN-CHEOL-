@@ -15,9 +15,9 @@ function Banner({ catName }) {
   // 선택데이터
   const selData = banData[catName];
   // console.log(selData);
-  console.log(selData.src);
+  // console.log(selData.src);
   // 메뉴데이터
-  console.log(subMenu);
+  // console.log(subMenu);
 
   // 코드리턴
   return (

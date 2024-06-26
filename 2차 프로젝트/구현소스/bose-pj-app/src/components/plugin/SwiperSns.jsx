@@ -96,15 +96,15 @@ function SwiperSns() {
         
         // 설정
       let pos = mytg.getBoundingClientRect().top;
-      console.log(pos);
+      // console.log(pos);
       if (pos < winH && vidSts) {
         swObj.current.querySelector("li:first-child video").play();
         vidSts = false;
-        console.log("한번만 실행", vidSts);
+        // console.log("한번만 실행", vidSts);
       } else if (pos > winH && !vidSts) {
         swObj.current.querySelector("li:first-child video").pause();
         vidSts = true;
-        console.log("한번만 실행", vidSts);
+        // console.log("한번만 실행", vidSts);
       }
     });
     };
@@ -147,7 +147,7 @@ function SwiperSns() {
           //   }}
           // onSlideChange={handleSlideChange}
           onSlideChange={(swp) => {
-            console.log(swp.previousIndex);
+            // console.log(swp.previousIndex);
             // let swipeDirection = swp.previousIndex;
             // let num = swp.realIndex;
             // console.log(num);
@@ -158,7 +158,7 @@ function SwiperSns() {
             // if(swp.realIndex !== num){
             let tg = swp.slides[swp.previousIndex];
             tg = tg.querySelector("video");
-            console.log(tg);
+            // console.log(tg);
             tg.pause();
 
             let tg2 = swp.slides[swp.realIndex];
