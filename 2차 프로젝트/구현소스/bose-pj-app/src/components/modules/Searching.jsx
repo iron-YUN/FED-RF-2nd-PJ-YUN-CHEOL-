@@ -8,6 +8,7 @@ import "../../css/searching.scss";
 
 import { searchProd } from "../data/items_main_data";
 import SearchShopItems from "./SearchShopItems";
+import { useState } from "react";
 console.log("이거!", searchProd);
 
 let keyObj = Object.keys(searchProd);
@@ -50,17 +51,17 @@ function Searching({ kword }) {
 
   console.log("최종데이터:", lastData);
 
-
+  const [sort, setSort] = useState("asc");
   // [ 정렬기능 추가하기 ] /////////
   // (1) 오름차순일 경우
   if (sort == "asc") {
-    newList.sort((a, b) =>
+    lastData.sort((a, b) =>
       a.cname > b.cname ? 1 : a.cname < b.cname ? -1 : 0
     );
   } /// if ///////////////////////
   // (2) 내림차순일 경우
   else if (sort == "desc") {
-    newList.sort((a, b) =>
+    lastData.sort((a, b) =>
       a.cname > b.cname ? -1 : a.cname < b.cname ? 1 : 0
     );
   } /// else if ///////////////////
