@@ -142,7 +142,10 @@ function MainPageBottom() {
             <h2 className="craft-tit craft-tit2">{mData.tit1}</h2>
           </div>
           {/* 배경이되는 박스 */}
-          <div className="back-img" style={{ background: `${process.env.PUBLIC_URL+mData.isrc0}` }}>
+          <div
+            className="back-img"
+            style={{ background: `${process.env.PUBLIC_URL + mData.isrc0}` }}
+          >
             {/* <img src={mData.isrc2} alt={mData.tit} className="back-img2"/> */}
           </div>
           {/*section 배경과 겹치는 앱솔루트박스
@@ -152,7 +155,7 @@ function MainPageBottom() {
               <ul className="p-flex-box1">
                 {iData.map((v, i) => (
                   <li className="box1-img" key={i}>
-                    <img src={process.env.PUBLIC_URL+v} alt="img" />
+                    <img src={process.env.PUBLIC_URL + v} alt="img" />
                   </li>
                 ))}
               </ul>
@@ -171,9 +174,9 @@ function MainPageBottom() {
           </section>
           {/* 버튼박스 */}
           <div className="go-box">
-              <a className="p-button" href={lData.link} target="_blank">
-                <span>BECOME A MEMBER</span>
-              </a>
+            <a className="p-button" href={lData.link} target="_blank">
+              <span>BECOME A MEMBER</span>
+            </a>
           </div>
         </div>
       </div>

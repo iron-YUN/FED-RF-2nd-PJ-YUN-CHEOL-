@@ -21,7 +21,10 @@ function MainPageMiddle() {
     <div className="rec-buy-now-box">
       <section className="rec-buy-now">
         <div className="rec-100-1 rec-100">
-          <div className="box-pad" style={{ background: `${process.env.PUBLIC_URL+rdItem[0].src}` }}>
+          <div className="box-pad" style={{ 
+            background:`url(${process.env.PUBLIC_URL+rdItem[0].src})${rdItem[0].back}`
+             
+             }}>
             <h1>{rdItem[0].tit1}</h1>
             <h3>{rdItem[0].tit2}</h3>
             <Link>
