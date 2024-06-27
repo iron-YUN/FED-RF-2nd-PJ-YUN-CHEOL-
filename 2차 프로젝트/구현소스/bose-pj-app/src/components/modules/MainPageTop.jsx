@@ -161,7 +161,7 @@ const MainPageTop = () => {
           <div className="big-box">
             <video
               ref={mainVideoRef}
-              src={selectedVideo}
+              src={process.env.PUBLIC_URL+selectedVideo}
               loop
               autoPlay
               muted={muted}
@@ -174,13 +174,13 @@ const MainPageTop = () => {
           <div className="small-box">
             <video
               ref={smallVideoRef}
-              src={selectedVideo}
+              src={process.env.PUBLIC_URL+selectedVideo}
               loop
               muted={muted}
               className="small-video"
             ></video>
             <div className="logo-box none-sel nonedrag">
-              <img src={logoSrc.svg1} alt="logo " />
+              <img src={process.env.PUBLIC_URL+logoSrc.svg1} alt="logo " />
             </div>
           </div>
         </div>

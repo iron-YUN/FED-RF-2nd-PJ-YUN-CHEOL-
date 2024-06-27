@@ -32,7 +32,7 @@ export default function Logo({ logoStyle }) {
   // 코드리턴구역
   return (
     <div className="logo-box none-sel nonedrag" style={myStyle[logoStyle]}>
-      <img style={imgStyle[logoStyle]} src={isrc.logoW} alt="Bose-logo" />
+      <img style={imgStyle[logoStyle]} src={process.env.PUBLIC_URL+isrc.logoW} alt="Bose-logo" />
     </div>
   );
 } ////////// logo ///////////////////
