@@ -36,7 +36,7 @@ function SearchShopItems({ data }) {
     let isrc = tg.attr("src").split("/");
     // console.log("전isrc:", JSON.stringify(isrc));
     // 3. 대상이미지 src값 변경
-    isrc[4] = clr;
+    isrc[9] = clr;
     // console.log("후isrc:", isrc);
     // 4. 대상이미지경로 복원
     isrc = isrc.join("/");
