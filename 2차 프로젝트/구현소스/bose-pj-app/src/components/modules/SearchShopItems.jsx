@@ -90,7 +90,7 @@ function SearchShopItems({ data }) {
                 <div className="item-p-img">
                   <img
                     idx={v.idx}
-                    src={`${v.isrc}${v.idx}/${rdColor}/0.webp`}
+                    src={`${process.env.PUBLIC_URL+v.isrc}${v.idx}/${rdColor}/0.webp`}
                     alt={v.name}
                   />
                 </div>

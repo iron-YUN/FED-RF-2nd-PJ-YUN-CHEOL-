@@ -283,7 +283,7 @@ export default function TopArea() {
           {/* 메뉴박스 오른쪽칸 이미지들 */}
           <div className="right">
             {menuSrcV.map((v, i) => (
-              <img key={i} src={v} alt={menuSrcK[i]} />
+              <img key={i} src={process.env.PUBLIC_URL+v} alt={menuSrcK[i]} />
             ))}
           </div>
         </nav>

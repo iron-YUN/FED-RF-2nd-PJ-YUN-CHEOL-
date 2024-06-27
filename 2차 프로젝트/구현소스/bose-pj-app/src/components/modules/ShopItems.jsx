@@ -76,7 +76,7 @@ function ShopItems({ catName }) {
       <div className="shop-item">
         <div
           className=" cont-0 cont-common"
-          style={{ background: sbData.src1 }}
+          style={{ background: process.env.PUBLIC_URL+sbData.src1 }}
         >
           <h1>{sbData.tit1}</h1>
           <h3>{sbData.stit1}</h3>
@@ -100,7 +100,7 @@ function ShopItems({ catName }) {
                 <div className="item-p-img">
                   <img
                     idx={v.idx}
-                    src={`${v.isrc}${v.idx}/${rdColor}/0.webp`}
+                    src={`${process.env.PUBLIC_URL+v.isrc}${v.idx}/${rdColor}/0.webp`}
                     alt={v.name}
                   />
                 </div>

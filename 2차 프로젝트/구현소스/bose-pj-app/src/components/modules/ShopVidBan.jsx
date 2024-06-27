@@ -67,7 +67,7 @@ function ShopVidBan({catName}) {
         <div className="mb-box">
             <video
               className="mb-video"
-              src={mData.vsrc}
+              src={process.env.PUBLIC_URL+mData.vsrc}
               controls
               loop
               autoPlay
