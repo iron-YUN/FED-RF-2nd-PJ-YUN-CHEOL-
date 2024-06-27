@@ -37,7 +37,7 @@ function ShopItems({ catName }) {
     let isrc = tg.attr("src").split("/");
     console.log("전isrc:", JSON.stringify(isrc));
     // 3. 대상이미지 src값 변경
-    isrc[4] = clr;
+    isrc[9] = clr;
     console.log("후isrc:", isrc);
     // 4. 대상이미지경로 복원
     isrc = isrc.join("/");
@@ -76,7 +76,7 @@ function ShopItems({ catName }) {
       <div className="shop-item">
         <div
           className=" cont-0 cont-common"
-          style={{ background: process.env.PUBLIC_URL+sbData.src1 }}
+          style={{ background: `url(${sbData.src1})${sbData.back}` }}
         >
           <h1>{sbData.tit1}</h1>
           <h3>{sbData.stit1}</h3>
@@ -137,7 +137,7 @@ function ShopItems({ catName }) {
         })}
         <div
           className="item-cat-cont cont-1 cont-common"
-          style={{ background: sbData.src2 }}
+          style={{ background: `url(${sbData.src2})${sbData.back}` }}
         >
           <h1>{sbData.tit2}</h1>
           <h3>{sbData.stit2}</h3>

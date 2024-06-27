@@ -127,7 +127,7 @@ export function SwiperRd({ catName }) {
      let isrc = tg.attr("src").split("/");
      console.log("전isrc:",JSON.stringify(isrc));
      // 3. 대상이미지 src값 변경
-     isrc[4] = clr;
+     isrc[9] = clr;
      console.log("후isrc:",isrc);
      // 4. 대상이미지경로 복원
      isrc = isrc.join("/");
@@ -198,7 +198,7 @@ export function SwiperRd({ catName }) {
                     <div className="rd-p-img">
                       <img
                         idx={prod.idx}
-                        src={`${process.env.PUBLIC_URL}${prod.isrc}${prod.idx}/${rdColor}/0.webp`}
+                        src={`${process.env.PUBLIC_URL+prod.isrc}${prod.idx}/${rdColor}/0.webp`}
                         alt={prod.name}
                       />
                     </div>
