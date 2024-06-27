@@ -1,0 +1,75 @@
+.rec-buy-now-box {
+  margin: 0 auto;
+  width: 80%;
+  padding-bottom: clamp(100px, 40vh, 200px);
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.rec-buy-now-box .rec-100-1 {
+  padding: 0 12px;
+  height: 40vw;
+  margin-bottom: 24px;
+}
+.rec-buy-now-box .rec-100-1 .box-pad h1 {
+  letter-spacing: 0.05em;
+  font-size: clamp(30px, 5vw, 65px);
+  line-height: 1.3;
+  font-weight: bold;
+}
+.rec-buy-now-box .rec-100:nth-child(2) {
+  display: flex;
+}
+.rec-buy-now-box .rec-100-2 {
+  height: 40vw;
+}
+.rec-buy-now-box .rec-100-2 h1 {
+  letter-spacing: 0.05em;
+  font-size: clamp(20px, 3vw, 50px);
+  line-height: 1.3;
+  font-weight: bold;
+}
+.rec-buy-now-box .rec-100-2 .rec-50-1 {
+  padding: 0 12px;
+  width: 50%;
+}
+.rec-buy-now-box .rec-100-2 .rec-50-2 {
+  flex: 1;
+  padding: 0 12px;
+}
+.box-pad {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(12px, 3vw, 48px);
+  box-sizing: border-box;
+  color: #fff;
+  justify-content: flex-end;
+}
+.box-pad h3 {
+  margin-top: clamp(12px, 3vw, 24px);
+  font-size: clamp(16px, 1.5vw, 48px);
+}
+.box-pad a {
+  padding: clamp(10px, 1vw, 20px);
+  margin-top: clamp(24px, 2vw, 48px);
+  width: 120px;
+  background-color: #fff;
+  color: #131317;
+  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+.box-pad a span {
+  font-size: 16px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.box-pad a:hover {
+  color: #fff;
+  background-color: #131317;
+}/*# sourceMappingURL=main_page_middle.css.map */

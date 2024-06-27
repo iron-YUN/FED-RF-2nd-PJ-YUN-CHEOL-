@@ -1,0 +1,60 @@
+.top-banner {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.top-banner .ban-tit {
+  padding: 2%;
+  color: #ffffff;
+}
+.top-banner .ban-tit h3 {
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: clamp(16px, 2vw, 36px);
+}
+.top-banner .ban-tit h1 {
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  font-size: clamp(36px, 5vw, 96px);
+  font-weight: bold;
+  margin-bottom: clamp(12px, 2vw, 24px);
+}
+.top-banner .ban-tit h2 {
+  letter-spacing: 0.05em;
+  font-size: clamp(16px, 2vw, 36px);
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.top-banner .ban-smenu-box {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 3px;
+}
+.top-banner .ban-smenu-box .ban-smenu {
+  background-color: rgba(255, 255, 255, 0.6274509804);
+  flex: 1;
+  text-align: center;
+  transition: 0.3s ease;
+}
+.top-banner .ban-smenu-box .ban-smenu a {
+  display: inline-block;
+  width: 100%;
+  line-height: 3;
+  white-space: nowrap;
+  font-size: clamp(12px, 1.5vw, 30px);
+  font-weight: bold;
+  color: #383838;
+}
+.top-banner .ban-smenu-box .ban-smenu:hover {
+  background-color: #383838;
+}
+.top-banner .ban-smenu-box .ban-smenu:hover a {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .top-banner {
+    height: 50vh;
+  }
+}/*# sourceMappingURL=banner.css.map */
