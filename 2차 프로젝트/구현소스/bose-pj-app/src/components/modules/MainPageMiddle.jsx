@@ -31,7 +31,7 @@ function MainPageMiddle() {
         </div>
         <div className="rec-100-2 rec-100 ">
           <div className="rec-50-1 ">
-            <div className="box-pad" style={{ background: `${process.env.PUBLIC_URL+rdItem[1].src}` }}>
+            <div className="box-pad" style={{ background: `${rdItem[1].src}` }}>
               <h1>{rdItem[1].tit1}</h1>
               <h3>{rdItem[1].tit2}</h3>
               <Link>

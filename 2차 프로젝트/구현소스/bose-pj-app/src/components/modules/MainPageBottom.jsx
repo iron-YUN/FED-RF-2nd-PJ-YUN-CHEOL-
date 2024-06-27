@@ -142,7 +142,7 @@ function MainPageBottom() {
             <h2 className="craft-tit craft-tit2">{mData.tit1}</h2>
           </div>
           {/* 배경이되는 박스 */}
-          <div className="back-img" style={{ background: `${mData.isrc0}` }}>
+          <div className="back-img" style={{ background: `${process.env.PUBLIC_URL+mData.isrc0}` }}>
             {/* <img src={mData.isrc2} alt={mData.tit} className="back-img2"/> */}
           </div>
           {/*section 배경과 겹치는 앱솔루트박스
