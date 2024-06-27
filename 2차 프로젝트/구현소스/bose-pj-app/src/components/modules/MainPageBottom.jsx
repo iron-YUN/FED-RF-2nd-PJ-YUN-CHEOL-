@@ -144,7 +144,8 @@ function MainPageBottom() {
           {/* 배경이되는 박스 */}
           <div
             className="back-img"
-            style={{ background: `${process.env.PUBLIC_URL + mData.isrc0}` }}
+            style={{ 
+              background: `url(${mData.isrc0})${mData.back}`}}
           >
             {/* <img src={mData.isrc2} alt={mData.tit} className="back-img2"/> */}
           </div>

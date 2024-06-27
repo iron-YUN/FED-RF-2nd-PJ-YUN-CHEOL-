@@ -30,7 +30,8 @@ export const mainPageBan = [
   {
     tit: "CRAFTING THE CULTURE",
     tit1: "Shoot for gold: Victor Solomon x Bose",
-    isrc0: "url(./images/main_ban_bottom/0.webp) no-repeat center / cover",
+    isrc0: process.env.PUBLIC_URL +"/images/main_ban_bottom/0.webp",
+    back : "no-repeat center / cover",
     isrc1: "/images/main_ban_bottom/0.webp",
     isrc2: "/images/main_ban_bottom/1.webp",
   },
