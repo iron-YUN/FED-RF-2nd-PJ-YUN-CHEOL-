@@ -152,7 +152,7 @@ function MainPageBottom() {
               <ul className="p-flex-box1">
                 {iData.map((v, i) => (
                   <li className="box1-img" key={i}>
-                    <img src={v} alt="img" />
+                    <img src={process.env.PUBLIC_URL+v} alt="img" />
                   </li>
                 ))}
               </ul>
