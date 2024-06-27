@@ -22,7 +22,7 @@ function MainPageMiddle() {
       <section className="rec-buy-now">
         <div className="rec-100-1 rec-100">
           <div className="box-pad" style={{ 
-            background:`url(${process.env.PUBLIC_URL+rdItem[0].src})${rdItem[0].back}`
+            background:`url(${rdItem[0].src})${rdItem[0].back}`
              
              }}>
             <h1>{rdItem[0].tit1}</h1>
@@ -34,7 +34,8 @@ function MainPageMiddle() {
         </div>
         <div className="rec-100-2 rec-100 ">
           <div className="rec-50-1 ">
-            <div className="box-pad" style={{ background: `${rdItem[1].src}` }}>
+            <div className="box-pad"
+             style={{ background: `url(${rdItem[1].src})${rdItem[1].back}` }}>
               <h1>{rdItem[1].tit1}</h1>
               <h3>{rdItem[1].tit2}</h3>
               <Link>
@@ -43,7 +44,8 @@ function MainPageMiddle() {
             </div>
           </div>
           <div className="rec-50-2 ">
-            <div className="box-pad" style={{ background: `${process.env.PUBLIC_URL+rdItem[2].src}` }}>
+            <div className="box-pad" 
+            style={{ background: `url(${rdItem[2].src})${rdItem[2].back}` }}>
               <h1>{rdItem[2].tit1}</h1>
               <h3>{rdItem[2].tit2}</h3>
               <Link>
