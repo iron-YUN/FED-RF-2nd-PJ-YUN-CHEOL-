@@ -52,7 +52,7 @@ export default function FooterArea() {
           {bmData2.map((v, i) => (
             <li key={i}>
               <a href={v.link} target="_blank" rel="noopener noreferrer">
-                <img src={v.src} alt="app-img" />
+                <img src={process.env.PUBLIC_URL+v.src} alt="app-img" />
                 <span>{v.text}</span>
               </a>
             </li>
