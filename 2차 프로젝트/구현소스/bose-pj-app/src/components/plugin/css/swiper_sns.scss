@@ -219,8 +219,19 @@
 
 
 @media screen and (max-width: 768px) {
+  .sns-tit{
+    h1{
+width: 90%;
+}
+h3{
+  width: 90%;
+  
+    }
+  }
+      
   .mySwiper-sns .swiper-wrapper .swiper-slide {
-    padding: 0 20px;
+    box-sizing: border-box;
+    width: 90%;
   }
   .sns-box {
     padding: 0;
