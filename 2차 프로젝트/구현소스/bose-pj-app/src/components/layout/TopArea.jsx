@@ -103,8 +103,8 @@ export default function TopArea() {
     // 메뉴창 나오기 이벤트
     function menuOpen() {
       gnb.classList.add("active");
-      search.classList.add("active");
-      searchInput.classList.add("active");
+      //search.classList.add("active");
+      //searchInput.classList.add("active");
       mFn.qs("body").classList.add("hidden");
       if (isMenuOpen) {
         closeMenu();
@@ -114,11 +114,11 @@ export default function TopArea() {
 
     // 메뉴 닫기 함수
     closeMenu = () => {
-      // console.log("상태값!!", isMenuOpen);
+      // console.log("상태값!!", is`MenuOpen);
       // 메뉴창이 열려있을 때 동작해야 하는 로직을 여기에 작성
       gnb.classList.remove("active");
-      search.classList.remove("active");
-      searchInput.classList.remove("active");
+      //search.classList.remove("active");
+      //searchInput.classList.remove("active");
       mFn.qs("body").classList.remove("hidden");
       setIsMenuOpen(true);
     }; ///////////////////////////////////////////////
