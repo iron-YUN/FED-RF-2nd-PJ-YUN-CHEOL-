@@ -15,7 +15,6 @@ function MainPageBottom() {
     // 박스탑
     const rectTop = mbBox.getBoundingClientRect().top;
     const rectTopPer = Math.floor((rectTop / window.innerHeight) * 100);
-
     // 제목 변수할당
     const tit = mbBox.querySelector(".craft-tit1");
     const ctit = mbBox.querySelector(".craft-tit2");
@@ -28,10 +27,8 @@ function MainPageBottom() {
     // 글자 수집
     const spanT = mbBox.querySelectorAll(".p-text");
     // 스크롤 증감설정구역1 : 내용 나오기 설정
-    // 설정 : 탑값 50% 이하일때 제목 나옴
     if (rectTopPer >= -200 && rectTopPer <= 100) {
-      // console.log("달려", rectTopPer);
-
+      // console.log("달려~", rectTopPer);
       if (rectTopPer <= 50) {
         tit.classList.add("on1");
       } else {
@@ -44,7 +41,6 @@ function MainPageBottom() {
         ctit.classList.remove("on1");
         infoBox.classList.remove("on2");
       }
-
       if (rectTopPer <= -20) {
         spanT[0].classList.add("on1");
         img[0].classList.add("on1");
@@ -52,7 +48,6 @@ function MainPageBottom() {
         spanT[0].classList.remove("on1");
         img[0].classList.remove("on1");
       }
-
       if (rectTopPer <= -60) {
         spanT[0].classList.add("on2");
         spanT[1].classList.add("on1");

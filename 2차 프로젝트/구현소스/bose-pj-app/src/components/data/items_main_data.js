@@ -4,7 +4,7 @@
 // https://www.bose.com/c/headphones
 
 const headphones = [
-  { // 현재는 해당 idx 와는 상관없음
+  {
     idx: "0",
     name: "Bose QuietComfort Ultra Headphones",
     price: "$379.00",

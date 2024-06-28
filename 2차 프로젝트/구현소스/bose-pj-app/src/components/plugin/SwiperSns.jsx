@@ -90,29 +90,24 @@ function SwiperSns() {
 
     const scSwp = (e) => {
       // 웹표준 에러 음소거 준비
-      $(document).ready(function() {
+      $(document).ready(function () {
         // 첫 번째 슬라이드의 첫 번째 비디오 요소를 선택하여 muted 설정
         $(".mySwiper-sns li:first-child video").prop("muted", true);
-        
+
         // 설정
-      let pos = mytg.getBoundingClientRect().top;
-      // console.log(pos);
-      if (pos < winH && vidSts) {
-        swObj.current.querySelector("li:first-child video").play();
-        vidSts = false;
-        // console.log("한번만 실행", vidSts);
-      } else if (pos > winH && !vidSts) {
-        swObj.current.querySelector("li:first-child video").pause();
-        vidSts = true;
-        // console.log("한번만 실행", vidSts);
-      }
-    });
+        let pos = mytg.getBoundingClientRect().top;
+        // console.log(pos);
+        if (pos < winH && vidSts) {
+          swObj.current.querySelector("li:first-child video").play();
+          vidSts = false;
+          // console.log("한번만 실행", vidSts);
+        } else if (pos > winH && !vidSts) {
+          swObj.current.querySelector("li:first-child video").pause();
+          vidSts = true;
+          // console.log("한번만 실행", vidSts);
+        }
+      });
     };
-
-
-
-
-
 
     window.addEventListener("scroll", scSwp);
 
@@ -167,22 +162,21 @@ function SwiperSns() {
             // }
           }}
         >
-          {/* sns 자료 뿌려보자고~~~ */}
+          {/* sns  */}
           {snsData.map((item, index) => (
             <SwiperSlide key={index}>
               <ul className="sns-gallery">
                 {item.map((media, idx) => (
-                  // ul>li 중 첫번째 li 만 그리드클래스 따로 적용하기 빠샤~
+                  // ul>li 중 첫번째 li 만 그리드클래스 따로 적용하기
                   <li
                     key={idx}
                     className={idx === 0 ? "grid-item-2x2" : "grid-item-1x1"}
                   >
                     {/* 첫번째 li 에 비디오 출력 /
-                     나머지는 이미지 출력 빠빠샤~! */}
+                     나머지는 이미지 출력 */}
                     {idx === 0 ? (
                       <video
                         className="sns-video"
-                        // 동영상 제어하기 : 오류 조정중
                         ref={(el) => (videoRefs.current[index] = el)}
                         src={process.env.PUBLIC_URL + media.src}
                         controls
