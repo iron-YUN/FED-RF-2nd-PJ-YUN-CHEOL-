@@ -260,4 +260,9 @@
     .mySwiper-sns .swiper-button-prev, .mySwiper-sns .swiper-button-next {
    display: none;
   }
+  .sns-area{
+    .swiper-pagination{
+      display: none;
+    }
+  }
 }
