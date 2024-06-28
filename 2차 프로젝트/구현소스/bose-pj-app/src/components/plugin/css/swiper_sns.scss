@@ -232,11 +232,14 @@
   }
       
   .mySwiper-sns .swiper-wrapper .swiper-slide {
-    box-sizing: border-box;
-    width: 90%;
+    box-sizing: border-box;    
+    width: 100vw !important;
+    padding: 7vw;
   }
   .sns-box {
     padding: 0;
+    min-width: auto !important;
+    width: 100%;
   }
   .sns-gallery {
     display: grid;
