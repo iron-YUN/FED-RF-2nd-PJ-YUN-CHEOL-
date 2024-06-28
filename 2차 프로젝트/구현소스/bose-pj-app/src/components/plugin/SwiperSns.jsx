@@ -180,6 +180,7 @@ function SwiperSns() {
                         ref={(el) => (videoRefs.current[index] = el)}
                         src={process.env.PUBLIC_URL + media.src}
                         controls
+                        playsInline={true}
                       ></video>
                     ) : (
                       <div className="sns-txt-box">

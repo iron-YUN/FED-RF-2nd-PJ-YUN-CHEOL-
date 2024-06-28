@@ -50,7 +50,8 @@ function Searching({ kword }) {
 
     
   });
-  // console.log("최종데이터:", lastData);
+  console.log("최종데이터:", lastData);
+  console.log("최종데이터:", lastData.length);
 
 
   // [ 정렬기능 추가하기 ] /////////
@@ -69,7 +70,7 @@ function Searching({ kword }) {
     );
     // console.log("lastData:", lastData);
   } /// else if ///////////////////
-
+  
   // 코드 리턴구역 ////////////////////////
   return (
     <>
@@ -80,7 +81,7 @@ function Searching({ kword }) {
             <div className="result">
               <h1>No results found.</h1>
               <h2>
-                Search results for: <span>"{kword}"</span>
+                Search results for: <span>"{kword}" , "{lastData.length}" items</span>
               </h2>
               {/* 2-2. 정렬선택박스 */}
             </div>
@@ -107,9 +108,9 @@ function Searching({ kword }) {
           <div className="no_result">
             <h1>No results found.</h1>
             <h2>
-              Search results for: <span>"{kword}"</span>
+              Search results for: <span>"{kword}" , "{lastData.length}" items</span>
             </h2>
-            <h2>Please search by product name.</h2>
+            <h2>Please search by product name, type, color, etc.</h2>
           </div>
         )}
       </section>

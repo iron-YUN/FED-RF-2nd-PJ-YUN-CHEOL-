@@ -163,6 +163,7 @@ const MainPageTop = () => {
               ref={mainVideoRef}
               src={process.env.PUBLIC_URL+selectedVideo}
               loop
+              playsInline={true}
               autoPlay
               muted={muted}
               className="big-video"
@@ -176,6 +177,7 @@ const MainPageTop = () => {
               ref={smallVideoRef}
               src={process.env.PUBLIC_URL+selectedVideo}
               loop
+              playsInline={true}
               muted={muted}
               className="small-video"
             ></video>

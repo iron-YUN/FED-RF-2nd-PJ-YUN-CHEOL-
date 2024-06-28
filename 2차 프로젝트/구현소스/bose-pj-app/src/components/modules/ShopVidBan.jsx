@@ -70,6 +70,7 @@ function ShopVidBan({catName}) {
               src={process.env.PUBLIC_URL+mData.vsrc}
               controls
               loop
+              playsInline={true}
               autoPlay
               muted={muted}
             />
