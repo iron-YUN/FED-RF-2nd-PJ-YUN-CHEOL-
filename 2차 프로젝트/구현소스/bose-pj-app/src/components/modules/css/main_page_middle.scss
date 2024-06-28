@@ -88,3 +88,7 @@ $font-16 : 16px;
     }
   }
 }
+@media screen and (max-width: 508px) {
+  .rec-buy-now-box {
+    width: 100%;}
+}

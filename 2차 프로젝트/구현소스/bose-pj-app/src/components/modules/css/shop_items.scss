@@ -45,6 +45,7 @@
  }
 }
 .item-cat-cont {
+  width: 100%;
     -webkit-user-drag: none;
       position: relative;
       z-index: 0;
@@ -161,7 +162,7 @@
   }
     @media screen and (max-width: 400px) {
       .shop-item{
-        grid-template-columns: repeat(1, 1fr);
+        // grid-template-columns: repeat(2, 1fr);
       }
       .wish{
         svg{
