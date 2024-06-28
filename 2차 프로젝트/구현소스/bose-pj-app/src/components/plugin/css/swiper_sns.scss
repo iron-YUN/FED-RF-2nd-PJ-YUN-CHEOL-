@@ -219,5 +219,32 @@
 
 
 @media screen and (max-width: 768px) {
-
+  .mySwiper-sns .swiper-wrapper .swiper-slide {
+    padding: 0 20px;
+  }
+  .sns-box {
+    padding: 0;
+  }
+  .sns-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  .grid-item-2x2 {
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 68px);
+    }}
+    .mySwiper-sns .swiper-button-prev, .mySwiper-sns .swiper-button-next {
+   display: none;
+  }
 }

@@ -112,17 +112,15 @@ export function SwiperRd({ catName }) {
     return items;
   }; ////////////// 랜덤2 함수 getRdItems ////////////
 
+
+  // 제품 색상 변경 함수
   const colorFn = (e, clr) => {
     e.preventDefault();
-    console.log("나를 선택했군!!", clr);
-    // console.log("나를 선택했군!!",e.currentTarget);
     // ./images/speakers/1/white_smoke/0.webp
     // 0. 원조대상
     let org = $(e.currentTarget);
-
     // 1. 대상이미지선택
     let tg = org.parents(".rd-p-info").prev().find("img");
-
     // 2. 대상이미지 src값 읽기
     let isrc = tg.attr("src").split("/");
     console.log("전isrc:", JSON.stringify(isrc));

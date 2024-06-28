@@ -89,6 +89,17 @@ $font-16 : 16px;
   }
 }
 @media screen and (max-width: 508px) {
+  .box-pad a {
+    padding: 3px;
+  }
   .rec-buy-now-box {
-    width: 100%;}
+    .rec-100-1 {
+      padding: 0 0px;
+      height: 60vw;
+    }
+    .rec-100-2 .rec-50-1,.rec-50-2 {
+      padding: 0 0px;
+      height: 60vw;
+    }
+    width: 100vw;}
 }
