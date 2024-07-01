@@ -49,7 +49,7 @@ export default function MainComponent(){
           {/* 기타페이지 */}
           <Route path="Explore" element={<Explore/>} />
           <Route path="Support" element={<Support/>} />
-          {/* <Route path="detail" element={<ShopDetail />} /> */}
+          <Route path="detail" element={<ShopDetail />} />
           <Route path="search" element={<SearchPage />} />
           <Route path="member" element={<Member />} />
         </Route>

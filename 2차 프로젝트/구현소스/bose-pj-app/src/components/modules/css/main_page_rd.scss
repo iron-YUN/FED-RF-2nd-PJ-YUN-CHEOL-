@@ -28,3 +28,8 @@ body{
   //  max-width: 80vw;
   }
 }
+@media screen and (max-width: 500px) {
+  #recommended {
+    max-width: 95vw;
+  }
+}

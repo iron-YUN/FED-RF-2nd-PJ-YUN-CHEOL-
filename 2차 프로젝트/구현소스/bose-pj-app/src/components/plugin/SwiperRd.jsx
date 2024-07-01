@@ -6,7 +6,7 @@ import React, {
   useLayoutEffect,
   useCallback,
 } from "react";
-
+import { Link } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // 제이쿼리 불러오기
@@ -112,7 +112,6 @@ export function SwiperRd({ catName }) {
     return items;
   }; ////////////// 랜덤2 함수 getRdItems ////////////
 
-
   // 제품 색상 변경 함수
   const colorFn = (e, clr) => {
     e.preventDefault();
@@ -156,10 +155,19 @@ export function SwiperRd({ catName }) {
         // 스와이퍼 사이즈별 슬라이드수 변경!
         breakpoints={{
           200: {
+            slidesPerView: 1,
+          },
+          330: {
+            slidesPerView: 2,
+          },
+          400: {
             slidesPerView: 2,
           },
           500: {
             slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
           },
           1000: {
             slidesPerView: 3,
@@ -177,9 +185,11 @@ export function SwiperRd({ catName }) {
             const rdProduct = getRdItems(v);
             // console.log(rdProduct); // 랜덤오브젝트 확인하기
             return rdProduct.map((prod, j) => {
+              console.log(prod.color);
               // 2.선택된 제품에서의 가지고있는 색 랜덤선택
               const rdColor = getRdItem(prod.color);
               // console.log(rdColor); // 랜덤 컬러 확인하기
+              
               return (
                 <SwiperSlide key={`${i}-${j}`} className="rd-cat-cont">
                   <div className="rd-p-box">
@@ -193,13 +203,24 @@ export function SwiperRd({ catName }) {
                     </span>
                     {/* 2.제품이미지 */}
                     <div className="rd-p-img">
-                      <img
-                        idx={prod.idx}
-                        src={`${process.env.PUBLIC_URL + prod.isrc}${
-                          prod.idx
-                        }/${rdColor}/0.webp`}
-                        alt={prod.name}
-                      />
+                      <Link
+                        to="/detail"
+                        state={{
+                          pname: prod.name,
+                          type: prod.MainType,
+                          idx: prod.idx,
+                          src: prod.isrc,
+                          color:prod.color,
+                        }}
+                      >
+                        <img
+                          idx={prod.idx}
+                          src={`${process.env.PUBLIC_URL + prod.isrc}${
+                            prod.idx
+                          }/${rdColor}/0.webp`}
+                          alt={prod.name}
+                        />
+                      </Link>
                     </div>
                     {/* 3.제품별 정보박스 */}
                     <section className="rd-p-info">
@@ -210,14 +231,18 @@ export function SwiperRd({ catName }) {
                       {/* 3-3.제품색상 */}
                       <div className="rd-p-color-box">
                         {prod.color.map((clr, idx) => (
-                          <div key={idx}
+                          <div
+                            key={idx}
                             className={`color-circle-wrap ${
-                              clr == rdColor ? "on" : ""}`}
-                            onClick={(e) => colorFn(e, clr)}>
+                              clr == rdColor ? "on" : ""
+                            }`}
+                            onClick={(e) => colorFn(e, clr)}
+                          >
                             <div
                               className="color-circle"
                               style={{ backgroundColor: colorList[clr] }}
-                              title={clr}/>
+                              title={clr}
+                            />
                           </div>
                         ))}
                       </div>
