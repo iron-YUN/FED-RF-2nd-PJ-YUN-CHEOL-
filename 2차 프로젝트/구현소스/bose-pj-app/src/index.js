@@ -18,6 +18,7 @@ import Explore from "./components/pages/Explore";
 import Support from "./components/pages/Support";
 import SearchPage from "./components/pages/SearchPage";
 import ShopDetail from "./components/pages/ShopDetail";
+import Member from "./components/pages/Member";
 
 import { scrolled, setPos } from "./components/modules/smoothScroll24";
 
@@ -50,6 +51,7 @@ export default function MainComponent(){
           <Route path="Support" element={<Support/>} />
           {/* <Route path="detail" element={<ShopDetail />} /> */}
           <Route path="search" element={<SearchPage />} />
+          <Route path="member" element={<Member />} />
         </Route>
      </Routes>
     </BrowserRouter>

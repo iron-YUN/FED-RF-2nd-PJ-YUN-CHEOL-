@@ -52,7 +52,25 @@ body.hidden {
           transition: 0.3s;
           &:hover {
             color: #486e8a;
+            a{
+              color: #486e8a;
+              .gnb-tit{
+                // transition: 0.3s;
+                width: auto;
+                opacity: 1;
+              }
+            }
           }
+          a{  
+            transition: 0.3s;
+            color: #fff;}
+            display: flex;
+            .gnb-tit{
+              display: inline-block;
+              font-weight: normal;
+              width: 0;
+              opacity: 0;
+            }
         }
       }
     }

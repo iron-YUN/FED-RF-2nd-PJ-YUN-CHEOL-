@@ -1,14 +1,12 @@
 // 상단영역 컴포넌트 ///
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-// import React, { useState, useEffect, useNavigate } from "react";
-
 import { bCon } from "../modules/bCon";
-
 import { Link } from "react-router-dom";
 import mFn from "../func/my_function";
-import { isrc, menuSrc } from "../data/img_src";
 import $ from "jquery";
+// 데이터 불러오기
+import { isrc, menuSrc } from "../data/img_src";
 // GNB 데이터 불러오기
 import { menu } from "../data/gnb";
 // 아이콘 svg 불러오기
@@ -218,13 +216,22 @@ export default function TopArea() {
                 {isMenuOpen ? <CloseMenuIcon /> : <HamburgerMenuIcon />}
               </li>
               <li>
-                <LoginIcon />
+                <Link to="/member" onClick={initSet}>
+                  {/* <span className="gnb-tit">LogIn </span> */}
+                  <LoginIcon />
+                </Link>
               </li>
               <li>
-                <WishlistHeartIcon />
+                <Link to="/" onClick={initSet}>
+
+                  <WishlistHeartIcon />
+                </Link>
               </li>
               <li>
-                <CartIcon />
+                <Link to="/" onClick={initSet}>
+                  {" "}
+                  <CartIcon />
+                </Link>
               </li>
               {/* <li onClick={()=>showSearch()}> */}
               <li onClick={searchBtnFn} className="search-li">
@@ -277,13 +284,15 @@ export default function TopArea() {
                   }
                 </li>
               ))}
-            <li className="sns-link-box"><SnsLink/></li>
+              <li className="sns-link-box">
+                <SnsLink />
+              </li>
             </ul>
           </div>
           {/* 메뉴박스 오른쪽칸 이미지들 */}
           <div className="right">
             {menuSrcV.map((v, i) => (
-              <img key={i} src={process.env.PUBLIC_URL+v} alt={menuSrcK[i]} />
+              <img key={i} src={process.env.PUBLIC_URL + v} alt={menuSrcK[i]} />
             ))}
           </div>
         </nav>

@@ -2,6 +2,7 @@
 const isrc = {
   // 로고 화이트
   logoW: "/images/logo/bose_logo_w.png",
+  logoB: "/images/logo/svg_logo2.svg",
   // 에러페이지
   error: "https://shop.dc.com/coming-soon/static/media/mxyzptlk.0f810a8a.png",
 };
