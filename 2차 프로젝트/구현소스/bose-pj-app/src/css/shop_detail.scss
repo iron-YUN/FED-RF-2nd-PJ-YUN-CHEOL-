@@ -1,0 +1,24 @@
+#shop-detail{
+    width: 90%;
+    margin: 0 auto;
+    h1{
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        font-size: clamp(36px, 5vw, 72px);
+        text-align: center;
+    }
+    .detail-box{
+        display: flex;
+        flex-direction: row;
+        .left{
+            
+        }
+        .right{
+            h2{
+                font-size: clamp(36px, 3vw, 72px);
+                // font-weight: bold;
+                line-height: 1.3;
+            }
+        }
+    }
+}

@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 // (여기서는 네비게이션 - 양쪽이동버튼)
 import { Navigation ,Pagination} from "swiper/modules";
 
-export function SwiperRd({ catName }) {
+export function SwiperDta({ catName }) {
   return (
     <>
       <Swiper
@@ -46,7 +46,10 @@ export function SwiperRd({ catName }) {
       >
         {/* ///////////////////////////////////// */}
           {products.flatMap((v, i) => {
-                <SwiperSlide >
+                <SwiperSlide key={i}>
+                  <div className="dtail-img">
+                    <img src="" alt="" />
+                  </div>
                 </SwiperSlide>
           })}
         {/* ///////////////////////////////////// */}
@@ -54,4 +57,4 @@ export function SwiperRd({ catName }) {
     </>
 
   );
-} /////////// SwiperVid 컴포넌트 ///////////
+} /////////// SwiperDta 컴포넌트 ///////////

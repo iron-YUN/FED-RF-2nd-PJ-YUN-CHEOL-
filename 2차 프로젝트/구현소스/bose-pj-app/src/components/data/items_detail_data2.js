@@ -3,7 +3,7 @@
 // 서브분류 : 사용목적별
 // https://www.bose.com/c/headphones
 
-const productList = [
+const headphones = [
   {
     idx: "1",
     name: "Bose QuietComfort Ultra Headphones",
@@ -199,13 +199,14 @@ const productList = [
     subTopVideo: "",
     infoText:
       "Tailored for jet pilots, the ProFlight Series 2 combines cutting-edge features with exceptional comfort, setting a new standard for in-flight communication. Customization is at your fingertips with multiple connector configurations, including Bluetooth® and non-Bluetooth variants in dual-plug and 5-pin options. Effortlessly connect to mobile devices, audio systems, and electronic flight bags using the Bose Connect app, enjoying the freedom of movement without compromising audio quality. Enhanced audio prioritization lets you effortlessly mix Bluetooth audio with intercom transmissions or temporarily mute Bluetooth to focus on critical communications, giving you unmatched control and convenience in the cockpit.",
-    infoIcon: ['Engineered for jet aircrafts',
-    'Ultra-lightweight design',
-    'Tap Control For Talk-Through Communication',
-    'Bluetooth and non-Bluetooth',
-    'Three noise cancellation modes',
-    'FAA TSO & E/TSO-C139A certified',
-    'Adjustable mic and cable',
+    infoIcon: [
+      "Engineered for jet aircrafts",
+      "Ultra-lightweight design",
+      "Tap Control For Talk-Through Communication",
+      "Bluetooth and non-Bluetooth",
+      "Three noise cancellation modes",
+      "FAA TSO & E/TSO-C139A certified",
+      "Adjustable mic and cable",
     ],
     "Box composition": [
       "ProFlight Series 2 Aviation Headset",
@@ -234,26 +235,29 @@ const productList = [
   /////
   {
     idx: "6",
+    name: "A20 Aviation Headset with Bluetooth",
     // 서브페이지에 들어갈 정보들
     subPageImg: [],
     subTopVideo: "",
-    infoText:"The A20 headset gives you 30% more noise reduction than conventional aviation headsets, so you’ll enjoy a peaceful flight from short stops to long hauls. And at just 12 ounces, with sheepskin cushions and minimal clamping force, it's one of the lightest and most comfortable aviation headsets you’ll find. All designed to let you focus on what matters — flying.",
-    infoIcon: ['Acclaimed noise reduction',
-    'Comfortable fit',
-    'Active equalization',
-    'Bluetooth® connectivity',
-    'FAA TSO and E/TSO-C139',
-    'Swap the mic to your best side',
-    'Up to 45 hours of battery',
+    infoText:
+      "The A20 headset gives you 30% more noise reduction than conventional aviation headsets, so you’ll enjoy a peaceful flight from short stops to long hauls. And at just 12 ounces, with sheepskin cushions and minimal clamping force, it's one of the lightest and most comfortable aviation headsets you’ll find. All designed to let you focus on what matters — flying.",
+    infoIcon: [
+      "Acclaimed noise reduction",
+      "Comfortable fit",
+      "Active equalization",
+      "Bluetooth® connectivity",
+      "FAA TSO and E/TSO-C139",
+      "Swap the mic to your best side",
+      "Up to 45 hours of battery",
     ],
     "Box composition": [
-      'A20 Aviation Headset',
-      'In-line clothing clip',
-      'Control module',
-      '2 AA batteries',
-      'Aux-in cable adapter',
-      'Carrying case',
-      'Owner’s guide',      
+      "A20 Aviation Headset",
+      "In-line clothing clip",
+      "Control module",
+      "2 AA batteries",
+      "Aux-in cable adapter",
+      "Carrying case",
+      "Owner’s guide",
     ],
     Specifications: {
       "Headphone Fit": "In Ear",
@@ -270,16 +274,9 @@ const productList = [
       "Bose App": "Bose Connect App",
     },
   },
-
-
-
-
-
-
-
-
-
-  ////////////////////////////////////////////////////////////
+]; ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const earbuds = [
   {
     idx: "6",
     name: "Bose QuietComfort Ultra Earbuds",
@@ -403,6 +400,9 @@ const productList = [
     "Box composition": ["Case Cover", "Carabiner", "Quick Start Guide"],
     Specifications: {},
   },
+]; ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const speakers = [
   {
     idx: "10",
     name: "Bose SoundLink Max Portable Speaker",
@@ -803,6 +803,9 @@ const productList = [
       "Bose App": "Bose Music App",
     },
   },
+]; ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const homeTheater = [
   {
     idx: "20",
     name: "Bose Smart Ultra Soundbar",
@@ -1044,6 +1047,9 @@ const productList = [
     ],
     Specifications: { Speaker: '5" H x 1" W x 1" D (0.78 lb)' },
   },
+]; ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const paSystems = [
   {
     idx: "27",
     name: "Bose S1 Pro+ Portable Bluetooth Speaker System",
@@ -1323,4 +1329,37 @@ const productList = [
       "Entire Product System": "5.115 lb",
     },
   },
+];
+
+export const productsDta = {
+  "Headphones":headphones,
+  "Earbuds":  earbuds,
+  "Speakers":  speakers,
+  "Home Theater":  homeTheater,
+  "PA Systems":  paSystems,
+};
+
+const productMainType = [
+  "Headphones",
+  "Earbuds",
+  "Speakers",
+  "Home Theater",
+  "PA Systems",
+];
+const productSubType = [
+  "Over-ear",
+  "Aviation",
+  "In Ear",
+  "Open Ear",
+  "Portable",
+  "Home Speakers",
+  "Amplifiers",
+  "Soundbars",
+  "Bass modules",
+  "Surround speakers",
+  "Portable PA",
+  "Array Systems",
+  "Sub-woofers",
+  "Mixers",
+  "Sets",
 ];

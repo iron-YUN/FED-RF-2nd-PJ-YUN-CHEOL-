@@ -6,11 +6,13 @@ import React, { useEffect } from "react";
 // 라우터로 전달한 state값을 읽기위한 객체
 import { Link, useLocation } from "react-router-dom";
 
-// import Banner from "../modules/Banner";
-// import CatList from "../modules/CatList";
+// 데이터 불러오기
+import { products } from "../data/items_main_data";
+import { productsDta } from "../data/items_detail_data2";
 
 // CSS불러오기
-// import "../../css/cat_detail.scss";
+import "../../css/shop_detail.scss";
+
 
 function ShopDetail() {
   // 라우터 호출시 전달한 값을 받는다!
@@ -21,6 +23,7 @@ function ShopDetail() {
   const src =loc.state.src;
   const color =loc.state.color;
   console.log("나는 무슨색",color);
+  console.log("나뭐야",productsDta[type]);
 
   // 화면랜더링 실행구역 ////
   // 매번실행해야 이미 생성된 컴포넌트의
@@ -31,11 +34,9 @@ function ShopDetail() {
 
   // 코드리턴구역 //////////////////
   return (
-    <>
-      {/* 1.배너모듈 */}
-      {/* <Banner catName={cname} /> */}
-      {/* 2.상세정보박스 */}
-          <h1 style={{paddingTop:"10vh"}}> 
+    <div id="shop-detail">
+      {/* 1.제목 */}
+          <h1> 
             <Link to="/SHOP" >
             SHOP 
             </Link>
@@ -44,10 +45,11 @@ function ShopDetail() {
             {type}
             </Link>
           </h1>
-      <div className="detail">
-        {/* 2-1. 설명박스 */}
-        <div className="desc-box">
-          <h2>{type}/{pname}</h2>
+
+      {/* 2.상세정보박스 */}
+      <div className="detail-box">
+        {/* 2-1. 왼쪽박스 */}
+        <div className="left">
           <img 
           src={`${process.env.PUBLIC_URL + src}${
             idx
@@ -55,15 +57,14 @@ function ShopDetail() {
           alt={pname}
           />
         </div>
-        {/* 2-2. */}
-        <div className="facts">
-          <div>
-          </div>
+        {/* 2-2.오른쪽박스 */}
+        <div className="right">
+        <h2>{pname}</h2>
         </div>
       </div>
       {/* 3. */}
       
-    </>
+    </div>
   );
 }
 

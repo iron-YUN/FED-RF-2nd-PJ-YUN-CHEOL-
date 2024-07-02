@@ -6,6 +6,7 @@ import { colorList } from "../data/color_data";
 import $ from "jquery";
 // css
 import "./css/shop_items.scss";
+import { Link } from "react-router-dom";
 
 function SearchShopItems({ data }) {
   // console.log(catName);
@@ -80,11 +81,21 @@ function SearchShopItems({ data }) {
           return (
             // 제품 각 박스
             <div className="item-cat-cont" key={i}>
-              <div className="item-p-box">
                 {/* 1.위시리스트 버튼 */}
                 <span className="wish">
                   <WishlistHeartIcon strokeWidth="1" width="30" height="30" />
                 </span>
+                <Link
+                to="/detail"
+                state={{
+                  pname: v.name,
+                  type: v.MainType,
+                  idx: v.idx,
+                  src: v.isrc,
+                  color: v.color,
+                }}
+              >
+              <div className="item-p-box">
                 {/* ******************************* */}
                 {/* 2.제품이미지 */}
                 <div className="item-p-img">
@@ -122,6 +133,7 @@ function SearchShopItems({ data }) {
                 </section>
                 {/* ******************************* */}
               </div>
+              </Link>
             </div>
           );
         })}

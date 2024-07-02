@@ -32,30 +32,17 @@ import "./css/swiper_rd.scss";
 export function SwiperRd({ catName }) {
   /////////////////////////////////////////////////////////////////
   const [selectedColors, setSelectedColors] = useState({});
-  // 선택된 색상 상태 관리
-  useEffect(() => {
-    // 위시리스트 이벤트 등록하기
-    // const wish = $(".wish");
-    // console.log("나 위시리스트",wish);
-    // 랜덤 아이템 총 개수
-    // const itemGet = $(".cat-cont");
-    // console.log("나 랜덤개수야~~", itemGet.length);
-    // 컬리선택 체인지 이벤트 등록하기
-  }); ///////////// useEffect ////////////////////
 
   useEffect(() => {
     // useEffect 안에서 jQuery를 이용한 이벤트 처리
     $(".wish svg").click(function () {
       // 현재 fill 속성 값을 가져옵니다.
       const currentFill = $(this).attr("fill");
-
       // 새로운 fill 속성 값을 설정합니다. 여기서는 빨강과 검정을 토글합니다.
       const newFill = currentFill === "red" ? "none" : "red";
-
       // 새로운 fill 속성 값을 적용합니다.
       $(this).attr("fill", newFill);
     });
-
     // clean-up 함수: 컴포넌트가 언마운트될 때 클릭 이벤트 핸들러를 제거합니다.
     return () => {
       $(".wish svg").off("click"); // 이벤트 제거
@@ -189,30 +176,28 @@ export function SwiperRd({ catName }) {
               // 2.선택된 제품에서의 가지고있는 색 랜덤선택
               const rdColor = getRdItem(prod.color);
               // console.log(rdColor); // 랜덤 컬러 확인하기
-              
+
               return (
                 <SwiperSlide key={`${i}-${j}`} className="rd-cat-cont">
-                  <div className="rd-p-box">
-                    <span className="wish">
-                      {/* 1.위시리스트 버튼 */}
-                      <WishlistHeartIcon
-                        strokeWidth="1"
-                        width="30"
-                        height="30"
-                      />
-                    </span>
-                    {/* 2.제품이미지 */}
-                    <div className="rd-p-img">
-                      <Link
-                        to="/detail"
-                        state={{
-                          pname: prod.name,
-                          type: prod.MainType,
-                          idx: prod.idx,
-                          src: prod.isrc,
-                          color:prod.color,
-                        }}
-                      >
+                         <p className="wish">
+                    {/* 1.위시리스트 버튼 */}
+                    <WishlistHeartIcon strokeWidth="1" width="30" height="30" />
+                  </p>
+                  <Link
+                    to="/detail"
+                    state={{
+                      pname: prod.name,
+                      type: prod.MainType,
+                      idx: prod.idx,
+                      src: prod.isrc,
+                      color: prod.color,
+                    }}
+                  >
+               
+                    <div className="rd-p-box">
+                  
+                      {/* 2.제품이미지 */}
+                      <div className="rd-p-img">
                         <img
                           idx={prod.idx}
                           src={`${process.env.PUBLIC_URL + prod.isrc}${
@@ -220,34 +205,34 @@ export function SwiperRd({ catName }) {
                           }/${rdColor}/0.webp`}
                           alt={prod.name}
                         />
-                      </Link>
-                    </div>
-                    {/* 3.제품별 정보박스 */}
-                    <section className="rd-p-info">
-                      {/* 3-1.제품명 */}
-                      <p className="rd-p-name">{prod.name}</p>
-                      {/* 3-2.제품가격 */}
-                      <p className="rd-p-price">{prod.price}</p>
-                      {/* 3-3.제품색상 */}
-                      <div className="rd-p-color-box">
-                        {prod.color.map((clr, idx) => (
-                          <div
-                            key={idx}
-                            className={`color-circle-wrap ${
-                              clr == rdColor ? "on" : ""
-                            }`}
-                            onClick={(e) => colorFn(e, clr)}
-                          >
-                            <div
-                              className="color-circle"
-                              style={{ backgroundColor: colorList[clr] }}
-                              title={clr}
-                            />
-                          </div>
-                        ))}
                       </div>
-                    </section>
-                  </div>
+                      {/* 3.제품별 정보박스 */}
+                      <section className="rd-p-info">
+                        {/* 3-1.제품명 */}
+                        <p className="rd-p-name">{prod.name}</p>
+                        {/* 3-2.제품가격 */}
+                        <p className="rd-p-price">{prod.price}</p>
+                        {/* 3-3.제품색상 */}
+                        <div className="rd-p-color-box">
+                          {prod.color.map((clr, idx) => (
+                            <div
+                              key={idx}
+                              className={`color-circle-wrap ${
+                                clr == rdColor ? "on" : ""
+                              }`}
+                              onClick={(e) => colorFn(e, clr)}
+                            >
+                              <div
+                                className="color-circle"
+                                style={{ backgroundColor: colorList[clr] }}
+                                title={clr}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+                    </div>
+                  </Link>
                 </SwiperSlide>
               );
             });
