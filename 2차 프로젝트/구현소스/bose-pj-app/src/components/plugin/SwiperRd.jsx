@@ -32,7 +32,7 @@ import "./css/swiper_rd.scss";
 export function SwiperRd({ catName }) {
   /////////////////////////////////////////////////////////////////
   const [selectedColors, setSelectedColors] = useState({});
-
+  const [selectedImageSrc, setSelectedImageSrc] = useState(null);
   useEffect(() => {
     // useEffect 안에서 jQuery를 이용한 이벤트 처리
     $(".wish svg").click(function () {
@@ -121,9 +121,24 @@ export function SwiperRd({ catName }) {
 
     // 6. 현재 자신에게 클래스"on"넣기
     org.addClass("on").siblings().removeClass("on");
+   
   }; ///////////// colorFn ////////////////
   ////////////////////////////////////////////////////////////////////
-
+  const colorFn2 = (e) => {
+    // e.preventDefault();
+    // 0. 원조대상
+    let org = $(e.currentTarget);
+    console.log(org);
+    // 1. 대상이미지선택
+    let tg = org.find('.rd-p-img img');
+    console.log(tg);
+    // 2. 대상이미지 src값 읽기
+    let isrc = tg.attr("src").split("/");
+    console.log("전전isrc:", JSON.stringify(isrc));
+    console.log("후후isrc:",isrc[9]);
+    setSelectedImageSrc(isrc[9]);
+  }; ///////////// colorFn ////////////////
+  /////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////
 
   return (
@@ -172,30 +187,31 @@ export function SwiperRd({ catName }) {
             const rdProduct = getRdItems(v);
             // console.log(rdProduct); // 랜덤오브젝트 확인하기
             return rdProduct.map((prod, j) => {
-              console.log(prod.color);
+              // console.log(prod.color);
               // 2.선택된 제품에서의 가지고있는 색 랜덤선택
               const rdColor = getRdItem(prod.color);
               // console.log(rdColor); // 랜덤 컬러 확인하기
 
               return (
                 <SwiperSlide key={`${i}-${j}`} className="rd-cat-cont">
-                         <p className="wish">
+                  <p className="wish">
                     {/* 1.위시리스트 버튼 */}
                     <WishlistHeartIcon strokeWidth="1" width="30" height="30" />
                   </p>
                   <Link
                     to="/detail"
+                    // onClick={(e)=>colorFn2(e)}
                     state={{
                       pname: prod.name,
                       type: prod.MainType,
                       idx: prod.idx,
                       src: prod.isrc,
                       color: prod.color,
+                      cimg:prod.cimg,
+                      sel: rdColor
                     }}
                   >
-               
                     <div className="rd-p-box">
-                  
                       {/* 2.제품이미지 */}
                       <div className="rd-p-img">
                         <img
@@ -211,7 +227,7 @@ export function SwiperRd({ catName }) {
                         {/* 3-1.제품명 */}
                         <p className="rd-p-name">{prod.name}</p>
                         {/* 3-2.제품가격 */}
-                        <p className="rd-p-price">{prod.price}</p>
+                        <p className="rd-p-price">$ {prod.price}</p>
                         {/* 3-3.제품색상 */}
                         <div className="rd-p-color-box">
                           {prod.color.map((clr, idx) => (

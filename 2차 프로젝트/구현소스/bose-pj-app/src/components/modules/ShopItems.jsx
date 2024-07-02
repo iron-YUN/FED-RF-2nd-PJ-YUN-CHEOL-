@@ -109,12 +109,14 @@ function ShopItems({ catName }) {
               </span>
               <Link
                 to="/detail"
-                state={{
+                state={{ 
                   pname: v.name,
                   type: v.MainType,
                   idx: v.idx,
                   src: v.isrc,
                   color: v.color,
+                  cimg:v.cimg,
+                  sel: rdColor
                 }}
               >
                 <div className="item-p-box">
@@ -135,7 +137,7 @@ function ShopItems({ catName }) {
                     {/* 3-1.제품명 */}
                     <p className="item-p-name">{v.name}</p>
                     {/* 3-2.제품가격 */}
-                    <p className="item-p-price">{v.price}</p>
+                    <p className="item-p-price">$ {v.price}</p>
                     {/* 3-3.제품색상 */}
                     <div className="item-p-color-box">
                       {v.color.map((clr, idx) => (

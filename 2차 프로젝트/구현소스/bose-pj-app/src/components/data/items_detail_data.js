@@ -3,13 +3,11 @@
 // 서브분류 : 사용목적별
 // https://www.bose.com/c/headphones
 
-const productList = [
+const headphones = [
   {
-    idx: "1",
+    idx: "0",
     name: "Bose QuietComfort Ultra Headphones",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "World-class noise cancellation, quieter than ever before. Breakthrough spatialized audio for immersive listening, no matter the content or source. Elevated design and luxe materials for unrivaled comfort. It’s everything music makes you feel taken to new highs. Bose Immersive Audio pushes the boundary of what it means to listen by taking what you’re hearing out of your head and placing it in front of you. It sounds so real it’s almost like you could reach out and touch it.",
     infoIcon: [
@@ -22,7 +20,7 @@ const productList = [
       "Amazingly clear calls",
       "Customize with Bose Music app",
     ],
-    "Box composition": [
+    Box: [
       "Bose QuietComfort Ultra Headphones",
       "Carry case",
       "3.5 mm to 2.5 mm audio cable",
@@ -56,11 +54,9 @@ const productList = [
     },
   },
   {
-    idx: "2",
+    idx: "1",
     name: "Bose QuietComfort 45 headphones",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "There’s comfort in quiet. You can feel it the minute you put them on. The soft, plush cushions seal you in. You press the button and whoosh — the world fades, the music starts, and it’s love at first listen. That’s the power of our QuietComfort 45 Headphones with signature active noise cancelling technology and premium comfort. Bose QuietComfort 45 Headphones also deliver proprietary acoustic technology for deep, clear audio with adjustable EQ so you can tune your music to your liking. They're wireless headphones with a perfect balance of quiet, comfort, and sound you’ll enjoy all day long.",
     infoIcon: [
@@ -73,7 +69,7 @@ const productList = [
       "High-fidelity audio",
       "Active and adjustable EQ",
     ],
-    "Box composition": [
+    Box: [
       "Bose QuietComfort 45 headphones",
       "Carry case",
       '12" USB-C charging cable',
@@ -106,11 +102,9 @@ const productList = [
     },
   },
   {
-    idx: "3",
+    idx: "2",
     name: "Bose QuietComfort Headphones",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Take charge of your music and stride along to the beat. High-fidelity audio and legendary noise cancellation work their magic by sealing you in, eliminating distractions, and letting you dive deep into your own rhythm. Toggle between Quiet and Aware Modes, or create a Custom Mode and adjust outside sound to the moment. The design is iconic and the comfort lasting, while an optional audio cable with an in-line microphone plugs you into sound as bold as you, even without a Bluetooth® connection.",
     infoIcon: [
@@ -123,7 +117,7 @@ const productList = [
       "Audio cable with in-line mic",
       "Customize with Bose Music app",
     ],
-    "Box composition": [
+    Box: [
       "Bose QuietComfort Headphones",
       "Carry Case",
       "3.5 mm to 2.5 mm audio cable",
@@ -154,11 +148,9 @@ const productList = [
     },
   },
   {
-    idx: "4",
+    idx: "3",
     name: "Bose A30 Aviation Headset",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "What happens when all the distractions — everything that’s standing in your way — are stripped away? You’re left with the pure, indescribable feeling of the freedom of flight.",
     infoIcon: [
@@ -169,7 +161,7 @@ const productList = [
       "Noise cancelling microphone",
       "Side swappable cable and mic",
     ],
-    "Box composition": [
+    Box: [
       "Headset",
       "1/8 Connector stereo input cable",
       "2X Alkaline AA batteries",
@@ -192,22 +184,21 @@ const productList = [
     },
   },
   {
-    idx: "5",
+    idx: "4",
     name: "ProFlight Series 2 Aviation Headset",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Tailored for jet pilots, the ProFlight Series 2 combines cutting-edge features with exceptional comfort, setting a new standard for in-flight communication. Customization is at your fingertips with multiple connector configurations, including Bluetooth® and non-Bluetooth variants in dual-plug and 5-pin options. Effortlessly connect to mobile devices, audio systems, and electronic flight bags using the Bose Connect app, enjoying the freedom of movement without compromising audio quality. Enhanced audio prioritization lets you effortlessly mix Bluetooth audio with intercom transmissions or temporarily mute Bluetooth to focus on critical communications, giving you unmatched control and convenience in the cockpit.",
-    infoIcon: ['Engineered for jet aircrafts',
-    'Ultra-lightweight design',
-    'Tap Control For Talk-Through Communication',
-    'Bluetooth and non-Bluetooth',
-    'Three noise cancellation modes',
-    'FAA TSO & E/TSO-C139A certified',
-    'Adjustable mic and cable',
+    infoIcon: [
+      "Engineered for jet aircrafts",
+      "Ultra-lightweight design",
+      "Tap Control For Talk-Through Communication",
+      "Bluetooth and non-Bluetooth",
+      "Three noise cancellation modes",
+      "FAA TSO & E/TSO-C139A certified",
+      "Adjustable mic and cable",
     ],
-    "Box composition": [
+    Box: [
       "ProFlight Series 2 Aviation Headset",
       "Carry case",
       "Carry case hook",
@@ -233,27 +224,28 @@ const productList = [
   },
   /////
   {
-    idx: "6",
+    idx: "5",
+    name: "A20 Aviation Headset with Bluetooth",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
-    infoText:"The A20 headset gives you 30% more noise reduction than conventional aviation headsets, so you’ll enjoy a peaceful flight from short stops to long hauls. And at just 12 ounces, with sheepskin cushions and minimal clamping force, it's one of the lightest and most comfortable aviation headsets you’ll find. All designed to let you focus on what matters — flying.",
-    infoIcon: ['Acclaimed noise reduction',
-    'Comfortable fit',
-    'Active equalization',
-    'Bluetooth® connectivity',
-    'FAA TSO and E/TSO-C139',
-    'Swap the mic to your best side',
-    'Up to 45 hours of battery',
+    infoText:
+      "The A20 headset gives you 30% more noise reduction than conventional aviation headsets, so you’ll enjoy a peaceful flight from short stops to long hauls. And at just 12 ounces, with sheepskin cushions and minimal clamping force, it's one of the lightest and most comfortable aviation headsets you’ll find. All designed to let you focus on what matters — flying.",
+    infoIcon: [
+      "Acclaimed noise reduction",
+      "Comfortable fit",
+      "Active equalization",
+      "Bluetooth® connectivity",
+      "FAA TSO and E/TSO-C139",
+      "Swap the mic to your best side",
+      "Up to 45 hours of battery",
     ],
-    "Box composition": [
-      'A20 Aviation Headset',
-      'In-line clothing clip',
-      'Control module',
-      '2 AA batteries',
-      'Aux-in cable adapter',
-      'Carrying case',
-      'Owner’s guide',      
+    Box: [
+      "A20 Aviation Headset",
+      "In-line clothing clip",
+      "Control module",
+      "2 AA batteries",
+      "Aux-in cable adapter",
+      "Carrying case",
+      "Owner’s guide",
     ],
     Specifications: {
       "Headphone Fit": "In Ear",
@@ -270,22 +262,13 @@ const productList = [
       "Bose App": "Bose Connect App",
     },
   },
-
-
-
-
-
-
-
-
-
-  ////////////////////////////////////////////////////////////
+]; ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const earbuds = [
   {
-    idx: "6",
+    idx: "0",
     name: "Bose QuietComfort Ultra Earbuds",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Breakthrough spatialized audio for more immersive listening that makes your music feel realer than ever before — no matter the content or source. World-class noise cancellation and sound tailored to you. And a design that feels so good to wear. Say less. (Listen more.) QuietComfort Ultra Earbuds are the ultimate wireless noise cancelling earbud experience. Bose Immersive Audio pushes the boundary of what it means to listen by taking what you’re hearing out of your head and placing it in front of you. It sounds so real it’s almost like you could reach out and touch it.",
     infoIcon: [
@@ -298,7 +281,7 @@ const productList = [
       "Simple touch controls",
       "Customize with Bose Music app",
     ],
-    "Box composition": [
+    Box: [
       "2 Bose QuietComfort Ultra Earbuds",
       "Bose Fit Kit:",
       "3 pairs of ear tips (small, medium, large)",
@@ -329,11 +312,9 @@ const productList = [
     },
   },
   {
-    idx: "7",
+    idx: "1",
     name: "Bose Ultra Open Earbuds",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Introducing Ultra Open Earbuds. Their cuff-like fit leaves your ears totally open so you can still hear the world around you, while OpenAudio technology provides you with rich, private sound. Listen to your music and life — at the same time, all the time.",
     infoIcon: [
@@ -346,7 +327,7 @@ const productList = [
       "Simple, satisfying button controls.",
       "IPX4 rating for water resistance",
     ],
-    "Box composition": [
+    Box: [
       "2 Bose Ultra Open Earbuds",
       "Charging case",
       'USB-C® (A to C) cable (12")',
@@ -375,23 +356,19 @@ const productList = [
     },
   },
   {
-    idx: "8",
+    idx: "2",
     name: "Bose Ultra Open Earbuds Silicone Case Cover",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "When music fuels your day — a playlist in the park or favorite song for shopping — protect your earbuds and always keep them close by with the Bose Ultra Open Earbuds Silicone Case Cover. It’s soft to the touch and defends against scratches and scuffs. And an aluminum carabiner lets you clip your buds to your bag for convenient carrying. So you can bring them everywhere for music anywhere.",
     infoIcon: ["Protects against scratches", "Attaches to your bag"],
-    "Box composition": ["Bose Ultra Open Earbuds Silicone Case Cover"],
+    Box: ["Bose Ultra Open Earbuds Silicone Case Cover"],
     Specifications: {},
   },
   {
-    idx: "9",
+    idx: "3",
     name: "Bose Ultra Open Earbuds Wireless Charging Case Cover",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Power up wirelessly with the Bose Ultra Open Earbuds Wireless Charging Case Cover. Soft-touch silicone defends against scratches and scuffs. An aluminum carabiner clips to your bag or belt loop, so you can keep your earbuds close by. And the convenience of it all puts you in charge.",
     infoIcon: [
@@ -400,15 +377,16 @@ const productList = [
       "Attaches to your bag",
       "Charges earbuds in 3 – 4 hours",
     ],
-    "Box composition": ["Case Cover", "Carabiner", "Quick Start Guide"],
+    Box: ["Case Cover", "Carabiner", "Quick Start Guide"],
     Specifications: {},
   },
+]; ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const speakers = [
   {
-    idx: "10",
+    idx: "0",
     name: "Bose SoundLink Max Portable Speaker",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Introducing SoundLink Max Speaker. Epic stereo sound and deep bass turn good times to the max, letting you feel the music from your head to your toes. And with its compact design and removable handle, you can take the party anywhere you are.",
     infoIcon: [
@@ -421,7 +399,7 @@ const productList = [
       "Bose app control",
       "SimpleSync compatibility",
     ],
-    "Box composition": [
+    Box: [
       "Bose SoundLink Max Portable Speaker",
       "USB-C (C to C) cable",
       "USB-C power supply (US only. Not available in all regions)",
@@ -443,22 +421,9 @@ const productList = [
     },
   },
   {
-    idx: "11",
+    idx: "1",
     name: "Bose SoundLink Flex Bluetooth Speaker",
-    price: "$149.00 ",
-    MainType: "Speakers",
-    SubType: "Portable",
-    color: [
-      "Black",
-      "White Smoke",
-      "Cypress Green",
-      "Stone Blue",
-      "Chilled Lilac",
-    ],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Sound for any all-day runway. The SoundLink Flex Bluetooth® speaker is the perfect chic musical sidekick, with a waterproof, dustproof, life-proof design that can handle whatever comes your way — with dazzling sound and deep bass. So whether you're storming the city, hanging by the beach, or just having friends over for dinner, the powerful SoundLink Flex helps you elevate the moment.",
     infoIcon: [
@@ -468,10 +433,7 @@ const productList = [
       "PositionIQ technology",
       "Built to handle some bruising",
     ],
-    "Box composition": [
-      "Bose SoundLink Flex Bluetooth speaker",
-      "USB Type-C cable",
-    ],
+    Box: ["Bose SoundLink Flex Bluetooth speaker", "USB Type-C cable"],
     Specifications: {
       Microphones: "Built-in Microphone",
       "Sound Options":
@@ -491,16 +453,9 @@ const productList = [
     },
   },
   {
-    idx: "12",
+    idx: "2",
     name: "Bose SoundLink Mini II Special Edition",
-    price: "$179.00",
-    MainType: "Speakers",
-    SubType: "Portable",
-    color: ["Triple Black", "Luxe Silver"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Live Big. Go Mini. The SoundLink Mini II Special Edition delivers full, natural sound with dramatically deeper bass than you’d expect from a Bluetooth mini speaker that fits in the palm of your hand. It also features a built-in microphone for taking calls and makes easy wireless connections anytime, anywhere. Now with 20% more battery life, a USB-C charging port, and two special edition colors — Luxe Silver or Triple Black.",
     infoIcon: [
@@ -510,10 +465,7 @@ const productList = [
       "Built-in speakerphone",
       "Get connected with Bluetooth®",
     ],
-    "Box composition": [
-      "SoundLink Mini II Special Edition",
-      "USB-C to USB-A cable",
-    ],
+    Box: ["SoundLink Mini II Special Edition", "USB-C to USB-A cable"],
     Specifications: {
       Microphones: "Built-in Microphone",
       "Sound Options": "Speakerphone",
@@ -528,16 +480,9 @@ const productList = [
     },
   },
   {
-    idx: "13",
+    idx: "3",
     name: "Bose SoundLink Micro Bluetooth Speaker",
-    price: "$119.00",
-    MainType: "Speakers",
-    SubType: "Portable",
-    color: ["Black", "White Smoke", "Stone Blue"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Take bold sound on the go. Our SoundLink Micro Bluetooth® Speaker is portable and rugged enough for any adventure. It delivers sound that packs a punch — crisp and balanced, with surprisingly deep bass. Plus, it's IP67-rated as waterproof, dustproof, and extreme temperature proof. Its tear-resistant strap means you can bring your music anywhere, or pair with other Bose speakers for more sound.",
     infoIcon: [
@@ -547,10 +492,7 @@ const productList = [
       "Up to 6 hours battery per charge",
       "Boasting a deep bass",
     ],
-    "Box composition": [
-      "SoundLink Micro Bluetooth speaker",
-      "Micro-B USB charging cable",
-    ],
+    Box: ["SoundLink Micro Bluetooth speaker", "Micro-B USB charging cable"],
     Specifications: {
       Microphones: "Built-in Microphone",
       "Sound Options":
@@ -570,16 +512,9 @@ const productList = [
     },
   },
   {
-    idx: "14",
+    idx: "4",
     name: "Bose Portable Smart Speaker",
-    price: "$349.00",
-    MainType: "Speakers",
-    SubType: "Portable",
-    color: ["Triple Black", "Luxe Silver"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Meet the home speaker you won’t want to leave home without. The Portable Smart Speaker is a wireless Wi-Fi® home speaker, a portable Bluetooth® speaker, and a voice-controlled speaker, all in one. Move it with you from room to room, or take it with you when you head out. Control it with your voice and stream music over Wi-Fi when you're home. On the go? Listen via Bluetooth to anything you can play on your device. And no matter what, you’ll hear it all in 360 degrees of astonishing Bose sound.",
     infoIcon: [
@@ -591,7 +526,7 @@ const productList = [
       "Apple Airplay 2 enabled",
       "Quality materials and durable build",
     ],
-    "Box composition": [
+    Box: [
       "Bose Portable Smart Speaker",
       "Power cord",
       "AC power adapter",
@@ -615,16 +550,9 @@ const productList = [
     },
   },
   {
-    idx: "15",
+    idx: "5",
     name: "Bose SoundLink Revolve+ II Bluetooth Speaker",
-    price: "$249.00",
-    MainType: "Speakers",
-    SubType: "Portable",
-    color: ["Triple Black", "Luxe Silver"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Experience the full 360° with the SoundLink Revolve+ II — one of our best-performing portable Bluetooth® speakers. It was engineered to spread deep, jaw-dropping sound in every direction, so when everyone stands around it, everyone gets the same experience. If you set it near a wall, sound will radiate and reflect around the room, immersing you in that same feeling you felt at your favorite concert. And with a flexible handle, it’s designed to go wherever you want to bring the music.",
     infoIcon: [
@@ -633,7 +561,7 @@ const productList = [
       "Up to 17 hours battery per charge",
       "Design that keeps up with you",
     ],
-    "Box composition": [
+    Box: [
       "SoundLink Revolve+ II Speaker",
       "USB power supply",
       "USB cable (micro-B to USB A)",
@@ -658,16 +586,9 @@ const productList = [
     },
   },
   {
-    idx: "16",
+    idx: "6",
     name: "Bose SoundLink Revolve II Bluetooth Speaker",
-    price: "$219.00",
-    MainType: "Speakers",
-    SubType: "Portable",
-    color: ["Triple Black", "Luxe Silver"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Be the center of attention from any direction. Meet SoundLink Revolve II, one of our best-performing portable Bluetooth speakers yet. It delivers true 360-degree sound for consistent, uniform coverage. Place it in the center of the room and everyone gets the same experience. Or set it near a wall and sound will radiate and reflect around the room. Indoors or out, it’s meant to go where you go.",
     infoIcon: [
@@ -676,10 +597,7 @@ const productList = [
       "Up to 13 hours battery per charge",
       "Built to keep up with you",
     ],
-    "Box composition": [
-      "SoundLink Revolve II Speaker",
-      "USB cable (micro-B to USB A)",
-    ],
+    Box: ["SoundLink Revolve II Speaker", "USB cable (micro-B to USB A)"],
     Specifications: {
       Microphones: "Built-in Microphone",
       "Sound Options":
@@ -699,16 +617,9 @@ const productList = [
     },
   },
   {
-    idx: "17",
+    idx: "7",
     name: "251® environmental speakers",
-    price: "$398.00",
-    MainType: "Speakers",
-    SubType: "Home Speakers",
-    color: ["Black", "White"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Take it all in with these wall-mount outdoor speakers. You'll experience balanced stereo sound that's guaranteed to withstand harsh weather, spread over a much wider area than most conventional outdoor speakers. They deliver a refined sound that adds a touch of elegance to your outdoor spaces.",
     infoIcon: [
@@ -716,7 +627,7 @@ const productList = [
       "Impressive sound tested for extreme weather",
       "Lifelike sound. Even outdoors.",
     ],
-    "Box composition": [
+    Box: [
       "2 251 speakers",
       "Mounting hardware (8 screws and 8 plastic anchors)",
       "Self-adhesive rubber feet",
@@ -732,16 +643,9 @@ const productList = [
     },
   },
   {
-    idx: "18",
+    idx: "8",
     name: "Bose Smart Speaker 500",
-    price: "$379.00",
-    MainType: "Speakers",
-    SubType: "Home Speakers",
-    color: ["Triple Black", "Luxe Silver"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Experience the widest sound of any smart speaker. It’s powerfully simple. Fill any room with wall-to-wall stereo sound, while built-in voice control puts millions of songs at the tip of your tongue.",
     infoIcon: [
@@ -751,7 +655,7 @@ const productList = [
       "Personalize with the Bose Music app",
       "Sync up with Apple Airplay 2",
     ],
-    "Box composition": ["Bose Smart Speaker 500", "Power cord"],
+    Box: ["Bose Smart Speaker 500", "Power cord"],
     Specifications: {
       Microphones: "8 Microphones, Built-in Microphone",
       "Sound Options": "Multiroom, SimpleSync",
@@ -766,16 +670,9 @@ const productList = [
     },
   },
   {
-    idx: "19",
+    idx: "9",
     name: "Bose Music Amplifier",
-    price: "$699.00",
-    MainType: "Speakers",
-    SubType: "Amplifiers",
-    color: [],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Your music, amplified. The Bose Music Amplifier connects multiple sources to bring your home to life. Part of our smart family of products, it powers new or existing speakers and streams music over Wi-Fi® from your favorite services.",
     infoIcon: [
@@ -786,7 +683,7 @@ const productList = [
       "Control with Bose Music app",
       "AirPlay 2, Spotify® Connect, Chromecast",
     ],
-    "Box composition": [
+    Box: [
       "Bose Music Amplifier",
       "Power cord",
       "3 rack screws for rack mounting",
@@ -803,17 +700,13 @@ const productList = [
       "Bose App": "Bose Music App",
     },
   },
+]; ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const homeTheater = [
   {
-    idx: "20",
+    idx: "0",
     name: "Bose Smart Ultra Soundbar",
-    price: "$799.00",
-    MainType: "Home Theater",
-    SubType: "Soundbars",
-    color: ["Black", "Arctic White"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Meet the top-of-the-line soundbar that’s here to pull you deep into the heart of all your favorite content. Bose Smart Ultra Soundbar with Dolby Atmos® and Bose TrueSpace technology separates instruments, dialogue, and effects, and places them in different parts of a room for a truly immersive spatial audio experience like you’ve never heard it before. Having a hard time hearing what your favorite characters are saying? A.I. Dialogue Mode automatically balances voice and surround sound for ultra-crisp vocal clarity. Plus, two upward firing dipole speakers work with Bose technologies to make it feel like your space is filled with sound from every direction — even overhead.",
     infoIcon: [
@@ -825,7 +718,7 @@ const productList = [
       "Wi-Fi®, Bluetooth®",
       "AirPlay 2, Chromecast, Spotify Connect",
     ],
-    "Box composition": [
+    Box: [
       "Bose Smart Ultra Soundbar",
       "HDMI™ eARC cable",
       "Optical cable",
@@ -849,16 +742,9 @@ const productList = [
     },
   },
   {
-    idx: "21",
+    idx: "1",
     name: "Bose Smart Soundbar 600",
-    price: "$399.00 ",
-    MainType: "Home Theater",
-    SubType: "Soundbars",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Full immersion. For everything you play. When movies, TV, and music are your passion — you don’t want to just watch. That’s why there’s Smart Soundbar 600 with Dolby Atmos® and proprietary technologies for a captivating sound experience for all your entertainment.",
     infoIcon: [
@@ -869,7 +755,7 @@ const productList = [
       "Wireless music streaming",
       "Whole home audio family",
     ],
-    "Box composition": [
+    Box: [
       "Bose Smart Soundbar 600",
       "Remote control with battery included",
       "Optical cable",
@@ -893,16 +779,9 @@ const productList = [
     },
   },
   {
-    idx: "22",
+    idx: "2",
     name: "Bose TV Speaker",
-    price: "$199.00",
-    MainType: "Home Theater",
-    SubType: "Soundbars",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Hear clearer with the Bose TV Speaker — a one-step, simple solution for better TV sound. It’s small but powerful, delivering a balanced, natural-sounding audio experience that enhances dialogue and bass performance.",
     infoIcon: [
@@ -911,7 +790,7 @@ const productList = [
       "Get connected with Bluetooth®",
       "Feel the bass on demand",
     ],
-    "Box composition": [
+    Box: [
       "Bose TV Speaker",
       "Remote control with battery pre-installed",
       "Optical cable",
@@ -930,16 +809,9 @@ const productList = [
     },
   },
   {
-    idx: "23",
+    idx: "3",
     name: "Bose Bass Module 500",
-    price: "$499.00",
-    MainType: "Home Theater",
-    SubType: "Bass modules",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "This is sound you can feel. If you’re looking to amp up your sound performance, just add the Bose Bass Module 500 to take your music, movie, and content library to a whole new level.  It’s thunderous bass packed into a compact, 10-inch cube with wireless connectivity, making it easy to hide, and even easier to hear. Who says you need a big box for big bass? Not us.",
     infoIcon: [
@@ -948,7 +820,7 @@ const productList = [
       "Feel the beat with bigger bass",
       "Generously sized port",
     ],
-    "Box composition": ["Bose Bass Module 500", "Power cord"],
+    Box: ["Bose Bass Module 500", "Power cord"],
     Specifications: {
       Controls:
         "Auto On, Auto Standby, Buttons, In App Control, In App Volume Control, Pairing, Bass",
@@ -959,16 +831,9 @@ const productList = [
     },
   },
   {
-    idx: "24",
+    idx: "4",
     name: "Bose Bass Module 700",
-    price: "$699.00",
-    MainType: "Home Theater",
-    SubType: "Bass modules",
-    color: ["Bose Black", "Arctic White"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Thunderous bass, wireless connectivity. The Bose Bass Module 700 is the best wireless bass module we’ve ever designed for our home theater systems. This subwoofer offers a sophisticated look and delivers a dynamic range of bass. Plus, the generously sized port virtually eliminates distortion.",
     infoIcon: [
@@ -977,7 +842,7 @@ const productList = [
       "Feel the beat with bigger bass",
       "Generously sized port",
     ],
-    "Box composition": ["Bose Bass Module 700", "Power cord"],
+    Box: ["Bose Bass Module 700", "Power cord"],
     Specifications: {
       Controls:
         "Auto On, Auto Standby, Buttons, In App Control, In App Volume Control, Pairing, Bass",
@@ -987,16 +852,9 @@ const productList = [
     },
   },
   {
-    idx: "25",
+    idx: "5",
     name: "Bose Surround Speakers",
-    price: "$399.00",
-    MainType: "Home Theater",
-    SubType: "Surround speakers",
-    color: ["Bose Black", "Arctic White"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Hear sound that stands out. Designed exclusively to pair with the Bose Smart Soundbars, the Bose Surround Speakers are unobtrusive rear surround speakers that provide sweeping sound for all your movies, sports, and TV shows.",
     infoIcon: [
@@ -1005,7 +863,7 @@ const productList = [
       "Simple to set up",
       "Connected wirelessly",
     ],
-    "Box composition": [
+    Box: [
       "2 Surround Speakers",
       "2 wireless receivers",
       "2 AC2 adapters",
@@ -1016,16 +874,9 @@ const productList = [
     Specifications: { Speaker: '15" H x 8" W x 5" D (6.6 lb)' },
   },
   {
-    idx: "26",
+    idx: "6",
     name: "Bose Surround Speakers 700",
-    price: "$599.00",
-    MainType: "Home Theater",
-    SubType: "Surround speakers",
-    color: ["Bose Black", "Arctic White"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Don’t just hear your entertainment. Experience it. The Bose Surround Speakers 700 deliver our most premium surround sound. They connect wirelessly to your soundbar. All you have to do is plug the included adapters into a power source and pair the surround speakers with your soundbar for instant entertainment.",
     infoIcon: [
@@ -1034,7 +885,7 @@ const productList = [
       "Connected wirelessly",
       "Refined design",
     ],
-    "Box composition": [
+    Box: [
       "2 Surround speakers",
       "2 Wireless receiver",
       "2 Surround speaker base",
@@ -1044,17 +895,13 @@ const productList = [
     ],
     Specifications: { Speaker: '5" H x 1" W x 1" D (0.78 lb)' },
   },
+]; ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const paSystems = [
   {
-    idx: "27",
+    idx: "0",
     name: "Bose S1 Pro+ Portable Bluetooth Speaker System",
-    price: "$599.00",
-    MainType: "PA Systems",
-    SubType: "Portable PA",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "It’s a pro move to bring big sound wherever you want music. Versatile, portable, powerful — the S1 Pro+ Wireless Speaker is your go-to for adding vibes to the backyard, bar, park, or any larger gathering. With a 3-channel mixer, you can stream a playlist, plug in a microphone, or your favorite instrument. Go with whatever the night calls for. And now you can simplify setup and get to the music faster when you add wireless RF accessories for mics and instruments. They pair effortlessly to the S1 Pro+ and store right in the speaker itself so they’re always ready for the next song.",
     infoIcon: [
@@ -1067,10 +914,7 @@ const productList = [
       "Control with the Bose Music app",
       "Bluetooth streaming",
     ],
-    "Box composition": [
-      "S1 Pro+ Wireless PA System with battery included",
-      "AC power cord",
-    ],
+    Box: ["S1 Pro+ Wireless PA System with battery included", "AC power cord"],
     Specifications: {
       "Sound Options":
         "Audiences up to 50, Stereo, Party Mode (When Enabling Two Speakers)",
@@ -1087,16 +931,9 @@ const productList = [
     },
   },
   {
-    idx: "28",
+    idx: "1",
     name: "L1 Pro16 Portable Line Array System",
-    price: "$1,899.00",
-    MainType: "PA Systems",
-    SubType: "Array Systems",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       'Balancing power and portability, the L1 Pro16 portable line array is a streamlined system with high output and extended low frequency. It offers versatile coverage with a J-shaped line array featuring 16 articulated 2" neodymium drivers, while delivering tight vertical control on top and wide dispersion on the bottom. For DJs, singer-songwriters, and small groups, the L1 Pro16 gives you expanded bandwidth and supreme clarity.',
     infoIcon: [
@@ -1108,7 +945,7 @@ const productList = [
       "Wireless mixer control with app",
       "ToneMatch port",
     ],
-    "Box composition": [
+    Box: [
       "Power stand",
       "Speaker array",
       "Speaker array extension",
@@ -1123,16 +960,9 @@ const productList = [
     },
   },
   {
-    idx: "29",
+    idx: "2",
     name: "L1 Pro8 Portable Line Array System",
-    price: "$1,299.00",
-    MainType: "PA Systems",
-    SubType: "Array Systems",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       'The L1 Pro8 is ready whenever you are, enabling easier load-in and faster setup. It offers generous coverage with a C-shaped line array featuring 8 articulated 2" neodymium drivers. This array delivers 180-degree horizontal coverage with wide vertical dispersion, allowing your audience to hear clearly no matter where your show is held. The L1 Pro8 gives singer-songwriters and DJs both setup simplicity and supreme clarity.',
     infoIcon: [
@@ -1144,7 +974,7 @@ const productList = [
       "System EQ presets",
       "ToneMatch port",
     ],
-    "Box composition": [
+    Box: [
       "Power stand",
       "Speaker array",
       "Speaker array extension",
@@ -1159,16 +989,9 @@ const productList = [
     },
   },
   {
-    idx: "30",
+    idx: "3",
     name: "F1 Model 812 Flexible Array loudspeaker",
-    price: "$1,199.00",
-    MainType: "PA Systems",
-    SubType: "Array Systems",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Powerful, standalone sound that flexes to meet your coverage needs. The Bose F1 Model 812 is a 1000-watt, full-range loudspeaker featuring Bose Flexible Array technology. At the heart of the F1 is a 12-inch woofer nested behind an array of eight high-output drivers. These nine speakers are supported by a lower crossover point than conventional loudspeakers to deliver clearer, more natural vocals, and midrange clarity, even at high volumes. And you control the vertical coverage pattern. So, wherever you’re playing, you can adapt the PA to match the room.",
     infoIcon: [
@@ -1176,11 +999,7 @@ const productList = [
       "Automatic EQ changes",
       "1,000 watts of power",
     ],
-    "Box composition": [
-      "1 F1 Model 812 Loudspeaker",
-      "1 IEC line cord",
-      "1 Owner’s guide",
-    ],
+    Box: ["1 F1 Model 812 Loudspeaker", "1 IEC line cord", "1 Owner’s guide"],
     Specifications: {
       "Sound Options": "Audiences up to 1000, Audiences up to 500",
       "Audio cable included": "No",
@@ -1188,16 +1007,9 @@ const productList = [
     },
   },
   {
-    idx: "31",
+    idx: "4",
     name: "Sub1 Powered Bass Module",
-    price: "$899.00",
-    MainType: "PA Systems",
-    SubType: "Sub-woofers",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Give your songs full impact. Sub1 Powered Bass Module combines with virtually any portable PA to deliver low end down to 40 Hz. Sub1 offers powerful bass, an optimized center of gravity, and an easy-to-use system for packing, carrying, and setting up. Stack two Sub1 subwoofers for even more bass or to unleash Cardioid Mode for focused, directional performance that negates rear-firing bass energy, steers the bass out front, and reduces feedback.",
     infoIcon: [
@@ -1205,7 +1017,7 @@ const productList = [
       "Directional sound",
       "SubMatch connectivity",
     ],
-    "Box composition": ["Sub1 powered bass module", "Slip cover", "Power cord"],
+    Box: ["Sub1 powered bass module", "Slip cover", "Power cord"],
     Specifications: {
       "Audio cable included": "No",
       "Entire Product System": '20.87" H x 9.84" W x 20.87" D (36 lb)',
@@ -1213,16 +1025,9 @@ const productList = [
     },
   },
   {
-    idx: "32",
+    idx: "5",
     name: "Sub2 Powered Bass Module",
-    price: "$1,299.00",
-    MainType: "PA Systems",
-    SubType: "Sub-woofers",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Give your songs full impact. Sub2 Powered Bass Module combines with virtually any portable PA to deliver low end down to 37 Hz. Sub2 plays lower and louder, giving you bold bass that goes almost anywhere. Stack two Sub2 subwoofers for even more bass or to unleash Cardioid Mode for focused, directional performance that negates rear-firing bass energy, steers the bass out front, and reduces feedback.",
     infoIcon: [
@@ -1230,7 +1035,7 @@ const productList = [
       "Directional sound",
       "SubMatch connectivity",
     ],
-    "Box composition": ["Sub2 powered bass module", "Slip cover", "Power cord"],
+    Box: ["Sub2 powered bass module", "Slip cover", "Power cord"],
     Specifications: {
       "Audio cable included": "No",
       "Entire Product System": '27.17" H x 12.01" W x 21.65" D (52.15 lb)',
@@ -1238,16 +1043,9 @@ const productList = [
     },
   },
   {
-    idx: "33",
+    idx: "6",
     name: "F1 Subwoofer",
-    price: "$1,299.00",
-    MainType: "PA Systems",
-    SubType: "Sub-woofers",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "More bass. Less space. With 1,000 watts of power, the Bose F1 Subwoofer packs all the performance of a larger bass box into a more compact design that’s easy to carry and simple to setup.",
     infoIcon: [
@@ -1257,7 +1055,7 @@ const productList = [
       "Line output EQ",
       "Easy transportation",
     ],
-    "Box composition": [
+    Box: [
       "F1 Subwoofer",
       "F1 Subwoofer stand",
       "IEC line cord",
@@ -1270,16 +1068,9 @@ const productList = [
     },
   },
   {
-    idx: "34",
+    idx: "7",
     name: "T4S ToneMatch mixer",
-    price: "$699.00",
-    MainType: "PA Systems",
-    SubType: "Mixers",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Take control of your music with the T4S ToneMatch mixer, an ultra-compact 4-channel interface designed for performers. Engineered with a powerful DSP engine and intuitive user control, the T4S offers studio-quality EQ, dynamics, and effects. You'll sound great with integrated Bose ToneMatch processing and zEQ, especially when connected to a Bose L1 or F1 system for full end-to-end tonal control. This mixer lets you play confidently on stage with the rugged T4S using its tactile controls, easy-to-read LED display and scene recall. The T4S ToneMatch mixer is a true performer’s companion.",
     infoIcon: [
@@ -1288,23 +1079,16 @@ const productList = [
       "Seamless sound control",
       "Convenient features for any gig",
     ],
-    "Box composition": ["T4S ToneMatch mixer", "ToneMatch cable", "Cover"],
+    Box: ["T4S ToneMatch mixer", "ToneMatch cable", "Cover"],
     Specifications: {
       "Audio cable included": "No",
       "Entire Product System": "3.153 lb",
     },
   },
   {
-    idx: "35",
+    idx: "8",
     name: "T8S ToneMatch mixer",
-    price: "$999.00",
-    MainType: "PA Systems",
-    SubType: "Mixers",
-    color: ["Black"],
-    gridimg: "",
     // 서브페이지에 들어갈 정보들
-    subPageImg: [],
-    subTopVideo: "",
     infoText:
       "Take unprecedented control of your music with the T8S ToneMatch mixer, a compact 8-channel interface designed for performers. Engineered with a powerful DSP engine and intuitive user control, the T8S offers studio-quality EQ, dynamics, and effects. Sound great with integrated Bose ToneMatch processing and zEQ, especially when connected to a Bose L1 or F1 system for full end-to-end tonal control. Play confidently on stage with the rugged T8S using its tactile controls, easy-to-read LED display, and scene recall.",
     infoIcon: [
@@ -1313,14 +1097,43 @@ const productList = [
       "Seamless sound control",
       "Convenient features for any gig",
     ],
-    "Box composition": [
-      "T8S ToneMatch mixer",
-      "ToneMatch power supply",
-      "Cover",
-    ],
+    Box: ["T8S ToneMatch mixer", "ToneMatch power supply", "Cover"],
     Specifications: {
       "Audio cable included": "No",
       "Entire Product System": "5.115 lb",
     },
   },
+];
+
+export const productsDta = {
+  Headphones: headphones,
+  Earbuds: earbuds,
+  Speakers: speakers,
+  "Home Theater": homeTheater,
+  "PA Systems": paSystems,
+};
+
+const productMainType = [
+  "Headphones",
+  "Earbuds",
+  "Speakers",
+  "Home Theater",
+  "PA Systems",
+];
+const productSubType = [
+  "Over-ear",
+  "Aviation",
+  "In Ear",
+  "Open Ear",
+  "Portable",
+  "Home Speakers",
+  "Amplifiers",
+  "Soundbars",
+  "Bass modules",
+  "Surround speakers",
+  "Portable PA",
+  "Array Systems",
+  "Sub-woofers",
+  "Mixers",
+  "Sets",
 ];
