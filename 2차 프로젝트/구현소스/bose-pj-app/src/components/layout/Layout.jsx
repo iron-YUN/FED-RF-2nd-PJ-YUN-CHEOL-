@@ -4,11 +4,12 @@ import FooterArea from "./Footer";
 import MainArea from "./MainArea";
 import TopArea from "./TopArea";
 
-
-import { bCon,dCon } from "../modules/bCon";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { bCon } from "../modules/bCon";
 
 import { scrolled, setPos } from "../modules/smoothScroll24";
-import { useEffect } from "react";
+
 // 내함수
 import mFn from "../func/my_function";
 import "./css/loding.scss";

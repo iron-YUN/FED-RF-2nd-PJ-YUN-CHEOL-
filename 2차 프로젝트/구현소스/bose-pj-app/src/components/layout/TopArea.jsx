@@ -216,7 +216,7 @@ export default function TopArea() {
                 {isMenuOpen ? <CloseMenuIcon /> : <HamburgerMenuIcon />}
               </li>
               <li>
-                <Link to="/member" onClick={initSet}>
+                <Link to="/login" onClick={initSet}>
                   {/* <span className="gnb-tit">LogIn </span> */}
                   <LoginIcon />
                 </Link>
