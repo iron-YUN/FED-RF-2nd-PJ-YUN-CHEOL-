@@ -167,7 +167,7 @@ function Login() {
 
             // 4. 로그인 성공 메시지 버튼에 출력하기
             document.querySelector(".sbtn").innerText =
-            "넌 로그인 된거야~!";
+            "Thank you!";
 
             // 5. 라우팅 페이지 이동
             // 1초후 메인 페이지로 이동
