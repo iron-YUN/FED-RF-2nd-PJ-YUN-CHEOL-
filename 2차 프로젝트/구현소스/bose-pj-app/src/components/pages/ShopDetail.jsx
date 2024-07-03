@@ -1,7 +1,7 @@
 // DC PJ 캐릭터 상세페이지
 // -> 캐릭터 리스트로 부터 라우팅 이동하여 보이는 페이지
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // 라우터로 전달한 state값을 읽기위한 객체
 import { Link, useLocation } from "react-router-dom";
@@ -16,8 +16,10 @@ import "../../css/shop_detail.scss";
 import Check from "../modules/Check";
 
 function ShopDetail() {
+  
   // 라우터 호출시 전달한 값을 받는다!
   const loc = useLocation();
+  console.log("전체파라미터:",loc);
   const pname = loc.state.pname;
   const idx = loc.state.idx;
   const type = loc.state.type;
@@ -37,7 +39,9 @@ function ShopDetail() {
   const iIcon = pdata2.infoIcon;
   const box = pdata2.Box;
   const Spec = pdata2.Specifications;
-
+  
+  // 현재색상 상태변수를 넘어온 값으로 초기셋팅함!
+  const [nowColor,setNowColor] = useState(sel);
   // 화면랜더링 실행구역 ////
   // 매번실행해야 이미 생성된 컴포넌트의
   // 랜더링 실행구역이 업데이트시에도 작동한다!
@@ -62,7 +66,7 @@ function ShopDetail() {
               src={src}
               type={type}
               idx={idx}
-              sel={sel}
+              sel={nowColor}
               pname={pname}
             />
           </div>
@@ -84,7 +88,13 @@ function ShopDetail() {
             <div className="color-select">
               {color.map((v, i) => (
                 <div key={i} className={`color-box ${v == sel ? "on" : ""}`}>
-                  <div className="color-circle-wrap">
+                  <div className="color-circle-wrap"
+                  onClick={()=>{
+                    console.log("나클릭!",v);
+                    // 현재색상 상태변수업데이트
+                    setNowColor(v);
+                  }}
+                  >
                     <div
                       className="color-circle"
                       style={{ backgroundColor: colorList[v] }}

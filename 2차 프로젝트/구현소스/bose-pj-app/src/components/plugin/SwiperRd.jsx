@@ -6,7 +6,7 @@ import React, {
   useLayoutEffect,
   useCallback,
 } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // 제이쿼리 불러오기
@@ -33,6 +33,12 @@ export function SwiperRd({ catName }) {
   /////////////////////////////////////////////////////////////////
   const [selectedColors, setSelectedColors] = useState({});
   const [selectedImageSrc, setSelectedImageSrc] = useState(null);
+
+  // 색상저장 참조변수
+  const rdColor = useRef(null);
+  // 라우터 이동함수만들기
+  const goNav = useNavigate();
+
   useEffect(() => {
     // useEffect 안에서 jQuery를 이용한 이벤트 처리
     $(".wish svg").click(function () {
@@ -112,6 +118,10 @@ export function SwiperRd({ catName }) {
     console.log("전isrc:", JSON.stringify(isrc));
     // 3. 대상이미지 src값 변경
     isrc[9] = clr;
+    console.log("clr:", clr);
+    // 참조 넘길 색상도 업데이트
+    rdColor.current = clr;
+    console.log("rdColor:", rdColor.current);
     console.log("후isrc:", isrc);
     // 4. 대상이미지경로 복원
     isrc = isrc.join("/");
@@ -189,8 +199,8 @@ export function SwiperRd({ catName }) {
             return rdProduct.map((prod, j) => {
               // console.log(prod.color);
               // 2.선택된 제품에서의 가지고있는 색 랜덤선택
-              const rdColor = getRdItem(prod.color);
-              // console.log(rdColor); // 랜덤 컬러 확인하기
+              rdColor.current = getRdItem(prod.color);
+              console.log(rdColor.current); // 랜덤 컬러 확인하기
 
               return (
                 <SwiperSlide key={`${i}-${j}`} className="rd-cat-cont">
@@ -198,7 +208,27 @@ export function SwiperRd({ catName }) {
                     {/* 1.위시리스트 버튼 */}
                     <WishlistHeartIcon strokeWidth="1" width="30" height="30" />
                   </p>
-                  <Link
+                  <a href="#"
+                  onClick={(e)=>{
+                    e.preventDefault();
+                    console.log(rdColor.current);
+
+                    // 현재 선택된 컬러 title속성값 읽기
+                    let selColor = $(e.currentTarget).find(".color-circle-wrap.on .color-circle").attr("title");
+                    console.log("이거 진짜임!!",selColor);
+                    // 이동
+                    goNav("/detail",{state:{
+                      pname: prod.name,
+                      type: prod.MainType,
+                      idx: prod.idx,
+                      src: prod.isrc,
+                      color: prod.color,
+                      cimg:prod.cimg,
+                      sel: selColor
+                    }})
+                  }}
+                  >
+                  {/* <Link
                     to="/detail"
                     // onClick={(e)=>colorFn2(e)}
                     state={{
@@ -208,9 +238,9 @@ export function SwiperRd({ catName }) {
                       src: prod.isrc,
                       color: prod.color,
                       cimg:prod.cimg,
-                      sel: rdColor
+                      sel: rdColor.current
                     }}
-                  >
+                  > */}
                     <div className="rd-p-box">
                       {/* 2.제품이미지 */}
                       <div className="rd-p-img">
@@ -218,7 +248,7 @@ export function SwiperRd({ catName }) {
                           idx={prod.idx}
                           src={`${process.env.PUBLIC_URL + prod.isrc}${
                             prod.idx
-                          }/${rdColor}/0.webp`}
+                          }/${rdColor.current}/0.webp`}
                           alt={prod.name}
                         />
                       </div>
@@ -234,9 +264,11 @@ export function SwiperRd({ catName }) {
                             <div
                               key={idx}
                               className={`color-circle-wrap ${
-                                clr == rdColor ? "on" : ""
+                                clr == rdColor.current ? "on" : ""
                               }`}
-                              onClick={(e) => colorFn(e, clr)}
+                              onClick={(e) =>{ 
+                                e.stopPropagation(); 
+                                colorFn(e, clr)}}
                             >
                               <div
                                 className="color-circle"
@@ -248,7 +280,8 @@ export function SwiperRd({ catName }) {
                         </div>
                       </section>
                     </div>
-                  </Link>
+                    </a>
+                  {/* </Link> */}
                 </SwiperSlide>
               );
             });
