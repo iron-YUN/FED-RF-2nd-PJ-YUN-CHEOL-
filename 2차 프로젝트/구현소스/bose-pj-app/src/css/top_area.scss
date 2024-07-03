@@ -110,7 +110,7 @@ body.hidden {
     position: relative;
     left: -100%;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     background-color: #fff;
     .left {
@@ -368,6 +368,79 @@ body.hidden {
           }
           .sns-link-box {
             justify-content: space-evenly;
+            .sns-link {
+              gap: 20px;
+              .sns-icon {
+                width: 40px;
+                a {
+                  svg {
+                    width: 20px;
+                    height: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .right {
+        img:first-child {
+        }
+        img {
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .top-area {
+    .icon-menu-box {
+
+      .logo-box {
+        img {
+        }
+      }
+      .icon-box {
+        .icon-menu {
+
+          // 아래는 아이콘 적용후 수정
+          li:nth-child(2),li:nth-child(3){
+            display: none;
+          }
+          & li {
+            &:hover {
+            }
+          }
+        }
+      }
+      .search {
+        &.active {
+        }
+        & input {
+          &.active {
+            // transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1) opacity 1s;
+          }
+        }
+      }
+    }
+    .gnb {
+      &.active {
+      }
+      .left {
+        .menu-box {
+          gap: 20px;
+          & > li {
+            & a:hover {
+            }
+            ol {
+              li {
+              }
+            }
+          }
+          .sns-link-box {
+            justify-content: space-evenly;
+            padding-bottom: 0px;
+    margin-top: 16px;
             .sns-link {
               gap: 20px;
               .sns-icon {

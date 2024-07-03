@@ -12,13 +12,13 @@ import Earbuds from "./components/pages/Earbuds";
 import Speakers from "./components/pages/Speakers";
 import Hometheater from "./components/pages/Hometheater";
 import Pasystems from "./components/pages/Pasystems";
-
 // 기타페이지
 import Explore from "./components/pages/Explore";
 import Support from "./components/pages/Support";
 import SearchPage from "./components/pages/SearchPage";
 import ShopDetail from "./components/pages/ShopDetail";
 import Member from "./components/pages/Member";
+import Login from "./components/pages/Login";
 
 import { scrolled, setPos } from "./components/modules/smoothScroll24";
 
@@ -52,6 +52,7 @@ export default function MainComponent(){
           <Route path="detail" element={<ShopDetail />} />
           <Route path="search" element={<SearchPage />} />
           <Route path="member" element={<Member />} />
+          <Route path="login" element={<Login />} />
         </Route>
      </Routes>
     </BrowserRouter>
