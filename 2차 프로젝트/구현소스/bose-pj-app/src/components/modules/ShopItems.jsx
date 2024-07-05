@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { products2 } from "../data/items_main_data";
 import { WishlistHeartIcon } from "../data/icons";
 import { colorList } from "../data/color_data";
@@ -7,9 +7,14 @@ import { subBanData } from "../data/sub_ban";
 import $ from "jquery";
 // css
 import "./css/shop_items.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function ShopItems({ catName }) {
+  // 색상저장 참조변수
+  const rdColor = useRef(null);
+  // 라우터 이동함수만들기
+  const goNav = useNavigate();
+
   useEffect(() => {
     // useEffect 안에서 jQuery를 이용한 이벤트 처리
     $(".wish svg").click(function () {
@@ -52,6 +57,8 @@ function ShopItems({ catName }) {
     // 3. 대상이미지 src값 변경
     isrc[9] = clr;
     console.log("후isrc:", isrc);
+    // 참조 넘길 색상도 업데이트
+    rdColor.current = clr;
     // 4. 대상이미지경로 복원
     isrc = isrc.join("/");
     console.log("최종isrc:", isrc);
@@ -107,16 +114,26 @@ function ShopItems({ catName }) {
               <span className="wish">
                 <WishlistHeartIcon strokeWidth="1" width="30" height="30" />
               </span>
-              <Link
-                to="/detail"
-                state={{ 
-                  pname: v.name,
-                  type: v.MainType,
-                  idx: v.idx,
-                  src: v.isrc,
-                  color: v.color,
-                  cimg:v.cimg,
-                  sel: rdColor
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  // 현재 선택된 컬러 title속성값 읽기
+                  let selColor = $(e.currentTarget)
+                    .find(".color-circle-wrap.on .color-circle")
+                    .attr("title");
+                  // 이동
+                  goNav("/detail", {
+                    state: {
+                      pname: v.name,
+                      type: v.MainType,
+                      idx: v.idx,
+                      src: v.isrc,
+                      color: v.color,
+                      cimg: v.cimg,
+                      sel: selColor,
+                    },
+                  });
                 }}
               >
                 <div className="item-p-box">
@@ -146,7 +163,10 @@ function ShopItems({ catName }) {
                           className={`color-circle-wrap ${
                             clr == rdColor ? "on" : ""
                           }`}
-                          onClick={(e) => colorFn(e, clr)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            colorFn(e, clr);
+                          }}
                         >
                           <div
                             className="color-circle"
@@ -159,7 +179,7 @@ function ShopItems({ catName }) {
                   </section>
                   {/* ******************************* */}
                 </div>
-              </Link>
+              </a>
             </div>
           );
         })}

@@ -134,21 +134,6 @@ export function SwiperRd({ catName }) {
    
   }; ///////////// colorFn ////////////////
   ////////////////////////////////////////////////////////////////////
-  const colorFn2 = (e) => {
-    // e.preventDefault();
-    // 0. 원조대상
-    let org = $(e.currentTarget);
-    console.log(org);
-    // 1. 대상이미지선택
-    let tg = org.find('.rd-p-img img');
-    console.log(tg);
-    // 2. 대상이미지 src값 읽기
-    let isrc = tg.attr("src").split("/");
-    console.log("전전isrc:", JSON.stringify(isrc));
-    console.log("후후isrc:",isrc[9]);
-    setSelectedImageSrc(isrc[9]);
-  }; ///////////// colorFn ////////////////
-  /////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////
 
   return (
