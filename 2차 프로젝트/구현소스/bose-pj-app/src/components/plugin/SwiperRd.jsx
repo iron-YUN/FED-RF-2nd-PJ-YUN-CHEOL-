@@ -5,6 +5,7 @@ import React, {
   useEffect,
   useLayoutEffect,
   useCallback,
+  useContext,
 } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // Import Swiper React components
@@ -28,17 +29,17 @@ import { WishlistHeartIcon } from "../data/icons";
 // css불러오기
 import "./css/swiper_rd.scss";
 ///////////////////////////////////////////////////////////
+import { bCon } from "../modules/bCon";
 
 export function SwiperRd({ catName }) {
   /////////////////////////////////////////////////////////////////
   const [selectedColors, setSelectedColors] = useState({});
   const [selectedImageSrc, setSelectedImageSrc] = useState(null);
-
+  const myCon = useContext(bCon);
   // 색상저장 참조변수
   const rdColor = useRef(null);
   // 라우터 이동함수만들기
   const goNav = useNavigate();
-
   useEffect(() => {
     // useEffect 안에서 jQuery를 이용한 이벤트 처리
     $(".wish svg").click(function () {
@@ -196,8 +197,9 @@ export function SwiperRd({ catName }) {
                   <a href="#"
                   onClick={(e)=>{
                     e.preventDefault();
-                    console.log(rdColor.current);
-
+                    // console.log(rdColor.current);
+                    window.scrollTo(0, 0);
+                    myCon.setPos(0);
                     // 현재 선택된 컬러 title속성값 읽기
                     let selColor = $(e.currentTarget).find(".color-circle-wrap.on .color-circle").attr("title");
                     console.log("이거 진짜임!!",selColor);

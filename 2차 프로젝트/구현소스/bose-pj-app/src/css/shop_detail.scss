@@ -43,14 +43,19 @@
         box-sizing: border-box;
       }
       .dt-icon {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        // display: grid;
+        // grid-template-columns: repeat(4, 1fr);
         gap: 5px;
         background-color: #eee;
         padding: 5px;
         box-sizing: border-box;
         span {
-          padding: 20px;
+          width: clamp(120px,5vw,200px);
+          padding: 10px;
+          line-height: 1.5;
+          font-size: 12px;
         }
       }
     }
@@ -115,12 +120,13 @@
           width: 100%;
           gap: 20px;
           .add-cart {
+            cursor: pointer;
             transition: .5s;
             justify-content: center;
             align-items: center;
             display: flex;
             width: 80%;
-            padding: 5px;
+            padding: clamp(5px,1vw,15px);
             background-color: #131317;
             color: #fff;
             font-weight: bold;
@@ -131,16 +137,20 @@
             }
           }
           .add-wish {
+            cursor: pointer;
             transition: .5s;
             justify-content: center;
             align-items: center;
             display: flex;
             aspect-ratio: 1/1;
-            padding: 5px;
+            padding: clamp(5px,1vw,15px);
             border: 1px solid #686868;
             &:hover {
                 box-shadow: 0 3.2px 7.2px rgba(0, 0, 0, 0.132),
                   0 0.6px 1.8px rgba(0, 0, 0, 0.108);
+                  svg{
+                    color: red;
+                  }
               }
           }
         }
@@ -176,6 +186,20 @@
     }
   }
 }
+.detail-box2{
+}
 @media screen and (max-width: 768px) {
-  
+  #shop-detail {
+    width: 90%;
+    .detail-box {
+      flex-direction: column;
+      .left {
+        width: 100%;
+      }
+      .right{
+        width: 100%;
+      }
+    }
+
+  }
 }

@@ -25,10 +25,10 @@ import { products2 } from "../data/items_main_data";
 
 
 export function SwiperDtail({ src, type, idx,sel,pname }) {
-  console.log("나는 스와이퍼?",src, type, idx,sel,pname );
+  // console.log("나는 스와이퍼?",src, type, idx,sel,pname );
   // console.log("뭥미",products2[type][idx].cimg[sel]);
   const selc = products2[type][idx].cimg[sel];
-  console.log("뭥미",selc);
+  // console.log("뭥미",selc);
 
   const slides = Array.from({ length: selc }, (_, i) => (
     <SwiperSlide key={i}>

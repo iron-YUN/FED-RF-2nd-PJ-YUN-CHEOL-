@@ -1,0 +1,70 @@
+#shop-detail{
+    .detail{
+        h1{
+            color: #484848;
+            font-weight: bold;
+            font-size: clamp(24px, 3vw, 60px);
+          }
+    }
+}
+.detail{
+    padding: 3vw;
+    background-color: #eee;
+    .dt-box{
+        width: 100%;
+        line-height: 1.5;
+        text-align: left;
+        font-size: clamp(12px, 1.2vw, 24px);
+    }
+    .dt-box1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .dt1{
+            padding: 0 20px;
+            width: 30%;
+        }
+        .dt2{
+            padding: 0 20px;
+            width: 50%; 
+          height: 100%;
+          li{
+            padding: 5px;
+            font-weight: 600;
+            color: #484848;
+          }
+        }
+        .dt-img{
+            img{
+                width: 100%;
+                aspect-ratio: 1/1;
+                object-fit: contain;
+            }
+        }
+    }
+    .dt-box2{
+        // padding: 2vw;
+        .dt-spec{
+            // display: flex;
+            border-bottom: 1px solid #484848;
+            th{
+                width: 40%;
+                padding: 10px;
+            }
+            td{
+                padding: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .detail{
+        .dt-box1{
+            flex-direction: column;
+            // width: 100%;
+            .dt1,.dt2{
+                width: 80%;
+            }
+        }
+    }
+}

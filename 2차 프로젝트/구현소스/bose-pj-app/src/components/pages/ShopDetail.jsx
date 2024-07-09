@@ -11,10 +11,12 @@ import { products2 } from "../data/items_main_data";
 import { productsDta } from "../data/items_detail_data";
 import { colorList } from "../data/color_data";
 import { SwiperDtail } from "../plugin/SwiperDtail";
+import { WishlistHeartIcon } from "../data/icons";
 // CSS불러오기
 import "../../css/shop_detail.scss";
 import Check from "../modules/Check";
-
+import Detail from "../modules/Detail";
+import MainPageRd from "../modules/MainPageRd";
 function ShopDetail() {
   
   // 라우터 호출시 전달한 값을 받는다!
@@ -110,7 +112,7 @@ function ShopDetail() {
                 <span>ADD TO CART</span>
               </div>
               <div className="add-wish">
-                <span>Wish</span>
+                <span><WishlistHeartIcon strokeWidth="1" width="24" height="24"/></span>
               </div>
             </div>
             <div className="direct">
@@ -142,7 +144,17 @@ function ShopDetail() {
           </section>
         </div>
       </div>
-      {/* 3. */}
+      <div className="detail-box2">
+      <Detail
+              src={src}
+              type={type}
+              idx={idx}
+              sel={nowColor}
+              pname={pname}
+            />
+      </div>
+      {/* 3.랜덤 */}
+      <MainPageRd />
     </div>
   );
 }
