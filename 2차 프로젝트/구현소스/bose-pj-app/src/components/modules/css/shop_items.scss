@@ -116,9 +116,10 @@
               }
               .color-circle {
                 margin: 3px;
-                width: 1.5vw;
-                min-width: 18px;
-                max-width: 30px;
+                // width: 1.5vw;
+                // min-width: 18px;
+                // max-width: 30px;
+                width: clamp(18px, 1.5vw,30px);
                 aspect-ratio: 1/1;
                 border-radius: 50%;
                 border: 1px solid #ccc;
@@ -161,12 +162,69 @@
     @media screen and (max-width: 400px) {
       .shop-item{
         // grid-template-columns: repeat(2, 1fr);
+        width: 95vw;
       }
+      .item-cat-cont{
+
+     
       .wish{
         svg{
           width: 20px;
           height: 20px;
           // fill: red;
+        }
+      }
+      .item-p-box {
+        ///////////////////////
+          user-select: none;
+          /////////////////////////
+          position: relative;
+          height: 100%;
+          .item-p-img {
+            // max-width: 400px;
+            // width: 100%;
+            // min-width: 200px;
+            width: clamp(50px, 100%, 400px);
+            aspect-ratio: 1/1;
+            // -webkit-user-drag: none;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              // -webkit-user-drag: none;
+            }
+          }
+          .item-p-info {
+            position: absolute;
+            bottom: 0;
+            .item-p-name {
+              line-height: 1.5;
+              letter-spacing: -0.05em;
+              margin-bottom: clamp(10px, 1vw, 20px);
+              font-size: clamp(10px, 1vw, 20px);
+            }
+            .item-p-price {
+              margin-bottom: clamp(10px, 1vw, 20px);
+              font-size: clamp(10px, 1vw, 20px);
+            }
+            .item-p-color-box {
+              gap: 5px; /* 색상 원 사이의 간격 */
+              .color-circle-wrap {
+                &.on {
+                }
+                .color-circle {
+                  margin: 3px;
+                  // width: 1vw;
+                  // min-width: 12px;
+                  // max-width: 30px;
+                  width: clamp(15px, 1.5vw,18px);
+                  &:hover {
+                   
+                  }
+                }
+              }
+            }
+          }
         }
       }
   }
