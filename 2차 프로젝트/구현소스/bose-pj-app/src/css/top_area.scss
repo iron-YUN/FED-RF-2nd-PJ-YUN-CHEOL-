@@ -11,6 +11,7 @@ body.hidden {
   z-index: 9999;
   // 강제로 h0  - 앞화면을 가려버림
   height: 0;
+  // height: 100%;
   .icon-menu-box {
     height: 50px;
     position: fixed;
@@ -52,25 +53,26 @@ body.hidden {
           transition: 0.3s;
           &:hover {
             color: #486e8a;
-            a{
+            a {
               color: #486e8a;
-              .gnb-tit{
+              .gnb-tit {
                 // transition: 0.3s;
                 width: auto;
                 opacity: 1;
               }
             }
           }
-          a{  
+          a {
             transition: 0.3s;
-            color: #fff;}
-            display: flex;
-            .gnb-tit{
-              display: inline-block;
-              font-weight: normal;
-              width: 0;
-              opacity: 0;
-            }
+            color: #fff;
+          }
+          display: flex;
+          .gnb-tit {
+            display: inline-block;
+            font-weight: normal;
+            width: 0;
+            opacity: 0;
+          }
         }
       }
     }
@@ -110,7 +112,8 @@ body.hidden {
     position: relative;
     left: -100%;
     width: 100vw;
-    height: 100dvh;
+    height: 105dvh;
+    // height: 100%;
     display: flex;
     background-color: #fff;
     .left {
@@ -149,7 +152,7 @@ body.hidden {
         }
         .sns-link-box {
           padding-bottom: 20px;
-          margin-top: 50px;
+          margin-top: 20px;
           display: flex;
           justify-content: flex-start;
           // justify-content: space-evenly;
@@ -192,6 +195,29 @@ body.hidden {
     }
   }
 }
+.logmsg {
+  display: flex;
+  background-color: #00000095;
+  color: #fff;
+  align-items: center;
+  padding: 10px;
+  font-size: clamp(10px, 2vw, 16px);
+}
+.logmsg2 {
+  // margin: 20px 0;
+  display: flex;
+  // color: #fff;
+  align-items: center;
+  span {
+    border-bottom: 1px solid #00000095;
+    // background-color: #00000095;
+    padding: 5px;
+    font-size: clamp(16px, 2vw, 24px);
+  }
+  .log:hover {
+    // color: blue;
+  }
+}
 @media screen and (max-width: 768px) {
   .top-area {
     .icon-menu-box {
@@ -228,6 +254,7 @@ body.hidden {
         width: 100%;
         // height: 100%;
         .menu-box {
+          // padding-top: 10vh;
           left: 10vw;
           & > li {
             font-size: clamp(36px, 8vw, 48px);
@@ -242,6 +269,9 @@ body.hidden {
               }
             }
           }
+          .sns-link-box {
+            margin-top: 0;
+          }
         }
       }
       .right {
@@ -255,6 +285,12 @@ body.hidden {
   }
 }
 @media screen and (max-width: 500px) {
+  .logmsg {
+    display: none;
+  }
+  .logmsg2 {
+    margin: 10px 0;
+  }
   .top-area {
     .icon-menu-box {
       width: 100%;
@@ -327,14 +363,12 @@ body.hidden {
 @media screen and (max-width: 400px) {
   .top-area {
     .icon-menu-box {
-
       .logo-box {
         img {
         }
       }
       .icon-box {
         .icon-menu {
-
           // 아래는 아이콘 적용후 수정
 
           & li {
@@ -358,6 +392,7 @@ body.hidden {
       }
       .left {
         .menu-box {
+          gap: 15px;
           & > li {
             & a:hover {
             }
@@ -395,16 +430,15 @@ body.hidden {
 @media screen and (max-width: 350px) {
   .top-area {
     .icon-menu-box {
-
       .logo-box {
         img {
         }
       }
       .icon-box {
         .icon-menu {
-
           // 아래는 아이콘 적용후 수정
-          li:nth-child(2),li:nth-child(3){
+          li:nth-child(2),
+          li:nth-child(3) {
             display: none;
           }
           & li {
@@ -440,7 +474,7 @@ body.hidden {
           .sns-link-box {
             justify-content: space-evenly;
             padding-bottom: 0px;
-    margin-top: 16px;
+            // margin-top: 16px;
             .sns-link {
               gap: 20px;
               .sns-icon {
@@ -465,4 +499,3 @@ body.hidden {
     }
   }
 }
-

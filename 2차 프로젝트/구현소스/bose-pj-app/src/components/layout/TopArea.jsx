@@ -1,6 +1,7 @@
 // 상단영역 컴포넌트 ///
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { memo } from "react";
 import { bCon } from "../modules/bCon";
 import { Link } from "react-router-dom";
 import mFn from "../func/my_function";
@@ -15,6 +16,7 @@ import {
   CloseMenuIcon,
   HamburgerMenuIcon,
   LoginIcon,
+  LogoutIcon,
   WishlistHeartIcon,
   CartIcon,
   SearchIcon,
@@ -28,7 +30,8 @@ import { scrolled, setPos } from "../modules/smoothScroll24";
 import Logo from "../modules/Logo";
 import SnsLink from "../modules/SnsLink";
 
-export default function TopArea() {
+// export default function TopArea() {
+export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // 전역 컨텍스트 사용하기
   const myCon = useContext(bCon);
 
@@ -212,29 +215,50 @@ export default function TopArea() {
               <Logo logoStyle="top" />
             </Link>
             <ul className="icon-menu">
-              <li onClick={() => toggleMenu()}>
+              <li onClick={() => toggleMenu()} title="Menu open & close">
                 {isMenuOpen ? <CloseMenuIcon /> : <HamburgerMenuIcon />}
               </li>
-              <li>
-                <Link to="/login" onClick={initSet}>
-                  {/* <span className="gnb-tit">LogIn </span> */}
-                  <LoginIcon />
-                </Link>
-              </li>
-              <li>
-                <Link to="/" onClick={initSet}>
+              {loginSts === null && (
+                <>
+                  <li>
+                    <Link to="/login" onClick={initSet} title="Log in">
+                      <LoginIcon />
+                    </Link>
+                  </li>
+                </>
+              )}
+              {loginSts !== null && (
+                <>
+                  <li>
+                    <a
+                      onClick={(e) => {
+                        // 기본이동 막기
+                        e.preventDefault();
+                        // 로그아웃처리함수 호출
+                        logoutFn();
+                        initSet();
+                      }}
+                      title="Log out"
+                    >
+                      <LogoutIcon />
+                    </a>
+                  </li>
+                </>
+              )}
 
+              <li>
+                <Link to="/" onClick={initSet} title="Wish list">
                   <WishlistHeartIcon />
                 </Link>
               </li>
               <li>
-                <Link to="/" onClick={initSet}>
+                <Link to="/" onClick={initSet} title="Cart list">
                   {" "}
                   <CartIcon />
                 </Link>
               </li>
               {/* <li onClick={()=>showSearch()}> */}
-              <li onClick={searchBtnFn} className="search-li">
+              <li onClick={searchBtnFn} className="search-li" title="Search">
                 <SearchIcon />
               </li>
             </ul>
@@ -249,11 +273,50 @@ export default function TopArea() {
               // onKeyUp={()=>enterKey()}
             />
           </div>
+          <div className="logmsg">
+            <span>{loginMsg}</span>
+          </div>
         </div>
         {/* 네비게이션 GNB파트 */}
         <nav className="gnb">
           <div className="left">
             <ul className="menu-box">
+              {loginSts === null && (
+                <>
+                <li className="logmsg2">
+                  <span className="log">
+                  <Link to="/login" onClick={initSet} title="Log in">
+                   Log in</Link>
+                  &nbsp; / &nbsp;
+                  <Link to="/member" onClick={initSet} title="Join us">
+                   Join us</Link>
+
+                  </span>
+                </li>
+                </>
+              )}
+              {loginSts !== null && (
+                <>
+                  <li className="logmsg2">
+                    <span>{loginMsg}</span>
+                    <span className="log">
+                    / &nbsp;
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          // 기본이동 막기
+                          e.preventDefault();
+                          // 로그아웃처리함수 호출
+                          logoutFn();
+                          initSet();
+                        }}
+                        title="Log out"
+                      >Log out
+                      </a>
+                    </span>
+                  </li>
+                </>
+              )}
               {/* 2. GNB메뉴 데이터 배열로 만들기 */}
               {menu.map((v, i) => (
                 <li key={i}>
@@ -299,4 +362,4 @@ export default function TopArea() {
       </header>
     </>
   );
-} ////////////// TopArea /////////////
+}); ////////////// TopArea /////////////

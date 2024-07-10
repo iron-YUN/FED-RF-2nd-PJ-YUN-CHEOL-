@@ -120,6 +120,7 @@
           width: 100%;
           gap: 20px;
           .add-cart {
+            border: 1px solid transparent;
             cursor: pointer;
             transition: .5s;
             justify-content: center;

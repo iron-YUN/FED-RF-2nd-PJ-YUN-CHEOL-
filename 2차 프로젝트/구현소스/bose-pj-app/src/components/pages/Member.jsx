@@ -473,7 +473,7 @@ function Member(props) {
               </button>
             </li>
             <li>
-              Are you already a Member?
+              Are you already a Member? &nbsp;
               <Link to="/login">Log In</Link>
             </li>
           </ul>

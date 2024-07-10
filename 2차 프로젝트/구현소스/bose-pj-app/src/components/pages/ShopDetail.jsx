@@ -108,9 +108,9 @@ function ShopDetail() {
             </div>
             {/* 선택버튼 */}
             <div className="buy-botton">
-              <div className="add-cart">
+              <button className="add-cart">
                 <span>ADD TO CART</span>
-              </div>
+              </button>
               <div className="add-wish">
                 <span><WishlistHeartIcon strokeWidth="1" width="24" height="24"/></span>
               </div>

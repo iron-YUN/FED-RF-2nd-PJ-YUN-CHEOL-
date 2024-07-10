@@ -2,7 +2,7 @@
 
 import FooterArea from "./Footer";
 import MainArea from "./MainArea";
-import TopArea from "./TopArea";
+import { TopArea } from "./TopArea";
 
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -30,11 +30,11 @@ export default function Layout() {
   // 2. 로그인 환영메시지 생성함수
   const makeMsg = (name) => {
     // 유저아이콘
-    let usrIcon = ["🙍‍♂️","🧏‍♀️","🦸‍♂","👨‍🎤","🦸‍♀"];
+    let usrIcon = ["❤","🧡","💛","💚","💙","💜","🤎","🤍"];
     // 랜덤수 : 0~4사이의 수
-    let rdm = Math.floor(Math.random()*5);
+    let rdm = Math.floor(Math.random()*8);
     // 로그인 메시지 상태변수 업데이트
-    setLoginMsg(`Welcome ${name} ${usrIcon[rdm]}`);
+    setLoginMsg(`Welcome  ${usrIcon[rdm]} ${name} `);
   }; /////// makeMsg 함수 /////////
 
   // 3. 로그아웃 함수 /////////
