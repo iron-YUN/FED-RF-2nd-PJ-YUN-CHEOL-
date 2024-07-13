@@ -20,6 +20,7 @@ import {
   WishlistHeartIcon,
   CartIcon,
   SearchIcon,
+  ThinPlusIcon,
 } from "../data/icons";
 
 // top css불러오기
