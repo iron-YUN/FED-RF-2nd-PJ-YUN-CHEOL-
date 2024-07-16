@@ -1,7 +1,7 @@
 // DC PJ 캐릭터 상세페이지
 // -> 캐릭터 리스트로 부터 라우팅 이동하여 보이는 페이지
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 // 라우터로 전달한 state값을 읽기위한 객체
 import { Link, useLocation } from "react-router-dom";
@@ -17,11 +17,13 @@ import "../../css/shop_detail.scss";
 import Check from "../modules/Check";
 import Detail from "../modules/Detail";
 import MainPageRd from "../modules/MainPageRd";
+import { bCon } from "../modules/bCon";
+
 function ShopDetail() {
-  
+  const myCon = useContext(bCon);
   // 라우터 호출시 전달한 값을 받는다!
   const loc = useLocation();
-  console.log("전체파라미터:",loc);
+
   const pname = loc.state.pname;
   const idx = loc.state.idx;
   const type = loc.state.type;
@@ -29,27 +31,24 @@ function ShopDetail() {
   const color = loc.state.color;
   const cimg = loc.state.cimg;
   const sel = loc.state.sel;
-  console.log("나는 무슨색", sel);
-  // console.log("나는 무슨색",color2);
-  // console.log("나뭐야",productsDta[type][idx]);
-  // console.log("나뭐야",products2[type][idx]);
-  console.log("나뭐야", products2[type][idx].price);
   const pdata = products2[type][idx];
+  console.log("넹", pdata);
   const pdata2 = productsDta[type][idx];
+  console.log("넹2", pdata2);
   const price = pdata.price;
   const iText = pdata2.infoText;
   const iIcon = pdata2.infoIcon;
   const box = pdata2.Box;
   const Spec = pdata2.Specifications;
-  
+
   // 현재색상 상태변수를 넘어온 값으로 초기셋팅함!
-  const [nowColor,setNowColor] = useState(sel);
+  const [nowColor, setNowColor] = useState(sel);
   // 화면랜더링 실행구역 ////
   // 매번실행해야 이미 생성된 컴포넌트의
   // 랜더링 실행구역이 업데이트시에도 작동한다!
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   // 코드리턴구역 //////////////////
   return (
@@ -90,12 +89,13 @@ function ShopDetail() {
             <div className="color-select">
               {color.map((v, i) => (
                 <div key={i} className={`color-box ${v == sel ? "on" : ""}`}>
-                  <div className="color-circle-wrap"
-                  onClick={()=>{
-                    console.log("나클릭!",v);
-                    // 현재색상 상태변수업데이트
-                    setNowColor(v);
-                  }}
+                  <div
+                    className="color-circle-wrap"
+                    onClick={() => {
+                      console.log("나클릭!", v);
+                      // 현재색상 상태변수업데이트
+                      setNowColor(v);
+                    }}
                   >
                     <div
                       className="color-circle"
@@ -108,11 +108,85 @@ function ShopDetail() {
             </div>
             {/* 선택버튼 */}
             <div className="buy-botton">
-              <button className="add-cart">
+              <button
+                className="add-cart"
+                onClick={() => {
+                  // [ 로컬스 카트 데이터 넣기 ]
+                  // 1. 로컬스 없으면 만들어라!
+                  if (!localStorage.getItem("cart-data")) {
+                    localStorage.setItem("cart-data", "[]");
+                  } //// if /////
+
+                  // 2. 로컬스 읽어와서 파싱하기
+                  let locals = localStorage.getItem("cart-data");
+                  locals = JSON.parse(locals);
+
+                  // 3. 중복검사
+
+                  // (1) 인클루드 비교
+                  let newLocals = locals.map(
+                    (v) => `${v.idx}-${v.color}-${v.type}`
+                  );
+                  // 현재 선택된 항목을 문자열로 변환
+                  let currentItem = `${idx}-${nowColor}-${type}`;
+                  // 중복 검사
+                  let retSts = newLocals.includes(currentItem);
+
+                  // (2) some 비교
+                  // 가독성: some 메서드는 콜백 함수를 사용하여 조건을 명확히 표현할 수 있습니다. 이는 코드의 가독성을 높이고 유지보수성을 향상시킵니다.
+                  // 유연성: some 메서드는 복잡한 조건을 쉽게 처리할 수 있으며, 객체의 속성을 직접 비교할 수 있습니다.
+                  // let newLocals = locals.map(v => ({
+                  //   idx: v.idx,
+                  //   color: v.color,
+                  //   type: v.type
+                  // }));
+
+                  // 현재 선택된 항목
+                  // let currentItem = {
+                  //   idx: idx,
+                  //   color: nowColor,
+                  //   type: type
+                  // };
+
+                  // 중복 검사
+                  // let retSts = newLocals.some(v =>
+                  //   v.idx === currentItem.idx &&
+                  //   v.color === currentItem.color &&
+                  //   v.type === currentItem.type
+                  // );
+
+                  if (retSts) {
+                    // 메시지 보이기
+                    alert("이미 선택하신 상품입니다!");
+                    // 함수 나가기
+                    return;
+                  } ///// if //////
+
+                  // 4.로컬스에 객체 데이터 추가하기
+                  locals.push({
+                    type: type,
+                    idx: idx,
+                    color: nowColor,
+                    pname: pname,
+                    src: src,
+                    cnt: "1",
+                  });
+
+                  // 로컬스에 문자화하여 입력하기
+                  localStorage.setItem("cart-data", JSON.stringify(locals));
+
+                  // 로컬스 카트데이터 상태값 변경!
+                  myCon.setLocalsCart(localStorage.getItem("cart-data"));
+                  // 카트리스트 생성 상태값 변경!
+                  myCon.setCartSts(true);
+                }}
+              >
                 <span>ADD TO CART</span>
               </button>
               <div className="add-wish">
-                <span><WishlistHeartIcon strokeWidth="1" width="24" height="24"/></span>
+                <span>
+                  <WishlistHeartIcon strokeWidth="1" width="24" height="24" />
+                </span>
               </div>
             </div>
             <div className="direct">
@@ -122,15 +196,15 @@ function ShopDetail() {
                 <p>90-day risk-free trial</p>
               </div>
               <div className="direct-flex">
-              <Check />
+                <Check />
                 <p>Price match promise</p>
               </div>
               <div className="direct-flex">
-              <Check />
+                <Check />
                 <p>Complimentary shipping & returns</p>
               </div>
               <div className="direct-flex">
-              <Check />
+                <Check />
                 <p>
                   Pay later with{" "}
                   <img
@@ -145,13 +219,7 @@ function ShopDetail() {
         </div>
       </div>
       <div className="detail-box2">
-      <Detail
-              src={src}
-              type={type}
-              idx={idx}
-              sel={nowColor}
-              pname={pname}
-            />
+        <Detail src={src} type={type} idx={idx} sel={nowColor} pname={pname} />
       </div>
       {/* 3.랜덤 */}
       <MainPageRd />

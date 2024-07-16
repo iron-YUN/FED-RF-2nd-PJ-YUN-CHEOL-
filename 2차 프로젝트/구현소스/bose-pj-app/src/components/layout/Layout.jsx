@@ -94,6 +94,28 @@ mFn.addEvt(window, "keyup", () => setPos(window.scrollY));
     // console.log("요기요~!!!");
   });
 
+
+
+// 장바구니//////////////////////////////////
+// 로컬스 카트 존재여부변수
+let cartTemp = false;
+// [ 로컬스 카트 데이터 상태변수 ] ///
+const [localsCart,setLocalsCart] = 
+useState(localStorage.getItem("cart-data"));
+// 로컬스 카트 데이터 존재여부에 따라 상태값 변경
+if(localsCart){
+  // 데이터가 있으면 cartTemp값 true로 변경
+  // 데이터 개수가 0이 아니어야함!
+  let cartCnt = JSON.parse(localsCart).length;
+  console.log("카트 데이터수:",cartCnt);
+  if(cartCnt > 0) cartTemp = true;
+} //////////// 카트존재여부 if ////////
+
+  // 2. 카트리스트 사용여부 : true 일때 사용
+  const [cartSts,setCartSts] = useState(cartTemp);
+
+
+
   return (
     <bCon.Provider value={{ setPos,
       loginSts,
@@ -103,6 +125,9 @@ mFn.addEvt(window, "keyup", () => setPos(window.scrollY));
       goPage,
       makeMsg,
       logoutFn,
+      setCartSts,
+      setLocalsCart,
+      localsCart,
      }}>
       {/* <div className="loding-cl">
         <div className="loding"></div>
