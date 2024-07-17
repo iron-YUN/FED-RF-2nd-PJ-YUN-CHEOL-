@@ -1,10 +1,16 @@
-// DC PJ 캐릭터 상세페이지
-// -> 캐릭터 리스트로 부터 라우팅 이동하여 보이는 페이지
 
 import React, { useContext, useEffect, useState } from "react";
-
+// 제이쿼리 불러오기
+import $ from "jquery";
 // 라우터로 전달한 state값을 읽기위한 객체
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 
 // 데이터 불러오기
 import { products2 } from "../data/items_main_data";
@@ -20,10 +26,10 @@ import MainPageRd from "../modules/MainPageRd";
 import { bCon } from "../modules/bCon";
 
 function ShopDetail() {
+  const goNav = useNavigate();
   const myCon = useContext(bCon);
   // 라우터 호출시 전달한 값을 받는다!
   const loc = useLocation();
-
   const pname = loc.state.pname;
   const idx = loc.state.idx;
   const type = loc.state.type;
@@ -31,16 +37,15 @@ function ShopDetail() {
   const color = loc.state.color;
   const cimg = loc.state.cimg;
   const sel = loc.state.sel;
+  ////////////////////////////////////////
   const pdata = products2[type][idx];
-  console.log("넹", pdata);
   const pdata2 = productsDta[type][idx];
-  console.log("넹2", pdata2);
   const price = pdata.price;
   const iText = pdata2.infoText;
   const iIcon = pdata2.infoIcon;
   const box = pdata2.Box;
   const Spec = pdata2.Specifications;
-
+////////////////////////////////////////
   // 현재색상 상태변수를 넘어온 값으로 초기셋팅함!
   const [nowColor, setNowColor] = useState(sel);
   // 화면랜더링 실행구역 ////
@@ -49,7 +54,27 @@ function ShopDetail() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  // 위시아이콘 표시
+  useEffect(() => {
+    $(".add-wish svg").click(function () {
+      const currentFill = $(this).attr("fill");
+      const newFill = currentFill === "red" ? "none" : "red";
+      $(this).attr("fill", newFill);
+    });
+    return () => {
+      $(".add-wish svg").off("click"); // 이벤트 제거
+    };
+  }, []);////////////////////
+    /////////// 제품 색상 변경 함수 //////////
+    const changeColor = (e) => {
+      // 원조대상
+      let org = $(e.currentTarget);
+      // 대상 바꾸기선택
+      let tg = org.parents(".color-box");
+      // 현재 자신에게 클래스"on"넣기
+      tg.addClass("on").siblings().removeClass("on");
+    }; ///////////// colorFn ///////
+    
   // 코드리턴구역 //////////////////
   return (
     <div id="shop-detail">
@@ -70,6 +95,7 @@ function ShopDetail() {
               sel={nowColor}
               pname={pname}
             />
+                 
           </div>
           <p className="dt-text">{iText}</p>
           <div className="dt-icon">
@@ -91,10 +117,11 @@ function ShopDetail() {
                 <div key={i} className={`color-box ${v == sel ? "on" : ""}`}>
                   <div
                     className="color-circle-wrap"
-                    onClick={() => {
+                    onClick={(e) => {
                       console.log("나클릭!", v);
                       // 현재색상 상태변수업데이트
                       setNowColor(v);
+                      changeColor(e);
                     }}
                   >
                     <div
@@ -111,6 +138,7 @@ function ShopDetail() {
               <button
                 className="add-cart"
                 onClick={() => {
+
                   // [ 로컬스 카트 데이터 넣기 ]
                   // 1. 로컬스 없으면 만들어라!
                   if (!localStorage.getItem("cart-data")) {
@@ -154,13 +182,24 @@ function ShopDetail() {
                   //   v.color === currentItem.color &&
                   //   v.type === currentItem.type
                   // );
-
+                  
+                  /////////////////////////////////
                   if (retSts) {
                     // 메시지 보이기
                     alert("이미 선택하신 상품입니다!");
                     // 함수 나가기
                     return;
-                  } ///// if //////
+                  }
+                  const userConfirmed = window.confirm("장바구니로 이동하시겠습니까?");
+                  
+                  if (userConfirmed) {
+                    // 사용자가 확인 버튼을 눌렀을 때
+                    goNav("/cart");
+                  } else {
+                    // 사용자가 취소 버튼을 눌렀을 때
+                    console.log("사용자가 취소를 눌렀습니다.");
+                  } 
+                  //////////////////////////////
 
                   // 4.로컬스에 객체 데이터 추가하기
                   locals.push({
@@ -168,6 +207,7 @@ function ShopDetail() {
                     idx: idx,
                     color: nowColor,
                     pname: pname,
+                    price:price,
                     src: src,
                     cnt: "1",
                   });
@@ -183,8 +223,47 @@ function ShopDetail() {
               >
                 <span>ADD TO CART</span>
               </button>
-              <div className="add-wish">
-                <span>
+              <div className="add-wish"
+               onClick={() => {
+                 // [ 로컬스 카트 데이터 넣기 ]
+                 // 1. 로컬스 없으면 만들어라!
+                 if (!localStorage.getItem("wish-data")) {
+                   localStorage.setItem("wish-data", "[]");
+                 } //// if /////
+
+                 // 2. 로컬스 읽어와서 파싱하기
+                 let locals = localStorage.getItem("wish-data");
+                 locals = JSON.parse(locals);
+
+                 // 3. 중복검사
+
+                 // (1) 인클루드 비교
+                 let newLocals = locals.map(
+                   (v) => `${v.idx}-${v.color}-${v.type}`
+                 );
+                 // 현재 선택된 항목을 문자열로 변환
+                 let currentItem = `${idx}-${nowColor}-${type}`;
+                 // 중복 검사
+                 let retSts = newLocals.includes(currentItem);
+                 if (retSts) {
+                   alert("이미 선택하신 상품입니다!");
+                   return;
+                 } ///// if //////
+                 locals.push({
+                   type: type,
+                   idx: idx,
+                   color: nowColor,
+                   pname: pname,
+                   price:price,
+                   src: src,
+                   cnt: "1",
+                 });
+                 localStorage.setItem("wish-data", JSON.stringify(locals));
+                 myCon.setLocalsWish(localStorage.getItem("wish-data"));
+                 myCon.setWishSts(true);
+               }}
+              >
+                <span className="wish">
                   <WishlistHeartIcon strokeWidth="1" width="24" height="24" />
                 </span>
               </div>
@@ -222,7 +301,7 @@ function ShopDetail() {
         <Detail src={src} type={type} idx={idx} sel={nowColor} pname={pname} />
       </div>
       {/* 3.랜덤 */}
-      <MainPageRd />
+      <MainPageRd  />
     </div>
   );
 }

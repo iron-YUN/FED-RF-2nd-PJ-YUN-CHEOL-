@@ -5,7 +5,7 @@ import "./css/detail.scss";
 function Detail({ src, type, idx, sel, pname }) {
   // console.log("야이", src);
   const selp = productsDta[type][idx];
-  console.log("야이자식들아", selp);
+  // console.log("야이자식들아", selp);
   return (
     <>
       <div className="detail">

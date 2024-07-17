@@ -8,27 +8,33 @@ import React, {
 } from "react";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 // 제이쿼리 불러오기
 import $ from "jquery";
 // Import Swiper styles 모듈용 기본 css파일로딩
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 // import required modules
 // 사용할 스와이퍼 모듈을 불러온다
 // (여기서는 네비게이션 - 양쪽이동버튼)
-import { Navigation, Pagination } from "swiper/modules";
 import { products } from "../data/items_main_data";
 import { products2 } from "../data/items_main_data";
 
 
 
 export function SwiperDtail({ src, type, idx,sel,pname }) {
-  // console.log("나는 스와이퍼?",src, type, idx,sel,pname );
-  // console.log("뭥미",products2[type][idx].cimg[sel]);
   const selc = products2[type][idx].cimg[sel];
-  // console.log("뭥미",selc);
+  const selc1 = products2[type][idx];
+  const selc2 = products2[type][idx].cimg;
+  const selc3 = products2[type][idx].cimg[sel];
+  
+  console.log("야야야",sel);
+  console.log("야좀",selc);
+  console.log("야좀 나와",selc1);
+  console.log("야좀 나와보라고",selc2);
+  console.log("야좀 나와보라고 제발",selc3);
 
   const slides = Array.from({ length: selc }, (_, i) => (
     <SwiperSlide key={i}>
@@ -49,7 +55,6 @@ export function SwiperDtail({ src, type, idx,sel,pname }) {
         pagination={{
           clickable: true,
         }}
-        // loop={true}
         navigation={true}
         /* 사용할 모듈을 여기에 적용시킨다 */
         modules={[Navigation, Pagination]}

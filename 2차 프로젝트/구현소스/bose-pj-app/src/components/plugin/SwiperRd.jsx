@@ -116,17 +116,17 @@ export function SwiperRd({ catName }) {
     let tg = org.parents(".rd-p-info").prev().find("img");
     // 2. 대상이미지 src값 읽기
     let isrc = tg.attr("src").split("/");
-    console.log("전isrc:", JSON.stringify(isrc));
+    // console.log("전isrc:", JSON.stringify(isrc));
     // 3. 대상이미지 src값 변경
     isrc[9] = clr;
-    console.log("clr:", clr);
+    // console.log("clr:", clr);
     // 참조 넘길 색상도 업데이트
     rdColor.current = clr;
-    console.log("rdColor:", rdColor.current);
-    console.log("후isrc:", isrc);
+    // console.log("rdColor:", rdColor.current);
+    // console.log("후isrc:", isrc);
     // 4. 대상이미지경로 복원
     isrc = isrc.join("/");
-    console.log("최종isrc:", isrc);
+    // console.log("최종isrc:", isrc);
     // 5. 대상이미지 src 실제로 변경
     tg.attr("src", isrc);
 
@@ -186,7 +186,7 @@ export function SwiperRd({ catName }) {
               // console.log(prod.color);
               // 2.선택된 제품에서의 가지고있는 색 랜덤선택
               rdColor.current = getRdItem(prod.color);
-              console.log(rdColor.current); // 랜덤 컬러 확인하기
+              // console.log(rdColor.current);
 
               return (
                 <SwiperSlide key={`${i}-${j}`} className="rd-cat-cont">
@@ -197,13 +197,13 @@ export function SwiperRd({ catName }) {
                   <a href="#"
                   onClick={(e)=>{
                     e.preventDefault();
-                    // console.log(rdColor.current);
                     window.scrollTo(0, 0);
                     myCon.setPos(0);
                     // 현재 선택된 컬러 title속성값 읽기
                     let selColor = $(e.currentTarget).find(".color-circle-wrap.on .color-circle").attr("title");
                     console.log("이거 진짜임!!",selColor);
                     // 이동
+
                     goNav("/detail",{state:{
                       pname: prod.name,
                       type: prod.MainType,

@@ -4,7 +4,7 @@ import React from 'react';
 import { snsIconMenu } from "../data/icons";
 
 const sData = snsIconMenu;
-console.log(sData);
+// console.log(sData);
 
 function SnsLink() {
     return (

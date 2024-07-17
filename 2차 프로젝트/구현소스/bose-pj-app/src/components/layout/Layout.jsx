@@ -114,10 +114,28 @@ if(localsCart){
   // 2. 카트리스트 사용여부 : true 일때 사용
   const [cartSts,setCartSts] = useState(cartTemp);
 
+// 위시리스트//////////////////////////////////
+// 로컬스 카트 존재여부변수
+let wishTemp = false;
+// [ 로컬스 카트 데이터 상태변수 ] ///
+const [localsWish,setLocalsWish] = 
+useState(localStorage.getItem("wish-data"));
+// 로컬스 카트 데이터 존재여부에 따라 상태값 변경
+if(localsWish){
+  // 데이터가 있으면 cartTemp값 true로 변경
+  // 데이터 개수가 0이 아니어야함!
+  let wishCnt = JSON.parse(localsWish).length;
+  console.log("카트 데이터수:",wishCnt);
+  if(wishCnt > 0) wishTemp = true;
+} //////////// 카트존재여부 if ////////
+
+  // 2. 카트리스트 사용여부 : true 일때 사용
+  const [wishSts,setWishSts] = useState(wishTemp);
+
 
 
   return (
-    <bCon.Provider value={{ setPos,
+    <bCon.Provider value={{setPos,
       loginSts,
       setLoginSts,
       loginMsg,
@@ -125,9 +143,14 @@ if(localsCart){
       goPage,
       makeMsg,
       logoutFn,
+      /////////////
       setCartSts,
       setLocalsCart,
       localsCart,
+      ///////////
+      setWishSts,
+      setLocalsWish,
+      localsWish,
      }}>
       {/* <div className="loding-cl">
         <div className="loding"></div>
