@@ -30,11 +30,11 @@ export function SwiperDtail({ src, type, idx,sel,pname }) {
   const selc2 = products2[type][idx].cimg;
   const selc3 = products2[type][idx].cimg[sel];
   
-  console.log("야야야",sel);
-  console.log("야좀",selc);
-  console.log("야좀 나와",selc1);
-  console.log("야좀 나와보라고",selc2);
-  console.log("야좀 나와보라고 제발",selc3);
+  // console.log("야야야",sel);
+  // console.log("야좀",selc);
+  // console.log("야좀 나와",selc1);
+  // console.log("야좀 나와보라고",selc2);
+  // console.log("야좀 나와보라고 제발",selc3);
 
   const slides = Array.from({ length: selc }, (_, i) => (
     <SwiperSlide key={i}>

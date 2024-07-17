@@ -29,13 +29,16 @@ import { WishlistHeartIcon } from "../data/icons";
 // css불러오기
 import "./css/swiper_rd.scss";
 ///////////////////////////////////////////////////////////
-import { bCon } from "../modules/bCon";
+import { bCon, cCon } from "../modules/bCon";
 
-export function SwiperRd({ catName }) {
+export function SwiperRd({force, setForce }) {
+  // 샵디테일 페이지 때문에 강제 리랜더링 .... 이었으나 실패
+  // const [force,setForce] = useState(false);
+  // const [nowColor, setNowColor] = useState(sel);
+  // const { nowColor, setNowColor } = useContext(cCon);
   /////////////////////////////////////////////////////////////////
-  const [selectedColors, setSelectedColors] = useState({});
-  const [selectedImageSrc, setSelectedImageSrc] = useState(null);
-  const myCon = useContext(bCon);
+  // 위치탑으로 이동을 위한것
+  const myCon = useContext(bCon); 
   // 색상저장 참조변수
   const rdColor = useRef(null);
   // 라우터 이동함수만들기
@@ -199,11 +202,12 @@ export function SwiperRd({ catName }) {
                     e.preventDefault();
                     window.scrollTo(0, 0);
                     myCon.setPos(0);
+                    // setForce(!force);
+                    // rdClick();
                     // 현재 선택된 컬러 title속성값 읽기
                     let selColor = $(e.currentTarget).find(".color-circle-wrap.on .color-circle").attr("title");
                     console.log("이거 진짜임!!",selColor);
                     // 이동
-
                     goNav("/detail",{state:{
                       pname: prod.name,
                       type: prod.MainType,
@@ -215,19 +219,6 @@ export function SwiperRd({ catName }) {
                     }})
                   }}
                   >
-                  {/* <Link
-                    to="/detail"
-                    // onClick={(e)=>colorFn2(e)}
-                    state={{
-                      pname: prod.name,
-                      type: prod.MainType,
-                      idx: prod.idx,
-                      src: prod.isrc,
-                      color: prod.color,
-                      cimg:prod.cimg,
-                      sel: rdColor.current
-                    }}
-                  > */}
                     <div className="rd-p-box">
                       {/* 2.제품이미지 */}
                       <div className="rd-p-img">
@@ -268,7 +259,6 @@ export function SwiperRd({ catName }) {
                       </section>
                     </div>
                     </a>
-                  {/* </Link> */}
                 </SwiperSlide>
               );
             });

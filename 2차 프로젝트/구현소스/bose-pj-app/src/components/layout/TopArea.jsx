@@ -253,7 +253,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                 </Link>
               </li>
               <li>
-                <Link to="/" onClick={initSet} title="Cart list">
+                <Link to="/cart" onClick={initSet} title="Cart list">
                   {" "}
                   <CartIcon />
                 </Link>

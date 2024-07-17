@@ -1,12 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Lexend:wght@100..900&family=Oswald:wght@200..700&display=swap');
 // font-family: "Lexend", sans-serif;
-#shop-detail {
+#cart_detail {
   width: clamp(70vw,80vw,90vw);
   margin: 0 auto;
   h1 {
     padding-top: 10vh;
-    padding-bottom: 3vh;
+    padding-bottom: 5vh;
     font-size: clamp(36px, 5vw, 72px);
     text-align: center;
   }
@@ -14,48 +14,97 @@
     display: flex;
     flex-direction: row;
     .left {
+  
       padding: clamp(10px, 3vw, 40px);
       box-sizing: border-box;
       width: 60%;
-      .dt-img-box {
-        // width: 90%;
-        margin: 0 auto;
-        .dt-img {
-          padding: clamp(10px, 1vw, 20px);
-          box-sizing: border-box;
-          width: 100%;
-          aspect-ratio: 1/1;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-          }
+      .sign-in{
+        padding:clamp(10px,2vw,20px);
+        line-height: 1.7;
+        border: 1px solid #00000025;
+        span:first-child{
+          font-weight: bold;
+        }
+        a{
+          text-decoration: underline;
+          font-weight: bold;
         }
       }
-      .dt-text {
-        margin: 30px 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; /* 원하는 줄 수 */
-        -webkit-box-orient: vertical;
-        overflow: auto;
-        line-height: 1.5;
-        padding: 20px;
-        box-sizing: border-box;
+      h3{
+        font-size: clamp(20px,3vw,30px);
+        margin: clamp(20px,3vw,30px) 0;
       }
-      .dt-icon {
-        display: flex;
-        flex-wrap: wrap;
-        // display: grid;
-        // grid-template-columns: repeat(4, 1fr);
-        gap: 5px;
-        background-color: #eee;
-        padding: 5px;
-        box-sizing: border-box;
-        span {
-          width: clamp(120px,5vw,200px);
-          padding: 10px;
-          line-height: 1.5;
-          font-size: 12px;
+      .cart-list-box{
+        max-height: 1000px;
+        overflow-y: auto; 
+        .cart-item{
+          position: relative;
+          margin: clamp(10px,1vw,30px) 0;
+          box-sizing: border-box;
+          padding-left: clamp(10px,1vw,30px);
+          padding-top: clamp(20px,3vw,30px);
+          padding-bottom: clamp(10px,1vw,30px);
+          padding-right: clamp(20px,3vw,50px);
+          background-color: #f8f8f8;
+          display: flex;
+          gap: clamp(10px,1vw,30px);
+          .del{
+            position: absolute;
+          right: clamp(10px,1.2vw,30px);
+          top: clamp(10px,1.2vw,30px);
+          background-color: #ffffff00;
+          border: 0;
+          cursor: pointer;
+          font-size: clamp(20px,3vw,30px);
+        }
+          .cart-img{
+            width: clamp(25%,50vw,30%);
+            img{
+              aspect-ratio: 1/1;
+              width: 100%;
+              object-fit: contain;
+            }
+          }
+          .cart-info{
+            flex: 1;
+            line-height: 1.3;
+            display: flex;
+            gap: clamp(5px,2vw,20px);
+            flex-direction: column;
+            .item-name{
+              width: 90%;
+              font-weight: bold;
+              font-size: clamp(12px,1.5vw,30px);
+            }
+            .item-color{font-size: clamp(12px,1.2vw,24px);}
+            .item-num{
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 10px;
+              .item-cnt{
+                button{
+                  cursor: pointer;
+                  font-weight: bold;
+                  background-color: #fff;
+                  &:hover{
+                    background-color: #0000001a;
+                  }
+                  padding: 5px;
+                  border-radius: 5px;
+                  aspect-ratio: 1/1;
+                  border: 0;
+                }
+                span{
+                  padding: 0 10px;
+                }
+              }
+              .item-price{
+                font-weight: bold;
+              font-size: clamp(12px,1.5vw,30px);
+              }
+            }
+          }
         }
       }
     }
@@ -191,12 +240,12 @@
 }
 
 @media screen and (max-width: 1000px) {
-  #shop-detail {
+  #cart_detail {
     // width: 80%;
   }
 }
 @media screen and (max-width: 768px) {
-  #shop-detail {
+  #cart_detail {
     width: 95%;
     .detail-box {
       flex-direction: column;
