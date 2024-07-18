@@ -45,6 +45,12 @@ function ShopDetail() {
   const box = pdata2.Box;
   const Spec = pdata2.Specifications;
 ////////////////////////////////////////
+  const initSet = () => {
+    window.scrollTo(0, 0);
+    myCon.setPos(0);
+    goNav("/cart");
+  }; ////////////////
+////////////////////////////////////////
   // 현재색상 상태변수를 넘어온 값으로 초기셋팅함!
   const [nowColor, setNowColor] = useState(sel);
   console.log("너무너무힘드러2222",nowColor);
@@ -186,11 +192,11 @@ function ShopDetail() {
                   /////////////////////////////////
                   if (retSts) {
                     // 메시지 보이기
-                    alert("이미 선택하신 상품입니다!");
+                    alert("This item is already in your cart!");
                     // 함수 나가기
                     return;
                   }
-                  const userConfirmed = window.confirm("장바구니로 이동하시겠습니까?");
+                  const userConfirmed = window.confirm("Would you like to go to your shopping cart?");
                   
                   if (userConfirmed) {
                     // 사용자가 확인 버튼을 눌렀을 때
@@ -293,6 +299,17 @@ function ShopDetail() {
                   or <strong>Afterpay</strong>
                 </p>
               </div>
+            </div>
+            <div className="buy-botton">
+              <button
+                className="go-cart"
+                onClick={
+                  initSet
+                }
+                
+              >
+                <span>MOVE TO CART</span>
+              </button>
             </div>
           </section>
         </div>

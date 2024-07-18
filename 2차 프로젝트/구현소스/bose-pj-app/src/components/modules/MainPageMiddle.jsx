@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // 데이터 불러오기
 import { middleBan } from "../data/main_page_middle";
 // css
 import "./css/main_page_middle.scss";
 import { Link } from "react-router-dom";
+import { bCon } from "./bCon";
 
 function MainPageMiddle() {
+  const myCon = useContext(bCon);
+  const initSet = () => {
+    window.scrollTo(0, 0);
+    myCon.setPos(0);
+  }; ////////////////
   const getRdItem = (arr) => {
     // 예) 순번1:Headphones -> 품목개수6개 중 랜덤순번품목의 순번을 rdIdx 에 담는다
     const rdIdx = Math.floor(Math.random() * arr.length);
@@ -27,7 +33,7 @@ function MainPageMiddle() {
           >
             <h1>{rdItem[0].tit1}</h1>
             <h3>{rdItem[0].tit2}</h3>
-            <Link>
+            <Link to={"/shop"} onClick={initSet}>
               <span>BUY NOW</span>
             </Link>
           </div>
@@ -40,7 +46,7 @@ function MainPageMiddle() {
             >
               <h1>{rdItem[1].tit1}</h1>
               <h3>{rdItem[1].tit2}</h3>
-              <Link>
+              <Link to={"/shop"} onClick={initSet}>
                 <span>BUY NOW</span>
               </Link>
             </div>
@@ -52,7 +58,7 @@ function MainPageMiddle() {
             >
               <h1>{rdItem[2].tit1}</h1>
               <h3>{rdItem[2].tit2}</h3>
-              <Link>
+              <Link to={"/shop"} onClick={initSet}>
                 <span>BUY NOW</span>
               </Link>
             </div>

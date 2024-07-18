@@ -125,7 +125,7 @@ if(localsWish){
   // 데이터가 있으면 cartTemp값 true로 변경
   // 데이터 개수가 0이 아니어야함!
   let wishCnt = JSON.parse(localsWish).length;
-  console.log("카트 데이터수:",wishCnt);
+  console.log("위시 데이터수:",wishCnt);
   if(wishCnt > 0) wishTemp = true;
 } //////////// 카트존재여부 if ////////
 
