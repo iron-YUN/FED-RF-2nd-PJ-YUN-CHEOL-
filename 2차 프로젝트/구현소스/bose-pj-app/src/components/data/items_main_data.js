@@ -48,7 +48,7 @@ const headphones = [
   {
     idx: "3",
     name: "Bose A30 Aviation Headset",
-    price: "1,299.00",
+    price: "1299.00",
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["black"],
@@ -60,7 +60,7 @@ const headphones = [
   {
     idx: "4",
     name: "ProFlight Series 2 Aviation Headset",
-    price: "1,045.00",
+    price: "1045.00",
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["black"],
@@ -72,7 +72,7 @@ const headphones = [
   {
     idx: "5",
     name: 'A20 Aviation Headset with Bluetooth',
-    price: "1,095.00",
+    price: "1095.00",
     MainType: "Headphones",
     SubType: "Aviation",
     color: ["black"],
@@ -389,7 +389,7 @@ const paSystems = [
   {
     idx: "1",
     name: "L1 Pro16 Portable Line Array System",
-    price: "1,899.00",
+    price: "1899.00",
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["black"],
@@ -401,7 +401,7 @@ const paSystems = [
   {
     idx: "2",
     name: "L1 Pro8 Portable Line Array System",
-    price: "1,299.00",
+    price: "1299.00",
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["black"],
@@ -413,7 +413,7 @@ const paSystems = [
   {
     idx: "3",
     name: "F1 Model 812 Flexible Array loudspeaker",
-    price: "1,199.00",
+    price: "1199.00",
     MainType: "PA Systems",
     SubType: "Array Systems",
     color: ["black"],
@@ -437,7 +437,7 @@ const paSystems = [
   {
     idx: "5",
     name: "Sub2 Powered Bass Module",
-    price: "1,299.00",
+    price: "1299.00",
     MainType: "PA Systems",
     SubType: "Sub-woofers",
     color: ["black"],
@@ -449,7 +449,7 @@ const paSystems = [
   {
     idx: "6",
     name: "F1 Subwoofer",
-    price: "1,299.00",
+    price: "1299.00",
     MainType: "PA Systems",
     SubType: "Sub-woofers",
     color: ["black"],

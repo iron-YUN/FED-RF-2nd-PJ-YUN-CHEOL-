@@ -7,9 +7,11 @@ import "../../css/member.scss";
 // 로컬 스토리지 셋팅 함수 호출!
 import { initData } from "../func/mem_fn";
 import { bCon } from "../modules/bCon";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Login() {
+  const { pathname } = useLocation();  
+  console.log("내경로는?",pathname  )
     // 컨텍스트 사용
     const myCon = useContext(bCon);
     // console.log(myCon.loginSts);
@@ -173,9 +175,11 @@ function Login() {
             // 1초후 메인 페이지로 이동
             setTimeout(() => {
                 myCon.goPage("/");
+                window.scrollTo(0, 0);
+                myCon.setPos(0);
             }, 1000);
-
-
+     
+    
 
         } //// if /////
         // 로그인 실패시 메시지 출력!

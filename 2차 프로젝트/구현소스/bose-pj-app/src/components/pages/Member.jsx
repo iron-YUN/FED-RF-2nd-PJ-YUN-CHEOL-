@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 // 로컬스토리지 생성 JS
 import { initData } from "../func/mem_fn";
 
 // 회원가입 CSS 불러오기
 import "../../css/member.scss";
+import { bCon } from "../modules/bCon";
 
 function Member(props) {
+  const myCon = useContext(bCon);
   // [ 회원가입 페이지 요구사항 ]
   // 1. 각 입력항목별로 유효성검사를 실행함
   // 2. 상태체크를 통하여 적절한 유효성검사시
@@ -242,7 +244,6 @@ function Member(props) {
     // 하나라도 false이면 false를 리턴함!
     else return false;
   }; /////////// totalValid 함수 ///////////
-
   // [서브밋 기능함수]
   const onSubmit = (e) => {
     // 1. 기본 서브밋 막기
@@ -277,6 +278,12 @@ function Member(props) {
       memData.push(newData);
       // 6.로컬스에 반영하기
       localStorage.setItem("mem-data", JSON.stringify(memData));
+      setTimeout(() => {
+        alert("Thank you for registering! You have successfully signed up.");
+        myCon.goPage("/login");
+        window.scrollTo(0, 0);
+         myCon.setPos(0);
+    }, 1000);
     } ////////if////
     // 3. 불통과시 ////
     else {
