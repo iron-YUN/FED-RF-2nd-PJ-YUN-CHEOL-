@@ -6,6 +6,7 @@ import { initData } from "../func/mem_fn";
 
 // 회원가입 CSS 불러오기
 import "../../css/member.scss";
+import AddressInput from "../modules/AddressInput";
 import { bCon } from "../modules/bCon";
 
 function Member(props) {
@@ -18,6 +19,11 @@ function Member(props) {
   // -> 특이사항 :
   // 글자를 입력할때마다 검사
   // + submit버튼 작동시 검사
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const showModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
 
   // [ 상태관리변수 ] /////////////
   // [1] 입력요소 상태변수
@@ -44,7 +50,12 @@ function Member(props) {
   const [userNameError, setUserNameError] = useState(false);
   // 5. 이메일변수
   const [emailError, setEmailError] = useState(false);
+   // 6. 주소변수
+   const [addr, setAddr] = useState("");
+   // 7. 우편번호변수
+   const [zipcode, setZipcode] = useState("");
 
+   
   // [ 아이디관련 메시지 프리셋 ] ////
   const msgId = [
     // 1. 최소 5글자 이상 입력할것

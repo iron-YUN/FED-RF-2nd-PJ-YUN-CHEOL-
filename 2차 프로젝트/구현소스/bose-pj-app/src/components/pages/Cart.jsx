@@ -5,7 +5,7 @@ import $ from "jquery";
 import { Link } from "react-router-dom";
 import "../../css/cart_detail.scss";
 import WhyBuyFromBose from "../modules/WhyBuyFromBose";
-
+import { card } from "../data/card_data";
 // 아이콘
 import { HiMinus, HiPlus } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
@@ -346,6 +346,22 @@ function Cart({ loginSts }) {
                   </button>
                 </div>
                   <span>Aviation headsets excluded. In order to benefit from your offer, your cart must reach the minimum amount of $199. For general ID.me verification questions, please visit</span>
+              </div>
+            </div>
+            <div className="card-list">
+              <div className="row">
+                <span>Accepted Payment Options</span>
+              </div>
+              <div className="cards">
+                <ul>
+                  {
+                    card.map((v,i)=>
+                    <li key={i}>
+                      {v}
+                    </li>
+                    )
+                  }
+                </ul>
               </div>
             </div>
           </section>

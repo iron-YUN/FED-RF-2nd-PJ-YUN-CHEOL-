@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 // 이미지 동영상 데이터불러오기
 import { mainPageBan } from "../data/main_page_banner";
 import $ from "jquery";
 // css 불러오기
 import "./css/main_page_bottom.scss";
+import { bCon } from "./bCon";
 
 function MainPageBottom() {
+  const myCon = useContext(bCon);
   ////////////////////////////////////////////////////////////
   // 스크롤이벤트 함수 : 윈도우 스크롤시 해당 이벤트 발생
   function banScrollEvt(e) {
@@ -110,7 +112,10 @@ function MainPageBottom() {
   function preventScroll(e) {
     e.preventDefault();
   }
-
+  const initSet = () => {
+    window.scrollTo(0, 0);
+    myCon.setPos(0);
+  }; ////////////////
   useEffect(() => {
     // 스크롤시 나타남 이벤트
     window.addEventListener("scroll", banScrollEvt);
@@ -170,9 +175,9 @@ function MainPageBottom() {
           </section>
           {/* 버튼박스 */}
           <div className="go-box">
-            <a className="p-button" href={lData.link} target="_blank">
-              <span>BECOME A MEMBER</span>
-            </a>
+            <Link className="p-button" to={"/login"} onClick={initSet}>
+              <button>BECOME A MEMBER</button>
+            </Link>
           </div>
         </div>
       </div>

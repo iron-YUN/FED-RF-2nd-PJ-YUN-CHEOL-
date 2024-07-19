@@ -4,12 +4,26 @@ import Logo from "../modules/Logo";
 // 하단메뉴 데이터불러오기
 import { bmData, bmData2, bmData3 } from "../data/bmenu";
 
+import { HiMinus, HiPlus } from "react-icons/hi2";
 
 // 하단영역 css 불러오기
 import "../../css/footer_area.scss";
 import SnsLink from "../modules/SnsLink";
+import { useEffect, useState } from "react";
 
 export default function FooterArea() {
+
+  useEffect(()=>{
+    const tit = document.querySelectorAll(".link-tit-tit")
+    const box = document.querySelectorAll(".about-about ol")
+    tit.forEach((v,i)=>{
+      v.addEventListener("click",()=>{
+        box[i].classList.toggle("on")
+
+      })
+    })
+  },[]);
+ 
   return (
     <footer className="footer-area">
       <section className="info">
@@ -34,8 +48,14 @@ export default function FooterArea() {
       <div className="footer-md">
         <ul className="about-link1">
           {Object.keys(bmData).map((v, i) => (
-            <li key={i}>
-              <p className="link-tit">{v}</p>
+            <li key={i} className="about-about"
+            >
+              <p className="link-tit-tit" >
+                <span className="link-tit1">{v}</span>
+                <span className="link-tit2">
+                <HiMinus/>
+                <HiPlus/>
+                  </span></p>
               <ol>
                 {bmData[v].map((v, i) => (
                   <li key={i}>

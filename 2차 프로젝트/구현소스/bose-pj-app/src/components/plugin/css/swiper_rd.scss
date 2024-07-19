@@ -136,6 +136,14 @@
     translate: -50% !important;
   }
 }
+@media screen and (max-width: 1000px) {
+  .mySwiper-rd {
+    .swiper-button-prev,
+    .swiper-button-next {
+       transform: translateY(-20px);
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .mySwiper-rd {
     .swiper-button-prev,
@@ -150,7 +158,15 @@
   .mySwiper-rd {
     .swiper-button-prev,
     .swiper-button-next {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
+    }
+  }
+}
+@media screen and (max-width: 330px) {
+  .mySwiper-rd {
+    .swiper-button-prev,
+    .swiper-button-next {
+      transform: translateY(10px);
     }
   }
 }

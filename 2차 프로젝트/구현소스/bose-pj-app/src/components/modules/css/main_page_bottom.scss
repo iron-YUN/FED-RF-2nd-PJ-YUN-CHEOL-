@@ -165,23 +165,24 @@ body.hidden {
   display: flex;
   justify-content: center;
   .p-button {
-    display: flex;
-    position: absolute;
+    // display: flex;
     bottom: 10%;
-    background-color: #fff;
-    padding: clamp(10px, 1vw, 20px);
-    transition: 0.3s ease;
-    span {
+    position: absolute;
+    display: block;
+    button{
       white-space: nowrap;
-      font-size: clamp(12px, 2vw, 24px);
-      letter-spacing: -0.05em;
-      font-weight: bold;
-    }
-    &:hover {
-      span {
-        color: #fff;
+      padding: clamp(10px, 1vw, 15px);
+      background-color: #131317;
+      font-family: "Ubuntu Condensed", sans-serif;
+      font-size: clamp(16px,3vw,24px);
+      color: #fff;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: #3e474a;
+        box-shadow: 0 3.2px 7.2px rgba(0, 0, 0, 0.132), 0 0.6px 1.8px rgba(0, 0, 0, 0.108);
       }
-      background-color: #282828;
     }
   }
 }
