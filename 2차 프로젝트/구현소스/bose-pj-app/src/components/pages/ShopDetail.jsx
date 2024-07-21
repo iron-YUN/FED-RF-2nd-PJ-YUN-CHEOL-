@@ -27,15 +27,15 @@ import { bCon,cCon } from "../modules/bCon";
 import { SwiperRd } from "../plugin/SwiperRd";
 
 function ShopDetail() {
-  // const { nowColor } = useContext(cCon);
   const [selectedColor, setSelectedColor] = useState(null);
+
   ////////////////////////////////////////
   const goNav = useNavigate();
   const myCon = useContext(bCon); // 장바구니로 사용
   // 라우터 호출시 전달한 값을 받는다!
   const loc = useLocation();
   const { pname, idx, type, src, color, cimg, sel } = loc.state;
-  console.log("너무너무힘드러",sel);
+  console.log("바꿀게",sel);
   ////////////////////////////////////////
   const pdata = products2[type][idx];
   const pdata2 = productsDta[type][idx];
@@ -53,16 +53,12 @@ function ShopDetail() {
 ////////////////////////////////////////
   // 현재색상 상태변수를 넘어온 값으로 초기셋팅함!
   const [nowColor, setNowColor] = useState(sel);
-  console.log("너무너무힘드러2222",nowColor);
+  console.log("바뀌기전의 선택컬러",nowColor);
 
-  // 화면랜더링 실행구역 ////
-  // 매번실행해야 이미 생성된 컴포넌트의
-  // 랜더링 실행구역이 업데이트시에도 작동한다!
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   // 위시아이콘 표시
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     $(".add-wish svg").click(function () {
       const currentFill = $(this).attr("fill");
       const newFill = currentFill === "red" ? "none" : "red";
@@ -72,6 +68,7 @@ function ShopDetail() {
       $(".add-wish svg").off("click"); // 이벤트 제거
     };
   }, []);////////////////////
+
     /////////// 제품 색상 변경 함수 //////////
     const changeColor = (e) => {
       // 원조대상

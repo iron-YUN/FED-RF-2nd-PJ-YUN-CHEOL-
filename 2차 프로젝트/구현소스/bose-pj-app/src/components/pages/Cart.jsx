@@ -12,11 +12,13 @@ import { IoCloseOutline } from "react-icons/io5";
 import MainPageRd from "../modules/MainPageRd";
 function Cart({ loginSts }) {
   const myCon = useContext(bCon);
+  console.log("난몰랑22",loginSts);
   // 로컬스 데이터 가져오기
   // const selData = JSON.parse(myCon.localsCart);
   const [selData, setSelData] = useState(JSON.parse(myCon.localsCart));
   ///////////////////////////////////////////////////////////////////
   selData.map((v,i)=>
+    // 이거왜 두번실행되는거지
     console.log(v.cnt)
   );
   // 강제 리랜더링을 위한 상태변수
@@ -46,36 +48,6 @@ function Cart({ loginSts }) {
       localStorage.setItem('cart-data', JSON.stringify(updatedData));
       myCon.localsCart = JSON.stringify(updatedData); // Context에 업데이트
     }
-  };
-  //////////////////////////////////////////////////
-  // const updateCartData = (index, increment) => {
-  //   if (index >= 0 && index < selData.length) {
-  //     const updatedCnt = Math.max(1, parseInt(selData[index].cnt, 10) + increment);
-  //     const updatedData = [...selData];
-  //     updatedData[index].cnt = String(updatedCnt);
-  //     // 상태 업데이트
-  //     setSelData(updatedData);
-  
-  //     // 로컬 스토리지에 업데이트된 데이터 저장
-  //     localStorage.setItem('cart-data', JSON.stringify(updatedData));
-  //   }
-  // };
-  //////////////////////////////////////////////////
-  // const updateCartData = (index, increment) => {
-  //   // 직접 데이터를 수정하고 업데이트
-  //   if (index >= 0 && index < selData.length) {
-  //     const updatedCnt = Math.max(1, parseInt(selData[index].cnt, 10) + increment);
-  //     selData[index].cnt = String(updatedCnt);
-  //     // 로컬 스토리지에 업데이트된 데이터 저장
-  //     localStorage.setItem('cart-data', JSON.stringify(selData));
-  //     // Context에 업데이트
-  //     myCon.localsCart = JSON.stringify(selData);
-  //     // 강제 리렌더링
-  //     setTimeout(() =>setForce(!force),10);
-  //   }
-  // };
-  const forceFn = ()=>{
-    setTimeout(()=>setForce(!force),10)
   };
   //////////////////////////////////////////////////
 ///////////////////////////////////////////////
@@ -137,7 +109,7 @@ function Cart({ loginSts }) {
       <h1>Your Cart</h1>
       {/* 2.상세정보박스 */}
       <div className="detail-box">
-        {/* 2-1. 왼쪽박스 */}
+        {/************************ 2-1. 왼쪽박스 ************************/}
         <div className="left">
           {loginSts === null && (
             <div className="sign-in">
@@ -145,6 +117,11 @@ function Cart({ loginSts }) {
               <br />
               <span>Enjoy member benefits and faster checkout </span>
               <Link to="/login">Sign-in</Link>
+            </div>
+          )}
+          {loginSts !== null && (
+            <div className="sign-in">
+          
             </div>
           )}
           <h3 className="pcnt">Products ({dataCnt})</h3>
@@ -230,7 +207,7 @@ function Cart({ loginSts }) {
             ))}
           </div>
         </div>
-        {/* 2-2.오른쪽박스 */}
+        {/************************* 2-2.오른쪽박스 *************************/}
         <div className="right">
           <section className="dt-sticky">
             <h2 className="cart-page-header">Order Summary</h2>
@@ -366,6 +343,7 @@ function Cart({ loginSts }) {
             </div>
           </section>
         </div>
+        {/**************************  **************************/}
       </div>
     </div>
     <WhyBuyFromBose/>

@@ -158,7 +158,7 @@ if(localsWish){
       {/* 1.상단영역 */}
       <TopArea loginMsg={loginMsg} loginSts={loginSts} logoutFn={logoutFn} />
       {/* 2.메인영역 */}
-      <MainArea />
+      <MainArea loginSts={loginSts}/>
       {/* 3.하단영역 */}
       <FooterArea />
     </bCon.Provider>

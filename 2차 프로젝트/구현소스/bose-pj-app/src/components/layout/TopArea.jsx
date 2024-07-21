@@ -35,7 +35,7 @@ import SnsLink from "../modules/SnsLink";
 export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // 전역 컨텍스트 사용하기
   const myCon = useContext(bCon);
-
+  console.log("난몰랑",loginSts);
   // 햄버거 버튼을 X버튼으로 바꾸기위한 설정
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuOpen2, setIsMenuOpen2] = useState(false);
