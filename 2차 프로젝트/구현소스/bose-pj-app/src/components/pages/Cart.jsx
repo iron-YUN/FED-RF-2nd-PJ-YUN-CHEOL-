@@ -137,7 +137,12 @@ function Cart({ loginSts }) {
               // 그게아니면 장바구니 리스트 출력
                dataCnt === 0 ? ( <div className="empty-cart">
                 <p>Your cart is currently empty.</p>
-                <Link to="/shop"style={{ textDecoration: "underline" }} >Continue Shopping</Link>
+                <Link to="/shop"style={{ textDecoration: "underline" }} 
+                onClick={()=>{
+                  window.scrollTo(0, 0);
+                  myCon.setPos(0);
+                }}
+                >Continue Shopping</Link>
               </div>):(      <div className="cart-list-box">
               {
                   selData.map((v, i) => (
