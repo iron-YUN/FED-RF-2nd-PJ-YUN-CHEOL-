@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { products2 } from "../data/items_main_data";
 import { WishlistHeartIcon } from "../data/icons";
 import { colorList } from "../data/color_data";
@@ -8,13 +8,14 @@ import $ from "jquery";
 // css
 import "./css/shop_items.scss";
 import { Link, useNavigate } from "react-router-dom";
+import { bCon } from "./bCon";
 
 function ShopItems({ catName }) {
   // 색상저장 참조변수
   const rdColor = useRef(null);
   // 라우터 이동함수만들기
   const goNav = useNavigate();
-
+  const myCon = useContext(bCon);
   useEffect(() => {
     // useEffect 안에서 jQuery를 이용한 이벤트 처리
     $(".wish svg").click(function () {
@@ -118,6 +119,9 @@ function ShopItems({ catName }) {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
+
+                  window.scrollTo(0, 0);
+                  myCon.setPos(0);
                   // 현재 선택된 컬러 title속성값 읽기
                   let selColor = $(e.currentTarget)
                     .find(".color-circle-wrap.on .color-circle")

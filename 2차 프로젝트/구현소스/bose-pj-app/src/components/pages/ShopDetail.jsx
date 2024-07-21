@@ -28,13 +28,15 @@ import { SwiperRd } from "../plugin/SwiperRd";
 
 function ShopDetail() {
   const [selectedColor, setSelectedColor] = useState(null);
-
+ 
   ////////////////////////////////////////
   const goNav = useNavigate();
   const myCon = useContext(bCon); // 장바구니로 사용
   // 라우터 호출시 전달한 값을 받는다!
   const loc = useLocation();
-  const { pname, idx, type, src, color, cimg, sel } = loc.state;
+  const { pname, idx, type, src,  sel } = loc.state;
+  const color = products2[type][idx].color
+  console.log(products2[type][idx].color)
   console.log("바꿀게",sel);
   ////////////////////////////////////////
   const pdata = products2[type][idx];

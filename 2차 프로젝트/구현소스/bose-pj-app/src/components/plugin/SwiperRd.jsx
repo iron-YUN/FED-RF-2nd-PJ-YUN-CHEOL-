@@ -214,7 +214,6 @@ export function SwiperRd({force, setForce }) {
                       idx: prod.idx,
                       src: prod.isrc,
                       color: prod.color,
-                      cimg:prod.cimg,
                       sel: selColor
                     }})
                   }}
