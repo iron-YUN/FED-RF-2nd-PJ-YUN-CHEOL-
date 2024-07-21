@@ -36,16 +36,6 @@ function Cart({ loginSts }) {
       setSelData(localCartData);
       myCon.localsCart = JSON.stringify(localCartData); // Context에 업데이트
     }
-    // const localCartData = localStorage.getItem("cart-data");
-    // if (localCartData) {
-    //   const parsedData = JSON.parse(localCartData);
-    //   setSelData(parsedData);
-    //   myCon.localsCart = JSON.stringify(parsedData);
-    // } else {
-    //   // 로컬 스토리지에 cart-data가 없을 경우 기본값을 빈 배열로 설정
-    //   setSelData([]);
-    //   myCon.localsCart = JSON.stringify([]);
-    // }
 
   }, []);
 
@@ -140,14 +130,16 @@ function Cart({ loginSts }) {
                 <Link to="/login">Sign-in</Link>
               </div>
             )}
-            {loginSts !== null && <div className="sign-in"></div>}
+            {loginSts !== null && ""}
             <h3 className="pcnt">Products ({dataCnt})</h3>
-            <div className="cart-list-box">
+            {
+              // 데이터수 0 이면 안내메시지 출력
+              // 그게아니면 장바구니 리스트 출력
+               dataCnt === 0 ? ( <div className="empty-cart">
+                <p>Your cart is currently empty.</p>
+                <Link to="/shop"style={{ textDecoration: "underline" }} >Continue Shopping</Link>
+              </div>):(      <div className="cart-list-box">
               {
-                dataCnt === 0 ? ( <div className="empty-cart">
-                  <p>Your cart is currently empty.</p>
-                  <Link to="/">Continue Shopping</Link>
-                </div>):(
                   selData.map((v, i) => (
                     <a
                       key={i}
@@ -230,7 +222,6 @@ function Cart({ loginSts }) {
                                   updateCartData(i, -1);
                                   e.stopPropagation();
                                   e.preventDefault(); 
-                                  // forceFn()
                                 }}
                               >
                                 <HiMinus />
@@ -257,118 +248,10 @@ function Cart({ loginSts }) {
                       </div>
                     </a>
                   ))
-                )
-              }
-              {/* {selData.map((v, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation(); 
-                    window.scrollTo(0, 0);
-                    myCon.setPos(0);
-                    goNav("/detail", {
-                      state: {
-                        pname: v.pname,
-                        type: v.type,
-                        idx: v.idx,
-                        src: v.src,
-                        sel: v.color,
-                      },
-                    });
-                  }}
-                >
-                  <div className="cart-item">
-                    <button
-                      className="del"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        e.preventDefault(); 
-                        // confirm()의 "확인"클릭시 true
-                        if (
-                          window.confirm(
-                            "Are you sure you want to delete this item?"
-                          )
-                        ) {
-                          // console.log("삭제함!!!");
-                          // console.log("현재객체:",selData);
-                          // console.log("지울순번:",i);
-                          // // splice 자체를 찍으면 지워진 요소가 찍힘
-                          // console.log("지우기:",selData.splice(i,1));
-
-                          // 지울 배열 순번은 map()에서 i로 들어옴
-                          // 지울 배열은 selData임
-                          // 1.데이터 지우기 :
-                          selData.splice(i, 1);
-                          // 2. 데이터 문자화하기 : 변경된 원본을 문자화
-                          let res = JSON.stringify(selData);
-                          // 3.로컬스 "cart-data"반영하기
-                          localStorage.setItem("cart-data", res);
-                          // 4. 카트리스트 전역상태변수 변경
-                          myCon.setLocalsCart(res);
-                          // 5. 데이터개수가 0이면 카트리스트
-                          // 상태변수를 false로 변경하여
-                          // 카트리스트 출력을 없앤다!
-                          if (selData.length == 0) myCon.setCartSts(false);
-                          // let aa = [];
-                          // aa.splice(지울순번,지울개수)
-                        } //// if /////
-                      }}
-                    >
-                      <IoCloseOutline />
-                    </button>
-                    <div className="cart-img">
-                      <img
-                        src={
-                          process.env.PUBLIC_URL +
-                          v.src +
-                          v.idx +
-                          "/" +
-                          v.color +
-                          "/0.webp"
-                        }
-                        alt=""
-                      />
-                    </div>
-                    <div className="cart-info">
-                      <div className="item-name">{v.pname}</div>
-                      <div className="item-color">color: {v.color}</div>
-                      <div className="item-num">
-                        <div className="item-cnt">
-                          <button
-                            onClick={(e) => {
-                              updateCartData(i, -1);
-                              e.stopPropagation();
-                              e.preventDefault(); 
-                              // forceFn()
-                            }}
-                          >
-                            <HiMinus />
-                          </button>
-                          <span>{v.cnt}</span>
-                          <button onClick={(e) => {
-                            updateCartData(i, 1);
-                            e.stopPropagation();
-                            e.preventDefault(); 
-                          }}>
-                            <HiPlus />
-                          </button>
-                        </div>
-                        <div className="item-price">
-                          ${addComma(v.price * v.cnt)}.00
-                        </div>
-                        <input
-                          className="sum-num2"
-                          type="hidden"
-                          defaultValue={v.price * v.cnt}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              ))} */}
-            </div>
+                }
+            </div>)
+            }
+      
           </div>
           {/************************* 2-2.오른쪽박스 *************************/}
           <div className="right">
