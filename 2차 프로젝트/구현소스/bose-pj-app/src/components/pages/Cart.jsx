@@ -19,11 +19,7 @@ function Cart({ loginSts }) {
   const [selData, setSelData] = useState(JSON.parse(myCon.localsCart));
   ///////////////////////////////////////////////////////////////////
  
-  selData.map((v, i) => {
-    // 이거왜 두번실행되는거지
-    console.log(v.cnt);
-    console.log(v);
-  });
+
   // 강제 리랜더링을 위한 상태변수
   const [force, setForce] = useState(false);
   // 더하기 버튼
@@ -38,7 +34,11 @@ function Cart({ loginSts }) {
     }
 
   }, []);
-
+  selData.map((v, i) => {
+    // 이거왜 두번실행되는거지
+    console.log(v.cnt);
+    console.log(v);
+  });
   const updateCartData = (index, increment) => {
     if (index >= 0 && index < selData.length) {
       const updatedCnt = Math.max(
