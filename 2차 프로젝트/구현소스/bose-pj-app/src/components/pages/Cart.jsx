@@ -31,16 +31,22 @@ function Cart({ loginSts }) {
   const [force2, setForce2] = useState(false);
   //////////////////////////////////////////////////
   useEffect(() => {
-    const localCartData = localStorage.getItem("cart-data");
+    const localCartData = JSON.parse(localStorage.getItem("cart-data"));
     if (localCartData) {
-      const parsedData = JSON.parse(localCartData);
-      setSelData(parsedData);
-      myCon.localsCart = JSON.stringify(parsedData);
-    } else {
-      // 로컬 스토리지에 cart-data가 없을 경우 기본값을 빈 배열로 설정
-      setSelData([]);
-      myCon.localsCart = JSON.stringify([]);
+      setSelData(localCartData);
+      myCon.localsCart = JSON.stringify(localCartData); // Context에 업데이트
     }
+    // const localCartData = localStorage.getItem("cart-data");
+    // if (localCartData) {
+    //   const parsedData = JSON.parse(localCartData);
+    //   setSelData(parsedData);
+    //   myCon.localsCart = JSON.stringify(parsedData);
+    // } else {
+    //   // 로컬 스토리지에 cart-data가 없을 경우 기본값을 빈 배열로 설정
+    //   setSelData([]);
+    //   myCon.localsCart = JSON.stringify([]);
+    // }
+
   }, []);
 
   const updateCartData = (index, increment) => {

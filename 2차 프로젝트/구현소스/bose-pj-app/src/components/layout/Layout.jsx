@@ -132,6 +132,18 @@ if(localsWish){
   // 2. 카트리스트 사용여부 : true 일때 사용
   const [wishSts,setWishSts] = useState(wishTemp);
 
+  /////////////////////////////////////////
+  useEffect(() => {
+    const initializeData = () => {
+      if (!localStorage.getItem("cart-data")) {
+        localStorage.setItem("cart-data", JSON.stringify([]));
+      }
+      if (!localStorage.getItem("wish-data")) {
+        localStorage.setItem("wish-data", JSON.stringify([]));
+      }
+    };
+    initializeData();
+  }, []);
 
 
   return (
