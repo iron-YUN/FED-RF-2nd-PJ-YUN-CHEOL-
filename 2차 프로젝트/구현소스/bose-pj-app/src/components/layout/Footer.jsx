@@ -15,11 +15,12 @@ export default function FooterArea() {
 
   useEffect(()=>{
     const tit = document.querySelectorAll(".link-tit-tit")
+    const stit = document.querySelectorAll(".link-tit2")
     const box = document.querySelectorAll(".about-about ol")
     tit.forEach((v,i)=>{
       v.addEventListener("click",()=>{
         box[i].classList.toggle("on")
-
+        stit[i].classList.toggle("on")
       })
     })
   },[]);

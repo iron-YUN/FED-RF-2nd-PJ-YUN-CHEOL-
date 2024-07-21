@@ -42,10 +42,10 @@
           text-align: center;
           background-color: #f8f8f8;
           border: none;
-          border-bottom: 2px solid #e6e6e6;
+          border-bottom: 2px solid #7e7e7e;
           font-size: clamp(12px,2vw,20px);
           &:hover{
-            border-bottom: 2px solid #636363;
+            border-bottom: 2px solid #9dff60;
           }
           &:focus{
             border-bottom: 2px solid blue;
@@ -71,9 +71,12 @@
       .about-link1 {
         display: flex;
         gap: 60px;
-        .link-tit{
+        .link-tit1{
           font-size: 16px;
           font-weight: bold;
+        }
+        .link-tit2{
+          display: none;
         }
         &>li{
           display: flex;
@@ -285,6 +288,7 @@
         }
         .input-holder {
           .input-send {
+            margin: 0;
           }
           .btn-secondary {
             .btn-text {
@@ -306,6 +310,22 @@
               font-size: 24px;
               cursor: pointer;
               .link-tit1{
+                font-weight: normal;
+                font-size: 20px;
+              }
+              .link-tit2{
+                display: block;
+                & svg:first-child{
+                  display: none;
+                }
+                &.on {
+                  svg:first-child{
+                    display: inline-block;
+                  }
+                  svg:last-child{
+                    display: none;
+                  }
+                }
               }
             }
             ol{
