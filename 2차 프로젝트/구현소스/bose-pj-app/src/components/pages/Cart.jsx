@@ -126,7 +126,7 @@ function Cart({}) {
                 <span>Do you have a My Bose Account?</span>
                 <br />
                 <span>Enjoy member benefits and faster checkout </span>
-                <Link to="/login">Sign-in</Link>
+                <Link to="/login" state={{page:"cart"}}>Sign-in</Link>
               </div>
             )}
             {myCon.loginSts !== null && ""}
@@ -314,7 +314,7 @@ function Cart({}) {
                 </div>
                 {/* 선택버튼 */}
                 <div className="buy-botton">
-                  <button className="add-cart" >
+                  <button className="add-cart">
                     <span>CHECKOUT</span>
                   </button>
                 </div>

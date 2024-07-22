@@ -7,7 +7,7 @@ import "../../css/member.scss";
 // 로컬 스토리지 셋팅 함수 호출!
 import { initData } from "../func/mem_fn";
 import { bCon } from "../modules/bCon";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Login() {
   const { pathname } = useLocation();  
@@ -16,6 +16,8 @@ function Login() {
     const myCon = useContext(bCon);
     // console.log(myCon.loginSts);
 
+    // 도착페이지 파라미터 읽기
+    const {state} = useLocation();
 
   // [ 상태관리변수 ] /////////////
   // [1] 입력요소 상태변수
@@ -174,7 +176,11 @@ function Login() {
             // 5. 라우팅 페이지 이동
             // 1초후 메인 페이지로 이동
             setTimeout(() => {
-                myCon.goPage("/");
+              console.log("넘어온값 있나?",state);
+              // 메인으로갈지 분기하기
+              if(state) myCon.goPage("/"+state.page);
+              else myCon.goPage("/");
+
                 window.scrollTo(0, 0);
                 myCon.setPos(0);
             }, 1000);

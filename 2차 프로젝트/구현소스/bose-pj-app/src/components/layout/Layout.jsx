@@ -138,9 +138,10 @@ export default function Layout() {
     const initializeData = () => {
       if (!localStorage.getItem("cart-data")) {
         localStorage.setItem("cart-data", JSON.stringify([]));
-      }
-      if (!localStorage.getItem("wish-data")) {
-        localStorage.setItem("wish-data", JSON.stringify([]));
+        setLocalsCart(localStorage.getItem("cart-data"))
+        if (!localStorage.getItem("wish-data")) {
+          localStorage.setItem("wish-data", JSON.stringify([]));
+        }
       }
     };
     initializeData();
