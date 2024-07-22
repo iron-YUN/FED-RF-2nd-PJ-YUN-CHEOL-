@@ -18,7 +18,7 @@ function setPos(val) {
 
 // 생성자함수로 받던 값을 직접 지정함!
 let target = document;
-let speed = 60;
+let speed = 90;
 let smooth = 20;
 
 // function SmoothScroll(target, speed, smooth) {
