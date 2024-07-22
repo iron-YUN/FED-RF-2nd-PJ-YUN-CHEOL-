@@ -10,7 +10,7 @@ import { card } from "../data/card_data";
 import { HiMinus, HiPlus } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
 import MainPageRd from "../modules/MainPageRd";
-function Cart({}) {
+function Wish({}) {
   const myCon = useContext(bCon);
   const goNav = useNavigate();
   // 로컬스 데이터 가져오기
@@ -26,7 +26,7 @@ function Cart({}) {
   const [force2, setForce2] = useState(false);
   //////////////////////////////////////////////////
   useEffect(() => {
-    const localCartData = JSON.parse(localStorage.getItem("cart-data"));
+    const localCartData = JSON.parse(localStorage.getItem("wish-data"));
     if (localCartData) {
       setSelData(localCartData);
       myCon.localsCart = JSON.stringify(localCartData); // Context에 업데이트
@@ -51,7 +51,7 @@ function Cart({}) {
       setSelData(updatedData);
       setForce(!force);
       // 로컬 스토리지에 업데이트된 데이터 저장
-      localStorage.setItem("cart-data", JSON.stringify(updatedData));
+      localStorage.setItem("wish-data", JSON.stringify(updatedData));
       myCon.localsCart = JSON.stringify(updatedData); // Context에 업데이트
     }
   };
@@ -188,8 +188,8 @@ function Cart({}) {
                               selData.splice(i, 1);
                               // 2. 데이터 문자화하기 : 변경된 원본을 문자화
                               let res = JSON.stringify(selData);
-                              // 3.로컬스 "cart-data"반영하기
-                              localStorage.setItem("cart-data", res);
+                              // 3.로컬스 "wish-data"반영하기
+                              localStorage.setItem("wish-data", res);
                               // 4. 카트리스트 전역상태변수 변경
                               myCon.setLocalsCart(res);
                               // 5. 데이터개수가 0이면 카트리스트
@@ -414,4 +414,4 @@ function Cart({}) {
   );
 }
 
-export default Cart;
+export default Wish;
