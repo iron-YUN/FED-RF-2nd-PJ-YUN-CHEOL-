@@ -99,12 +99,14 @@
                   &:hover {
                     background-color: #0000001a;
                   }
+                  width: clamp(30px,2vw,40px);
                   padding: 5px;
                   border-radius: 50%;
                   aspect-ratio: 1/1;
                   border: 0;
                 }
                 span {
+                  font-size: clamp(16px,2vw,20px);
                   padding: 0 10px;
                 }
               }

@@ -14,10 +14,9 @@ function Cart({}) {
   const myCon = useContext(bCon);
   const goNav = useNavigate();
   // 로컬스 데이터 가져오기
-  // const selData = JSON.parse(myCon.localsCart);
   const [selData, setSelData] = useState(JSON.parse(myCon.localsCart));
   ///////////////////////////////////////////////////////////////////
-  console.log("ㅇ야양야양",myCon.loginSts);
+  // console.log("ㅇ야양야양",myCon.loginSts);
 
   // 강제 리랜더링을 위한 상태변수
   const [force, setForce] = useState(false);
@@ -153,13 +152,14 @@ function Cart({}) {
                         e.stopPropagation(); 
                         window.scrollTo(0, 0);
                         myCon.setPos(0);
+                        myCon.setSelColor(v.color)
                         goNav("/detail", {
                           state: {
                             pname: v.pname,
                             type: v.type,
                             idx: v.idx,
                             src: v.src,
-                            sel: v.color,
+                            sel: myCon.selColor,
                           },
                         });
                       }}
@@ -314,7 +314,15 @@ function Cart({}) {
                 </div>
                 {/* 선택버튼 */}
                 <div className="buy-botton">
-                  <button className="add-cart">
+                  <button className="add-cart" onClick={()=>{
+                   if (myCon.loginSts === null) {
+                    if (window.confirm("Login is required. Do you want to go to the login page?")) {
+                      goNav("/login", { state: { page: "checkout" } });
+                    }
+                  } else if (myCon.loginSts !== null) {
+                    goNav("/checkout");
+                  }
+                  }}>
                     <span>CHECKOUT</span>
                   </button>
                 </div>

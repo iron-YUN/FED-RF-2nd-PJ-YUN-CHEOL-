@@ -39,8 +39,6 @@ function ShopDetail() {
   console.log(products2[type][idx].color)
   // console.log("바꿀게",sel);
 
-
-
   ////////////////////////////////////////
   const pdata = products2[type][idx];
   const pdata2 = productsDta[type][idx];
@@ -56,20 +54,6 @@ function ShopDetail() {
     myCon.setPos(0);
     goNav("/cart");
   }; ////////////////
-
-////////////////////////////////////////
-  // 현재색상 상태변수를 넘어온 값으로 초기셋팅함!
-  // const [nowColor, setNowColor] = useState(sel);
-  // console.log("바뀌기전의 선택컬러",nowColor);
-
-  // -> 전역상태변수로 관리
-  // nowColor => selColor
-  // setNowColor = setSelColor
-
-  // if(beforeColor.current != nowColor)
-  // setNowColor(sel);
-
-  // console.log("이전:",beforeColor.current,"/지금:",sel);
 
   // 위시아이콘 표시
   useEffect(() => {
