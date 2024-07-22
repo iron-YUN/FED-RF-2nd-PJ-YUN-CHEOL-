@@ -1,7 +1,7 @@
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 // 제이쿼리 불러오기
-import $ from "jquery";
+import $, { now } from "jquery";
 // 라우터로 전달한 state값을 읽기위한 객체
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -27,17 +27,20 @@ import { bCon,cCon } from "../modules/bCon";
 import { SwiperRd } from "../plugin/SwiperRd";
 
 function ShopDetail() {
-  const [selectedColor, setSelectedColor] = useState(null);
+  // const [selectedColor, setSelectedColor] = useState(null);
  
   ////////////////////////////////////////
   const goNav = useNavigate();
   const myCon = useContext(bCon); // 장바구니로 사용
   // 라우터 호출시 전달한 값을 받는다!
   const loc = useLocation();
-  const { pname, idx, type, src,  sel } = loc.state;
+  const { pname, idx, type, src } = loc.state;
   const color = products2[type][idx].color
   console.log(products2[type][idx].color)
-  console.log("바꿀게",sel);
+  // console.log("바꿀게",sel);
+
+
+
   ////////////////////////////////////////
   const pdata = products2[type][idx];
   const pdata2 = productsDta[type][idx];
@@ -46,16 +49,27 @@ function ShopDetail() {
   const iIcon = pdata2.infoIcon;
   const box = pdata2.Box;
   const Spec = pdata2.Specifications;
+
 ////////////////////////////////////////
   const initSet = () => {
     window.scrollTo(0, 0);
     myCon.setPos(0);
     goNav("/cart");
   }; ////////////////
+
 ////////////////////////////////////////
   // 현재색상 상태변수를 넘어온 값으로 초기셋팅함!
-  const [nowColor, setNowColor] = useState(sel);
-  console.log("바뀌기전의 선택컬러",nowColor);
+  // const [nowColor, setNowColor] = useState(sel);
+  // console.log("바뀌기전의 선택컬러",nowColor);
+
+  // -> 전역상태변수로 관리
+  // nowColor => selColor
+  // setNowColor = setSelColor
+
+  // if(beforeColor.current != nowColor)
+  // setNowColor(sel);
+
+  // console.log("이전:",beforeColor.current,"/지금:",sel);
 
   // 위시아이콘 표시
   useEffect(() => {
@@ -80,6 +94,8 @@ function ShopDetail() {
       // 현재 자신에게 클래스"on"넣기
       tg.addClass("on").siblings().removeClass("on");
     }; ///////////// colorFn ///////
+
+    
     
   // 코드리턴구역 //////////////////
   return (
@@ -98,7 +114,7 @@ function ShopDetail() {
               src={src}
               type={type}
               idx={idx}
-              sel={nowColor}
+              sel={myCon.selColor}
               pname={pname}
             />
                  
@@ -120,13 +136,13 @@ function ShopDetail() {
             {/* 색상 */}
             <div className="color-select">
               {color.map((v, i) => (
-                <div key={i} className={`color-box ${v == sel ? "on" : ""}`}>
+                <div key={i} className={`color-box ${v == myCon.selColor ? "on" : ""}`}>
                   <div
                     className="color-circle-wrap"
                     onClick={(e) => {
                       console.log("나클릭!", v);
                       // 현재색상 상태변수업데이트
-                      setNowColor(v);
+                      myCon.setSelColor(v);
                       changeColor(e);
                     }}
                   >
@@ -161,7 +177,7 @@ function ShopDetail() {
                     (v) => `${v.idx}-${v.color}-${v.type}`
                   );
                   // 현재 선택된 항목을 문자열로 변환
-                  let currentItem = `${idx}-${nowColor}-${type}`;
+                  let currentItem = `${idx}-${myCon.selColor}-${type}`;
                   // 중복 검사
                   let retSts = newLocals.includes(currentItem);
 
@@ -210,7 +226,7 @@ function ShopDetail() {
                   locals.push({
                     type: type,
                     idx: idx,
-                    color: nowColor,
+                    color: myCon.selColor,
                     pname: pname,
                     price:price,
                     src: src,
@@ -247,7 +263,7 @@ function ShopDetail() {
                    (v) => `${v.idx}-${v.color}-${v.type}`
                  );
                  // 현재 선택된 항목을 문자열로 변환
-                 let currentItem = `${idx}-${nowColor}-${type}`;
+                 let currentItem = `${idx}-${myCon.selColor}-${type}`;
                  // 중복 검사
                  let retSts = newLocals.includes(currentItem);
                  if (retSts) {
@@ -257,7 +273,7 @@ function ShopDetail() {
                  locals.push({
                    type: type,
                    idx: idx,
-                   color: nowColor,
+                   color: myCon.selColor,
                    pname: pname,
                    price:price,
                    src: src,
@@ -314,11 +330,16 @@ function ShopDetail() {
         </div>
       </div>
       <div className="detail-box2">
-        <Detail src={src} type={type} idx={idx} sel={nowColor} pname={pname} />
+        <Detail src={src} type={type} idx={idx} sel={myCon.selColor} pname={pname} />
       </div>
-      <MainPageRd setSelectedColor={setSelectedColor} />
+      <MainPageRd />
     </div>
   );
 }
 
 export default ShopDetail;
+
+
+// 보내는값 구조
+// MAinArea > Main > MainPageRd > SwiperRd
+// MAinArea > ShopDetail > MainPageRd > SwiperRd

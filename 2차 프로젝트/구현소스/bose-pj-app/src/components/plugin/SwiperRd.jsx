@@ -207,6 +207,8 @@ export function SwiperRd({force, setForce }) {
                     // 현재 선택된 컬러 title속성값 읽기
                     let selColor = $(e.currentTarget).find(".color-circle-wrap.on .color-circle").attr("title");
                     console.log("이거 진짜임!!",selColor);
+                    // 전역 선택 아이템 색상변수에 넣기
+                    myCon.setSelColor(selColor);
                     // 이동
                     goNav("/detail",{state:{
                       pname: prod.name,

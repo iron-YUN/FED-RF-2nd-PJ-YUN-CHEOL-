@@ -22,7 +22,7 @@ import { products2 } from "../data/items_main_data";
 export function SwiperDtail({ src, type, idx,sel,pname }) {
   const selc = products2[type][idx].cimg[sel];
   console.log("바뀌고싶은색",sel);
-  const [nowColor, setNowColor] = useState(sel);
+  // const [nowColor, setNowColor] = useState(sel);
 
 
 
