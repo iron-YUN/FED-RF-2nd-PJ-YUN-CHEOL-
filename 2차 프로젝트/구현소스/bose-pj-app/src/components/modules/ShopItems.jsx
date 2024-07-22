@@ -126,6 +126,7 @@ function ShopItems({ catName }) {
                   let selColor = $(e.currentTarget)
                     .find(".color-circle-wrap.on .color-circle")
                     .attr("title");
+                    myCon.setSelColor(selColor);
                   // 이동
                   goNav("/detail", {
                     state: {

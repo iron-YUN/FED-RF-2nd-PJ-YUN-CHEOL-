@@ -3,7 +3,7 @@ import { bCon, cCon } from "../modules/bCon";
 // 제이쿼리
 import $ from "jquery";
 import { Link, useNavigate } from "react-router-dom";
-import "../../css/cart_detail.scss";
+import "../../css/wish_detail.scss";
 import WhyBuyFromBose from "../modules/WhyBuyFromBose";
 import { card } from "../data/card_data";
 // 아이콘
@@ -17,7 +17,7 @@ function Wish({}) {
   // const selData = JSON.parse(myCon.localsCart);
   const [selData, setSelData] = useState(JSON.parse(myCon.localsCart));
   ///////////////////////////////////////////////////////////////////
-  console.log("ㅇ야양야양",myCon.loginSts);
+  console.log("ㅇ야양야양", myCon.loginSts);
 
   // 강제 리랜더링을 위한 상태변수
   const [force, setForce] = useState(false);
@@ -31,7 +31,6 @@ function Wish({}) {
       setSelData(localCartData);
       myCon.localsCart = JSON.stringify(localCartData); // Context에 업데이트
     }
-
   }, []);
   selData.map((v, i) => {
     // 이거왜 두번실행되는거지
@@ -115,51 +114,49 @@ function Wish({}) {
   }
   return (
     <>
-      <div id="cart_detail">
-        <h1>Your Cart</h1>
+      <div id="wish_detail">
+        <h1>Your Wish-list</h1>
         {/* 2.상세정보박스 */}
         <div className="detail-box">
           {/************************ 2-1. 왼쪽박스 ************************/}
           <div className="left">
-            {myCon.loginSts === null && (
-              <div className="sign-in">
-                <span>Do you have a My Bose Account?</span>
-                <br />
-                <span>Enjoy member benefits and faster checkout </span>
-                <Link to="/login">Sign-in</Link>
-              </div>
-            )}
-            {myCon.loginSts !== null && ""}
             <h3 className="pcnt">Products ({dataCnt})</h3>
             {
               // 데이터수 0 이면 안내메시지 출력
               // 그게아니면 장바구니 리스트 출력
-               dataCnt === 0 ? ( <div className="empty-cart">
-                <p>Your cart is currently empty.</p>
-                <Link to="/shop"style={{ textDecoration: "underline" }} 
-                onClick={()=>{
-                  window.scrollTo(0, 0);
-                  myCon.setPos(0);
-                }}
-                >Continue Shopping</Link>
-              </div>):(      <div className="cart-list-box">
-              {
-                  selData.map((v, i) => (
+              dataCnt === 0 ? (
+                <div className="empty-cart">
+                  <p>Your cart is currently empty.</p>
+                  <Link
+                    to="/shop"
+                    style={{ textDecoration: "underline" }}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      myCon.setPos(0);
+                    }}
+                  >
+                    Continue Shopping
+                  </Link>
+                </div>
+              ) : (
+                <div className="cart-list-box">
+                  {selData.map((v, i) => (
                     <a
                       key={i}
                       href="#"
                       onClick={(e) => {
                         e.preventDefault();
-                        e.stopPropagation(); 
+                        e.stopPropagation();
                         window.scrollTo(0, 0);
                         myCon.setPos(0);
+                        myCon.setSelColor(v.color);
                         goNav("/detail", {
                           state: {
                             pname: v.pname,
                             type: v.type,
                             idx: v.idx,
                             src: v.src,
-                            sel: v.color,
+                            sel: myCon.selColor,
                           },
                         });
                       }}
@@ -169,7 +166,7 @@ function Wish({}) {
                           className="del"
                           onClick={(e) => {
                             e.stopPropagation();
-                            e.preventDefault(); 
+                            e.preventDefault();
                             // confirm()의 "확인"클릭시 true
                             if (
                               window.confirm(
@@ -181,7 +178,7 @@ function Wish({}) {
                               // console.log("지울순번:",i);
                               // // splice 자체를 찍으면 지워진 요소가 찍힘
                               // console.log("지우기:",selData.splice(i,1));
-    
+
                               // 지울 배열 순번은 map()에서 i로 들어옴
                               // 지울 배열은 selData임
                               // 1.데이터 지우기 :
@@ -225,17 +222,19 @@ function Wish({}) {
                                 onClick={(e) => {
                                   updateCartData(i, -1);
                                   e.stopPropagation();
-                                  e.preventDefault(); 
+                                  e.preventDefault();
                                 }}
                               >
                                 <HiMinus />
                               </button>
                               <span>{v.cnt}</span>
-                              <button onClick={(e) => {
-                                updateCartData(i, 1);
-                                e.stopPropagation();
-                                e.preventDefault(); 
-                              }}>
+                              <button
+                                onClick={(e) => {
+                                  updateCartData(i, 1);
+                                  e.stopPropagation();
+                                  e.preventDefault();
+                                }}
+                              >
                                 <HiPlus />
                               </button>
                             </div>
@@ -251,160 +250,21 @@ function Wish({}) {
                         </div>
                       </div>
                     </a>
-                  ))
-                }
-            </div>)
+                  ))}
+                </div>
+              )
             }
-      
+            <div className="row">
+              <div className="col-8">
+                <h3>Subtotal : </h3>
+              </div>
+              <div className="col-4">
+                <h3 className="total-num"></h3>
+              </div>
+            </div>
           </div>
           {/************************* 2-2.오른쪽박스 *************************/}
-          <div className="right">
-            <section className="dt-sticky">
-              <h2 className="cart-page-header">Order Summary</h2>
-              <div className="cart-total">
-                <div className="row">
-                  <div className="col-8">
-                    <h3>Subtotal</h3>
-                  </div>
-                  <div className="col-4">
-                    <h3 className="total-num"></h3>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-8">
-                    <h3>2-Day Shipping</h3>
-                  </div>
-                  <div className="col-4">
-                    <h3>Free</h3>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-8">
-                    <h3>Tax</h3>
-                  </div>
-                  <div className="col-4">
-                    <h3>$--.--</h3>
-                  </div>
-                </div>
-                <div className="row tax-txt">
-                  <div className="col-8">
-                    <span>
-                      {" "}
-                      Applicable taxes will be calculated at checkout
-                    </span>
-                  </div>
-                </div>
-                <div className="row row-space"></div>
-                <div className="row row-total">
-                  <div className="col-8">
-                    <span>Total</span>
-                  </div>
-                  <div className="col-4">
-                    <span className="total-num"></span>
-                  </div>
-                </div>
-                <div className="row row-save">
-                  <div className="col-8">
-                    <span></span>
-                  </div>
-                  <div className="col-4">
-                    <span>You are saving a total </span>
-                    <span className="total-saving"></span>
-                  </div>
-                </div>
-                {/* 선택버튼 */}
-                <div className="buy-botton">
-                  <button className="add-cart" >
-                    <span>CHECKOUT</span>
-                  </button>
-                </div>
-              </div>
-              <div className="acount">
-                <div
-                  className="row"
-                  onClick={() => {
-                    setForce1(!force1);
-                    showFn1();
-                  }}
-                >
-                  <div className="col-8 row-underline">
-                    <h3>Do you have a promo code?</h3>
-                  </div>
-                  <div className="col-4">
-                    <span>
-                      {force1 === true && <HiMinus />}
-                      {force1 !== true && <HiPlus />}
-                    </span>
-                  </div>
-                </div>
-                <div className="acount-info">
-                  <input
-                    type="text"
-                    placeholder="Insert your promo code in the field. The code will only "
-                    value={promoCode}
-                    onChange={inputChange}
-                  />
-                  <button
-                    className="apply-btn apply-btn2"
-                    style={{ display: promoCode ? "block" : "none" }}
-                  >
-                    <span>APPLY</span>
-                  </button>
-                </div>
-              </div>
-              <div className="acount">
-                <div
-                  className="row"
-                  onClick={() => {
-                    setForce2(!force2);
-                    showFn2();
-                  }}
-                >
-                  <div className="col-8 row-underline">
-                    <h3>Verify ID.Me Discount</h3>
-                  </div>
-                  <div className="col-4">
-                    <span>
-                      {force2 === true && <HiMinus />}
-                      {force2 !== true && <HiPlus />}
-                    </span>
-                  </div>
-                </div>
-                <div className="acount-info">
-                  <span>
-                    Responders/​Medical/​Nurses/​Students/​Educators/​Military/​Hospital
-                    Employees
-                  </span>
-                  <div className="buy-botton">
-                    <button className="add-cart2" onClick={showBtn}>
-                      <span>VERIFY WITH </span>&nbsp;&nbsp;
-                      <img
-                        src={process.env.PUBLIC_URL + "/images/logo/idme.png"}
-                        alt=""
-                      />
-                    </button>
-                  </div>
-                  <span>
-                    Aviation headsets excluded. In order to benefit from your
-                    offer, your cart must reach the minimum amount of $199. For
-                    general ID.me verification questions, please visit
-                  </span>
-                </div>
-              </div>
-              <div className="card-list">
-                <div className="row">
-                  <span>Accepted Payment Options</span>
-                </div>
-                <div className="cards">
-                  <ul>
-                    {card.map((v, i) => (
-                      <li key={i}>{v}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
-          </div>
+         
           {/**************************  **************************/}
         </div>
       </div>

@@ -23,6 +23,7 @@ import Login from "./components/pages/Login";
 import { scrolled, setPos } from "./components/modules/smoothScroll24";
 import Cart from "./components/pages/Cart";
 import Checkout from "./components/pages/Checkout";
+import Wish from "./components/pages/Wish";
 
 export default function MainComponent(){
 
@@ -56,6 +57,7 @@ export default function MainComponent(){
           <Route path="member" element={<Member />} />
           <Route path="login" element={<Login />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="wish" element={<Wish />} />
           <Route path="checkout" element={<Checkout />} />
         </Route>
      </Routes>

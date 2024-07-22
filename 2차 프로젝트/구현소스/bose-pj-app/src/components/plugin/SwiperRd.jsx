@@ -54,6 +54,7 @@ export function SwiperRd({force, setForce }) {
       $(this).attr("fill", newFill);
     });
     // clean-up 함수: 컴포넌트가 언마운트될 때 클릭 이벤트 핸들러를 제거합니다.
+
     return () => {
       $(".wish svg").off("click"); // 이벤트 제거
     };

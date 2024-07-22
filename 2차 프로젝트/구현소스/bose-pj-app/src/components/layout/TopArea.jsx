@@ -248,7 +248,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
               )}
 
               <li>
-                <Link to="/" onClick={initSet} title="Wish list">
+                <Link to="/wish" onClick={initSet} title="Wish list">
                   <WishlistHeartIcon />
                 </Link>
               </li>
