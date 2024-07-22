@@ -10,15 +10,14 @@ import { card } from "../data/card_data";
 import { HiMinus, HiPlus } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
 import MainPageRd from "../modules/MainPageRd";
-function Cart({ loginSts }) {
+function Cart({}) {
   const myCon = useContext(bCon);
   const goNav = useNavigate();
-  console.log("난몰랑22", loginSts);
   // 로컬스 데이터 가져오기
   // const selData = JSON.parse(myCon.localsCart);
   const [selData, setSelData] = useState(JSON.parse(myCon.localsCart));
   ///////////////////////////////////////////////////////////////////
- 
+  console.log("ㅇ야양야양",myCon.loginSts);
 
   // 강제 리랜더링을 위한 상태변수
   const [force, setForce] = useState(false);
@@ -36,8 +35,8 @@ function Cart({ loginSts }) {
   }, []);
   selData.map((v, i) => {
     // 이거왜 두번실행되는거지
-    console.log(v.cnt);
-    console.log(v);
+    // console.log(v.cnt);
+    // console.log(v);
   });
   const updateCartData = (index, increment) => {
     if (index >= 0 && index < selData.length) {
@@ -122,7 +121,7 @@ function Cart({ loginSts }) {
         <div className="detail-box">
           {/************************ 2-1. 왼쪽박스 ************************/}
           <div className="left">
-            {loginSts === null && (
+            {myCon.loginSts === null && (
               <div className="sign-in">
                 <span>Do you have a My Bose Account?</span>
                 <br />
@@ -130,7 +129,7 @@ function Cart({ loginSts }) {
                 <Link to="/login">Sign-in</Link>
               </div>
             )}
-            {loginSts !== null && ""}
+            {myCon.loginSts !== null && ""}
             <h3 className="pcnt">Products ({dataCnt})</h3>
             {
               // 데이터수 0 이면 안내메시지 출력
