@@ -112,6 +112,10 @@ function Cart({}) {
       box.style.display = "none";
     }
   }
+  const initSet = () => {
+    window.scrollTo(0, 0);
+    myCon.setPos(0);
+ };
   return (
     <>
       <div id="cart_detail">
@@ -125,7 +129,9 @@ function Cart({}) {
                 <span>Do you have a My Bose Account?</span>
                 <br />
                 <span>Enjoy member benefits and faster checkout </span>
-                <Link to="/login" state={{page:"cart"}}>Sign-in</Link>
+                <Link to="/login" state={{page:"cart"}}
+                onClick={initSet}
+                >Sign-in</Link>
               </div>
             )}
             {myCon.loginSts !== null && ""}
@@ -315,12 +321,15 @@ function Cart({}) {
                 {/* 선택버튼 */}
                 <div className="buy-botton">
                   <button className="add-cart" onClick={()=>{
+                   
                    if (myCon.loginSts === null) {
                     if (window.confirm("Login is required. Do you want to go to the login page?")) {
-                      goNav("/login", { state: { page: "checkout" } });
+                      goNav("/login", { state: { page: "cart" } });
+                      initSet();
                     }
                   } else if (myCon.loginSts !== null) {
                     goNav("/checkout");
+                    initSet();
                   }
                   }}>
                     <span>CHECKOUT</span>

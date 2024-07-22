@@ -83,7 +83,10 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     // 메뉴창 닫기 위한 설정 /////////////////////////////
     const escClose = (event) => {
       if (event.key === "Escape" && isMenuOpen) {
-        setIsMenuOpen(false);
+        if(isMenuOpen) {
+          setIsMenuOpen(false);
+
+        }
         closeMenu();
       } ///////// if //////
     }; /////////escClose///////////////

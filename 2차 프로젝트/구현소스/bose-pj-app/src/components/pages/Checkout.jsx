@@ -41,6 +41,11 @@ function Checkout(props) {
           <div>
             <input type="text" placeholder="Insert your card's CVV" />
           </div>
+          <div className="buy-botton">
+            <button className="add-cart">
+              <span>BUY NOW</span>
+            </button>
+          </div>
         </div>
       </div>
       <WhyBuyFromBose />

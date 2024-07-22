@@ -28,10 +28,10 @@ import { SwiperRd } from "../plugin/SwiperRd";
 
 function ShopDetail() {
   // const [selectedColor, setSelectedColor] = useState(null);
- 
   ////////////////////////////////////////
   const goNav = useNavigate();
   const myCon = useContext(bCon); // 장바구니로 사용
+  console.log("난나니뇨",myCon.selColor);
   // 라우터 호출시 전달한 값을 받는다!
   const loc = useLocation();
   const { pname, idx, type, src } = loc.state;
@@ -58,15 +58,17 @@ function ShopDetail() {
   // 위시아이콘 표시
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    $(".add-wish svg").click(function () {
-      const currentFill = $(this).attr("fill");
-      const newFill = currentFill === "red" ? "none" : "red";
-      $(this).attr("fill", newFill);
-    });
-    return () => {
-      $(".add-wish svg").off("click"); // 이벤트 제거
-    };
+    if(myCon.selColor===null){
+      $(".color-circle-wrap").first().trigger("click");
+    }
+    // $(".add-wish svg").click(function () {
+    //   const currentFill = $(this).attr("fill");
+    //   const newFill = currentFill === "red" ? "none" : "red";
+    //   $(this).attr("fill", newFill);
+    // });
+    // return () => {
+    //   $(".add-wish svg").off("click"); 
+    // };
   }, []);////////////////////
 
     /////////// 제품 색상 변경 함수 //////////
@@ -144,128 +146,143 @@ function ShopDetail() {
               <button
                 className="add-cart"
                 onClick={() => {
-
-                  // [ 로컬스 카트 데이터 넣기 ]
-                  // 1. 로컬스 없으면 만들어라!
-                  if (!localStorage.getItem("cart-data")) {
-                    localStorage.setItem("cart-data", "[]");
-                  } //// if /////
-
-                  // 2. 로컬스 읽어와서 파싱하기
-                  let locals = localStorage.getItem("cart-data");
-                  locals = JSON.parse(locals);
-
-                  // 3. 중복검사
-                  // (1) 인클루드 비교
-                  let newLocals = locals.map(
-                    (v) => `${v.idx}-${v.color}-${v.type}`
-                  );
-                  // 현재 선택된 항목을 문자열로 변환
-                  let currentItem = `${idx}-${myCon.selColor}-${type}`;
-                  // 중복 검사
-                  let retSts = newLocals.includes(currentItem);
-
-                  // (2) some 비교
-                  // 가독성: some 메서드는 콜백 함수를 사용하여 조건을 명확히 표현할 수 있습니다. 이는 코드의 가독성을 높이고 유지보수성을 향상시킵니다.
-                  // 유연성: some 메서드는 복잡한 조건을 쉽게 처리할 수 있으며, 객체의 속성을 직접 비교할 수 있습니다.
-                  // let newLocals = locals.map(v => ({
-                  //   idx: v.idx,
-                  //   color: v.color,
-                  //   type: v.type
-                  // }));
-
-                  // 현재 선택된 항목
-                  // let currentItem = {
-                  //   idx: idx,
-                  //   color: nowColor,
-                  //   type: type
-                  // };
-
-                  // 중복 검사
-                  // let retSts = newLocals.some(v =>
-                  //   v.idx === currentItem.idx &&
-                  //   v.color === currentItem.color &&
-                  //   v.type === currentItem.type
-                  // );
-                  
-                  /////////////////////////////////
-                  if (retSts) {
-                    // 메시지 보이기
-                    alert("This item is already in your cart!");
-                    // 함수 나가기
-                    return;
+                  if(myCon.selColor===null){
+                    alert("Please select a color");
                   }
-                  const userConfirmed = window.confirm("Would you like to go to your shopping cart?");
-                  
-                  if (userConfirmed) {
-                    // 사용자가 확인 버튼을 눌렀을 때
-                    goNav("/cart");
-                  } else {
-                    // 사용자가 취소 버튼을 눌렀을 때
-                    console.log("사용자가 취소를 눌렀습니다.");
-                  } 
-                  //////////////////////////////
-
-                  // 4.로컬스에 객체 데이터 추가하기
-                  locals.push({
-                    type: type,
-                    idx: idx,
-                    color: myCon.selColor,
-                    pname: pname,
-                    price:price,
-                    src: src,
-                    cnt: "1",
-                  });
-
-                  // 로컬스에 문자화하여 입력하기
-                  localStorage.setItem("cart-data", JSON.stringify(locals));
-
-                  // 로컬스 카트데이터 상태값 변경!
-                  myCon.setLocalsCart(localStorage.getItem("cart-data"));
-                  // 카트리스트 생성 상태값 변경!
-                  myCon.setCartSts(true);
+                  else{
+                    // [ 로컬스 카트 데이터 넣기 ]
+                    // 1. 로컬스 없으면 만들어라!
+                    if (!localStorage.getItem("cart-data")) {
+                      localStorage.setItem("cart-data", "[]");
+                    } //// if /////
+  
+                    // 2. 로컬스 읽어와서 파싱하기
+                    let locals = localStorage.getItem("cart-data");
+                    locals = JSON.parse(locals);
+  
+                    // 3. 중복검사
+                    // (1) 인클루드 비교
+                    let newLocals = locals.map(
+                      (v) => `${v.idx}-${v.color}-${v.type}`
+                    );
+                    // 현재 선택된 항목을 문자열로 변환
+                    let currentItem = `${idx}-${myCon.selColor}-${type}`;
+                    // 중복 검사
+                    let retSts = newLocals.includes(currentItem);
+  
+                    // (2) some 비교
+                    // 가독성: some 메서드는 콜백 함수를 사용하여 조건을 명확히 표현할 수 있습니다. 이는 코드의 가독성을 높이고 유지보수성을 향상시킵니다.
+                    // 유연성: some 메서드는 복잡한 조건을 쉽게 처리할 수 있으며, 객체의 속성을 직접 비교할 수 있습니다.
+                    // let newLocals = locals.map(v => ({
+                    //   idx: v.idx,
+                    //   color: v.color,
+                    //   type: v.type
+                    // }));
+  
+                    // 현재 선택된 항목
+                    // let currentItem = {
+                    //   idx: idx,
+                    //   color: nowColor,
+                    //   type: type
+                    // };
+  
+                    // 중복 검사
+                    // let retSts = newLocals.some(v =>
+                    //   v.idx === currentItem.idx &&
+                    //   v.color === currentItem.color &&
+                    //   v.type === currentItem.type
+                    // );
+                    
+                    /////////////////////////////////
+                    if (retSts) {
+                      // 메시지 보이기
+                      alert("This item is already in your cart!");
+                      // 함수 나가기
+                      return;
+                    }
+                    const userConfirmed = window.confirm("Would you like to go to your shopping cart?");
+                    
+                    if (userConfirmed) {
+                      // 사용자가 확인 버튼을 눌렀을 때
+                      initSet();
+                      // goNav("/cart");
+                    } else {
+                      // 사용자가 취소 버튼을 눌렀을 때
+                      console.log("사용자가 취소를 눌렀습니다.");
+                    } 
+                    //////////////////////////////
+  
+                    // 4.로컬스에 객체 데이터 추가하기
+                    locals.push({
+                      type: type,
+                      idx: idx,
+                      color: myCon.selColor,
+                      pname: pname,
+                      price:price,
+                      src: src,
+                      cnt: "1",
+                    });
+  
+                    // 로컬스에 문자화하여 입력하기
+                    localStorage.setItem("cart-data", JSON.stringify(locals));
+  
+                    // 로컬스 카트데이터 상태값 변경!
+                    myCon.setLocalsCart(localStorage.getItem("cart-data"));
+                    // 카트리스트 생성 상태값 변경!
+                    myCon.setCartSts(true);
+                  }
                 }}
               >
                 <span>ADD TO CART</span>
               </button>
               <div className="add-wish"
                onClick={() => {
-                 // [ 로컬스 카트 데이터 넣기 ]
-                 // 1. 로컬스 없으면 만들어라!
-                 if (!localStorage.getItem("wish-data")) {
-                   localStorage.setItem("wish-data", "[]");
-                 } //// if /////
+                  if(myCon.selColor===null){
+                    alert("Please select a color");
+                  }
+                  else{
 
-                 // 2. 로컬스 읽어와서 파싱하기
-                 let locals = localStorage.getItem("wish-data");
-                 locals = JSON.parse(locals);
-
-                 // 3. 중복검사
-
-                 // (1) 인클루드 비교
-                 let newLocals = locals.map(
-                   (v) => `${v.idx}-${v.color}-${v.type}`
-                 );
-                 // 현재 선택된 항목을 문자열로 변환
-                 let currentItem = `${idx}-${myCon.selColor}-${type}`;
-                 // 중복 검사
-                 let retSts = newLocals.includes(currentItem);
-                 if (retSts) {
-                   alert("이미 선택하신 상품입니다!");
-                   return;
-                 } ///// if //////
-                 locals.push({
-                   type: type,
-                   idx: idx,
-                   color: myCon.selColor,
-                   pname: pname,
-                   price:price,
-                   src: src,
-                   cnt: "1",
-                 });
-                 localStorage.setItem("wish-data", JSON.stringify(locals));
-                 myCon.setLocalsWish(localStorage.getItem("wish-data"));
-                 myCon.setWishSts(true);
+                    // [ 로컬스 카트 데이터 넣기 ]
+                    // 1. 로컬스 없으면 만들어라!
+                    if (!localStorage.getItem("wish-data")) {
+                      localStorage.setItem("wish-data", "[]");
+                     
+                    } //// if /////
+   
+                    // 2. 로컬스 읽어와서 파싱하기
+                    let locals = localStorage.getItem("wish-data");
+                    locals = JSON.parse(locals);
+   
+                    // 3. 중복검사
+   
+                    // (1) 인클루드 비교
+                    let newLocals = locals.map(
+                      (v) => `${v.idx}-${v.color}-${v.type}`
+                    );
+                    // 현재 선택된 항목을 문자열로 변환
+                    let currentItem = `${idx}-${myCon.selColor}-${type}`;
+                    // 중복 검사
+                    let retSts = newLocals.includes(currentItem);
+                    if (retSts) {
+                      alert("This item is already in your wish list!");
+                      return;
+                    } ///// if //////
+                    else if(!retSts){
+                     alert("The item has been added to your wish list!");
+                    }
+                    locals.push({
+                      type: type,
+                      idx: idx,
+                      color: myCon.selColor,
+                      pname: pname,
+                      price:price,
+                      src: src,
+                      cnt: "1",
+                    });
+                    localStorage.setItem("wish-data", JSON.stringify(locals));
+                    myCon.setLocalsWish(localStorage.getItem("wish-data"));
+                    myCon.setWishSts(true);
+                  }
                }}
               >
                 <span className="wish">

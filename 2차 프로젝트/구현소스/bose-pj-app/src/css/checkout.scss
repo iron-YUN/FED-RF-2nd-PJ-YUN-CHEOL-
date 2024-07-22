@@ -30,5 +30,31 @@
               
             }
           }
+          .buy-botton {
+            margin: 5vh auto ;
+            display: flex;  
+            // flex-direction: column;
+            width: 60%;
+            gap: 20px;
+            .add-cart {
+              border: 1px solid transparent;
+              cursor: pointer;
+              transition: 0.5s;
+              justify-content: center;
+              align-items: center;
+              display: flex;
+              width: 100%;
+              padding: clamp(10px, 1vw, 15px);
+              font-size: clamp(12px,1.5vw,24px);
+              // font-weight: bold;
+              background-color: #131317;
+              color: #fff;
+              &:hover {
+                background-color: #3e474a;
+                box-shadow: 0 3.2px 7.2px rgba(0, 0, 0, 0.132),
+                  0 0.6px 1.8px rgba(0, 0, 0, 0.108);
+              }
+            }
+          }
     }
 }
