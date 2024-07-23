@@ -25,6 +25,7 @@ import Detail from "../modules/Detail";
 import MainPageRd from "../modules/MainPageRd";
 import { bCon,cCon } from "../modules/bCon";
 import { SwiperRd } from "../plugin/SwiperRd";
+import WhyBuyFromBose from "../modules/WhyBuyFromBose";
 
 function ShopDetail() {
   // const [selectedColor, setSelectedColor] = useState(null);
@@ -333,6 +334,7 @@ function ShopDetail() {
       <div className="detail-box2">
         <Detail src={src} type={type} idx={idx} sel={myCon.selColor} pname={pname} />
       </div>
+      <WhyBuyFromBose />
       <MainPageRd />
     </div>
   );
