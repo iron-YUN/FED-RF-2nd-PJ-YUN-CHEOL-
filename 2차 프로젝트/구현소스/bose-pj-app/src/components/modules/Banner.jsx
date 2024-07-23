@@ -21,7 +21,9 @@ function Banner({ catName }) {
 
   // 코드리턴
   return (
-    <div className="top-banner" style={{ background: `url(${selData.src})${selData.back} ` }}>
+    <div className="top-banner"
+     style={{ background: 
+     `url(${selData.src})${selData.back} ` }}>
       <div className="ban-tit">
         <h3>{catName}</h3>
         <h1>{selData.tit1}</h1>

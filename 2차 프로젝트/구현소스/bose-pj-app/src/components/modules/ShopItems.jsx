@@ -104,10 +104,7 @@ function ShopItems({ catName }) {
         </div>
         {/* 플렉스 설정 item-box */}
         {products.map((v, i) => {
-          // console.log(v);
           const rdColor = getRdItem(v.color);
-          // console.log(rdColor);
-          // console.log(v.color);
           return (
             // 제품 각 박스
             <div className="item-cat-cont" key={i}>
@@ -119,7 +116,6 @@ function ShopItems({ catName }) {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-
                   window.scrollTo(0, 0);
                   myCon.setPos(0);
                   // 현재 선택된 컬러 title속성값 읽기

@@ -60,82 +60,47 @@ export function SwiperRd({force, setForce }) {
     };
   }, []);
 
-  // 램덤1 함수 ///////////////////////////////////////
-  // 1. rdProduct : 리턴코드에서 products의 순번 카테고리를 받아서
-  // 해당 카테고리 내의 순번개수만큼 랜덤돌리기를 한다
-  // 2.rdColor : 위에서 결정된 제품내의 컬러리스트를 랜덤돌리기한다(위와같은방법).
+  // 램덤 함수 1
   const getRdItem = (arr) => {
-    // 예) 순번1:Headphones -> 품목개수6개 중 랜덤순번품목의 순번을 rdIdx 에 담는다
-    const rdIdx = Math.floor(Math.random() * arr.length);
-    // console.log(rdIdx);
+    const rdIdx = Math.floor(Math.random() 
+    * arr.length);
     return arr[rdIdx];
-    // 위에서 rdIdx 에 담은 순번을 Headphones[랜덤수] 로 리턴해 getRdItem 에 담는다.
-  }; ////////////// 랜덤1 함수 getRdItem ////////////
-
-  // 랜덤2 함수 ///////////////////////////////////
+  }; //////////////
+  // 랜덤 함수 2
   const getRdItems = (arr) => {
-    // 1. 1~2개 랜덤넘버
-    const rNum = Math.ceil(Math.random() * 2); // 1 또는 2
-    // const rNum = Math.floor(Math.random() * 2)+1; // 1 또는 2
-    //  console.log("난 1개내지 2개",rNum)
-
-    // 2. 선택된 아이템들을 배열로 담을 준비
+    const rNum = Math.ceil(Math.random() 
+    * 2);
+    // 원본데이터 안전장치 : 빈배열 + 배열복사
     const items = [];
-    // console.log("난 선택받은 용사들",items);
-    // 선택된 제품을 저장 => 카테고리당 1~2 를 선택해 배열로 담음
-
-    // 3.원본 배열 복사 : 카테고리의 품목 배열로 복사!
     const catCopyArr = [...arr];
-    // console.log("카테고리 복사!",catCopyArr);
-
-    // const catCopyArr = arr; // 이거하지마
-    //  ->> 이건 원본배열의 주소만 복사한것으로 원본이 위험함
-
-    // 출력코드
-    // rNum 에서 1개또는 2개를 선택해서
-    //  1개일때는 순번0 , 2개일때는 순번 1까지나옴
-    // 이순번을 for문 사용 해서 출력
     for (let i = 0; i < rNum; i++) {
-      // 1) catCopyArr 복사배열에서 무작위 아이템 선택
       const item = getRdItem(catCopyArr);
-      // 2) 선택된 아이템을 items 빈배열에 추가
       items.push(item);
-      // console.log(items);
-      // 3) 중복 방지를 위해 선택된 아이템 제거
-      // catCopyArr 복사된 배열에서 랜덤 선택된 인덱스를 제거
-      catCopyArr.splice(catCopyArr.indexOf(item), 1); // -> 이거안하면 중복됨
-      // console.log(catCopyArr); // -> 선택된 제품 제외하고 나머지 나옴
+      catCopyArr.splice(catCopyArr
+        .indexOf(item), 1);
     }
     return items;
-  }; ////////////// 랜덤2 함수 getRdItems ////////////
+  }; //////////////
 
   // 제품 색상 변경 함수
   const colorFn = (e, clr) => {
     e.preventDefault();
-    // ./images/speakers/1/white_smoke/0.webp
-    // 0. 원조대상
     let org = $(e.currentTarget);
-    // 1. 대상이미지선택
-    let tg = org.parents(".rd-p-info").prev().find("img");
-    // 2. 대상이미지 src값 읽기
+    // 1.바꿀대상 찾기
+    let tg = org.parents(".rd-p-info")
+    .prev().find("img");
+    // 2.대상이미지 src값 읽기
     let isrc = tg.attr("src").split("/");
-    // console.log("전isrc:", JSON.stringify(isrc));
-    // 3. 대상이미지 src값 변경
+    // 3.대상이미지 src값 변경,색상 업데이트
     isrc[9] = clr;
-    // console.log("clr:", clr);
-    // 참조 넘길 색상도 업데이트
     rdColor.current = clr;
-    // console.log("rdColor:", rdColor.current);
-    // console.log("후isrc:", isrc);
     // 4. 대상이미지경로 복원
     isrc = isrc.join("/");
-    // console.log("최종isrc:", isrc);
     // 5. 대상이미지 src 실제로 변경
     tg.attr("src", isrc);
-
     // 6. 현재 자신에게 클래스"on"넣기
-    org.addClass("on").siblings().removeClass("on");
-   
+    org.addClass("on").siblings()
+    .removeClass("on");
   }; ///////////// colorFn ////////////////
   ////////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////
@@ -180,19 +145,15 @@ export function SwiperRd({force, setForce }) {
       >
         {/* ///////////////////////////////////// */}
         {
-          // 각 카테고리별로 1~2개의 제품 랜덤 선택
-          products.flatMap((v, i) => {
+          products.map((v, i) => {
             // 1.각 카테고리별로 1~2개 제품 랜덤선택
             const rdProduct = getRdItems(v);
-            // console.log(rdProduct); // 랜덤오브젝트 확인하기
             return rdProduct.map((prod, j) => {
-              // console.log(prod.color);
               // 2.선택된 제품에서의 가지고있는 색 랜덤선택
               rdColor.current = getRdItem(prod.color);
-              // console.log(rdColor.current);
-
               return (
-                <SwiperSlide key={`${i}-${j}`} className="rd-cat-cont">
+                <SwiperSlide key={`${i}-${j}`}
+                 className="rd-cat-cont">
                   <p className="wish">
                     {/* 1.위시리스트 버튼 */}
                     <WishlistHeartIcon strokeWidth="1" width="30" height="30" />

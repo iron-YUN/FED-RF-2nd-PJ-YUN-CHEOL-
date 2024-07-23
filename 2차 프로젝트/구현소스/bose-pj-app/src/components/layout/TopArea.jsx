@@ -260,7 +260,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
             <ul className="menu-box">
               {loginSts === null && (
                 <>
-                  <li className="logmsg2">
+                  <div className="logmsg2">
                     <span className="log">
                       <Link to="/login" onClick={initSet} title="Log in">
                         Log in
@@ -270,12 +270,12 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                         Join us
                       </Link>
                     </span>
-                  </li>
+                  </div>
                 </>
               )}
               {loginSts !== null && (
                 <>
-                  <li className="logmsg2">
+                  <div className="logmsg2">
                     <span>{loginMsg}</span>
                     <span className="log">
                       / &nbsp;
@@ -293,7 +293,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                         Log out
                       </a>
                     </span>
-                  </li>
+                  </div>
                 </>
               )}
               {/* 2. GNB메뉴 데이터 배열로 만들기 */}
