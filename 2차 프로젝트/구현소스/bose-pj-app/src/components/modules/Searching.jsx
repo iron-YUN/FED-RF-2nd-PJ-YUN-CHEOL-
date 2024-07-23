@@ -45,10 +45,10 @@ function Searching({ kword }) {
     mtype = mtype.indexOf(kw) != -1;
     let stype = v.SubType.toLowerCase();
     stype = stype.indexOf(kw) != -1;
-    let cType = v.color.some((color) => color.toLowerCase().indexOf(kw) !== -1);
+    let cType = v.color.some((color) => 
+    color.toLowerCase().indexOf(kw) !== -1);
     if (pname || mtype || stype || cType) return true;
-
-    
+ 
   });
   console.log("최종데이터:", lastData);
   console.log("최종데이터:", lastData.length);
@@ -79,7 +79,7 @@ function Searching({ kword }) {
         {lastData.length > 0 && (
           <>
             <div className="result">
-              <h1>No results found.</h1>
+              <h1>Results found.</h1>
               <h2>
                 Search results for: <span>"{kword}" , "{lastData.length}" items</span>
               </h2>
