@@ -35,18 +35,16 @@ import SnsLink from "../modules/SnsLink";
 export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // 전역 컨텍스트 사용하기
   const myCon = useContext(bCon);
-  console.log("난몰랑",loginSts);
   // 햄버거 버튼을 X버튼으로 바꾸기위한 설정
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMenuOpen2, setIsMenuOpen2] = useState(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  // 이동함수 ////
+  const goNav = useNavigate();
   //  메뉴박스 오른쪽칸에 들어갈 map 이미지들 변수 ////////////
   const menuSrcV = Object.values(menuSrc);
   const menuSrcK = Object.keys(menuSrc);
   // svg 메뉴 아이콘 크기 변경하기 ////////////////////
-
   let icon1;
-  let icon5;
+  let icon1a;
   let gnb;
   let search;
   let searchInput;
@@ -63,7 +61,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
 
     // 상단 메뉴바 아이콘버튼 변수
     icon1 = mFn.qsa(".icon-menu li")[0]; // 햄버거버튼
-    icon5 = mFn.qsa(".icon-menu li")[4]; // 돋보기버튼
+    icon1a = mFn.qsEl(icon1,"a");
     gnb = mFn.qs(".gnb");
     search = mFn.qs(".search");
     searchInput = mFn.qs(".search input");
@@ -72,22 +70,11 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     menuLiArray = Array.from($(".menu-box li a"));
     rightImg = $(".right img");
 
-    // 광클금지 설정 - 잘안됨 //////////////////////
-    // let prot = false;
-    // if (prot) return; // 돌아가!(함수나감!)
-    // prot = true; // 잠금! (뒤의호출막기)
-    // setTimeout(() => {
-    //   prot = false; // 0.6초후 해제!
-    // }, 6000); //////////////////////////////
-
     // 메뉴창 닫기 위한 설정 /////////////////////////////
     const escClose = (event) => {
-      if (event.key === "Escape" && isMenuOpen) {
-        if(isMenuOpen) {
-          setIsMenuOpen(false);
-
-        }
+      if (event.key === "Escape" ) {
         closeMenu();
+        setIsMenuOpen(false);
       } ///////// if //////
     }; /////////escClose///////////////
     window.addEventListener("keydown", escClose);
@@ -97,21 +84,19 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
       mFn.addEvt(v, "click", topMenuOpen);
     });
     // 햄버거 버튼에 메뉴페이지 기능추가
-    mFn.addEvt(icon1, "click", menuOpen);
-
+    mFn.addEvt(icon1a, "click", menuOpen);
     function topMenuOpen() {
       // 메뉴 클릭시에만 상단스크롤 이동하기위해
       // 함수안에 함수를 호출
       menuOpen();
       window.scrollTo(0, 0);
     } /////// topMenuOpen ///////
+
     // 메뉴창 나오기 이벤트
     function menuOpen() {
       gnb.classList.add("active");
-      //search.classList.add("active");
-      //searchInput.classList.add("active");
       mFn.qs("body").classList.add("hidden");
-      if (isMenuOpen) {
+      if (isMenuOpen==true) {
         closeMenu();
         setIsMenuOpen(false);
       }
@@ -119,17 +104,11 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
 
     // 메뉴 닫기 함수
     closeMenu = () => {
-      // console.log("상태값!!", is`MenuOpen);
       // 메뉴창이 열려있을 때 동작해야 하는 로직을 여기에 작성
       gnb.classList.remove("active");
-      //search.classList.remove("active");
-      //searchInput.classList.remove("active");
       mFn.qs("body").classList.remove("hidden");
-      setIsMenuOpen(true);
+      // setIsMenuOpen(true);
     }; ///////////////////////////////////////////////
-
-    // 검색창 나오기 ->> 메뉴바와 별도로!!!!! 기능추가
-    // mFn.addEvt(icon5, "click", function (e) ); ////////// 검색창 클릭 이벤트 ////////
 
     $(menuLiArray).on("mouseover", function (e) {
       // 이벤트 타겟이 하위 요소라도 가장 가까운 li 부모 요소 찾기
@@ -143,21 +122,25 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   const initSet = () => {
     window.scrollTo(0, 0);
     myCon.setPos(0);
-    // console.log("호출!");
     closeMenu();
-    // 햄버거 메뉴를 원래모양으로 변경하기
-    // 위해  false로 만들고 닫기에서 true로 전환함!
     setIsMenuOpen(false);
   }; ////////////////
 
   // html 햄버거버튼 바꾸기
   const toggleMenu = () => {
-    // console.log(isMenuOpen);
-    setIsMenuOpen(!isMenuOpen);
+      if(isMenuOpen==true){
+        setIsMenuOpen(false);
+      }
+      else if(isMenuOpen==false){
+        setIsMenuOpen(true);
+      }
+        
+    // setIsMenuOpen(!isMenuOpen);
   }; ////////////////////
 
   const searchBtnFn = (e) => {
     e.stopPropagation();
+    $("#schinGnb").focus();
     if (search.classList.contains("active")) {
       search.classList.remove("active");
       searchInput.classList.remove("active");
@@ -165,27 +148,17 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
       search.classList.add("active");
       searchInput.classList.add("active");
     }
+
   };
 
   //////////////////////// 검색관련 함수들 ///////////////////////////
 
-  // 이동함수 ////
-  const goNav = useNavigate();
-  // 1.검색창 보이기 함수
-  const showSearch = (e) => {
-    // console.log(isMenuOpen);
-    // 기본기능막기
-    // e.preventDefault();
-    // 2.입력창
-    $("#schinGnb").focus();
-  }; ///////// showSearch 함수 /////////
   // 2.검색창에 앤터키 누르면 검색함수 호출
   const enterKey = (e) => {
     // e.keyCode 는 숫자, e.key는 문자로 리턴함
     if (e.key == "Enter") {
       // 입력창의 입력값 읽어오기 : val()사용
       let txt = $(e.target).val().trim();
-      // console.log(txt);
       // 빈값이 아니면 검색함수 호출(검색어전달)
       if (txt != "") {
         // 입력창 비우기
@@ -197,6 +170,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
           $(".icon-menu li").first().trigger("click");
         }
       } //// if ////
+      initSet();
     } ///// if ////
   }; /////// enterKey ////////
 
@@ -219,8 +193,10 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
               <Logo logoStyle="top" />
             </Link>
             <ul className="icon-menu">
-              <li onClick={() => toggleMenu()} title="Menu open & close">
-                {isMenuOpen ? <CloseMenuIcon /> : <HamburgerMenuIcon />}
+              <li >
+                <a href="###" onClick={() => toggleMenu()} title="Menu open & close">
+                {isMenuOpen==true ? <CloseMenuIcon /> : <HamburgerMenuIcon />}
+                </a>
               </li>
               {loginSts === null && (
                 <>
@@ -260,7 +236,6 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                   <CartIcon />
                 </Link>
               </li>
-              {/* <li onClick={()=>showSearch()}> */}
               <li onClick={searchBtnFn} className="search-li" title="Search">
                 <SearchIcon />
               </li>
@@ -273,7 +248,6 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
               placeholder="Filter by keyword"
               id="schinGnb"
               onKeyUp={enterKey}
-              // onKeyUp={()=>enterKey()}
             />
           </div>
           <div className="logmsg">
@@ -286,16 +260,17 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
             <ul className="menu-box">
               {loginSts === null && (
                 <>
-                <li className="logmsg2">
-                  <span className="log">
-                  <Link to="/login" onClick={initSet} title="Log in">
-                   Log in</Link>
-                  &nbsp; / &nbsp;
-                  <Link to="/member" onClick={initSet} title="Join us">
-                   Join us</Link>
-
-                  </span>
-                </li>
+                  <li className="logmsg2">
+                    <span className="log">
+                      <Link to="/login" onClick={initSet} title="Log in">
+                        Log in
+                      </Link>
+                      &nbsp; / &nbsp;
+                      <Link to="/member" onClick={initSet} title="Join us">
+                        Join us
+                      </Link>
+                    </span>
+                  </li>
                 </>
               )}
               {loginSts !== null && (
@@ -303,7 +278,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                   <li className="logmsg2">
                     <span>{loginMsg}</span>
                     <span className="log">
-                    / &nbsp;
+                      / &nbsp;
                       <a
                         href="#"
                         onClick={(e) => {
@@ -314,7 +289,8 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                           initSet();
                         }}
                         title="Log out"
-                      >Log out
+                      >
+                        Log out
                       </a>
                     </span>
                   </li>
