@@ -61,7 +61,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
 
     // 상단 메뉴바 아이콘버튼 변수
     icon1 = mFn.qsa(".icon-menu li")[0]; // 햄버거버튼
-    icon1a = mFn.qsEl(icon1,"a");
+    icon1a = mFn.qsEl(icon1,"span");
     gnb = mFn.qs(".gnb");
     search = mFn.qs(".search");
     searchInput = mFn.qs(".search input");
@@ -194,13 +194,13 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
             </Link>
             <ul className="icon-menu">
               <li >
-                <a onClick={(e) => {
+                <span onClick={(e) => {
                   // e.preventDefault();
                   toggleMenu();
                 }
                   } title="Menu open & close">
                 {isMenuOpen==true ? <CloseMenuIcon /> : <HamburgerMenuIcon />}
-                </a>
+                </span>
               </li>
               {loginSts === null && (
                 <>
