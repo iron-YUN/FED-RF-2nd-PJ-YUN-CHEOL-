@@ -194,8 +194,8 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
             </Link>
             <ul className="icon-menu">
               <li >
-                <a href="#" onClick={(e) => {
-                  e.preventDefault();
+                <a onClick={(e) => {
+                  // e.preventDefault();
                   toggleMenu();
                 }
                   } title="Menu open & close">
