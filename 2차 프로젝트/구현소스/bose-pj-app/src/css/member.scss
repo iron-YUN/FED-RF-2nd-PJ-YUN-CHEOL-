@@ -21,6 +21,28 @@
   li {
     position: relative;
     padding: 25px;
+   
+    .code-box{
+      display: flex;
+      margin: 10px 0 auto;
+      .zipcode{
+        width: 40%;
+      }
+      .zipcode-btn{
+
+      }
+    }
+    .code-box-zip{
+ width: clamp(70%, 20vw, 90%);
+ margin: 0 auto;
+ input{
+  margin: 0;
+  margin-right: 20px;
+ }
+ button{
+  background-color: #fff;
+ }
+    }
   }
   label {
     display: none;
