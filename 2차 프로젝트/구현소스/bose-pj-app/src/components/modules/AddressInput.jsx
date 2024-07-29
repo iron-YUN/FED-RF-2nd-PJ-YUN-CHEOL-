@@ -28,10 +28,10 @@ const AddressInput = ({ changeAddr }) => {
   };
 
   // [3] 전체박스 스타일 객체
-//   const wholeBoxStyle = {
-//     display: "inline-block",
-//     verticalAlign: "top",
-//   };
+  //   const wholeBoxStyle = {
+  //     display: "inline-block",
+  //     verticalAlign: "top",
+  //   };
 
   // [4] 팝업 윈도우 스타일 객체
   const popupWindowStyle = {
@@ -90,19 +90,15 @@ const AddressInput = ({ changeAddr }) => {
   return (
     <>
       <div className="code-box code-box-zip">
-      
         {/* 우편번호 표시박스 */}
-    
-          <input
-            className="zipcode"
-            value={zonecode}
-            readOnly
-            onClick={toggleHandler}
-            placeholder="ZipCode"
-          />
-        <button 
-         className="zipcode-btn"
-        type="button" onClick={toggleHandler}>
+        <input
+          className="zipcode"
+          value={zonecode}
+          readOnly
+          onClick={toggleHandler}
+          placeholder="ZipCode"
+        />
+        <button className="zipcode-btn" type="button" onClick={toggleHandler}>
           Search Address
         </button>
       </div>
@@ -121,24 +117,22 @@ const AddressInput = ({ changeAddr }) => {
       )}
       {/* 주소자동완성 앞부분 */}
       <div className="code-box">
-
-      <input
-        className="addr1"
-        value={address}
-        readOnly
-        onClick={toggleHandler}
-        placeholder="Search Address"
-      />
+        <input
+          className="addr1"
+          value={address}
+          readOnly
+          onClick={toggleHandler}
+          placeholder="Search Address"
+        />
       </div>
       {/* 주소 직접작성 뒷부분(상세주소) */}
       <div className="code-box">
-
-      <input
-        className="addr2"
-        placeholder="Detail Address"
-        onChange={changeAddr}
-        onBlur={changeAddr}
-      />
+        <input
+          className="addr2"
+          placeholder="Detail Address"
+          onChange={changeAddr}
+          onBlur={changeAddr}
+        />
       </div>
     </>
   );
