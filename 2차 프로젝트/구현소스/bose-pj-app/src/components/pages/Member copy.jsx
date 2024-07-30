@@ -289,8 +289,8 @@ function Member(props) {
       memData.push(newData);
       // 6.로컬스에 반영하기
       localStorage.setItem("mem-data", JSON.stringify(memData));
+     
       setTimeout(() => {
-        alert("Thank you for registering! You have successfully signed up.");
         myCon.goPage("/login");
         window.scrollTo(0, 0);
          myCon.setPos(0);

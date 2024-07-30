@@ -1,5 +1,5 @@
 // 회원가입 페이지 컴포넌트 - Member.jsx
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 // 로컬스토리지 생성 JS
@@ -11,12 +11,13 @@ import $ from "jquery";
 import "../../css/member.scss";
 import AddressInput from "../modules/AddressInput";
 import Modal from "react-modal";
+import { bCon } from "../modules/bCon";
 
 function Member() {
   // 라우터 이동 네비게이트
   const goNav = useNavigate();
   // goNav(라이터주소,state변수)
-
+  const myCon = useContext(bCon)
   // [ 회원가입 페이지 요구사항 ]
   // 1. 각 입력항목별로 유효성검사를 실행함
   // 2. 상태체크를 통하여 적절한 유효성검사시
@@ -347,7 +348,10 @@ function Member() {
       document.querySelector(".sbtn").innerText = "Thank you for joining us!";
       // 1초후 페이지 이동 : 라우터 Navigate로 이동함
       setTimeout(() => {
+        alert("Thank you for registering! You have successfully signed up.");
         goNav("/login");
+        window.scrollTo(0, 0);
+        myCon.setPos(0);
         // 주의: 경로앞에 슬래쉬(/) 안쓰면
         // 현재 Memeber 경로 하위 경로를 불러옴
       }, 1000);
