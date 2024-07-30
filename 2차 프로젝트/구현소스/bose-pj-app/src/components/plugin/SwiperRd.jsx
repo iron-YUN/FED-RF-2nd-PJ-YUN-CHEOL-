@@ -121,7 +121,7 @@ export function SwiperRd({force, setForce }) {
     let isrc = tg.attr("src").split("/");
     // console.log("전isrc:", JSON.stringify(isrc));
     // 3. 대상이미지 src값 변경
-    isrc[9] = clr;
+    isrc[isrc.length - 2] = clr;
     // console.log("clr:", clr);
     // 참조 넘길 색상도 업데이트
     rdColor.current = clr;
