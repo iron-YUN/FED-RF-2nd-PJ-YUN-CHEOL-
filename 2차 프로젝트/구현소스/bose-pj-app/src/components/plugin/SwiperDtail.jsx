@@ -30,7 +30,7 @@ export function SwiperDtail({ src, type, idx,sel,pname }) {
     <SwiperSlide key={i}>
       <div className="dt-img">
       <img
-        src={`${process.env.PUBLIC_URL}/${src}/${idx}/${sel}/${i}.webp`}
+        src={`${process.env.PUBLIC_URL}${src}${idx}/${sel}/${i}.webp`}
         alt={`${pname}`}
       />
       </div>

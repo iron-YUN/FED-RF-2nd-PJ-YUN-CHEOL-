@@ -62,14 +62,6 @@ function ShopDetail() {
     if(myCon.selColor===null){
       $(".color-circle-wrap").first().trigger("click");
     }
-    // $(".add-wish svg").click(function () {
-    //   const currentFill = $(this).attr("fill");
-    //   const newFill = currentFill === "red" ? "none" : "red";
-    //   $(this).attr("fill", newFill);
-    // });
-    // return () => {
-    //   $(".add-wish svg").off("click"); 
-    // };
   }, []);////////////////////
 
     /////////// 제품 색상 변경 함수 //////////
