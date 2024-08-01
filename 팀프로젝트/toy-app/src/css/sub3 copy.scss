@@ -1,0 +1,281 @@
+
+
+.mlogo img {
+  background-color: #ffffff7a;
+}
+
+
+
+
+
+
+ 
+
+
+
+ 
+ 
+/* 배너 페이드 onoff */
+ .char-banner li{
+   display: flex;
+
+    /* 모두 투명 */
+   opacity: 0;
+   /* 트랜지션 */
+   transition: opacity .6s ease-in-out;
+ }
+ .char-banner li.on{
+   opacity: 1;
+   z-index: 1;
+    
+ }
+
+ /* 배너 디자인 */
+.char-banner li{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    top: 55%;
+    left: 65%;
+    transform: translate(-50%,-50%);
+}
+ .char-banner img{
+    width: 50vw;
+    border-radius: 10px;
+    border: 5px solid rgb(248, 248, 248);
+   
+ }
+ .char-banner p{
+   margin: 0 auto;
+   margin-top: 1%;   
+   max-width: 900px;
+   /* font-size: 1.8rem; */
+   padding-top: 1%;
+   padding-bottom: 1%;
+   font-weight: bold;
+   line-height: 1.5;
+   color: #fff;
+   text-shadow: 1px 1px 1px #000;
+   border-radius: 10px;
+   background-color: rgba(0, 0, 0, 0.473);
+ }
+
+
+
+ /* 트레잉ㄹ러 영역 */
+ .video-banner{
+  display: flex;
+  justify-content: center;
+ }
+
+ .video-banner li{
+  top: 15%;
+  position: absolute;
+  /* display: inline-block; */
+  /* text-align: center; */
+  /* width: 1000px; */
+ width: 80vw;
+ max-width: 1000px;
+   
+ }
+
+
+ .video-banner li img{
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgb(248, 248, 248);
+
+  object-fit: cover;
+ }
+ .video-banner li a{
+  width: 100%;
+  height: 100%;
+ }
+
+ .video-btn{
+  position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* height: 74px; */
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    
+ }
+ .v-indic{
+  
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    width: 50%;
+    padding: 15px;
+    box-sizing: border-box;
+    
+  }
+  .v-indic li{
+
+  }
+  
+  .v-indic li img{
+    width: 250px;
+  border-radius: 10px;
+  border: 5px solid rgb(248, 248, 248);
+ opacity: 0.7;
+ }
+
+ .video-banner li{
+  opacity: 0;
+  z-index: 1;
+ }
+ .video-banner li.on{
+  opacity: 1;
+  z-index: 1;
+ }
+
+ 
+ .v-indic li.on img{
+  opacity: 1;
+   border: 5px solid yellow;
+ }
+ .v-indic li:hover img{
+  opacity: 1;
+  border: 5px solid yellow;
+ }
+
+ /*이동버튼*/
+.avbtn {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+ 
+}
+/*왼쪽버튼*/
+.ab1 {
+  left: 20px;
+}
+
+/*오른쪽버튼*/
+.ab2 {
+  right: 20px;
+}
+
+#video-area{
+  content: '';
+  background: url(../../public/images/img3/creditshead.jpg)no-repeat center/cover;
+  /* position: absolute; */
+  
+  /* opacity: 0.7; */
+  z-index: -1;
+}
+
+
+/************************** 미디어 쿼리 **************************/
+
+@media screen and (max-width: 1200px) {
+  .avbtn{
+    /* 트레일러 방향 버튼 x */
+    display: none;
+  }
+
+  .sino-box span{
+   font-size: 2rem;
+    
+    }
+}
+@media screen and (max-width: 1100px) {
+    .v-indic li img{
+      width: 20vw;
+    }
+}
+@media screen and (max-width: 1000px) {
+  .sino-box span{
+   font-size: 1.8rem;
+  
+    }
+}
+@media screen and (max-width: 800px) {
+  .sino-box {
+    top: 70%;
+  }
+  .sino-box span{
+   font-size: 1.5rem;
+   
+    }
+  .toy-3rd-logo img{
+    scale: 0.6;
+  }
+  .indic li{
+    height: 70px !important;
+  }
+  .indic li img{
+    height: 80px !important;
+  }
+  
+}
+@media screen and (max-width: 600px) {
+  .sino-box {
+    display: none;
+  }
+  .toy-3rd-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+  .toy-3rd-logo img{
+    scale: 0.6;
+  }
+  .intro-area{
+    overflow: hidden;
+  }
+  .sub-tit {
+    
+    font-size:4rem;
+  }
+
+  .char-banner li p{
+    font-size: 1.3rem;
+  }
+  .indic li span{
+    font-size: 13px;
+  }
+  .video-btn{
+    display: none;
+  }
+
+  .video-banner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .video-banner li{
+    position: relative;
+    opacity: 1 !important;
+    margin: 5px 0;
+  }
+  .video-box{
+    padding-top: 10%;
+  }
+  .char-area{
+    height: 90vh;
+  }
+  .video-area{
+    height: 106vh;
+   }
+}
+
+@media screen and (max-width: 360px) {
+  .sub-tit {
+    
+    font-size:3rem;
+  }
+  .char-area{
+    height: 70vh;
+  }
+  .video-area{
+    height: 70vh;
+   }
+ 
+  
+}

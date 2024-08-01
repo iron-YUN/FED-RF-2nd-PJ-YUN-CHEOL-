@@ -1,0 +1,7 @@
+process.env.PUBLIC_URL+
+
+빌드 주소
+https://jaeyoonperl.github.io/TEAM-PJ-TOYSTORY/%EB%A6%AC%EC%95%A1%ED%8A%B8PJ/toy-app/build/
+
+설계 문서 링크
+https://drive.google.com/drive/folders/1IW11xeLOjWt4xONSiiiyMgu16EHdxnRT

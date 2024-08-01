@@ -1,0 +1,1036 @@
+@charset "utf-8";
+
+// @import url(./reset.css);
+// @import url(./common.css);
+// @import url(./core.css);
+// @import url(./grid_12_flex.css);
+
+/* font-family: "Dancing Script", cursive;
+    font-family: "Lugrasimo", cursive;
+font-family: "Pacifico", cursive;
+font-family: "Lobster", sans-serif;
+  */
+/**************** 공통영역 ****************/
+.sub2-swiper {
+  user-drag: none;
+}
+  .swiper-slide{
+    padding-bottom: 100px;
+  }
+
+.sub2-tail {
+  position: relative;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 90%;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: yellow;
+    font-weight: bold;
+    z-index: 10; /* 다른 요소 위에 표시되도록 z-index 설정 */
+  }
+  .swiper-button-prev {
+    left: calc(50% - 50px); 
+  
+  }
+
+  .swiper-button-next {
+    right: calc(50% - 50px);
+  }
+}
+
+/* 공사중 표시 */
+body * {
+  /* outline: 2px dashed #ccc; */
+}
+.mlogo img {
+  background-color: #ffffff7a;
+}
+
+// 전체영역 설정 네스팅
+#sub2 {
+  strong {
+    font-weight: bold;
+  }
+  /* 스크롤바 디자인 클래스 */
+  .content-box::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .ibx {
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+  }
+  .flex-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-row {
+    position: relative;
+    /* padding: 0 150px 0 30px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .main-tit2 {
+    padding-top: 80px;
+    margin-bottom: 60px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+  }
+
+  /**************** gnb 인딕 고정 박스 ****************/
+  #top-area {
+    position: fixed;
+    z-index: 100;
+  }
+  #side-area {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    bottom: 60vh;
+  }
+  .gnb {
+    position: absolute;
+    right: 0;
+  }
+  .gnb ul li {
+    margin: 5px 0;
+    text-align: center;
+    background-color: #0000003f;
+    border-radius: 20px;
+  }
+  .gnb ul li.on a {
+    color: yellow;
+  }
+  .gnb ul li a {
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  /********************* 백그라운드 영역 *********************/
+  #logo-area {
+    background: url(../../public/images/img2/bg_sky.jpg) no-repeat center/cover;
+  }
+  #summary-area {
+    background: url(../../public/images/img2/bg_summary.jpg) no-repeat
+    center/cover;
+  }
+  #trailers-area {
+    background: url(../../public/images/img2/bg_TRAILERS.png) no-repeat
+    center/cover;
+  }
+  #character-design-area {
+    background: url(../../public/images/img2/bg_CHARACTERDESIGN.jpg) no-repeat
+    center/cover;
+  }
+  #world-design-area {
+    background: url(../../public/images/img2/bg_WORLDDESIGN.jpg) no-repeat
+    center/cover;
+  }
+  #awards-area {
+    background: url(../../public/images/img2/bg_AWARDS.jpg) no-repeat
+    center/cover;
+  }
+  #credits-area {
+    background: url(../../public/images/img2/bg_CREDITS.jpg) no-repeat
+    center/cover;
+  }
+  #foot-back {
+    // background: url(../../public/images/img2/bg_THANKS.jpg) no-repeat
+    // center/cover;
+  }
+  /* #footer-area{
+  background: url(../../public/images/img2/bg_THANKS.jpg) no-repeat
+  center/cover;
+} */
+
+  /*************** 상단 로고영역 ***************/
+  .logo {
+    position: relative;
+    max-width: 600px;
+    height: 100%;
+    /* aspect-ratio: 453/662; */
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .logo a {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s ease-in-out;
+  }
+  .logo a:first-child:hover {
+    transition: 0.3s ease-in-out;
+    transform: translateY(-50%) rotateX(-10deg) rotateY(20deg) scale(1.1);
+  }
+  .logo a img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+  }
+  .logo a:last-child {
+    text-align: center;
+    top: -200%;
+  }
+  .logo a:last-child img {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    max-width: 400px;
+    object-fit: contain;
+  }
+  .logo a:last-child.show {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* 줄거리 영역 */
+  .sum-text {
+    position: relative;
+    margin: 0 auto;
+    bottom: 0;
+    height: 100vh;
+    padding: 0 10%;
+  }
+  .sum-text p {
+    position: relative;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #00000085;
+    color: #fff;
+    padding: 5% 10%;
+    border-radius: 50px;
+  }
+  .sum-text a:first-child h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .sum-text a:first-child {
+    transition: 0.5s;
+  }
+  .sum-text a:last-child {
+    position: relative;
+    transition: 0.5s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sum-text a:last-child.show {
+    pointer-events: painted;
+    transition: 0.5s;
+    opacity: 1;
+  }
+  .sum-text a:first-child.show {
+    pointer-events: none;
+    transition: 0.5s;
+    opacity: 0;
+  }
+  .summary-click h1 {
+    transition: 0.3s;
+  }
+  .summary-click:hover h1 {
+    color: #56a5cc !important;
+    transition: 0.3s ease-in-out;
+    transform: translate(-50%, -50%) rotateX(-10deg) rotateY(20deg) scale(1.1) !important;
+  }
+  /******************* 2.트레일러 영역 *******************/
+  .content-box2 {
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .trailers-box {
+    position: relative;
+    display: flex;
+    left: 0;
+  }
+  .trailer {
+    flex: 0 0 100%;
+  }
+  .trailer video {
+    display: block;
+    margin: 0 auto;
+    max-width: 1080px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280/720;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* 버튼 */
+  .trail-button {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+  .abtn {
+    padding: 20px 40px;
+    color: #fff;
+    font-size: 50px;
+    text-shadow: 2px 0px #ffe861, -2px 0px #ffe861, 0px 2px #ffe861,
+      0px -2px #ffe861;
+    transition: 0.3s;
+  }
+  .abtn:hover {
+    color: #ffe861;
+  }
+  .ab1 {
+    rotate: 180deg;
+  }
+  .ab2 {
+  }
+  /*************** 3,4 공통영역 ***************/
+  /* 캐릭터 menu list */
+  .menu {
+    position: absolute;
+    width: 250px;
+    left: 30px;
+    /* top: 50vh;
+  transform: translateY(50vh); */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .menu ul li a {
+    color: #fff;
+    font-size: 30px;
+    line-height: 2;
+  }
+  .menu ul li.show a {
+    color: yellow;
+  }
+  /* 캐릭터별 메인콘텐트 
+- 부모설정 필요없어짐*/
+  .main-cont {
+    margin: 0 auto;
+  }
+  /* 앱솔루트설정박스 
+- dn설정으로 앱솔설정 필요없어짐 */
+  .ab-box {
+    display: none;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    margin-left: 250px;
+    margin-right: 150px;
+  }
+  .ab-box.show {
+    display: flex;
+  }
+  /* 공통 -  정보박스 */
+  .info-box {
+    flex-direction: column;
+    display: flex;
+    color: #fff;
+    max-width: 600px;
+    height: 100%;
+    margin: 0 30px;
+  }
+  .info-text {
+    max-width: 600px;
+    margin-top: 30px;
+  }
+  /* 공통 - 그리드 겔러리 박스 */
+  .grid-img {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-img a {
+    aspect-ratio: 1/1;
+    max-width: 200px;
+    max-height: 200px;
+    /* overflow: hidden; */
+  }
+  .grid-img a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /******************* 3.캐릭터 영역 *******************/
+  /* 개별 - 캐릭터정보 이미지를 가두는 박스 */
+  .char-img {
+    max-height: 350px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .char-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  /******************* 4.월드 영역 *******************/
+  /* 없어도되지요~~~~~~ */
+  /******************* 5 & 6 . 어워즈 & 크레딧 영역 공통 *******************/
+  .content-box {
+    height: 100%;
+    width: 50vw;
+    margin: 0 auto;
+    overflow: auto;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #00000073;
+    text-align: center;
+  }
+  .credits-text p,
+  .awards-text p {
+    margin: 25px 0;
+    line-height: 1.5;
+  }
+  .credits-text p:last-child,
+  .awards-text p:last-child {
+    padding-bottom: 150px;
+  }
+}
+/******************* 7.하단 영역 *******************/
+// #footer-area {
+//   /* 부모설정 */
+//   position: relative;
+// }
+// .footer-bx {
+//   width: 100%;
+//   position: absolute;
+//   /* background-color: #ffffff33; */
+//   bottom: 0;
+//   padding: 30px 0;
+// }
+// .sns-box ul {
+//   gap: 30px;
+// }
+// .sns-box a {
+//   color: #fff;
+//   font-size: 40px;
+// }
+// .fcont-part a {
+//   color: #fff;
+//   font-size: 20px;
+//   line-height: 2.5;
+//   text-decoration: underline;
+//   text-underline-offset: 3px;
+// }
+// .corp-part {
+//   color: #fff;
+//   margin-top: 20px;
+//   font-size: 25px;
+// }
+@media only screen and (max-width: 1870px) and (max-height: 830px) {
+  #sub2 {
+    /* 상단 */
+    /* 서머리 */
+    /* 트레일러 */
+    .trailer video {
+      max-width: 900px;
+    }
+    /* 캐릭터 월드 */
+    .char-img img {
+      max-height: 200px;
+      max-width: 200px;
+    }
+    .menu ul li a {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+    .grid-img a {
+      aspect-ratio: 1 / 1;
+      max-width: 150px;
+      max-height: 150px;
+    }
+    /* 어워즈 크레딧 */
+  }
+  /* 하단 */
+}
+@media only screen and (max-width: 1800px) and (max-height: 800px) {
+  #sub2 {
+    /* 상단 */
+    /* 서머리 */
+    /* 트레일러 */
+    .trailer video {
+      max-width: 900px;
+    }
+    /* 캐릭터 월드 */
+    /* 어워즈 크레딧 */
+    /* 하단 */
+    .grid-img a {
+      aspect-ratio: 1 / 1;
+      max-width: 150px;
+      max-height: 150px;
+    }
+    .char-img {
+      /* max-height: 200px; */
+      /* margin: 0 10px; */
+    }
+    .char-img img {
+      max-height: 250px;
+      max-width: 200px;
+    }
+    .menu ul li a {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+}
+@media only screen and (max-width: 1800px) and (max-height: 400px) {
+  #sub2 {
+    /* 상단 */
+    /* 서머리 */
+    /* 캐릭터 월드 */
+    /* 어워즈 크레딧 */
+    /* 하단 */
+    .footer-bx {
+      padding: 0;
+    }
+    .sns-box a {
+      font-size: 25px;
+    }
+    .fcont-part a {
+      font-size: 14px;
+      line-height: 2;
+    }
+    .corp-part {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
+}
+@media only screen and (max-width: 1600px) and (max-height: 650px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  #sub2 {
+    .grid-img {
+      display: none;
+    }
+    .grid-img a {
+      max-width: 100px;
+      max-height: 100px;
+    }
+    .char-img img {
+      max-height: 100px;
+      max-width: 100px;
+    }
+    /* 어워즈 크레딧 */
+  }
+  /* 하단 */
+  .footer-bx {
+    padding: 0;
+  }
+  .sns-box a {
+    font-size: 25px;
+  }
+  .fcont-part a {
+    font-size: 14px;
+    line-height: 2;
+  }
+  .corp-part {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  #sub2 {
+    .trailer video {
+      max-width: 1000px;
+    }
+    .main-tit2 {
+      padding-top: 70px;
+      margin-bottom: 50px;
+    }
+  }
+}
+@media only screen and (max-width: 1400px) and (max-height: 850px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  #sub2 {
+    .menu ul li a {
+      color: #fff;
+      font-size: 20px;
+      line-height: 2;
+    }
+    .char-img img {
+      max-height: 250px;
+      max-width: 200px;
+    }
+  }
+}
+@media only screen and (max-width: 1400px) and (max-height: 700px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  #sub2 {
+    .trailer video {
+      max-width: 600px;
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  #sub2 {
+    .trailer video {
+      max-width: 950px;
+    }
+    .main-tit2 {
+      padding-top: 80px;
+      margin-bottom: 45px;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) and (max-height: 850px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  #sub2 {
+    .char-img img {
+      max-height: 250px;
+      max-width: 200px;
+    }
+    .menu ul li a {
+      color: #fff;
+      font-size: 20px;
+      line-height: 2;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) and (max-height: 708px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  #sub2 {
+    .char-img img {
+      max-height: 250px;
+      max-width: 200px;
+    }
+    .menu ul li a {
+      color: #fff;
+      font-size: 20px;
+      line-height: 2;
+    }
+    .info-box {
+      flex-direction: row;
+    }
+  }
+}
+@media only screen and (max-width: 1100px) and (max-height: 850px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  .grid-img {
+    /* display: none; */
+  }
+}
+@media only screen and (max-width: 1100px) and (max-height: 650px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  .grid-img {
+    /* display: none; */
+  }
+}
+@media screen and (max-width: 1000px) {
+  #sub2 {
+    .flex-row {
+      /* padding: 0 150px 0 30px;
+    box-sizing: border-box; */
+    }
+    .main-tit2 {
+      box-sizing: border-box;
+    }
+    #side-area {
+      bottom: 30vh;
+    }
+
+    .gnb ul li {
+      margin: 10px 0;
+    }
+    .gnb ul li a {
+      font-size: 10px;
+    }
+    .flex-row {
+      align-items: flex-start;
+    }
+    .content-box2 {
+      position: relative;
+      top: 50%;
+      transform: translate(0, -90%);
+    }
+    .trailers-box {
+    }
+    .trailer video {
+      max-width: 800px;
+    }
+    .grid-img {
+      display: none;
+    }
+    .ab-box {
+      margin: 0 auto;
+    }
+    .char-img {
+      max-width: 150px;
+    }
+    .main-cont {
+    }
+    .menu {
+      position: relative;
+      top: 0;
+      left: 2vw;
+      transform: translateY(0);
+      /* width: auto; */
+    }
+    .menu ul li a {
+      font-size: 20px;
+      line-height: 2;
+      white-space: nowrap;
+    }
+    .content-box {
+      width: 60vw;
+    }
+    .sub-text2 {
+      font-size: 15px;
+      margin: 15px 0;
+    }
+    .info-box {
+      margin: 0 30px 0 10px;
+    }
+  }
+}
+@media only screen and (max-width: 1000px) and (max-height: 850px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  #sub2 {
+    .info-box {
+      flex-direction: column;
+    }
+    .trailer video {
+    }
+    .content-box2 {
+      position: relative;
+      top: 50%;
+      transform: translate(0, -70%);
+    }
+  }
+}
+@media only screen and (max-width: 1000px) and (max-height: 600px) {
+  /* 상단 */
+  /* 서머리 */
+  /* 트레일러 */
+  /* 캐릭터 월드 */
+  /* 어워즈 크레딧 */
+  /* 하단 */
+  #sub2 {
+    #side-area {
+      bottom: 60vh;
+    }
+    .mlogo img {
+      padding: 10px 15px 5px;
+      width: 100%;
+      min-width: 150px;
+      max-width: 150px;
+    }
+
+    .logo {
+      max-width: 300px;
+    }
+    .logo a:last-child img {
+      width: 100%;
+      height: 100%;
+      max-height: 300px;
+    }
+    .sub-text1 {
+      font-size: 1.3rem;
+    }
+    /* 서머리 */
+    .sum-text p {
+      padding: 2% 7%;
+      border-radius: 20px;
+    }
+    .sub-text2 {
+      font-size: 13px;
+      margin-right: 50px;
+      margin-left: 20px;
+    }
+    .main-tit2 {
+      padding-top: 60px;
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+    /* 트레일러 */
+    .content-box2 {
+      position: relative;
+      top: 50%;
+      transform: translate(0, -70%);
+    }
+    .trailer video {
+      max-width: 400px;
+      max-height: 250px;
+    }
+    .abtn {
+      padding: 10px 20px;
+      font-size: 25px;
+    }
+    /* 캐릭터 */
+    .grid-img {
+      display: none;
+    }
+    .char-img {
+      max-height: 200px;
+      max-width: 100px;
+      /* margin: 0 10px; */
+    }
+    .char-img img {
+      object-fit: contain;
+    }
+    .info-box {
+      /* flex-direction: row; */
+    }
+    .menu {
+      width: 100px;
+    }
+    .menu ul li a {
+      font-size: 12px;
+      line-height: 1.8;
+    }
+  }
+
+  /* 하단영역 */
+  .footer-bx {
+    padding: 0;
+  }
+  .sns-box a {
+    font-size: 25px;
+  }
+  .fcont-part a {
+    font-size: 14px;
+    line-height: 2;
+  }
+  .corp-part {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 750px) and (max-height: 370px) {
+  #sub2 {
+    #side-area {
+      bottom: 66vh;
+    }
+    .trailer video {
+      max-width: 320px;
+      max-height: 200px;
+    }
+    .info-box {
+      flex-direction: row;
+    }
+    .main-tit2 {
+      padding-top: 50px;
+      margin-bottom: 20px;
+      font-size: 25px;
+    }
+  }
+  .sns-part a {
+    font-size: 25px;
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 600px) {
+  #sub2 {
+    .main-tit2 {
+      margin-bottom: 50px;
+    }
+    .flex-row {
+      flex-wrap: wrap;
+    }
+    .menu {
+      width: auto;
+      padding: 0 20px 30px;
+      left: 0;
+    }
+    .menu ul {
+      /* position: absolute; */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 20px;
+    }
+    .menu ul li a {
+      font-size: 15px;
+    }
+    .info-box {
+      margin: 0 60px 0 20px;
+    }
+    #side-area {
+      bottom: 35vh;
+    }
+    .gnb {
+      /* top: auto; */
+      /* bottom: 0vh; */
+      /* bottom: 30vh; */
+    }
+  }
+  .footer-bx {
+    margin-top: 80px;
+    bottom: 10px;
+    text-align: center;
+  }
+  .sns-part ul {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0 20px;
+    justify-content: center;
+  }
+  .sns-part a {
+    font-size: 25px;
+    line-height: 2.5;
+  }
+  .fcont-part {
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .corp-part {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 2.8;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  #sub2 {
+    .sub-text2 {
+      font-size: 14px;
+    }
+    .main-tit2 {
+      margin-bottom: 35px;
+    }
+  }
+}
+@media only screen and (max-width: 450px) and (max-height: 900px) {
+  #sub2 {
+    .content-box2 {
+      top: 50%;
+      transform: translate(0, -100%);
+    }
+    .mlogo img {
+      padding: 10px 5px 5px;
+      width: 100%;
+      min-width: 100px;
+    }
+    .sub-text1 {
+      font-size: 1.3rem;
+      padding: 3% 7%;
+      border-radius: 20px;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  #sub2 {
+    .sub-text2 {
+      font-size: 12px;
+    }
+    .main-tit2 {
+      margin-bottom: 30px;
+    }
+    .gnb ul li a {
+      padding: 0 5px;
+    }
+  }
+}
+@media only screen and (max-width: 370px) and (max-height: 750px) {
+  #sub2 {
+    .char-img {
+      max-width: 100px;
+    }
+    .menu ul li a {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+  }
+  .fcont-part a {
+    font-size: 15px;
+    line-height: 2;
+  }
+  .footer-bx {
+    margin-top: 20px;
+    bottom: 10px;
+    text-align: center;
+  }
+}
+
+/* ************************************************* */
+/* 모달 팝업창 스타일 */
+.modal {
+  position: fixed; /* 고정 위치로 설정하여 스크롤에 따라 움직이지 않도록 합니다. */
+  z-index: 999; /* 다른 요소 위에 나타나도록 z-index를 설정합니다. */
+  left: 0;
+  top: 0;
+  width: 100%; /* 화면 전체를 차지하도록 너비를 100%로 설정합니다. */
+  height: 100%; /* 화면 전체를 차지하도록 높이를 100%로 설정합니다. */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* 배경색을 반투명 검은색으로 설정합니다. */
+  overflow: auto; /* 모달 내용이 넘칠 경우 스크롤이 나타나도록 합니다. */
+  display: flex; /* Flexbox 레이아웃을 사용하여 내부 요소를 배치합니다. */
+  justify-content: center; /* 가로 중앙 정렬을 위해 가로 방향으로 정렬합니다. */
+  align-items: center; /* 세로 중앙 정렬을 위해 세로 방향으로 정렬합니다. */
+  display: none;
+}
+/* 모달 내용 스타일 */
+.modal-content {
+  max-width: 90%; /* 최대 너비를 설정합니다. */
+  max-height: 90%; /* 최대 높이를 설정합니다. */
+}
+/* 이미지 스타일ㅎ */
+.modal-content {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}

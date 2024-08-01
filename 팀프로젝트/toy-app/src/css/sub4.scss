@@ -1,0 +1,305 @@
+
+
+#top, #main, #footer{
+  max-width: 1200;
+}
+
+#top{
+  height: 100vh;
+  background: url(../../public/images/img4/common4.jpg) no-repeat center /100% 100%;
+}
+
+#main{
+  // max-height: 100vh; 
+}
+
+
+/********************************* 메뉴구역 *********************************/
+
+.ts{
+  // display: none;
+}
+
+#top-area::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // background: #ffffff60;
+}
+.mlogo{
+  position: relative;
+}
+/********************************* 상단구역 *********************************/
+
+.screen{
+  position: relative;
+  width: 100%;
+  padding-top: 13%;
+}  
+
+#ifr{
+  position: relative;
+  left: 5%;
+  width: 600px;
+  height: 400px;
+  
+}  
+
+/********************************* 메인구역 *********************************/
+.main-title >img{
+  width: 40%;
+  margin-left: -2%;
+  padding: 6%;
+}
+
+/* 재귀함수 영역 */
+
+.gbox{
+  overflow: hidden;
+}
+.gbox ul{
+  display: flex;
+  list-style: none;    
+  margin: 0;
+  padding: 0;  
+}
+.gbox li{
+    width: 25vw;
+    padding: 1vw;
+    /* 플렉스 부모박스크기에 맞춰 줄이기 
+    -> 0을 쓰면 맞춰서 안줄이겠다는 뜻*/
+    flex-shrink: 0;
+    aspect-ratio: 664/443;
+    box-sizing: border-box;
+}
+.gbox li img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 시놉시스 영역 */
+
+.main-synopsis{
+  // height: 15%;
+  padding-top: 6%;
+}
+.main-title{
+  text-align: center;
+ 
+}
+.synop-box{
+  text-align: center;
+  display: flex;
+  margin: 72px auto 0;
+  padding-bottom: 3%;
+  width: 66%;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+.synop-btn{
+  margin-top: 3%;
+  margin-left: 46%;
+  width: 9%;
+  padding: 1% 0%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: darkgreen;
+  background-color: beige;
+  border-radius: 25px;
+
+}
+.synop-txt{
+  font-size: 3rem;
+  opacity: 1;
+}
+.synop-txt .on{
+  opacity: 0;
+}
+
+
+/* 포스터 영역 */
+.main-poster{
+  position: relative;
+}
+.main-poster > h2{
+  padding-top: 9%;
+}
+
+.main-poster.on .poster{
+  opacity: 0;
+}
+.main-poster.on .poster2{
+  opacity: 1;
+}
+
+.poster{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 10;
+  transition: opacity 3s;  
+}
+.poster span{
+  position: absolute;
+  z-index: 11;
+  top: 60%;
+  left: 38%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white; 
+}
+
+.poster img{
+  padding-top: 35%;
+  width: min(700px, 40vw);
+}
+
+.poster2{
+  display: flex;
+  gap: 2%;
+  padding: 3%;
+  opacity: 0;
+  transition: opacity 3s;
+}
+.poster2 li{
+  flex: 1;
+}
+.poster2 img{
+  border-radius: 4%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/*  캐릭터 소개 영역 */
+
+.main-character{
+  padding-top: 10%;
+  padding-bottom: 3%;
+}
+.cha-intro{
+  // position: absolute;
+  width: auto;
+  // height: auto;
+}
+.cha-intro > h1{
+ /* font-size: 3rem; */
+ padding: 2%;
+}
+
+.cha-desc{
+  display: block;
+  margin-top: 3%;
+  text-align: center;
+}
+
+.cha-desc > p{
+  font-size: 1.3rem;
+  padding-bottom: 1%;
+  text-align: center;
+}
+
+.cha-pic2{
+  display: flex;
+  gap: 1%;
+  padding-top: 1%;
+  padding-bottom: 3%;
+  overflow: hidden;
+}
+
+.cha-pic2 > li img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5%;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+
+.cha-pic2 > li:hover img {
+  transform: scale(1.05, 1.05);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+
+/********************************* 하단구역 *********************************/
+
+/* 마우스 포인터 */
+.pointer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: url(../../public/images/img4/ts4logo.png) no-repeat center;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+}
+
+
+/* top버튼 설정 */
+.footer-icon{
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.footer-icon img{
+  position: relative;
+  z-index: 99;
+  width: 50%;
+  left: 55%;
+  animation: icon-ani 1.3s ease-in-out infinite;
+}
+
+@keyframes icon-ani {
+  0%, 100% {
+    transform: translateY(0px) scale(0.95);
+  }
+  50% {
+    transform: translateY(-20px) scale(1);
+  }
+}
+
+
+/* 하단 sns설정 구역*/
+.sns-part ul {
+  gap: 0 3%;
+}
+.info-link >ul {
+  padding: 2%;
+}
+ 
+/************************** 미디어쿼리 **************************/
+@media screen and (max-width: 450px) {
+  #top {
+    height: 400px;
+  }
+
+  #ifr {
+    left: 0;
+    width: 203px;
+    height: auto;
+}
+.screen {
+  padding-top: 41%;
+}
+.poster img {
+  padding-top: 55%;
+}
+
+.cha-pic{
+ display: inline;
+}
+
+}
