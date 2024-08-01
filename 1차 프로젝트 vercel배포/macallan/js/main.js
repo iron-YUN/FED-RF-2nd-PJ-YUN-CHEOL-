@@ -265,35 +265,35 @@ const collSlideItems = [
 
   //////////////////객체///////////
   // {
-  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main01.jpg",
+  //   imgSrc: "./images/main_img/main_page_bottle/coll_main01.jpg",
   //   spanText: "SHERRY OAK 12 YEARS OLD"
   // },
   // {
-  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main02.jpg",
+  //   imgSrc: "./images/main_img/main_page_bottle/coll_main02.jpg",
   //   spanText: "SHERRY OAK 18 YEARS OLD, 2023 RELEASE"
   // },
   // {
-  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main03.jpg",
+  //   imgSrc: "./images/main_img/main_page_bottle/coll_main03.jpg",
   //   spanText: "SHERRY OAK 25 YEARS OLD, 2023 RELEASE"
   // },
   // {
-  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main04.jpg",
+  //   imgSrc: "./images/main_img/main_page_bottle/coll_main04.jpg",
   //   spanText: "SHERRY OAK 30 YEARS OLD, 2023 RELEASE"
   // },
   // {
-  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main05.jpg",
+  //   imgSrc: "./images/main_img/main_page_bottle/coll_main05.jpg",
   //   spanText: "DOUBLE CASK 12 YEARS OLD"
   // },
   // {
-  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main06.jpg",
+  //   imgSrc: "./images/main_img/main_page_bottle/coll_main06.jpg",
   //   spanText: "DOUBLE CASK 15 YEARS OLD"
   // },
   // {
-  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main07.jpg",
+  //   imgSrc: "./images/main_img/main_page_bottle/coll_main07.jpg",
   //   spanText: "DOUBLE CASK 18 YEARS OLD, 2023 RELEASE"
   // },
   // {
-  //   imgSrc: "../01.자료수집/main_img/main_page_bottle/coll_main08.jpg",
+  //   imgSrc: "./images/main_img/main_page_bottle/coll_main08.jpg",
   //   spanText: "DOUBLE CASK 30 YEARS OLD, 2023 RELEASE"
   // },
 ]; ////////////////// collSlideItems 배열 ///////////////////////
@@ -304,7 +304,7 @@ collSlideItems.forEach((v) => {
     <a href="./sub_coll.html">
       <div class="coll-img">
         <img
-          src="../01.자료수집/main_img/main_page_bottle/coll_main0${v[0]}.jpg"
+          src="./images/main_img/main_page_bottle/coll_main0${v[0]}.jpg"
           alt=""
         />
       </div>
@@ -400,7 +400,7 @@ Mat.forEach((mat, index) => {
     </div>
     <div class="mat-sh">
       <div class="mat-img">
-        <img src="../01.자료수집/main_img/THE MATERIALS/met${v[0]}.jpg" alt="${v[1]}" />
+        <img src="./images/main_img/THE MATERIALS/met${v[0]}.jpg" alt="${v[1]}" />
       </div>
       <div class="mat-info">
         <p class="main-text2">${v[2]}</p>
@@ -439,7 +439,7 @@ collText.innerHTML = `
 <h3 class="${tAt[1]}">${collTextItems[tAt[1]]}</h3>
 <div class="${tAt[2]}">
   <img
-    src="../01.자료수집/main_img/line_img/lineout.svg"
+    src="./images/main_img/line_img/lineout.svg"
     alt=""
   />
 </div>

@@ -127,7 +127,7 @@ body * {
 
 .gnb .menu-right {
   flex: 1;
-  background: url(../../01.자료수집/main_img/menubg.webp) no-repeat center/cover;
+  background: url(../images/main_img/menubg.webp) no-repeat center/cover;
 }
 
 /* 1. 상단영역 */
@@ -170,7 +170,7 @@ body * {
 #partnerships-area {
   position: sticky;
   top: -25%;
-  background: url(../../01.자료수집/main_img/Horizn.png) no-repeat center/cover;
+  background: url(../images/main_img/Horizn.png) no-repeat center/cover;
 }
 .partnerships-area {
   height: 150vh;

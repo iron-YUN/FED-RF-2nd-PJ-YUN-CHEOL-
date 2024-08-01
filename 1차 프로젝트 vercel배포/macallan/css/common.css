@@ -88,7 +88,7 @@
   /* height: 20%; */
   transition: 0.1s ease-out;
   /* transform: translate(-50%, -20%) rotate(0deg); */
-  /* background: url(../../01.자료수집/mover/mover_img.png) no-repeat center/cover; */
+  /* background: url(../images/mover/mover_img.png) no-repeat center/cover; */
   pointer-events: none;
   filter: drop-shadow(5px 5px 3px #00000069);
   color: #000;
@@ -792,7 +792,7 @@
 
 .f-line {
   height: 20px;
-  background: url(../../01.자료수집/main_img/line_img/small.21f8a7d3.svg)
+  background: url(../images/main_img/line_img/small.21f8a7d3.svg)
     repeat-x;
 }
 .f-grid-contain {

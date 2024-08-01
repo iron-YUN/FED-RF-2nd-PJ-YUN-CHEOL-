@@ -36,7 +36,7 @@ const comData ={
         <a class="top-logo2" href="./index.html">
           <img
             class="top-logo"
-            src="../01.자료수집/LOGO/Logo.svg"
+            src="./images/LOGO/Logo.svg"
             alt="메인 로고"
           />
         </a>
@@ -94,9 +94,9 @@ const comData ={
     <div class="f-grid-contain">
       <div class="fgcon1">
         <a href="###" class="foot-logo">
-          <img src="../01.자료수집/LOGO/Logo_dark.svg" alt="하단로고" />
+          <img src="./images/LOGO/Logo_dark.svg" alt="하단로고" />
           <img
-            src="../01.자료수집/LOGO/Logo_mobile.svg"
+            src="./images/LOGO/Logo_mobile.svg"
             alt="하단로고"
           />
         </a>
