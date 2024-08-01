@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheMacallan.com</title>
+    <!-- 폰트어썸CSS -->
+    <!-- https://fontawesome.com/icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="./images/pavicon_tvN.png" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+
+  <body class="scbar hidden">
+  
+    <!--껍데기 메인로고영역 검정바탕 -->
+    <div class="mainlogo1">
+      <div class="mlogo-pgbx">
+        <div class="mlogo-pg" title="Click to Enter">
+          <a class="logo-btn" href="#">
+            <img src="../01.자료수집/LOGO/Logo.svg" alt="" />
+          </a>
+          <a class="logo-btn" href="#">
+            <img src="../01.자료수집/LOGO/Logo.svg" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ////////coll-stit///////////여기영역부터가 메인///////////////////////// -->
+    <!-- 메인겉박스를 위한 박스 -->
+    <div id="mmm-area">
+      <!-- 메뉴파트 -->
+      <div class="gnb">
+        <div class="menu-left">
+          <a href="###" class="menu-close">
+            <svg width="32" height="32" viewBox="0 0 32 32">
+              <g fill="currentColor">
+                <path
+                  d="m14.585 16-4.95 4.95 1.415 1.414L22.364 11.05l-1.415-1.414-4.95 4.95-4.949-4.95-1.414 1.414 4.95 4.95ZM20.95 22.364l-3.536-3.536 1.414-1.414 3.536 3.536-1.415 1.414Z"
+                ></path>
+              </g>
+            </svg>
+          </a>
+          <div class="menu-left-box">
+            <a href="###" class="menu-back">BACK</a>
+            <ul class="first-menu">
+              <li>
+                <a href="###">COLLECTIONS</a>
+              </li>
+              <li>
+                <a href="###">EXPERIENCE</a>
+              </li>
+              <li>
+                <a href="###">STORIES</a>
+              </li>
+              <li>
+                <a href="###">ABOUT</a>
+              </li>
+              <li>
+                <a href="###">THE MACALLAN SOCIETY</a>
+              </li>
+              <li>
+                <a href="###">SUPPORT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu-right"></div>
+      </div>
+      <!-- 1. 상단영역 -->
+      <div id="top-area" class="top-area-bgc"></div>
+      <!-- 2. 배너영역 -->
+      <div id="ban-area">
+          <!-- 따라다니는 모양-->
+    <div class="mover">Click</div>
+        <!-- 미디어쿼리 없을때 -->
+        <section class="inbox ban-area">
+          <div class="col-12 ban-box">
+            <!-- 3-1.배너 영상 박스 -->
+            <div class="ban-video">
+              <a href="###">
+                <video
+                  src="../01.자료수집/intro_mv/Mystère by Cirque du Soleil _ Official Trailer 2024.mp4"
+                  loop="1"
+                  autoplay="1"
+                  muted="1"
+                ></video>
+              </a>
+            </div>
+            <!-- 3-1.배너 이미지 박스 -->
+            <div class="baner">
+              <div class="ban-img"></div>
+              <a href="###">
+                <img
+                  src="../01.자료수집/main_img/main_eve_ban.png"
+                  alt="메인이벤트배너"
+                />
+              </a>
+              <!-- 이미지 박스 안의 설명 -->
+              <div class="ban-text">
+                <p>DISCOVER</p>
+                <p>THE MACALLAN & CIRQUE DU SOLEIL</p>
+              </div>
+              <!-- 이미지 박스 안의 버튼 -->
+              <a class="ban-btn" href="./sub_ban.html">EXPLORE</a>
+            </div>
+          </div>
+        </section>
+        <!-- 미디어쿼리 적용시 -->
+        <section class="inbox ban-area2">
+          <!-- 3-1.배너 이미지 박스 -->
+          <div class="baner2">
+            <a href="#">
+              <img
+                src="../01.자료수집/main_img/main_eve_ban2.jpg"
+                alt="메인이벤트배너"
+              />
+            </a>
+            <!-- 이미지 박스 안의 설명 -->
+            <div class="ban-text2">
+              <p>DISCOVER</p>
+              <p>THE MACALLAN & CIRQUE <br />DU SOLEIL</p>
+            </div>
+            <!-- 이미지 박스 안의 버튼 -->
+            <a class="ban-btn2" href="./sub_ban.html">EXPLORE</a>
+          </div>
+        </section>
+      </div>
+      <!-- 3.콜렉션 영역 -->
+      <div id="collections-area">
+        <div class="collections-area inbox">
+          <div class="col-12 coll-box">
+            <!-- 설명박스 -->
+            <div class="coll-text"></div>
+            <!-- 제품박스 -->
+            <div class="coll-list">
+              <a href="javascript:;" onclick="js();" class="abtn ab1"
+                ><img src="../01.자료수집/btn/left_btn.png" alt="왼쪽이동버튼"
+              /></a>
+              <a href="javascript:;" onclick="js();" class="abtn ab2"
+                ><img
+                  src="../01.자료수집/btn/right_btn.png"
+                  alt="오른쪽이동버튼"
+              /></a>
+              <ul id="coll-slide"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4.파트너쉽 영역 -->
+      <!-- 4-1.파트너쉽-이미지 영역 -->
+      <div id="partnerships-area" class="scroll-area">
+        <section class="partnerships-area inbox"></section>
+      </div>
+      <!-- 4-1-1.파트너쉽-제목 영역 -->
+      <div id="partner">
+        <section class="partner inbox">
+          <div class="partner-h1"></div>
+        </section>
+      </div>
+      <!-- 4-2.파트너쉽-설명 영역 -->
+      <div id="partnerships2-area">
+        <section class="partnerships2-area inbox">
+          <div class="mat-box">
+            <div class="materials-h1 mat-grid"></div>
+            <div class="mat mat-grid"></div>
+            <div class="mat mat-grid"></div>
+            <div class="mat mat-grid"></div>
+            <div class="mat mat-grid"></div>
+            <div class="mat mat-grid"></div>
+            <div class="mat mat-grid"></div>
+          </div>
+        </section>
+      </div>
+      <!-- 4-3.파트너쉽동영상 영역 -->
+      <div id="partnerships3-area">
+        <section class="partnerships3-area inbox">
+          <!-- <h2 class="temp-tit">4.파트너쉽 호라이즌 영역</h2> -->
+          <div class="cont-box">
+            <div class="col-12">
+              <div class="partner-mv-box">
+                <div class="partner-mv">
+                  <video
+                    class="ptmv-video"
+                    controls
+                    src="../01.자료수집/intro_mv/The Macallan Horizon.mp4"
+                  ></video>
+                  <img
+                    class="ptmv-img"
+                    src="../01.자료수집/main_img/Horizn.png"
+                    alt="커버이미지"
+                  />
+                  <button class="ptmv-btn button-btn"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="scroll-area black-area">
+        <!-- 5.최신스토리 영역 -->
+        <div id="story-area">
+          <section class="story-area inbox">
+            <div class="sth2-grid12-box">
+              <div class="st-h2">
+                <p class="sub-tit">COLLABORATIONS</p>
+                <p class="main-tit">IN COLLABORATION WITH NATHAN YONG</p>
+                <p class="sub-tit">LAST UPDATED: 26 MAR 2024</p>
+              </div>
+            </div>
+            <div class="st-grid12-box">
+              <div class="st-left2">
+                <div class="story-mv-box2">
+                  <div class="story-mv">
+                    <video
+                      class="stmv-video"
+                      controls
+                      src="../01.자료수집/intro_mv/The Macallan In Collaboration With - Nathan Yong.mp4"
+                    ></video>
+                    <img
+                      class="stmv-img"
+                      src="../01.자료수집/main_img/video_img/storyimg.png"
+                      alt="커버이미지"
+                    />
+                    <button class="stmv-btn button-btn"></button>
+                  </div>
+                </div>
+                <div class="st-text-box2 main-text">
+                  <p>
+                    The Macallan House Singapore encapsulates the spirit of The
+                    Macallan Estate through the lens of 'Nature Culture,'
+                    weaving a rich tapestry of multi-sensory experiences
+                    throughout its expansive 3,000-square-foot retail haven.
+                    <br />
+                    <br />
+                    The areas within The Macallan House Singapore have been
+                    thoughtfully crafted to lead visitors on an immersive
+                    exploration of the natural world. The cultural essence of
+                    the creative expression is exemplified by our collaboration
+                    with Nathan Yong, a Spatial, Furniture, and Object Designer.
+                    <br />
+                    <br />
+                    Nathan’s creations draw deep inspiration from The Macallan
+                    Estate, forging an exquisite union of artistic expression
+                    and the essence of our heritage.
+                  </p>
+                </div>
+              </div>
+              <div class="st-right2">
+                <div>
+                  <img
+                    class="st-img11"
+                    src="../01.자료수집/main_img/video_img/storyimg2.png"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    class="st-img22"
+                    src="../01.자료수집/main_img/video_img/storyimg3.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- 6.소개동영상 영역 -->
+        <div id="intromv-area">
+          <section class="intromv-area inbox">
+            <div class="">
+              <div class="in-grid12-box">
+                <div class="intro-h1">
+                  <p class="sub-tit">HEART AND HOME</p>
+                  <p class="main-tit">WELCOME TO THE MACALLAN ESTATE</p>
+                </div>
+                <div class="intro-mv-box">
+                  <div class="intro-mv">
+                    <video
+                      class="itmv-video"
+                      controls
+                      src="../01.자료수집/intro_mv/intro_How Macallan built its new distillery.mp4"
+                    ></video>
+                    <img
+                      class="itmv-img"
+                      src="../01.자료수집/main_img/video_img/introimgimg.png"
+                      alt="커버이미지"
+                    />
+                    <button class="itmv-btn button-btn"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="scroll-area white-area">
+        <!-- 7.경험해보세요 영역 -->
+        <div id="experience-area">
+          <section class="experience-area inbox">
+            <!-- 설명박스 -->
+            <div class="experience-text">
+              <p class="sub-tit">YOURS TO DISCOVER</p>
+              <h3 class="main-tit">EXPERIENCE THE MACALLAN</h3>
+              <div class="line">
+                <img
+                  src="../01.자료수집/main_img/line_img/lineout.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="experience-grid">
+              <a href="###" class="eximg">
+                <div class="eximg-hidden">
+                  <img
+                    src="../01.자료수집/main_img/EXPERIENCES/EXPERIENCES_1.webp"
+                    alt="SERVES"
+                  />
+                </div>
+                <span>ENJOY</span>
+                <span>SERVES</span>
+              </a>
+              <a href="###" class="eximg">
+                <div class="eximg-hidden">
+                  <img
+                    src="../01.자료수집/main_img/EXPERIENCES/EXPERIENCES_2.webp"
+                    alt="THE MACALLAN SOCIETY"
+                  />
+                </div>
+                <span>INSIDE</span>
+                <span>THE MACALLAN SOCIETY</span>
+              </a>
+              <a href="###" class="eximg">
+                <div class="eximg-hidden">
+                  <img
+                    src="../01.자료수집/main_img/EXPERIENCES/EXPERIENCES_3.webp"
+                    alt="ESTATE EXPERIENCES"
+                  />
+                </div>
+                <span>BOOK</span>
+                <span>ESTATE EXPERIENCES</span>
+              </a>
+              <a href="###" class="eximg">
+                <div class="eximg-hidden">
+                  <img
+                    src="../01.자료수집/main_img/EXPERIENCES/EXPERIENCES_4.webp"
+                    alt="OUR SIX PILLARS"
+                  />
+                </div>
+                <span>DISCOVER</span>
+                <span>OUR SIX PILLARS</span>
+              </a>
+            </div>
+          </section>
+        </div>
+        <!-- 9. 기타스토리영역 -->
+        <div id="other-story-area">
+          <section class="other-story-area inbox">
+            <!-- 설명박스 -->
+            <div class="other-story-text">
+              <p class="sub-tit">PROCESS AND PASSION</p>
+              <h3 class="main-tit">BEHIND THE MASTERY</h3>
+            </div>
+            <div class="os-slide">
+
+              <a href="###" class="osbtn osb1"
+                ><img src="../01.자료수집/btn/left_btn.png" alt="왼쪽이동버튼"
+              /></a>
+              <a href="###" class="osbtn osb2"
+                ><img src="../01.자료수집/btn/right_btn.png" alt="오른쪽이동버튼"
+              /></a>
+              <div class="other-story-flex">
+                <a href="###" class="osimg">
+                  <div class="osimg-hidden">
+                    <img
+                      src="../01.자료수집/main_img/other_story/otherst_1.webp"
+                      alt="THE MACALLAN 200 YEARS YOUNG"
+                    />
+                  </div>
+                  <span>CELEBRATE</span>
+                  <span>THE MACALLAN 200 YEARS YOUNG</span>
+                </a>
+                <a href="###" class="osimg">
+                  <div class="osimg-hidden">
+                    <img
+                      src="../01.자료수집/main_img/other_story/otherst_2.webp"
+                      alt="INSPIRED BY NATURE: STELLA AND MARY MCCARTNEY"
+                    />
+                  </div>
+                  <span>PARTNERSHIP</span>
+                  <span>INSPIRED BY NATURE: STELLA AND MARY MCCARTNEY</span>
+                </a>
+                <a href="###" class="osimg">
+                  <div class="osimg-hidden">
+                    <img
+                      src="../01.자료수집/main_img/other_story/otherst_3.webp"
+                      alt="IN COLLABORATION WITH DAVID CARSON"
+                    />
+                  </div>
+                  <span>COLLABORATION</span>
+                  <span>IN COLLABORATION WITH DAVID CARSON</span>
+                </a>
+                <a href="###" class="osimg">
+                  <div class="osimg-hidden">
+                    <img
+                      src="../01.자료수집/main_img/other_story/otherst_4.webp"
+                      alt="THE MACALLAN PRESENT THE SPIRIT OF 1926"
+                    />
+                  </div>
+                  <span>OUR HISTORY</span>
+                  <span>THE MACALLAN PRESENT THE SPIRIT OF 1926</span>
+                </a>
+              </div>
+              <div class="os-bottom"></div>
+            </div>
+          </section>
+        </div>
+        <!-- 10. 하단영역 -->
+        <div id="footer-area"></div>
+      </div>
+    </div>
+
+    <!-- /////////////////////////////////////////// -->
+  </body>
+</html>

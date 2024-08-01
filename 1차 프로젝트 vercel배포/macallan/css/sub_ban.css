@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/* 바탕흰색 */
+#subpg-main{
+    padding: 0 30px;
+}
+.nav-list{
+    position: relative;
+    background-color: #fff;
+    padding: 12px 0;
+    padding-left: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#topimg-area img{
+    width: 100%;
+}
+.sub-h1-box{
+    margin-top: 64px;
+}

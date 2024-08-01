@@ -1,0 +1,80 @@
+@charset "utf-8";
+.coll-sub-tit{
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+.coll-main-tit{
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 2rem auto;
+    white-space: nowrap;
+}
+.coll-main-text{
+    font-size: 1.6rem;
+    margin: 2rem 0;
+    line-height: 2;
+
+}
+.coll-wrap{
+    position: sticky;
+    top: 100px;
+}
+/* 바탕흰색 */
+#subpg-main{
+    padding: 0 30px;
+}
+.nav-list{
+    position: relative;
+    background-color: #fff;
+    padding: 12px 0;
+    padding-left: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#topimg-area img{
+    width: 100%;
+}
+.sub-h1-box{
+    margin-top: 64px;
+}
+#coll-sub-intro{
+    display: flex;
+    padding: 30px;
+}
+.coll-left{
+    width: 50%;
+    background-color: #f2f2f2;
+}
+.coll-sub-borad{
+    width: 70px;
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+.coll-left img{
+    width: 100%;
+}
+.coll-right{
+    flex: 1;
+    padding: 10%;
+}
+.coll-h2-box{
+    margin-top: 60px;
+    border-bottom: 2px solid #ccc;
+}
+
+.coll-main-h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.coll-main-h2.on .coll-main-text{
+    height: 0;
+}

@@ -1,0 +1,100 @@
+<ul class="foot-menu foot-menu1">
+    <li>
+      <a href="###">COLLECTIONS</a>
+    </li>
+    <li>
+      <a href="###">CLASSIC RANGE</a>
+    </li>
+    <li>
+      <a href="###">TRAVEL EXCLUSIVE</a>
+    </li>
+    <li>
+      <a href="###">LIMITED RELEASES</a>
+    </li>
+    <li>
+      <a href="###">LIFESTYLE & ACCESSORIES</a>
+    </li>
+    <li>
+      <a href="###">ARCHIVE</a>
+    </li>
+  </ul>
+  <ul class="foot-menu foot-menu2">
+    <li>
+      <a href="###">ABOUT</a>
+    </li>
+    <li>
+      <a href="###">ABOUT THE MACALLAN</a>
+    </li>
+    <li>
+      <a href="###">CAREERS</a>
+    </li>
+    <li>
+      <a href="###">CONTACT US</a>
+    </li>
+    <li>
+      <a href="###">NEWSROOM</a>
+    </li>
+    <li>
+      <a href="###">SUSTAINABILITY</a>
+    </li>
+  </ul>
+  <ul class="foot-menu foot-menu3">
+    <li>
+      <a href="###">SUPPORT</a>
+    </li>
+    <li>
+      <a href="###">DELIVERY INFORMATION</a>
+    </li>
+    <li>
+      <a href="###">FREQUENTLY ASKED QUESTIONS</a>
+    </li>
+    <li>
+      <a href="###">MANAGE COOKIE PREFERENCES</a>
+    </li>
+    <li>
+      <a href="###">MY ACCOUNT</a>
+    </li>
+    <li>
+      <a href="###">RETURNS INFORMATION</a>
+    </li>
+  </ul>
+
+  ////////////////////////////////////////////////////////////////
+    <ol class="sns-box">
+                  <li>
+                    <a class="fa-brands fa-square-facebook" href="#"></a>
+                  </li>
+                  <li>
+                    <a class="fa-brands fa-square-twitter" href="#"></a>
+                  </li>
+                  <li>
+                    <a class="fa-brands fa-square-instagram" href="#"></a>
+                  </li>
+                  <li>
+                    <a class="fa-brands fa-square-youtube" href="#"></a>
+                  </li>
+                </ol>
+  ////////////////////////////////////////////////////////////////
+                 <ul>
+                  <li>
+                    <a href="###">DRINK RESPONSIBLY</a>
+                  </li>
+                  <li>
+                    <a href="###">EDRINGTON</a>
+                  </li>
+                  <li>
+                    <a href="###">PRIVACY POLICY</a>
+                  </li>
+                  <li>
+                    <a href="###">TERMS OF USE</a>
+                  </li>
+                  <li>
+                    <a href="###">COOKIES POLICY</a>
+                  </li>
+                  <li>
+                    <a href="###">MANAGE COOKIE PREFERENCES</a>
+                  </li>
+                  <li>
+                    <a href="###">TERMS AND CONDITIONS OF SALE</a>
+                  </li>
+                </ul>
