@@ -202,6 +202,15 @@ body.hidden {
   align-items: center;
   padding: 10px;
   font-size: clamp(10px, 2vw, 16px);
+  a{
+    transition: .3s;
+    color: #fff;
+  }
+  &:hover{
+    a{
+      color: #486e8a;
+    }
+  }
 }
 .logmsg2 {
   // margin: 20px 0;
@@ -213,6 +222,14 @@ body.hidden {
     // background-color: #00000095;
     padding: 5px;
     font-size: clamp(16px, 2vw, 24px);
+    a{
+      transition: .3s;
+    }
+    &:hover{
+      a{
+        color: #486e8a;
+      }
+    }
   }
   .log:hover {
     // color: blue;

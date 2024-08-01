@@ -34,7 +34,8 @@ export default function Layout() {
     // 랜덤수 : 0~4사이의 수
     let rdm = Math.floor(Math.random() * 8);
     // 로그인 메시지 상태변수 업데이트
-    setLoginMsg(`Welcome  ${usrIcon[rdm]} ${name} `);
+    // setLoginMsg(`Welcome  ${usrIcon[rdm]} ${name} `);
+    setLoginMsg(`MyPage ${name} `);
   }; /////// makeMsg 함수 /////////
 
   // 3. 로그아웃 함수 /////////

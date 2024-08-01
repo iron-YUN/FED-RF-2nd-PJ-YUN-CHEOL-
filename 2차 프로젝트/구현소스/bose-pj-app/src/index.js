@@ -24,6 +24,7 @@ import { scrolled, setPos } from "./components/modules/smoothScroll24";
 import Cart from "./components/pages/Cart";
 import Checkout from "./components/pages/Checkout";
 import Wish from "./components/pages/Wish";
+import Mypage from "./components/pages/Mypage";
 
 export default function MainComponent(){
 
@@ -59,6 +60,7 @@ export default function MainComponent(){
           <Route path="cart" element={<Cart />} />
           <Route path="wish" element={<Wish />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path="mypage" element={<Mypage />} />
         </Route>
      </Routes>
     </BrowserRouter>

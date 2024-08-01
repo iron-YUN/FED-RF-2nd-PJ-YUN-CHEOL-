@@ -255,7 +255,11 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
             />
           </div>
           <div className="logmsg">
-            <span>{loginMsg}</span>
+            <span>
+            <Link to="/mypage" onClick={initSet} title="my page">
+              {loginMsg}
+            </Link>
+            </span>
           </div>
         </div>
         {/* 네비게이션 GNB파트 */}
@@ -280,7 +284,11 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
               {loginSts !== null && (
                 <>
                   <div className="logmsg2">
-                    <span>{loginMsg}</span>
+                    <span>
+                      <Link to="/mypage" onClick={initSet} title="my page">
+                      {loginMsg}
+                      </Link>
+                      </span>
                     <span className="log">
                       / &nbsp;
                       <a
